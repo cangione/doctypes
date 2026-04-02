@@ -1,0 +1,5 @@
+% Suppress rule between rows of a table if the two rows are in
+% separate columns or pages
+
+\TableRulePreBrk=0      % 0=none, 1=last row rule, 2=first table rule
+\TableRulePostBrk=1     % 0=none, 1=last row rule, 2=first table rule

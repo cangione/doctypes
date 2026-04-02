@@ -1,0 +1,16 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                SGML Document Type Definition                       *
+    *                    Data Module List (DML)                          *
+    *                                                                    *
+    *                     Release Version 2.3                            *
+    *                       Date: 2007-02-28                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE dml PUBLIC "-//S1000D//DTD Data Module List 20070228//EN"[
+ ]>

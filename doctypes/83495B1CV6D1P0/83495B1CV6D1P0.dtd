@@ -1,0 +1,436 @@
+<!-- *****  START OF FILE ***** -->
+
+<!--  **************************************************************************
+      SPECIAL NOTE: 
+	This DTD was modified for the Arbortext implementation.
+      Changes:
+      20030116 modified to reference the latest version of 38784 (Draft V7 to 
+               include updated support for the change application)
+      20030117 created three row wrapper for semantic tables:
+                 consumrow in consumtab
+                 referrow in refertab
+                 jgindexrow in jgindextab
+               changed the contents of the related table to be the row wrapper, 
+               and moved the contents into the new row wrapper element
+      20040220 Added ATTLIST to content models:
+                 refertab
+                 foldouts
+      20040220 - removed 38784 subset in favor of an entity to 38784 directory
+               - added %chgatt to the following:
+                 chapno          chap            fobrk     
+                 func            funcno          functitle     
+                 funtitle        sssn            toc  
+               - changed #PCDATA content model to %text; in the following:
+                 persreq     
+      ********************************************************************** -->
+
+<!-- 83495B1CV6D1P0
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  DTD TITLE:	Job Guide
+	+
+	+  SPECIFICATION NUMBER:	MIL-PRF-83495B Amendment 1
+	+
+	+  SPECIFICATION POC:	Bill Bates
+	+
+	+  DOCUMENT TYPE DEFINITION (DTD):	83495B1CV6D1P0
+	+
+	+  MIL-STANDARD VERSION:	38784STD-BV6
+	+
+	+  LAST MODIFICATION:	08/17/01
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+  This file is made available to provide the user with a digital 
+	+  representation of the DTD found in:  Appendix C of MIL-PRF-83495B
+	+  This file is incomplete without MIL-PRF-83495B.
+	+
+	+  The following set of declarations may be referred to by using a
+	+  public entity as follows:
+	+
+	+  <!ENTITY % m83495jg PUBLIC "-//USA-DOD//DTD 83495B1CV6D1P0//EN" >
+	+  %m83495jg;
+	+
+	+  NOTE: In order to parse the following DTD subset alone, append
+	+  the following statement to the beginning of the file:
+	+
+	+		<!DOCTYPE doc [
+	+
+	+		and the associated  ]>  to the end of the file.
+	+
+	+  NOTE: The start and end of this file are marked with notations.
+	+  If these notations are not present, the file may not be complete!
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+	AUTHORED BY: Johnny Sullivan, TMSS, IDE
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  OTHER DTDS NEEDED:		
+	+  
+	+	MIL-STD-38784	38784STD-BV6.dtd
+	+	
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  MODIFICATIONS SINCE PREVIOUS RELEASE:  (previous release:  83495B1CV6D0P0)
+	+
+	+	CCB#:	 	83495jg-02023-01
+	+	Description:	added followon maintenance to the task level
+	+			
+	+	jls, 01/24/02
+	+
+	+	
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  -->
+<!-- ENTITY DECLARATIONS -->
+
+
+<!ENTITY % fpi "para0, (para0 | applicdef | symsect | abbrsect |
+internatlstd | lrp | tctolist | ratd | tmimprep)*" >
+
+<!ENTITY % frnt "idinfo, warnpage?, chginssht?, lep, verstat?,
+tpdr?, chgrec?, toc?, (foreword | preface | intro)?, safesum?" >
+
+<!-- CCB#: 1005-03 -->
+
+<!ENTITY % bodyele "((gchaptercontinue | chaptercontinue)?, (gchapter | chapter)+)" >
+
+<!-- ENTITY % bodyele "(gchapter?, chapter+)" -->
+
+<!ENTITY % titles "title" >
+
+<!ENTITY % fig "(%titles;)?, ((subfig, subfig+) | ((graphic, legend?) | figtable)+)" >
+
+<!ENTITY % chap "(%titles;, function+)" >
+
+<!-- CCB# 83495jg-01269-01 -->
+<!ENTITY % parazero "(%titles;)?, (warning | caution | note | para | step1 )*" >
+
+<!-- CCB# 83495jg-01269-01 -->
+<!ENTITY % nparcon "(%titles; | warning | caution | note | para | step1 )*" >
+
+<!-- CCB# 83495jg-01269-01 -->
+<!ENTITY % nparcon1 "warning*, caution?, note?, (%titles;)?,
+para, note?, step1*" >
+
+<!ENTITY % stepcon "(warning*, caution?, note?, para, specinst*, 
+result*, note?)" >
+
+<!ENTITY % yesorno "NUMBER" >
+
+<!-- CCB# 8139-001-03 -->
+<!ENTITY % secur "security (u | c | s | n) 'n'" >
+
+
+<!ENTITY % itemid
+"unit CDATA #IMPLIED
+module CDATA #IMPLIED
+lru CDATA #IMPLIED
+compon CDATA #IMPLIED
+partno CDATA #IMPLIED
+refdes CDATA #IMPLIED" >
+
+<!ENTITY % content
+"skilltrk NMTOKENS #IMPLIED
+contype (desc | proc) #IMPLIED
+assocfig IDREFS #IMPLIED
+assoctab IDREFS #IMPLIED" >
+
+<!ENTITY % db "%itemid; %content;" >
+
+<!ENTITY % delstat    "delete  | real | reserve | NA" >
+
+<!ENTITY % status     "empty | deleted | reserved | notapp" >
+
+<!-- CCB# 98-006-08 -->
+<!ENTITY % chgatt
+"deltype (%delstat;) #IMPLIED
+inschlvl NMTOKEN #IMPLIED
+delchlvl NMTOKEN #IMPLIED
+status  (%status;) #IMPLIED
+revchg %yesorno; '0'" > 
+
+<!ENTITY % bodyatt
+"label CDATA #IMPLIED
+sssn CDATA #IMPLIED
+indexid  CDATA  #IMPLIED 
+%chgatt;
+%db;" >
+
+<!ENTITY % stepatt '
+%chgatt; 
+applicref IDREFS #IMPLIED
+label CDATA #IMPLIED
+emergency %yesorno; "0" 
+sssn CDATA #IMPLIED
+id ID #IMPLIED
+person CDATA #IMPLIED
+esds %yesorno; "0"
+nsp %yesorno; "0"
+fcp %yesorno; "0"
+hcp %yesorno; "0"
+hci %yesorno; "0"
+ocp %yesorno; "0"
+oci %yesorno; "0"
+clitem %yesorno; "0"
+%db;
+ '>
+
+<!ENTITY % verified
+"verdate CDATA #IMPLIED
+verrem CDATA #IMPLIED
+verstatus (unver | ver) 'unver'" >
+
+<!ENTITY % figatts
+"pgwide %yesorno; '1'
+orient (port | land) 'port'
+samepg %yesorno; '0'
+place (inline|float) float
+id ID #IMPLIED
+applicref IDREFS #IMPLIED
+%verified;
+%bodyatt;
+%secur;" >
+
+<!ENTITY % doc "docjg">
+
+<!-- Entity to 38784 -->
+<!ENTITY % m38784       PUBLIC "-//USA-DOD//DTD 38784STD-BV7//EN" >
+%m38784;
+
+
+
+<!ELEMENT addata     - o  (para+ | none | refertab) >
+<!ATTLIST addata     %bodyatt;
+		     %verified;>
+
+<!ELEMENT addcontents     - o  (chaptitle, functitle+)+ >
+<!ATTLIST addcontents     %bodyatt;
+		     	  %verified;>
+
+<!ELEMENT appl     - o  ((para)+ | (applichd?, applic+)+) >
+<!ATTLIST appl     %bodyatt;
+		   %verified; > 
+
+<!ELEMENT cage     - o  (%text;) >     
+
+<!-- ATI 20040220:  Added %chgatt; -->
+<!ELEMENT chapno     - o  (%text;) >
+<!ATTLIST chapno     %chgatt;  >
+
+<!-- ATI 20040220:  Added %chgatt; -->
+<!ELEMENT chap     - o  (%text;) >
+<!ATTLIST chap     %chgatt;  >
+
+<!-- CCB#: 1005-03 -->
+
+<!ELEMENT chaptercontinue	- -  (function+)  +(%inclus;) >
+<!ATTLIST chaptercontinue	chapcontstart  NUMBER  #IMPLIED
+				lastpagenum  NUMBER  #IMPLIED
+				%chapatt; >
+
+<!ELEMENT chaptitle     - o  (%text;) >
+<!ATTLIST chaptitle  	label CDATA #IMPLIED
+			sssn CDATA #IMPLIED >
+
+<!ELEMENT clreq     - o  (para+ | none) >
+<!ATTLIST clreq     %bodyatt;
+		    %verified; >
+
+<!-- CCB# 0103-01-05 -->
+<!ELEMENT consum     - o  (consumtab | none) >
+<!ATTLIST consum     %bodyatt;
+		     %verified;>
+
+<!-- Arbortext 20030117: SFORT 
+     moved the table contents into a row wrapper -->
+<!ELEMENT consumrow     - o  ((nomen, (spec | partno), (cage | mfrnad)?, use, reference) | (tfndisplay)) >
+<!ATTLIST consumrow     %chgatt;
+                        %secur; >
+
+<!-- Arbortext 20030117: SFORT 
+     created a row wrapper for consumtab content -->
+<!ELEMENT consumtab     - o  (consumrow)+  -(%exclus;) +(tfoot | tfnref) >
+<!ATTLIST consumtab     %tabatts; >
+
+<!ELEMENT contentsentry     - o  (tmidno, title, sssn*, addcontents?) >
+<!ATTLIST contentsentry     %chgatt; >    
+
+<!-- CCB#: 1005-03 -->
+
+<!ELEMENT docjg     - -  (front, (body | jgindex))  
+                         +(pgbrk | brk | fobrk| subjinfo | line | modreq | location) >
+<!ATTLIST docjg     chapstart  NUMBER  #IMPLIED
+		    funcstart  NUMBER  #IMPLIED
+		    parastart  NUMBER  #IMPLIED
+		    pagesize (5x8 | 8.5x11) "5x8">
+<!-- added pagesize attribute to determine between 5 by 8 and 8.5 by 11 -
+10/28/96 - jls -->
+
+<!ELEMENT faultcode     - o  (%text;) >
+<!ATTLIST faultcode     %chgatt; >  
+
+<!-- ATI 20040220:  Added %chgatt; -->
+<!ELEMENT fobrk     - o  EMPTY >
+<!ATTLIST fobrk     brk (npg | vpg) "vpg" 
+                    %chgatt; >
+
+<!-- ccb 98-009-01 -->
+<!-- Arbortext 20040220: SFORT
+     added ATTLIST for change processing and linking -->
+<!ELEMENT foldouts     - -  (jgfoldoutwba+ | jgfoldoutnoba+)+>
+<!ATTLIST foldouts  id ID #IMPLIED
+                    %bodyatt;
+                    %secur; >
+
+<!ELEMENT followon     - -  (para+ | none) >
+<!ATTLIST followon     paging (fold | illus) "illus"
+		       %chgatt; >   
+                                    
+ 
+<!-- ATI 20040220:  Added %chgatt; -->
+<!ELEMENT func     - -  (%text;) >
+<!ATTLIST func     %chgatt; >
+
+<!-- ATI 20040220:  Added %chgatt; -->
+<!ELEMENT funcno     - -  (%text;) >
+<!ATTLIST funcno     %chgatt; >
+
+<!ELEMENT function     - -  (%titles;, incond, (task, followon?)+) +(warning | caution | note | figure | table | foldouts) >
+<!ATTLIST function     %para0att; >
+			
+<!-- ATI 20040220:  Added %chgatt; -->
+<!ELEMENT functitle     - o  (%text;) >
+<!ATTLIST functitle  	label CDATA #IMPLIED
+			sssn CDATA #IMPLIED 
+                        %chgatt; >
+
+<!-- ATI 20040220:  Added %chgatt; -->
+<!ELEMENT funtitle     - o (%text;) >
+<!ATTLIST funtitle     %secur; 
+                       %chgatt; >
+
+<!-- ccb 98-009-01 -->
+<!ELEMENT gchapter     - -  (%titles;, para0+, function*)  
+                           +(warning | caution | note | figure | table | foldouts) >
+<!ATTLIST gchapter     %chapatt; >
+
+<!-- CCB#: 1005-03 -->
+
+<!ELEMENT gchaptercontinue	- -  (para0+)  +(%inclus;) >
+<!ATTLIST gchaptercontinue	gchapcontstart  NUMBER  #IMPLIED
+				lastpagenum  NUMBER  #IMPLIED
+				%chapatt; >
+
+<!ELEMENT incond     - -  (appl, reqcond, persreq, supeqp, consum,
+			safecond, clreq?, addata) >
+<!ATTLIST incond     %verified; >   
+
+<!ELEMENT jgindex     - -  (jgindextab) >
+<!ATTLIST jgindex     %verified; >
+
+<!-- Arbortext 20030117: SFORT 
+     moved the table contents into a row wrapper -->
+<!ELEMENT jgindexrow     - -  (system, tmidno?, chapno?, (chap | func)+) >
+<!ATTLIST jgindexrow  %chgatt;
+                      %secur; >
+
+<!-- Arbortext 20030117: SFORT 
+     created a row wrapper for jgindextab content -->
+<!ELEMENT jgindextab     - -  (jgindexrow)+ >
+<!ATTLIST jgindextab  %tabatts; >
+
+<!-- ccb 98-009-01 -->
+<!ELEMENT jgfoldoutwba 	- - (%fig;) >
+<!ATTLIST jgfoldoutwba	pgstyle (8x10 | 8x11 | 8x13.5 | 8x17 | 8x20.5 | 8x24 | 8x27.5 | 
+				8x31 | 11x17 | 11x20.5 | 11x24 | 11x27.5 | 11x31 | 
+				11x34.5 | 11x38 | 11x41.5 | 11x45) #IMPLIED      
+			%figatts;
+			pagebreak (recto | verso | next | off | rectobb | versobf) "off" >
+
+<!-- ccb 98-009-01 -->
+<!ELEMENT jgfoldoutnoba - - (%fig;) >
+<!ATTLIST jgfoldoutnoba	pgstyle (8x10 | 8x11 | 8x13.5 | 8x17 | 8x20.5 | 8x24 | 8x27.5 | 
+				8x31 | 11x17 | 11x20.5 | 11x24 | 11x27.5 | 11x31 | 
+				11x34.5 | 11x38 | 11x41.5 | 11x45) #IMPLIED      
+			%figatts; >
+<!-- added these two elements to allow for the choice of a foldout with or
+without a blank apron - 10/28/96 - jls -->
+
+<!ELEMENT mfrnad   - o  (%text;) > 
+
+<!-- CCB# 83495jg-01276-01 -->
+<!-- ATI 20040220:  Changed PCDATA to %text; -->
+<!ELEMENT persreq     - o  ((%text;)| para)+ >  
+<!ATTLIST persreq     %bodyatt;
+		      %verified; >
+
+<!ELEMENT purpose   - o (%text;)>
+
+<!-- Arbortext 20030117: SFORT 
+     moved the table contents into a row wrapper -->
+<!ELEMENT referrow     - o  (reference, purpose)+ >
+<!ATTLIST referrow  %chgatt;
+                    %secur; >
+
+<!-- Arbortext 20030117: SFORT 
+     created a row wrapper for jgindextab content 
+     Arbortext 20040220: SFORT 
+     added ATTLIST for change processing and referencing -->
+<!ELEMENT refertab     - o  (referrow)+ >
+<!ATTLIST refertab  id ID #IMPLIED
+                    %bodyatt;
+                    %secur; >
+
+<!ELEMENT reference   - o (%text;)>
+
+<!ELEMENT reqcond     - o  (para+ | none) >
+<!ATTLIST reqcond     %bodyatt;
+		      %verified; >
+
+<!ELEMENT result     - o  (para, faultcode*) >
+<!ATTLIST result     %chgatt;  
+                     person CDATA #IMPLIED >
+
+<!ELEMENT safecond     - o  ((warning*, caution?, note?) | para)+ +(none) >
+<!ATTLIST safecond     %bodyatt;
+		       %verified; >
+
+<!ELEMENT spec     - o  (%text;) >
+
+<!ELEMENT specinst     - o  (para) >
+<!ATTLIST specinst     %chgatt;
+                       person CDATA #IMPLIED >
+
+<!-- ATI 20040220:  Added %chgatt; -->
+<!ELEMENT sssn     - o  (%text;) >
+<!ATTLIST sssn     %chgatt; >
+
+
+<!ELEMENT step 	   - o (%stepcon;) +(hcp | esds)>
+<!ATTLIST step     %stepatt;>
+
+<!-- <!ELEMENT subentry     - o (chapno, title, (funcno, funtitle)+) >
+<!ATTLIST subentry     %chgatt;
+                       %secur; > -->  
+
+<!ELEMENT supeqp     - o  (para+ | none) >
+<!ATTLIST supeqp     %bodyatt;
+		     %verified; >
+
+<!ELEMENT system     - o  (%text;) >
+
+<!-- CCB# 83495jg-02023-01 -->
+<!ELEMENT task     - -  (title, step+, tasksp?, followon?) >
+<!ATTLIST task     %para0att; > 
+
+<!ELEMENT tasksp     - -  (title, step+) >
+<!ATTLIST tasksp     %para0att; >
+
+<!-- ATI 20040220:  Added %chgatt; -->
+<!ELEMENT toc   - -  (contentsentry*, contents, contentsentry*) >
+<!ATTLIST toc   %verified; 
+                %chgatt; >
+
+<!ELEMENT use   - o (%text;) >
+
+<!-- **************************** END OF FILE **************************** -->
+

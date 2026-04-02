@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.1                            *
+    *                       Date: 2004-02-29                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    *                                                                    *
+    * The following DOCTYPE statement may be used to call this set of    *
+    * declarations:-                                                     *
+    *                                                                    *
+    * <!DOCTYPE dmodule PUBLIC                                           *
+    *  "-//S1000D//DTD S1000D IPD 20040229//EN" [                        *
+    *  ]>                                                                *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Call the Project Configuration Text.                               *
+    * Project Configuration may alter delaration of selected objects.    *
+    * For information on which objects are available for tailoring,      *
+    * refer to S1000D!                                                   *
+    ********************************************************************** -->
+	<xs:include schemaLocation="project.cfg"/>
+
+<!--**********************************************************************
+    * Call the text group definition.                                    *
+    ********************************************************************** -->
+	<xs:include schemaLocation="text.xsd"/>
+
+<!--**********************************************************************
+    * Call the Common Entities Public Text.                              *
+    * The formal public identifier is stored in the entity %COMMON;      *
+    ********************************************************************** -->
+	<xs:include schemaLocation="common.xsd" />
+
+<!--**********************************************************************
+    * Call the NPAR group definition.                                    *
+    ********************************************************************** -->
+	<xs:include schemaLocation="npar.xsd"/>
+
+<!--**********************************************************************
+    * Call the S1000D Base DTD Public Text. The formal public identifier *
+    * is stored in the entity %BASE;                                     *
+    ********************************************************************** -->
+<!-- %BASE; -->
+	<xs:include schemaLocation="base.xsd" />
+
+<!--**********************************************************************
+    * Call the Illustrated Parts Data Public Text.                       *
+    * The formal public identifier is stored in the entity %IPD;         *
+    ********************************************************************** -->
+<!-- %IPD; -->
+	<xs:include schemaLocation="ipd.xsd" />
+
+<!--**********************************************************************
+    * Call the Content Breakdown Public Text. The formal public          *
+    * identifier is stored in the entity %EXTCONT;                       *
+    ********************************************************************** -->
+<!-- %EXTCONT; -->
+	<xs:include schemaLocation="content.xsd" />
+
+
+</xs:schema>

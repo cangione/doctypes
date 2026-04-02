@@ -1,0 +1,452 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2001-22I:  Add attribute skill to elements deftask,         *
+    *                   taskitem and timelim.                            *
+    * 3. Consistency:   Change declared values of attributes typex and   *
+    *                   airworthlim from uppercase to lowercase.         *
+    * 4. CPF 2001-74SE: Change declaration of values for attribute       *
+    *                   sup.lev of element supervis to %SUP.LEVS; (see   *
+    *                   S1000D.CFG). Change declaration of values for    *
+    *                   attribute type of element limittype to %TYPES;   *
+    *                   (declaration in S1000D.CFG). Change type of      *
+    *                   attribute uom on element threshold from CDATA    *
+    *                   to the value set defined by entity %THIUOMS;     *
+    *                   (see SCHEDUL.ENT).                               *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % SCHEDUL                                                 *
+    *   "-//S1000D//ELEMENTS Schedule Breakdown 20030531//EN" >          *
+    * %SCHEDUL;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing:- schedule. *
+    ********************************************************************** -->
+ 
+<!ENTITY % CONTENT "schedule" >
+
+
+
+<!--**********************************************************************
+    * Define Element schedule (Schedule Information) containing:-        *
+    *   definspec - Mandatory Repeatable  contains inspection, tasklist. *
+    * or                                                                 *
+    *   deftask   - Mandatory Repeatable  contains task, prelreqs, refs, *
+    *                                      equip, supervis, limit, applic*
+    * or                                                                 *
+    *   timelim   - Mandatory Repeatable  contains equip, qty, cat,      *
+    *                                      timelimit, applic.            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type     - CDATA   - IMPLIED - Type of Schedule                   *
+    **********************************************************************-->
+ 
+<!ELEMENT schedule - O (definspec+ | deftask+ | timelim+) >
+<!ATTLIST schedule
+               type  CDATA    #IMPLIED  >
+
+ 
+
+<!--**********************************************************************
+    * Define Element definspec (Inspection Definition) containing:-      *
+    *   inspection - Mandatory Single    contains limit, remarks.        *
+    *   tasklist   - Optional  Single    contains taskitem.              *
+    ********************************************************************** -->
+ 
+<!ELEMENT definspec  - O (inspection, tasklist?) >
+
+ 
+
+<!--**********************************************************************
+    * Define Element threshold (Threshold Inspection) containing:-       *
+    *   value     - Mandatory Single   contains Parsed Character Data.   *
+    *   tolerance - Optional  Single   contains No Other Tags.           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom       - %THIUOMS;   - REQUIRED - Unit of Measurement          *
+    *                                       %THIUOMS; decl in S1000D.CFG *
+    ********************************************************************** -->
+
+<!ELEMENT threshold  - O (value, tolerance?) >
+<!ATTLIST threshold
+             uom  %THIUOMS;  #REQUIRED >
+<!-- Changed declaration of attribute uom from CDATA to declared value set -->
+
+
+
+<!--**********************************************************************
+    * Define Element equip (Equipment) containing:-                      *
+    *====================================================================*
+    * Mandatory Repeatable Group                                         *
+    *====================================================================*
+    *  nomen    - Mandatory Single       contains Parsed Character Data. *
+    *  nsn      - Optional  Single       contains No Other Tags.         *
+    *====================================================================*
+    * Mandatory Repeatable Group                                         *
+    *====================================================================*
+    *  identno  - Mandatory Single       contains pnr, mfc.              *
+    * or                                                                 *
+    *  csnref   - Mandatory Single       contains No Other Tags.         *
+    *====================================================================*
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT equip  - O (nomen , nsn?, (identno | csnref)+)+ >
+<!ATTLIST equip
+            %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element value (Value) containing:-                          *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+
+<!ELEMENT value  - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element limrange (Limit Range) containing:-                 *
+    *   from    - Mandatory Single   contains threshold.                 *
+    *   to      - Optional  Single   contains threshold.                 *
+    ********************************************************************** -->
+
+<!ELEMENT limrange  - O (from , to?) >
+
+
+
+<!--**********************************************************************
+    * Define Element timelimit (Time Limit) containing:-                 *
+    *   limittype - Mandatory Repeatable  contains threshold, remarks.   *
+    *  or                                                                *
+    *   remarks   - Optional  Repeatable  contains Definition stored in  *
+    *                                              entity %SPAR;.        *
+    ********************************************************************** -->
+
+<!ELEMENT timelimit  - O (limittype+ | remarks*) >
+
+
+
+<!--**********************************************************************
+    * Define Element tasklist (Task List) containing:-                   *
+    *   taskitem  - Mandatory  Repeatable  contains refs, task, applic.  *
+    ********************************************************************** -->
+
+<!ELEMENT tasklist  - O (taskitem+) >
+
+
+
+<!--**********************************************************************
+    * Define Element from (Limrange from) containing:-                   *
+    *   threshold  - Mandatory Single   contains value, tolerance.       *
+    ********************************************************************** -->
+
+<!ELEMENT from  - O (threshold) >
+
+
+
+<!--**********************************************************************
+    * Define Element to (Limrange to) containing:-                       *
+    *   threshold  - Mandatory Single   contains value, tolerance.       *
+    ********************************************************************** -->
+
+<!ELEMENT to  - O (threshold) >
+
+
+
+<!--**********************************************************************
+    * Define Element sampling (Sampling) containing:-                    *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT sampling  - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element tolerance (Tolerance Value) containing:-            *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  minus  - NUMBER - IMPLIED - Minus tolerance value                 *
+    *  plus   - NUMBER - IMPLIED - Plus tolerance value                  *
+    ********************************************************************** -->
+
+<!ELEMENT tolerance  - O  EMPTY  >
+<!ATTLIST tolerance
+              minus  NUMBER    #IMPLIED 
+              plus   NUMBER    #IMPLIED  >
+
+
+
+<!--**********************************************************************
+    * Define Element limit (Time Limit) containing:-                     *
+    *   sampling   - Optional Single      contains Parsed Character Data.*
+    *   threshold  - Optional Repeatable  contains value, tolerance.     *
+    *   refinspec  - Optional Repeatable  contains No Other Tags.        *
+    *   trigger    - Optional Single      contains refs, threshold.      *
+    *   limrange   - Optional Single      contains from, to.             *
+    *   remarks    - Optional Repeatable  contains Definition stored in  *
+    *                                              entity %SPAR;.        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  typex     - Declared - IMPLIED -   Type of Time Limit.            *
+    *              - "po"   - Perform Once.                              *
+    *              - "ev"   - On Event/Condition.                        *
+    *              - "pe"   - Perform Periodically.                      *
+    *  condition - CDATA    - IMPLIED - conditions                       *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT limit  - O (sampling?, threshold*, refinspec*, trigger?, 
+               limrange?, remarks*) >
+<!ATTLIST limit
+             typex (po , ev , pe)  "pe"
+             condition  CDATA    #IMPLIED
+             %bodyatt; >
+<!-- Changed declared values of attribute typex from upper to lowercase.  -->
+
+
+<!--**********************************************************************
+    * Define Element trigger (Trigger) containing:-                      *
+    *   refs      - Mandatory Single  contains norefs, rdandrt, refdm,   *
+    *                                 reftp.                             *
+    *   threshold - Optional Single   contains value, tolerance.         *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  release   - Declared - IMPLIED - "before", "with", "after"        *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+
+<!ELEMENT trigger  - O (refs , threshold?) >
+<!ATTLIST trigger
+             release (before , with , after)   #IMPLIED 
+             %INSDEL;  >
+
+
+<!--**********************************************************************
+    * Define Element timelim (Time Limit) containing:-                   *
+    *   equip     - Mandatory Single      contains nomen, nsn, identno,  *
+    *                                     csnref.                        *
+    *   qty       - Optional  Single      contains Parsed Character Data.*
+    *   cat       - Optional  Single      contains No Other Tags.        *
+    *   timelimit - Mandatory Repeatable  contains limittype, remarks.   *
+    *   applic    - Mandatory Single      contains type, model.          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  identifier   - CDATA    - REQUIRED -                              *
+    *  skill        - Declared - IMPLIED  - Personnel skill level        *
+    *                                       Def. stored in entity %SKILL;*
+    *  Attribute Definition List stored in entity %INSDEL;               *
+    ********************************************************************** -->
+
+<!ELEMENT timelim  - O (equip, qty?, cat?, timelimit+, applic) >
+<!ATTLIST timelim
+             identifier  CDATA    #REQUIRED 
+             skill       %SKILL;  #IMPLIED
+             %INSDEL; >
+
+
+
+<!--**********************************************************************
+    * Define Element limittype (Limit Type) containing:-                 *
+    *   threshold - Mandatory Repeatable  contains value, tolerance.     *
+    *   remarks   - Optional  Repeatable  contains Definition stored in  *
+    *                                              entity %SPAR;.        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type       - %TYPES;   - IMPLIED -  Identifies the limit type.    *
+    *                                      %TYPES; declared in S1000D.CFG*
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT limittype  - O (threshold+, remarks*) >
+<!ATTLIST limittype
+             type %TYPES; #IMPLIED 
+             %bodyatt; >
+<!-- Changed declaration of type -->
+
+
+<!--**********************************************************************
+    * Define Element supervis (Supervisor) containing:-                  *
+    *   No Other Tags.                                                   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  sup.lev    - %SUP.LEVS; - IMPLIED - Supervisor level              *
+    *                                      %SUP.LEVS; decl in S1000D.CFG.*
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT supervis  - O  EMPTY  >
+<!ATTLIST supervis
+             sup.lev %SUP.LEVS; #IMPLIED
+             %bodyatt; >
+<!-- Changed declaration of sup.lev -->
+
+
+<!--**********************************************************************
+    * Define Element deftask (Task Definition) containing:-              *
+    *   task     - Mandatory Single      contains Parsed Character Data. *
+    *   prelreqs - Optional  Single      contains pmd, reqconds, reqpers,*
+    *                                     supequip, supplies, spares,    *
+    *                                     safety.                        *
+    *   refs     - Optional  Single      contains norefs, rdandrt,       *
+    *                                     refdms, reftp.                 *
+    *   equip    - Optional  Single      contains nomen, nsn, identno,   *
+    *                                     csnref.                        *
+    *   supervis - Optional  Single      contains No Other Tags.         *
+    *   limit    - Optional  Repeatable  contains sampling, threshold,   *
+    *                                     refinspec, trigger, limrange,  *
+    *                                     remarks.                       *
+    *   applic    - optional single      contains type, model.           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  taskid       - CDATA    - REQUIRED - Task identifier              *
+    *  airworthlim  - Declared - IMPLIED  - Airworthiness limit          *
+    *                            "recommended", "mandatory", "none"      *
+    *  reducem      - CDATA    - IMPLIED  - Reduced maintenance          *
+    *  skill        - Declared - IMPLIED  - Personnel skill level        *
+    *                                       Def. stored in entity %SKILL;*
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT deftask  - O (task, prelreqs?, refs?, equip?, supervis?,
+                        limit*, applic?) >
+<!ATTLIST deftask
+             taskid  CDATA    #REQUIRED  
+             airworthlim (recommended, mandatory, none)   #IMPLIED 
+             reducem  CDATA    #IMPLIED 
+             skill    %SKILL;  #IMPLIED
+             %bodyatt; >
+<!-- Changed declared values of attribute airworthlim from uppercase first
+     letter to lowercase throughout.  -->
+
+
+
+<!--**********************************************************************
+    * Define Element inspection (Inspection) containing:-                *
+    *   limit    - Optional Repeatable  contains sampling, threshold,    *
+    *                                    refinspec, trigger, limrange,   *
+    *                                    remarks.                        *
+    *   remarks  - Optional Repeatable  contains Definition stored in    *
+    *                                            entity %SPAR;.          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT inspection  - O (limit* , remarks*) >
+<!ATTLIST inspection
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element taskitem (Task Item) containing:-                   *
+    *   refs      - Optional Single     contains norefs, rdandrt, refdms,*
+    *                                    reftp.                          *
+    *   task      - Optional Single     contains Parsed Character Data.  *
+    *   applic    - Optional Single     contains type, model.            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  seqnum    - CDATA    - REQUIRED - Sequence Number                 *
+    *  taskname  - CDATA    - REQUIRED - Task Name                       *
+    *  skill     - Declared - IMPLIED  - Personnel skill level           *
+    *                                    Def. stored in entity %SKILL;   *
+    *  id        - ID       - IMPLIED  - Unique identifier of task item  *
+    ********************************************************************** -->
+
+<!ELEMENT taskitem  - O (refs?, task?, applic?) >
+<!ATTLIST taskitem
+               seqnum   CDATA    #REQUIRED 
+               taskname CDATA    #REQUIRED
+               skill    %SKILL;  #IMPLIED
+               id       ID       #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element task (Short Task Description) containing:-          *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+
+<!ELEMENT task  - O (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element cat (Category) containing:-                         *
+    *   No Other Tags.                                                   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  cat    - Declared  - "1"    - Category "1" or "2"                 *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+
+<!ELEMENT cat  - O  EMPTY  >
+<!ATTLIST cat
+             cat (1 , 2)  "1"  
+             %INSDEL;  >
+
+
+
+<!--**********************************************************************
+    * Define Element refinspec (Inspection Reference) containing:-       *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  insptype    - CDATA - REQUIRED  - Inspection Type                 *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT refinspec  - O  EMPTY  >
+<!ATTLIST refinspec
+             insptype CDATA #REQUIRED   
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Call the Preliminary Requirements Public Text.                     *
+    * The formal public identifier is stored in the entity %PRELREQ;     *
+    ********************************************************************** -->
+
+%PRELREQ;
+
+
+
+<!--**********************************************************************
+    * Call the Lists Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTLIST;     *
+    ********************************************************************** -->
+ 
+%EXTLIST;
+ 
+
+
+<!--**********************************************************************
+    * Call the Warning, Caution, Note, Para Public Text.                 *
+    * The formal public identifier is stored in the entity %WCNP;        *
+    ********************************************************************** -->
+ 
+%WCNP;
+ 
+
+ 
+<!--**********************************************************************
+    * Call the Figure And Table Public Text.                             *
+    * The formal public identifier is stored in the entity %EXTFTAB;     *
+    ********************************************************************** -->
+ 
+%EXTFTAB;

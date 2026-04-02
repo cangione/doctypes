@@ -1,0 +1,871 @@
+<!--  **************************************************************************
+      SPECIAL NOTE: 
+	This DTD was modified for General Atomics technical manual development 
+      effort for the Predator for use in Epic with FOSIs developed for GA-ASI.
+      Changes:
+
+      ********************************************************************** -->
+<!-- *****  START OF FILE ***** -->
+<!-- 87929C-AV6aD1P0.dtd
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  DTD TITLE:	General Work Package
+	+
+	+  SPECIFICATION NUMBER:	87929 Appendix A
+	+
+	+  SPECIFICATION POC:	Bill Garrity
+	+
+	+  DOCUMENT TYPE DEFINITION (DTD):	87929C-AV6aD1P0.dtd
+	+
+	+  MIL-STANDARD VERSION:	38784STD-BV6a
+	+
+	+  LAST MODIFICATION:	06 April 2004
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+  This file is made available to provide the user with a digital 
+	+  representation of the DTD found in:  Appendix A of 87929
+	+  This file is incomplete without 38807 and 38784.
+	+
+	+  The following set of declarations may be referred to by using a
+	+  public entity as follows:
+	+
+	+	  <!ENTITY % m87929wpDTL PUBLIC "-//USA-DOD//DTD 87929C-AV6aD1P0//EN" >
+        +	%m87929wpDTL;
+	+
+	+  NOTE: In order to parse the following DTD subset alone, append
+	+  the following statement to the beginning of the file:
+	+
+	+	<!DOCTYPE doc [ and the associated  ]>  to the end of the file.
+	+
+	+  NOTE: The start and end of this file are marked with notations.
+	+  If these notations are not present, the file may not be complete!
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+	AUTHORED BY: Chris A. Tanner, TMSS, AF TDD
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  OTHER DTDS NEEDED:		
+	+  
+	+			38807C-AV6aD0P1.dtd
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+ MODIFICATIONS SINCE PREVIOUS RELEASE
+        +                     (87929C-AV6aD0P0)
+        +
+	+	CCB #: None
+	+	Description: Upgrade to 38807V6a
+	+	cat, 05 September 2003
+	+
+	+  01052-05-00
+	+  **NOTE: ANY GRAPHIC USED WITHIN TEXT, NEEDS TO HAVE ICON="yes" WITHIN
+	+	THE GRAPHIC TAG.  IF IT IS NOT USED THE TEXT WILL START ON NEXT
+	+	LINE.**
+	+  **NOTE: PARSING WARNINGS WILL APPEAR DUE TO THE GLOBAL INCLUSION
+	+	OF TABLES WITHIN EACH WORK PACKAGE.  THESE WARNINGS ARE OK AND
+	+	WILL NOT CAUSE FURTHER PROBLEMS.**
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  -->
+ 
+<!ENTITY % doc "docwp">
+ 
+<!ENTITY % testpt 
+"major NMTOKENS #IMPLIED 
+secondary NMTOKENS #IMPLIED  
+minor NMTOKENS #IMPLIED " > 
+ 
+<!ENTITY % frnt "(idinfo, lep, verstat?, niewp, safesum)" > 
+ 
+<!ENTITY % titles "title" > 
+ 
+<!ENTITY % yesorno "NUMBER" > 
+
+<!ENTITY % text "(#PCDATA | change | tabmat | ftnref | xref | verbatim | 
+emphasis | applicabil | graphic | extref | dataiden | hcp | hci | esds |
+tstptref | line | nsp | oci | ocp | fcp | acronym | nameloc | clink | 
+ilink | object)+" >
+
+<!--8337-00-013-->
+
+<!ENTITY % wpidinf "(title, effectivity)" > 
+  
+<!ENTITY % list "randlist | deflist | seqlist" > 
+ 
+<!ENTITY % fpi "(para0 | applicdef | symsect | abbrsect | internatlstd | 
+lrp | tctolist)*" > 
+       
+
+<!ENTITY % safesum "para0+" >
+
+<!--00040-00-02-->
+
+<!ENTITY % wp "(wpno, swpno, wpidinfo, wplep, contentstbl, 
+wpilluslisttbl?, wptablelisttbl?, refmatreq, applictcto, consummat, applicequip, 
+illusse?, tablimtbl?, para0*)" > 
+
+<!--01052-03-00-->
+<!ENTITY % wp1 "(wpno, swpno, wpidinfo, wplep, contentstbl, 
+wpilluslisttbl?, wptablelisttbl?)" > 
+
+<!ENTITY % aiwp "(wpno, swpno, wpidinfo, wplep)" >
+
+
+<!-- ATI 20070108, per  10110601SF remove marked section 
+<!ENTITY % testtrend "IGNORE" >
+<![ %testtrend; [
+<!ENTITY % tables "(inspdam | compdrop | fica | inspreq | repsched | pdminsp 
+| inspmaint | penapp)" > 
+]]>
+-->
+
+<!ENTITY % cntnt "((parano|subparano), paratitle, pgnumber)+" >
+  
+<!-- ATI 20070108, add penapp to listing -->
+<!ENTITY % tables "(inspdam | compdrop | fica | inspreq | repsched | pdminsp | 
+inspmaint | penapp)" >
+
+<!--8337-00-007-->
+<!--99111-01-07-->
+<!--00040-00-02-->
+<!ENTITY % sttec "(wpno, swpno, wpidinfo, wplep, contentstbl?, 
+wpilluslisttbl?, wptablelisttbl?, (sptoolte)?)" >
+
+<!-- ATI ACN 87929C-A-05201-02 --> 
+<!ENTITY % sttecwp-inclus "figure | table | foldout | eqplisttbl | consumtbl | 
+contlisttbl | toollisttbl | tablimtbl" >
+
+
+<!--8337-00-009-->
+<!ENTITY % forwp "%wp1;, (foreword | preface | intro)?, purpose, scope, manstru, coverage?, 
+indexscheme, locinfo, para0*, leadpartic, maintcon, (para0 | 
+envcont | warrprov)*, tmimprep?" > 
+
+<!-- ATI ACN 87929C-A-05201-02 --> 
+<!ENTITY % forewordwp-inclus "figure | table | leadpartictbl" > 
+
+<!--8337-00-007-->
+<!ENTITY % ipbswp "(wpno, swpno, wpidinfo, wplep, contentstbl?, 
+			  ipbilluslisttbl?, pl, numindx?, rfdsindx?)">
+			  
+<!ENTITY % ipbwp "(wpno, swpno, wpidinfo, wplep, contentstbl, 
+			ipbilluslisttbl?, ipbforeword, pl, numindx?, rfdsindx?, ipbswp*)">
+			
+
+<!ENTITY % effect "model+" >
+
+<!--00210-00-01-->
+
+<!ENTITY % lepcontents "(lepentry+)">
+
+<!-- ****changed to allow table form**2-28-97****-->
+<!ENTITY % ipbforwd "(para0+, modelcover, serialization?, finding?, simassem?, 
+quickchgexpl?, deflist?, abbrsect?, shtnoexpl?, useonexpl, smrexpl, ipbhci?, 
+ipbesds?, partstd, mfrlist?, internatlstd?, lrp?, tctolist, para0*)" > 
+
+<!ENTITY % itemid
+"unit CDATA #IMPLIED
+module CDATA #IMPLIED
+lru CDATA #IMPLIED
+compon CDATA #IMPLIED
+partno CDATA #IMPLIED
+refdes CDATA #IMPLIED" >
+
+<!ENTITY % content
+"skilltrk NMTOKENS #IMPLIED
+contype (desc | proc) #IMPLIED
+assocfig IDREFS #IMPLIED
+assoctab IDREFS #IMPLIED" >
+
+<!--38784-01080-09-->
+<!ENTITY % docatt
+"docid CDATA #IMPLIED
+docstat (revision | change | prelim | draft | formal) 'prelim'
+verstatpg (ver | unver) 'ver'
+cover %yesorno; '0'">
+
+<!ENTITY % db
+"%itemid;
+%content;" >
+
+
+
+<!ENTITY % delstat    "delete  | real | reserve | NA" >
+
+<!ENTITY % status     "empty | deleted | reserved | notapp" >
+
+<!ENTITY % chgatt
+"deltype (%delstat;) #IMPLIED
+inschlvl NMTOKEN #IMPLIED
+delchlvl NMTOKEN #IMPLIED
+status  (%status;) #IMPLIED
+revchg %yesorno; '0'" > 
+
+<!ENTITY % bodyatt
+"label CDATA #IMPLIED 
+sssn CDATA #IMPLIED 
+indexid  CDATA  #IMPLIED
+%chgatt;
+%db; " >
+
+<!ENTITY % verified
+"verdate CDATA #IMPLIED
+verrem CDATA #IMPLIED
+verstatus (unver | ver) 'unver'" >
+
+<!ENTITY % secur "security (u | c | s | n) 'n'" >
+
+<!-- 87929-A-02135-10-->
+<!ENTITY % para0att
+"emergency %yesorno; '0'
+id ID #IMPLIED
+esds %yesorno; '0'
+nsp %yesorno; '0'
+fcp %yesorno; '0'
+hcp %yesorno; '0'
+hci %yesorno; '0'
+ocp %yesorno; '0'
+oci %yesorno; '0'
+applicref IDREFS #IMPLIED
+%verified;
+%secur;
+%bodyatt;" >
+
+
+<!ENTITY % parazero "(%titles;, warning*, caution?, note?, (para, note?)?, (step1, step1+)?)" >
+ 
+<!ENTITY % lrp "%parazero;, subpara1*, (lrptable | ipblrptable)?" > 
+
+<!-- ATI 20060320: parameterized to support munition doctypes -->
+<!ENTITY % distrib.att "type (A | B | C | D | E | F | X | other) #REQUIRED" >
+
+
+  <!--01052-08-00-->
+  <!--99351-00-01-->
+  <!--8337-00-001-->
+
+<!-- Arbortext, 20040715:  Modified DTD to pull in entity for 38807 DTD -->
+<!-- ENTITY % m38807cPRF PUBLIC "-//USA-DOD//DTD 38807C-AV6aD0P1//EN" --> 
+<!ENTITY % m38807cPRF PUBLIC "-//USA-DOD//DTD 38807C-AV6D0P0//EN">
+%m38807cPRF;
+
+
+
+<!ENTITY % leadpartic "%parazero;, subpara1*" >
+<!--99351-00-09-->
+<!--00040-00-02-->
+<!-- ATI remove + outside of ( ) to facilitate change processing -->
+<!ENTITY % niewp "(wpno, swpno, chgno, title, model+)" >
+
+<!ENTITY % wpatt  
+"%bodyatt; 
+modelapp CDATA #IMPLIED 
+emergency %yesorno; '0' 
+id ID #IMPLIED  
+chgno NUMBER '0' 
+maintcd CDATA #IMPLIED" > 
+  
+<!ENTITY % swpatt  
+"%bodyatt; 
+modelapp CDATA #IMPLIED 
+emergency %yesorno; '0' 
+id ID #IMPLIED 
+chgno NUMBER '0' 
+maintcd CDATA #IMPLIED" > 
+
+ <!--01052-16-00-->
+<!ENTITY % wptabatts
+"id ID #IMPLIED
+place (inline|float) 'float' 
+%verified;
+%bodyatt;
+%secur;  " >
+
+
+
+<!ENTITY degstor "<para0><title> Storage Inspection <para>Different degrees of 
+inspection are required based upon the type of storage: <subpara1><title> Ready 
+Storage <para>Equipment maintained in a completely ready status in 
+anticipation of a relatively near term use requirement. This equipment may be 
+positioned on the shelf, held in the shop, or may be installed in the next 
+higher assembly or installation. The item may be preloaded with munitions and 
+maintained in a munitions holding area or munitions storage igloo in 
+preparation for installation on the aircraft. Equipment shall also be provided 
+adequate protection from damage and the elements. Examples of ready storage 
+would be DD 780 equipment receiving frequent use, and mobility contingency, or 
+bare base assets requiring a high degree of readiness for immediate employment. 
+Inspection interval for items placed in ready storage shall be that deemed 
+necessary by the &mgrtype; Manager to assure serviceability in 'ready-to-use' 
+condition. For weapons release equipment, the inspection frequency on items in 
+ready storage shall be a minimum of every eighteen months. <subpara1><title> 
+Extended Storage <para>Those items maintained in a ready condition for which 
+no requirement exists for frequent exercises or immediate short term 
+employment. Equipment placed in extended storage shall be in a serviceable, 
+ready-to-use condition. This category includes War Reserve Material assets.  
+&degstor2;" > 
+ 
+<!ENTITY degstor2 "<subpara2><title> Inspection Criteria <para>An annual 
+sampling inspection shall be performed of &insppc; percent of all assets in 
+extended storage. Items inspected shall be identified; marked to prevent 
+redundant inspection of the same items during future annual inspections. 
+Subsequent annual inspections shall be performed on those items which have 
+acquired the longest calendar year time period since last inspection. In the 
+event that deterioration of equipment is detected during any annual inspection, 
+a determination shall be made whether an inspection of all assets having 
+corresponding packaging dates must be performed. For field organizations, this 
+determination shall be made either by the organizational commander or 
+maintenance supervisor. For AFMC depot organizations, this determination shall 
+be made by the supply inspector. <subpara2><title> Storage and Packaging <para>
+Equipment placed in extended storage shall meet the following criteria: 
+<randlist><item> Equipment shall be packaged in accordance with applicable 
+transportation packaging order. <item> Packaged equipment must be warehoused in 
+a covered structure which will provide protection from climatic elements. 
+<item> Units which have been subjected to prior use must meet all criteria 
+prior to being placed in extended storage. <item> Items received from depot or 
+in base supply assets, meeting the packaging requirements specified in READY 
+STORAGE above, shall be considered as being in extended storage. </randlist>" > 
+ 
+<!ENTITY insppc "User enters sampling percentage here." > 
+ 
+<!ENTITY mgrtype "User enters manager type: 'System' or 'Item'." > 
+ 
+<!ENTITY niewpchg "Insert Change No. &niewpchgno; work packages and 
+subordinate work packages, dated &niewpchgdate;. Dispose of superseded work 
+packages and subordinate work packages. If changed pages are issued to a work 
+package or subordinate work package, insert the changed pages in the applicable 
+work package or subordinate work package. The portion of the text affected in a 
+change or revised WP or SWP is indicated by change bars in the outer margin of 
+each column of text. Changes to illustrations and diagrams are indicated by 
+pointing hands or shaded areas." > 
+ 
+<!ENTITY niewpchgdate "Insert work package change date here." > 
+ 
+<!ENTITY niewpchgno "Insert work package change number here." > 
+ 
+<!ENTITY niewpnote "Only these work packages and subordinate work packages 
+assigned to this manual are listed in this index, therefore WP/SWP numbers may 
+not be sequential." > 
+ 
+<!ENTITY repkit "Certain repair parts for components covered in this 
+publication are supplied in the form of kits. Refer to the applicable 
+Illustrated Parts Breakdown (IPB) for details. Maintenance activities shall 
+replace all parts, regardless of condition, which are removed during 
+disassembly, with like parts furnished in the kit. Therefore instructions for 
+inspection, cleaning, and rework of the used parts have been omitted. If any 
+parts in the kit must be inspected, cleaned, or tested prior to installation, 
+instructions for performing these requirements are included in this WP. An 
+installed part which is not defective need not be removed solely for the 
+purpose of replacement by a corresponding kitted part." > 
+ 
+<!-- ELEMENT and ATTRIBUTE LIST DECLARATIONS --> 
+ 
+<!ELEMENT action     - o  (%text;) > 
+<!ATTLIST action     %secur; > 
+
+<!-- ATI 20040716 -->
+<!ELEMENT ailist     - o (ailistrow)+>
+<!ATTLIST ailist   autobuild CDATA #CONREF>
+
+<!-- ATI 20040716 -->
+<!ELEMENT ailistrow     - - (stitle*, wpno, swpno) >
+<!ATTLIST ailistrow   %chgatt; >
+ 
+<!-- ATI 20040716 -->
+<!ELEMENT ailisttbl     - o (ailist)>
+<!ATTLIST ailisttbl     %chgatt; >
+
+<!ELEMENT aiwp     - -  (%aiwp;, ailisttbl) > 
+<!ATTLIST aiwp     %wpatt; > 
+ 
+<!ELEMENT applicequip     - o (applicequiptbl | none) > 
+<!ATTLIST applicequip     %chgatt; > 
+
+<!-- ATI 20040716 -->
+<!ELEMENT applicequiprow     - o ((toolno, toolname, figno) | tfndisplay) > 
+<!ATTLIST applicequiprow     %chgatt; > 
+
+<!-- ATI 20040716 -->
+<!ELEMENT applicequiptbl     - o (applicequiprow)+  -(%exclus;) +(tfoot | tfnref) > 
+<!ATTLIST applicequiptbl     %chgatt; > 
+ 
+<!ELEMENT applictcto     - o (applictctotbl | none) > 
+<!ATTLIST applictcto     %chgatt; > 
+ 
+<!-- ATI 20040716 -->
+<!ELEMENT applictctorow     - o ((tctono, title, date) | tfndisplay) > 
+<!ATTLIST applictctorow     %chgatt; > 
+
+<!-- ATI 20040716 -->
+<!ELEMENT applictctotbl     - o (applictctorow)+   -(%exclus;) +(tfoot | tfnref) > 
+ 
+<!ELEMENT cause     - o  (%text;) > 
+<!ATTLIST cause     %secur; > 
+ 
+<!ELEMENT chgno     - o  (%text;) > 
+<!ATTLIST chgno     %secur; > 
+
+<!ELEMENT codenomen     - o  (%text;) > 
+<!ATTLIST codenomen     %secur; > 
+ 
+<!ELEMENT compdrop    - o (%parazero;, subpara1*, compdroptbl) > 
+<!ATTLIST compdrop    %para0att; > 
+ 
+<!-- ATI 20040716 -->
+<!ELEMENT compdroprow     - -  (((nomen, packunpack, distance, action) | (%wcn;)) | tfndisplay) > 
+<!ATTLIST compdroprow     %chgatt; >
+
+ <!--99111-01-04-->
+<!-- ATI 20040716 -->
+<!ELEMENT compdroptbl     - -  (compdroprow)+    -(%exclus;) +(tfoot | tfnref) > 
+<!ATTLIST compdroptbl     %wptabatts; >
+
+<!ELEMENT consum    - o (%parazero;, subpara1*) > 
+<!ATTLIST consum    %para0att; > 
+   
+<!ELEMENT consummat     - o (consummattbl | none) > 
+<!ATTLIST consummat     %chgatt; > 
+ 
+<!-- ATI 20040716 -->
+<!ELEMENT consummatrow     - - ((nomen, (spec | partno), cage) | tfndisplay) > 
+<!ATTLIST consummatrow     %chgatt; > 
+
+<!-- ATI 20040716 -->
+<!ELEMENT consummattbl     - o (consummatrow)+   -(%exclus;) +(tfoot | tfnref) > 
+<!ATTLIST consummattbl     %wptabatts; >
+
+<!-- ATI 20040716 -->
+<!ELEMENT consumrow     - - ((nomen, (spec | partno), (cage | (name, 
+                             address)), use, ref) | tfndisplay) > 
+<!ATTLIST consumrow     %chgatt; > 
+
+<!-- ATI 20040716 -->
+<!ELEMENT consumtbl     - -  (consumrow)+    -(%exclus;) +(tfoot | tfnref) > 
+<!ATTLIST consumtbl     %wptabatts; >
+
+
+<!ELEMENT contentstbl    - o (contents) > 
+  
+<!ELEMENT contlist    - o (%parazero;, subpara1*, figure*) > 
+<!ATTLIST contlist    %para0att; > 
+ 
+<!-- ATI 20040716 -->
+<!ELEMENT contlistrow     - -  ((nomen, figno, ((use, partno?) | partno), units, dim, cube, loadwt, 
+                               emptywt) | tfndisplay) >  
+<!ATTLIST contlistrow     %chgatt; > 
+
+<!-- ATI 20040716 -->
+<!ELEMENT contlisttbl     - -  (contlistrow)+     -(%exclus;) +(tfoot | tfnref) >  
+<!ATTLIST contlisttbl     %wptabatts; >
+  
+<!ELEMENT coverage     - o  (%parazero;, subpara1*) > 
+<!ATTLIST coverage     %para0att; > 
+ 
+<!ELEMENT cube     - o  (%text;) > 
+<!ATTLIST cube     %secur; > 
+ 
+<!ELEMENT ddwp     - -  (%wp1;, %ddchap;)   +(foldout | figure | table) > 
+<!ATTLIST ddwp     %wpatt; 
+			wplep (yes|no) 'no' > 
+ 
+<!ELEMENT descript     - o  (%text;) > 
+<!ATTLIST descript     %secur; > 
+ 
+<!ELEMENT dim     - o  (%text;) > 
+<!ATTLIST dim     %secur; > 
+ 
+<!ELEMENT dispos     - o  (%text;) > 
+<!ATTLIST dispos     %secur; > 
+ 
+<!ELEMENT distance     - o  (%text;) > 
+<!ATTLIST distance     %secur; > 
+   
+<!ELEMENT docwp     - -  (front, wpgroup)   +(pgbrk | brk | line | modreq | location | subjinfo) > 
+
+<!ELEMENT effect     - o  (%text;) > 
+<!ATTLIST effect     %secur; > 
+
+<!ELEMENT effectivity     - o  (%effect;) > 
+<!ATTLIST effectivity     %secur; > 
+
+<!ELEMENT emptywt     - o  (%text;) > 
+<!ATTLIST emptywt     %secur; > 
+ 
+<!ELEMENT envcont     - o  (%parazero;, subpara1*) > 
+<!ATTLIST envcont     %para0att; > 
+ 
+<!ELEMENT eqplist    - o (%parazero;, subpara1*) > 
+<!ATTLIST eqplist    %para0att; > 
+ 
+<!-- ATI 20040716 -->
+<!ELEMENT eqplistrow     - -  (((partno | typedes), (cage |  
+                              (name, address)), figno, nomen, use) | tfndisplay) >  
+<!ATTLIST eqplistrow     %chgatt; > 
+
+<!-- ATI 20040716 -->
+<!ELEMENT eqplisttbl     - -  (eqplistrow)+     -(%exclus;) +(tfoot | tfnref) >  
+<!ATTLIST eqplisttbl     %wptabatts; >
+  
+<!ELEMENT extstor     - o  (%text;) > 
+<!ATTLIST extstor     %secur; > 
+ 
+<!ELEMENT fica    - o (%parazero;, subpara1*, ficatbl) > 
+<!ATTLIST fica    %para0att; > 
+
+<!-- ATI 20040716 -->
+<!ELEMENT ficarow     - -  ( ((trouble, cause, action) | (%wcn;)) | tfndisplay) >  
+<!ATTLIST ficarow     %chgatt; >
+
+<!--99111-01-04-->
+<!-- ATI 20040716 -->
+<!ELEMENT ficatbl     - -  (ficarow)+     -(%exclus;) +(tfoot | tfnref) >  
+<!ATTLIST ficatbl     %wptabatts; >
+ 
+<!ELEMENT forewordwp     - -  (%forwp;)   +(%forewordwp-inclus;) > 
+<!ATTLIST forewordwp     %wpatt; 
+			wplep (yes|no) 'no' > 
+ 
+<!ELEMENT freq     - o  (%text;) > 
+<!ATTLIST freq     %secur; > 
+
+<!ELEMENT illusse     - o (tfig+) >
+
+
+<!ELEMENT indexscheme     - o  (%parazero;, subpara1*) > 
+<!ATTLIST indexscheme     %para0att; > 
+ 
+<!ELEMENT insp     - o  (%text;) > 
+<!ATTLIST insp     %secur; > 
+ 
+<!ELEMENT inspdam    - o (%parazero;, subpara1*, deflist?, inspdamtbl) > 
+<!ATTLIST inspdam    %para0att; > 
+
+<!-- ATI 20040716 -->
+<!ELEMENT inspdamrow     - -  (((nomen, insp, dispos) | (%wcn;)) | tfndisplay) >  
+<!ATTLIST inspdamrow     %chgatt; >
+
+<!--99111-01-04-->
+<!-- ATI 20040716 -->
+<!ELEMENT inspdamtbl     - -  (inspdamrow)+  -(%exclus;) +(tfoot | tfnref) >  
+<!ATTLIST inspdamtbl     %wptabatts; >
+  
+<!ELEMENT inspmaint    - o (%parazero;, subpara1*, inspmainttbl) > 
+<!ATTLIST inspmaint    %para0att; > 
+
+<!--99111-01-04-->
+<!-- ATI 20040716; 20061010 update atts to be chgatt -->
+<!ELEMENT inspmaintrow     - -  (((nomen, insp, repair, readystor, extstor) | (%wcn;))  | tfndisplay) >  
+<!ATTLIST inspmaintrow     %chgatt; >
+  
+<!-- ATI 20040716 -->
+<!ELEMENT inspmainttbl     - -  (inspmaintrow)+   -(%exclus;) +(tfoot | tfnref) >  
+<!ATTLIST inspmainttbl     %wptabatts; >
+  
+<!ELEMENT inspreq    - o (%parazero;, subpara1*, inspreqtbl) > 
+<!ATTLIST inspreq    %para0att; > 
+ 
+ <!--combined code and nomen; also req and ref for formatting puposes; two
+ entries needed for codenomen and reqref-->
+
+<!--99111-01-04-->
+<!-- ATI 20040716 -->
+<!ELEMENT inspreqrow     - -  ( ((codenomen, (reqref, (periodic | special), (applicabil | effect), minutes)) | (%wcn;)) | tfndisplay) >  
+<!ATTLIST inspreqrow     %chgatt; >
+
+<!--99111-01-04-->
+<!-- ATI 20040716 -->
+<!ELEMENT inspreqtbl     - -  (inspreqrow)+    -(%exclus;) +(tfoot | tfnref) >  
+<!ATTLIST inspreqtbl     %wptabatts; >
+
+<!-- CCB#: 87929-A-03211-01 -->
+<!-- ATI 20040716 -->
+<!ELEMENT ipbilluslistrow - - (figno, title, page) >
+<!ATTLIST ipbilluslistrow     %chgatt; >
+
+<!-- ATI 20040716 -->
+<!ELEMENT ipbilluslist - o (ipbilluslistrow)+ >
+<!ATTLIST ipbilluslist     autobuild CDATA #CONREF>
+
+<!ELEMENT ipbilluslisttbl - o (ipbilluslist) >
+   
+<!ELEMENT ipbswp     - -  (%ipbswp;)  +(para0) > 			 
+<!ATTLIST ipbswp     %swpatt; 
+			wplep (yes|no) 'no' > 
+ 
+<!ELEMENT ipbwp     - -  (%ipbwp;)  +(para0)>  
+<!ATTLIST ipbwp     %wpatt; 
+			wplep (yes|no) 'no' > 
+  
+<!ELEMENT leadpartic     - o  (%leadpartic;) > 
+<!ATTLIST leadpartic     %para0att; > 
+
+<!ELEMENT leadpartictbl     - o  (table) > 
+<!ATTLIST leadpartictbl     %secur; > 
+ 
+<!ELEMENT loadwt     - o  (%text;) > 
+<!ATTLIST loadwt     %secur; > 
+ 
+<!ELEMENT locinfo     - o  (%parazero;, subpara1*) > 
+<!ATTLIST locinfo     %para0att; > 
+ 
+<!ELEMENT maintcon     - o  (%parazero;, subpara1*) > 
+<!ATTLIST maintcon     %para0att; > 
+ 
+<!ELEMENT manstru     - o  (%parazero;, subpara1*) > 
+<!ATTLIST manstru     %para0att; > 
+ 
+<!ELEMENT maxrep     - o  (%text;) > 
+<!ATTLIST maxrep     %secur; > 
+ 
+<!ELEMENT maxserv     - o  (%text;) > 
+<!ATTLIST maxserv     %secur; > 
+ 
+<!ELEMENT minmax     - o  (%text;) > 
+<!ATTLIST minmax     %secur; > 
+ 
+<!ELEMENT minutes     - o  (%text;) > 
+<!ATTLIST minutes     %secur; > 
+ 
+<!--added the series attribute rmn-->
+<!ELEMENT model     - o  (%text;) > 
+<!ATTLIST model     %secur;
+		    series %yesorno; '0'>
+
+<!ELEMENT name     - o  (#PCDATA) > 
+<!ATTLIST name     %secur; > 
+ <!-- 99351-00-09-->
+<!-- ATI 20040716 -->
+<!ELEMENT niewp     - o (niewprow+) > 
+<!ATTLIST niewp     %verified; 
+                    chgno NUMBER '0'
+                    multiple (1|0) #REQUIRED 
+                    autobuild CDATA #CONREF >
+
+<!-- ATI 20040716 -->
+<!ELEMENT niewprow     - o (%niewp;) > 
+<!ATTLIST niewprow     %chgatt; > 
+ 
+<!ELEMENT packunpack     - o  (%text;) > 
+<!ATTLIST packunpack     %secur; > 
+
+<!ELEMENT page      - o (%text;) >
+<!ATTLIST page      %secur; >
+
+<!ELEMENT parano	- o (#PCDATA)>
+ 
+<!ELEMENT pdminsp    - o (%parazero;, subpara1*, pdminsptbl) > 
+<!ATTLIST pdminsp    %para0att; > 
+
+<!--99111-01-04-->
+ 
+<!-- ATI 20040716 -->
+<!ELEMENT pdminsprow   - -  (((insp, maxserv, maxrep, action) | (%wcn;)) | tfndisplay) > 
+<!ATTLIST pdminsprow  %chgatt; >
+
+<!--99111-01-04-->
+<!-- ATI 20040716 -->
+<!ELEMENT pdminsptbl     - -  (pdminsprow)+     -(%exclus;) +(tfoot | tfnref) > 
+<!ATTLIST pdminsptbl     %wptabatts; >
+   
+<!ELEMENT penapp    - o (%parazero;, subpara1*, penapptbl) > 
+<!ATTLIST penapp    %para0att; > 
+ 
+<!--99111-01-04-->
+<!-- ATI 20040716 -->
+<!ELEMENT penapprow     - -  (((partno, nomen, reintest, reptest, remarks) | (%wcn;)) | tfndisplay) > 
+<!ATTLIST penapprow     %chgatt; >
+
+<!--99111-01-04-->
+<!-- ATI 20040716 -->
+<!ELEMENT penapptbl     - -  (penapprow)+     -(%exclus;) +(tfoot | tfnref | tfndisplay) > 
+<!ATTLIST penapptbl     %wptabatts; >
+   
+<!ELEMENT periodic     - o  (%text;) > 
+<!ATTLIST periodic     %secur; > 
+  
+<!ELEMENT purpose     - o  (%parazero;, subpara1*) > 
+<!ATTLIST purpose     %para0att;  > 
+ 
+<!ELEMENT qty     - o  (%text;) > 
+<!ATTLIST qty     %secur; > 
+ 
+<!ELEMENT readystor     - o  (%text;) > 
+<!ATTLIST readystor     %secur; > 
+ 
+<!ELEMENT ref     - o  (%text;) > 
+<!ATTLIST ref     %secur; > 
+ 
+<!ELEMENT refmatreq     - o (refmatreqtbl | none) > 
+<!ATTLIST refmatreq     %chgatt; > 
+ 
+<!-- ATI 20040716 -->
+<!ELEMENT refmatreqrow     -  - ((tmidno, title)  | tfndisplay) > 
+<!ATTLIST refmatreqrow     %chgatt; > 
+
+<!-- ATI 20040716 -->
+<!ELEMENT refmatreqtbl     - o (refmatreqrow)+   -(%exclus;) +(tfoot | tfnref ) > 
+ 
+<!ELEMENT refno     - o  (%text;) > 
+<!ATTLIST refno     %secur; > 
+ 
+<!ELEMENT reintest     - o  (%text;) > 
+<!ATTLIST reintest     %secur; > 
+ 
+<!ELEMENT repair     - o  (%text;) > 
+<!ATTLIST repair     %secur; > 
+ 
+<!ELEMENT repsched    - o (%parazero;, subpara1*, repschedtbl) > 
+<!ATTLIST repsched    %para0att; > 
+ 
+<!-- ATI 20040716 -->
+<!ELEMENT repschedrow     - -  ((freq, sysno, nomen, partno, qty?, minutes) | tfndisplay) > 
+<!ATTLIST repschedrow     %chgatt; >
+   
+<!-- ATI 20040716 -->
+<!ELEMENT repschedtbl     - -  (repschedrow)+     -(%exclus;) +(tfoot | tfnref) > 
+<!ATTLIST repschedtbl     %wptabatts; >
+   
+<!ELEMENT reptest     - o  (%text;) > 
+<!ATTLIST reptest     %secur; > 
+ 
+<!ELEMENT reqref     - o  (%text;) > 
+<!ATTLIST reqref     %secur; > 
+ 
+<!ELEMENT rminrmax     - o  (%text;) > 
+<!ATTLIST rminrmax     %secur; > 
+ 
+<!ELEMENT scope     - o  (%parazero;, subpara1*) > 
+<!ATTLIST scope     %para0att; > 
+   
+<!ELEMENT spec     - o  (%text;) > 
+<!ATTLIST spec     %secur; > 
+ 
+<!ELEMENT special     - o  (%text;) > 
+<!ATTLIST special     %secur; > 
+
+<!--99111-01-07-->
+
+<!ELEMENT sptoolte     - o  ((illusse?, para0*), techinfo?, (toollist, para0*)?,
+				(eqplist, para0*)?, (consum, para0*)?,  (contlist, para0*)?) > 
+<!ATTLIST sptoolte     %secur; > 
+
+<!ELEMENT stitle      - o (%text;) >
+<!ATTLIST stitle      %secur; >
+  
+<!-- CCB#: 87929-A-03190-01 -->
+<!-- ATI ACN 87929C-A-05201-02 --> 
+<!ELEMENT sttecwp     - -  (%sttec;)  +(%sttecwp-inclus;) >
+<!ATTLIST sttecwp     %wpatt; 
+			wplep (yes|no) 'no' > 
+			
+<!ELEMENT subparano	- o (#PCDATA)>
+  
+<!ELEMENT swp     - -  (%wp;, wpforewd, techinfo)  > 
+<!ATTLIST swp     %swpatt; 
+			wplep (yes|no) 'no'> 
+  
+<!ELEMENT swpno     - o  (%text;) > 
+<!ATTLIST swpno     %secur; >
+ 
+<!ELEMENT sysno     - o  (%text;) > 
+<!ATTLIST sysno     %secur; > 
+
+<!ELEMENT tableno     - o  (%text;) > 
+<!ATTLIST tableno    %secur; > 
+
+<!--99111-01-04-->
+ 
+<!-- ATI 20040716 -->
+<!ELEMENT tablimrow     - -  (((refno, figno, descript, minmax, rminrmax) | (%wcn;)) | tfndisplay)  > 
+<!ATTLIST tablimrow     %chgatt; > 
+
+<!-- ATI 20040716 -->
+<!-- ATI 20021031 -->
+<!ELEMENT tablimtbl     - -  (tablimrow)+     -(%exclus;) +(tfoot | tfnref)  > 
+<!ATTLIST tablimtbl     %wptabatts; >
+    
+<!-- ATI 20070108, per  10110602SF remove attlist kept attlist to support techinfo being optional in sttecwp -->
+<!ELEMENT techinfo     - -  (para0 | %tables;)+ > 
+<!ATTLIST techinfo     %chgatt; >
+<!-- ATTLIST techinfo     %para0att; --> 
+ 
+<!-- ATI 20070108, per  10110602SF remove id ID #IMPLIED -->
+<!ELEMENT tfig     - - (figure) >
+<!ATTLIST tfig     %verified;
+                   %secur; >
+
+<!ELEMENT toollist    - o (%parazero;, subpara1*) > 
+<!ATTLIST toollist    %para0att; > 
+ 
+<!-- CCB#: 87929-A-03211-01 -->
+<!-- ATI 20040716 -->
+<!ELEMENT toollistrow     - -  ((partno, (cage | (name, address)), figno, nomen, use) | tfndisplay) >  
+<!ATTLIST toollistrow     %chgatt; >
+   
+<!-- ATI 20040716 -->
+<!ELEMENT toollisttbl     - -  (toollistrow)+     -(%exclus;) +(tfoot | tfnref) >  
+<!ATTLIST toollisttbl     %wptabatts; >   
+
+<!ELEMENT toolname     - o (%text;) > 
+<!ATTLIST toolname     %chgatt; > 
+  
+<!ELEMENT toolno     - o (%text;) > 
+<!ATTLIST toolno     %chgatt; > 
+ 
+<!ELEMENT trouble     - o  (%text;) > 
+<!ATTLIST trouble     %secur; > 
+ 
+<!ELEMENT tstptref     - o  EMPTY > 
+<!ATTLIST tstptref     %testpt; > 
+ 
+<!ELEMENT use     - o  (%text;) > 
+<!ATTLIST use     %secur; > 
+ 
+<!ELEMENT warrprov     - o  (%parazero;, subpara1*) > 
+<!ATTLIST warrprov     %para0att; > 
+  
+<!-- ATI 20021031 -->
+<!ELEMENT wp     - -  (%wp;, wpforewd, techinfo, swp*) 
+                      +(figure | table | foldout) > 
+<!ATTLIST wp     %wpatt; 
+		wplep (yes|no) 'no' > 
+ 
+<!-- ATI 20070108, per  10110602SF remove attlist -->
+<!ELEMENT wpforewd     - o  ((para0 | symsect | abbrsect | applicdef)+) 
+                            +(figure | table) > 
+<!-- ATTLIST wpforewd     %para0att; -->  
+
+<!-- ATI 20021031 -->
+<!-- ATI 20070108 add ftnote as global inclusion per 10120602SF -->
+<!ELEMENT wpgroup - - (aiwp, forewordwp, sttecwp, wp+, ipbwp?, ddwp?)  +(ftnote) >
+<!ATTLIST wpgroup      numcols ( 1 | 2 ) #REQUIRED >
+   
+<!ELEMENT wpidinfo     - - (%wpidinf;)  -(foldout | figure | table) > 
+<!ATTLIST wpidinfo     %verified; 
+			niewpeffect (all|gen) 'all'> <!--8337-00-002-->
+<!--8337-00-003-->
+
+<!-- CCB#: 87929-A-03211-01 -->
+<!ELEMENT wpilluslist - o ((figno, title, page)+)? +(xref)>
+<!ATTLIST wpilluslist     autobuild CDATA #CONREF>
+
+<!ELEMENT wpilluslisttbl - o (wpilluslist) >
+
+<!--8337-00-002-->
+ 
+<!ELEMENT wplep     - o  (page, chgno)+ > 
+<!ATTLIST wplep     autobuild CDATA #CONREF 
+		    wplepcount NUMBER '0'><!--8337-00-002-->
+  			
+<!ELEMENT wpno     - o  (%text;) > 
+<!ATTLIST wpno     %secur; > 
+
+<!--8337-00-003-->
+
+<!ELEMENT wptablelist - o ((tableno, title, page)+)? >
+<!ATTLIST wptablelist     autobuild CDATA #CONREF>
+
+<!ELEMENT wptablelisttbl - o (wptablelist) >
+<!-- **************************** END OF FILE **************************** --> 
+
+
+
+
+

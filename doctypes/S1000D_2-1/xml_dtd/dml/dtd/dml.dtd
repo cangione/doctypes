@@ -1,0 +1,276 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                    Data Module List (DML)                          *
+    *                 XML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. Reflect the changes done for the DM DTD.                        *
+    *====================================================================*
+    * The following DOCTYPE statement may be used to call this set of    *
+    * declarations:-                                                     *
+    *                                                                    *
+    * <!DOCTYPE dml PUBLIC                                               *
+    *   "-//S1000D//DTD Data Module List 20030531//EN//XML"              *
+    *   "../dtd/dml.dtd" []>                                             *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %PROJECT; (PROJECT Configuration) containing:- the   *
+    * formal public identifier for the Project Configuration public text.*
+    ********************************************************************** -->
+<!ENTITY % PROJECT PUBLIC 
+  "-//S1000D//ENTITIES S1000D Project Configuration//EN//XML"
+  "project.cfg" >
+
+
+<!--**********************************************************************
+    * Define Entity %ISOENTS; (ISO Entity Definitions)                   *
+    ********************************************************************** -->
+<!ENTITY % ISOENTS PUBLIC 
+  "-//S1000D//ENTITIES ISO Entity Definitions 20030531//EN//XML" 
+  "isoents.ent" >
+
+<!--**********************************************************************
+    * Call the ISO Entity Definitions                                    *
+    ********************************************************************** -->
+%ISOENTS;
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR1; (DM Address Details 1st Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR1 PUBLIC 
+  "-//S1000D//ENTITIES DM Address Details 1st Part 20030531//EN//XML" 
+  "dmaddr1.ent" >
+
+<!--**********************************************************************
+    * Call the DM Address Details 1st Part                               *
+    ********************************************************************** -->
+%DMADDR1;
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR2; (DM Address Details 2nd Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR2 PUBLIC 
+  "-//S1000D//ELEMENTS DM Address Details 2nd Part 20030531//EN//XML" 
+  "dmaddr2.ent" >
+
+<!--**********************************************************************
+    * Call the DM Address Details 2nd Part                               *
+    ********************************************************************** -->
+%DMADDR2;
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR3; (DM Address Details 3rd Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR3 PUBLIC 
+  "-//S1000D//ELEMENTS DM Address Details 3rd Part 20030531//EN//XML" 
+  "dmaddr3.ent" >
+
+<!--**********************************************************************
+    * Call the DM Address Details 2nd Part                               *
+    ********************************************************************** -->
+%DMADDR3;
+
+
+<!--**********************************************************************
+    * Define Entity %LISTCODE; (List Code Definitions)                   *
+    ********************************************************************** -->
+<!ENTITY % LISTCODE PUBLIC
+  "-//S1000D//ELEMENTS List Code Definitions 20030531//EN//XML"
+  "listcode.ent" >
+
+<!--**********************************************************************
+    * Call the List Code Definitions                                     *
+    ********************************************************************** -->
+%LISTCODE;
+
+
+<!--**********************************************************************
+    * Define Entity %EXTRDFDC; (RDF and DC Definitions) containing:-     *
+    * the formal public identifier for the RDF and DC Definitions        *
+    * public text.                                                       *
+    ********************************************************************** -->
+<!ENTITY % EXTRDFDC PUBLIC 
+  "-//S1000D//ELEMENTS RDF and DC Definitions 20030531//EN//XML" 
+  "rdfdc.ent" >
+
+<!--**********************************************************************
+    * Call the RDF and DC Definitions Public Text.                       *        
+    ********************************************************************** -->
+%EXTRDFDC;
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTXLINK; (XLINK Definitions) containing:-          *
+    * the formal public identifier for the XLINK Definitions public text.*
+    ********************************************************************** -->
+<!ENTITY % EXTXLINK PUBLIC 
+  "-//S1000D//ELEMENTS XLINK Definitions 20030531//EN//XML" 
+  "xlink.ent" >
+
+<!--**********************************************************************
+    * Call the XLINK Definitions Public Text.                            *        
+    ********************************************************************** -->
+%EXTXLINK;
+
+
+
+<!--**********************************************************************
+    * Define Element dml (Data Module List) containing:-                 *
+    *  rdf:Description  - Optional  Single      contains Definition      *
+    *                                           stored in entity %DCMES;.*
+    *  dmlc             - Mandatory Single      contains modelic, sendid,*
+    *                                           type, diyear, seqnum.    *
+    *  issno            - Mandatory Single      contains No Other Tags.  *
+    *  issdate          - Mandatory Single      contains No other Tags.  *
+    *  security         - Mandatory Single      contains No other Tags.  *
+    *  datarest         - Optional  Single      contains instruct,inform.*
+    *  dmlref           - Optional  Repeatable  contains dmlc, issno or  *
+    *                                           Definition stored in     *
+    *                                           entity %XLINKEXT;.       *
+    *  dmentry          - Mandatory Repeatable  contains addresdm,       *
+    *                                           security, rpc, answer,   *
+    *                                           remarks.                 *
+    *  remarks          - Optional  Single      contains Parsed Character*
+    *                                           Data or p.               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id          - ID       - IMPLIED  - Unique identifier of element. *
+    *  xmlns       - CDATA    - FIXED    - DML default namespace definit.*
+    *  direction   - Declared - IMPLIED  - Direction:-                   *
+    *              - "send"                  - original dispatched DML   *
+    *              - "reply"                 - answer to same DML        *
+    *                                          returned with remarks     *
+    *  Attribute Definition List stored in entity %RDFDCATT;.            *
+    ********************************************************************** -->
+<!ELEMENT dml  (rdf:Description?,dmlc,issno,issdate,security,datarest?,
+                dmlref*,dmentry+,remarks?) >
+<!ATTLIST dml
+	  id            ID      #IMPLIED
+	  xmlns         CDATA	#FIXED	"http://www.s1000d.org/dml"
+	  direction     (send | reply)  #IMPLIED
+	  %RDFDCATT; >
+
+
+<!--**********************************************************************
+    * Define Element dmlc (Data Module List Code) containing:-           *
+    *  modelic   - Mandatory   Single     contains Parsed Character Data.*
+    *  sendid    - Mandatory   Single     contains Parsed Character Data.*
+    *  dmltype   - Mandatory   Single     contains No Other Tags.        *
+    *  diyear    - Mandatory   Single     contains Parsed Character Data.*
+    *  seqnum    - Mandatory   Single     contains Parsed Character Data.*
+    ********************************************************************** -->
+<!ELEMENT dmlc   (modelic,sendid,dmltype,diyear,seqnum) >
+
+
+<!--**********************************************************************
+    * Define Element dmltype (Type of Data Module List) containing:-     *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  dmltype   - Declared - REQUIRED   - Identifies Type of DML:       *
+    *            - "c"  - Complete Data Module Requirement List (DMRL-C) *
+    *            - "p"  - Partial Data Module Requirement List (DMRL-P)  *
+    *            - "s"  - CSDB Status List (CSL)                         *
+    ********************************************************************** -->
+<!ELEMENT dmltype  EMPTY >
+<!ATTLIST dmltype
+                type  (c | p | s )  #REQUIRED >
+
+
+<!--**********************************************************************
+    * Define Element dmlref (Data Module List Reference) containing:-    *
+    *====================================================================*
+    * Mandatory Single Group.                                            *
+    *====================================================================*
+    *  dmlc      - Mandatory   Single      contains modelic, sendid,     *
+    *                                               type, diyear, seqnum.*
+    *  issno     - Optional    Single      contains No Other Tags.       *
+    *====================================================================*
+    * or                                                                 *
+    *  Definition stored in entity %XLINKEXT;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %XLINKATT;             *
+    ********************************************************************** -->
+<!ELEMENT dmlref ((dmlc,issno?) | %XLINKEXT;) >
+<!ATTLIST dmlref %XLINKATT; >
+
+
+<!--**********************************************************************
+    * Define Element dmentry (Data Module Entry) containing:-            *
+    *  addresdm    - Mandatory   Single   contains dmc, dmtitle, issno,  *
+    *                                              issdate, language or  *
+    *                                              Definition stored in  *
+    *                                              entity %XLINKEXT;.    *
+    *  security    - Optional    Single   contains No Other Tags.        *
+    *  rpc         - Mandatory   Single   contains Parsed Character Data.*
+    *  answer      - Optional    Single   contains remarks.              *
+    *  remarks     - Optional    Single   contains Parsed Character Data *
+    *                                              or p.                 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type   - Declared - IMPLIED  - Change Type of DM Entry compared   *
+    *                                 to last DML issue                  *
+    *            - "c"  - Changed DML entry (eg. rpc or dmtitle changed) *
+    *            - "d"  - Deleted DML entry                              *
+    *            - "n"  - New DML entry                                  *
+    *         If attribute is not used: no changes in DM entry.          *
+    ********************************************************************** -->
+<!ELEMENT dmentry  (addresdm,security?,rpc,answer?,remarks?) >
+<!ATTLIST dmentry
+              type  (c | d | n)  #IMPLIED >
+
+
+<!--**********************************************************************
+    * Define Element addresdm (Data Module Entry Address) containing:-   *
+    *====================================================================*
+    * Mandatory Single Group.                                            *
+    *====================================================================*
+    *  dmc      - Mandatory  Single      contains Definition stored in   *
+    *                                    entity %EXTDMC;                 *
+    *  dmtitle  - Optional  Single       contains techname, infoname.    *
+    *  issno    - Optional  Single       contains No Other Tags.         *
+    *  issdate  - Optional  Single       contains No Other Tags.         *
+    *  language - Optional  Single       contains No Other Tags.         *
+    *====================================================================*
+    * or                                                                 *
+    *  Definition stored in entity %XLINKEXT;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %XLINKATT4;            *
+    ********************************************************************** -->
+<!ELEMENT addresdm ((dmc,dmtitle?,issno?,issdate?,language?) | %XLINKEXT;) >
+<!ATTLIST addresdm %XLINKATT4; >
+
+
+<!--**********************************************************************
+    * Define Element answer (Reservation query Answer) containing:-      *
+    *  remarks  - Optional  Single       contains Parsed Character Data  *
+    *                                             or p.                  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  answer  - DECLARED - "y"         - answer is either               *
+    *                                     "y" for accepted DM entry or   *
+    *                                     "n" for not accepted DM entry  *
+    *                                     in case of a DML reply         *
+    ********************************************************************** -->
+<!ELEMENT answer  (remarks?) >
+<!ATTLIST answer
+             answer   (y | n)  "y"  >
+
+
+
+<!--** End of XML DML DTD **-->

@@ -1,0 +1,123 @@
+<!--  ########  [  EPS big symbols supported by JCALS  ]  ######## -->
+<!--
+    LAST UPDATE:  January 13, 1995
+    BY:           Simon Wickes
+
+    PUBLIC ID:    -//JCALS//ENTITIES big EPS symbols v1//EN
+
+    COMMENTS:
+      This file consists of big symbols in EPS format
+      that are supported by the JCALS publishing system.
+
+-->
+
+<!-- 
+    $RCSfile$      $Revision$    $Date$
+    
+    Revision History:
+    
+    $Log$
+# Revision 1.1  1995/01/06  16:48:16  swickes
+# Initial revision
+#
+  Revision 1.1  1994/12/20  15:04:31  swickes
+  Initial revision
+
+-->
+
+<!--
+    CSCI:   Workstation Management
+    CSU:    Authoring Tools,
+             DTDs and FOSIs
+    CSU ID: 01-03-0130
+
+     Project:         JCALS System
+     Contract Number: DAHC94-89-C-008
+-->
+
+<!--
+    EPS big symbol set. Typical invocation:
+
+    <!ENTITY % eps-big PUBLIC "-//JCALS//ENTITIES big EPS symbols v1//EN">
+    %eps-big;
+-->
+
+
+<!-- Support for a locally-defined set of big EPS symbols.
+     Set to INCLUDE in DTD to reference -->
+
+<!ENTITY % local-big-symbols "IGNORE" >
+
+<![%local-big-symbols; [
+<!ENTITY % eps-big-local PUBLIC "-//JCALS//ENTITIES local big EPS symbols v1//EN">
+%eps-big-local;
+                       ]]>
+
+
+
+<!--
+		LAST AUTO-UPDATE:	19970101
+-->
+<!ENTITY ABversion SYSTEM "ABversion.eps" NDATA EPS>
+<!ENTITY S555      SYSTEM "555.eps"       NDATA EPS>
+<!ENTITY S560      SYSTEM "560.eps"       NDATA EPS>
+<!ENTITY S560a     SYSTEM "560a.eps"      NDATA EPS>
+<!ENTITY anews     SYSTEM "anews.eps"     NDATA EPS>
+<!ENTITY angle     SYSTEM "angle.eps"     NDATA EPS>
+<!ENTITY arect     SYSTEM "arect.eps"     NDATA EPS>
+<!ENTITY blksq     SYSTEM "blksq.eps"     NDATA EPS>
+<!ENTITY caut1b    SYSTEM "caut1b.eps"    NDATA EPS>
+<!ENTITY caut1c    SYSTEM "caut1c.eps"    NDATA EPS>
+<!ENTITY caut2b    SYSTEM "caut2b.eps"    NDATA EPS>
+<!ENTITY caut2c    SYSTEM "caut2c.eps"    NDATA EPS>
+<!ENTITY caut3b    SYSTEM "caut3b.eps"    NDATA EPS>
+<!ENTITY caut4b    SYSTEM "caut4b.eps"    NDATA EPS>
+<!ENTITY cksq      SYSTEM "cksq.eps"      NDATA EPS>
+<!ENTITY dtsq      SYSTEM "dtsq.eps"      NDATA EPS>
+<!ENTITY e43       SYSTEM "e43.eps"       NDATA EPS>
+<!ENTITY el        SYSTEM "el.eps"        NDATA EPS>
+<!ENTITY elec      SYSTEM "elec.eps"      NDATA EPS>
+<!ENTITY er        SYSTEM "er.eps"        NDATA EPS>
+<!ENTITY flag3     SYSTEM "flag3.eps"     NDATA EPS>
+<!ENTITY formula   SYSTEM "formula.eps"   NDATA EPS>
+<!ENTITY gline     SYSTEM "gline.eps"     NDATA EPS>
+<!ENTITY grsq      SYSTEM "grsq.eps"      NDATA EPS>
+<!ENTITY lline     SYSTEM "lline.eps"     NDATA EPS>
+<!ENTITY long-e    SYSTEM "long-e.eps"    NDATA EPS>
+<!ENTITY madas     SYSTEM "madas.eps"     NDATA EPS>
+<!ENTITY mclogo    SYSTEM "mclogo.eps"    NDATA EPS>
+<!-- using "mc" to set Marine Core seal.
+	 need this for filval referencing. -->
+<!ENTITY mc        SYSTEM "mclogo.eps"    NDATA EPS>
+<!ENTITY newstar   SYSTEM "newstar.eps"   NDATA EPS>
+<!ENTITY note1b    SYSTEM "note1b.eps"    NDATA EPS>
+<!ENTITY note1c    SYSTEM "note1c.eps"    NDATA EPS>
+<!ENTITY patsq     SYSTEM "patsq.eps"     NDATA EPS>
+<!ENTITY perpen    SYSTEM "perpen.eps"    NDATA EPS>
+<!ENTITY pnntr1    SYSTEM "pnntr1.eps"    NDATA EPS>
+<!ENTITY revb      SYSTEM "revb.eps"      NDATA EPS>
+<!ENTITY revbc     SYSTEM "revbc.eps"     NDATA EPS>
+<!ENTITY revc      SYSTEM "revc.eps"      NDATA EPS>
+<!ENTITY revd      SYSTEM "revd.eps"      NDATA EPS>
+<!ENTITY reve      SYSTEM "reve.eps"      NDATA EPS>
+<!ENTITY revf      SYSTEM "revf.eps"      NDATA EPS>
+<!ENTITY revg      SYSTEM "revg.eps"      NDATA EPS>
+<!ENTITY revh      SYSTEM "revh.eps"      NDATA EPS>
+<!ENTITY revna     SYSTEM "revna.eps"     NDATA EPS>
+<!ENTITY round     SYSTEM "round.eps"     NDATA EPS>
+<!ENTITY spchl     SYSTEM "spchl.eps"     NDATA EPS>
+<!ENTITY spcho     SYSTEM "spcho.eps"     NDATA EPS>
+<!ENTITY sq1       SYSTEM "sq1.eps"       NDATA EPS>
+<!ENTITY sqdot     SYSTEM "sqdot.eps"     NDATA EPS>
+<!ENTITY sqsq      SYSTEM "sqsq.eps"      NDATA EPS>
+<!ENTITY strsq     SYSTEM "strsq.eps"     NDATA EPS>
+<!ENTITY thing     SYSTEM "thing.eps"     NDATA EPS>
+<!ENTITY tn        SYSTEM "tn.eps"        NDATA EPS>
+<!ENTITY triangle  SYSTEM "triangle.eps"  NDATA EPS>
+<!ENTITY w555      SYSTEM "w555.eps"      NDATA EPS>
+<!ENTITY warn1b    SYSTEM "warn1b.eps"    NDATA EPS>
+<!ENTITY warn1c    SYSTEM "warn1c.eps"    NDATA EPS>
+<!ENTITY warn2b    SYSTEM "warn2b.eps"    NDATA EPS>
+<!ENTITY warn2c    SYSTEM "warn2c.eps"    NDATA EPS>
+<!ENTITY warn3b    SYSTEM "warn3b.eps"    NDATA EPS>
+<!ENTITY warn4b    SYSTEM "warn4b.eps"    NDATA EPS>

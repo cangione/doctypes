@@ -1,0 +1,79 @@
+DocTraits
+	Protected: No
+	UnprotectedTags:
+
+TagTypes
+	Divisions: prtitle dddesc subpara3 subpara4 foldout subpara5 applicdef ddindex objmedia subpara6
+		 ddsheet subpara7 subpara8 ratddesc ipbmodelcover ipbshtnoexpl ipbmfrlist ipbpartstd chapter abbrsect
+		 para0 ipbsmrexpl figure ipbuseonexpl ipbdesc ipbhcidesc lrp ipbsertable appendix tctolist
+		 section ipbesdsdesc ipbsimassem ipbserialization tmimprep ipbfinding indexrow wpgentry subpara1 chginssht
+		 subpara2 ipbquickchgexpl
+	DivisionHeads: nomen letter title chgnum
+	Paragraphs: warning note caution para typedes partno title modelno tmidno ipbfigindex note caution para ratdentry topic insertpg step2 param prentry
+		 glosslist date step3 pageno warning step4 remarks ecpno date dateinc title typeno mritem tctorow lepchg
+		 def date title tctono item mrlist vollepchg nmlist para lrpentry letter term def
+
+GraphicTraits
+	GraphicTag: graphic
+	GraphicEntityAttr: boardno
+	GraphicFileNameAttr: 
+	GraphicCropH: reprodep
+	GraphicCropW: reprowid
+	GraphicScalefit: scalefit
+	GraphicReprodep: vscale
+	GraphicReprowid: hscale
+
+EqnTableModes
+	EqnMode: None
+	TableMode: CALS
+
+TagTraits
+	NoCharacterSubstitution:
+	NewlineAfterStartTag:
+	NewlineBeforeEndTag:
+	NoTagFullMode:
+	NoTagPartialMode:
+	NoTagNoTagsMode:
+	FullTagPartialMode: none extref chgrec ipbplbrk esds ipbpl0tblfoot seal tfndisplay ipbgroup10 location
+		 fcp pgbrk subjinfo xref ocp nsp oci ftnref mrinfo hcp
+		 hci tfnref mrchgtxt _tex brk prtitle dddesc subpara3 subpara4 foldout subpara5 applicdef ddindex objmedia subpara6
+		 ddsheet subpara7 subpara8 ratddesc ipbmodelcover ipbshtnoexpl ipbmfrlist ipbpartstd chapter abbrsect
+		 para0 ipbsmrexpl figure ipbuseonexpl ipbdesc ipbhcidesc lrp ipbsertable appendix tctolist
+		 section ipbesdsdesc ipbsimassem ipbserialization tmimprep ipbfinding indexrow wpgentry subpara1 chginssht
+		 subpara2 ipbquickchgexpl item tabno title expcont removepg leppage param tfnid internatlstd sigblock
+		 label volleppage subtitle contractno symtitle ipbsmrcode effdatenot ipbsssn tmidno contents
+		 destr topic supersed pageno serno ipbpartnosym date tpdrno lepchg def
+		 hazmat ipbfigindex ipbunits volnot mfr seqno ipbfigureno ftnote address doctype
+		 distrib insertpg typedes oadr suppl ipbcage discl appltitle subject vollepchg
+		 authnot ipbrefdes term nomen activity chgnum maintlvl chgtxt tctono ecpno
+		 dateinc abbrtitle line mrpara remarks cogact volnum ipbuseoncode partno letter
+		 para chgdate revnum nsn pubdate figno tpdrlocation moveddata modelno nmlist
+		 pretmidno copyright phrase volcontents underline mritem chgpara typeno
+	FullTagNoTagsMode: none extref chgrec ipbplbrk esds ipbpl0tblfoot seal tfndisplay ipbgroup10 location
+		 fcp pgbrk subjinfo xref ocp nsp oci ftnref mrinfo hcp
+		 hci tfnref mrchgtxt _tex brk
+	SmallIconFullMode:
+	SmallIconPartialMode:
+	SmallIconNoTagsMode:
+	IconFullMode:
+	IconPartialMode:
+	IconNoTagsMode:
+
+ContextTransformations
+	InsertAroundToFix: item tabno secindex title expcont removepg leppage param internatlstd label
+		 tfnid sigblock volleppage change ipbsmrcode subtitle contractno symtitle dataiden effdatenot
+		 ipbsssn tmidno contents extapplicabil destr topic pageno supersed serno ipbpartnosym
+		 tpdrno date lepchg def hazmat ipbfigindex ipbunits volnot mfr seqno
+		 ipbfigureno ilink ftnote address emphasis distrib doctype insertpg suppl oadr
+		 typedes appltitle discl ipbcage authnot vollepchg subject verbatim nomen term
+		 ipbrefdes chgtxt maintlvl chgnum activity ecpno tctono dateinc line abbrtitle
+		 applicabil mrpara remarks para letter partno ipbuseoncode volnum cogact pubdate
+		 nsn revnum chgdate figno tpdrlocation copyright pretmidno nmlist modelno moveddata
+		 volcontents prindex phrase clink underline mritem typeno chgpara
+	Substitutions:
+	InsertAutoNested:
+	InsertAutoHeading:
+
+Options
+	AllowFosiMod: no
+	AllowTouchup: no

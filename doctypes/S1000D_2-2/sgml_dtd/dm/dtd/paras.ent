@@ -1,0 +1,145 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2002-11FR: Replace entity %NP; by %NPFFT; which includes    *
+    *                   %FFT; in its content model.                      *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTPARA  PUBLIC                                         *
+    *   "-//S1000D//ELEMENTS Numbered Paragraphs Breakdown 20050501//EN">*
+    * %EXTPARA;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %HEADING; (Numbered Paragraphs Heading) containing:- *
+    *  Definition stored in entity %HEADING1;.                           *
+    ********************************************************************** -->
+
+<!ENTITY % HEADING "%HEADING1;" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %NPAR; (Numbered Paragraphs) containing:-            *
+    *  Definition stored in entity %WC; (see COMMON.ENT).                *
+    *  Definition stored in entity %NPFFT; (see COMMON.ENT).             *
+    ********************************************************************** -->
+
+<!ENTITY % NPAR "%WC;, %NPFFT;" >
+<!-- Entity %NP; replaced by %NPFFT; -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %nparcon; (Numbered/Titled Paragraphs) containing:-  *
+    *  Definition stored in entity %HEADING;                             *
+    *  Definition stored in entity %NPAR;                                *
+    ********************************************************************** -->
+
+<!ENTITY % nparcon "(%HEADING;, %NPAR;)" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %SUBPAR1; (Sub Paragraph 1) containing:-             *
+    *  subpara1 - Optional   Repeatable  contains Definition stored in   *
+    *                                    entity %nparcon;, subpara2.     *
+    ********************************************************************** -->
+
+<!ENTITY % SUBPAR1 "(subpara1*)" >
+
+
+
+<!--**********************************************************************
+    * Define Element para0 (Primary Paragraph) containing:-              *
+    *  Definition stored in entity %nparcon;                             *
+    *  Definition stored in entity %SUBPAR1;                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %secur;                *
+    ********************************************************************** -->
+
+<!ELEMENT para0    - O ((%nparcon;),(%SUBPAR1;)) >
+<!ATTLIST para0
+              %bodyatt;
+              %secur; >
+
+
+
+<!--**********************************************************************
+    * Define Element subpara1 (Sub Paragraph Level 1) containing:-       *
+    *  Definition stored in entity %nparcon;                             *
+    *  subpara2 - Optional  Repeatable   contains Definition stored in   *
+    *                                    entity %nparcon;, subpara3.     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %secur;                *
+    ********************************************************************** -->
+
+<!ELEMENT subpara1 - O ((%nparcon;), subpara2*) >
+<!ATTLIST subpara1
+              %bodyatt;
+              %secur; >
+
+
+
+<!--**********************************************************************
+    * Define Element subpara2 (Sub Paragraph Level 2) containing:-       *
+    *  Definition stored in entity %nparcon;                             *
+    *  subpara3 - Optional  Repeatable   contains Definition stored in   *
+    *                                    entity %nparcon;, subpara4.     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %secur;                *
+    ********************************************************************** -->
+
+<!ELEMENT subpara2 - O ((%nparcon;), subpara3*) >
+<!ATTLIST subpara2
+              %bodyatt;
+              %secur; >
+
+
+
+<!--**********************************************************************
+    * Define Element subpara3 (Sub Paragraph Level 3) containing:-       *
+    *  Definition stored in entity %nparcon;                             *
+    *  subpara4 - Optional  Repeatable   contains Definition stored in   *
+    *                                    entity %nparcon;.               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %secur;                *
+    ********************************************************************** -->
+
+<!ELEMENT subpara3 - O ((%nparcon;), subpara4*) >
+<!ATTLIST subpara3
+              %bodyatt;
+              %secur; >
+
+
+
+<!--**********************************************************************
+    * Define Element subpara4 (Sub Paragraph Level 4) containing:-       *
+    *  Definition stored in entity %nparcon;.                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %secur;                *
+    ********************************************************************** -->
+
+<!ELEMENT subpara4 - O (%nparcon;) >
+<!ATTLIST subpara4
+              %bodyatt;
+              %secur; >

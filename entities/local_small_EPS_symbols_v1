@@ -1,0 +1,15 @@
+<!ENTITY boxo SDATA "[boxo  ]">
+<!ENTITY bullo SDATA "[bullo ]">
+<!ENTITY drar SDATA "[drar  ]">
+<!ENTITY half SDATA "[half  ]">
+<!ENTITY ell SDATA "[ell   ]">
+<!ENTITY bsubS SDATA "[bsubS ]">
+<!ENTITY bsubT SDATA "[bsubT ]">
+<!ENTITY bsubO SDATA "[bsubO ]">
+<!ENTITY bsubP SDATA "[bsubP ]">
+<!ENTITY bsubG SDATA "[bsubG ]">
+<!ENTITY uts SDATA "[uts ]">
+<!ENTITY dts SDATA "[dts ]">
+<!ENTITY lts SDATA "[lts ]">
+<!ENTITY rts SDATA "[rts ]">
+<!ENTITY DIAM SDATA "[DIAM ]">

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.ataebiz.org/XMLSchema"
+           targetNamespace="http://www.ataebiz.org/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<!-- ================================================================
+
+Limitations of Liability: 
+
+1.  This material is provided "As Is" and neither Air Transport Association of America, Inc. (ATA) 
+    nor any person who has contributed to the creation, revision or maintenance of the material 
+    makes any representations or warranties, express or implied, including but not limited to, 
+    warranties of merchantability or fitness for any particular purpose. 
+
+2.  Neither ATA nor any person who has contributed to the creation, revision or maintenance of 
+    this material shall be liable for any direct, indirect, special or consequential damages or 
+    any other liability arising from any use of this material. 
+
+3.  Revisions to this document may occur after its issuance. The user is responsible for determining 
+    if revisions to the material contained in this document have occurred and are applicable. 
+
+Copyright 2017, Air Transport Association of America, Inc., d/b/a Airlines for America. All rights reserved.
+
+================================================================= -->
+	<xs:annotation>
+		    <xs:documentation>Version Number: 2017.1</xs:documentation>
+		    <xs:documentation>Revision Date: 2017-10-31</xs:documentation>
+		    <xs:documentation>Revision Comments: Spec 2300 revision 2017.1</xs:documentation>
+	  </xs:annotation>
+	  <!--=============================================-->
+	<!--=============================================-->
+	<!--  dmIdent : Content model	 											-->
+	<!--=============================================-->
+	<!--=============================================-->
+	<!--=============================================-->
+	<!--  element declarations														-->
+	<!--=============================================-->
+	<xs:element name="dmIdent" type="dmIdentElemType">
+		    <xs:annotation>
+			      <xs:documentation>unique identification of the data module</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <xs:element name="identExtension" type="identExtensionElemType">
+		    <xs:annotation>
+			      <xs:documentation>producer unique subdomain for instance identification</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <xs:element name="dmCode" type="dmCodeElemType">
+		    <xs:annotation>
+			      <xs:documentation>data module code</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <xs:element name="language" type="languageElemType">
+		    <xs:annotation>
+			      <xs:documentation>describe the language in which the data module is written</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <!--=============================================-->
+	<!--=============================================-->
+	<!--  element content models definitions									-->
+	<!--=============================================-->
+	<xs:complexType name="dmIdentElemType">
+		    <xs:sequence>
+			      <xs:element ref="identExtension" minOccurs="0"/>
+			      <xs:element ref="dmCode"/>
+			      <xs:element ref="language"/>
+		    </xs:sequence>
+	  </xs:complexType>
+	  <xs:complexType name="identExtensionElemType">
+		    <xs:attributeGroup ref="identExtensionAttGrp"/>
+	  </xs:complexType>
+	  <xs:complexType name="dmCodeElemType">
+		    <xs:attributeGroup ref="dmCodeAttGrp"/>
+		    <xs:attribute name="dispatchItemExtensionCode" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>optional extension for dispatch item code : XXX-XXXX-XXX</xs:documentation>
+			      </xs:annotation>
+			      <xs:simpleType>
+				        <xs:restriction base="xs:string">
+					          <xs:pattern value="[A-Z0-9]{3}-[A-Z0-9]{4}-[A-Z0-9]{3}"/>
+				        </xs:restriction>
+			      </xs:simpleType>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:complexType name="languageElemType">
+		    <xs:attributeGroup ref="languageAttGrp"/>
+	  </xs:complexType>
+	  <!--=============================================-->
+	<!--=============================================-->
+	<!--  attributes declarations														-->
+	<!--=============================================-->
+	<xs:attributeGroup name="identExtensionAttGrp">
+		    <xs:attribute name="extensionProducer" type="xs:string" use="required">
+			      <xs:annotation>
+				        <xs:documentation>the data/publication module producer the value of which forms part of the universally unique identifier of a data/publication module instance</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="extensionCode" type="xs:string" use="required">
+			      <xs:annotation>
+				        <xs:documentation>the data/publication module extended code the value of which is decided by the data/publication module producer.</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:attributeGroup>
+	  <xs:attributeGroup name="dmCodeAttGrp">
+		    <xs:attribute name="modelIdentCode" type="modelIdentCodeAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>the model identifier using NSPA Model Identification Code list</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="systemDiffCode" type="systemDiffCodeAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>indicates alternative versions of the system and subsystem/ by the SNS without affecting the type, model or variant identity. SDC can also be used to differentiate DMs which pertain to the same subject but for different equipment variations installed on the aircraft.</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="systemCode" type="systemCodeAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>the system code (part of the SNS).</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="subSystemCode" type="subSystemCodeAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>the subsystem code (part of the SNS).</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="subSubSystemCode" type="subSubSystemCodeAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>the sub-subsystem code (part of the SNS).</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="assyCode" type="assyCodeAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>the assembly code (part of the SNS).</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="disassyCode" type="disassyCodeAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>the disassembly code.</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="disassyCodeVariant" type="disassyCodeVariantAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>the disassembly code variant, used for container (value Z) and alternates identification</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="infoCode" type="infoCodeAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>the information code</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="infoCodeVariant" type="infoCodeVariantAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>the information code variant</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="itemLocationCode" type="itemLocationCodeAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>the item location code, can be used to flag a training DM (value T). Default value is A.</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="learnCode" type="learnCodeAttType" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>the learn code allowing to flag a training DM, as T01 (flight training mission), T02 (simulator), T03 (on ground training mission), T04 (operational training)</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="learnEventCode" type="learnEventCodeAttType" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>the learn event code</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:attributeGroup>
+	  <xs:attributeGroup name="languageAttGrp">
+		    <xs:attribute name="languageIsoCode" type="languageIsoCodeAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>two alpha characters from International Standards Organisation (ISO) 639</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="countryIsoCode" type="countryIsoCodeAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>two alpha characters from ISO 3166 to denote the country where the language is spoken</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:attributeGroup>
+	  <!--=============================================-->
+	<!--  simpletypes definitions													-->
+	<!--=============================================-->
+	<xs:simpleType name="modelIdentCodeAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="[A-Z0-9]{2,14}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="systemDiffCodeAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="[A-Z0-9]{1,4}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="systemCodeAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="[A-Z0-9]{2}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="subSystemCodeAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="[A-Z0-9]{1}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="subSubSystemCodeAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="[A-Z0-9]{1}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="assyCodeAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="([A-Z0-9]{2}|[A-Z0-9]{4})"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="disassyCodeAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="[A-Z0-9]{2}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="disassyCodeVariantAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="[A-Z0-9]{1,3}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="infoCodeAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="[A-Z0-9]{3}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="infoCodeVariantAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="[A-Z0-9]{1}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="itemLocationCodeAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="[A-Z0-9]{1}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="learnCodeAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="([T|H][A-Z0-9]{2})"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="learnEventCodeAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="([A|B|C|D|E])"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="languageIsoCodeAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="[a-z]{2,3}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="countryIsoCodeAttType">
+		    <xs:restriction base="xs:string">
+			      <xs:pattern value="[A-Z]{2}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+</xs:schema>

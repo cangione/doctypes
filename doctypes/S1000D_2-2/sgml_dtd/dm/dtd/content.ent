@@ -1,0 +1,110 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2002-11FR: Remove exclusion of <figure>, <foldout> and      *
+    *                   <table> from <refdm> and <reftp>.                *
+    *                   Replace entity %text; by %TEXT-NOREFS; in the    *
+    *                   content model of element <reftp>.                *
+    * 3. CPF 2004-06SE: Make element <refs> optional and change its      *
+    *                   content model. Remove element <techpub>, move    *
+    *                   its content model up one level under element     *
+    *                   <reftp> and change content occurrences from      *
+    *                   multiple to single.                              *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTCONT                                                 *
+    *   PUBLIC "-//S1000D//ELEMENTS Content Breakdown 20050501//EN" >    *
+    * %EXTCONT;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element content (Content Structure) containing:-            *
+    *  refs     - Optional   Single      contains refdm, reftp.          *
+    *  Definition stored in entity %CONTENT;                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED  - Unique identifier of content     *
+    ********************************************************************** -->
+
+<!ELEMENT content - O (refs?,%CONTENT;) >
+<!ATTLIST content
+            id   ID  #IMPLIED >
+<!-- Occurrence of <refs> now optional. -->
+
+
+<!--**********************************************************************
+    * Define Element refs (References) containing:-                      *
+    *====================================================================*
+    *   Mandatory Single Group.                                          *
+    *====================================================================*
+    *    refdm    - Mandatory  Repeatable  contains applic, age, avee,   *
+    *                                               issno, dmtitle.      *
+    *    reftp    - Optional   Repeatable  contains applic,              *
+    *                                               Definition stored in *
+    *                                               entity %TEXT-NOREFS;,*
+    *                                               Definition stored in *
+    *                                               entity %PUBREF;.     *
+    *====================================================================*
+    *  or                                                                *
+    *   reftp    - Mandatory  Repeatable   contains applic,              *
+    *                                               Definition stored in *
+    *                                               entity %TEXT-NOREFS;,*
+    *                                               Definition stored in *
+    *                                               entity %PUBREF;.     *
+    ********************************************************************** -->
+
+<!ELEMENT refs - - ((refdm+, reftp*) | reftp+)>
+<!-- Content model changed. -->
+
+
+
+<!--**********************************************************************
+    * Define Element refdm (Reference Data Module) containing:-          *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  Definition stored in entity %ALLDMC;                              *
+    *  issno    - Optional   Single      contains No other tags          *
+    *  dmtitle  - Optional   Single      contains techname, infoname.    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  target  - CDATA   - IMPLIED - Cross reference ID within target DM *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT refdm - - (applic?, (%ALLDMC;), issno?, dmtitle?) >
+<!ATTLIST refdm
+            target CDATA  #IMPLIED
+            %bodyatt; >
+<!-- Exclusion of <figure>, <foldout> and <table> removed -->
+
+
+
+<!--**********************************************************************
+    * Define Element reftp (Reference Technical Publication)             *
+    * containing:-                                                       *
+    *  applic   - Optional   Single      contains type, model.           *
+    *====================================================================*
+    *  Mandatory Single Group.                                           *
+    *====================================================================*
+    *    Definition stored in entity %TEXT-NOREFS; - Mandatory Repeatable*
+    *   or                                                               *
+    *    Definition stored in entity %PUBREF;.                           *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT reftp - - (applic?, ((%TEXT-NOREFS;)+ | %PUBREF;)) >
+<!ATTLIST reftp
+            %bodyatt; >
+<!-- Exclusion of <figure>, <foldout>, <table>, <refdm>, <reftp> removed -->
+<!-- Content model of previous subelement <techpub> inserted. -->

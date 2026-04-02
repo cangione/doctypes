@@ -1,0 +1,662 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 1998-55D:  Remove call of ISO entity definitions; now done  *
+    *                   in entity %ISOENTS;, called by %COMPS;.          *
+    * 3. CPF 2000-01D:  Add element acronym to entity %text; and         *
+    *                   introduce its subelements acroterm and acrodef.  *
+    * 4. CPF 2000-13UK and CPF 2002-28FR: Introduce entities %SPAR; and  *
+    *                   %SPARCON; defining a "simple" text paragraph     *
+    *                   structure for use on rfu and remarks.            *
+    *                   In addition, introduce new element p for this    *
+    *                   purpose containing Parsed Character Data.        * 
+    * 5. CPF 2001-74SE: Change declaration of values for attribute emph  *
+    *                   of element emphasis to %EMPHS; (declaration in   *
+    *                   S1000D.CFG).                                     *
+    *                   Change declaration of values for attribute       *
+    *                   acrotype of element acronym to %ACROTYPS;        *
+    *                   (declaration in S1000D.CFG).                     *
+    * 6. CPF 2002-26UK: Introduce entity %PUBREF; that defines a         *
+    *                   substructure for publication references          *
+    *                 	containing elements pubcode, pubtitle and        *
+    *                   pubdate.                                         *
+    * 7. CPF 2002-29FR: Amend elements graphic and symbol by optional    *
+    *                   attributes reprowid and reprohgt.                *
+    * 8. CPF 2002-38SE: Introduce entities %HEADING1;, %NP; and %WC; due *
+    *                   removal of element specpara. Redefine content    *
+    *                   model in entity %spcpara; for the same reason.   *
+    *                   Introduce entity %CHECKSTP; to allow optional    *
+    *                   attributes check and skill on all step levels.   *
+    * 9. CPF 2002-39SE: Amend elements graphic and symbol by optional    *
+    *                   attribute reproscl.                              *
+    * 10. Bug fix:      End tag for xref made mandatory. It uses now     *
+    *                   the new entity %SPARCON; in its content model.   * 
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % COMMON                                                  *
+    *   PUBLIC "-//S1000D//ENTITIES Common Entities 20030531//EN" >      *
+    * %COMMON;                                                           *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define the pdf Notation, to the Public Identifier for PDF files.   *
+    ********************************************************************** -->
+
+<!NOTATION pdf PUBLIC
+"-//Adobe Inc.//NOTATION Portable Document Format//EN" >
+
+
+
+<!--**********************************************************************
+    * Define the gif Notation, to the Public Identifier for GIF          *
+    * graphics.                                                          *
+    ********************************************************************** -->
+
+<!NOTATION gif PUBLIC
+"+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION CompuServe Graphic Interchange Format//EN">
+
+
+
+<!--**********************************************************************
+    * Define the png Notation, to the Public Identifier for PNG graphics.*
+    ********************************************************************** -->
+
+<!NOTATION png PUBLIC
+"-//W3C//NOTATION Portable Network Graphics//EN" >
+
+
+
+<!--**********************************************************************
+    * Define the cgm Notation, to the Public Identifier for CGM          *
+    * graphics.                                                          *
+    ********************************************************************** -->
+
+<!NOTATION cgm PUBLIC
+"-//USA-DOD//NOTATION Computer Graphics Metafile//EN" >
+
+
+
+<!--**********************************************************************
+    * Define the fax Notation, to the Public Identifier for CCITT Group 4*
+    * images.                                                            *
+    ********************************************************************** -->
+
+<!NOTATION fax PUBLIC
+"-//USA-DOD//NOTATION CCITT Group 4 Facsimile//EN" >
+
+
+
+<!--**********************************************************************
+    * Define the JPEG Notation, to the Public Identifier for JPEG        *
+    * images.                                                            *
+    ********************************************************************** -->
+
+<!NOTATION jpeg PUBLIC
+"+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint Photographic Experts Group Raster//EN" >
+
+
+
+<!--**********************************************************************
+    * Define the tiff Notation, to the Public Identifier for TIFF        *
+    * images.                                                            *
+    ********************************************************************** -->
+
+<!NOTATION tiff PUBLIC
+"+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Aldus/Microsoft Tagged Interchange File Format//EN" >
+
+<!-- NOTATION tiff PUBLIC
+ "-//Aldus/Microsoft Tagged Interchange File Format//NOTATION CCITT Group 4 Facsimile//EN" -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %yesorno; (Yes or No Attribute Answer) containing:-  *
+    * NUMBER                                                             *
+    ********************************************************************** -->
+
+<!ENTITY % yesorno  "NUMBER" >
+
+
+<!--**********************************************************************
+    * Define Entity %CHECKSTP; (Check and Skill Attributes on Steps)     *
+    * containing:-                                                       *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *                                                                    *
+    *  check  - CDATA     - IMPLIED   - Identifies an optional checkpoint*
+    *                                   as the supervisor qualification. *
+    *  skill  - Declared  - IMPLIED   - Identifies the optional skill    *
+    *                                   necessary to perform the actions.*
+    *           - %SKILL;   - contains Definition stored in entity.      *
+    ********************************************************************** -->
+
+<!ENTITY % CHECKSTP "check CDATA     #IMPLIED
+                     skill %SKILL;   #IMPLIED" >
+<!-- Newly introduced entity -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %HEADING1; (Numbered Paragraphs/Steps Heading)       *
+    * containing:-                                                       *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  title    - Optional   Single      contains Definition stored in   *
+    *                                    entity %text;                   *
+    ********************************************************************** -->
+
+<!ENTITY % HEADING1 "applic?, title?" >
+<!-- Newly introduced entity -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %WC; (Warning and Caution) containing:-              *
+    *  warning  - Optional Repeatable  contains applic,symbol,para,%list;*
+    *  caution  - Optional Repeatable  contains applic,symbol,para,%list;*
+    ********************************************************************** -->
+
+<!ENTITY % WC "warning*, caution*" >
+<!-- Newly introduced entity -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %NP; (Note or Paragraph) containing:-                *
+    *====================================================================*
+    * Optional  Repeatable Group.                                        *
+    *====================================================================*
+    *   note     - Mandatory Single     contains applic, symbol, para,   *
+    *                                   Definition stored in entity      *
+    *                                   %list;                           *
+    *  or                                                                *
+    *   para     - Mandatory Single     contains applic,                 *
+    *                                   Definition stored in entity      *
+    *                                   %paracon;                        *
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ENTITY % NP "(note | para)*" >
+<!-- Newly introduced entity -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %spcpara; (Special Paragraphs) containing:-          *
+    *  Definition stored in entity %WC;                                  *
+    *           - Optional Single      contains warning, caution         *
+    *  note     - Optional Repeatable  contains applic,symbol,para,%list;*
+    ********************************************************************** -->
+
+<!ENTITY % spcpara "(%WC;, note*)" >
+<!-- Changed content model to call new entity %WC; -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %ACTEXT; (All Crew Running Text Continuation)        *
+    * containing:                                                        *
+    *  No Information                                                    *
+    ********************************************************************** -->
+
+<!ENTITY % ACTEXT "" >
+
+
+<!--**********************************************************************
+    * Define Entity %SPARCON; (Simple Paragraph Continuation)            *
+    * containing:-                                                       *
+    *====================================================================*
+    * Optional Repeatable Group                                          *
+    *====================================================================*
+    *  Parsed Character Data.                                            *
+    *  or                                                                *
+    *   subscrpt - Mandatory Single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *  or                                                                *
+    *   supscrpt - Mandatory Single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ENTITY % SPARCON "(#PCDATA | subscrpt | supscrpt)*" >
+<!-- Introduced to allow "simple" paragraph structures on rfu and remarks -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %text; (Running Text) containing:-                   *
+    *   Parsed Character Data.                                           *
+    *  or                                                                *
+    *   xref     - Mandatory Single     contains applic, Definition      *
+    *                                   stored in entity %SPARCON;.      *
+    *  or                                                                *
+    *   indxflag - Mandatory Single     contains No Other Tags.          *
+    *  or                                                                *
+    *   change   - Mandatory Single     contains Definition stored in    *
+    *                                   entity %text;                    *
+    *  or                                                                *
+    *   emphasis - Mandatory Single     contains Definition stored in    *
+    *                                   entity %text;                    *
+    *  or                                                                *
+    *   symbol   - Mandatory Single     contains applic.                 *
+    *  or                                                                *
+    *   subscrpt - Mandatory Single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *  or                                                                *
+    *   supscrpt - Mandatory Single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *  or                                                                *
+    *   refdm    - Mandatory Single     contains Definition stored in    *
+    *                                   entity %ALLDMC;                  *
+    *  or                                                                *
+    *   reftp    - Mandatory Single     contains techpub.                *
+    *  or                                                                *
+    *   acronym  - Mandatory Single     contains acroterm, acrodef.      *
+    *  or                                                                *
+    *   acroterm - Mandatory Single     contains Definition stored in    *
+    *                                            entity %SPARCON;.       *
+    *  Definition stored in entity %ACTEXT;                              *
+    ********************************************************************** -->
+
+<!ENTITY % text "(#PCDATA | xref | indxflag | change | emphasis | symbol
+                  | subscrpt | supscrpt | refdm | reftp | acronym
+                  | acroterm %ACTEXT;)" >
+<!-- Added newly introduced elements acronym and acroterm -->
+
+
+<!--**********************************************************************
+    * Define Element acronym (Acronym Term and Definition) containing:-  *
+    *   acroterm   - Mandatory Single     contains Definition stored in  *
+    *                                              entity %SPARCON;.     *
+    *   acrodef    - Mandatory Single     contains Definition stored in  *
+    *                                              entity %SPARCON;.     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  acrotype   - %ACROTYPS;            - Type of acronym/abbrev.      *
+    *                                       %ACROTYPS; decl in S1000D.CFG*
+    *  Attribute Definition List stored in entity %bodyatt;.             *
+    ********************************************************************** -->
+
+<!ELEMENT acronym - - (acroterm, acrodef) >
+<!ATTLIST acronym
+             acrotype %ACROTYPS; 
+             %bodyatt; >
+<!-- Newly introduced element to support markup of abbreviations -->
+<!-- Changed declaration of acrotype -->
+
+
+<!--**********************************************************************
+    * Define Element acroterm (Acronym Term) containing:-                *
+    *   Definition stored in entity %SPARCON;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xrefid    - IDREF    - IMPLIED  - Cross reference ID.             *
+    ********************************************************************** -->
+
+<!ELEMENT acroterm - - (%SPARCON;) >
+<!ATTLIST acroterm
+             xrefid    IDREF  #IMPLIED >
+<!-- Newly introduced element to support markup of abbreviations -->
+
+
+<!--**********************************************************************
+    * Define Element acrodef (Acronym Definition) containing:-           *
+    *   Definition stored in entity %SPARCON;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;.             *
+    ********************************************************************** -->
+
+<!ELEMENT acrodef - - (%SPARCON;) >
+<!ATTLIST acrodef
+             %bodyatt; >
+<!-- Newly introduced element to support markup of abbreviations -->
+
+
+<!--**********************************************************************
+    * Define Element xref (Cross Reference) containing:-                 *
+    *   applic   - Optional  Single     contains type, model.            *
+    *   Definition stored in entity %SPARCON;                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xrefid    - IDREF    - IMPLIED  - Cross reference ID.             *
+    *  xidtype   - DECLARED - IMPLIED  - Type of ID.                     *
+    *            - "figure"   - Cross reference to a figure.             *
+    *            - "table"    - Cross reference to a table.              *
+    *            - "supply"   - Cross reference to Supply.               *
+    *            - "supequip" - Cross reference to Support Equipment.    *
+    *            - "spares"   - Cross reference to Spares.               *
+    *            - "para"     - Cross reference to a paragraph.          *
+    *            - "step"     - Cross reference to a procedural step.    *
+    *            - "sheet"    - Cross reference to a sheet.              *
+    *            - "hotspot"  - Cross reference to a graphical hotspot.  *
+    *            - "other"    - Cross reference to any other element.    *
+    *  target    - CDATA    - IMPLIED  - Cross reference name or URI.    *
+    *  destitle  - CDATA    - IMPLIED  - Label/name of link destination. *
+    *  pretext   - CDATA    - IMPLIED  - Text that will precede the cross*
+    *                                    reference.                      *
+    *  posttext  - CDATA    - IMPLIED  - Text that will follow the cross *
+    *                                    reference.                      *
+    ********************************************************************** -->
+
+<!ELEMENT xref - - (applic?, %SPARCON;) >
+<!-- Changed to call up new entity %SPARCON; -->
+<!ATTLIST xref
+             xrefid    IDREF  #IMPLIED
+             xidtype   (figure | table | supply | supequip | spares | para |
+                        step | sheet | hotspot | other)  #IMPLIED
+             target    CDATA  #IMPLIED
+             destitle  CDATA  #IMPLIED
+             pretext   CDATA  #IMPLIED
+             posttext  CDATA  #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element indxflag (Index Flag) containing:-                  *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  ref1     - CDATA    - IMPLIED  - First level reference.           *
+    *  ref2     - CDATA    - IMPLIED  - Second level reference.          *
+    *  ref3     - CDATA    - IMPLIED  - Third level reference.           *
+    *  ref4     - CDATA    - IMPLIED  - Fourth level reference.          *
+    ********************************************************************** -->
+
+<!ELEMENT indxflag - O EMPTY >
+<!ATTLIST indxflag
+            ref1 CDATA #IMPLIED
+            ref2 CDATA #IMPLIED
+            ref3 CDATA #IMPLIED
+            ref4 CDATA #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element change (Change Marker) containing:-                 *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *   Definition stored in entity %text;                               *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+<!ELEMENT change - - ((%text;)+) >
+<!ATTLIST change
+            %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element emphasis (Phrase Emphasis) containing:-             *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  Definition stored in entity %text;                                *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  emph     - %EMPHS;             - Identifying the type of emphasis.*
+    *                                   %EMPHS; declared in S1000D.CFG.  *
+    ********************************************************************** -->
+
+<!ELEMENT emphasis - - ((%text;)+) >
+<!ATTLIST emphasis
+            emph %EMPHS; >
+<!-- Changed declaration of emph -->
+
+
+<!--**********************************************************************
+    * Define Element symbol (Symbol) containing:-                        *
+    *   applic   - Optional  Single     contains type, model.            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  boardno  - ENTITY   - REQUIRED - Unique graphic identifier.       *
+    *  id       - ID       - IMPLIED  - Unique identifier of symbol      *
+    *  reprowid - CDATA    - IMPLIED  - Reproduction area width in mm.   *
+    *  reprohgt - CDATA    - IMPLIED  - Reproduction area height in mm.  *
+    *  reproscl - CDATA    - IMPLIED  - Reproduction scaling (yes/no)    *
+    ********************************************************************** -->
+
+<!ELEMENT symbol - O (applic?) >
+<!ATTLIST symbol
+              boardno     ENTITY       #REQUIRED
+              id          ID           #IMPLIED
+              reprowid    CDATA        #IMPLIED
+              reprohgt    CDATA        #IMPLIED
+              reproscl    CDATA        #IMPLIED >
+<!-- Added attributes REPROWID, REPROHGT and REPROSCL -->
+
+
+<!--**********************************************************************
+    * Define Element graphic (Graphic / Image) containing:-              *
+    *  hotspot - Optional Repeatable   contains applic and optional      *
+    *                                  repeatable group consisting of    *
+    *                                  hotspot or xref.                  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  boardno  - ENTITY   - REQUIRED - Unique graphic identifier.       *
+    *  id       - ID       - IMPLIED  - Unique identifier of graphic     *
+    *  reprowid - CDATA    - IMPLIED  - Reproduction area width in mm.   *
+    *  reprohgt - CDATA    - IMPLIED  - Reproduction area height in mm.  *
+    *  reproscl - CDATA    - IMPLIED  - Reproduction scaling (yes/no)    *
+    ********************************************************************** -->
+
+<!ELEMENT graphic - O (hotspot)* >
+<!ATTLIST graphic
+              boardno     ENTITY       #REQUIRED
+              id          ID           #IMPLIED
+              reprowid    CDATA        #IMPLIED
+              reprohgt    CDATA        #IMPLIED
+              reproscl    CDATA        #IMPLIED >
+<!-- Added attributes REPROWID, REPROHGT and REPROSCL -->
+
+
+<!--**********************************************************************
+    * Define Element hotspot (Graphical Hotspot) containing:-            *
+    *   applic   - Optional  Single     contains type, model.            *
+    *====================================================================*
+    *  Optional Repeatable Group.                                        *
+    *====================================================================*
+    *    hotspot - Mandatory Single   contains applic, optional          *
+    *                                 repeatable group consisting of     *
+    *                                 hotspot or xref.                   *
+    *   or                                                               *
+    *    xref    - Mandatory Single   contains applic, optional          *
+    *                                 repeatable group consisting of     *
+    *                                 Parsed Character Data or subscrpt  *
+    *                                 or supscrpt.                       *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED  - Unique identifier of hotspot     *
+    *  apsid    - CDATA    - IMPLIED  - Unique identifier of CGM APS     *
+    *  apsname  - CDATA    - IMPLIED  - CGM APS name attribute           *
+    *  type     - CDATA    - IMPLIED  - Type of graphical hotspot        *
+    *  title    - CDATA    - IMPLIED  - Label / Screentip of hotspot     *
+    *  descript - CDATA    - IMPLIED  - Description of graphical hotspot *
+    *  coords   - CDATA    - IMPLIED  - Closed polygon coordinates of    *
+    *                                   graphical hotspot picking region *
+    ********************************************************************** -->
+
+<!ELEMENT hotspot - O (applic?, (hotspot | xref)*) >
+<!ATTLIST hotspot
+              id          ID           #IMPLIED 
+              apsid       CDATA        #IMPLIED
+              apsname     CDATA        #IMPLIED
+              type        CDATA        #IMPLIED
+              title       CDATA        #IMPLIED
+              descript    CDATA        #IMPLIED
+              coords      CDATA        #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Elements subscrpt (Sub Script) & supscrpt (Super Script)    *
+    * containing:-                                                       *
+    *  Replaceable Character Data.                                       *
+    ********************************************************************** -->
+
+<!ELEMENT (subscrpt | supscrpt) - - RCDATA >
+
+
+
+<!--**********************************************************************
+    * Define Entity %titles; (Title Structure) containing:-              *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  title    - Mandatory  Single      contains Definition stored in   *
+    *                                    entity %text;                   *
+    ********************************************************************** -->
+
+<!ENTITY % titles "(applic?,title)" >
+
+
+
+<!--**********************************************************************
+    * Define Element title (Title) containing:-                          *
+    *  Definition stored in entity %text;                                *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %secur;                 *
+    **********************************************************************
+    * EXCLUSION: figure, foldout, table.                                 *
+    ********************************************************************** -->
+
+<!ELEMENT title - O ((%text;)+) -(figure | foldout | table) >
+<!ATTLIST title
+             %secur; >
+
+
+
+<!--**********************************************************************
+    * Define Entity %list; (Types of Lists) containing:-                 *
+    *  seqlist  - Mandatory  Single      contains title, item.           *
+    * or                                                                 *
+    *  randlist - Mandatory  Single      contains title, item.           *
+    * or                                                                 *
+    *  deflist  - Mandatory  Single      contains title, term, def.      *
+    ********************************************************************** -->
+
+<!ENTITY % list "(seqlist | randlist | deflist)" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %CAPPCON; (Caption Paragraph Continuation)           *
+    * containing:-                                                       *
+    *  No Information                                                    *
+    ********************************************************************** -->
+
+<!ENTITY % CAPPCON "" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %paracon; (Paragraph Continuation) containing:-      *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  Definition stored in entity %text;                                *
+    * or                                                                 *
+    *  Definition stored in entity %list;                                *
+    * or                                                                 *
+    *  Definition stored in entity %CAPPCON;                             *
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ENTITY % paracon "(%text; | %list; %CAPPCON;)+" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %SPAR; (Simple Paragraphs) containing:-              *
+    *====================================================================*
+    * Optional  Repeatable Group.                                        *
+    *====================================================================*
+    *   Parsed Character Data.                                           *
+    *  or                                                                *
+    *   p        - Mandatory Single     contains Definition stored in    *
+    *                                   entity %SPARCON;                 *
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ENTITY % SPAR "(#PCDATA | p)*" >
+<!-- Introduced to allow "simple" paragraph structures on rfu and remarks -->
+
+
+
+<!--**********************************************************************
+    * Define Element p (Simple Paragraph) containing:-                   *
+    *  Definition stored in entity %SPARCON;                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+<!ELEMENT p - - (%SPARCON;) >
+<!ATTLIST p
+             %bodyatt; >
+<!-- Introduced to allow "simple" paragraph structures on rfu and remarks -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %PUBREF; (Publication Reference) containing:-        *
+    *  pubcode   - Mandatory Single     contains Parsed Character Data,  *
+    *                                   pmc.                             *
+    *  pubtitle  - Optional  Single     contains Parsed Character Data.  *
+    *  pubdate   - Optional  Single     contains No Other Tags.          *
+    ********************************************************************** -->
+
+<!ENTITY % PUBREF "(pubcode, pubtitle?, pubdate?)" >
+<!-- Introduced to allow breakdown for tech pubs references -->
+
+
+<!--**********************************************************************
+    * Define Element pubcode (Publication code) containing:-             *
+    *   Parsed Character Data                                            *
+    *  or                                                                *
+    *   pmc      - Mandatory Single     contains modelic, pmissuer,      *
+    *                                            pmnumber, pmvolume.     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  pubcodsy   - CDATA   - IMPLIED - Publication coding system/scheme.*
+    ********************************************************************** -->
+
+<!ELEMENT pubcode - O (#PCDATA | pmc) >
+<!ATTLIST pubcode
+           pubcodsy    CDATA    #IMPLIED >
+<!-- Newly introduced element -->
+
+
+<!--**********************************************************************
+    * Define Element pubtitle (Publication title) containing:-           *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT pubtitle - O (#PCDATA) >
+<!-- Newly introduced element -->
+
+
+<!--**********************************************************************
+    * Define Element pubdate (Publication date) containing:-             *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Definition stored in entity %DATE;.                               *
+    ********************************************************************** -->
+
+<!ELEMENT pubdate - O EMPTY >
+<!ATTLIST pubdate %DATE; >
+<!-- Newly introduced element -->

@@ -1,0 +1,182 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                 XML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2004-06SE: Update public identifier date of entity %DMADDR1;*
+    * 3. CPF 2004-22GB, CPF 2004-24GB:                                   *
+    *                   Replace entity %DMADDR2; by %DMADDR2PM;.         *
+    * 4. CPF 2004-30DE: Introduce public identifier date on entity       *
+    *                   %PROJECT;.                                       *
+    * 5. CPF 2005-06SE: Update public identifier date of entity %EXTPMC;.*
+    * 6. TPSMG request: Update public identifier date of entity          *
+    *                   %PMLISTCODE;.                                    *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % PMCOMPS PUBLIC                                          *
+    *   "-//S1000D//ENTITIES Publication Module Component Definitions    *
+    *                        20050501//EN//XML"                          *
+    *   "pmcomps.ent">                                                   *
+    * %PMCOMPS;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %PROJECT; (PROJECT Configuration) containing:- the   *
+    * formal public identifier for the Project Configuration public text.*
+    ********************************************************************** -->
+<!ENTITY % PROJECT PUBLIC 
+  "-//S1000D//ENTITIES S1000D Project Configuration 20050501//EN//XML" 
+  "project.cfg" >
+<!-- Public identifier date introduced -->  
+         
+
+<!--**********************************************************************
+    * Define Entity %ISOENTS; (ISO Entity Definitions)                   *
+    ********************************************************************** -->
+<!ENTITY % ISOENTS PUBLIC 
+  "-//S1000D//ENTITIES ISO Entity Definitions 20030531//EN//XML" 
+  "isoents.ent" >
+
+<!--**********************************************************************
+    * Call the ISO Entity Definitions                                    *
+    ********************************************************************** -->
+%ISOENTS;
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR1; (DM Address Details 1st Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR1 PUBLIC 
+  "-//S1000D//ENTITIES DM Address Details 1st Part 20050501//EN//XML" 
+  "dmaddr1.ent" >
+<!-- Public identifier date updated -->  
+
+<!--**********************************************************************
+    * Call the DM Address Details 1st Part                               *
+    ********************************************************************** -->
+%DMADDR1;
+
+<!--**********************************************************************
+    * Define Entity %DMADDR2PM; (DM Address Details 2nd Part for PM)     *
+    ********************************************************************** -->
+<!ENTITY % DMADDR2PM PUBLIC 
+  "-//S1000D//ELEMENTS DM Address Details 2nd Part for PM 20050501//EN//XML" 
+  "dmaddr2_pm.ent" >
+<!-- Entity replaced -->
+
+<!--**********************************************************************
+    * Call the DM Address Details 2nd Part                               *
+    ********************************************************************** -->
+%DMADDR2PM;
+
+<!--**********************************************************************
+    * Define Entity %DMADDR3; (DM Address Details 3rd Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR3 PUBLIC 
+  "-//S1000D//ELEMENTS DM Address Details 3rd Part 20050501//EN//XML" 
+  "dmaddr3.ent" >
+
+<!--**********************************************************************
+    * Call the DM Address Details 3rd Part                               *
+    ********************************************************************** -->
+%DMADDR3;
+
+
+<!--**********************************************************************
+    * Define Entity %PMLISTCODE; (Publication Module List Code           *
+    * Definitions)                                                       *
+    ********************************************************************** -->
+<!ENTITY % PMLISTCODE PUBLIC 
+  "-//S1000D//ELEMENTS Publication Module List Code Definitions 20050501//EN//XML" 
+  "pmlistcode.ent" >
+<!-- Public identifier date updated -->  
+
+<!--**********************************************************************
+    * Call the Publication Module List Code Definitions                  *
+    ********************************************************************** -->
+%PMLISTCODE;
+
+
+<!--**********************************************************************
+    * Define Entity %EXTPMC; (Publication Module Code Breakdown)         *
+    * containing:-                                                       *
+    * the formal public identifier for the Publication Module Code       *
+    * Breakdown public text.                                             *
+    ********************************************************************** -->
+<!ENTITY % EXTPMC PUBLIC 
+  "-//S1000D//ELEMENTS Publication Module Code Breakdown 20050501//EN//XML" 
+  "pmc.ent" >
+<!-- Public identifier date updated -->  
+
+<!--**********************************************************************
+    * Call the Publication Module Code Breakdown Public Text             *        
+    ********************************************************************** -->
+%EXTPMC;
+
+
+<!--**********************************************************************
+    * Define Entity %EXTRDFDC; (RDF and DC Definitions) containing:-     *
+    * the formal public identifier for the RDF and DC Definitions        *
+    * public text.                                                       *
+    ********************************************************************** -->
+<!ENTITY % EXTRDFDC PUBLIC 
+  "-//S1000D//ELEMENTS RDF and DC Definitions 20030531//EN//XML" 
+  "rdfdc.ent" >
+
+<!--**********************************************************************
+    * Call the RDF and DC Definitions Public Text                        *        
+    ********************************************************************** -->
+%EXTRDFDC;
+
+
+<!--**********************************************************************
+    * Define Entity %EXTXLINK; (XLINK Definitions) containing:-          *
+    * the formal public identifier for the XLINK Definitions public text.*
+    ********************************************************************** -->
+<!ENTITY % EXTXLINK PUBLIC 
+  "-//S1000D//ELEMENTS XLINK Definitions 20030531//EN//XML" 
+  "xlink.ent" >
+
+<!--**********************************************************************
+    * Call the XLINK Definitions Public Text.                            *        
+    ********************************************************************** -->
+%EXTXLINK;
+
+
+<!--**********************************************************************
+    * Define Entity %ORGNAME; (Originator Names) containing:-            *
+    *====================================================================*
+    *  ORIG names allowed by the project.                                *
+    ********************************************************************** -->
+<!ENTITY % ORGNAME  "CDATA" >
+
+
+<!--**********************************************************************
+    * Define Entity %FIC; (Functional Item Code) containing:-            *
+    *  Parsed Character Data.                                            *
+    *====================================================================*
+    * To tailor the <fic> element for project specific use               *
+    **********************************************************************-->
+<!ENTITY % FIC "#PCDATA" >
+
+
+<!--**********************************************************************
+    * Define Entity %SBC; (System Breakdown Code) containing:-           *
+    *  Parsed Character Data.                                            *
+    *====================================================================*
+    * To tailor the <sbc> element for project specific use               *
+    ********************************************************************** -->
+<!ENTITY % SBC "#PCDATA" >
+
+
+
+
+<!--** End of XML PMCOMPS Entity **-->

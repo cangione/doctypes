@@ -1,0 +1,102 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2002-38SE: Replace call of entity %EXTSPEC; by call of      *
+    *                   %WCNP; due to deletion of element specpara.      *
+    *                   Amend content model in entity %HEADING; by call  *
+    *                   of entity %HEADING1; instead of defining elements*
+    *                   applic and title directly.                       *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % DESCRPT                                                 *
+    *   PUBLIC "-//S1000D//ELEMENTS Description Breakdown 20030531//EN" >*
+    * %DESCRPT;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing:- descript. *
+    ********************************************************************** -->
+
+<!ENTITY % CONTENT "descript" >
+
+
+
+<!--**********************************************************************
+    * Define Element descript (Descriptive Content) containing:-         *
+    *  para     - Optional  Repeatable  contains definition stored in    *
+    *                                   entity %paracon;                 *
+    *  Definition stored in entity %spcpara;.                            *
+    *  para0    - Optional  Repeatable  contains definition stored in    *
+    *                                   entity %nparcon; and %SUBPAR1;.  *
+    **********************************************************************
+    * INCLUSION: figure, foldout, table, caption.                        *
+    ********************************************************************** -->
+
+<!ELEMENT descript - O (para*,(%spcpara;),para0*)
+              +(figure | foldout | table | caption) >
+
+
+
+<!--**********************************************************************
+    * Define Entity %HEADING; (Numbered Paragraphs Heading) containing:- *
+    *  Definition stored in entity %HEADING1;.                           *
+    *  capgrp   - Optional   Single    contains colspec,spanspec,capbody.*
+    ********************************************************************** -->
+
+<!ENTITY % HEADING "%HEADING1;, capgrp?" >
+<!-- Content model changed by call of entity %HEADING1; (see COMMON.ENT) -->
+
+
+<!--**********************************************************************
+    * Call the Caption Group Public Text.                                *
+    * The formal public identifier is stored in the entity %CAPGRP;      *
+    ********************************************************************** -->
+
+%CAPGRP;
+
+
+
+<!--**********************************************************************
+    * Call the Numbered Paragraphs Public Text.                          *
+    * The formal public identifier is stored in the entity %EXTPARA;     *
+    ********************************************************************** -->
+
+%EXTPARA;
+
+
+
+<!--**********************************************************************
+    * Call the Lists Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTLIST;     *
+    ********************************************************************** -->
+
+%EXTLIST;
+
+
+
+<!--**********************************************************************
+    * Call the Figure And Table Public Text.                             *
+    * The formal public identifier is stored in the entity %EXTFTAB;     *
+    ********************************************************************** -->
+
+%EXTFTAB;
+
+
+
+<!--**********************************************************************
+    * Call the Warning, Caution, Note, Para Public Text.                 *
+    * The formal public identifier is stored in the entity %WCNP;        *
+    ********************************************************************** -->
+
+%WCNP;
+<!-- Call of entity %EXTSPEC; replaced by call of %WCNP; due to deletion
+     of element specpara.  -->

@@ -1,0 +1,34 @@
+
+Warning: Could not locate DTD entity '%charent'
+   Public Identifier: '-//JCALS//ENTITIES supported ISO entities v1//EN'
+   System Identifier: '(none)'
+   No entry was found for the above public identifier
+   in any of these files:
+      C:\Program Files\PTC\Arbortext Editor\application\com.ptc.arbortext.techinfo\doctypes\catalog
+      C:\custom\doctypes\catalog
+      C:\Program Files\PTC\Arbortext Editor\adapters\com.ptc.prowt.arbortext\doctypes\catalog
+      C:\Program Files\PTC\Arbortext Editor\doctypes\catalog
+      C:\Program Files\PTC\Arbortext Editor\doctypes\catalog
+
+Warning: Could not locate DTD entity '%eps-big'
+   Public Identifier: '-//JCALS//ENTITIES big EPS symbols v1//EN'
+   System Identifier: '(none)'
+   No entry was found for the above public identifier
+   in any of these files:
+      C:\Program Files\PTC\Arbortext Editor\application\com.ptc.arbortext.techinfo\doctypes\catalog
+      C:\custom\doctypes\catalog
+      C:\Program Files\PTC\Arbortext Editor\adapters\com.ptc.prowt.arbortext\doctypes\catalog
+      C:\Program Files\PTC\Arbortext Editor\doctypes\catalog
+      C:\Program Files\PTC\Arbortext Editor\doctypes\catalog
+
+Warning: Could not locate DTD entity '%eps-sml'
+   Public Identifier: '-//JCALS//ENTITIES small EPS symbols v1//EN'
+   System Identifier: '(none)'
+   No entry was found for the above public identifier
+   in any of these files:
+      C:\Program Files\PTC\Arbortext Editor\application\com.ptc.arbortext.techinfo\doctypes\catalog
+      C:\custom\doctypes\catalog
+      C:\Program Files\PTC\Arbortext Editor\adapters\com.ptc.prowt.arbortext\doctypes\catalog
+      C:\Program Files\PTC\Arbortext Editor\doctypes\catalog
+      C:\Program Files\PTC\Arbortext Editor\doctypes\catalog
+Compile succeeded with warnings.

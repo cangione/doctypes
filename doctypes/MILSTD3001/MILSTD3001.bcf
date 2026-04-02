@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fragment document type declaration subset:
+Arbortext, Inc., 1988-2018, v.4002
+<!DOCTYPE burstspec PUBLIC "-//Arbortext//DTD BurstSpec 1.0//EN"
+ "burstspec/burstspec.dtd">
+-->
+<burstspec>
+	<boundaryspec fileent="on" graphics="on">
+		<!-- Root element -->
+		<element name="manual" objecttype="xinclude"/>
+		<!-- Aircraft general description work package -->
+		<element name="descwp" objecttype="xinclude"/>
+		<!-- Programming Software description work packages -->
+		<element name="softwp" objecttype="xinclude"/>
+		<!-- Principles of operations WPs -->
+		<element name="popwp" objecttype="xinclude"/>
+		<!-- SCHEMATIC DIAGRAM WORK PACKAGES -->
+		<element name="schemwp" objecttype="xinclude"/>
+		<!-- Functional flow diagram WPs -->
+		<element name="ffdiagwp" objecttype="xinclude"/>
+		<!-- Operational checkout WPs -->
+		<element name="opchkwp" objecttype="xinclude"/>
+		<!-- Troubleshooting WPs -->
+		<element name="trblshtwp" objecttype="xinclude"/>
+		<!-- Combined testing and troubleshooting WPs -->
+		<element name="tst-trblwp" objecttype="xinclude"/>
+		<!-- Operating instruction WPs -->
+		<element name="operwp" objecttype="xinclude"/>
+		<!-- Software loading WPs -->
+		<element name="softldwp" objecttype="xinclude"/>
+		<!-- Aircraft weapon systems principles of operation work packages -->
+		<element name="popwp" objecttype="xinclude"/>
+		<!-- Maintenance Code Listing work packages -->
+		<element name="maintcdwp" objecttype="xinclude"/>
+		<!-- Fault indications WP -->
+		<element name="fltindwp" objecttype="xinclude"/>
+		<!-- Fault descriptor WP -->
+		<element name="fltdescrptwp" objecttype="xinclude"/>
+		<!-- Symbology WPs -->
+		<element name="symwp" objecttype="xinclude"/>
+		<!-- Fault Isolation troubleshooting procedure WPs -->
+		<element name="fitrblwp" objecttype="xinclude"/>
+		<!-- General Maintenance Procedures Work Package -->
+		<element name="genmaintwp" objecttype="xinclude"/>
+		<!-- Support equipment maintenance work package -->
+		<element name="semaintwp" objecttype="xinclude"/>
+		<!-- Local Manufacturing and assembly work package -->
+		<element name="locmfgwp" objecttype="xinclude"/>
+		<!-- IPB data Work Package -->
+		<element name="ipbwp" objecttype="xinclude"/>
+		<!-- Wiring / Cabling diagram work packages -->
+		<element name="wirediawp" objecttype="xinclude"/>
+		<!-- Wire run lists work packages -->
+		<element name="wirelistwp" objecttype="xinclude"/>
+		<!-- Aircraft Structure Visual Index WP -->
+		<element name="repindxwp" objecttype="xinclude"/>
+		<!-- General Aircraft Structural Information WP -->
+		<element name="genstructwp" objecttype="xinclude"/>
+		<!-- Typical Repair Data WP -->
+		<element name="typrepwp" objecttype="xinclude"/>
+		<!-- Specific Repair Data WP -->
+		<element name="specrepwp" objecttype="xinclude"/>
+		<!-- Corrosion Control Materials Requirements WP -->
+		<element name="cormatwp" objecttype="xinclude"/>
+		<!-- General Information WP -->
+		<element name="geninfowp" objecttype="xinclude"/>
+		<!-- Typical Corrosion Control Data WP -->
+		<element name="typcorwp" objecttype="xinclude"/>
+		<!-- Inspection for Corrosion WP -->
+		<element name="corinspwp" objecttype="xinclude"/>
+		<!-- Cleaning WP -->
+		<element name="corclnwp" objecttype="xinclude"/>
+		<!-- Stripping WP -->
+		<element name="stripwp" objecttype="xinclude"/>
+		<!-- Corrosion Removal WP -->
+		<element name="corremwp" objecttype="xinclude"/>
+		<!-- Chemical treatment of Metal Surfaces WP -->
+		<element name="chemtrtwp" objecttype="xinclude"/>
+		<!-- Corrosion Control Seals and Sealants WP -->
+		<element name="corsealwp" objecttype="xinclude"/>
+		<!-- Paint Systems WP -->
+		<element name="paintsyswp" objecttype="xinclude"/>
+		<!--NDI General Information WP -->
+		<element name="ndigeninfowp" objecttype="xinclude"/>
+		<!-- NDI Typical Procedures WP -->
+		<element name="nditypwp" objecttype="xinclude"/>
+		<!-- NDI Index WP -->
+		<element name="ndindxwp" objecttype="xinclude"/>
+		<!-- NDI Specific Procedures WP -->
+		<element name="ndispecwp" objecttype="xinclude"/>
+		<!-- Wiring Diagram Identification and Information WP -->
+		<element name="wdiaidwp" objecttype="xinclude"/>
+		<!-- Wiring Diagram WP -->
+		<element name="wdiawp" objecttype="xinclude"/>
+		<!-- Wire run list WP -->
+		<element name="wrunlstwp" objecttype="xinclude"/>
+		<!-- Wiring Reference Designation List WP -->
+		<element name="wrefdeswp" objecttype="xinclude"/>
+		<!-- Wire & Connector Component Identification and Location List WP -->
+		<element name="wcomplstwp" objecttype="xinclude"/>
+		<!-- Wiring System Bundle Assembly Identification and Information WP -->
+		<element name="bunidwp" objecttype="xinclude"/>
+		<!-- Access Information WP -->
+		<element name="accessinfowp" objecttype="xinclude"/>
+		<!-- Wire Bundle Assembly Routings WP -->
+		<element name="bunroutewp" objecttype="xinclude"/>
+		<!-- Wiring Systems Repair Identification and Information WP -->
+		<element name="wrepidwp" objecttype="xinclude"/>
+		<!-- Wiring System Component Repair Tool List WP -->
+		<element name="compreplistwp" objecttype="xinclude"/>
+		<!-- Aircraft Specific Wiring System Repair Kit WP -->
+		<element name="reprkitwp" objecttype="xinclude"/>
+		<!-- Wire Type List WP -->
+		<element name="wtypelistwp" objecttype="xinclude"/>
+		<!-- Aircraft Specific Repair Tools WP -->
+		<element name="reptoolwp" objecttype="xinclude"/>
+		<!-- Wiring System Connector Component Repair WP -->
+		<element name="wcomprepwp" objecttype="xinclude"/>
+		<!-- Aircraft Cable Assembly Parts Data WP -->
+		<element name="partswp" objecttype="xinclude"/>
+		<!-- Maintenance General Information WP -->
+		<element name="geninfomaintwp" objecttype="xinclude"/>
+		<!-- Quick Engine Change Kit Description WP -->
+		<element name="qeckdescwp" objecttype="xinclude"/>
+		<!-- Quick Engine Change Assembly WP -->
+		<element name="qecawp" objecttype="xinclude"/>
+		<!-- Non-Quick Engine Change Assembly WP -->
+		<element name="nonqecawp" objecttype="xinclude"/>
+		<!-- Additional Power Plant Build-Up WP -->
+		<element name="bldupwp" objecttype="xinclude"/>
+		<!-- Maintenance Work Packages -->
+		<element name="maintwp" objecttype="xinclude"/>
+		<!-- Engine Testing Procedures WP -->
+		<element name="engtestwp" objecttype="xinclude"/>
+		<!-- Preinduction and Mandatory Inspection WP -->
+		<element name="preindinspwp" objecttype="xinclude"/>
+		<!-- Numerical Index WP -->
+		<element name="compindwp" objecttype="xinclude"/>
+		<!-- Bracket Installation WP -->
+		<element name="brktwp" objecttype="xinclude"/>
+		<!-- External Components WP -->
+		<element name="extcompwp" objecttype="xinclude"/>
+		<!-- External Tubing, Cabling, and Clamping WP -->
+		<element name="extubwp" objecttype="xinclude"/>
+		<!-- Critical Clearances WP -->
+		<element name="critclwp" objecttype="xinclude"/>
+		<!-- Aircraft Systems Description Work Package -->
+		<element name="acsysdescwp" objecttype="xinclude"/>
+		<!--Aircraft Instructment Panel Location Work Package -->
+		<element name="acpnlwp" objecttype="xinclude"/>
+		<!-- Danger Areas and precautionary Measures Work Package -->
+		<element name="dangarwp" objecttype="xinclude"/>
+		<!-- Aircraft Stations Work Package -->
+		<element name="acstawp" objecttype="xinclude"/>
+		<!-- Aircraft Access and Inspection Panels and Provisions WP -->
+		<element name="acacesswp" objecttype="xinclude"/>
+		<!-- Aircraft External Power Source Connections Work Package -->
+		<element name="acextpwrwp" objecttype="xinclude"/>
+		<!-- Ground Operations Work Package -->
+		<element name="grndopwp" objecttype="xinclude"/>
+	</boundaryspec>
+	<createarg>
+		<!-- Object creation parameters specific to gdls_ab. Global defaults
+				are available in 'atidefaults'.  -->
+		<!-- An object's name is assigned according
+				to a prioritized set of rules. Each of the rules below is checked in order, and
+				the first applicable rule determines the object's name.
+				"topmost-is-filename" takes effect only when it's the first
+				rule in the naming criteria. -->
+		<namecriteria>
+			<!-- For manuals, use the docid attribute with (manual) -->
+			<namerule elementname="manual" nameexpression="concat('Manual ',//@docid)" rule="xpath"/>
+			<namerule elementname="descwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="softwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="popwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="schemwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="ffdiagwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="opchkwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="trblshtwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="tst-trblwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="operwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="softldwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="popwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="maintcdwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="fltindwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="fltdescrptwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="symwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="fitrblwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="genmaintwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="semaintwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="locmfgwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="ipbwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="wirediawp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="wirelistwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="repindxwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="genstructwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="typrepwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="specrepwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="cormatwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="geninfowp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="typcorw" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="corinspwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="corclnwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="stripwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="corremwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="chemtrtwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="corsealwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="paintsyswp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="ndigeninfowp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="nditypwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="ndindxwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="ndispecwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="wdiaidwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="wdiawp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="wrunlstwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="wrefdeswp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="wcomplstwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="bunidwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="accessinfowp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="bunroutewp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="wrepidwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="compreplistwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="reprkitwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="wtypelistwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="reptoolwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="wcomprepwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="partswp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="geninfomaintwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="qeckdescwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="qecawp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="nonqecawp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="bldupwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="maintwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="engtestwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="preindinspwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="compindwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="brktwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="extcompwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="extubwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="critclwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="acsysdescwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="acpnlwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="dangarwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="acstawp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="acacesswp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="acextpwrwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+			<namerule elementname="grndopwp" nameexpression="concat(titleblk/wptitle/subject,' ',titleblk/wptitle/sysnomen/name,' (',name(), ')')" rule="xpath"/>
+		</namecriteria>
+		<!--
+			 Rules for DMS object type and storage location can be
+			 based on either the element name or the source type
+			 ("text" or "graphic"). The user may assign a value
+			 only if the useroverride setting in atidefaults is
+			 set "on", in which case, a user-supplied value takes
+			 precedence. Otherwise, the system checks for a rule
+			 based on the element name, then the source type, and
+			 finally, the administrative default.
+		-->
+		<dmsobjtype>
+			<!-- typerule
+				 The 'targettype' attribute of any 'typerule' elements must
+				 specify a fully-qualified soft type name which derives from
+				 DynamicDocument (which is a built-in type deriving from
+				 EPMDocument).  The format of this attribute is as follows:
+
+				 wt.epm.EPMDocument|<child-name-1>| ... |<child-name-N>
+
+				 Each component must specify the 'Name' of each soft type
+				 (not the 'Display Name') as given in the Type Manager
+				 interface.  An example 'targettype' attribute value follows:
+
+				 wt.epm.EPMDocument|com.acme.DynamicDocument|com.acme.CustomType
+			-->
+			<typerule elementname="manual" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.Manual|{domain}.3001Manual"/>
+			<typerule elementname="descwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="softwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="popwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="schemwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="ffdiagwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="opchkwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="trblshtwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="tst-trblwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="operwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="softldwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="popwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="maintcdwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="fltindwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="fltdescrptwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="symwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="fitrblwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="genmaintwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="semaintwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="locmfgwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="ipbwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="wirediawp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="wirelistwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="repindxwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="genstructwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="typrepwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="specrepwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="cormatwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="geninfowp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="typcorw" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="corinspwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="corclnwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="stripwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="corremwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="chemtrtwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="corsealwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="paintsyswp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="ndigeninfowp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="nditypwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="ndispecwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="wdiawp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="wrunlstwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="wrefdeswp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="wcomplstwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="bunidwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="accessinfowp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="bunroutewp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="wrepidwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="compreplistwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="reprkitwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="wtypelistwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="wcomprepwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="partswp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="geninfomaintwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="qeckdescwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="qecawp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="nonqecawp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="bldupwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="maintwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="engtestwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="preindinspwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="compindwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="brktwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="extcompwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="extubwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="critclwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="acsysdescwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="acpnlwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="dangarwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="acstawp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="acacesswp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="acextpwrwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule elementname="grndopwp" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.WorkPackage|{domain}.3001WorkPackage"/>
+			<typerule sourcetype="graphic" targettype="wt.epm.EPMDocument|{domain}.DynamicDocument|{domain}.Illustration|{domain}.3001Illustration"/>
+		</dmsobjtype>
+		<dmslocation>
+			<!-- locnrule
+				 The 'location' attribute value is interpreted as follows
+
+				 "" (empty path)
+				 This specifies the home folder of the context selected by the user
+				 during login.
+				 
+				 "relative/path"
+				 This specifies a path relative to the "home folder".  If more than
+				 one context can be chosen then be sure that the specified subdirectory
+				 structure exists in all possible context folders.
+				 
+				 "/Site/Product Name/subfolder"
+				 A leading slash (/) character specifies a full path.
+				 Since this rule will be in effect for all users and all contexts,
+				 you must make sure that all users have read/write access to any
+				 fully-pathed folder specified here.
+			-->
+			<locnrule elementname="manual" location=""/>
+			<locnrule elementname="descwp" location="Work Packages"/>
+			<locnrule elementname="softwp" location="Work Packages"/>
+			<locnrule elementname="popwp" location="Work Packages"/>
+			<locnrule elementname="schemwp" location="Work Packages"/>
+			<locnrule elementname="ffdiagwp" location="Work Packages"/>
+			<locnrule elementname="opchkwp" location="Work Packages"/>
+			<locnrule elementname="trblshtwp" location="Work Packages"/>
+			<locnrule elementname="tst-trblwp" location="Work Packages"/>
+			<locnrule elementname="operwp" location="Work Packages"/>
+			<locnrule elementname="softldwp" location="Work Packages"/>
+			<locnrule elementname="popwp" location="Work Packages"/>
+			<locnrule elementname="maintcdwp" location="Work Packages"/>
+			<locnrule elementname="fltindwp" location="Work Packages"/>
+			<locnrule elementname="fltdescrptwp" location="Work Packages"/>
+			<locnrule elementname="symwp" location="Work Packages"/>
+			<locnrule elementname="fitrblwp" location="Work Packages"/>
+			<locnrule elementname="genmaintwp" location="Work Packages"/>
+			<locnrule elementname="semaintwp" location="Work Packages"/>
+			<locnrule elementname="locmfgwp" location="Work Packages"/>
+			<locnrule elementname="ipbwp" location="Work Packages"/>
+			<locnrule elementname="wirediawp" location="Work Packages"/>
+			<locnrule elementname="wirelistwp" location="Work Packages"/>
+			<locnrule elementname="repindxwp" location="Work Packages"/>
+			<locnrule elementname="genstructwp" location="Work Packages"/>
+			<locnrule elementname="typrepwp" location="Work Packages"/>
+			<locnrule elementname="specrepwp" location="Work Packages"/>
+			<locnrule elementname="cormatwp" location="Work Packages"/>
+			<locnrule elementname="geninfowp" location="Work Packages"/>
+			<locnrule elementname="typcorw" location="Work Packages"/>
+			<locnrule elementname="corinspwp" location="Work Packages"/>
+			<locnrule elementname="corclnwp" location="Work Packages"/>
+			<locnrule elementname="stripwp" location="Work Packages"/>
+			<locnrule elementname="corremwp" location="Work Packages"/>
+			<locnrule elementname="chemtrtwp" location="Work Packages"/>
+			<locnrule elementname="corsealwp" location="Work Packages"/>
+			<locnrule elementname="paintsyswp" location="Work Packages"/>
+			<locnrule elementname="ndigeninfowp" location="Work Packages"/>
+			<locnrule elementname="nditypwp" location="Work Packages"/>
+			<locnrule elementname="ndispecwp" location="Work Packages"/>
+			<locnrule elementname="wdiawp" location="Work Packages"/>
+			<locnrule elementname="wrunlstwp" location="Work Packages"/>
+			<locnrule elementname="wrefdeswp" location="Work Packages"/>
+			<locnrule elementname="wcomplstwp" location="Work Packages"/>
+			<locnrule elementname="bunidwp" location="Work Packages"/>
+			<locnrule elementname="accessinfowp" location="Work Packages"/>
+			<locnrule elementname="bunroutewp" location="Work Packages"/>
+			<locnrule elementname="wrepidwp" location="Work Packages"/>
+			<locnrule elementname="compreplistwp" location="Work Packages"/>
+			<locnrule elementname="reprkitwp" location="Work Packages"/>
+			<locnrule elementname="wtypelistwp" location="Work Packages"/>
+			<locnrule elementname="wcomprepwp" location="Work Packages"/>
+			<locnrule elementname="partswp" location="Work Packages"/>
+			<locnrule elementname="geninfomaintwp" location="Work Packages"/>
+			<locnrule elementname="qeckdescwp" location="Work Packages"/>
+			<locnrule elementname="qecawp" location="Work Packages"/>
+			<locnrule elementname="nonqecawp" location="Work Packages"/>
+			<locnrule elementname="bldupwp" location="Work Packages"/>
+			<locnrule elementname="maintwp" location="Work Packages"/>
+			<locnrule elementname="engtestwp" location="Work Packages"/>
+			<locnrule elementname="preindinspwp" location="Work Packages"/>
+			<locnrule elementname="compindwp" location="Work Packages"/>
+			<locnrule elementname="brktwp" location="Work Packages"/>
+			<locnrule elementname="extcompwp" location="Work Packages"/>
+			<locnrule elementname="extubwp" location="Work Packages"/>
+			<locnrule elementname="critclwp" location="Work Packages"/>
+			<locnrule elementname="acsysdescwp" location="Work Packages"/>
+			<locnrule elementname="acpnlwp" location="Work Packages"/>
+			<locnrule elementname="dangarwp" location="Work Packages"/>
+			<locnrule elementname="acstawp" location="Work Packages"/>
+			<locnrule elementname="acacesswp" location="Work Packages"/>
+			<locnrule elementname="acextpwrwp" location="Work Packages"/>
+			<locnrule elementname="grndopwp" location="Work Packages"/>
+			<locnrule sourcetype="graphic" location="Illustrations"/>
+		</dmslocation>
+		<dmsmetadata>
+			<!-- Three attributes were added to the DynamicDocument type in the
+			 PTC Server 10.1 M020 release. These attributes are PTC_DD_LANGUAGE,
+			 PTC_DD_TRANSLATE, and InformationType. The first two store the
+			 object's translation data. InformationType contains the 
+			 document's Service Center Information Type. The following
+			 are example metadata rules for these attributes. These object 
+			 properties are not expected to change over an object's 
+			 lifetime. The examples apply to the topic element; similar 
+			 rules must be included for each object boundary of interest. 
+
+			 The following rule states that the PTC Server property 
+			 PTC_DD_TRANSLATE will be assigned the value of the translate
+			 attribute. If the attribute is not present, the default value
+			 of 'yes' is assigned. -->
+	<!--		<metadatarule elementname="manual" expr="@docid"
+				metadata="MANUAL::docNumber" sourcetype="text"/>-->
+		</dmsmetadata>
+	</createarg>
+</burstspec>

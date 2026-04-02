@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.ataebiz.org/XMLSchema"
+           targetNamespace="http://www.ataebiz.org/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<!-- ================================================================
+
+Limitations of Liability: 
+
+1.  This material is provided "As Is" and neither Air Transport Association of America, Inc. (ATA) 
+    nor any person who has contributed to the creation, revision or maintenance of the material 
+    makes any representations or warranties, express or implied, including but not limited to, 
+    warranties of merchantability or fitness for any particular purpose. 
+
+2.  Neither ATA nor any person who has contributed to the creation, revision or maintenance of 
+    this material shall be liable for any direct, indirect, special or consequential damages or 
+    any other liability arising from any use of this material. 
+
+3.  Revisions to this document may occur after its issuance. The user is responsible for determining 
+    if revisions to the material contained in this document have occurred and are applicable. 
+
+Copyright 2017, Air Transport Association of America, Inc., d/b/a Airlines for America. All rights reserved.
+
+================================================================= -->
+	<xs:annotation>
+		    <xs:documentation>Version Number: 2017.1</xs:documentation>
+		    <xs:documentation>Revision Date: 2017-10-31</xs:documentation>
+		    <xs:documentation>Revision Comments: Spec 2300 revision 2017.1</xs:documentation>
+	  </xs:annotation>
+	  <xs:include schemaLocation="../systems/commonDescriptionTypes.xsd"/>
+	  <!--=============================================-->
+	<!-- qualifierRepositoryType-->
+	<!--=============================================-->
+	<xs:complexType name="qualifierRepositoryType">
+		    <xs:sequence>
+			      <xs:element name="qualifier" type="qualifierType" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>a data qualifier (a category or a property)</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <!--=============================================-->
+	<!-- Qualifier Element Declaration-->
+	<!--=============================================-->
+	<xs:complexType name="qualifierType">
+		    <xs:annotation>
+			      <xs:documentation>avionic context qualifier</xs:documentation>
+		    </xs:annotation>
+		    <xs:sequence>
+			      <xs:element name="name" type="xs:string">
+				        <xs:annotation>
+					          <xs:documentation>qualifier name</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="displayName" type="nameType" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>qualifier label, noticed to the crew when existing.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="description" type="descriptionType" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>If needed, qualifier detailled description.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:choice minOccurs="0">
+				        <xs:element name="localValue" type="localValueType">
+					          <xs:annotation>
+						            <xs:documentation>local value used when there is not discrete property values for the qualifier (example : speed).</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element name="qualifier" type="qualifierType" maxOccurs="unbounded">
+					          <xs:annotation>
+						            <xs:documentation>a sub category or a category property</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+			      </xs:choice>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>qualifier identification used to be referenced by a qualification</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <!--=============================================-->
+	<!-- localValueElement Declaration-->
+	<!--=============================================-->
+	<xs:complexType name="localValueType">
+		    <xs:annotation>
+			      <xs:documentation>local value used when there is not discrete property values for the qualifier (example : speed).</xs:documentation>
+		    </xs:annotation>
+		    <xs:sequence>
+			      <xs:element name="enumeration" minOccurs="0" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>provides the allowable values for the product attribute.</xs:documentation>
+				        </xs:annotation>
+				        <xs:complexType mixed="true">
+					          <xs:choice minOccurs="0" maxOccurs="unbounded">
+						            <xs:element ref="emphasis"/>
+						            <xs:element ref="symbol"/>
+						            <xs:element ref="dmRef"/>
+						            <xs:element ref="externalRef"/>
+						            <xs:element ref="multimedia"/>
+						            <xs:element ref="extApplication"/>
+					          </xs:choice>
+				        </xs:complexType>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="valuePattern" type="xs:string">
+			      <xs:annotation>
+				        <xs:documentation>Optional regular expression for a constrainst on a locally defined value</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+</xs:schema>

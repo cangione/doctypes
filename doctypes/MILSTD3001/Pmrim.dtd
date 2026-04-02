@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--<!DOCTYPE pmrim [ 
+-->
+<!-- 
+PUBLIC "-//USA-DOD//DTD pmrim 3001 Part 7 Draft XML V307 08242016//EN"
+-->
+<!-- 			DTD for Periodic Maintenance Requirements
+-->
+<!ENTITY % pointpage "">
+<!ENTITY % refentry "(effect?, title?, reference)">
+<!ENTITY % delstat "delete | real | reserve | na">
+<!ENTITY % status "empty | deleted | reserved | notapp">
+
+<!ENTITY % itemchars  
+"esds (esds-app | esds-notapp) #IMPLIED
+hci (hci-app | hci-notapp) #IMPLIED
+hcp (hcp-app | hcp-notapp) #IMPLIED
+csi (csi-app | csi-notapp) #IMPLIED
+csp (csp-app | csp-notapp) #IMPLIED
+oci (oci-app | oci-notapp) #IMPLIED
+ocp (ocp-app | ocp-notapp) #IMPLIED
+cai (cai-app | cai-notapp) #IMPLIED
+ods (ods-app | ods-notapp) #IMPLIED
+">
+
+<!ENTITY % stepatt
+"emergency  (emerg-app | emerg-notapp) 'emerg-notapp'
+applicref IDREFS #IMPLIED
+qap (qap-app | qap-notapp) 'qap-notapp'
+area CDATA #IMPLIED
+crsn (crsn-app | crsn-notapp) 'crsn-notapp'
+wuc	CDATA #IMPLIED
+label CDATA #IMPLIED
+id             ID              #IMPLIED
+databaseident CDATA #IMPLIED
+sssn CDATA #IMPLIED
+config CDATA  #IMPLIED
+skilltrk CDATA #IMPLIED
+%itemchars;">
+
+<!ENTITY % proccon "(warning*, caution*, (para | deflist | randlist | note)*)">
+
+<!ENTITY % stepcon "warning*, caution*, note*, (para+, (note | randlist | deflist)*)">
+
+<!ENTITY %  notecon  "(para | randlist | deflist | seqlist)+" >
+
+<!ENTITY  % cautioncon  "(para | randlist | deflist | seqlist)+" >
+
+<!ENTITY % common.ent PUBLIC "-//USA-DOD//ENTITIES 3001 Common Draft XML V307 08242016//EN"  "Common.ent">
+
+<!ENTITY % front.ent PUBLIC "-//USA-DOD//ELEMENTS FRONT MATTER 3001 Part 1 Draft XML V307 08242016//EN" "Front.ent">
+
+<!ENTITY % MIL-STD-3001-7 PUBLIC "-//USA-DOD//ELEMENTS 3001 Part 7 Draft XML V307 08242016//EN"  "Milstd7.ent">
+
+%common.ent;
+%front.ent;
+%MIL-STD-3001-7;
+
+<!--
+]>
+-->

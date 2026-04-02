@@ -1,0 +1,379 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2000-13UK: Allow multiple "simple" paras on element remarks.*
+    * 3. CPF 2000-08D and 2002-06F: Amend content model and attribute    *
+    *                               list of mod by new optional single   *
+    *                               modtitle element and attributes      *
+    *                               stored in entity %bodyatt;,          *
+    *                               respectively.                        *
+    * 4. CPF 2001-56US: Amend content model of status by new optional    *
+    *                   element datarest denoting data restrictions.     *
+    * 5. CPF 2002-28FR: Allow multiple "simple" paras on element rfu.    *
+    * 6. TPSMG request: Change occurrence of elements sbc and fic from   *
+    *                   optional single to optional repeatable.          *
+    * 7. Consistency:   Change declared values of attribute modtype from *
+    *                   uppercase to lowercase.                          *
+    * 8. Editorial:     Misspelled word "atribute" corrected in inline   *
+    *                   comment under definition of element mod.         *
+    *                                                                    *
+    *   Typical invocation:-                                             *
+    * <!ENTITY % EXTSTAT                                                 *
+    *   PUBLIC "-//S1000D//ELEMENTS Status Breakdown 20030531//EN" >     *
+    * %EXTSTAT;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %STATUS; (Status) containing:-                       *
+    *  security  - Mandatory Single    contains No Other Tags.           *
+    *  datarest  - Optional  Single    contains instruct, inform.        *
+    *  dmsize    - Optional  Single    contains Parsed Character Data.   *
+    *  rpc       - Mandatory Single    contains Parsed Character Data.   *
+    *  orig      - Mandatory Single    contains Parsed Character Data.   *
+    *  applic    - Mandatory Single    contains type, model.             *
+    *  techstd   - Optional  Single    contains autandtp, authblk, tpbase*
+    *                                   authex, notes.                   *
+    *  qa        - Mandatory Single    contains unverif, firstver, secver*
+    *====================================================================*
+    * Optional Repeatable Group                                          *
+    *====================================================================*
+    *  sbc      - Mandatory Single      contains Definition stored in    *
+    *                                    entity %SBC;                    *
+    * or                                                                 *
+    *  fic      - Mandatory Single      contains Definition stored in    *
+    *                                    entity %FIC;                    *
+    *====================================================================*
+    *  skill    - Optional  Single      contains Parsed Character Data.  *
+    *  rfu      - Optional  Single      contains Definition stored in    *
+    *                                    entity %SPAR;.                  *
+    *  remarks  - Optional  Single      contains Definition stored in    *
+    *                                    entity %SPAR;.                  *
+    ********************************************************************** -->
+
+<!ENTITY % STATUS
+  "security,datarest?,dmsize?,rpc,orig,applic,techstd?,qa,(sbc|fic)*,
+   skill?,rfu?,remarks?" >
+<!-- Occurrence of sbc and fic changed from single to optional repeatable -->
+
+
+<!--**********************************************************************
+    * Define Element status (Status Section) containing:-                *
+    *  Definition stored in entity %STATUS;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED  - Unique identifier of status      *
+    ********************************************************************** -->
+
+<!ELEMENT status - O (%STATUS;) >
+<!ATTLIST status
+            id   ID  #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element dmsize (Data Module Size) containing:-              *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT dmsize   - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element security (Security Marking) containing:-            *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in Entity %SECURIT;              *
+    ********************************************************************** -->
+
+<!ELEMENT security  - O EMPTY >
+<!ATTLIST security %SECURIT; >
+
+
+
+<!--**********************************************************************
+    * Call the Data Restrictions Breakdown public text. The formal public*
+    * identifier is stored in entity %EXTRESTR;                          *
+    ********************************************************************** -->
+
+%EXTRESTR;
+
+
+
+<!--**********************************************************************
+    * Define Element rpc (Responsible Partner Company) containing:-      *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  rpcname  - %RPCNAME; - The name or NCAGE code of the responsible  *
+    *                         partner company.                           *
+    *  id       - ID        - IMPLIED - Unique identifier of responsible *
+    *                         partner company.                           *
+    ********************************************************************** -->
+
+<!ELEMENT rpc      - O (#PCDATA) >
+<!ATTLIST rpc
+            rpcname  %RPCNAME;  #IMPLIED
+            id       ID         #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element orig (Originator) containing:-                      *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  origname - %ORGNAME; - The name or NCAGE code of the originator.  *
+    *  id       - ID        - IMPLIED - Unique identifier of originator. *
+    ********************************************************************** -->
+
+<!ELEMENT orig     - O (#PCDATA) >
+<!ATTLIST orig
+            origname  %ORGNAME;  #IMPLIED
+            id        ID         #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Call the Applicability Breakdown public text. The formal public    *
+    * identifier is stored in entity %EXTAPPL;                           *
+    ********************************************************************** -->
+
+%EXTAPPL;
+
+
+
+<!--**********************************************************************
+    * Define Element techstd (Technical Standard) containing:-           *
+    *====================================================================*
+    *   autandtp - Mandatory Single     contains authblk, tpbase.        *
+    *  or                                                                *
+    *   authblk  - Mandatory Single     contains Parsed Character Data.  *
+    *  or                                                                *
+    *   tpbase   - Mandatory Single     contains Parsed Character Data.  *
+    *====================================================================*
+    *   authex   - Mandatory Single     contains inline, retrofit.       *
+    *   notes    - Mandatory Single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT techstd - O ((autandtp|authblk|tpbase),authex,notes) >
+
+
+
+<!--**********************************************************************
+    * Define Element autandtp (Authority Block & Technical Publication   *
+    * Baseline) containing:-                                             *
+    *   authblk  - Mandatory Single     contains Parsed Character Data.  *
+    *   tpbase   - Mandatory Single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT autandtp - O (authblk,tpbase) >
+
+
+
+<!--**********************************************************************
+    * Define the following elements:-                                    *
+    *   authblk  - Authority Block.                                      *
+    *   tpbase   - Technical Publication Base Line.                      *
+    *  containing:- Parsed Character Data.                               *
+    ********************************************************************** -->
+
+<!ELEMENT (authblk|tpbase) - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element authex (Authority Exceptions) containing:-          *
+    *   inline   - Optional  Single     contains exmod, addmod.          *
+    *   retrofit - Optional  Single     contains No Other Tags.          *
+    ********************************************************************** -->
+
+<!ELEMENT authex - O (inline?,retrofit?) >
+
+
+
+<!--**********************************************************************
+    * Define Element inline (Inline Information) containing:-            *
+    *   exmod    - Optional  Repeatable  contains Parsed Character Data. *
+    *   addmod   - Optional  Repeatable  contains Parsed Character Data. *
+    ********************************************************************** -->
+
+<!ELEMENT inline - O (exmod*,addmod*) >
+
+
+
+<!--**********************************************************************
+    * Define Element exmod (Excluded Modifications) containing:-         *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+
+<!ELEMENT exmod - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element addmod (Additional Modifications) containing:-      *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+
+<!ELEMENT addmod - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element retrofit (Retrofit Information) containing:-        *
+    *   mod      - Mandatory Repeatable  contains No Other Tags.         *
+    ********************************************************************** -->
+
+<!ELEMENT retrofit - O  (mod+) >
+
+
+
+<!--**********************************************************************
+    * Define Element mod (Modification Order) containing:-               *
+    *  modtitle  - Optional   Single      contains Parsed Character Data.*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  authno   - NMTOKEN  - REQUIRED - Retrofit order number.           *
+    *  modtype  - Declared - REQUIRED - Standard for this modification.  *
+    *           - "pre"     - Pre-modification.                          *
+    *           - "post"    - Post modification.                         *
+    *           - "prandpo" - Both Pre & Post modifications.             *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT mod - O (modtitle?) >
+<!ATTLIST mod
+            authno NMTOKEN #REQUIRED
+            modtype (pre | post | prandpo) #REQUIRED 
+            %bodyatt; >
+<!-- Content model and attribute list amended; declared values of attribute
+     modtype changed from uppercase to lowercase throughout.   -->
+
+
+
+<!--**********************************************************************
+    * Define Element modtitle (Modification Title) containing:-          *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT modtitle - O (#PCDATA) >
+<!-- Newly introduced element -->
+
+
+
+<!--**********************************************************************
+    * Define Element notes (Notes) containing:-                          *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT notes - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element qa (Quality Assurance Status) containing:-          *
+    *   unverif  - Mandatory Single     contains No Other Tags.          *
+    *  or                                                                *
+    *   firstver - Mandatory Single     contains No Other Tags.          *
+    *   secver   - Optional  Single     contains No Other Tags.          *
+    ********************************************************************** -->
+
+<!ELEMENT qa - O (unverif|(firstver,secver?)) >
+
+
+
+<!--**********************************************************************
+    * Define Element unverif (Unverified) containing:-                   *
+    *   No Other Tags.                                                   *
+    ********************************************************************** -->
+
+<!ELEMENT unverif - O EMPTY >
+
+
+
+<!--**********************************************************************
+    * Define the following elements:-                                    *
+    *   firstver - First Level Verification (By SDR Contractor).         *
+    *   secver   - Second Level Verification (By Customer).              *
+    *  containing:- No Other Tags.                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type     - Declared - REQUIRED  - Type of verification performed. *
+    *           - "tabtop"   - Performed with only designs and drawings. *
+    *           - "onobject" - Performed with actual piece of equipment. *
+    *           - "ttandoo"  - Performed by both the above ways.         *
+    ********************************************************************** -->
+
+<!ELEMENT (firstver|secver) - O EMPTY >
+<!ATTLIST (firstver|secver)
+            type (tabtop|onobject|ttandoo) #REQUIRED >
+
+
+
+<!--**********************************************************************
+    * Define Element sbc (System Breakdown Code) containing:-            *
+    *   Definition stored in entity %SBC;                                *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED - Unique identifier of system       *
+    *                                   breakdown code                   *
+    ********************************************************************** -->
+
+<!ELEMENT sbc - O (%SBC;) >
+<!ATTLIST sbc
+            id   ID  #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element fic (Functional Item Code) containing:-             *
+    *   Definition stored in entity %FIC;                                *
+    **********************************************************************-->
+
+<!ELEMENT fic - O (%FIC;) >
+
+
+
+<!--**********************************************************************
+    * Define element rfu (Reason For Update) containing:-                *
+    *   Definition stored in entity %SPAR;                               *
+    ********************************************************************** -->
+
+<!ELEMENT rfu - - (%SPAR;) >
+<!-- Content model changed to allow simple paragraph structures on rfu -->
+
+
+
+<!--**********************************************************************
+    * Define element remarks (Remarks) containing:-                      *
+    *   Definition stored in entity %SPAR;                               *
+    ********************************************************************** -->
+
+<!ELEMENT remarks - - (%SPAR;) >
+<!-- Content model changed to allow simple paragraph structures on remarks -->
+
+
+
+<!--**********************************************************************
+    * Define Element skill (Skill Level) containing:-                    *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  skill    - Declared - REQUIRED - Personnel skill level            *
+    *             Definition stored in entity %SKILL;                    *
+    ********************************************************************** -->
+
+<!ELEMENT skill - O EMPTY>
+<!ATTLIST skill
+             skill %SKILL; #REQUIRED>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--<!DOCTYPE descopim [
+-->
+<!--
+PUBLIC "-//USA-DOD//DTD descopim 3001 Part 2 Draft XML V307 08242016//EN"
+-->
+
+<!-- 			DTD for Description, Principals of Operation, 
+			and Operation Information. 
+
+			Aeronautical, Airborne, and Support Equipment 					Information Module.
+-->
+<!-- 
+Define parameter entities containing content models for the Information Modules and Common Elements
+-->
+<!ENTITY % pointpage "| start_ripple_page | end_ripple_pages | pgbrk">
+
+<!ENTITY % common.ent PUBLIC "-//USA-DOD//ENTITIES 3001 Common Draft XML V307 08242016//EN"  "Common.ent">
+
+<!ENTITY % MIL-STD-3001-2 PUBLIC "-//USA-DOD//ELEMENTS 3001 Part 2 Draft XML V307 08242016//EN"  "milstd2.ent">
+
+%common.ent;
+
+%MIL-STD-3001-2;
+<!--
+]>
+-->

@@ -1,0 +1,285 @@
+<!-- ======================================================== -->
+<!-- SGML DTD of the Graphic Companion File                   -->
+<!-- This DTD is based on ATA iSpec 2200 definition.          -->
+<!-- DTD Reference: -//ATA-TEXT//DTD GCF-VER2-REV2-LEVEL2//EN -->
+<!--                                                          -->
+<!-- Rev Date: Jan 31, 2005                                   -->
+<!-- Parse Date: Jan 31, 2005                                 -->
+<!-- This DTD defines the companion file at the sheet level   -->
+<!--  (physical graphic file).                                -->
+<!--                                                          -->
+<!-- Highlights    :                                          -->
+<!-- 1) Added new REFMEDIA element to reference a media file. -->
+<!--    Added REFMEDIA as a choice in PARA and SUBPARA.       -->
+<!-- 2) Editorial improvements of notations for readability.  -->
+<!-- 3) Increased the version number to 2.2                   -->
+<!--                                                          -->
+<!-- DTD REVISION HISTORY version 2.1                         -->
+<!-- 1) Editorial improvements of notations for readability.  -->
+<!-- 2) Increased the version number to 2.1                   -->
+<!--                                                          -->
+<!-- DTD REVISION HISTORY version 2.0                         -->
+<!--  1) Added optional attributes EFFLEN and EFFTYPE to      -->
+<!--     v4sheet element.                                     -->
+<!--  2) Added optional BIZDESC attribute to GROBJECT element -->
+<!--  3) Added CGM, CCITT4, JPEG and PNG notations.           -->
+<!--  4) Added Public ID for V4Sheet DTD doctype.             -->
+<!--  5) Effect changed to optional in V4SHEET element.       -->
+<!-- ======================================================== -->
+
+<!--   DOCTYPE v4sheet [                                      -->
+<!-- The following set of declarations may be referred to 
+     using the public entity as follows:
+<!DOCTYPE v4sheet PUBLIC
+  "-//ATA-TEXT//DTD GCF-VER2-REV2-LEVEL2//EN" [ ]>            -->
+
+<!-- ======================================================== -->
+<!--          NOTATIONS                                       -->
+<!-- ======================================================== -->
+
+<!NOTATION cgm  PUBLIC 
+   "-//USA-DOD//NOTATION Computer Graphics Metafile//EN"        >
+
+<!NOTATION ccitt4 PUBLIC
+   "-//USA-DOD//NOTATION CCITT Group4 Facsimile//EN"            >
+
+<!NOTATION png PUBLIC
+   "-//W3C//NOTATION Portable Network Graphics//EN"             >
+
+<!NOTATION jpeg PUBLIC
+"+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint
+ Photographic Experts Group Raster//EN"                         >
+
+<!-- ======================================================== -->
+<!--          ENTITIES                                        -->
+<!-- ======================================================== -->
+
+<!ENTITY % yesorno "NUMBER"                                     >
+
+<!-- ======================================================== -->
+<!-- The v4sheet element contains one effectivity, one        -->
+<!-- imgsize element and one optional apslist element.        -->
+<!-- Attributes:                                              -->
+<!-- "id" stores the ID of the companion data file.           -->
+<!-- "gnbr" SGML external entity referencing the physical     -->
+<!--    CGM file.                                             -->
+<!-- "sheetnbr" Sheet Number.                                 -->
+<!-- "efflen" Effectivity length.                             -->
+<!-- "efftype" Effectivity type.                              -->
+<!-- ======================================================== -->
+<!ELEMENT v4sheet  - - (effect?, imgsize, apslist?)             >
+<!ATTLIST v4sheet
+          id              ID                           #IMPLIED
+          gnbr            ENTITY                       #IMPLIED
+          sheetnbr        CDATA                        #IMPLIED
+          efflen          NUMBER                       #IMPLIED
+          efftype         CDATA                        #IMPLIED >
+
+<!-- ======================================================== -->
+<!-- The image size (imgsize) element contains the Image Area -->
+<!-- (imgarea) of the graphic (Format).                       -->
+<!-- Attributes:                                              -->
+<!-- "imgarea" is to identify the designation of the format   -->
+<!--  Standard ATA:                                           -->
+<!-- "AP" for full A4 portrait                                -->
+<!-- "BP" for half A4 portrait                                -->
+<!-- "HL" for foldout A3 landscape                            -->
+<!--  ...                                                     -->
+<!-- "unit" specifies the dimension unit                      -->
+<!-- "imgwid" and "imghgt" give the physical dimension        -->
+<!-- ======================================================== -->
+<!ELEMENT imgsize  - o  EMPTY                                   >
+<!ATTLIST imgsize
+          imgarea        (AP|BP|CP|DL|EL|FP|GP|HL|IL)  #IMPLIED 
+          unit            CDATA                        #IMPLIED
+          imgwid          NMTOKEN                      #IMPLIED 
+          imghgt          NMTOKEN                      #IMPLIED >
+
+<!-- ======================================================== -->
+<!-- The apslist element will contain the APS stored in the   -->
+<!--   file (min=0).                                          -->
+<!-- Attributes:                                              -->
+<!-- "apsnbr" gives the number of APS in the list             -->
+<!-- ======================================================== -->
+<!ELEMENT apslist  - - (layer+ | (grobject | para)*)            >
+<!ATTLIST apslist
+          apsnbr          NMTOKEN                      #IMPLIED >
+
+<!-- ======================================================== -->
+<!-- The layer element describes the different layer.         -->
+<!-- Attributes:                                              -->
+<!-- "layername" identification of the layer (can be null)    -->
+<!-- "layerdesc" description of the layer                     -->
+<!-- "behavior" interactive state of the layer                -->
+<!-- ======================================================== -->
+<!ELEMENT layer    - - (grobject | para)*                       >
+<!ATTLIST layer
+          layername       CDATA                        #REQUIRED
+          layerdesc       CDATA                        #IMPLIED
+          behavior        CDATA                        #IMPLIED >
+
+<!-- ======================================================== -->
+<!-- The grobject element describes the different graphical   -->
+<!--    hotspots present in the graphic file.                 -->
+<!-- Attributes:                                              -->
+<!-- "id" attributes store the ID of the unique id of the     -->
+<!--    hotspot                                               -->
+<!-- "refloc" contains a reference to a given grobject        -->
+<!-- "screentip" contains the information displayed when      -->
+<!--    passing on the graphical object                       -->
+<!-- "name" attribute is to identify the type of the hotspot  -->
+<!--    or maybe complete the ID information                  -->
+<!-- "viewcontext" describes the display zone dimension when  -->
+<!--    accessing the hotspot                                 -->
+<!-- "region" contains the list of point needed to draw the   -->
+<!--    region type zone of the hotspot                       -->
+<!-- "region_type" contains the geometrical description of    -->
+<!--    the zone where the hotspot can be activated           -->
+<!-- "revdate" Year, Month, day associated with a revision    -->
+<!--    cycle for the data                                    -->
+<!-- "assembly" Next higher assembly associated with an       -->
+<!--    intelligent graphics application structure            -->
+<!-- "sys" Overall system associated with an intelligent      -->
+<!--    graphics application structure (often ATA chapter)    -->
+<!-- "subsys" Subsystem associated with an intelligent        -->
+<!--    graphics application structure (often ATA section)    -->
+<!-- "subsubsys" Sub-subsystem associated with an intelligent -->
+<!--    graphics application structure (often ATA subject)    -->
+<!-- "bizdesc" Business description of a GROBJECT (graphical  -->
+<!--    object element)                                       -->
+<!-- "behavior" interactive state of the element              -->
+<!-- ======================================================== -->
+<!ELEMENT grobject - - (effect?, (refint | refext | refcond
+                       | grphcref | grobject | para)*)          >
+<!ATTLIST grobject
+          id              ID                           #REQUIRED 
+          refloc          CDATA                        #IMPLIED 
+          screentip       CDATA                        #IMPLIED 
+          name            CDATA                        #IMPLIED 
+          viewcontext     CDATA                        #IMPLIED 
+          region          CDATA                        #IMPLIED 
+          regiontype      CDATA                        #IMPLIED 
+          revdate         CDATA                        #IMPLIED 
+          assembly        CDATA                        #IMPLIED 
+          sys             CDATA                        #IMPLIED 
+          subsys          CDATA                        #IMPLIED 
+          subsubsys       CDATA                        #IMPLIED
+          bizdesc         CDATA                        #IMPLIED 
+          behavior        CDATA                        #IMPLIED >
+
+<!-- ======================================================== -->
+<!-- The para element describes the different textual         -->
+<!--    hotspots present in the graphic file.                 -->
+<!-- Attributes:                                              -->
+<!-- "id" attributes store the ID of the unique id of the     -->
+<!--    hotspot                                               -->
+<!-- "refloc" contains a reference to a given grobject        -->
+<!-- "screentip" contains the information displayed when      -->
+<!--    passing on the graphical object                       -->
+<!-- "viewcontext" describes the display zone dimension when  -->
+<!--    accessing the hotspot                                 -->
+<!-- "region" contains the list of point needed to draw the   -->
+<!--    region type zone of the hotspot                       -->
+<!-- "content" copy of the textual content of a paragraph     -->
+<!--    within an intelligent graphics application structure  -->
+<!-- "parablock" region into which the paragraph is restricted-->
+<!-- "behavior" interactive state of the element              -->
+<!-- ======================================================== -->
+<!ELEMENT para     - - (#PCDATA | refint | refext | grphcref 
+                       | refcond | subpara | refmedia)*         >
+<!ATTLIST para
+          id              ID                           #REQUIRED
+          refloc          CDATA                        #IMPLIED 
+          screentip       CDATA                        #IMPLIED 
+          viewcontext     CDATA                        #IMPLIED 
+          region          CDATA                        #IMPLIED 
+          content         CDATA                        #IMPLIED 
+          parablock       CDATA                        #IMPLIED 
+          behavior        CDATA                        #IMPLIED >
+
+<!ELEMENT refmedia  - -  (#PCDATA)                              >
+<!ATTLIST refmedia
+          mednbr          ENTITY                       #REQUIRED>
+
+<!-- ======================================================== -->
+<!-- The subpara element describes the different textual      -->
+<!--    hotspots present in the graphic file.                 -->
+<!-- Attributes:                                              -->
+<!-- "id" attributes store the ID of the unique id of the     -->
+<!--    hotspot                                               -->
+<!-- "refloc" contains a reference to a given grobject        -->
+<!-- "screentip" contains the information displayed when      -->
+<!--    passing on the graphical object                       -->
+<!-- "viewcontext" describes the display zone dimension when  -->
+<!--    accessing the hotspot                                 -->
+<!-- "region" contains the list of point needed to draw the   -->
+<!--    region type zone of the hotspot                       -->
+<!-- "content" copy of the textual content of a paragraph     -->
+<!--    within an intelligent graphics application structure  -->
+<!-- "behavior" interactive state of the element              -->
+<!-- ======================================================== -->
+<!ELEMENT subpara  - - (#PCDATA | refint | refext | refcond 
+                       | grphcref | refmedia)*                  >
+<!ATTLIST subpara
+          id              ID                           #REQUIRED
+          refloc          CDATA                        #IMPLIED
+          screentip       CDATA                        #IMPLIED
+          viewcontext     CDATA                        #IMPLIED
+          region          CDATA                        #IMPLIED
+          content         CDATA                        #IMPLIED
+          behavior        CDATA                        #IMPLIED >
+
+<!-- ======================================================== -->
+<!--     Standard linking elements                            -->
+<!-- The refcond element permits to chose a link depending on -->
+<!-- the effectivity                                          -->
+<!-- ======================================================== -->
+<!ELEMENT refcond  - - (effect, (refint | refext | grphcref))   > 
+
+<!ELEMENT refint   - - (#PCDATA)                                > 
+<!ATTLIST refint 
+          refid           IDREF                        #IMPLIED 
+          reftype         CDATA                        #IMPLIED > 
+
+<!ELEMENT refext   - - (#PCDATA)                                > 
+<!ATTLIST refext 
+          refloc          CDATA                        #IMPLIED 
+          refman          CDATA                        #IMPLIED 
+          refmodel        CDATA                        #IMPLIED 
+          refspl          CDATA                        #IMPLIED 
+          docnbr          CDATA                        #IMPLIED 
+          reftype         CDATA                        #IMPLIED >
+
+<!ELEMENT grphcref - - (#PCDATA)                                > 
+<!ATTLIST grphcref 
+          refid           IDREF                        #IMPLIED 
+          sheetnbr        CDATA                        #IMPLIED 
+          structid        CDATA                        #IMPLIED 
+          shownow         %yesorno;                    "0"
+          reftype         CDATA                        #IMPLIED >
+
+<!-- ======================================================== -->
+<!--     Effectivity                                          -->
+<!-- ======================================================== -->
+<!ELEMENT effect   - - (sbeff | coceff)*                        >
+<!ATTLIST effect
+          effrg           CDATA                        #IMPLIED 
+          efftext         CDATA                        #IMPLIED >
+ 
+<!ELEMENT sbeff    - o  EMPTY                                   >
+<!ATTLIST sbeff 
+          effrg           CDATA                        #IMPLIED
+          efftext         CDATA                        #IMPLIED
+          sbnbr           CDATA                        #REQUIRED
+          sbcond          CDATA                        #REQUIRED
+          sbrev           CDATA                        #IMPLIED >
+
+<!ELEMENT coceff   - o  EMPTY                                   >
+<!ATTLIST coceff 
+          effrg           CDATA                        #IMPLIED
+          efftext         CDATA                        #IMPLIED
+          cocnbr          CDATA                        #REQUIRED
+          coccond         CDATA                        #IMPLIED
+          cocrev          CDATA                        #IMPLIED >
+
+<!--   ]>                                                     -->

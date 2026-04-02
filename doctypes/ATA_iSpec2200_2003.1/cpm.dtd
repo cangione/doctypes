@@ -1,0 +1,920 @@
+<!-- =============================================================== -->
+<!--  This is the DTD for Consumable Products Manual                 -->
+<!--                                                                 -->
+<!-- DTD Reference : -//ATA-TEXT//DTD CPM-VER7-LEVEL2//EN            -->
+<!-- DTD Level     : 2                                               -->
+<!-- Rev Date      : 28 Sep 2021                                     -->
+<!-- Parsed Date   : 28 Sep 2021                                     -->
+<!--                                                                 -->
+<!-- Highlights    :                                                 -->
+<!-- 1) Increased the "VER" number to 7.0.                           -->
+<!-- 2) Added optional ID attribute to LxITEM elements (CR-2020-12). -->
+<!--                                                                 -->
+<!-- DTD REVISION HISTORY:                                           -->
+<!-- 1) Increased the "VER" number to 6.0.                           -->
+<!-- 2) CHGDTYPE optional attribute added to CHGDESC (CR-2016-02)    -->
+<!--                                                                 -->
+<!-- DTD REVISION HISTORY:                                           -->
+<!-- 1) Formatting improvements made for readability.                -->
+<!-- 2) Increased the Revision number to 5.2.                        -->
+<!--                                                                 -->
+<!-- DTD REVISION HISTORY:                                           -->
+<!-- 1) Editorial improvements of notations for readability.         -->
+<!-- 2) Increased the Revision number to 5.1.                        -->
+<!--                                                                 -->
+<!-- DTD REVISION HISTORY:                                           -->
+<!-- November 17 2004 version 5                                      -->
+<!-- 1) Added attribute CFNBR to SHEET for companion file            -->
+<!--    referencing. Added gcf notation definition.                  -->
+<!--    (CR AIB.GRAPHIC.001.2004)                                    -->
+<!-- 2) Added new REFMEDIA element to reference a media file.        -->
+<!--    Added PDF, PNG, JPEG, VRML, MPEG and MP3 notations.          -->
+<!--    (CR 2004-Media-001).                                         -->
+<!-- 3) Added EFFLEN and EFFTYPE attribute to root element.          -->
+<!--    (CR AIB.TRAN.003.2004)                                       -->
+<!-- 4) Added GRSYMBOL element to PARA content to reference inline   -->
+<!--    graphics (CR inline graphics).                               -->
+<!-- 5) Increased the Version number to 5.                           -->
+<!--                                                                 -->
+<!-- DTD REVISION HISTORY:                                           -->
+<!-- December 24 2003 version 4                                      -->
+<!-- 1) Added attribute ID to PRCITEM 1 thru 7 for referencing       -->
+<!--    (boe.tran.002.2003).                                         -->
+<!-- 2) Incorporated ISObox, ISOamso & ISOamsc per ATA approved      -->
+<!--    DTD CR 2003-All-001.                                         -->
+<!-- 3) Increased the Version number to 4 (cp020400.dtd).            -->
+<!-- 4) Made some editorial improvements for readability.            -->
+<!--                                                                 -->
+<!-- DTD REVISION HISTORY:                                           -->
+<!-- DTD Reference : -//ATA-TEXT//DTD CPM-VER3-REV1-LEVEL2//EN       -->
+<!-- Rev Date      : 04 Dec 2001                                     -->
+<!-- Highlights:                                                     -->
+<!-- 1) Changed TABLE ENTRY to "*" optional repeating to avoid       -->
+<!--    empty tags <para>  </para> for blank table cell entries.     -->
+<!-- 2) Increased the "VER-REV" number to 3.1 (cp020301.dtd).        -->
+<!-- 3) Made some editorial improvements for readability.            -->
+<!--                                                                 -->
+<!-- Highlights    :                                                 -->
+<!-- 1) Added optional EFFECT element to SECTION.                    -->
+<!--    Added EFFECT inclusions to PBFMATR, WARNING, NOTE &          -->
+<!--    CAUTION.                                                     -->
+<!-- 2) Added new elements SUB & SUPER to PARA, EQU & TITLE with a   -->
+<!--    content of #PCDATA.                                          -->
+<!-- 3) Added optional HAZMTLST element to MFMATR with a             -->
+<!--    content of TITLE, optional PRETOPIC & HAZMT. Added new       -->
+<!--    element HAZMT with a content of TITLE & WARNING.             -->
+<!-- 4) Added REFBLOCK to entity %G.R. Added new element             -->
+<!--    REFBLOCK with a content of #PCDATA or REFINT or REFEXT       -->
+<!--    or GRPHCREF.                                                 -->
+<!-- 5) Increased the "VER" number to 3.                             -->
+<!-- 6) Made some editorial improvements for readability.            -->
+<!--                                                                 -->
+<!-- DTD REVISION HISTORY:                                           -->
+<!-- Rev Date      : 15 Dec 2000                                     -->
+<!-- Parsed Date   : 08 Jan 2001                                     -->
+<!--     Increased Version to 2.                                     -->
+<!--     DTD format changes.                                         -->
+<!--     Added entities ISOgrk2,3,4 and ISOlat1.                     -->
+<!--     Added optional LEGALNTC (Legal Notice) element structure    -->
+<!--          to top level structure.                                -->
+<!--     Added implied attribute IMGAREA to SHEET.                   -->
+<!--                                                                 -->
+<!--  Ver 1.2 - - 01-17-1999 - TWR                                   -->
+<!--     Updated DTD structure charts                                -->
+<!--                                                                 -->
+<!--  Ver 1.1 - Pre-release B 06-24-97 - FJB/NRS                     -->
+<!--     Comments cleaned up and previous pre-release marks removed  -->
+<!--     Added OTHTYPE attribute to those element which had a "TYPE" -->
+<!--          that could be "OTH" (other),`to allow further          -->
+<!--          identification of non-standard types                   -->
+<!--     Removed vestigial attributes in Graphic carried over from   -->
+<!--          Engine manual                                          -->
+<!--     Added Unit to Weight                                        -->
+<!--                                                                 -->
+<!--  Ver 1 - - 08-23-96 - FJB/RB/NRS                                -->
+<!--                                                                 -->
+<!--   DTD ref:  "-//ATA-TEXT//DTD CPM-VER2-LEVEL2//EN"              -->
+<!--                                                                 -->
+<!-- Implementation Notes:                                           -->
+<!--                                                                 -->
+<!-- 1. Changes are marked in section headings                       -->
+<!--                                                                 -->
+<!-- 2. DOCTYPE is CPM                                               -->
+<!--                                                                 -->
+<!-- 3. No TRs in CPM (but may be there effectively, since           -->
+<!--          digital CPM changes CPM mgt                            -->
+<!--                                                                 -->
+<!-- 4. MANUAL DIVISIONS                                             -->
+<!--                                                                 -->
+<!--   Manual Front Matter                                           -->
+<!--     o Title page           - GENERATED: title, ATTR(cpm)        -->
+<!--     o Highlights           - GENERATED                          -->
+<!--     o Numerical Index      - GENERATED                          -->
+<!--     o Alphabetical Index   - GENERATED                          -->
+<!--     o Transmittal Letter                                        -->
+<!--     o Introduction                                              -->
+<!--                                                                 -->
+<!--    Main Manual Sections (no order implied)                      -->
+<!--       Consumable data sheets                                    -->
+<!--               o Chemical Products                               -->
+<!--               o Material Handling Equipment                     -->
+<!--               o Commercial Products                             -->
+<!--               o Materials                                       -->
+<!--     o Supplier Codes                                            -->
+<!--     o Other                                                     -->
+<!--                                                                 -->
+<!--    Consumable Data Sheet Subsections                            -->
+<!--     o Specifications reference purpose and use                  -->
+<!--     o Storage information                                       -->
+<!--     o Packaging information                                     -->
+<!--     o Transportation information                                -->
+<!--       weight                                                    -->
+<!--     o Specification requirements                                -->
+<!--       (or General Characteristics)                              -->
+<!--     o other                                                     -->
+<!--                                                                 -->
+<!-- =============================================================== -->
+
+<!-- DOCTYPE cpm [  -->
+<!-- The following set of declarations may be referred to
+     using the public entity as follows:
+<!DOCTYPE cpm PUBLIC
+  "-//ATA-TEXT//DTD CPM-VER7-LEVEL2//EN" [ ]>                        -->
+
+<!-- =============================================================== -->
+<!--          NOTATIONS                                              -->
+<!-- =============================================================== -->
+
+<!NOTATION cgm PUBLIC
+  "-//USA-DOD//NOTATION Computer Graphics Metafile//EN"                >
+
+<!NOTATION ccitt4 PUBLIC
+  "-//USA-DOD//NOTATION CCITT Group4 Facsimile//EN"                    >
+
+<!NOTATION gcf PUBLIC
+ "-//ATA-TEXT//NOTATION Graphic Companion File//EN"                    >
+
+<!NOTATION pdf PUBLIC
+ "-//Adobe Inc.//NOTATION Portable Document Format//EN"                >
+
+<!NOTATION png PUBLIC
+ "-//W3C//NOTATION Portable Network Graphics//EN"                      >
+
+<!NOTATION jpeg PUBLIC
+ "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint
+  Photographic Experts Group Raster//EN"                               >
+
+<!NOTATION vrml PUBLIC
+ "-//ATA-TEXT//NOTATION Virtual Reality Modeling Language//EN"         >
+
+<!NOTATION mpeg PUBLIC
+ "-//ATA-TEXT//NOTATION Motion Pictures Expert Group//EN"              >
+
+<!NOTATION mp3 PUBLIC
+ "-//ATA-TEXT//NOTATION Motion Pictures Expert Group, Audio
+  Layer 3//EN"                                                         >
+
+<!-- =============================================================== -->
+<!--                      ENTITIES                                   -->
+<!-- =============================================================== -->
+
+<!ENTITY  % tblitem  "(connbr | dd | func | mfr | mfrec | mad | pnr
+                      | weight | fluidvol)"                            >
+<!ENTITY  % g.r      "(refblock* | (grphcref*, refext*, refint*))"     >
+<!ENTITY  % w.c      "(warning*, caution*)"                            >
+<!ENTITY  % text     "(para | tabdat | table | unlist | numlist
+                      | note )+"                                       >
+
+<!ENTITY  % deleted  "(deleted, chgdesc*)"                             >
+<!ENTITY  % yesorno  "NUMBER"                                          >
+<!ENTITY  % revatt
+            "chg      (N|R|U|D)   #REQUIRED
+             key      ID          #REQUIRED
+             revdate  NUMBER      #REQUIRED"                           >
+
+<!ENTITY   % ISOtech      PUBLIC
+     "ISO 8879-1986//ENTITIES   General Technical//EN"                 >
+<!ENTITY   % ISOpub      PUBLIC
+     "ISO 8879-1986//ENTITIES Publishing//EN"                          >
+<!ENTITY   % ISOnum      PUBLIC
+     "ISO 8879-1986//ENTITIES   Numeric and Special Graphic//EN"       >
+<!ENTITY   % ISOgrk1     PUBLIC
+     "ISO 8879-1986//ENTITIES   Greek Letters//EN"                     >
+<!ENTITY   % ISOgrk2     PUBLIC
+     "ISO 8879-1986//ENTITIES Monotoniko Greek//EN"                    >
+<!ENTITY   % ISOgrk3     PUBLIC
+     "ISO 8879-1986//ENTITIES Greek Symbols//EN"                       >
+<!ENTITY   % ISOgrk4     PUBLIC
+     "ISO 8879-1986//ENTITIES Alternative Greek Symbols//EN"           >
+<!ENTITY   % ISOlat1     PUBLIC
+     "ISO 8879-1986//ENTITIES Added Latin 1//EN"                       >
+<!ENTITY   % ISObox      PUBLIC
+     "ISO 8879-1986//ENTITIES Box and Line Drawing//EN"                >
+<!ENTITY   % ISOamso     PUBLIC
+     "ISO 8879-1986//ENTITIES Added Math Symbols: Ordinary//EN"        >
+<!ENTITY   % ISOamsc     PUBLIC
+     "ISO 8879-1986//ENTITIES Added Math Symbols: Delimiters//EN"      >
+
+%ISOtech; %ISOpub; %ISOnum; %ISOgrk1; %ISOgrk2; %ISOgrk3;
+%ISOgrk4; %ISOlat1; %ISObox; %ISOamso; %ISOamsc;
+
+<!-- =============================================================== -->
+<!--                   TOP LEVEL STRUCTURE                           -->
+<!-- =============================================================== -->
+
+<!ELEMENT cpm       - -  ((title, legalntc?, mfmatr, section+, append*)
+                         | increv)   +(revst | revend | hotlink)       >
+<!ATTLIST cpm
+          spl       CDATA                             #REQUIRED
+          model     CDATA                             #REQUIRED
+          oidate    NUMBER                            #REQUIRED
+          tsn       CDATA                             #REQUIRED
+          cus       CDATA                             #IMPLIED
+          cusname   CDATA                             #IMPLIED
+          docnbr    CDATA                             #IMPLIED
+          lang      CDATA                             #REQUIRED
+          revdate   NUMBER                            #REQUIRED
+          chg       (N | R | U)                       "N"
+          efflen    NUMBER                            #IMPLIED
+          efftype   CDATA                             #IMPLIED         >
+
+<!-- =============================================================== -->
+<!-- Increv model matching current anchor list                       -->
+<!-- =============================================================== -->
+
+<!ELEMENT increv    - -  (transltr?, legalntc?, (section | cpsheet
+                         | conindex | append | unit | intro
+                         | howtouse | hazmtlst | graphic)+)            >
+
+<!-- =============================================================== -->
+<!--       Legal Notice Information                                  -->
+<!-- =============================================================== -->
+
+<!ELEMENT legalntc  - - (exprtcl | cpyrght | proptary | geninfo)+      >
+<!ATTLIST legalntc
+          %revatt;                                                     >
+
+<!ELEMENT proptary  - - (fullstmt, partstmt?)                          >
+<!ELEMENT fullstmt  - - (title?, cpyrght?, para+)                      >
+<!ELEMENT partstmt  - - (title?, para+)                                >
+<!ELEMENT exprtcl   - - (para | unlist | numlist | note)+              >
+<!ELEMENT cpyrght   - - (year*, holder*, geninfo)                      >
+<!ELEMENT year      - - (#PCDATA)                                      >
+<!ELEMENT holder    - - (#PCDATA)                                      >
+<!ELEMENT geninfo   - - (para | unlist | numlist | note)+              >
+
+<!-- =============================================================== -->
+<!--             FRONT MATTER                                        -->
+<!-- =============================================================== -->
+
+<!ELEMENT mfmatr    - -  (transltr?, conindex?, intro, howtouse?,
+                          vendlist, hazmtlst?)                         >
+
+<!ELEMENT transltr  - -  (chgdesc*, title, (%text;))+                  >
+<!ATTLIST transltr
+          oldkey    NAME                              #IMPLIED
+          %revatt;                                                     >
+<!ELEMENT conindex  - -  (chgdesc*, title, (prclist1 | table)+)+       >
+<!ELEMENT intro     - -  (chgdesc*, title, prclist1)+                  >
+<!ATTLIST intro
+          oldkey    NAME                              #IMPLIED
+          %revatt;                                                     >
+
+<!ELEMENT howtouse  - -  (chgdesc*, title, prclist1)+                  >
+<!ATTLIST howtouse
+          oldkey    NAME                              #IMPLIED
+          %revatt;                                                     >
+
+<!ELEMENT hazmtlst  - -  (title, pretopic*, hazmt+)                    >
+<!ATTLIST hazmtlst
+          %revatt;                                                     >
+<!ELEMENT hazmt     - -  (title, warning)                              >
+<!ATTLIST hazmt
+          id        ID                                #REQUIRED        >
+<!ELEMENT pretopic  - -  (title, (%text; | list1)) +(effect)           >
+
+<!-- =============================================================== -->
+<!--                  SUPPLIER INFO                                  -->
+<!-- =============================================================== -->
+<!-- The CPM carries the following information which is not in       -->
+<!--    the ESM:                                                     -->
+<!--                                                                 -->
+<!--       - Supplier code(zone)                                     -->
+<!--       - Supplier name                                           -->
+<!--       - Supplier address                                        -->
+<!--       - Supplier Contact (AOG........)                          -->
+<!--       - Supplier Communication (name,                           -->
+<!--           phone, fax, internet, sita, arinc,.......)            -->
+<!--                                                                 -->
+<!--   To address this, vendata, mfr and mad were added from AIPC.   -->
+<!--   Vendata (mad) was changed to accomodate additional info.      -->
+<!--                                                                 -->
+<!--   Associated with a single mfr code, there can be one or more   -->
+<!--    manufacturer's addresses.  Within each address, we now mark  -->
+<!--    information including:                                       -->
+<!--                                                                 -->
+<!--       Phone                                                     -->
+<!--       URL                                                       -->
+<!--       Fax                                                       -->
+<!--       Email                                                     -->
+<!--       TELEX                                                     -->
+<!--                                                                 -->
+<!-- Chg V1.1 - added ADDR to list so the address portion can be     -->
+<!--              tagged for identification                          -->
+<!--                                                                 -->
+<!-- =============================================================== -->
+
+<!ELEMENT vendlist  - -  (title, (%text;)?, vendata+)                  >
+<!ELEMENT vendata   - -  (mfr, mad+)                                   >
+<!ATTLIST vendata
+          mfrname   CDATA                             #REQUIRED        >
+
+<!ELEMENT mfr       - -  (#PCDATA)                                     >
+<!ATTLIST mfr
+          zone      CDATA                             #REQUIRED        >
+<!ELEMENT mad       - -  (#PCDATA | addr | phone | fax
+                         | url | email | mfrcont | telex)+             >
+
+<!ELEMENT mfrcont   - -  (#PCDATA)                                     >
+<!ELEMENT addr      - -  (#PCDATA)                                     >
+<!ELEMENT phone     - -  (#PCDATA)                                     >
+<!ELEMENT fax       - -  (#PCDATA)                                     >
+<!ELEMENT url       - -  (#PCDATA)                                     >
+<!ELEMENT email     - -  (#PCDATA)                                     >
+<!ELEMENT telex     - -  (#PCDATA)                                     >
+
+<!-- =============================================================== -->
+<!--                         SECTION [Anchor]                        -->
+<!--         A collection of consumables or other units              -->
+<!--                                                                 -->
+<!-- section model (new part)                                        -->
+<!--                                                                 -->
+<!--   A section is a set of consumables of a particular type        -->
+<!--     (e.g., a set of Data Sheets, or Mat Handl Data Sheets)      -->
+<!--   Or it is a "unit"                                             -->
+<!--                                                                 -->
+<!--                                                                 -->
+<!-- Explanation of section abbreviations:                           -->
+<!--                                                                 -->
+<!--       SYM    TITLE                                              -->
+<!--       ===    ================================                   -->
+<!--       IDX =  Index (numerical index)                            -->
+<!--       MFR =  Standard Consumable Supplier Table                 -->
+<!--       TDS =  Consumable Product Sheets                          -->
+<!--       OTH =  Other                                              -->
+<!--                                                                 -->
+<!-- Notes on the changes from the EM:                               -->
+<!--                                                                 -->
+<!--  changed - section  - section model changed to allow            -->
+<!--                        them to be either collections of         -->
+<!--                        consumable sheets or units.              -->
+<!--                                                                 -->
+<!-- =============================================================== -->
+
+<!ELEMENT section   - -  ((effect?, chgdesc*, title?, pbfmatr?,
+                         (cpsheet+ | unit+)) | %deleted;)              >
+<!ATTLIST section
+          sectnbr   NUMBER                            #REQUIRED
+          type      (IDX | MFR | OTH | TDS)           #REQUIRED
+          othtype   CDATA                             #IMPLIED
+          %revatt;                                                     >
+
+<!-- =============================================================== -->
+<!--     pbfmatr - is used at several levels as generic              -->
+<!--               front matter (other than at the manual level      -->
+<!-- =============================================================== -->
+
+<!ELEMENT pbfmatr   - -  (title?, %g.r;, (list1 | %text;)*)
+                                                      +(effect)        >
+
+<!-- =============================================================== -->
+<!--                         CPSHEET [Anchor]                        -->
+<!--                        A consumables sheet                      -->
+<!--                                                                 -->
+<!--  CPSHEET is a consumables sheet, which is comprised of          -->
+<!--     sub-sections (cpsect).                                      -->
+<!--                                                                 -->
+<!--       SYM    TITLE                                              -->
+<!--       ===    ================================                   -->
+<!--       CHE =  Chemical products                                  -->
+<!--       CMP =  Commercial Products                                -->
+<!--       MAT =  Materials                                          -->
+<!--       OTH =  Other                                              -->
+<!--                                                                 -->
+<!--    This list is extended by using the                           -->
+<!--     OTH type and supplying an OTHTYPE attribute                 -->
+<!--     to identify the nonstandardized type                        -->
+<!--                                                                 -->
+<!-- =============================================================== -->
+
+<!ELEMENT cpsheet   - -  ((effect?, chgdesc*, title?, pbfmatr?,
+                         (cpsect | graphic)+)     | %deleted;)         >
+<!ATTLIST cpsheet
+          connbr    CDATA                             #REQUIRED
+          sectnbr   NUMBER                            #IMPLIED
+          type      (CHE | CMP | MAT | OTH)           #REQUIRED
+          othtype   CDATA                             #IMPLIED
+          %revatt;                                                     >
+
+<!-- =============================================================== -->
+<!--                        CPSECT                                   -->
+<!--              Consumable Sheet Sections                          -->
+<!--                                                                 -->
+<!--   Where type is from symbol table :                             -->
+<!--                                                                 -->
+<!--       SYM    TITLE                                              -->
+<!--       ===    ================================                   -->
+<!--       DES = Description                                         -->
+<!--       GEN = Specification req and general characteristics       -->
+<!--       PAK = Packaging information                               -->
+<!--       SPC = Specifications Reference                            -->
+<!--       SPL = Suppliers code                                      -->
+<!--       STO = Storage information                                 -->
+<!--       TPS = Transportation information                          -->
+<!--       OTH = OTHER                                               -->
+<!--                                                                 -->
+<!--    This list is extended by using the                           -->
+<!--     OTH type and supplying an OTHTYPE attribute                 -->
+<!--     to identify the nonstandardized type                        -->
+<!--                                                                 -->
+<!-- =============================================================== -->
+
+<!ELEMENT cpsect    - -  ((effect?, (%w.c;)*, title?,
+                          (cpchar | %text; | %g.r; | graphic)+)
+                          | %deleted;)                                 >
+<!ATTLIST cpsect
+          type      (DES | GEN | PAK | SPL | SPC | STO | TPS
+                    | OTH)                            #REQUIRED
+          connbr    CDATA                             #IMPLIED
+          sectnbr   NUMBER                            #IMPLIED
+          othtype   CDATA                             #IMPLIED         >
+
+<!-- =============================================================== -->
+<!--                       CPCHAR                                    -->
+<!--         Consumable Product Characteristics                      -->
+<!--                                                                 -->
+<!--    These characteristics are subsections under the Spec req     -->
+<!--     and general characteristics section (though the content     -->
+<!--     model would allow them to go in any cpsect.)                -->
+<!--                                                                 -->
+<!-- =============================================================== -->
+<!--                                                                 -->
+<!--   Where type is from symbol table :                             -->
+<!--                                                                 -->
+<!--       SYM    TITLE                                              -->
+<!--       ===    ================================                   -->
+<!--       APP = appearance                                          -->
+<!--       CLR = color/odor                                          -->
+<!--       CMP = composition  chemical/physical                      -->
+<!--       CTT = specific content                                    -->
+<!--       FRM = form/hardness                                       -->
+<!--       MET = method of utilization                               -->
+<!--       MOI = moisture                                            -->
+<!--       PAR = particule size/shape                                -->
+<!--       PH  = ph                                                  -->
+<!--       RLD = relative density                                    -->
+<!--       TMP = flash point/useful/self ignition/boiling :          -->
+<!--       VIS = viscosity                                           -->
+<!--       OTH = OTHER                                               -->
+<!--                                                                 -->
+<!--    This list is extended by using the                           -->
+<!--     OTH type and supplying an OTHTYPE attribute                 -->
+<!--     to identify the nonstandardized type                        -->
+<!--                                                                 -->
+<!-- =============================================================== -->
+
+<!ELEMENT cpchar    - -  (#PCDATA)                                     >
+<!ATTLIST cpchar
+          type      (APP | CLR | CMP | CTT | FRM | MET
+                    | MOI | PAR | PH | RLD | TMP | VIS
+                    | OTH)                            #REQUIRED
+          othtype   CDATA                             #IMPLIED         >
+
+<!-- =============================================================== -->
+<!--                        UNIT [Anchor]                            -->
+<!--        Units are sections which are not consumable sheets       -->
+<!--                                                                 -->
+<!--   The unit type is inherited from SECTION.  Only the following  -->
+<!--   types apply:                                                  -->
+<!--                                                                 -->
+<!--       SYM    TITLE                                              -->
+<!--       ===    ================================                   -->
+<!--       IDX =  Index                                              -->
+<!--       MDX =  Maintenance Index                                  -->
+<!--       MFR =  Standard Supplier List                             -->
+<!--       OTH =  Other                                              -->
+<!--                                                                 -->
+<!--    This list is extended by using the                           -->
+<!--     OTH type and supplying an OTHTYPE attribute                 -->
+<!--     to identify the nonstandardized type                        -->
+<!--                                                                 -->
+<!--                                                                 -->
+<!-- Chg V1.1 - Remove Type CTL, OVX, TEE (don't belong here)        -->
+<!--                                                                 -->
+<!-- =============================================================== -->
+
+<!ELEMENT unit      - - ((effect?, chgdesc*, (%w.c;)*, title, pbfmatr?,
+                         (%text; | %g.r; | graphic)+) | %deleted;)     >
+<!ATTLIST unit
+          unitnbr   NUMBER                            #REQUIRED
+          type      (IDX | MDX | MFR | OTH)           #IMPLIED
+          othtype   CDATA                             #IMPLIED
+          sectnbr   NUMBER                            #IMPLIED
+          %revatt;                                                     >
+
+<!-- =============================================================== -->
+<!--                    Append (Appendix) [Anchor]                   -->
+<!-- =============================================================== -->
+
+<!ELEMENT append    - -  ((chgdesc*, title?, (%text;)) | (%deleted;))  >
+<!ATTLIST append
+          appnbr    NUTOKEN                           #REQUIRED
+          %revatt;                                                     >
+
+<!-- =============================================================== -->
+<!--             PROCEDURE LIST STRUCTURE      (NON-TASKED)          -->
+<!-- =============================================================== -->
+
+<!ELEMENT prclist1  - -  (prcitem1+)              +(effect)            >
+<!ELEMENT prclist2  - -  (prcitem2+)                                   >
+<!ELEMENT prclist3  - -  (prcitem3+)                                   >
+<!ELEMENT prclist4  - -  (prcitem4+)                                   >
+<!ELEMENT prclist5  - -  (prcitem5+)                                   >
+<!ELEMENT prclist6  - -  (prcitem6+)                                   >
+<!ELEMENT prclist7  - -  (prcitem7+)                                   >
+
+<!ELEMENT prcitem1  - -  (prcitem, prclist2?)                          >
+<!ATTLIST prcitem1
+          id        ID                                #IMPLIED         >
+<!ELEMENT prcitem2  - -  (prcitem, prclist3?)                          >
+<!ATTLIST prcitem2
+          id        ID                                #IMPLIED         >
+<!ELEMENT prcitem3  - -  (prcitem, prclist4?)                          >
+<!ATTLIST prcitem3
+          id        ID                                #IMPLIED         >
+<!ELEMENT prcitem4  - -  (prcitem, prclist5?)                          >
+<!ATTLIST prcitem4
+          id        ID                                #IMPLIED         >
+<!ELEMENT prcitem5  - -  (prcitem, prclist6?)                          >
+<!ATTLIST prcitem5
+          id        ID                                #IMPLIED         >
+<!ELEMENT prcitem6  - -  (prcitem, prclist7?)                          >
+<!ATTLIST prcitem6
+          id        ID                                #IMPLIED         >
+<!ELEMENT prcitem7  - -  (prcitem)                                     >
+<!ATTLIST prcitem7
+          id        ID                                #IMPLIED         >
+
+<!ELEMENT prcitem   - -  (title?, (%w.c;), (%text;), graphic*)         >
+
+<!-- =============================================================== -->
+<!--                STANDARD LISTS                                   -->
+<!-- =============================================================== -->
+
+<!ELEMENT list1     - - (l1item+)                                      >
+<!ATTLIST list1
+          cont      %yesorno;                         "0"              >
+<!ELEMENT list2     - - (l2item+)                                      >
+<!ATTLIST list2
+          cont      %yesorno;                         "0"              >
+<!ELEMENT list3     - - (l3item+)                                      >
+<!ATTLIST list3
+          cont      %yesorno;                         "0"              >
+<!ELEMENT list4     - - (l4item+)                                      >
+<!ATTLIST list4
+          cont      %yesorno;                         "0"              >
+<!ELEMENT list5     - - (l5item+)                                      >
+<!ATTLIST list5
+          cont      %yesorno;                         "0"              >
+<!ELEMENT list6     - - (l6item+)                                      >
+<!ATTLIST list6
+          cont      %yesorno;                         "0"              >
+<!ELEMENT list7     - - (l7item+)                                      >
+<!ATTLIST list7
+          cont      %yesorno;                         "0"              >
+
+<!ELEMENT l1item    - - (((%w.c;), (%text; | entry*)), (list2, note*)?)>
+<!ATTLIST l1item
+          id        ID                                #IMPLIED
+          cont      %yesorno;                         "0"              >
+<!ELEMENT l2item    - - (((%w.c;), (%text; | entry*)), (list3, note*)?)>
+<!ATTLIST l2item
+          id        ID                                #IMPLIED
+          cont      %yesorno;                         "0"              >
+<!ELEMENT l3item    - - (((%w.c;), (%text; | entry*)), (list4, note*)?)>
+<!ATTLIST l3item
+          id        ID                                #IMPLIED
+          cont      %yesorno;                         "0"              >
+<!ELEMENT l4item    - - (((%w.c;), (%text; | entry*)), (list5, note*)?)>
+<!ATTLIST l4item
+          id        ID                                #IMPLIED
+          cont      %yesorno;                         "0"              >
+<!ELEMENT l5item    - - (((%w.c;), (%text; | entry*)), (list6, note*)?)>
+<!ATTLIST l5item
+          id        ID                                #IMPLIED
+          cont      %yesorno;                         "0"              >
+<!ELEMENT l6item    - - (((%w.c;), (%text; | entry*)), (list7, note*)?)>
+<!ATTLIST l6item
+          id        ID                                #IMPLIED
+          cont      %yesorno;                         "0"              >
+<!ELEMENT l7item    - - ((%w.c;), (%text; | entry*))                   >
+<!ATTLIST l7item
+          id        ID                                #IMPLIED
+          cont      %yesorno;                         "0"              >
+
+<!-- =============================================================== -->
+<!--            Tabular data                                         -->
+<!-- =============================================================== -->
+
+<!ELEMENT tabdat    - -  ((effect?, title?, tabgroup, ftnote*)
+                         | graphic* | %deleted;)  -(tabdat)            >
+<!ATTLIST tabdat
+          formal    (F | I)                           "I"
+          frame     (top | bottom | topbot | all
+                    | sides | none)                   #IMPLIED
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED
+          orient    (port | land)                     #IMPLIED
+          pgwide    %yesorno;                         #IMPLIED
+          id        ID                                #IMPLIED
+          alt       (C | B)                           "B"              >
+
+<!ELEMENT tabgroup  - O  (colspec*, spanspec*, thead?, tfoot?)         >
+<!ATTLIST tabgroup
+          cols      NUMBER                            #REQUIRED
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED
+          align     (left | right | center
+                    | justify | char)                 "left"
+          charoff   NUTOKEN                           "50"
+          char      CDATA                             #IMPLIED         >
+<!--                                                                 -->
+<!-- =============================================================== -->
+<!--            TABLE (CELLULAR, CALS BASED)                         -->
+<!-- =============================================================== -->
+<!--                                                                 -->
+<!ELEMENT table     - -  ((title?, tgroup, ftnote*) |
+                           graphic+)                   -(table)        >
+<!ATTLIST table
+          tabstyle  NMTOKEN                           #IMPLIED
+          frame     (top | bottom | topbot | all
+                    | sides | none)                   #IMPLIED
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED
+          orient    (port | land)                     #IMPLIED
+          pgwide    %yesorno;                         #IMPLIED
+          id        ID                                #IMPLIED
+          formal    (F | I)                           "I"              >
+
+<!ELEMENT tgroup    - O  (colspec*, spanspec*, thead?, tfoot?, tbody)  >
+<!ATTLIST tgroup
+          cols      NUMBER                            #REQUIRED
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED
+          align     (left | right | center
+                    | justify | char)                 "left"
+          charoff   NUTOKEN                           "50"
+          char      CDATA                             ""               >
+
+<!ELEMENT colspec   - O  EMPTY                                         >
+<!ATTLIST colspec
+          colnum    NUMBER                            #IMPLIED
+          colname   NMTOKEN                           #IMPLIED
+          align     (left | right | center
+                    | justify | char)                 #IMPLIED
+          charoff   NUTOKEN                           #IMPLIED
+          char      CDATA                             #IMPLIED
+          colwidth  CDATA                             #IMPLIED
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED         >
+
+<!ELEMENT spanspec  - O  EMPTY                                         >
+<!ATTLIST spanspec
+          namest    NMTOKEN                           #REQUIRED
+          nameend   NMTOKEN                           #REQUIRED
+          spanname  NMTOKEN                           #IMPLIED
+          align     (left | right | center
+                    | justify | char)                 "center"
+          charoff   NUTOKEN                           #IMPLIED
+          char      CDATA                             #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED
+          colsep    %yesorno;                         #IMPLIED         >
+
+<!ELEMENT thead     - O  (colspec*, row+)                              >
+<!ATTLIST thead
+          valign    (top | middle | bottom)           "bottom"         >
+
+<!ELEMENT tfoot     - O  (colspec*, row+)                              >
+<!ATTLIST tfoot
+          valign    (top | middle | bottom)           "top"            >
+
+<!ELEMENT tbody     - O  (row+)                                        >
+<!ATTLIST tbody
+          valign    (top | middle | bottom)           "top"            >
+
+<!ELEMENT row       - O  (entry+)                                      >
+<!ATTLIST row
+          rowsep    %yesorno;                         #IMPLIED         >
+
+<!ELEMENT entry     - O  (%text; | graphic | %w.c; | %tblitem;)*       >
+<!ATTLIST entry
+          colname   NMTOKEN                           #IMPLIED
+          namest    NMTOKEN                           #IMPLIED
+          nameend   NMTOKEN                           #IMPLIED
+          spanname  NMTOKEN                           #IMPLIED
+          morerows  NUMBER                            "0"
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED
+          rotate    %yesorno;                         "0"
+          valign    (top | bottom | middle)           "top"
+          align     (left | right | center
+                    | justify | char)                 #IMPLIED
+          charoff   NUTOKEN                           #IMPLIED
+          char      CDATA                             #IMPLIED         >
+
+<!ELEMENT ftnote    - -  %text;                                        >
+<!ATTLIST ftnote
+          ftnoteid  ID                                #REQUIRED        >
+<!--                                                                 -->
+<!-- =============================================================== -->
+<!--                         GRAPHICS                                -->
+<!-- Chg V1.1 - Graphic attribs (chapnbr, pgblknbr, subjnbr, func,   -->
+<!--  seq, confltr, varnbr, and alunqi) removed; don't belong here   -->
+<!--  Added connbr, cptype, unitnbr instead.                         -->
+<!--                                                                 -->
+<!-- =============================================================== -->
+<!--    REFERENCE BLOCK and GRAPHIC REFERENCING MECHANISMS           -->
+<!-- =============================================================== -->
+
+<!ELEMENT refblock  - -  (#PCDATA | refint | refext | grphcref)*       >
+
+<!ELEMENT grphcref  - -  (effect?, #PCDATA)                            >
+<!ATTLIST grphcref
+          refid     IDREF                             #REQUIRED
+          sheetnbr  CDATA                             #IMPLIED
+          structid  CDATA                             #IMPLIED
+          shownow   %yesorno;                         "0"              >
+
+<!ELEMENT graphic   - -  (effect?, ((chgdesc*, title?, sheet+)
+                         | %deleted;))                                 >
+<!ATTLIST graphic
+          sectnbr   NUMBER                            #IMPLIED
+          connbr    NUMBER                            #IMPLIED
+          cptype    CDATA                             #IMPLIED
+          unitnbr   NUMBER                            #IMPLIED
+          %revatt;                                                     >
+
+<!ELEMENT sheet     - -  (effect?, ((chgdesc*, title?, gdesc?)
+                         | %deleted;))                                 >
+<!ATTLIST sheet
+          gnbr      ENTITY                            #REQUIRED
+          cfnbr     ENTITY                            #IMPLIED
+          sheetnbr  CDATA                             #REQUIRED
+          imgarea   (AP|BP|CP|DL|EL|FP|GP|HL|IL)      #IMPLIED
+          %revatt;                                                     >
+
+<!ELEMENT gdesc     - -  (effect?, %text;)                             >
+
+<!ELEMENT grsymbol   - O  EMPTY                                        >
+<!ATTLIST grsymbol
+          gnbr      ENTITY                            #REQUIRED
+          reprowid  CDATA                             #IMPLIED
+          reprohgt  CDATA                             #IMPLIED
+          reproscl  CDATA                             #IMPLIED         >
+
+<!-- =============================================================== -->
+<!--             NUMBERED AND UN-NUMBERED LISTS                      -->
+<!-- =============================================================== -->
+
+<!ELEMENT unlist    - -  (unlitem+)                                    >
+<!ATTLIST unlist
+          bulltype  (NONE | BULLET | NDASH | MDASH
+                     | DIAMOND | ASTERISK | DELTA
+                     | SQUARE | SYSTEM)               "SYSTEM"         >
+
+<!ELEMENT unlitem   - -  (para+)                                       >
+<!ELEMENT numlist   - -  (numlitem+)                                   >
+<!ATTLIST numlist
+          numtype   (NNP | AUP | NNB | ALB | NNS
+                     | ALS | DBR | RUP | RLP | RUR
+                     | RLR | NNR | AUR | ALR)         "NNP"            >
+
+<!ELEMENT numlitem  - -  (para+)                                       >
+<!ATTLIST numlitem
+          label     CDATA                             #IMPLIED         >
+
+<!-- =============================================================== -->
+<!--                       PARAGRAPH                                 -->
+<!-- =============================================================== -->
+
+<!ELEMENT para     - -  (#PCDATA | con | csn | equ | grphcref | ncon
+                        | refext | refint | std | sub | super | ted
+                        | toc | txtgrphc | %tblitem; | refmedia
+                        | grsymbol)+                                   >
+
+<!-- =============================================================== -->
+<!--                  PARAGRAPH CONTENTS                             -->
+<!-- =============================================================== -->
+
+<!ELEMENT con       - - (connbr, conname)                              >
+<!ELEMENT connbr    - - (#PCDATA)                                      >
+<!ELEMENT conname   - - (#PCDATA)                                      >
+<!ELEMENT csn       - O EMPTY                                          >
+<!ATTLIST csn
+          chapnbr   NUMBER                            #REQUIRED
+          sectnbr   NUMBER                            #REQUIRED
+          unitnbr   NUMBER                            #REQUIRED
+          fignbr    NUTOKEN                           #REQUIRED
+          itemnbr   NUTOKEN                           #REQUIRED        >
+
+<!ELEMENT equ       - - (#PCDATA | sub | super)+                       >
+
+<!ELEMENT dd        - - (#PCDATA)                                      >
+<!ATTLIST dd
+          unit      (ft | in | mm | cm | m)           #IMPLIED         >
+
+<!ELEMENT fluidvol  - - (#PCDATA)                                      >
+<!ATTLIST fluidvol
+          unit      (gal | qt | pt | oz | l
+                    | dl | ml | cc)                   #IMPLIED         >
+
+<!ELEMENT weight    - - (#PCDATA)                                      >
+<!ATTLIST weight
+          unit      (lb | oz | kg | g)                #IMPLIED         >
+
+<!ELEMENT mfrec     - - (#PCDATA)                                      >
+<!ELEMENT func      - - (#PCDATA)                                      >
+<!ELEMENT ncon      - - (#PCDATA)                                      >
+<!ELEMENT pnr       - - (#PCDATA)                                      >
+
+<!ELEMENT refext    - - (#PCDATA)                                      >
+<!ATTLIST refext
+          refman    CDATA                             #IMPLIED
+          docnbr    CDATA                             #IMPLIED
+          refloc    CDATA                             #IMPLIED
+          refspl    CDATA                             #IMPLIED
+          refmodel  CDATA                             #IMPLIED         >
+
+<!ELEMENT refint    - - (#PCDATA)                                      >
+<!ATTLIST refint
+          reftype   CDATA                             #IMPLIED
+          refid     IDREF                             #REQUIRED        >
+
+<!ELEMENT refmedia - - (#PCDATA)                                       >
+<!ATTLIST refmedia
+          mednbr    ENTITY                            #REQUIRED        >
+
+
+<!ELEMENT std       - - (stdnbr, stdname)                              >
+<!ELEMENT stdnbr    - - (#PCDATA)                                      >
+<!ELEMENT stdname   - - (#PCDATA)                                      >
+<!ELEMENT sub       - - (#PCDATA)                                      >
+<!ELEMENT super     - - (#PCDATA)                                      >
+<!ELEMENT ted       - - (toolnbr, toolname)                            >
+<!ELEMENT toolnbr   - - (#PCDATA)                                      >
+<!ELEMENT toolname  - - (#PCDATA)                                      >
+
+<!ELEMENT toc       - - (#PCDATA)                                      >
+<!ATTLIST toc
+          readable  %yesorno;                         "1"              >
+
+<!ELEMENT txtgrphc  - - (txtline+)                                     >
+<!ELEMENT txtline   - - (#PCDATA)                                      >
+
+<!-- =============================================================== -->
+<!--                    TITLE, ETC.                                  -->
+<!-- =============================================================== -->
+
+<!ELEMENT title     - -  (#PCDATA | sub | super | ted)+                >
+
+<!ELEMENT warning   - -  (effect?, %text;)          -(note) +(effect)  >
+<!ELEMENT caution   - -  (effect?, %text;)          -(note) +(effect)  >
+<!ELEMENT note      - -  (effect?, %text;)          -(note) +(effect)  >
+
+<!-- =============================================================== -->
+<!--     MISCELLANEOUS CONSTRUCTIONS TO:                             -->
+<!--     MARK EFFECTIVITIES                                          -->
+<!--     MARK DELETED AND REVISED ELEMENTS                           -->
+<!--     SUPPORT CROSS-REFERENCING MECHANISMS                        -->
+<!-- =============================================================== -->
+
+<!ELEMENT chgdesc   - -  (#PCDATA)                                     >
+<!ATTLIST chgdesc
+          chgdtype        (edit|tech|effect|sgml)     #IMPLIED         >
+<!-- sbeff and coceff removed - no sb or coc in CPM                  -->
+<!-- effect content is empty                                         -->
+<!ELEMENT effect    - O  EMPTY                                         >
+<!ATTLIST effect
+          effrg     CDATA                             #IMPLIED
+          efftext   CDATA                             #IMPLIED         >
+
+<!ELEMENT deleted   - O  EMPTY                                         >
+
+<!ELEMENT revst     - O  EMPTY                                         >
+<!ELEMENT revend    - O  EMPTY                                         >
+
+<!ELEMENT hotlink   - O  EMPTY                                         >
+<!ATTLIST hotlink
+          targetid      CDATA                         #IMPLIED
+          targetrefid   CDATA                         #IMPLIED         >
+<!--   ]>   -->

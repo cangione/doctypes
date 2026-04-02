@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2001-56US: Introduce new entity %COMMSEC; defining optional *
+    *                   attributes commcls and caveat for commercial     *
+    *                   classification and caveats, respectively.        *
+    *                   Amend entities %secur; and %SECURIT; to use      *
+    *                   these attributes.                                *
+    * 3. Introduce new entity %DATE; defining attributes year, month and *
+    *    day for general purpose use in various attribute lists.         *
+    * 4. Consistency:   Change attribute values in entity %SKILL; from   *
+    *                   uppercase to lowercase.                          *
+    * 5. TPSMG request: File and entity name changed from AECMA to S1000D*
+    * 6. CPF 2001-74SE: Introduce CDATA declarations for all project     *
+    *                   configurable attributes, defined in param ents.  *
+    *                   New project configuration file PROJECT.CFG       *
+    *                   invoked (makes project redeclarations, if any).  *
+    *                                                                    *
+    * NOTE:-                                                             *
+    * ======                                                             *
+    * The S1000D configuration component is for information purposes only*
+    * and should NOT be configured as project specific.                  *
+    * Project specific declarations should all be made in the project    *
+    * configuration file PROJECT.CFG.                                    *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % S1000D                                                  *
+    *   PUBLIC "-//S1000D//ENTITIES S1000D Configuration 20030531//EN" > *
+    * %S1000D;                                                           *
+    ********************************************************************** -->
+
+
+	<xs:attributeGroup name="COMMSEC">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %COMMSEC; (Commercial Security) containing:-         *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *                                                                    *
+    *  commcls    - Declared - IMPLIED - Identifies Commercial Security. *
+    *  caveat     - Declared - IMPLIED - Identifies Caveats.             *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="commcls" type="COMMCLSS"/>
+		<xs:attribute name="caveat" type="CAVEATS"/>
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="secur">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %secur; (Content Security) containing:-              *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *                                                                    *
+    *  class    - Declared - IMPLIED - Identifies Security Marking.      *
+    *  Definition stored in entity %COMMSEC;                             *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="class" type="CLASSES"/>
+		<xs:attributeGroup ref="COMMSEC"/>
+	</xs:attributeGroup>
+
+	<xs:simpleType name="RPCNAME">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %RPCNAME; (Responsible Partner Company Names)        *
+    *====================================================================*
+    *  RPC identification or NCAGE code as required.                     *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="ORGNAME">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %ORGNAME; (Originator Names) containing:-            *
+    *====================================================================*
+    *  ORIG identification or NCAGE code as required.                    *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="CATEG">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %CATEG; (Personnel Category) containing:-            *
+    *====================================================================*
+    * To tailor the %CATEG; entity for project use, replace CDATA with   *
+    * personnel category as required.                                    *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>		
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<xs:attributeGroup name="INSDEL">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %INSDEL; (Change Level Attributes)                   *
+    *  containing:-                                                      *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  level     - NUMBER   - IMPLIED  - Identifies the level or Data    *
+    *                         issue (project specific) at which the      *
+    *                         information was revised/updated            *
+    *  mark      - NUMBER   - IMPLIED - Revision Bar. (This can be used  *
+    *                         in conjunction which level to only produce *
+    *                         revision bar for the current level/issue of*
+    *                         data module.)                              *
+    *              - "0"      - Do not mark change with Revision bars    *
+    *              - "1"      - Mark this change with Revision Bars      *
+    *  change    - Declared - IMPLIED  - Identifies the type of change   *
+    *              - "add"    - Information was changed/revised          *
+    *              - "delete" - Information was deleted                  *
+    *  rfc       - CDATA    - IMPLIED  - Specifies the reason for change *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="level" type="xs:string"/>
+		<xs:attribute name="mark" type="xs:string"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="add"/>
+					<xs:enumeration value="delete"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="rfc" type="xs:string"/>
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="bodyatt">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %bodyatt; (Body Attributes) containing:-             *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id        - ID       - IMPLIED  - An identifier of the element    *
+    *                       which is assigned at origination and which   *
+    *                       remains unchanged as the document is revised *
+    *                       or updated even though the automatically     *
+    *                       assigned enumeration "labels" change. The    *
+    *                       value of "id" is used when making references *
+    *                       to the element from other portions of the    *
+    *                       document.                                    *
+    *  Attribute Definition List stored in entity %INSDEL;               *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:attributeGroup>
+
+	<xs:simpleType name="SKILL">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %SKILL; (Personnel Skill Level) containing:-         *
+    *  Declared Attribute List.                                          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    *   Definition stored in entity %SKILLS;.                            *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="SKILLS"/>
+	</xs:simpleType>
+	
+
+	<xs:simpleType name="MONTH">
+		<xs:restriction base="xs:int">
+			 <xs:minInclusive value="1"/>
+			 <xs:maxInclusive value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DAY">
+		<xs:restriction base="xs:int">
+		 <xs:minInclusive value="1"/>
+		 <xs:maxInclusive value="31"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:attributeGroup name="DATE">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %DATE; (Date breakdown) containing:-                 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  year     - NUMBER - REQUIRED - The year. (YYYY)                   *
+    *  month    - NUMBER - REQUIRED - The month of the year. (MM)        *
+    *  day      - NUMBER - REQUIRED - The day of the month. (DD)         *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="year" type="xs:gYear" use="required"/>
+		<xs:attribute name="month" type="MONTH" use="required"/>
+		<xs:attribute name="day" type="DAY" use="required"/>
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="SECURIT">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %SECURIT; (Status Security) containing:-             *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *                                                                    *
+    *  class    - Declared - REQUIRED - Identifies Security Marking.     *
+    *  Definition stored in entity %COMMSEC;                             *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="class" type="CLASSES" use="required"/>
+		<xs:attributeGroup ref="COMMSEC"/>
+	</xs:attributeGroup>
+
+	<xs:simpleType name="FIC">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %FIC; (Functional Item Code) containing:-            *
+    *  Parsed Character Data.                                            *
+    *====================================================================*
+    * To tailor the fic element for project specific use,                *
+    * replace PCDATA as required.                                        *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="SBC">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %SBC; (System Breakdown Code) containing:-           *
+    *  Parsed Character Data.                                            *
+    *====================================================================*
+    * To tailor the sbc element for project specific use,                *
+    * replace PCDATA as required.                                        *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<xs:group name="fft_inc">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Group fft_inc, standing for inclusions of:                  *
+    *====================================================================*
+    *     - figure                                                       *
+    *     - foldout                                                      *																 *
+    *     - table                                                        *															 *
+    *====================================================================*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="figure"/>
+			<xs:element ref="foldout"/>
+			<xs:element ref="table"/>
+		</xs:choice>
+	</xs:group>
+
+	<xs:group name="cap_inc">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Group cap_inc, standing for inclusions of:                  *
+    *====================================================================*
+    *     - caption                                                      *
+    *====================================================================*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="caption"/>
+		</xs:choice>
+	</xs:group>
+
+	<xs:group name="gen_inc">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Group gen_inc (General Inclusions) for inclusions of:       *
+    *     - fft_inc  (figure, foldout, table)                            *
+    *     - cap_inc (caption)                                            *
+    *====================================================================*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:group ref="fft_inc"/>
+			<xs:group ref="cap_inc"/>
+		</xs:choice>
+	</xs:group>
+
+
+</xs:schema>

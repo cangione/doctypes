@@ -1,0 +1,339 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.1                            *
+    *                       Date: 2004-02-29                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2003-10US, 2003-11US, 2004-11US: Update public identifier   *
+    *                                         date of entity %INTERACT;. *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % COMPS                                                   *
+    *   PUBLIC "-//S1000D//ENTITIES Component Definitions 20040229//EN" >*
+    * %COMPS;                                                            *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %PROJECT; (PROJECT Configuration) containing:- the   *
+    * formal public identifier for the Project Configuration public text.*
+    ********************************************************************** -->
+
+<!ENTITY % PROJECT
+  PUBLIC "-//S1000D//ENTITIES S1000D Project Configuration//EN" >
+
+
+<!--**********************************************************************
+    * Define Entity %S1000D; (S1000D Configuration) containing:- the     *
+    * formal public identifier for the S1000D Configuration public text. *
+    ********************************************************************** -->
+
+<!ENTITY % S1000D
+  PUBLIC "-//S1000D//ENTITIES S1000D Configuration 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %COMMON; (Common Entities) containing:- the formal   *
+    * public identifier for the Common Entities public text.             *
+    ********************************************************************** -->
+
+<!ENTITY % COMMON
+  PUBLIC "-//S1000D//ENTITIES Common Entities 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define and call Entity %ISOENTS; (ISO Entity Defs) containing:-    *
+    * the formal public identifiers for the ISO Entities public text.    *
+    ********************************************************************** -->
+
+<!ENTITY % ISOENTS
+  PUBLIC "-//S1000D//ENTITIES ISO Entity Definitions 20030531//EN" >
+  
+%ISOENTS;
+
+
+
+<!--**********************************************************************
+    * Define Entity %BASE; (S1000D Base DTD structure) containing:-      *
+    * the formal public identifier for the S1000D Base DTD public text.  *
+    ********************************************************************** -->
+
+<!ENTITY % BASE
+  PUBLIC "-//S1000D//ELEMENTS S1000D Base DTD 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTDMC; (Data Module Code Breakdown) containing:-   *
+    * the formal public identifier for the Data Module Code Breakdown    *
+    * public text.                                                       *
+    ********************************************************************** -->
+
+<!ENTITY % EXTDMC
+  PUBLIC "-//S1000D//ELEMENTS Data Module Code Breakdown 20030531//EN" >
+  
+  
+
+<!--**********************************************************************
+    * Define Entity %EXTPMC; (Publication Module Code Breakdown)         *
+    * containing:-                                                       *
+    * the formal public identifier for the Publication Module Code       *
+    * Breakdown public text.                                             *
+    ********************************************************************** -->
+
+<!ENTITY % EXTPMC PUBLIC
+  "-//S1000D//ELEMENTS Publication Module Code Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTSTAT; (Status Breakdown) containing:- the formal *
+    * public identifier for the Status Breakdown public text.            *
+    ********************************************************************** -->
+
+<!ENTITY % EXTSTAT
+  PUBLIC "-//S1000D//ELEMENTS Status Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTRESTR; (Data Restrictions Breakdown)             *
+    * containing:-                                                       *
+    * the formal public identifier for the Data Restrictions Breakdown   *
+    * public text.                                                       *
+    ********************************************************************** -->
+
+<!ENTITY % EXTRESTR PUBLIC
+  "-//S1000D//ELEMENTS Data Restrictions 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTAPPL; (Applicability Breakdown) containing:- the *
+    * formal public identifier for the Applicability Breakdown public    *
+    * text.                                                              *
+    ********************************************************************** -->
+
+<!ENTITY % EXTAPPL
+  PUBLIC "-//S1000D//ELEMENTS Applicability Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTCONT; (Content Breakdown) containing:-  the      *
+    * formal public identifier for the Content Breakdown public text.    *
+    ********************************************************************** -->
+
+<!ENTITY % EXTCONT
+  PUBLIC "-//S1000D//ELEMENTS Content Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTPARA; (Numbered Paragraphs) containing:-  the    *
+    * formal public identifier for the Numbered Paragraphs Breakdown     *
+    * public text.                                                       *
+    ********************************************************************** -->
+
+<!ENTITY % EXTPARA
+  PUBLIC "-//S1000D//ELEMENTS Numbered Paragraphs Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTFTAB; (Figure & Table Breakdown) containing:-    *
+    * the formal public identifier for the Figure & Table Breakdown      *
+    * public text.                                                       *
+    ********************************************************************** -->
+
+<!ENTITY % EXTFTAB
+  PUBLIC "-//S1000D//ELEMENTS Figure And Table Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTSTEP; (Step Breakdown) containing:-  the formal  *
+    * public identifier for the Step Breakdown public text.              *
+    ********************************************************************** -->
+
+<!ENTITY % EXTSTEP
+  PUBLIC "-//S1000D//ELEMENTS Steps Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTLIST; (Lists Breakdown) containing:-  the formal *
+    * public identifier for the Lists Breakdown public text.             *
+    ********************************************************************** -->
+
+<!ENTITY % EXTLIST
+  PUBLIC "-//S1000D//ELEMENTS Lists Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %ACRWCFG; (All Crew Configuration) containing:- the  *
+    * formal public identifier for the Crew Configuration public text.   *
+    ********************************************************************** -->
+
+<!ENTITY % ACRWCFG
+  PUBLIC "-//S1000D//ENTITIES Crew Configuration 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %CREW; (Crew Information Breakdown) containing:-     *
+    * the formal public identifier for the Crew Information Breakdown    *
+    * public text.                                                       *
+    ********************************************************************** -->
+
+<!ENTITY % CREW
+  PUBLIC "-//S1000D//ELEMENTS Crew Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %DESCRPT; (Description) containing:-  the formal     *
+    * public identifier for the Description Content public text.         *
+    ********************************************************************** -->
+
+<!ENTITY % DESCRPT
+  PUBLIC "-//S1000D//ELEMENTS Description Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %PROCED; (Procedural) containing:-        the formal *
+    * public identifier for the Procedural Content public text.          *
+    ********************************************************************** -->
+
+<!ENTITY % PROCED
+  PUBLIC "-//S1000D//ELEMENTS Procedural Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %IPD; (Illustrated Parts Data) containing:-          *
+    * the formal public identifier for the IPD Content public text.      *
+    ********************************************************************** -->
+
+<!ENTITY % IPD
+  PUBLIC "-//S1000D//ELEMENTS Illustrated Parts Data 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %WCNP; (Warning, Caution, Note, Para) containing:-   *
+    * the formal public identifier for the WCNP public text.             *
+    ********************************************************************** -->
+
+<!ENTITY % WCNP
+PUBLIC "-//S1000D//ELEMENTS Warning Caution Note Paragraphs 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %PRELREQ; (Preliminary Requirements) containing:-    *
+    * the formal public identifier for the PRELREQ public text.          *
+    ********************************************************************** -->
+
+<!ENTITY % PRELREQ
+  PUBLIC "-//S1000D//ELEMENTS Preliminary Requirements 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %SCHEDUL; (Schedule Breakdown) containing:-          *
+    * the formal public identifier for the SCHEDUL public text.          *
+    ********************************************************************** -->
+
+<!ENTITY % SCHEDUL
+  PUBLIC "-//S1000D//ELEMENTS Schedule Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %FAULT; (Fault Breakdown) containing:-               *
+    * the formal public identifier for the FAULT public text.            *
+    ********************************************************************** -->
+
+<!ENTITY % FAULT
+  PUBLIC "-//S1000D//ELEMENTS Fault Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %NI; (NOMEN and IDENTNO) containing:-                *
+    * the formal public identifier for the NI public text.               *
+    ********************************************************************** -->
+
+<!ENTITY % NI
+  PUBLIC "-//S1000D//ELEMENTS NOMEN and IDENTNO 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %CAPGRP; (Caption Group) containing:-                *
+    * the formal public identifier for the CAPGRP public text.           *
+    ********************************************************************** -->
+
+<!ENTITY % CAPGRP
+  PUBLIC "-//S1000D//ELEMENTS Caption Group 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %PMDATA; (Product Management Data) containing:-      *
+    * the formal public identifier for the PMDATA public text.           *
+    ********************************************************************** -->
+
+<!ENTITY % PMDATA
+  PUBLIC "-//S1000D//ELEMENTS Product Management Data 20030531//EN" >
+
+  
+
+<!--**********************************************************************
+    * Define Entity %WRNGDATA; (Wiring Data) containing:-                *
+    * The formal public identifier for wiring data definitions.          *
+    ********************************************************************** -->
+
+<!ENTITY % WRNGDATA 
+  PUBLIC "-//S1000D//ELEMENTS WRNGDATA Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %WRNGFLDS; (Wiring Data Description) containing:-    *
+    * The formal public identifier for wiring data descriptions/fields.  *
+    ********************************************************************** -->
+
+<!ENTITY % WRNGFLDS 
+  PUBLIC "-//S1000D//ELEMENTS WRNGFLDS Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %PROCESS; (Process Module Breakdown) containing:-    *
+    * the formal public identifier for the PROCESS public text           *
+    ********************************************************************** -->
+
+<!ENTITY % PROCESS
+  PUBLIC "-//S1000D//ELEMENTS Process Module Breakdown 20030531//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %INTERACT; (Interactive Common Data) containing:-    *
+    * the formal public identifier for the INTERACT public text          *
+    ********************************************************************** -->
+
+<!ENTITY % INTERACT
+  PUBLIC "-//S1000D//ELEMENTS Interactive Common Data 20040229//EN" >
+<!-- Public identifier date updated -->

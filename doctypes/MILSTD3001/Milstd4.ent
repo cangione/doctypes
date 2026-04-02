@@ -1,0 +1,454 @@
+<!--  PUBLIC "-//USA-DOD//ELEMENTS 3001 Part 4 Draft XML V307 08242016"-->
+
+<!-- 		DTD for Maintenance Information 
+		With Illustrated Parts Breakdown 
+-->
+
+
+<!ENTITY % tasks "(prepuse | handling | stow | remove | dissam | clncorr  | insp | service | repair  | align | paint | lube | assem | test-inspect | install | rig | adjust | calibrate | pss | envircond | safe | engstart | softload | fabricate | packing | unpacking | preserve | track | fuel | defuel | canning | decanning)*">
+
+<!ENTITY % wpmaintreqipb  "(titleblk,  wpinfo,  intro?, %tasks;, ipb?, figsect?, foldsect?)">
+
+<!ENTITY % wpmaintoptipb  "(titleblk,  wpinfo,  intro?, %tasks;, ipb?, figsect?, foldsect?)">
+
+<!ENTITY % wpmaintnoipb  "(titleblk,  wpinfo,  intro?, %tasks;,  figsect?, foldsect?)">
+
+<!-- ======================== -->
+
+<!--	 Root Element for Maintenance Information Module -->
+<!ELEMENT maintim  (maintwp |  genmaintwp | servicewp | grndopwp | semaintwp | locmfgwp| geninfomaintwp | qeckdescwp | qecawp | nonqecawp | bldupwp | preindinspwp | compindwp | brktwp | extcompwp | extubwp | critclwp | ipbwp | wirelistwp | wirediawp | scc)* >
+<!ATTLIST maintim 	  %docatt;
+					   %secur;>
+
+<!--Maintenance Work Packages-->
+<!ELEMENT maintwp  (%wpmaintreqipb;) >
+<!ATTLIST maintwp 	%wpatt;
+				 %secur;>
+
+<!--Ground Handling Work Packages-->
+<!ELEMENT grndopwp (titleblk,  wpinfo,  intro?, (grndop | handling)*, ipb?, figsect?, foldsect?) >
+<!ATTLIST grndopwp 	%wpatt;
+					 %secur;>
+
+<!--General Maintenance Procedures Work Package-->
+<!ELEMENT genmaintwp  (%wpmaintoptipb;) >
+<!ATTLIST genmaintwp 	%wpatt;
+				 %secur;>
+
+<!--Servicing Work Package-->
+<!ELEMENT servicewp  (%wpmaintnoipb;) >
+<!ATTLIST servicewp 	%wpatt;
+				 %secur;>
+
+<!--Support Equipment Maintenance Work Package -->
+<!ELEMENT semaintwp  (%wpmaintoptipb;) >
+<!ATTLIST semaintwp 	%wpatt;
+				 %secur;>
+
+<!--Local Manufacturing and Assembly Work Package-->
+<!ELEMENT locmfgwp  (%wpmaintoptipb;) >
+<!ATTLIST locmfgwp 	%wpatt;
+				 %secur;>
+
+<!--General Information Maintenance Work Package-->
+<!ELEMENT geninfomaintwp   (%wpmaintreqipb;) >
+<!ATTLIST geninfomaintwp 	%wpatt;
+				 	%secur;>
+
+<!--Quick Engine Change Kit Description Work Package -->
+<!ELEMENT qeckdescwp  (titleblk,  wpinfo,  intro?, qeckdesc,  figsect?, foldsect?) >
+<!ATTLIST qeckdescwp 	%wpatt;
+				 %secur;>
+
+<!-- A listing and description of the components and equipment which comprise the QECK. Part of the Quick Engine Change Kit Description Work Package. -->
+<!ELEMENT qeckdesc (title, (%paracon;)*, qecklist, qeckcompdesc+)>
+<!ATTLIST qeckdesc 	%bodyatt;
+				 	%secur;>
+
+<!-- A listing of the components and equipment which comprise the QECK. Part of the Quick Engine Change Kit Description Work Package. -->
+<!ELEMENT qecklist (title?, qeckentry+)>
+<!ATTLIST qecklist 	%bodyatt;
+				 	%secur;>
+
+<!-- An individual entry of the QECK component listing. Part of the Quick Engine Change Kit Description Work Package. -->
+<!ELEMENT qeckentry (#PCDATA | %pctext;)*>
+<!ATTLIST qeckentry 	 %secur;>
+
+<!-- A description of the components and equipment which comprise the QECK. Part of the Quick Engine Change Kit Description Work Package. -->
+<!ELEMENT qeckcompdesc (title, desc, qeckcompdesc*)>
+<!ATTLIST qeckcompdesc 	%bodyatt;
+				 			%secur;>
+
+<!--Quick Engine Change Assembly Work Package -->
+<!ELEMENT qecawp  (%wpmaintreqipb;) >
+<!ATTLIST qecawp 	%wpatt;
+				 %secur;>
+
+<!--Non-Quick Engine Change Assembly Work Package -->
+<!ELEMENT nonqecawp  (%wpmaintreqipb;) >
+<!ATTLIST nonqecawp 	%wpatt;
+				 %secur;>
+
+<!--Additional Power Plant Build-up Work Package -->
+<!ELEMENT bldupwp  (%wpmaintreqipb;) >
+<!ATTLIST bldupwp 	%wpatt;
+				 %secur;>
+
+<!--Preinduction and Mandatory Inspection Work Package -->
+<!ELEMENT preindinspwp  (%wpmaintoptipb;) >
+<!ATTLIST preindinspwp 	%wpatt;
+				 %secur;>
+
+<!--Numerical Index Work Package -->
+<!ELEMENT compindwp    (titleblk, intro?, compind, figsect?, foldsect?) >
+<!ATTLIST compindwp 	%wpatt;
+				 %secur;>
+
+<!--Numerical Index of External Part Numbers -->
+<!ELEMENT compind (title,  compindentry+, noteslist?)>
+<!ATTLIST compind 	%bodyatt;
+				 	%secur;>
+
+<!--Individual Entry in the Numerical Index of External Part Numbers -->
+<!ELEMENT compindentry (partno, seqno)>
+<!ATTLIST compindentry 	%refs;
+				 		%secur;>
+
+<!--Bracket Installation Work Package -->
+<!ELEMENT brktwp   (titleblk,  wpinfo,  intro?, (%proccon;), %tasks;,  figsect?, foldsect?) >
+<!ATTLIST brktwp 	%wpatt;
+				 %secur;>
+
+<!--External Components Work Package -->
+<!ELEMENT extcompwp  (titleblk,  wpinfo,  intro?, %tasks;,  figsect?, foldsect?) >
+<!ATTLIST extcompwp 	%wpatt;
+				 %secur;>
+
+<!--External Tubing, Cabling, and Clamping Installation Work Package -->
+<!ELEMENT extubwp  (titleblk,  wpinfo,  intro?, %tasks;,  figsect?, foldsect?) >
+<!ATTLIST extubwp 	%wpatt;
+				 %secur;>
+
+<!--Critical Clearances Work Package -->
+<!ELEMENT critclwp  (titleblk,  wpinfo,  intro?, %tasks;,  figsect?, foldsect?) >
+<!ATTLIST critclwp 	%wpatt;
+				 %secur;>
+
+<!--Separate IPB Work Package -->
+<!ELEMENT ipbwp (titleblk,  wpinfo,  intro?, plgrp*)>
+<!ATTLIST ipbwp 	%wpatt;
+				 %secur;>
+
+<!-- Wire List Work Package -->
+ <!ELEMENT wirelistwp (titleblk,  wpinfo,  intro, (foldout | figure | table)+)>
+<!ATTLIST wirelistwp 	%wpatt;
+				 %secur;>
+
+<!-- Wiring Diagram Work Package -->
+<!ELEMENT wirediawp (titleblk,  wpinfo,  intro, (foldout | figure | table)+)>
+<!ATTLIST wirediawp 	%wpatt;
+			%secur;>
+
+<!--Sequence Control Chart-->
+<!ELEMENT scc  (graphic)>
+<!ATTLIST scc 	%bodyatt;
+		%secur;>
+
+<!-- TASKS -->
+
+<!--  %tasks:
+	Preparation for use and assembly <prepuse> (defined in common.ent)
+	Handling <handling>
+	Stowage <stow>
+	Removal <remove>
+	Disassembly <dissam>
+	Cleaning and corrosion control <clncorr>
+	Inspection <insp>
+	Service <service>
+	Repair <repair>
+	Alignment <align>
+	Painting <paint>
+	Lubrication <lube>
+	Assembly <assem>
+	Test and inspection <test-inspect>
+	Installation <install>
+	Rigging <rig>
+	Adjustment <adjust>
+	Calibration <calibrate>
+	Preparation for storage or shipment <pss>
+	Environmental conditioning <envircond>
+	Safety information <safe>
+	Engine start and run-up <engstart> (defined in common.ent)
+	Software loading <softload>
+	Fabrication <fabricate>
+	Packing <packing>
+	Unpacking <unpacking>
+	Preservation <preserve>
+	Tracking <track>
+	Ground Operations <grndop>
+	Canning <canning>
+	Decanning <decanning>
+--> 
+
+<!--	Stowage Task -->
+<!ELEMENT stow  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST stow  	%stepatt;
+	%secur;>
+
+<!--	Removal Task -->
+<!ELEMENT remove  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST remove  	%stepatt;
+	%secur;>
+
+<!--	Disassembly Task -->
+<!ELEMENT dissam  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST dissam  	%stepatt;
+	%secur;>
+
+<!--	Cleaning and corrosion control Task -->
+<!ELEMENT clncorr  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST clncorr  	%stepatt;
+	%secur;>
+	
+<!--	Inspection Task -->
+<!ELEMENT insp  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST insp  	%stepatt;
+	%secur;>
+
+<!--	Service Task -->
+<!ELEMENT service  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST service  	%stepatt;
+	%secur;>
+
+<!--	Repair Task -->
+<!ELEMENT repair  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST repair  	%stepatt;
+	%secur;>
+
+<!--	Alignment Task -->
+<!ELEMENT align  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST align  	%stepatt;
+	%secur;>
+
+<!--	Painting Task -->
+<!ELEMENT paint  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST paint  	%stepatt;
+	%secur;>
+
+<!--	Lubrication Task -->
+<!ELEMENT lube  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST lube  	%stepatt;
+	%secur;>
+
+<!--	Assembly Task -->
+<!ELEMENT assem  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST assem  	%stepatt;
+	%secur;>
+
+<!--	Test and inspection Task -->
+<!ELEMENT test-inspect  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST test-inspect  	%stepatt;
+	%secur;>
+
+<!--	Installation Task -->
+<!ELEMENT install  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST install  	%stepatt;
+	%secur;>
+
+<!--	Rigging Task -->
+<!ELEMENT rig  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST rig  	%stepatt;
+	%secur;>
+
+<!--	Adjustment Task -->
+<!ELEMENT adjust  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST adjust  	%stepatt;
+	%secur;>
+
+<!--	Calibration Task -->
+<!ELEMENT calibrate  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST calibrate  	%stepatt;
+	%secur;>
+
+<!--	Preparation for storage or shipment Task -->
+<!ELEMENT pss  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST pss  	%stepatt;
+	%secur;>
+
+<!--	Environmental conditioning Task -->
+<!ELEMENT envircond  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST envircond  	%stepatt;
+	%secur;>
+
+<!--	Safety information Task -->
+<!ELEMENT safe  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST safe  	%stepatt;
+	%secur;>
+	
+	
+<!--	Fabrication Task -->
+<!ELEMENT fabricate  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST fabricate  	%stepatt;
+	%secur;>
+
+<!--	Packing Task -->
+<!ELEMENT packing  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST packing  	%stepatt;
+	%secur;>
+
+<!--	Unpacking Task -->
+<!ELEMENT unpacking  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST unpacking  	%stepatt;
+	%secur;>
+
+<!--	Preservation Task -->
+<!ELEMENT preserve  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST preserve  	%stepatt;
+	%secur;>
+
+<!--	Tracking Task -->
+<!ELEMENT track  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST track  	%stepatt;
+	%secur;>
+
+<!--	Ground Operations Task -->
+<!ELEMENT grndop  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST grndop  	%stepatt;
+	%secur;>
+
+<!-- Fuel Task -->
+<!ELEMENT fuel  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST fuel  	%stepatt;
+	%secur;>
+
+<!--  Defuel Task -->
+<!ELEMENT defuel  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST defuel  	%stepatt;
+	%secur;>
+	
+<!-- Canning Task -->
+<!ELEMENT canning  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST canning  	%stepatt;
+	%secur;>
+
+<!--  Decanning Task -->
+<!ELEMENT decanning  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST decanning  	%stepatt;
+	%secur;>
+
+<!--	Handling Task -->
+<!ELEMENT handling (title, %proccon;, taskintro?, (fold | cock | tow | move | park | moor | jack | hoist | level | procover | safelock | cardckhdl | prepcat | load | unload | arrlndop | fuelproc | defuelproc)*)>
+<!ATTLIST handling 	%stepatt;
+			%secur;>
+
+<!--HANDLING PROCEDURES:
+
+Folding and unfolding <fold>
+Cockpit entry and safety check <cock>
+Towing <tow>
+Moving <move>
+Parking <park>
+Mooring <moor>
+Jacking <jack>
+Hoisting <hoist>
+Leveling <level>
+Protective covers <procover>
+Ground safety locks and pins <safelock>
+Carrier deck handling <cardckhdl>
+Preparation for catapulting <prepcat>
+Loading <load>
+Unloading <unload>
+Arrested landing operation <arrlndop>
+Fueling <fuel>
+Defueling <defuel>
+-->
+
+<!-- Folding and unfolding Procedure -->
+<!ELEMENT fold (effect?, title, (%proccon;), step*)>
+<!ATTLIST fold 	%stepatt;
+				 %secur;>
+
+<!-- Cockpit entry and safety check Procedure -->
+<!ELEMENT cock (effect?, title, (%proccon;), step*)>
+<!ATTLIST cock 	%stepatt;
+				 %secur;>
+
+<!-- Towing Procedure -->
+<!ELEMENT tow (effect?, title, (%proccon;), step*)>
+<!ATTLIST tow 	%stepatt;
+				 %secur;>
+
+<!-- Moving Procedure -->
+<!ELEMENT move (effect?, title, (%proccon;), step*)>
+<!ATTLIST move 	%stepatt;
+				 %secur;>
+
+<!-- Parking Procedure -->
+<!ELEMENT park (effect?, title, (%proccon;), step*)>
+<!ATTLIST park 	%stepatt;
+				 %secur;>
+
+<!-- Mooring Procedure -->
+<!ELEMENT moor (effect?, title, (%proccon;), step*)>
+<!ATTLIST moor 	%stepatt;
+				 %secur;>
+
+<!-- Jacking Procedure -->
+<!ELEMENT jack (effect?, title, (%proccon;), step*)>
+<!ATTLIST jack 	%stepatt;
+				 %secur;>
+
+<!-- Hoisting Procedure -->
+<!ELEMENT hoist (effect?, title, (%proccon;), step*)>
+<!ATTLIST hoist 	%stepatt;
+				 %secur;>
+
+<!-- Leveling Procedure -->
+<!ELEMENT level (effect?, title, (%proccon;), step*)>
+<!ATTLIST level 	%stepatt;
+				 %secur;>
+
+<!-- Protective covers Procedure -->
+<!ELEMENT procover (effect?, title, (%proccon;), step*)>
+<!ATTLIST procover 	%stepatt;
+				 %secur;>
+
+<!-- Ground safety locks and pins Procedure -->
+<!ELEMENT safelock (effect?, title, (%proccon;), step*)>
+<!ATTLIST safelock 	%stepatt;
+				 %secur;>
+
+<!-- Carrier deck handling Procedure -->
+<!ELEMENT cardckhdl (effect?, title, (%proccon;), step*)>
+<!ATTLIST cardckhdl 	%stepatt;
+				 %secur;>
+
+<!-- Loading Procedure -->
+<!ELEMENT load (effect?, title, (%proccon;), step*)>
+<!ATTLIST load 	%stepatt;
+				 %secur;>
+
+<!-- Unloading Procedure -->
+<!ELEMENT unload (effect?, title, (%proccon;), step*)>
+<!ATTLIST unload 	%stepatt;
+				 %secur;>
+
+<!-- Preparation for catapulting Procedure -->
+<!ELEMENT prepcat (effect?, title, (%proccon;), step*)>
+<!ATTLIST prepcat 	%stepatt;
+				 %secur;>
+
+<!-- Arrested landing operation Procedure -->
+<!ELEMENT arrlndop (effect?, title, (%proccon;), step*)>
+<!ATTLIST arrlndop 	%stepatt;
+				 %secur;>
+
+<!-- Fueling Procedure -->
+<!ELEMENT fuelproc (effect?, title, (%proccon;), step*)>
+<!ATTLIST fuelproc 	%stepatt;
+				 %secur;>
+
+<!-- Defueling Procedure -->
+<!ELEMENT defuelproc (effect?, title, (%proccon;), step*)>
+<!ATTLIST defuelproc 	%stepatt;
+			%secur;>

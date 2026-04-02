@@ -1,0 +1,871 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2001-40D:  Allow multiple, optional para after elements     *
+    *                   challeng/response and procd within element step. *
+    * 3. CPF 2001-74SE: Change declaration of values for attribute type  *
+    *                   of element drill to %DRILLTPS; (declaration in   *
+    *                   S1000D.CFG). Change declaration of values for    *
+    *                   attribute crewmem of element crewmem to          *
+    *                   %CREWMEMS; (see S1000D.CFG).                     *
+    * 4. CPF 2002-37GB: Bug fix on exclusion of element sheet within     *
+    *                   frc. Delete exclusion (see ISO 8879, Clause      *
+    *                                                        11.2.5.2).  *
+    * 5. CPF 2002-38SE: Redefine content model in entity %NPAR; due to   *
+    *                   deletion of element specpara and introduction    *
+    *                   of new entity %NP;. Replace call of entity       *
+    *                   %EXTSPEC; by call of %WCNP; for the same reason. *
+    *                   Amend content model in entity %DRLINTRO; by call *
+    *                   of entity %HEADING1; instead of defining elements*
+    *                   applic and title directly.                       *
+    *                   Amend and rearrange content model in entity      *
+    *                   %ACSTCON; by call of entities %HEADING1; and %WC;*
+    *                   Introduce optional attributes check and skill on *
+    *                   element step, defined in entity %CHECKSTP;.      *
+    * 6. Consistency:   Change declared values of attribute memorize from*
+    *                   uppercase first letters to lowercase throughout. *
+    * 7. TPSMG request: File and entity name changed from AIRCREW to CREW*
+    * 8. XML compatibility: Introduce new element challrsp to solve the  *
+    *                       ambiguity of defining element crew twice     *
+    *                       within content model of entity %ASTCON;.     *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % CREW PUBLIC                                             *
+    *   "-//S1000D//ELEMENTS Crew Breakdown 20030531//EN" >              *
+    * %CREW;                                                             *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Call the HEADING group definition.                                 *
+    ********************************************************************** -->
+	<xs:include schemaLocation="heading.xsd"/>
+
+<!--**********************************************************************
+    * Call the Warning, Caution, Note, Para Public Text.                 *
+    * The formal public identifier is stored in the entity %WCNP;        *
+    ********************************************************************** -->
+<!-- %WCNP;-->
+	<xs:include schemaLocation="wcnp.xsd"/>
+
+<!--**********************************************************************
+    * Call the paracon group definition.                                 *
+    ********************************************************************** -->
+	<xs:include schemaLocation="paracon.xsd"/>
+
+<!--**********************************************************************
+    * Call the Lists Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTLIST;     *
+    ********************************************************************** -->
+<!-- %EXTLIST; -->
+	<xs:include schemaLocation="lists.xsd"/>
+	
+
+	<xs:group name="CONTENT">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing :- acrw.    *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="acrw"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="NPAR">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Entity %NPAR; (Numbered Paragraphs) containing:-            *
+    *   warning - Optional   Repeatable  contains applic, symbol, para,  *
+    *                                    Definition stored in entity     *
+    *                                    %list;.                         *
+    *   caution - Optional   Repeatable  contains applic, symbol, para,  *
+    *                                    Definition stored in entity     *
+    *                                    %list;.                         *
+    *   Definition stored in Entity %NP;                                 *
+    *             - Mandatory Single     contains note, para.            *
+    *   drill     - Optional  Single     contains Definition stored in   *
+    *                                    entity %DRLINTRO; step, %STEPS;,*
+    *                                    subdrill, endmattr.             *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>	
+		<xs:sequence>
+			<xs:element ref="warning" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="caution" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:group ref="NP" minOccurs="0"/>
+			<xs:element ref="drill" minOccurs="0"/>	
+		</xs:sequence>
+	</xs:group>
+
+<!-- use	<xs:complexType mixed="true"> -->
+	<xs:group name="text">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Entity %text; (Running Text) containing:-                   *
+    *   Parsed Character Data.                                           *
+    *  or                                                                *
+    *   xref     - Mandatory Single     contains applic, Definition      *
+    *                                   stored in entity %SPARCON;.      *
+    *  or                                                                *
+    *   indxflag - Mandatory Single     contains No Other Tags.          *
+    *  or                                                                *
+    *   change   - Mandatory Single     contains Definition stored in    *
+    *                                   entity %text;                    *
+    *  or                                                                *
+    *   emphasis - Mandatory Single     contains Definition stored in    *
+    *                                   entity %text;                    *
+    *  or                                                                *
+    *   symbol   - Mandatory Single     contains applic.                 *
+    *  or                                                                *
+    *   subscrpt - Mandatory Single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *  or                                                                *
+    *   supscrpt - Mandatory Single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *  or                                                                *
+    *   refdm    - Mandatory Single     contains Definition stored in    *
+    *                                   entity %ALLDMC;                  *
+    *  or                                                                *
+    *   reftp    - Mandatory Single     contains techpub.                *
+    *  or                                                                *
+    *   acronym  - Mandatory Single     contains acroterm, acrodef.      *
+    *  or                                                                *
+    *   acroterm - Mandatory Single     contains Definition stored in    *
+    *                                            entity %SPARCON;.       *
+    *  Definition stored in entity %ACTEXT;                              *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="xref"/>
+			<xs:element ref="indxflag"/>
+			<xs:element ref="change"/>
+			<xs:element ref="emphasis"/>
+			<xs:element ref="symbol"/>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+			<xs:element ref="refdm"/>
+			<xs:element ref="reftp"/>
+			<xs:element ref="acronym"/>
+			<xs:element ref="acroterm"/>
+			<xs:group ref="ACTEXT"/>
+		</xs:choice>
+	</xs:group>	
+
+	<xs:group name="ACTEXT">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Entity %ACTEXT; (All Crew Running Text Continuation)        *
+    * containing:                                                        *
+    * or                                                                 *
+    *  capgrp   - Mandatory Single     contains colspec, spanspec,       *
+    *                                           capbody.                 *
+    * or                                                                 *
+    *  caption  - Mandatory Single     contains capline.                 *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="capgrp"/>
+			<!-- <xs:element ref="caption"/>-->
+		</xs:choice>	
+	</xs:group>
+
+	<xs:group name="acspcpara">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Entity %aspcpara; (All Crew Special Paragraphs) containing:-*
+    *  Definition stored in entity %WC;                                  *
+    *           - Optional Single      contains warning, caution         *
+    ********************************************************************** 
+    *  Same as %spcpara; but without element note.                       *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group ref="WC"/>
+			<!-- <xs:element ref="note" minOccurs="0" maxOccurs="unbounded"/> -->
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="ACSTCON">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Entity %ACSTCON; (All Crew Step Content) containing:-       *
+    *  Definition stored in entity %HEADING1;                            *
+    *  Definition stored in entity %WC;                                  *
+    *  Optional repeatable group containing:-                            *
+    *====================================================================*
+    *    Definition stored in entity %NP;        contains note, para     *
+    *   or                                                               *
+    *====================================================================*
+    *      crew     - Optional  Repeatable  contains applic, crewmem.    *
+    *      procd    - Mandatory Single      contains Definition stored in*
+    *                                       entity %paracon;.            *
+    *====================================================================*
+    *     or                                                             *
+    *      challrsp - Mandatory Single     contains challeng, crew,      *
+    *                                               response.            *
+    *====================================================================*
+    *====================================================================*
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+ 		<xs:sequence>
+			<xs:group ref="HEADING1"/>		
+			<xs:group ref="WC"/>		
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="NP"/>		
+				<xs:sequence>
+					<xs:element ref="crew" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="procd"/>
+				</xs:sequence>
+				<xs:element ref="challrsp"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="DRLINTRO">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Entity %DRLINTRO; (Drill Introduction) containing :-        *
+    *  Definition stored in entity %HEADING1;                            *
+    *  tabtitle - Optional  Single      contains Definition stored in    *
+    *                                   entity %text;.                   *
+    *  Definition stored in entity %spcpara;                             *
+    *  crew       Optional  Repeatable  contains applic, crewmem.        *
+    *  para     - Optional  Repeatable  contains Definition stored in    *
+    *                                   entity %paracon;.                *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group ref="HEADING1"/>
+			<xs:element ref="tabtitle" minOccurs="0"/>
+			<xs:group ref="spcpara"/>
+			<xs:element ref="crew" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="para" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="STEPS">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Entity %STEPS; (Multiple Steps) containing:-                *
+    *  step    - Mandatory Single     contains Definition stored in      *
+    *                                 entity %ACSTCON;, %STEPS;          *
+    * or                                                                 *
+    *====================================================================*
+    *  if      - Mandatory Single     contains applic, condit,           *
+    *                                 Definition stored in entity %STEPS;*
+    *  elseif  - Optional  Repeatable contains applic, condit,           *
+    *                                 Definition stored in entity %STEPS;*
+    *====================================================================*
+    * or                                                                 *
+    *  case    - Mandatory Single     contains applic, condit,           *
+    *                                 Definition stored in entity %STEPS;*
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="step"/>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="if"/>
+					<xs:element ref="elseif" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:element ref="case"/>
+			</xs:choice>
+		</xs:choice>
+	</xs:group>
+
+	<xs:element name="acrw">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element acrw (All Crew Content) Containing:-                *
+    *  FRC      - Mandatory Single     contains title, warning, caution, *
+    *                                  note, para, drill.                *
+    * or                                                                 *
+    *  descacrw - Mandatory Single     contains warning, caution, note,  *
+    *                                  para0.                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  id        - ID       - IMPLIED  - An identifier of the element    *
+    *                       which is assigned at origination and which   *
+    *                       remains unchanged as the document is revised *
+    *                       or updated even though the automatically     *
+    *                       assigned enumeration "labels" change. The    *
+    *                       value of "id" is used when making references *
+    *                       to the element from other portions of the    *
+    *                       document.                                    *
+    *  Attribute Definition list stored in entity %secur;.               *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="frc"/>
+				<xs:element ref="descacrw"/>
+			</xs:choice>
+			<xs:attribute name="id" type="xs:ID"/>
+			<xs:attributeGroup ref="secur"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="frc">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element frc (Flight/Operator Reference Cards) containing:-  *
+    *  title    - Optional  Single      contains Definition stored in    *
+    *                                   entity %text;.                   *
+    *  Definition stored in entity %spcpara;.                            *
+    *  para     - Optional  Repeatable  contains Definition stored in    *
+    *                                   entity %paracon;.                *
+    *  drill    - Mandatory Repeatable  contains Definition stored in    *
+    *                                   entity %DRLINTRO;.               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %secur;                 *
+    **********************************************************************
+    * INCLUSION: figure, table, foldout.                                 *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:element ref="title" minOccurs="0"/>
+					<xs:group ref="spcpara" minOccurs="0"/>
+					<xs:element ref="para" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="drill" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attributeGroup ref="secur"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="descacrw">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element descacrw (All Crew Description) containing:-        *
+    *  Definition stored in entity %spcpara;.                            *
+    *  para0    - Optional  Repeatable  contains Definition stored in    *
+    *                                   entity %nparacon; and %SUBPAR1;. *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %secur;.                *
+    **********************************************************************
+    * INCLUSION: figure, table, foldout.                                 *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:group ref="spcpara"/>
+					<xs:element ref="para0" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attributeGroup ref="secur"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="drill">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element drill (Flight Drill) containing:-                   *
+    *  Definition stored in entity %DRLINTRO;                            *
+    *====================================================================*
+    * Optional Repeatable Group                                          *
+    *====================================================================*
+    *  Mandatory Repeatable Definition stored in entity %STEPS;.         *
+    * or                                                                 *
+    *  subdrill - Optional  Repeatable contains Definition stored in     *
+    *                                  entity %DRLINTRO; and %STEPS;.    *
+    *====================================================================*
+    *  ENDMATTR - Optional  Single     contains APPLIC, PARA.            * 
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  drilltyp  - %DRILLTPS;          - Drill Type                      *
+    *                                    (Flight Deck presentation)      *
+    *                                    %DRILLTPS; decl in S1000D.CFG.  *
+    *  ordered   - Declared - "on"     - Steps form part of              *
+    *                                    chronologically ordered list.   *
+    *            - "on"     - Steps must occur between neighbouring steps*
+    *                         in time.                                   *
+    *            - "off"    - Steps can occur at any time in the drill   *
+    * Attribute Definition list stored in entity %bodyatt;               *
+    * Attribute Definition list stored in entity %secur;                 *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>	
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>				
+				<xs:group ref="DRLINTRO"/>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="STEPS" maxOccurs="unbounded"/>
+					<xs:element ref="subdrill" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+				<xs:element ref="endmattr" minOccurs="0"/>
+			</xs:choice>
+			<xs:attribute ref="drilltyp"/>
+			<xs:attribute name="ordered" default="on">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="on"/>
+						<xs:enumeration value="off"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attributeGroup ref="bodyatt"/>
+			<xs:attributeGroup ref="secur"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="step">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element step (Drill or Procedural Step) containing:-        *
+    *  Definition stored in entity %ACSTCON;                             *
+    *  Definition stored in entity %STEPS;                               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  label     - CDATA    - IMPLIED  - Drill Type                      *
+    *                                    (Flight Deck presentation)      *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    *  memorize  - Declared - "NO"     - Memorize this step.             *
+    *            - "no"     - Step not required to be memorized.         *
+    *            - "yes"    - This step must be memorized.               *
+    *  dotline   - Declared - "dot"    - Defines the seperator characters*
+    *                         between the challenge and response elements*
+    *            - "dot"    - sequence of dots.                          *
+    *            - "line"   - solid line.                                *
+    *            - "none"   - No seperator.                              *
+    *  ordered   - Declared - "on"     - Steps form part of              *
+    *                                    chronologically ordered list.   *
+    *            - "on"     - Steps must occur between neighbouring steps*
+    *                         in time.                                   *
+    *            - "off"    - Steps can occur at any time in the drill   *
+    * Attribute Definition list stored in entity %secur;                 *
+    * Attribute Definition List stored in entity %CHECKSTP;              *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:group ref="ACSTCON" maxOccurs="unbounded"/>	
+					<xs:group ref="STEPS" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attribute name="label" type="xs:string"/>
+			<xs:attributeGroup ref="bodyatt"/>
+			<xs:attribute name="memorize" default="no">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="yes"/>
+						<xs:enumeration value="no"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="dotline" default="dot">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="dot"/>
+						<xs:enumeration value="line"/>
+						<xs:enumeration value="none"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ordered" default="on">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="on"/>
+						<xs:enumeration value="off"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attributeGroup ref="secur"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="crew">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element crew (Responsible Crew) containing:-                *
+    *  applic   - Optional  Single      contains type, model.            *
+    *  crewmem  - Mandatory Repeatable  contains applic.                 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  response  - Declared - "all"    - Responsible for step            *
+    *            - "all"    - All the identified crew members are        *
+    *                         must respond to the step.                  *
+    *            - "any"    - Any of the identified crew members can     *
+    *                         respond to the step                        *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:element ref="applic" minOccurs="0"/>
+					<xs:element ref="crewmem" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attribute name="response" default="all">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="all"/>
+						<xs:enumeration value="any"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="crewmem">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element crewmem (Type Of Crew Member) containing:-          *
+    *  applic   - Optional   Single      contains type, model.           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  crewmem  - %CREWMEMS; - REQUIRED - Type(s) of Crew Member(s)      *
+    *                                     %CREWMEMS; decl in S1000D.CFG. *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>	
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="applic" minOccurs="0"/>
+			</xs:choice>
+			<xs:attribute name="crewmem" type="CREWMEMS" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="procd">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element procd (Procedure) containing:-                      *
+    *  applic   - Optional  Single     contains type, model.             *
+    *  para     - Mandatory Single     contains Definition stored in     *
+    *                                           entity %paracon;.        *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:element ref="applic" minOccurs="0"/>
+					<xs:element ref="para"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="challeng">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element challeng (Challenge) containing:-                   *
+    *  applic   - Optional  Single     contains type, model.             *
+    *  para     - Mandatory Single     contains Definition stored in     *
+    *                                           entity %paracon;.        *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:element ref="applic" minOccurs="0"/>
+					<xs:element ref="para"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="response">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element response (Response) containing:-                    *
+    *  applic   - Optional  Single     contains type, model.             *
+    *  para     - Mandatory Single     contains Definition stored in     *
+    *                                           entity %paracon;.        *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:element ref="applic" minOccurs="0"/>
+					<xs:element ref="para"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="if">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element if (If Condition) containing:-                      *
+    *  applic   - Optional  Single     contains type, model.             *
+    *  condit   - Mandatory Single     contains Definition stored in     *
+    *                                           entity %text;.           *
+    *  Definition stored in entity %STEPS;.                              *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %bodyatt;.              *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:element ref="applic" minOccurs="0"/>
+					<xs:element ref="condit"/>
+					<xs:group ref="STEPS" maxOccurs="unbounded"/>			
+				</xs:sequence>
+			</xs:choice>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="elseif">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element elseif (Else If Condition) containing:-             *
+    *  applic   - Optional  Single     contains type, model.             *
+    *  condit   - Mandatory Single     contains Definition stored in     *
+    *                                           entity %text;.           *
+    *  Definition stored in entity %STEPS;.                              *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %bodyatt;.              *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:element ref="applic" minOccurs="0"/>
+					<xs:element ref="condit"/>
+					<xs:group ref="STEPS" maxOccurs="unbounded"/>				
+				</xs:sequence>
+			</xs:choice>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="case">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element case (Conditional Case) containing:-                *
+    *  applic   - Optional  Single     contains type, model.             *
+    *  condit   - Mandatory Single     contains Definition stored in     *
+    *                                           entity %text;.           *
+    *  Definition stored in entity %STEPS;.                              *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %bodyatt;.              *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:element ref="applic" minOccurs="0"/>
+					<xs:element ref="condit"/>
+					<xs:group ref="STEPS" maxOccurs="unbounded"/>	
+				</xs:sequence>
+			</xs:choice>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="condit">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element condit (If, Elseif and Case Condition) containing:- *
+    *  Definition stored in entity %text;.                               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %secur;.                *
+    **********************************************************************
+    * EXCLUSION: figure, foldout, table.                                 *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:sequence minOccurs="0">			
+				<xs:group ref="text" minOccurs="0" maxOccurs="unbounded"/>	
+			</xs:sequence>
+			<xs:attributeGroup ref="secur"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="subdrill">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element subdrill (Sub Flight Drill) containing:-            *
+    *====================================================================*
+    * Optional Single Group                                              *
+    *====================================================================*
+    *  Definition stored in entity %DRLINTRO;.                           *
+    *====================================================================*
+    *====================================================================*
+    * Optional Repeatable Group                                          *
+    *====================================================================*
+    *  Definition stored in entity %STEPS;.                              *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  ordered   - Declared - "on"     - Steps form part of              *
+    *                                    chronologically ordered list.   *
+    *            - "on"     - Steps must occur between neighbouring steps*
+    *                         in time.                                   *
+    *            - "off"    - Steps can occur at any time in the drill   *
+    *  Attribute Definition list stored in entity %bodyatt;.             *
+    *  Attribute Definition list stored in entity %secur;.               *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>			
+					<xs:group ref="DRLINTRO"/>
+					<xs:group ref="STEPS" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attribute name="ordered" default="on">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="on"/>
+						<xs:enumeration value="off"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attributeGroup ref="bodyatt"/>
+			<xs:attributeGroup ref="secur"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="tabtitle">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element tabtitle (Tab Title) containing:-                   *
+    *  Definition stored in entity %text;.                               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %INSDEL;.               *
+    **********************************************************************
+    * EXCLUSION: refdm, reftp, capgrp.                                   *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="fft_inc"/>
+				<xs:group ref="text"/>						
+			</xs:choice>
+			<xs:attributeGroup ref="INSDEL"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="endmattr">
+		<xs:annotation>
+			<xs:documentation>
+    ********************************************************************** 
+    * Define Element endmattr (Drill End Matter) containing:-            *
+    *  applic   - Optional  Single      contains type, model.            *
+    *  para     - Mandatory Repeatable  contains Definition stored in    *
+    *                                            entity %paracon;.       *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>		
+				<xs:sequence>
+					<xs:element ref="applic" minOccurs="0"/>
+					<xs:element ref="para" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="challrsp">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element challrsp (Challenge and Response) containing:-      *
+    *  challeng - Mandatory Single     contains applic, para.            *
+    *====================================================================*
+    *    crew     - Optional  Repeatable  contains applic, crewmem.      *
+    *    response - Mandatory Single      contains applic, para.         *
+    *====================================================================*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="challeng"/>
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element ref="crew" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="response"/>
+				</xs:sequence>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+</xs:schema>

@@ -1,0 +1,881 @@
+<!--Arbortext, Inc., 1988-2019, v.4002-->
+<!DOCTYPE DOC PUBLIC "-//USA-DOD//DTD 38769D-BV6aD1P0//EN"
+ "38769D-BV6aD1P0.dtd" [
+<!ENTITY styler SYSTEM "styler.gif" NDATA gif>
+<!ENTITY ESD1 SYSTEM "ESD.eps" NDATA eps>
+<!NOTATION gif SYSTEM "gif">
+<!ENTITY fullpagegraphic SYSTEM "sq1.eps" NDATA eps>
+<!ENTITY er1 SYSTEM "er.eps" NDATA eps>
+<!ENTITY star1 SYSTEM "bio.eps" NDATA eps>
+<!ENTITY radioactive SYSTEM "rada.eps" NDATA eps>
+<!ENTITY vapor1 SYSTEM "vapor.eps" NDATA eps>
+<!ENTITY computer SYSTEM "computer.eps" NDATA eps>
+<!ENTITY ipb SYSTEM "explode.eps" NDATA eps>
+<!ENTITY chem SYSTEM "chemical.eps" NDATA eps>
+<!ENTITY qtrpage SYSTEM "bio.eps" NDATA eps>
+<!ENTITY halfpage SYSTEM "hand.eps" NDATA eps>
+<!ENTITY fullpage SYSTEM "goggles.eps" NDATA eps>
+]>
+<?Pub Inc>
+<doc service="af" docid="1X-XXXX-2-2-1" docstat="prelim"
+verstatpg="unver" security="u" cycle="0" labelstyle="FAN"><docwuc>
+<front t2page="1" numcols="1"><idinfo><?Pub Lcl _divid="100"
+_parentid="0"><?Pub Dtl><tmidno service="af" security="u">38784STD-BV7</tmidno>
+<chghistory></chghistory>
+<doctype></doctype>
+<maintlvl>Depot and Intermediate WITH<line quad="center">Illustrated
+Parts Breakdown</line></maintlvl>
+<prtitle><nomen><?Pub Dtl>ARC-XXX TRANSMITTER</nomen>
+<modelno>MODEL NUMBER</modelno>
+<partno>PRTITLE PARTNO</partno>
+<nsn>2840-00-345-6789</nsn>
+<typedes>TYPE DESIGNATOR</typedes>
+<pslist>
+<partno>PSLIST PARTNO</partno>
+<serno>PSLIST SerialnO</serno>
+</pslist><serno>PRTITLE SERIALNO</serno>
+</prtitle>
+<subtitle>Subtitle Entered Here</subtitle>
+<mfr>The Airplane Company</mfr>
+<mfr>Second Manufacture</mfr>
+<contractno>1234567890</contractno>
+<contractno>Second Contract Number here.</contractno>
+<supersed>THIS PUBLICATION SUPERSEDES TO XXXXXXXX DATED 27 November
+2004.</supersed>
+<suppl>SUPPLEMENT STATEMENT</suppl>
+<effdatenot>EFFECTIVE DATE NOTICE</effdatenot>
+<discl>This document was prepared by GPSL for demonstration purposes
+only. It is intended to be representative of the types of elements
+appearing in a typical DoD Technical Manual. It is not intended to
+be a faithful reproduction of an actual Technical Manual and it should
+in no way be treated as if the information contained within is accurate
+or complete.</discl>
+<distrib> Distribution authorized to the Department of Defense and
+US DoD contractors only (Administrative or Operational Use) (7 March
+2003).  Questions concerning technical content or any other requests
+for this document shall be referred to ABC/ABC, XXX Some Street, Bldg
+123, AN AIRBASE AFB, XX  XXXXX-XXXX (Attention: TO Manager).</distrib>
+<expcont>This document contains technical data whose export is restricted
+by the Arms Export Control Act (Title 22, U.S.C., Sec 2751 <emphasis
+type="i">et seq.</emphasis>) or the Export Administration Act of 1979,
+as amended (Title 50, U.S.C., App. 2401 <emphasis type="i">et seq.</emphasis>).
+Violators of these export laws are subject to severe criminal penalties.</expcont>
+<destr>Comply with distribution statement and destroy by any method
+that will prevent disclosure of the contents or reconstruction of
+the document. See TO 00-5-1 for specific destruction procedures and
+disposition instructions.</destr>
+<copyright>Copyright notice here</copyright>
+<cogact>Cognizant Activity Statement.</cogact>
+<moveddata>Moveddata Text</moveddata>
+<authnot>Published for test purposes only.</authnot>
+<downgrd><oadr>OADR Statement</oadr></downgrd><pubdate>14 September
+2007</pubdate></idinfo><lep><?Pub Lcl _divid="200" _parentid="0">
+<lepcontents autobuild="1"></lep>
+<verstat><?Pub Dtl></verstat>
+<contents autobuild="1"><?Pub Lcl _divid="400" _parentid="0">
+<illuslist autobuild="1"><?Pub Lcl _divid="400" _parentid="0">
+<tablelist autobuild="1"><?Pub Lcl _divid="400" _parentid="0">
+<foreword><?Pub Lcl _divid="400" _parentid="0"><?Pub Dtl>
+<para0 verstatus="ver"><?Pub Dtl><title>First PARA0 TITLE</title>
+<para>The content of this PARA0 has samples for testing within the
+PREFACE element.</para>
+<subpara1 applicref="a" verstatus="ver"><title> Subpara1</title><para><applicabil
+applicref="b"></applicabil> Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. <prindex pridnbr="3">F prindex entry</prindex>Sample
+data for testing purposes. Sample data for testing purposes.<ftnote
+id="ftnote-19"> This is a footnote in the Foreword.</ftnote></para>
+<subpara2 verstatus="ver"><title><applicabil applicref="c"></applicabil> Subpara2
+</title><para>Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara3 applicref="b" verstatus="ver"><title> Subpara3</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+</subpara3>
+<subpara3 verstatus="ver"><title>Subpara3</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+<subpara4 applicref="c" verstatus="ver"><title> Subpara4</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document.</para>
+</subpara4>
+<subpara4 verstatus="ver"><title>Subpara4</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+<subpara5 applicref="d" verstatus="ver"><title> Subpara5</title><para><applicabil
+applicref="a"></applicabil> This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document.</para>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+<subpara2 applicref="a" verstatus="ver"><title> Subpara2</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara2>
+</subpara1>
+<subpara1 verstatus="ver"><title>Subpara1</title><para><applicabil
+applicref="c"></applicabil> This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document.</para>
+</subpara1>
+</para0>
+<para0 verstatus="ver"><?Pub Dtl><title>Use of "Shall", "Will", "Should",
+and "May"</title>
+<para><applicabil applicref="d"></applicabil> The word "shall" is
+used to express a provision that is binding.  The words "should" and
+"may" are used when it is necessary to express non-mandatory provisions.
+ The word "will" may be used to express a mandatory declaration of
+purpose or when it is necessary to express a future event.</para>
+</para0>
+<applicdef rtermwidth="5.5in" ltermwidth="2.0in" verstatus="ver"><?Pub Dtl>
+<title>List of Applicability and Effectivity</title><para>In this
+example the &ldquo;TERM&rdquo; heading is used to define the column
+used for the symbol. The &ldquo;DEFINITION&rdquo; heading is used
+to define the applicability/effectivity for the symbol used in the
+&ldquo;TERM&rdquo; column.</para>
+<appltitle>List of Applicability and Effectivity</appltitle>
+<applichd>
+<term>TERM</term><def>DEFINITION</def>
+</applichd>
+<applic id="a">
+<term>a</term><def>This is applicability a. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+<applic id="b">
+<term>b</term><def>This is applicability b. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+<applic id="c">
+<term>c</term><def>This is applicability c. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+<applic id="d">
+<term>d</term><def>This is applicability d. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+</applicdef>
+<abbrsect applicref="b" verstatus="ver"><title> LIST OF Standard ABBREVIATIONS
+AND ACRONYMS</title><para>This publication provides a list of standard
+abbreviations and acronyms used throughout this document.</para>
+<abbrtitle> List of Abbreviations and Acronyms</abbrtitle>
+<acronymlist autobuild="1">
+</abbrsect>
+<abbrsect applicref="c"><title> List of Non Standard Abbreviations
+and Acronyms</title><para>This publication provides a list of non
+standard abbreviations and acronyms used throughout this document.</para>
+<abbrtitle> List of Non Standard Abbreviations and Acronyms</abbrtitle>
+<acronymlist>
+<term>ABC</term><def>Alphabet Soup</def>
+<term>AC</term><def>Alternating Current</def>
+<term>ADF</term><def>Automatic Direction Finder</def>
+<term>AFB</term><def>Air Force Base</def>
+<term>AL</term><def>ALABAMA</def>
+<term>AK</term><def>ALASKA</def>
+<term>AR</term><def>ARKANSAS</def>
+<term>AS</term><def>AMERICAN SAMOA</def>
+<term>AUX</term><def>Auxiliary</def>
+<term>AZ</term><def>ARIZONA </def>
+<term>BIT</term><def>Built In Test</def>
+<term>BITE</term><def>Built In Test Equipment</def>
+<term>CA</term><def>CALIFORNIA </def>
+<term>CCA</term><def>Circuit Card Assembly</def>
+<term>CO</term><def>COLORADO </def>
+<term>CT</term><def>CONNECTICUT</def>
+<term>DC</term><def>DISTRICT OF COLUMBIA</def>
+<term>DC</term><def>Direct Current</def>
+<term>DE</term><def>DELAWARE</def>
+<term>ESDS</term><def>Electrostatic Discharge Sensitive</def>
+<term>ESMS</term><def>Electronics Support Measures System</def>
+<term>ESS</term><def>Environmental Stress Screening</def>
+<term>FL</term><def>FLORIDA</def>
+<term>FM</term><def>FEDERATED STATES OF MICRONESIA</def>
+<term>FM</term><def>Frequency Modulation</def>
+<term>GA</term><def>GEORGIA</def>
+<term>GPSL</term><def>Global Publishing Solutions Ltd</def>
+<term>GU</term><def>GUAM </def>
+<term>HI</term><def>HAWAII</def>
+<term>HMIS</term><def>Hazardous Materials Information System</def>
+<term>IA</term><def>IOWA</def>
+<term>ID</term><def>IDAHO</def>
+<term>IL</term><def>ILLINOIS</def>
+<term>IN</term><def>INDIANA</def>
+<term>JIT</term><def>Just in Time</def>
+<term>KS</term><def>KANSAS</def>
+<term>KY</term><def>KENTUCKY</def>
+<term><applicabil applicref="a"></applicabil> LA</term><def>LOUISIANA</def>
+<term>LOL</term><def>Laugh out loud</def>
+<term>MA</term><def>MASSACHUSETTS</def>
+<term>MD</term><def>MARYLAND</def>
+<term>ME</term><def>MAINE</def>
+<term>MH</term><def>MARSHALL ISLANDS</def>
+<term>MI</term><def>MICHIGAN</def>
+<term>MLG</term><def>Main Landing Gear</def>
+<term>MN</term><def>MINNESOTA</def>
+<term>MO</term><def>MISSOURI</def>
+<term>MP</term><def>NORTHERN MARIANA ISLANDS</def>
+<term>MS</term><def>MISSISSIPPI</def>
+<term>MSDS</term><def>Material Safety Data Sheet</def>
+<term>MT</term><def>MONTANA</def>
+<term>NAV</term><def>Navigation</def>
+<term>NC</term><def>NORTH CAROLINA</def>
+<term>ND</term><def>NORTH DAKOTA</def>
+<term>NE</term><def>NEBRASKA</def>
+<term>NH</term><def>NEW HAMPSHIRE</def>
+<term>NJ</term><def>NEW JERSEY</def>
+<term>NM</term><def>NEW MEXICO</def>
+<term>NP</term><def>No Problem</def>
+<term>NV</term><def>NEVADA</def>
+<term>NY</term><def>NEW YORK</def>
+<term>OH</term><def>OHIO</def>
+<term>OK</term><def>OKLAHOMA</def>
+<term>OR</term><def>OREGON</def>
+<term>OSHA</term><def><applicabil applicref="b"></applicabil> Occupational
+Safety and Health Act</def>
+<term>PA</term><def>PENNSYLVANIA</def>
+<term>PDQ</term><def>Pretty Darn Quick</def>
+<term>PR</term><def>PUERTO RICO</def>
+<term>PSIG</term><def>Pounds per Square Inch, Gage</def>
+<term>PW</term><def>PALAU</def>
+<term>RF</term><def>Radio Frequency</def>
+<term>RI</term><def>RHODE ISLAND</def>
+<term>SC</term><def>SOUTH CAROLINA</def>
+<term>SD</term><def>SOUTH DAKOTA</def>
+<term>SRU</term><def>Shop Replaceable Unit</def>
+<term>STBY</term><def>Standby</def>
+<term>STE</term><def>Suite</def>
+<term>TN</term><def>TENNESSEE</def>
+<term>TX</term><def>TEXAS</def>
+<term>USA</term><def>United States of America</def>
+<term>USAF</term><def>United States Air Force</def>
+<term>UT</term><def>UTAH</def>
+<term>VA</term><def>VIRGINIA </def>
+<term>VI</term><def>VIRGIN ISLANDS</def>
+<term>VT</term><def>VERMONT</def>
+<term>WA</term><def>WASHINGTON</def>
+<term>WI</term><def>WISCONSIN</def>
+<term>WPAFB</term><def>Wright Patterson Air Force Base</def>
+<term>WV</term><def>WEST VIRGINIA</def>
+<term>WY</term><def>WYOMING</def>
+<term>XMTR</term><def>Transmitter</def>
+</acronymlist>
+</abbrsect>
+<lrp verstatus="ver"><title>LIST OF RELATED PUBLICATIONS</title><para><secindex
+pridnbr="3">Secondary entry F</secindex>This publication provides
+a <acronym><def>List of Related Publications</def><term>LRP</term>
+</acronym> referenced within this manual.</para>
+<lrptable>
+<lrpentry><modelno>Model Number 1</modelno><tmidno>1X&ndash;XXXX-2-23-00-1
+</tmidno><title>Communication System</title></lrpentry>
+<lrpentry><modelno>Model Number 1</modelno><tmidno>1X&ndash;XXXX-2-24-00-1
+</tmidno><title>Electrical System</title></lrpentry>
+<lrpentry><typedes>Type Designator 1</typedes><tmidno>1X&ndash;XXXX-2-23-00-1
+</tmidno><title>Communication System</title></lrpentry>
+<lrpentry><typedes>Type Designator 2</typedes><tmidno>1X&ndash;XXXX-2-24-00-1
+</tmidno><title>Electrical System</title></lrpentry>
+<lrpentry id="toref038"><partno>Part Number 1</partno><tmidno>1X&ndash;XXXX-2-23-00-1
+</tmidno><title>Communication System</title></lrpentry>
+<lrpentry id="toref083"><partno>Part Number 2</partno><tmidno>1X&ndash;XXXX-2-24-00-1
+</tmidno><title>Electrical System</title></lrpentry>
+<lrpentry id="toref084"><tmidno>1X&ndash;XXXX-2-26-00-1</tmidno><title>Fire
+Protection System</title></lrpentry>
+<lrpentry id="toref086"><tmidno>1X&ndash;XXXX-2-29-00-1</tmidno><title>Hydraulic
+System</title></lrpentry>
+<lrpentry id="toref001"><tmidno>1X&ndash;XXXX-2-30-00-1</tmidno><title>Ice
+and Rain Protection System</title></lrpentry>
+<lrpentry id="toref085"><tmidno>1X&ndash;XXXX-2-33-00-1</tmidno><title>Lighting
+System</title></lrpentry>
+<lrpentry id="toref037"><tmidno>1X&ndash;XXXX-2-34-00-1</tmidno><title>Navigation
+System</title></lrpentry>
+<lrpentry id="toref062"><tmidno>1X&ndash;XXXX-2-51-00-1</tmidno><title>Standard
+Practices: Structures</title></lrpentry>
+<lrpentry id="toref030"><tmidno>1X&ndash;XXXX-2-61-00-1</tmidno><title>Propellers
+System</title></lrpentry>
+<lrpentry id="toref011"><tmidno>1X&ndash;XXXX-2-71-00-1</tmidno><title>Airframe
+Group</title></lrpentry>
+<lrpentry><tmidno><applicabil applicref="c"></applicabil> 1X&ndash;XXXX-2-23-00-1
+</tmidno><title>Communication System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-24-00-1</tmidno><title>Electrical
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-26-00-1</tmidno><title>Fire Protection
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-29-00-1</tmidno><title>Hydraulic
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-30-00-1</tmidno><title>Ice and Rain
+Protection System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-33-00-1</tmidno><title>Lighting
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-34-00-1</tmidno><title>Navigation
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-51-00-1</tmidno><title>Standard
+Practices: Structures</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-61-00-1</tmidno><title>Propellers
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-71-00-1</tmidno><title>Airframe
+Group</title></lrpentry>
+<lrpentry><tmidno><applicabil applicref="d"></applicabil> 1X&ndash;XXXX-2-23-00-1
+</tmidno><title>Communication System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-24-00-1</tmidno><title>Electrical
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-26-00-1</tmidno><title>Fire Protection
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-29-00-1</tmidno><title>Hydraulic
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-30-00-1</tmidno><title>Ice and Rain
+Protection System</title></lrpentry>
+</lrptable>
+</lrp>
+<tctolist verstatus="ver"><title>LIST OF TIME COMPLIANCE TECHNICAL
+ORDERS</title><para>This publication provides a list of <acronym><def>Time
+Compliance Technical Order</def><term>TCTO</term></acronym> referenced
+within this manual. The list of applicable Time Compliance Technical
+Orders is a list of all TCTOs which affect the technical content (text
+or illustration) of this manual.</para>
+<tctotbl>
+<tctorow><tctono>TA</tctono><title><applicabil applicref="a"></applicabil> TCTO
+Row Title #4</title><date>13 April 2004</date></tctorow>
+<tctorow><tctono>TB</tctono><title>TCTO Row Title #5</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TC</tctono><title>TCTO Row Title #6</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TD</tctono><title>TCTO Row Title #7</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TE</tctono><title>TCTO Row Title #8</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TF</tctono><title>TCTO Row Title #9</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TG</tctono><title>TCTO Row Title #10</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TH</tctono><title>TCTO Row Title #11</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TJ</tctono><title>TCTO Row Title #12</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TK</tctono><title>TCTO Row Title #13</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TL</tctono><title><applicabil applicref="b"></applicabil> TCTO
+Row Title #14</title><date>13 April 2004</date></tctorow>
+<tctorow><tctono>TM</tctono><title>TCTO Row Title #15</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TN</tctono><title>TCTO Row Title #16</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TO</tctono><title>TCTO Row Title #17</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TP</tctono><title>TCTO Row Title #18</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TQ</tctono><title>TCTO Row Title #19</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TR</tctono><title>TCTO Row Title #20</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TS</tctono><title>TCTO Row Title #21</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TT</tctono><title>TCTO Row Title #22</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TU</tctono><title>TCTO Row Title #23</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TV</tctono><title>TCTO Row Title #24</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TW</tctono><title>TCTO Row Title #25</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TX</tctono><title>TCTO Row Title #26</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TY</tctono><title>TCTO Row Title #27</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TZ</tctono><title>TCTO Row Title #28</title><date>13
+April 2004</date></tctorow>
+</tctotbl>
+</tctolist>
+<ratddesc verstatus="ver"><title><acronym><def>Record Of Applicable
+Technical Directives Description</def><term>RATD</term></acronym></title>
+<para>This element contains a list of applicable technical directives.
+This is where an<acronym><def>Engineering Change Proposal</def><term>ECP</term>
+</acronym> or an <acronym><def>Engineering Change Notice</def><term>ECN</term>
+</acronym>would be listed. An ECP or ECN is generated by the engineering
+staff of a aircraft or system manufacture for the purpose of modifying
+an existing aircraft or system.</para>
+<ratd>
+<ratdentry><typeno>TYPENO Element</typeno><date>DATE</date><title>TITLE</title>
+<ecpno> ECPNO</ecpno><dateinc>DATEINC</dateinc><remarks>REMARKS</remarks>
+</ratdentry>
+<ratdentry><typeno>TYPENO Content</typeno><date>DATE Content</date>
+<title>TITLE Content</title><ecpno>ECPNO Content</ecpno><dateinc>DATEINC
+Content</dateinc><remarks>REMARKS</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content A</typeno><date>20 October 2004</date>
+<title><applicabil applicref="a"></applicabil> TITLE Content A</title>
+<ecpno>ECPNO Content A</ecpno><dateinc>DATEINC Content A</dateinc>
+<remarks>REMARKS A</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content B</typeno><date>DATE Content B</date>
+<title>TITLE Content B</title><ecpno>ECPNO Content B</ecpno><dateinc>DATEINC
+Content B</dateinc><remarks>REMARKS B</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C</typeno><date>DATE Content C</date>
+<title>TITLE Content C</title><ecpno>ECPNO Content C</ecpno><dateinc>DATEINC
+Content C</dateinc><remarks>REMARKS C</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C1</typeno><date>DATE Content C1</date>
+<title>TITLE Content C1</title><ecpno>ECPNO Content C1</ecpno><dateinc>DATEINC
+Content C1</dateinc><remarks>REMARKS C1</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C2</typeno><date>DATE Content C2</date>
+<title>TITLE Content C2</title><ecpno>ECPNO Content C2</ecpno><dateinc>DATEINC
+Content C2</dateinc><remarks>REMARKS C2</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C3</typeno><date>DATE Content C3</date>
+<title>TITLE Content C3</title><ecpno>ECPNO Content C3</ecpno><dateinc>DATEINC
+Content C3</dateinc><remarks>REMARKS C3</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C4</typeno><date>DATE Content C4</date>
+<title>TITLE Content C4</title><ecpno>ECPNO Content C4</ecpno><dateinc>DATEINC
+Content C4</dateinc><remarks>REMARKS C4</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content D</typeno><date>DATE Content D</date>
+<title>TITLE Content D</title><ecpno>ECPNO Content D</ecpno><dateinc>DATEINC
+Content D</dateinc><remarks>REMARKS D</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content E</typeno><date>DATE Content D</date>
+<title>TITLE Content D</title><ecpno>ECPNO Content D</ecpno><dateinc>DATEINC
+Content D</dateinc><remarks>REMARKS D</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content F</typeno><date>DATE Content D</date>
+<title><applicabil applicref="b"></applicabil> TITLE Content D</title>
+<ecpno>ECPNO Content D</ecpno><dateinc>DATEINC Content D</dateinc>
+<remarks>REMARKS D</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content G</typeno><date>DATE Content D</date>
+<title>TITLE Content D</title><ecpno>ECPNO Content D</ecpno><dateinc>DATEINC
+Content D</dateinc><remarks>REMARKS D</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content H</typeno><date>DATE Content D</date>
+<title>TITLE Content D</title><ecpno>ECPNO Content D</ecpno><dateinc>DATEINC
+Content D</dateinc><remarks>REMARKS D</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content J</typeno><date>DATE Content D</date>
+<title>TITLE Content D</title><ecpno>ECPNO Content D</ecpno><dateinc>DATEINC
+Content D</dateinc><remarks>REMARKS D</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content K</typeno><date>DATE Content D</date>
+<title>TITLE Content D</title><ecpno>ECPNO Content D</ecpno><dateinc>DATEINC
+Content D</dateinc><remarks>REMARKS D</remarks></ratdentry>
+</ratd>
+</ratddesc>
+<internatlstd verstatus="ver">International standardization agreement
+is entered in the internatlstd element. The contents of the agreement
+is done in the form of a NOTE per MIL-STD-38784.</internatlstd>
+<symsect rtermwidth="6.5in" ltermwidth="1.0in" verstatus="ver"><title>Symbol
+Definition</title><para>The following list of symbols are used in
+this manual and adhere to requirements of DoD specification MIL-STD-38784.
+</para>
+<symtitle>List of Symbols</symtitle>
+<term security="u"><graphic boardno="ESD1"></term><def><applicabil
+applicref="c"></applicabil>cThis is the symbol used to indicate Electrostatic
+Discharge Sensitive parts. ESDS parts require to be handled in accordance
+with the ESDS device handling procedures in TO 00-25-234.  This explanation
+shall be preceded by a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+<term security="u"><graphic boardno="ESD1"></term><def>This is the
+symbol used to indicate Electrostatic Discharge Sensitive parts. ESDS
+parts require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+<term security="u"><graphic boardno="ESD1"></term><def>This is the
+symbol used to indicate Electrostatic Discharge Sensitive parts. ESDS
+parts require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+<term security="u"><graphic boardno="ESD1"></term><def>This is the
+symbol used to indicate Electrostatic Discharge Sensitive parts. ESDS
+parts require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+<term security="u"><graphic boardno="ESD1"></term><def>This is the
+symbol used to indicate Electrostatic Discharge Sensitive parts. ESDS
+parts require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+<term security="u"><graphic boardno="ESD1"></term><def>This is the
+symbol used to indicate Electrostatic Discharge Sensitive parts. ESDS
+parts require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+<term security="u"><graphic boardno="ESD1"></term><def>This is the
+symbol used to indicate Electrostatic Discharge Sensitive parts. ESDS
+parts require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def><applicabil applicref="d"></applicabil> This
+is the symbol used for a Harness Critical Item. This shall include
+an explanation that the HCI symbol establishes special requirements
+limiting changes and substitutions, and that the specific parts listed
+must be used to ensure hardness is not degraded.  This statement shall
+be preceded by a CAUTION heading.</def>
+</symsect>
+<tmimprep><title>Technical Manual Improvement Report Preparation</title>
+<subpara1><title>IMPROVEMENT REPORTS</title><para>Recommendations
+for improvements to this technical order shall be submitted on AFTO
+Form 22, Technical Manual (TM) Change Recommendation and Reply. Complete
+AFTO Form 22 in accordance with TO 00-5-1.<seqlist>
+<title>Seqlist Title</title>
+<item><applicabil applicref="c"></applicabil> First item in a seqlist</item>
+<item>Second item in a seqlist</item><item><applicabil applicref="d"></applicabil> Third
+item in a seqlist</item><item>Fourth item in a seqlist</item></seqlist></para>
+<subpara2 verstatus="ver"><title><applicabil applicref="c"></applicabil> Subpara2
+Title</title><para>Sample data for testing purposes. Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes.</para>
+<subpara3 verstatus="ver"><title>Subpara3 Title</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document.</para>
+<subpara4 verstatus="ver"><title><applicabil applicref="d"></applicabil> Subpara4
+Title</title><para>This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document.</para>
+<subpara5 applicref="b" verstatus="ver"><title>Subpara5 Title</title>
+<para>This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document.<randlist>
+<title>Randlist Title</title>
+<item><applicabil applicref="a"></applicabil> First item in a randlist</item>
+<item>Second item in a randlist</item>
+<item>Third item in a randlist</item>
+<item><applicabil applicref="b"></applicabil> Fourth item in a randlist</item>
+</randlist></para>
+<subpara6 applicref="c"><title> Subpara6 Title</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+<subpara7 applicref="a"><title> Subpara7 Title</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+<subpara8 applicref="d"><title> Subpara8 Title</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</tmimprep>
+<figure applicref="a" legend="1">
+<title> Figure Title in a Foreword</title>
+<graphic boardno="styler" reprodep="7.5in" scalefit="1">
+<legend>
+<tabmat><tgroup cols="2"><tbody>
+<row>
+<entry>This is a legend in a figure in the body.</entry>
+<entry>Legend entry</entry>
+</row>
+<row>
+<entry>Legend entry</entry>
+<entry>Legend entry</entry>
+</row>
+</tbody></tgroup></tabmat>
+</legend>
+</figure>
+</foreword>
+</front><body numcols="2"><codes><typmntcds><?Pub Dtl><code>11111</code>
+<codedesc><codetitle></codetitle>
+<description></description>
+</codedesc>
+<code>12345</code>
+<codedesc><codetitle></codetitle>
+</codedesc>
+</typmntcds><acttakcds><?Pub Dtl><code>23444</code>
+<codedesc>
+<codetitle></codetitle>
+<description></description>
+</codedesc>
+</acttakcds><whndiscds><?Pub Dtl><code></code>
+<codedesc>
+<codetitle></codetitle>
+<description></description>
+</codedesc>
+</whndiscds><howmalcdsalpha><?Pub Dtl><avelcom><?Pub Dtl><code>avl112345</code>
+<codedesc>
+<codetitle>code title</codetitle>
+<description>code description</description>
+</codedesc>
+<code> is se</code>
+<codedesc>
+<codetitle></codetitle>
+</codedesc>
+</avelcom><physmech><?Pub Dtl><code>pm123</code>
+<codedesc>
+<codetitle></codetitle>
+<description></description>
+</codedesc>
+</physmech></howmalcdsalpha><howmalcdsnum><?Pub Dtl><avelcom><?Pub Dtl>
+<code><?Pub Dtl></code>
+<codedesc><codetitle></codetitle>
+<description></description>
+</codedesc>
+<code></code>
+<codedesc><codetitle></codetitle>
+</codedesc>
+</avelcom><physmech><code>746487</code>
+<codedesc><codetitle></codetitle>
+<description></description>
+</codedesc>
+<code>4637289146</code>
+<codedesc><codetitle></codetitle>
+</codedesc>
+</physmech></howmalcdsnum><supgencds><?Pub Dtl><code></code>
+<codedesc>
+<codetitle></codetitle>
+</codedesc>
+</supgencds><uniqdatacds><?Pub Dtl><code></code>
+<codedesc>
+<codetitle></codetitle>
+</codedesc>
+</uniqdatacds><supgen3000><supgrp><?Pub Dtl>
+<grpcode>123</grpcode>
+<grpcodetitle>supgen3000 a</grpcodetitle>
+<code>123&ndash;tyr</code>
+<codedesc><codetitle>codedesc in codetitle</codetitle>
+</codedesc>
+<code>123&ndash;tuw</code>
+<codedesc><codetitle>codetitle</codetitle>
+</codedesc>
+</supgrp><supgrp>
+<grpcode>456</grpcode>
+<grpcodetitle>supgen3000 b</grpcodetitle>
+<code>456&ndash;frk</code>
+<codedesc><codetitle>codetitle</codetitle>
+</codedesc>
+</supgrp></supgen3000><supgen4000><supgrp>
+<grpcode>grp123</grpcode>
+<grpcodetitle></grpcodetitle>
+<code>123456</code>
+<codedesc><codetitle></codetitle>
+</codedesc>
+</supgrp></supgen4000></codes><standard><wucsy wuc="aa">
+<wucode>wucode1 &mdash; first page is aa-001</wucode>
+<wucdesc>desc here</wucdesc>
+<wuc1><wucode>wuc1</wucode></wuc1></wucsy><wucsy wuc="333">
+<wucode>wucode2 &mdash; first page as 333&ndash;001</wucode>
+<wucdesc>desc here</wucdesc>
+</wucsy><brk></standard></body><rear numcols="2"><appendix><?Pub Lcl
+_divid="800" _parentid="0"><?Pub Dtl>
+<title>TITLE FOR APPENDIX A</title>
+<para0 applicref="a"><title> Para0 Title in Appendix A</title>
+<para>This is a para in a para0 in Appendix A.</para>
+<subpara1 applicref="b" verstatus="ver"><title> Subpara1 Title</title>
+<para><applicabil applicref="a"></applicabil> Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara2 applicref="c"><title> Subpara 2 Title</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.</para>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+<step2><para>This is a step2.</para>
+</step2>
+<step2><para>This is the second step 2.</para>
+<step3><para>First step 3.</para>
+</step3>
+<step3><para>Second step 3</para>
+<step4><para>First step 4.</para>
+</step4>
+<step4><para>Second step 4.</para>
+</step4>
+</step3>
+</step2>
+</step1>
+<subpara3><title>Subpara3 Title</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara4 applicref="d"><title>Subpara4 Title</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.<seqlist
+numstyle="arabic">
+<title>This is a Sequential List</title>
+<item>First item in a sequential list</item><item>Second item in a
+sequential list</item><item>Third item in a sequential list</item><item>Fourth
+item in a sequential list</item></seqlist></para>
+<subpara5 applicref="c"><title> Subpara5 Title</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.<tabmat
+frame="none" colsep="0" pgwide="0"><tgroup cols="2"><colspec
+colname="col1"><colspec colname="col2"><thead>
+<row>
+<entry>Column 1 header</entry>
+<entry>Column 2 header</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>Column1, row 1</entry>
+<entry>Column2, row 1</entry>
+</row>
+<row>
+<entry>Column1, row 2</entry>
+<entry>Column2, row 2</entry>
+</row>
+<row>
+<entry>Column1, row 3</entry>
+<entry>Column2, row 3</entry>
+</row>
+<row>
+<entry>Column1, row 4</entry>
+<entry>Column2, row 4</entry>
+</row>
+</tbody></tgroup></tabmat></para>
+<subpara6 applicref="a"><title> Subpara6 Title</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.</para>
+<table frame="none" colsep="0" pgwide="0" applicref="b">
+<title> Table Title in an Appendix</title><tgroup cols="2"><colspec
+colname="col1"><colspec colname="col2"><thead>
+<row>
+<entry>Column 1 header</entry>
+<entry>Column 2 header</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>Column1, row 1</entry>
+<entry>Column2, row 1</entry>
+</row>
+<row>
+<entry>Column1, row 2</entry>
+<entry>Column2, row 2</entry>
+</row>
+<row>
+<entry>Column1, row 3</entry>
+<entry>Column2, row 3</entry>
+</row>
+<row>
+<entry>Column1, row 4</entry>
+<entry>Column2, row 4</entry>
+</row>
+</tbody></tgroup></table>
+<subpara7 applicref="d"><title> Subpara7 Title</title><para><applicabil
+applicref="d"></applicabil> Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.<randlist>
+<title>This is a Random List.</title>
+<item>First Item in a random<secindex pridnbr="6">Another use of random</secindex> list
+</item>
+<item>Second Item in a random list</item>
+<item>Third Item in a random list</item>
+<item>Fourth Item in a random list</item>
+</randlist></para>
+<subpara8 applicref="a"><title> Subpara8 Title </title><para><ftnote
+id="ftnote-10">This is a footnote in the Appendix.</ftnote>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. </para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+</appendix><glossary><?Pub Lcl _divid="900" _parentid="0"><?Pub Dtl>
+<glosslist>
+<term>one</term><def>item in the Glossary</def>
+<term>two</term><def>item in the Glossary</def>
+<term>three</term><def>item in the Glossary</def>
+<term>four</term><def>item in the Glossary</def>
+<term>five</term><def>item in the Glossary</def>
+<term>six</term><def>item in the Glossary</def>
+<term>seven</term><def>item in the Glossary</def>
+<term>eight</term><def>item in the Glossary</def>
+<term>nine</term><def>item in the Glossary</def>
+<term>ten</term><def>item in the Glossary</def>
+<term>elevan</term><def>item in the Glossary</def>
+<term>twelve</term><def>item in the Glossary</def>
+<term>thirteen</term><def>item in the Glossary</def>
+<term>fourteen</term><def>item in the Glossary</def>
+<term>fifteen</term><def>item in the Glossary</def>
+<term>sixteen</term><def>item in the Glossary</def>
+<term>seventeen</term><def>item in the Glossary</def>
+<term>eighteen</term><def>item in the Glossary</def>
+<term>nineteen</term><def>item in the Glossary</def>
+<term>twenty</term><def>item in the Glossary</def>
+</glosslist></glossary>
+<index autobuild="1"><?Pub Lcl _divid="1000" _parentid="0">
+<foldsect><?Pub Lcl _divid="1100" _parentid="0"><?Pub Dtl><foldout
+pgstyle="11x17" blankapron="0" applicref="a" verstatus="ver"
+security="u">
+<title> Foldout Page Vapor Does Not Contain a Blank Apron</title>
+<graphic boardno="vapor1" reprowid="15.25in" reprodep="7.5in"
+scalefit="1" security="u"></foldout><foldout pgstyle="11x17"
+verstatus="ver" security="u">
+<title><applicabil applicref="d"></applicabil> Foldout Page Vapor
+Does Contain a Blank Apron</title>
+<subfig><graphic boardno="vapor1" reprowid="7.5in" scalefit="1"
+security="u"></subfig>
+<subfig><graphic boardno="vapor1" reprowid="7.5in" scalefit="1"
+security="u"></subfig></foldout>
+</foldsect></rear></docwuc></doc>

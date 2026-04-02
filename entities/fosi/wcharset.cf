@@ -1,0 +1,56 @@
+#
+# Configuration file mapping a Windows font family name to a 
+# character set
+# The format of the file is:
+#   
+#  charset1=font name1
+#  charset1=font name2
+#  charset2=font name3
+#
+# The word to the left of the = is charset id to be used by Epic.
+# The text on the right of the = is the Windows font family name
+# and my contain embedded spaces.
+# Lines beginning with '#' are comments and are ignored.
+#
+ati_tag=Arbortext
+ps_symbol=Symbol
+zapfdingbats=ZapfDingbats
+wingdings=Wingdings
+#webdings=WebDings
+
+flightman=Arial Unicode MS
+triangles=Lucida Sans Unicode
+#
+# Microsoft fonts
+#
+win_1250=Times New Roman CE
+win_1250=Arial CE
+win_1250=Courier New CE
+win_1251=Times New Roman CYR
+win_1251=Arial CYR
+win_1251=Courier New CYR
+win_1252=Times New Roman
+win_1252=Arial
+win_1252=Courier New
+win_1252=Lucida Console
+win_1253=Times New Roman Greek
+win_1253=Arial Greek
+win_1253=Courier New Greek
+win_1254=Times New Roman TUR
+win_1254=Arial TUR
+win_1254=Courier New TUR
+ibm_850=Terminal
+#
+# The fonts used by Caterpillar
+#
+iso_latin5=HelveticaL5
+iso_latin5=HelveticaInseratL5
+iso_latin7=HelveticaL7
+win_1251=Helvetica Cyr Upright
+win_1251=Helvetica Cyrillic
+win_1251=Helvetica Inserat Cyr Upright
+win_1251=Helvetica Inserat Cyrillic
+win_1251=Futuris
+win_1251=Pragmatica
+win_1251=SvobodaFWF
+win_1253=Times NR Dual Greek MT

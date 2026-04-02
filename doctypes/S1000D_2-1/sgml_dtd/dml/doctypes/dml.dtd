@@ -1,0 +1,18 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                    Data Module List (DML)                          *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    *                                                                    *
+    * Amendment:-                                                        *
+    *  1. Update formal public identifier.                               *
+    *                                                                    *
+    ********************************************************************** -->
+<!DOCTYPE dml
+ PUBLIC "-//S1000D//DTD Data Module List 20030531//EN"
+[]>

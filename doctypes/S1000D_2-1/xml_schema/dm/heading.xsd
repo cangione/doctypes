@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. CPF 2002-38SE: Redefine content model in entity %HEADING;       *
+    *                   by call of entity %HEADING1;.                    *
+    ********************************************************************** -->
+
+	<xs:group name="HEADING">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %HEADING; (Numbered Paragraphs Heading) containing:- *
+    *  Definition stored in entity %HEADING1;.                           *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>		
+			<xs:group ref="HEADING1"/>
+		</xs:sequence>
+	</xs:group>
+
+	
+</xs:schema>

@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.ataebiz.org/XMLSchema"
+           xmlns:m="http://www.w3.org/1998/Math/MathML"
+           targetNamespace="http://www.ataebiz.org/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<!-- ================================================================
+
+Limitations of Liability: 
+
+1.  This material is provided "As Is" and neither Air Transport Association of America, Inc. (ATA) 
+    nor any person who has contributed to the creation, revision or maintenance of the material 
+    makes any representations or warranties, express or implied, including but not limited to, 
+    warranties of merchantability or fitness for any particular purpose. 
+
+2.  Neither ATA nor any person who has contributed to the creation, revision or maintenance of 
+    this material shall be liable for any direct, indirect, special or consequential damages or 
+    any other liability arising from any use of this material. 
+
+3.  Revisions to this document may occur after its issuance. The user is responsible for determining 
+    if revisions to the material contained in this document have occurred and are applicable. 
+
+Copyright 2017, Air Transport Association of America, Inc., d/b/a Airlines for America. All rights reserved.
+
+================================================================= -->
+	<xs:annotation>
+		    <xs:documentation>Version Number: 2017.1</xs:documentation>
+		    <xs:documentation>Revision Date: 2017-10-31</xs:documentation>
+		    <xs:documentation>Revision Comments: Spec 2300 revision 2017.1</xs:documentation>
+	  </xs:annotation>
+	  <xs:import namespace="http://www.w3.org/1998/Math/MathML"
+              schemaLocation="../mathML/mathml3.xsd"/>
+	  <xs:include schemaLocation="../attrs/commonAttrs.xsd"/>
+	  <xs:include schemaLocation="./figure.xsd"/>
+	  <xs:include schemaLocation="./text.xsd"/>
+	  <!--=============================================-->
+	<!--  basicTextGroup -->
+	<!--=============================================-->
+	<xs:group name="basicMixedContentGroup">
+		    <xs:annotation>
+			      <xs:documentation>Set of basic element included in mixed content</xs:documentation>
+		    </xs:annotation>
+		    <xs:choice>
+			      <xs:element ref="abbreviation"/>
+			      <xs:element ref="techLabel"/>
+			      <xs:element ref="emphasis"/>
+			      <xs:element ref="ifInstalled"/>
+			      <xs:element ref="ifOperated"/>
+			      <xs:element ref="ifOperative"/>
+			      <xs:element ref="measureBlock"/>
+			      <xs:element ref="measure"/>
+			      <xs:element ref="equation"/>
+			      <xs:element ref="electronicMessage"/>
+			      <xs:element ref="electronicMessageBlock"/>
+			      <xs:element ref="symbol"/>
+		    </xs:choice>
+	  </xs:group>
+	  <!--=============================================-->
+	<!--  Abbreviation Element Definition -->
+	<!--=============================================-->
+	<xs:element name="abbreviation">
+		    <xs:annotation>
+			      <xs:documentation>A shortened form of a word or phrase.</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:attribute name="glossaryItemId" type="xs:NCName" use="required">
+				        <xs:annotation>
+					          <xs:documentation>Reference to a glossaryItem ID defined in glossaryRepository</xs:documentation>
+				        </xs:annotation>
+			      </xs:attribute>
+		    </xs:complexType>
+	  </xs:element>
+	  <!--=============================================-->
+	<!--  TechLabel Element Definition -->
+	<!--=============================================-->
+	<xs:element name="techLabel">
+		    <xs:annotation>
+			      <xs:documentation>A technical label.</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType mixed="true">
+			      <xs:choice minOccurs="0" maxOccurs="unbounded">
+				        <xs:element ref="abbreviation"/>
+				        <xs:element ref="emphasis"/>
+			      </xs:choice>
+			      <xs:attribute name="type" type="xs:string" use="required"/>
+		    </xs:complexType>
+	  </xs:element>
+	  <!--=============================================-->
+	<!--  Emphasis Element Definition -->
+	<!--=============================================-->
+	<xs:element name="emphasis">
+		    <xs:annotation>
+			      <xs:documentation>Part of text to emphasize</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType mixed="true">
+			      <xs:choice minOccurs="0" maxOccurs="unbounded">
+				        <xs:element ref="abbreviation"/>
+			      </xs:choice>
+			      <xs:attribute name="bold" type="xs:boolean" use="optional" default="false"/>
+			      <xs:attribute name="italic" type="xs:boolean" use="optional" default="false"/>
+			      <xs:attribute name="underline" type="xs:boolean" use="optional" default="false"/>
+			      <xs:attribute name="overline" type="xs:boolean" use="optional" default="false"/>
+			      <xs:attribute name="strikeout" type="xs:boolean" use="optional" default="false"/>
+			      <xs:attribute name="case" use="optional">
+				        <xs:simpleType>
+					          <xs:restriction base="xs:string">
+						            <xs:enumeration value="lower"/>
+						            <xs:enumeration value="upper"/>
+					          </xs:restriction>
+				        </xs:simpleType>
+			      </xs:attribute>
+			      <xs:attribute name="color" type="xs:string" use="optional">
+				        <xs:annotation>
+					          <xs:documentation>part of text with color. Use of CSS3 color specification notations.</xs:documentation>
+				        </xs:annotation>
+			      </xs:attribute>
+			      <xs:attribute name="bgColor" type="xs:string" use="optional">
+				        <xs:annotation>
+					          <xs:documentation>part of text with background color. Use of CSS3 color specification notations.</xs:documentation>
+				        </xs:annotation>
+			      </xs:attribute>
+			      <xs:attribute name="script">
+				        <xs:simpleType>
+					          <xs:restriction base="xs:string">
+						            <xs:enumeration value="sub"/>
+						            <xs:enumeration value="super"/>
+					          </xs:restriction>
+				        </xs:simpleType>
+			      </xs:attribute>
+		    </xs:complexType>
+	  </xs:element>
+	  <!--=============================================-->
+	<!--  IfInstalled IfOperated IfOperative Element Definition -->
+	<!--=============================================-->
+	<xs:element name="ifInstalled">
+		    <xs:annotation>
+			      <xs:documentation>Flag an optional equipment</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType mixed="true">
+			      <xs:choice minOccurs="0" maxOccurs="unbounded">
+				        <xs:element ref="emphasis"/>
+				        <xs:element ref="abbreviation"/>
+				        <xs:element ref="techLabel"/>
+			      </xs:choice>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="ifOperated">
+		    <xs:annotation>
+			      <xs:documentation>Flag an operated equipment</xs:documentation>
+			
+		    </xs:annotation>
+		    <xs:complexType mixed="true">
+			      <xs:choice minOccurs="0" maxOccurs="unbounded">
+				        <xs:element ref="emphasis"/>
+				        <xs:element ref="abbreviation"/>
+				        <xs:element ref="techLabel"/>
+			      </xs:choice>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="ifOperative">
+		    <xs:annotation>
+			      <xs:documentation>Flag an operative equipment</xs:documentation>
+			
+		    </xs:annotation>
+		    <xs:complexType mixed="true">
+			      <xs:choice minOccurs="0" maxOccurs="unbounded">
+				        <xs:element ref="emphasis"/>
+				        <xs:element ref="abbreviation"/>
+				        <xs:element ref="techLabel"/>
+			      </xs:choice>
+		    </xs:complexType>
+	  </xs:element>
+	  <!--=============================================-->
+	<!--  Measure Element Definition -->
+	<!--=============================================-->
+	<xs:element name="measureBlock">
+		    <xs:annotation>
+			      <xs:documentation>pair of measures to provide the same business measure for two different measurement systems.</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="measure" minOccurs="2" maxOccurs="2"/>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="measure">
+		    <xs:annotation>
+			      <xs:documentation>A measure: with a specific unit : contains a decimal and has a unit attribute (such as meter, inch, kg, ....).</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:simpleContent>
+				        <xs:extension base="xs:decimal">
+					          <xs:attribute name="measurementSystem" use="required">
+						            <xs:annotation>
+							              <xs:documentation>measure system</xs:documentation>
+						            </xs:annotation>
+						            <xs:simpleType>
+							              <xs:restriction base="xs:string">
+								                <xs:enumeration value="si"/>
+								                <xs:enumeration value="us"/>
+								                <xs:enumeration value="other"/>
+							              </xs:restriction>
+						            </xs:simpleType>
+					          </xs:attribute>
+					          <xs:attribute name="category" type="xs:string" use="required">
+						            <xs:annotation>
+							              <xs:documentation>information of the type of measure (weight, length, ...)</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+					          <xs:attribute name="subCategory" type="xs:string" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>sub category to clarify the category</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+					          <xs:attribute name="unit" type="xs:string" use="required">
+						            <xs:annotation>
+							              <xs:documentation>unit of mesure : allows to secure the unit format.</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+					          <xs:attribute name="showUnit" type="xs:boolean" use="optional" default="true">
+						            <xs:annotation>
+							              <xs:documentation>unit of mesure must be auto-generated or nor ?</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+					          <xs:attribute name="bound" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>Indicates if the measure identify the minimum or maximum values</xs:documentation>
+						            </xs:annotation>
+						            <xs:simpleType>
+							              <xs:restriction base="xs:NMTOKEN">
+								                <xs:enumeration value="min"/>
+								                <xs:enumeration value="max"/>
+								                <xs:enumeration value="minMax"/>
+							              </xs:restriction>
+						            </xs:simpleType>
+					          </xs:attribute>
+				        </xs:extension>
+			      </xs:simpleContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <!--=============================================-->
+	<!--  Equation Element Definition -->
+	<!--=============================================-->
+	<xs:element name="equation">
+		    <xs:annotation>
+			      <xs:documentation>A mathematical equation</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="m:math"/>
+				        <xs:element ref="figure" minOccurs="0"/>
+			      </xs:sequence>
+			      <xs:attribute name="id" type="idType" use="optional"/>
+		    </xs:complexType>
+	  </xs:element>
+	  <!--=============================================-->
+	<!--  ElectronicMessage Element Definition -->
+	<!--=============================================-->
+	<xs:element name="electronicMessage">
+		    <xs:annotation>
+			      <xs:documentation>An electronic message</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="electronicAnnunciationNameType">
+					          <xs:attribute name="category" type="messageCategoryType" use="required">
+						            <xs:annotation>
+							              <xs:documentation>Type of the message (such Alert, Memo, Message)</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+					          <xs:attribute name="priorityLevel" type="priorityLevelType" use="required">
+						            <xs:annotation>
+							              <xs:documentation>Classification of the message based on level of urgency.</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+					          <xs:attribute name="priorityRanking" type="xs:string" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>Used to convey additional information to clarify the Priority Level of the message . Info, Specific, Normal.</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+					          <xs:attribute name="displayStatus" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>Provide the status of display of a message (triggered, acknowlegded, off)</xs:documentation>
+						            </xs:annotation>
+						            <xs:simpleType>
+							              <xs:restriction base="xs:string">
+								                <xs:enumeration value="triggered"/>
+								                <xs:enumeration value="acknowledged"/>
+								                <xs:enumeration value="off"/>
+							              </xs:restriction>
+						            </xs:simpleType>
+					          </xs:attribute>
+					          <xs:attribute name="dynamicBehavior" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>Provide a dynamic display of a message (bliking or steady)</xs:documentation>
+						            </xs:annotation>
+						            <xs:simpleType>
+							              <xs:restriction base="xs:string">
+								                <xs:enumeration value="blinking"/>
+								                <xs:enumeration value="steady"/>
+							              </xs:restriction>
+						            </xs:simpleType>
+					          </xs:attribute>
+					          <xs:attribute name="origin" type="xs:string" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>Describe the alerting system that triggers the message</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <!--=============================================-->
+	<!--  ElectronicMessageBlockElement Definition -->
+	<!--=============================================-->
+	<xs:element name="electronicMessageBlock">
+		    <xs:annotation>
+			      <xs:documentation>A grouping of electronic messages</xs:documentation>
+			
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="electronicMessage" minOccurs="2" maxOccurs="unbounded"/>
+			      </xs:sequence>
+			      <xs:attributeGroup ref="logicalOperationAndOrAttGrp"/>
+		    </xs:complexType>
+	  </xs:element>
+	  <!--=============================================-->
+	<!-- ElectronicAnnunciationNameType -->
+	<!--=============================================-->
+	<xs:complexType name="electronicAnnunciationNameType">
+		    <xs:sequence>
+			      <xs:element name="systemName" minOccurs="0">
+				        <xs:complexType mixed="true">
+					          <xs:choice minOccurs="0" maxOccurs="unbounded">
+						            <xs:element ref="abbreviation"/>
+					          </xs:choice>
+					          <xs:attribute name="instance" type="xs:string" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>instance of a system</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+				        </xs:complexType>
+			      </xs:element>
+			      <xs:element name="message" type="messageType" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>Electronic message content</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="subMessage" type="messageType" minOccurs="0" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>Sub messages displayed</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType" use="optional"/>
+	  </xs:complexType>
+</xs:schema>

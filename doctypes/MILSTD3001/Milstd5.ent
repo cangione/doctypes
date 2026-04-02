@@ -1,0 +1,256 @@
+ <!--PUBLIC "-//USA-DOD//ELEMENTS 3001 Part 5 Draft XML V307 08242016"-->
+
+
+<!-- 			DTD for Aircraft Wiring Information
+-->
+
+<!-- =========================
+-->
+
+<!ENTITY % cablepartinfo "(refdes?, partno?, desc, cage?, units, useoncode?,  smrcode?, clkdeg?, notes?)">
+
+
+<!--	3 ROOT ELEMENT FOR AIRCRAFT WIRING MODULES 
+	Aircraft Wiring Diagram Information Module <acwirim>
+	Aircraft Wire Bundle Information Module <acwirbunim>
+	Aircraft Wire Connector Repair Information Module <acconnrepim>
+-->
+
+			<!--Information Modules-->
+
+<!--Aircraft Wiring Diagram Information Module-->
+<!ELEMENT acwirim    (wdiaidwp | wdiawp | wrunlstwp | wrefdeswp | wcomplstwp)+  >
+<!ATTLIST acwirim 	   %docatt;
+						%secur;>
+
+<!--Aircraft Wire Bundle Information Module-->
+<!ELEMENT acwirbunim    (bunidwp | accessinfowp | bunroutewp)+  >
+<!ATTLIST acwirbunim 	   %docatt;
+						%secur;>
+
+<!--Aircraft Wire Connector Repair Information Module-->
+<!ELEMENT acconnrepim    (wrepidwp | compreplistwp | reprkitwp | wtypelistwp | reptoolwp | wcomprepwp | partswp)+  >
+<!ATTLIST acconnrepim 	   %docatt;
+						%secur;>
+
+
+			<!--WORK PACKAGE ELEMENTS -->
+
+<!--Wiring Diagram Identification and Information Work Package-->
+<!ELEMENT wdiaidwp   (titleblk, wpinfo?, intro?, titledpara+, figsect?, foldsect?)>
+<!ATTLIST wdiaidwp 	%wpatt;                                                   			%secur;>
+
+<!--Wiring Diagram Work Package -->
+<!ELEMENT wdiawp   (titleblk, wpinfo?, intro, wpdiag+) >
+<!ATTLIST wdiawp 	%wpatt;                                                   		%secur;>
+
+<!--Wire Run List Work Package -->
+<!ELEMENT wrunlstwp   (titleblk, wpinfo?, intro, wrunlst+, figsect?, foldsect?) >
+<!ATTLIST wrunlstwp 	%wpatt;                                                   					%secur;>
+
+<!--Wire Reference Designator List Work Package -->
+<!ELEMENT wrefdeswp   (titleblk, wpinfo?, intro, wrefdeslst+, figsect?, foldsect?) >
+<!ATTLIST wrefdeswp 	%wpatt;                                                   					%secur;>
+
+<!--Wire and Connector Component Identification and Location List Work Package -->
+<!ELEMENT wcomplstwp   (titleblk, wpinfo?, intro, wcomplst+, figsect?, foldsect?) >
+<!ATTLIST wcomplstwp 	%wpatt;                                                   					%secur;>
+
+<!--Wiring System Bundle Assembly Identification and Information Work Package -->
+<!ELEMENT bunidwp   (%wpinfogeneric;) >
+<!ATTLIST bunidwp 	%wpatt;                                                   		%secur;>
+
+<!--Access Information Work Package -->
+<!ELEMENT accessinfowp   (titleblk, wpinfo, intro, (accesslist, graphic)+, figsect?, foldsect?) >
+<!ATTLIST accessinfowp 	%wpatt;                                                   		%secur;>
+
+<!--Wire Bundle Assembly Routing Work Package -->
+<!ELEMENT bunroutewp   (titleblk, wpinfo, intro?, titledpara*, bunroutegrp+) >
+<!ATTLIST bunroutewp  	%wpatt;                                                   		%secur;>
+
+<!--Wiring Systems Repair Identification And Information Work Package-->
+<!ELEMENT wrepidwp   (%wpinfogeneric;) >
+<!ATTLIST wrepidwp 	%wpatt;                                                   					%secur;>
+
+<!--Wiring Systems Component Repair Tool List Work Package -->
+<!ELEMENT compreplistwp   (titleblk, wpinfo, intro, compreplist, figsect?, foldsect?) >
+<!ATTLIST compreplistwp 	%wpatt;                                                   					%secur;>
+
+<!--Aircraft Specific Wiring Systems Repair Kit Work Package -->
+<!ELEMENT reprkitwp   (titleblk, wpinfo, intro, reprkitgrp+) >
+<!ATTLIST reprkitwp 	%wpatt;                                                   		%secur;>
+
+<!--Wire Type List Work Package -->
+<!ELEMENT wtypelistwp   (titleblk, wpinfo, intro, (wtypelist | table)*, figsect?, foldsect?) >
+<!ATTLIST wtypelistwp 	%wpatt;                                                   					%secur;>
+
+<!--Aircraft Specific Repair Tools Work Package -->
+<!ELEMENT reptoolwp    (titleblk,  wpinfo, intro?, maintproc+, figsect?, foldsect?) >
+<!ATTLIST reptoolwp 	%wpatt;                                                   					%secur;>
+
+<!--Wiring System Component Report Work Package -->
+<!ELEMENT wcomprepwp   (titleblk, wpinfo, intro?, wiringcompdesc?, maintproc+, figsect?, foldsect?) >
+<!ATTLIST wcomprepwp 	%wpatt;   
+assemblyinfo CDATA #IMPLIED
+%secur;>
+
+<!--Wiring Component Description -->
+<!ELEMENT wiringcompdesc   (title, desc) >
+<!ATTLIST wiringcompdesc 	%bodyatt;                                                   					%secur;>
+
+<!--Aircraft Cable Assembly Parts Data Work Package -->
+<!ELEMENT partswp   (titleblk, wpinfo, intro?,  partsdata) >
+<!ATTLIST partswp 	%wpatt;  
+assemblyinfo CDATA #IMPLIED
+%secur;>
+
+
+
+			<!--Specific WP Data-->
+
+<!--Wiring Diagrams-->
+<!ELEMENT wpdiag   (figure | foldout)>
+<!ATTLIST wpdiag 	%refs;                                                   					%secur;>
+
+<!--               ###                     -->
+
+<!--Wire Run List-->
+<!ELEMENT wrunlst   (table)>
+<!ATTLIST wrunlst columns (1 | 2 | 3) "1"
+       %secur;>
+
+<!--               ###                     -->
+
+<!--Wire Reference Designator List -->
+<!ELEMENT wrefdeslst   (table)>
+<!ATTLIST wrefdeslst columns (1 | 2 | 3) "1"                   					%secur;>
+
+
+<!--               ###                     -->
+
+<!--Wire and Connector Component Identification and Location List. -->
+<!ELEMENT wcomplst   (table)>
+<!ATTLIST wcomplst columns (1 | 2 | 3) "1"              					%secur;>
+
+
+<!--               ###                     -->
+
+<!--Access Information List -->
+<!ELEMENT accesslist   (title,  accessinfo+, noteslist?)>
+<!ATTLIST accesslist 	%refs;                                                   					%secur;>
+
+<!--Access Information - for gaining access to the aircraft wiring bundle assemblies. -->
+<!ELEMENT accessinfo   (areadoorno, indexno, reference)>
+<!ATTLIST accessinfo 	%refs;                                                   				%secur;>
+
+<!--Areas and Access Door Information -->
+<!ELEMENT areadoorno   (#PCDATA)>
+<!ATTLIST areadoorno		%secur;>
+
+
+<!--               ###                     -->
+
+<!--Wire Bundle Assembly Routing Group -->
+<!ELEMENT bunroutegrp   (figure, bunroutepl, useoncodelist?)>
+<!ATTLIST bunroutegrp 	%refs;                                                   					%secur;>
+
+<!--Wire Bundle Assembly Parts List -->
+<!ELEMENT bunroutepl   ( bunrouteplentry+, noteslist?)>
+<!ATTLIST bunroutepl 	%refs;                                                   					%secur;>
+
+<!--Wire Bundle Assembly Parts List Entry -->
+<!ELEMENT bunrouteplentry (%partinfo;)>
+
+<!--               ###                     -->
+
+<!--Wiring System Component Repair Tool List-->
+<!ELEMENT compreplist   (title,  comprep+, noteslist?)>
+<!ATTLIST compreplist 	%refs;                                                   					%secur;>
+
+<!--Entries in the Wiring System Component Repair Tool List-->
+<!ELEMENT comprep   (partno, tool, reference)>
+<!ATTLIST comprep 	%refs;                                                   				%secur;>
+
+<!--The part number of the insert, extraction, and crimping tool-->
+<!ELEMENT tool   (partno)>
+<!ATTLIST tool		%secur;>
+
+
+<!--               ###                     -->
+
+<!--Aircraft Specific Wiring Systems Repair Kit Group-->
+<!ELEMENT reprkitgrp   (figure, reprkitlist)>
+<!ATTLIST reprkitgrp 	%refs;                                                   					%secur;>
+
+<!--Aircraft Specific Wiring Systems Repair Kit List-->
+<!ELEMENT reprkitlist   (title,  reprkit+, noteslist?)>
+<!ATTLIST reprkitlist 	%refs;                                                   					%secur;>
+
+<!--Individual repair kits as listed in the Aircraft Specific Wiring Systems Repair Kit List-->
+<!ELEMENT reprkit    (indexno, partno, nomen)>
+<!ATTLIST reprkit 	%refs;                                                   					%secur;>
+
+<!--               ###                     -->
+
+<!--Wire Type List. A Standard List -->
+<!ELEMENT  wtypelist   (title,  wtypeentry+, noteslist?)>
+<!ATTLIST wtypelist 	%refs;                                                   					%secur;>
+
+<!--An individual entry in the Wire Type List  -->
+<!ELEMENT wtypeentry   (wtype, (wgage?, partno?, wstrip?)*, wiredesc)>
+<!ATTLIST wtypeentry 	%refs;                                                   					%secur;>
+
+<!--Wire Type Code -->
+<!ELEMENT wtype   (#PCDATA)>
+<!ATTLIST wtype 	%secur;>
+
+<!--Wire gage-->
+<!ELEMENT wgage   (#PCDATA)>
+<!ATTLIST wgage 	%secur;>
+
+<!--Wire stripper-->
+<!ELEMENT wstrip   (#PCDATA)>
+<!ATTLIST wstrip 	%secur;>
+
+<!--Wire/Cable Description -->
+<!ELEMENT wiredesc   (#PCDATA)>
+<!ATTLIST wiredesc 	%secur;>
+
+<!-- Maintenance Procedure -->
+<!ELEMENT maintproc   (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST maintproc 	%stepatt;                                                   					%secur;>
+
+<!--Aircraft Cable Assembly Parts Data -->
+<!ELEMENT partsdata   (title, (%paracon; | accablepl)+)>
+<!ATTLIST partsdata 	%bodyatt;                                                   					%secur;>
+
+<!--Aircraft Cable Assembly Parts List -->
+<!ELEMENT accablepl   (accablegrp+)>
+<!ATTLIST accablepl 	%bodyatt;                                                   					%secur;>
+
+<!--Aircraft Cable Assembly Group -->
+<!ELEMENT accablegrp   (figure?, accableassy, useoncodelist?)>
+<!ATTLIST accablegrp 	%refs;                                                   					%secur;>
+
+<!--Aircraft Cable Assembly -->
+<!ELEMENT accableassy   (title?, (maincableassy+, subcableassy*)+, noteslist?)  >
+<!ATTLIST accableassy %bodyatt; 
+				%secur;>
+
+<!--Aircraft Cable Main Assembly  -->
+<!ELEMENT maincableassy   (%cablepartinfo;)>
+<!ATTLIST maincableassy 	%refs;                                                   					%secur;>
+
+<!--Aircraft Cable Sub Assembly  -->
+<!ELEMENT subcableassy   (%cablepartinfo;)>
+<!ATTLIST subcableassy 	%refs;                                                   					%secur;>
+
+<!-- Clock Degree. Indicates the angle in degrees between the connector keyway, and the direction of the angled cable clamp as viewed clockwise from the face of the connector.  -->
+<!ELEMENT clkdeg   (#PCDATA)>
+<!ATTLIST clkdeg 	%secur;>
+
+<!-- Notes for an entry in the Aircraft Cable Assembly. A note refers to an entry in the notes list defined outside the Aircraft Cable Assembly Information.-->
+<!ELEMENT notes   (#PCDATA | %text;)* >
+<!ATTLIST notes idref IDREF #IMPLIED
+		%secur;>
+

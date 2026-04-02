@@ -1,0 +1,990 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: /home/csc3/mpray/graphics/epsi
+%%Creator: IslandDraw for mpray
+%%CreationDate: Thu Aug 19 08:08:27 1993
+%%Pages: 1
+%%BoundingBox: 145.392 585.042 222.935 608.273
+%%EndComments
+%%BeginPreview: 108 33 1 33
+% 0e1830e1c3870e3870e1c3870e00
+% 1f3cf9f7efdfbf7efdfbf7efdf00
+% 7fffffbf7ffffffffffffffdfb80
+% f3e78f1e3c78e1c38f1e3c78f1c0
+% e0c30408102040800204082040e0
+% f0000000000000000000000000e0
+% 78000000000000000000000001c0
+% 3800000000000000000000000380
+% 78000000000000000000000001c0
+% e0000000000000000000000000e0
+% e0000000000000000000000000e0
+% f0000780000000001e00000001e0
+% 78001fe0f0e77fde7f1e700003c0
+% 38001fe1f0e77fde7f9e70000380
+% 70001ce1f0e77fdef3df700001c0
+% e0001801f8e70e1ee3dff00000e0
+% e0001c63f8e70e1ee3dff0000070
+% 70001ce3fce70e1ef3dff00000e0
+% 38001fe3fcff0e1e7f9df00001c0
+% 38000fe79cfe0e1e3f1cf00001c0
+% 70000380003c00001c00000001e0
+% e0000000000000000000000000f0
+% f000000000000000000000000070
+% 78000000000000000000000000e0
+% 38000000000000000000000001c0
+% 38000000000000000000000001c0
+% 70000000000000000000000000f0
+% e000000000000000000000000070
+% f0f1c1060c1830c183060c1830f0
+% 79fbe7cf9f3e79f3e7cf1e7cf9e0
+% 3fbf7fffffffffffffffffffffc0
+% 1f1e3ef9f3e7cf3e7cf9f3e7cf00
+% 0e04183061c3860c3870e1830600
+%%EndPreview
+save
+
+userdict /IslandDrawDict 300 dict dup begin put
+
+%% catch nocurrentpoint error for:
+%% pathbbox
+    /ncpoint errordict /nocurrentpoint get def
+    errordict begin
+    /nocurrentpoint {
+	dup /pathbbox load eq
+	{ pop 0 0 1 1 }
+	{ ncpoint }
+	ifelse
+    } bind def
+    end
+
+    /image_raster { %% sw sh dw dh xs ys
+	translate scale /sh exch def /sw exch def
+	/imagebuf sw 7 add 8 idiv string def
+	sw sh 1 [sw 0 0 sh 0 0] { currentfile imagebuf readhexstring pop }
+	image
+    } bind def
+    /m {moveto} bind def
+    /l {lineto} bind def
+    /c {curveto} bind def
+    /n {newpath} bind def
+    /cl {closepath} bind def
+    /ar { %% sa ea sx sy rot tx ty
+	matrix currentmatrix 8 1 roll translate rotate scale
+	n 0 0 1 5 3 roll arc setmatrix
+    } bind def
+    /arn { %% sa ea sx sy rot tx ty
+	matrix currentmatrix 8 1 roll translate rotate scale
+	n 0 0 1 5 3 roll arcn setmatrix
+    } bind def
+    /el { %% sx sy rot tx ty
+	matrix currentmatrix 6 1 roll translate rotate scale
+	n 0 0 1 0 360 arc setmatrix cl
+    } bind def
+    /bp {setlinejoin setlinewidth setrgbcolor} bind def
+    /bpbw {setlinejoin setlinewidth setgray} bind def
+    /lw {setlinewidth} bind def
+    /lj {setlinejoin} bind def
+    /gr {setgray} bind def
+%% pattern stuff
+    /BPSIDE 32 def	%% pixels per pattern side
+    /PATFREQ 3.0 def	%% pattern pixels per mm
+    /dp_mat [PATFREQ 0 0 PATFREQ 0 0] def
+    /dp_pw BPSIDE def	%% pattern pixel width
+    /dp_ph BPSIDE def	%% pattern pixel height
+    /dp_w dp_pw PATFREQ div def	%% pattern mm width
+    /dp_h dp_ph PATFREQ div def	%% pattern mm height
+    /dp_bs 1 def		%% pattern bits per pixel
+
+    /savemat matrix def
+    /topmat matrix def
+    /patmat matrix def
+
+    /patpath {
+	/inv exch def
+	topmat setmatrix
+	pathbbox	%% get lo - hi indecies
+	/hy exch dp_h div floor cvi def
+	/hx exch dp_w div floor cvi def
+	/ly exch dp_h div floor cvi def
+	/lx exch dp_w div floor cvi def
+	lx 1 hx {
+	    dp_w mul
+	    ly 1 hy {
+		dp_h mul
+		exch dup 3 1 roll exch
+		patmat currentmatrix pop
+		translate
+		dp_pw dp_ph inv
+		dp_mat dp_proc imagemask
+		patmat setmatrix
+	    } for
+	    pop
+	} for
+    } bind def
+% setpattern  brush of patterns instead of gray
+   /setpattern {
+         /blue    exch def
+         /green    exch def
+         /red    exch def
+         /freq    exch def
+         /bwidth  exch def
+         /bpside  exch def
+         /bstring exch def
+         /onbits 0 def  /offbits 0 def
+         freq 0 {/y exch def
+                 /x exch def
+                 /xindex x 1 add 2 div bpside mul cvi def
+                 /yindex y 1 add 2 div bpside mul cvi def
+                 bstring yindex bwidth mul xindex 8 idiv add get not
+                 1 7 xindex 8 mod sub bitshift and 0 ne
+                 {/onbits  onbits  1 add def 1}
+                 {/offbits offbits 1 add def 0}
+                 ifelse
+                }
+                setscreen
+         {} settransfer
+         systemdict /setcmykcolor known
+         { /fact 1 onbits offbits onbits add div sub def
+           1 red sub fact mul 1 green sub fact mul 1 blue sub fact mul 0
+           setcmykcolor
+         }
+         { offbits offbits onbits add div setgray
+}         ifelse
+        } bind def
+    /dmatrix matrix def
+    /dpi    72 0 dmatrix defaultmatrix dtransform
+        dup mul exch   dup mul add   sqrt
+    def
+
+    /B {gsave bp stroke grestore} bind def %% brush: gr lw lj
+    /Bbw {gsave bpbw stroke grestore} bind def %% brush: gr lw lj
+    /F {gsave setrgbcolor eofill grestore} bind def %% fill: gr
+    /Fbw {gsave setgray eofill grestore} bind def %% fill: gr
+    /PB {gsave setlinejoin setlinewidth setpattern stroke grestore} bind def
+    /PF {gsave eoclip patpath grestore} bind def
+    /BB { gsave setrgbcolor setlinejoin setlinewidth strokepath
+          clip patpath grestore
+        } bind def
+%! IslandDraw text prolog Version 1.0
+%%
+/BLACK { 0.0 } bind def
+/CP {closepath} bind def
+/FI {eofill} bind def
+/E {exch} bind def
+/FF {findfont} bind def
+/GR {grestore} bind def
+/GS {gsave} bind def
+/MF {makefont} bind def
+/NP {newpath} bind def
+/RO {rotate} bind def
+/ST {stroke} bind def
+/SC {scale} bind def
+/SF {setfont} bind def
+/SG {setgray} bind def
+/SLC {setlinecap} bind def
+/SLJ {setlinejoin} bind def
+/SLW {setlinewidth} bind def
+/TR {translate} bind def
+/WHITE { 1.0 } bind def
+/m {moveto} bind def
+/r {rmoveto} bind def
+/l {lineto} bind def
+/sp {x 0 rmoveto} bind def
+/rl {rlineto} bind def
+/s {show} bind def
+/box { NP m l l l CP } bind def
+/pageboundary { NP m l l l CP } bind def
+/BS {   % black stroke
+GS SLJ SLW BLACK SG ST GR
+} bind def
+/WS {   % white stroke
+GS SLJ SLW WHITE SG ST GR
+} bind def
+/reencode_small_dict 12 dict def
+/ReencodeSmall {
+reencode_small_dict begin
+/new_codes_and_names E def
+/new_font_name E def
+/base_font_name E def
+/base_font_dict base_font_name FF def
+/newfont base_font_dict maxlength dict def
+base_font_dict {
+E dup /FID ne
+{ dup /Encoding eq
+{ E dup length array copy newfont 3 1 roll put }
+{ E newfont 3 1 roll put }
+ifelse
+}
+{ pop pop }
+ifelse
+} forall
+newfont /FontName new_font_name put
+new_codes_and_names aload pop
+new_codes_and_names length 2 idiv
+{ newfont /Encoding get 3 1 roll put }
+repeat
+new_font_name newfont definefont pop
+end     %reencode_small_dict
+} def
+/extended_Zapf [
+8#223 /a89
+8#224 /a90
+8#225 /a93
+8#226 /a94
+8#227 /a91
+8#230 /a92
+8#231 /a205
+8#232 /a85
+8#233 /a206
+8#234 /a86
+8#235 /a87
+8#236 /a88
+8#237 /a95
+8#240 /a96
+] def
+/extended_Standard [
+29 /thorn
+30 /yacute
+31 /divide
+128 /Acircumflex
+129 /Adieresis
+130 /Agrave
+131 /Aring
+132 /Atilde
+133 /Ccedilla
+134 /Eacute
+135 /Ecircumflex
+136 /Edieresis
+137 /Egrave
+138 /Iacute
+139 /Icircumflex
+140 /Idieresis
+141 /Igrave
+142 /Ntilde
+143 /Oacute
+144 /Ocircumflex
+145 /Odieresis
+146 /Ograve
+147 /Otilde
+148 /Scaron
+149 /Uacute
+150 /Ucircumflex
+151 /Udieresis
+152 /Ugrave
+153 /Ydieresis
+154 /Zcaron
+155 /aacute
+156 /acircumflex
+157 /adieresis
+158 /agrave
+159 /aring
+160 /atilde
+161 /exclamdown
+162 /cent
+163 /sterling
+164 /fraction
+165 /yen
+166 /florin
+167 /section
+168 /currency
+169 /quotesingle
+170 /quotedblleft
+171 /guillemotleft
+172 /guilsinglleft
+173 /guilsinglright
+174 /fi
+175 /fl
+176 /plusminus
+177 /endash
+178 /dagger
+179 /daggerdbl
+180 /periodcentered
+181 /twosuperior
+182 /paragraph
+183 /bullet
+184 /quotesinglebase
+185 /quotedblbase
+186 /quotedblright
+187 /guillemotright
+188 /ellipsis
+189 /perthousand
+190 /threesuperior
+191 /questiondown
+192 /mu
+193 /grave
+194 /acute
+195 /circumflex
+196 /tilde
+197 /macron
+198 /breve
+199 /dotaccent
+200 /dieresis
+201 /onesuperior
+202 /ring
+203 /cedilla
+204 /onequarter
+205 /hungarumlaut
+206 /ogonek
+207 /caron
+208 /emdash
+209 /ccedilla
+210 /copyright
+211 /eacute
+212 /ecircumflex
+213 /edieresis
+214 /egrave
+215 /iacute
+216 /icircumflex
+217 /idieresis
+218 /igrave
+219 /logicalnot
+220 /minus
+221 /ntilde
+222 /oacute
+223 /ocircumflex
+224 /odieresis
+225 /AE
+226 /onehalf
+227 /ordfeminine
+228 /ograve
+229 /otilde
+230 /registered
+231 /scaron
+232 /Lslash
+233 /Oslash
+234 /OE
+235 /ordmasculine
+236 /trademark
+237 /uacute
+238 /ucircumflex
+239 /udieresis
+240 /ugrave
+241 /ae
+242 /ydieresis
+243 /zcaron
+244 /Aacute
+245 /dotlessi
+246 /threequarters
+247 /Eth
+248 /lslash
+249 /oslash
+250 /oe
+251 /germandbls
+252 /multiply
+253 /Yacute
+254 /Thorn
+255 /eth
+] def
+/extended_Symbol [
+] def
+/extend_font {  % stack: fontname newfontname
+E dup (ZapfDingbats) eq
+{ cvn E cvn extended_Zapf ReencodeSmall }
+{ dup (Symbol) eq
+{ cvn E cvn extended_Symbol ReencodeSmall }
+{ cvn E cvn extended_Standard ReencodeSmall }
+ifelse
+}
+ifelse
+} bind def
+/getfont {
+/f E def f cvn where
+% { begin f cvx cvn exec SF end }
+{ begin f cvn load exec SF end }
+% { f 0 f length 8 sub getinterval (LocalFont) extend_font
+%/LocalFont FF
+{ f 0 f length 8 sub getinterval dup
+dup length 1 add string /localfont exch def
+localfont exch 0 exch putinterval
+localfont dup length 1 sub (X) putinterval
+localfont extend_font
+localfont FF
+/xsz f f length 4 sub 4 getinterval cvi def
+/ysz f f length 8 sub 4 getinterval cvi def
+[ xsz 0 0 ysz neg 0 0 ] MF dup f cvn E def
+SF
+}
+ifelse
+} bind def
+/ul { % space drop thickness
+GS currentpoint currentlinewidth 
+currentpoint NP m 6 -3 roll 
+SLW 0 E r
+0 rl ST SLW m
+GR 
+} bind def
+/ss { currentpoint pop E m } bind def
+/image_raster { % sw sh dw dh xs ys
+TR SC /sh E def /sw E def
+/imagebuf sw 7 add 8 idiv string def
+sw sh 1 [sw 0 0 sh 0 0] { currentfile imagebuf readhexstring pop }
+image
+} bind def
+/imagemask_raster {
+TR SC /sh E def /sw E def
+/imagebuf sw 7 add 8 idiv string def
+sw sh false [sw 0 0 sh 0 0] { currentfile imagebuf readhexstring pop }
+imagemask
+} bind def
+/image_color_raster { % sw sh sd dw dh xs ys
+systemdict /colorimage known not {
+/colorimage /colimg load def
+} if
+TR SC /sd E def /sh E def /sw E def
+/imagebuf sw 3 mul sd mul 7 add 8 idiv string def
+sw sh sd [sw 0 0 sh 0 0] { currentfile imagebuf readhexstring pop }
+false 3 colorimage
+} bind def
+/nx { /x E def } bind def
+0. nx
+%%EndFixedProlog
+%%EndProlog
+
+%%Page: 1 1
+gsave
+2.83465 -2.83465 scale 0 -279.4 translate
+topmat currentmatrix pop
+% Group
+n 56.995 69.799 m 57.44 69.799 l
+56.931 69.799 m 57.567 69.799 l
+56.868 69.736 m 57.63 69.736 l
+56.741 69.736 m 57.693 69.736 l
+56.678 69.672 m 57.757 69.672 l
+56.678 69.672 m 57.757 69.672 l
+56.614 69.672 m 57.821 69.672 l
+56.614 69.608 m 57.821 69.608 l
+56.55 69.608 m 57.884 69.608 l
+56.487 69.608 m 57.948 69.608 l
+56.487 69.545 m 57.948 69.545 l
+56.424 69.545 m 57.948 69.545 l
+56.424 69.545 m 58.011 69.545 l
+56.424 69.481 m 58.011 69.481 l
+57.312 69.481 m 58.011 69.481 l
+57.44 69.417 m 58.011 69.417 l
+57.503 69.417 m 58.011 69.417 l
+57.567 69.417 m 58.074 69.417 l
+57.567 69.354 m 58.074 69.354 l
+57.567 69.354 m 58.074 69.354 l
+57.63 69.291 m 58.074 69.291 l
+57.63 69.291 m 58.138 69.291 l
+57.63 69.291 m 58.138 69.291 l
+57.693 69.227 m 58.138 69.227 l
+57.693 69.227 m 58.138 69.227 l
+57.693 69.164 m 58.138 69.164 l
+57.693 69.164 m 58.138 69.164 l
+57.693 69.164 m 58.138 69.164 l
+57.693 69.1 m 58.138 69.1 l
+56.36 69.417 m 56.995 69.417 l
+56.36 69.417 m 56.931 69.417 l
+56.36 69.417 m 56.931 69.417 l
+56.36 69.354 m 56.868 69.354 l
+56.297 69.354 m 56.868 69.354 l
+56.297 69.291 m 56.805 69.291 l
+56.297 69.291 m 56.805 69.291 l
+56.233 69.291 m 56.741 69.291 l
+56.233 69.227 m 56.741 69.227 l
+56.233 69.227 m 56.741 69.227 l
+56.169 69.164 m 56.678 69.164 l
+56.169 69.164 m 56.678 69.164 l
+56.169 69.164 m 56.678 69.164 l
+56.169 69.1 m 56.678 69.1 l
+56.169 69.1 m 56.678 69.1 l
+56.169 69.1 m 56.678 69.1 l
+56.169 69.036 m 56.614 69.036 l
+56.169 69.036 m 56.614 69.036 l
+56.169 68.974 m 56.614 68.974 l
+56.169 68.974 m 56.614 68.974 l
+56.169 68.974 m 56.614 68.974 l
+56.169 68.91 m 56.614 68.91 l
+56.169 68.91 m 56.614 68.91 l
+56.169 68.91 m 56.614 68.91 l
+56.169 68.846 m 56.614 68.846 l
+56.169 68.846 m 56.614 68.846 l
+56.169 68.783 m 56.614 68.783 l
+56.169 68.783 m 56.614 68.783 l
+56.169 68.783 m 56.614 68.783 l
+56.169 68.719 m 56.614 68.719 l
+56.169 68.719 m 56.614 68.719 l
+56.169 68.656 m 56.614 68.656 l
+56.169 68.656 m 56.614 68.656 l
+56.169 68.656 m 56.614 68.656 l
+56.169 68.592 m 56.614 68.592 l
+56.169 68.592 m 56.614 68.592 l
+56.169 68.592 m 56.614 68.592 l
+56.169 68.529 m 56.614 68.529 l
+56.169 68.529 m 56.614 68.529 l
+56.169 68.465 m 56.678 68.465 l
+56.169 68.465 m 56.678 68.465 l
+56.169 68.465 m 56.678 68.465 l
+56.169 68.402 m 56.678 68.402 l
+56.169 68.402 m 56.678 68.402 l
+56.233 68.402 m 56.678 68.402 l
+56.233 68.338 m 56.678 68.338 l
+56.233 68.338 m 56.741 68.338 l
+56.233 68.274 m 56.741 68.274 l
+56.233 68.274 m 56.741 68.274 l
+56.297 68.274 m 56.805 68.274 l
+56.297 68.212 m 56.868 68.212 l
+56.297 68.212 m 56.868 68.212 l
+56.297 68.148 m 56.868 68.148 l
+56.36 68.148 m 56.931 68.148 l
+56.36 68.148 m 56.995 68.148 l
+56.36 68.084 m 57.059 68.084 l
+56.424 68.084 m 58.011 68.084 l
+56.424 68.084 m 57.948 68.084 l
+56.424 68.021 m 57.948 68.021 l
+56.487 68.021 m 57.884 68.021 l
+56.487 67.957 m 57.884 67.957 l
+56.55 67.957 m 57.821 67.957 l
+56.55 67.957 m 57.821 67.957 l
+56.614 67.894 m 57.757 67.894 l
+56.678 67.894 m 57.757 67.894 l
+56.678 67.894 m 57.693 67.894 l
+56.741 67.83 m 57.63 67.83 l
+56.868 67.83 m 57.567 67.83 l
+56.931 67.767 m 57.503 67.767 l
+57.059 67.767 m 57.312 67.767 l
+57.693 68.402 m 58.138 68.402 l
+57.693 68.402 m 58.138 68.402 l
+57.693 68.402 m 58.138 68.402 l
+57.693 68.338 m 58.138 68.338 l
+57.63 68.338 m 58.138 68.338 l
+57.63 68.274 m 58.074 68.274 l
+57.63 68.274 m 58.074 68.274 l
+57.567 68.274 m 58.074 68.274 l
+57.567 68.212 m 58.074 68.212 l
+57.567 68.212 m 58.074 68.212 l
+57.503 68.148 m 58.011 68.148 l
+57.503 68.148 m 58.011 68.148 l
+57.44 68.148 m 58.011 68.148 l
+57.312 68.084 m 58.011 68.084 l
+56.424 69.481 m 57.122 69.481 l
+58.9 69.799 m 59.598 67.894 l
+58.9 69.799 m 59.662 67.894 l
+58.964 69.799 m 59.662 67.894 l
+58.964 69.799 m 59.662 67.894 l
+58.964 69.799 m 59.726 67.894 l
+59.027 69.799 m 59.726 67.894 l
+59.027 69.799 m 59.789 67.894 l
+59.091 69.799 m 59.789 67.894 l
+59.091 69.799 m 59.853 67.894 l
+59.154 69.799 m 59.853 67.894 l
+59.154 69.799 m 59.916 67.894 l
+59.217 69.799 m 59.916 67.894 l
+59.217 69.799 m 59.916 67.894 l
+59.217 69.799 m 59.979 67.894 l
+59.281 69.799 m 59.979 67.894 l
+59.281 69.799 m 59.979 67.894 l
+59.345 69.799 m 59.979 67.894 l
+60.36 69.799 m 59.662 67.894 l
+60.424 69.799 m 59.726 67.894 l
+60.424 69.799 m 59.726 67.894 l
+60.488 69.799 m 59.789 67.894 l
+60.488 69.799 m 59.789 67.894 l
+60.551 69.799 m 59.853 67.894 l
+60.551 69.799 m 59.853 67.894 l
+60.615 69.799 m 59.916 67.894 l
+60.615 69.799 m 59.916 67.894 l
+60.615 69.799 m 59.916 67.894 l
+60.678 69.799 m 59.979 67.894 l
+60.678 69.799 m 59.979 67.894 l
+60.741 69.799 m 59.979 67.894 l
+60.741 69.799 m 59.979 67.894 l
+60.805 69.799 m 59.979 67.894 l
+60.805 69.799 m 60.043 67.894 l
+60.805 69.799 m 60.043 67.894 l
+60.869 69.799 m 60.107 67.894 l
+59.281 69.417 m 60.424 69.417 l
+59.281 69.354 m 60.424 69.354 l
+59.281 69.354 m 60.424 69.354 l
+59.281 69.291 m 60.424 69.291 l
+59.281 69.291 m 60.424 69.291 l
+59.281 69.291 m 60.424 69.291 l
+59.281 69.227 m 60.424 69.227 l
+59.281 69.227 m 60.424 69.227 l
+59.281 69.164 m 60.424 69.164 l
+59.281 69.164 m 60.424 69.164 l
+59.281 69.164 m 60.424 69.164 l
+59.281 69.1 m 60.424 69.1 l
+61.567 69.417 m 61.567 67.957 l
+61.567 69.481 m 61.567 67.957 l
+61.631 69.545 m 61.631 67.957 l
+61.631 69.608 m 61.631 67.957 l
+61.694 69.608 m 61.694 67.957 l
+61.694 69.672 m 61.694 67.957 l
+61.758 69.672 m 61.758 67.957 l
+61.758 69.672 m 61.758 67.957 l
+61.821 69.672 m 61.821 67.957 l
+61.821 69.736 m 61.821 67.957 l
+61.821 69.736 m 61.821 67.957 l
+61.884 69.799 m 61.884 67.957 l
+61.884 69.799 m 61.884 67.957 l
+61.948 69.799 m 61.948 67.957 l
+61.948 69.799 m 61.948 67.957 l
+62.012 69.799 m 62.012 67.957 l
+62.012 69.799 m 62.012 67.957 l
+62.075 69.799 m 62.075 69.354 l
+62.075 69.799 m 62.075 69.417 l
+62.075 69.862 m 62.075 69.417 l
+62.139 69.862 m 62.139 69.481 l
+62.139 69.862 m 62.139 69.545 l
+62.202 69.862 m 62.202 69.545 l
+62.202 69.862 m 62.202 69.545 l
+62.265 69.862 m 62.265 69.545 l
+62.265 69.862 m 62.265 69.545 l
+62.265 69.862 m 62.265 69.545 l
+62.329 69.862 m 62.329 69.545 l
+62.329 69.862 m 62.329 69.545 l
+62.393 69.862 m 62.393 69.545 l
+62.393 69.862 m 62.393 69.545 l
+62.456 69.862 m 62.456 69.545 l
+62.456 69.862 m 62.456 69.545 l
+62.52 69.862 m 62.52 69.545 l
+62.52 69.862 m 62.52 69.545 l
+62.52 69.862 m 62.52 69.545 l
+62.583 69.862 m 62.583 69.545 l
+62.583 69.862 m 62.583 69.545 l
+62.646 69.862 m 62.646 69.545 l
+62.646 69.862 m 62.646 69.545 l
+62.71 69.862 m 62.71 69.545 l
+62.71 69.862 m 62.71 69.481 l
+62.71 69.799 m 62.71 69.481 l
+62.774 69.799 m 62.774 69.417 l
+62.774 69.799 m 62.774 69.417 l
+62.837 69.799 m 62.837 69.291 l
+62.837 69.799 m 62.837 67.957 l
+62.901 69.799 m 62.901 67.957 l
+62.901 69.799 m 62.901 67.957 l
+62.964 69.799 m 62.964 67.957 l
+62.964 69.736 m 62.964 67.957 l
+62.964 69.736 m 62.964 67.957 l
+63.027 69.736 m 63.027 67.957 l
+63.027 69.672 m 63.027 67.957 l
+63.091 69.672 m 63.091 67.957 l
+63.091 69.672 m 63.091 67.957 l
+63.155 69.608 m 63.155 67.957 l
+63.155 69.608 m 63.155 67.957 l
+63.155 69.608 m 63.155 67.957 l
+63.218 69.545 m 63.218 67.957 l
+63.218 69.545 m 63.218 67.957 l
+63.282 69.481 m 63.282 67.957 l
+63.282 69.354 m 63.282 67.957 l
+63.98 68.274 m 65.822 68.274 l
+63.98 68.212 m 65.822 68.212 l
+63.98 68.212 m 65.822 68.212 l
+63.98 68.148 m 65.822 68.148 l
+63.98 68.148 m 65.822 68.148 l
+63.98 68.148 m 65.822 68.148 l
+63.98 68.084 m 65.822 68.084 l
+63.98 68.084 m 65.822 68.084 l
+63.98 68.084 m 65.822 68.084 l
+63.98 68.021 m 65.822 68.021 l
+63.98 68.021 m 65.822 68.021 l
+63.98 67.957 m 65.822 67.957 l
+63.98 67.957 m 65.822 67.957 l
+63.98 67.957 m 65.822 67.957 l
+63.98 67.894 m 65.822 67.894 l
+64.679 69.799 m 64.679 67.894 l
+64.679 69.799 m 64.679 67.894 l
+64.742 69.799 m 64.742 67.894 l
+64.742 69.799 m 64.742 67.894 l
+64.806 69.799 m 64.806 67.894 l
+64.806 69.799 m 64.806 67.894 l
+64.869 69.799 m 64.869 67.894 l
+64.869 69.799 m 64.869 67.894 l
+64.869 69.799 m 64.869 67.894 l
+64.932 69.799 m 64.932 67.894 l
+64.932 69.799 m 64.932 67.894 l
+64.996 69.799 m 64.996 67.894 l
+64.996 69.799 m 64.996 67.894 l
+65.06 69.799 m 65.06 67.894 l
+65.06 69.799 m 65.06 67.894 l
+65.06 69.799 m 65.06 67.894 l
+65.123 69.799 m 65.123 67.894 l
+65.123 69.799 m 65.123 67.894 l
+66.52 69.799 m 66.52 67.957 l
+66.584 69.799 m 66.584 67.957 l
+66.584 69.799 m 66.584 67.957 l
+66.647 69.799 m 66.647 67.957 l
+66.647 69.799 m 66.647 67.957 l
+66.711 69.799 m 66.711 67.957 l
+66.711 69.799 m 66.711 67.957 l
+66.774 69.799 m 66.774 67.957 l
+66.774 69.799 m 66.774 67.957 l
+66.774 69.799 m 66.774 67.957 l
+66.837 69.799 m 66.837 67.957 l
+66.837 69.799 m 66.837 67.957 l
+66.901 69.799 m 66.901 67.957 l
+66.901 69.799 m 66.901 67.957 l
+66.965 69.799 m 66.965 67.957 l
+66.965 69.799 m 66.965 67.957 l
+67.028 69.799 m 67.028 67.957 l
+67.727 68.974 m 67.727 68.592 l
+67.79 69.1 m 67.79 68.465 l
+67.79 69.164 m 67.79 68.402 l
+67.79 69.227 m 67.79 68.338 l
+67.854 69.291 m 67.854 68.274 l
+67.854 69.354 m 67.854 68.274 l
+67.917 69.417 m 67.917 68.212 l
+67.917 69.417 m 67.917 68.148 l
+67.98 69.481 m 67.98 68.148 l
+67.98 69.481 m 67.98 68.084 l
+67.98 69.545 m 67.98 68.084 l
+68.044 69.545 m 68.044 68.021 l
+68.044 69.545 m 68.044 68.021 l
+68.108 69.608 m 68.108 67.957 l
+68.108 69.608 m 68.108 67.957 l
+68.171 69.608 m 68.171 67.957 l
+68.171 69.672 m 68.171 67.957 l
+69.378 69.608 m 69.378 67.957 l
+69.378 69.608 m 69.378 67.957 l
+69.441 69.608 m 69.441 67.957 l
+69.441 69.545 m 69.441 68.021 l
+69.504 69.545 m 69.504 68.021 l
+69.504 69.545 m 69.504 68.084 l
+69.568 69.481 m 69.568 68.084 l
+69.568 69.481 m 69.568 68.084 l
+69.568 69.417 m 69.568 68.148 l
+69.632 69.417 m 69.632 68.148 l
+69.632 69.354 m 69.632 68.212 l
+69.695 69.291 m 69.695 68.274 l
+69.695 69.291 m 69.695 68.338 l
+69.759 69.227 m 69.759 68.402 l
+69.759 69.164 m 69.759 68.465 l
+69.822 69.1 m 69.822 68.529 l
+69.822 68.974 m 69.822 68.656 l
+68.235 68.084 m 69.314 68.084 l
+68.235 68.084 m 69.314 68.084 l
+68.235 68.084 m 69.314 68.084 l
+68.235 68.021 m 69.314 68.021 l
+68.235 68.021 m 69.314 68.021 l
+68.235 67.957 m 69.314 67.957 l
+68.235 67.957 m 69.314 67.957 l
+68.235 67.957 m 69.314 67.957 l
+68.235 67.894 m 69.314 67.894 l
+68.235 67.894 m 69.314 67.894 l
+68.298 67.894 m 69.251 67.894 l
+68.361 67.83 m 69.187 67.83 l
+68.425 67.83 m 69.123 67.83 l
+68.552 67.767 m 68.997 67.767 l
+68.679 67.767 m 68.87 67.767 l
+68.235 69.481 m 69.314 69.481 l
+68.235 69.545 m 69.314 69.545 l
+68.235 69.545 m 69.314 69.545 l
+68.235 69.545 m 69.314 69.545 l
+68.235 69.608 m 69.314 69.608 l
+68.235 69.608 m 69.314 69.608 l
+68.235 69.608 m 69.314 69.608 l
+68.235 69.672 m 69.314 69.672 l
+68.235 69.672 m 69.314 69.672 l
+68.298 69.672 m 69.251 69.672 l
+68.361 69.736 m 69.187 69.736 l
+68.425 69.736 m 69.123 69.736 l
+68.489 69.799 m 68.997 69.799 l
+68.616 69.799 m 68.933 69.799 l
+68.235 68.592 m 68.235 68.148 l
+68.235 68.465 m 68.235 68.148 l
+68.235 68.402 m 68.235 68.148 l
+68.298 68.402 m 68.298 68.148 l
+68.298 68.338 m 68.298 68.148 l
+68.361 68.274 m 68.361 68.148 l
+68.361 68.274 m 68.361 68.148 l
+68.425 68.274 m 68.425 68.148 l
+68.425 68.212 m 68.425 68.148 l
+68.425 68.212 m 68.425 68.148 l
+68.552 68.148 m 68.616 68.148 l
+68.933 68.148 m 68.997 68.148 l
+69.123 68.212 m 69.123 68.148 l
+69.123 68.212 m 69.123 68.148 l
+69.123 68.274 m 69.123 68.148 l
+69.187 68.274 m 69.187 68.148 l
+69.187 68.274 m 69.187 68.148 l
+69.251 68.338 m 69.251 68.148 l
+69.251 68.402 m 69.251 68.148 l
+69.314 68.465 m 69.314 68.148 l
+69.314 68.529 m 69.314 68.148 l
+69.314 68.592 m 69.314 68.148 l
+68.235 69.481 m 68.235 68.974 l
+68.235 69.481 m 68.235 69.1 l
+68.235 69.481 m 68.235 69.164 l
+68.298 69.481 m 68.298 69.164 l
+68.298 69.481 m 68.298 69.227 l
+68.361 69.481 m 68.361 69.291 l
+68.361 69.481 m 68.361 69.291 l
+68.425 69.481 m 68.425 69.354 l
+68.425 69.481 m 68.425 69.354 l
+68.425 69.481 m 68.425 69.417 l
+68.489 69.481 m 68.489 69.417 l
+68.489 69.481 m 68.489 69.417 l
+68.552 69.481 m 68.552 69.417 l
+68.552 69.481 m 68.679 69.481 l
+68.806 69.481 m 68.933 69.481 l
+68.933 69.417 l
+68.997 69.481 m 68.997 69.417 l
+68.997 69.481 m 68.997 69.417 l
+69.06 69.481 m 69.06 69.417 l
+69.06 69.481 m 69.06 69.354 l
+69.123 69.481 m 69.123 69.354 l
+69.123 69.481 m 69.123 69.354 l
+69.123 69.481 m 69.123 69.291 l
+69.187 69.481 m 69.187 69.291 l
+69.187 69.481 m 69.187 69.291 l
+69.251 69.481 m 69.251 69.227 l
+69.251 69.481 m 69.251 69.227 l
+69.314 69.481 m 69.314 69.1 l
+69.314 69.481 m 69.314 69.036 l
+69.314 69.481 m 69.314 68.91 l
+70.521 69.799 m 70.521 67.957 l
+70.584 69.799 m 70.584 67.957 l
+70.584 69.799 m 70.584 67.957 l
+70.584 69.799 m 70.584 67.957 l
+70.647 69.799 m 70.647 67.957 l
+70.647 69.799 m 70.647 67.957 l
+70.711 69.799 m 70.711 67.957 l
+70.711 69.799 m 70.711 67.957 l
+70.775 69.799 m 70.775 67.957 l
+70.775 69.799 m 70.775 67.957 l
+70.838 69.799 m 70.838 67.957 l
+70.838 69.799 m 70.838 67.957 l
+70.838 69.799 m 70.838 67.957 l
+70.902 69.799 m 70.902 67.957 l
+70.902 69.799 m 70.902 67.957 l
+70.965 69.799 m 70.965 67.957 l
+70.965 69.799 m 70.965 67.957 l
+71.028 68.592 m 71.028 67.957 l
+71.028 68.656 m 71.028 67.957 l
+71.028 68.656 m 71.028 67.957 l
+71.092 68.719 m 71.092 68.021 l
+71.092 68.783 m 71.092 68.084 l
+71.156 68.783 m 71.156 68.084 l
+71.156 68.846 m 71.156 68.148 l
+71.219 68.91 m 71.219 68.212 l
+71.219 68.91 m 71.219 68.212 l
+71.283 68.974 m 71.283 68.274 l
+71.283 68.974 m 71.283 68.274 l
+71.283 69.036 m 71.283 68.338 l
+71.346 69.036 m 71.346 68.402 l
+71.346 69.1 m 71.346 68.402 l
+71.409 69.164 m 71.409 68.465 l
+71.409 69.164 m 71.409 68.465 l
+71.473 69.227 m 71.473 68.529 l
+71.473 69.291 m 71.473 68.592 l
+71.473 69.291 m 71.473 68.592 l
+71.537 69.354 m 71.537 68.656 l
+71.537 69.354 m 71.537 68.719 l
+71.6 69.417 m 71.6 68.719 l
+71.6 69.481 m 71.6 68.783 l
+71.664 69.481 m 71.664 68.783 l
+71.664 69.545 m 71.664 68.846 l
+71.727 69.545 m 71.727 68.91 l
+71.727 69.608 m 71.727 68.974 l
+71.727 69.672 m 71.727 68.974 l
+71.79 69.672 m 71.79 69.036 l
+71.79 69.736 m 71.79 69.1 l
+71.854 69.736 m 71.854 69.1 l
+71.854 69.799 m 71.854 69.164 l
+71.918 69.799 m 71.918 67.957 l
+71.918 69.799 m 71.918 67.957 l
+71.918 69.799 m 71.918 67.957 l
+71.981 69.799 m 71.981 67.957 l
+71.981 69.799 m 71.981 67.957 l
+72.045 69.799 m 72.045 67.957 l
+72.045 69.799 m 72.045 67.957 l
+72.108 69.799 m 72.108 67.957 l
+72.108 69.799 m 72.108 67.957 l
+72.171 69.799 m 72.171 67.957 l
+72.171 69.799 m 72.171 67.957 l
+72.171 69.799 m 72.171 67.957 l
+72.235 69.799 m 72.235 67.957 l
+72.235 69.799 m 72.235 67.957 l
+72.299 69.799 m 72.299 67.957 l
+72.299 69.799 m 72.299 67.957 l
+72.362 69.799 m 72.362 67.957 l
+gsave
+0 0 0 0.084 0 B
+grestore
+n 67.409 65.608 m 68.298 64.973 l
+69.123 65.608 l
+70.076 64.973 l
+70.902 65.608 l
+71.79 64.973 l
+72.68 65.608 l
+73.569 64.973 l
+74.394 65.608 l
+75.347 64.973 l
+76.172 65.608 l
+77.061 64.973 l
+56.868 65.608 m 57.757 64.973 l
+58.583 65.608 l
+59.535 64.973 l
+60.36 65.608 l
+61.25 64.973 l
+62.139 65.608 l
+63.027 64.973 l
+63.853 65.608 l
+64.806 64.973 l
+65.631 65.608 l
+66.52 64.973 l
+67.409 65.608 l
+58.074 72.847 m 58.964 72.148 l
+59.853 72.847 l
+60.741 72.148 l
+61.567 72.847 l
+62.52 72.148 l
+63.345 72.847 l
+64.234 72.148 l
+65.123 72.847 l
+64.932 72.847 m 65.822 72.148 l
+66.711 72.847 l
+67.599 72.148 l
+68.425 72.847 l
+69.378 72.148 l
+70.203 72.847 l
+71.092 72.148 l
+71.981 72.847 l
+72.87 72.148 l
+73.695 72.847 l
+74.648 72.148 l
+75.474 72.847 l
+76.362 72.148 l
+77.252 72.847 l
+56.36 72.847 m 57.249 72.212 l
+58.074 72.847 l
+54.582 72.783 m 55.471 72.085 l
+56.36 72.783 l
+55.154 65.671 m 56.043 65.036 l
+56.868 65.671 l
+53.439 65.735 m 54.328 65.036 l
+55.217 65.735 l
+52.677 65.036 m 53.502 65.735 l
+52.233 68.084 m 51.471 67.322 l
+52.233 66.56 l
+52.296 69.608 m 51.534 68.783 l
+52.296 68.084 l
+52.359 71.069 m 51.597 70.307 l
+52.359 69.545 l
+52.677 72.847 m 51.597 71.767 l
+52.359 71.005 l
+77.633 69.608 m 78.395 70.434 l
+77.633 71.132 l
+77.569 68.148 m 78.331 68.91 l
+77.569 69.672 l
+77.505 66.624 m 78.267 67.45 l
+77.505 68.148 l
+78.267 65.988 m 77.505 66.688 l
+77.061 64.973 m 78.267 65.988 l
+77.633 71.005 m 78.458 71.767 l
+77.252 72.847 l
+52.677 65.036 m 51.534 65.862 l
+52.359 66.75 l
+52.677 72.847 m 53.82 72.021 l
+54.645 72.72 l
+gsave
+0 0 0 0.254 0 B
+grestore
+grestore
+
+%%Trailer
+end
+restore
+
+showpage

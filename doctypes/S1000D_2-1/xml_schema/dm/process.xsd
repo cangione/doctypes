@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+           	
+ <!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. New public identifier.                                          *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % PROCESS PUBLIC                                          *
+    *  "-//S1000D//ELEMENTS Process Module Breakdown 20030531//EN" >     *
+    * %PROCESS;                                                          *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Call the HEADING group definition.                                 *
+    ********************************************************************** -->
+  <xs:include schemaLocation="heading.xsd"/>
+
+<!--**********************************************************************
+    * Call the paracon group definition.                                 *
+    ********************************************************************** -->
+  <xs:include schemaLocation="paracon.xsd"/>
+  
+<!--**********************************************************************
+    * Call the Lists Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTLIST;     *
+    ********************************************************************** -->
+  <!-- %EXTLIST; -->
+  <xs:include schemaLocation="lists.xsd"/>
+  
+<!--**********************************************************************
+    * Call the Figure And Table Public Text.                             *
+    * The formal public identifier is stored in the entity %EXTFTAB;     *
+    ********************************************************************** -->
+  <!-- %EXTFTAB; -->
+  <xs:include schemaLocation="fig_tab.xsd"/>
+  
+<!--**********************************************************************
+    * Call the NPAR group definition.                                    *
+    ********************************************************************** -->
+  <xs:include schemaLocation="npar.xsd"/>
+
+  <xs:group name="CONTENT">
+    <xs:annotation>
+      <xs:documentation>
+    **********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing:- process.  *
+    **********************************************************************
+		</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="process"/>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:element name="process">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation>
+    **********************************************************************
+    * Define Element process (Maintenance Process Flow) containing:-     *
+    **********************************************************************
+    * The process element is a group of data module sequences that are   *
+    * grouped together to create a maintenance process flow.             *
+    * This element employs the 'Wrapper' class                           *
+    **********************************************************************
+    *   variable-declaratons                                             *
+    *             - Optional Single         Variable declarations        *
+    *   dm-seq    - Mandatory Repeatable    Sequence of Data Modules     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   id       - ID       - IMPLIED       - Node ID                    *
+    **********************************************************************
+	</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element ref="variable-declarations" minOccurs="0"/>
+        <xs:element ref="dm-seq" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID"/>
+      <xs:attributeGroup ref="secur"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="dm-seq">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation>
+    **********************************************************************
+    * Define Element dm-seq (Data Module Sequence) containing:-          *
+    **********************************************************************
+    * The dm-seq element sequences multiple Data Modules and/or the      *
+    * interactive constructs of Alternates, If-Then-Else, and Loops.     *
+    * This element employs the 'Node Sequence' class.                    *
+    **********************************************************************
+    *   dm-node       \                        Data Module node          *
+    *   dm-node-alt    >Mandatory Repeatable   Alted Data Module node    *
+    *   dm-if         /                        If-Then-Else DM node      *
+    *   dm-loop      /                         Loop Data Module node     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   id       - ID       - IMPLIED       - Node ID                    *
+    *   Definition stored in entity %secur;                              *
+    **********************************************************************
+	</xs:documentation>
+      </xs:annotation>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="dm-node"/>
+        <xs:element ref="dm-node-alt"/>
+        <xs:element ref="dm-if"/>
+        <xs:element ref="dm-loop"/>
+      </xs:choice>
+      <xs:attribute name="id" type="xs:ID"/>
+      <xs:attributeGroup ref="secur"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="dm-node">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation>
+    **********************************************************************
+    * Define Element dm-node (Data Module Node) containing:-             *
+    **********************************************************************
+    * The dm-node element either references another DM, contains a       *
+    * dialog, or contains another sequence of dm-nodes.                  *
+    * This element employs the 'Node' class.                             *
+    **********************************************************************
+    *   precond     - Optional Repeatable   Precondition Expression      *
+    *   preset      - Optional Repeatable   Changes to variable values   *
+    *   refdm        \                      Data Module reference        *
+    *   dialog       >Mandatory Single      Dialog to collect prop values*
+    *   dm-seq      /                       Sequence of dm-nodes         *
+    *   postset     - Optional Repeatable   Changes to variable values   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   id       - ID       - IMPLIED       - Node ID                    *
+    *   Definition stored in entity %secur;                              *
+    **********************************************************************
+	</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element ref="precond" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="preset" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:choice>
+          <xs:element ref="refdm"/>
+          <xs:group ref="DIALOG"/>
+          <xs:element ref="dm-seq"/>
+        </xs:choice>
+        <xs:element ref="postset" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID"/>
+      <xs:attributeGroup ref="secur"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="dm-node-alt">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation>
+    **********************************************************************
+    * Define Element dm-node-alt (DM Node Alternatives) containing:-     *
+    **********************************************************************
+    * The dm-node-alt element is a pointer to multiple Data Module       *
+    * Nodes where only one is valid determined by required preconditions *
+    * on the contained Data Module Nodes.                                *
+    * This element employs the 'Node Alternate' class.                   *
+    **********************************************************************
+    *   dm-node      - Mandatory Repeatable   Data Module Nodes          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   id       - ID       - IMPLIED       - Node ID                    *
+    *   name     - CDATA    - IMPLIED       - Name of the node           *
+    *   Definition stored in entity %secur;                              *
+    **********************************************************************
+	</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element ref="dm-node" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID"/>
+      <xs:attribute name="name" type="xs:string"/>
+      <xs:attributeGroup ref="secur"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="dm-if">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation>
+    **********************************************************************
+    * Define Element dm-if (If-Then-Else DM Nodes) containing:-          *
+    **********************************************************************
+    * The dm-if element provides an If-Then-Else conditional selection   *
+    * of Data Module Nodes depending on an expression.                   *
+    * This element employs the 'If Node' class.                          *
+    **********************************************************************
+    *   expression   - Mandatory Single  Expression to evaluate          *
+    *   dm-then-seq  - Mandatory Single  Then branch to a dm-seq         *
+    *   dm-else-seq  - Optional  Single  Else branch to a dm-seq         *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   id       - ID       - IMPLIED       - Node ID                    *
+    **********************************************************************
+	</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element ref="expression"/>
+        <xs:element ref="dm-then-seq"/>
+        <xs:element ref="dm-else-seq" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="dm-then-seq">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation>
+    **********************************************************************
+    * Define Element dm-then-seq (Then Branch DM Sequence) containing:-  *
+    **********************************************************************
+    * The dm-then-seq element provides an explicit tag for the Then      *
+    * branch of an If-Then-Else construct.  This is the sequence to be   *
+    * performed when the dm-if expression evaluates to true.             *
+    * This element employs the 'Node Sequence' class.                    *
+    **********************************************************************
+    *   dm-node       \                        Data Module node          *
+    *   dm-node-alt    >Mandatory Repeatable   Alted Data Module node    *
+    *   dm-if         /                        If-Then-Else DM node      *
+    *   dm-loop      /                         Loop Data Module node     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   id       - ID       - IMPLIED       - Node ID                    *
+    *   Definition stored in entity %secur;                              *
+    **********************************************************************
+	</xs:documentation>
+      </xs:annotation>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="dm-node"/>
+        <xs:element ref="dm-node-alt"/>
+        <xs:element ref="dm-if"/>
+        <xs:element ref="dm-loop"/>
+      </xs:choice>
+      <xs:attribute name="id" type="xs:ID"/>
+      <xs:attributeGroup ref="secur"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="dm-else-seq">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation>
+    **********************************************************************
+    * Define Element dm-else-seq (Else Branch DM Sequence) containing:-  *
+    **********************************************************************
+    * The dm-else-seq provides an explicit tag for the Else branch of    *
+    * an If-Then-Else construct.  This is the sequence to be performed   *
+    * when the dm-if expression evaluates to false.                      *
+    * This element employs the 'Node Sequence' class.                    *
+    **********************************************************************
+    *   dm-node       \                        Data Module node          *
+    *   dm-node-alt    >Mandatory Repeatable   Alted Data Module node    *
+    *   dm-if         /                        If-Then-Else DM node      *
+    *   dm-loop      /                         Loop Data Module node     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   id       - ID       - IMPLIED       - Node ID                    *
+    *   Definition stored in entity %secur;                              *
+    **********************************************************************
+	</xs:documentation>
+      </xs:annotation>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="dm-node"/>
+        <xs:element ref="dm-node-alt"/>
+        <xs:element ref="dm-if"/>
+        <xs:element ref="dm-loop"/>
+      </xs:choice>
+      <xs:attribute name="id" type="xs:ID"/>
+      <xs:attributeGroup ref="secur"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="dm-loop">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation>
+    **********************************************************************
+    * Define Element dm-loop (Loop Data Module Nodes) containing:-       *
+    **********************************************************************
+    * The dm-loop element provides a looping construct for Data Module   *
+    * Nodes depending on an expression.  The construct allows for        *
+    * setting an initial condition and incrementing at loop completion.  *
+    * This element employs the 'Loop Node' class.                        *
+    **********************************************************************
+    *   preset       - Optional  Single  Initial condition variable value*
+    *   expression   - Mandatory Single  Expression to evaluate for loop *
+    *   dm-seq       - Mandatory Single  Seq of Data Modules to loop     *
+    *   assertion    - Optional  Single  Loop end variable value         *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   id       - ID       - IMPLIED       - Node ID                    *
+    **********************************************************************
+	</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element ref="preset" minOccurs="0"/>
+        <xs:element ref="expression"/>
+        <xs:element ref="dm-seq"/>
+        <xs:element ref="assertion" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID"/>
+    </xs:complexType>
+  </xs:element>
+
+
+</xs:schema>

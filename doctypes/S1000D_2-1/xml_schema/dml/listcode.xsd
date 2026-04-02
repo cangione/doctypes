@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. Reflect the changes done for the DM DTD.                        *
+    *====================================================================*
+    * Typical invocation:-                                               *
+    * <!ENTITY % LISTCODE PUBLIC                                         *
+    *  "-//S1000D//ELEMENTS List Code Definitions 20030531//EN" >        *
+    * %LISTCODE;                                                         *
+    ********************************************************************** -->
+
+	
+	<xs:simpleType name="NCAGEcode">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Za-z0-9]{5}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="sendid" type="NCAGEcode">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element sendid (Senders Identification) containing:-        *
+    *  Parsed Character Data.                                            *
+    * may contain the NCAGE code                                         *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+
+	<xs:element name="diyear">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element diyear (Data Identification Year) containing:-      *
+    *  Parsed Character Data.                                            *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:gYear">
+				<xs:pattern value="[0-9]{4}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<!-- call with mixed="true" -->
+	<xs:group name="SPAR">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %SPAR; (Simple Paragraphs) containing:-              *
+    *====================================================================*
+    * Optional  Repeatable Group.                                        *
+    *====================================================================*
+    *   Parsed Character Data.                                           *
+    *  or                                                                *
+    *   p        - Mandatory Single     contains Definition stored in    *
+    *                                   entity %SPARCON;                 *
+    *====================================================================*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="p"/>
+		</xs:sequence>
+	</xs:group>
+
+	<!-- call with mixed="true" -->
+	<xs:group name="SPARCON">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %SPARCON; (Simple Paragraph Continuation)            *
+    * containing:-                                                       *
+    *====================================================================*
+    * Optional Repeatable Group                                          *
+    *====================================================================*
+    *   Parsed Character Data.                                           *
+    *  or                                                                *
+    *   subscrpt - mandatory single  contains Replaceable Character Data.*
+    *  or                                                                *
+    *   supscrpt - mandatory single  contains Replaceable Character Data.*
+    *====================================================================*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+		</xs:choice>
+	</xs:group>
+
+	<xs:element name="subscrpt">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element subscrpt (Sub Script) containing:-                  *
+    *  Replaceable Character Data.                                       *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true"/>	 
+	</xs:element>
+
+	<xs:element name="supscrpt">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element supscrpt (Super Script) containing:-                *
+    *  Replaceable Character Data.                                       *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true"/>
+	</xs:element>
+
+	<xs:element name="p">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element p (Simple Paragraph) containing:-                   *
+    *  Definition stored in entity %SPARCON;                             *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:group ref="SPARCON" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="remarks">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element remarks (Remarks) containing:-                      *
+    *   Definition stored in entity %SPAR;                               *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:group ref="SPAR" minOccurs="0"/>
+		</xs:complexType>
+	</xs:element>
+
+
+</xs:schema>

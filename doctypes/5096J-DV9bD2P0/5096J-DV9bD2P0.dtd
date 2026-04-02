@@ -1,0 +1,2785 @@
+<!-- *****  START OF FILE *****
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  DTD TITLE:	Work Cards
+	+
+	+  SPECIFICATION NUMBER:	MIL-DTL-5096J
+	+
+	+  SPECIFICATION POC:	Sheila Martin
+	+
+	+  DOCUMENT TYPE DEFINITION (DTD):	5096J-DV9bD2P0
+	+
+	+  MIL-STANDARD VERSION:	38784STD-BV9b
+	+
+	+  LAST MODIFICATION: 22 September 2023
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+  This file is made available to provide the user with a digital 
+	+  representation of the DTD found in:  Appendix D of MIL-DTL-5096J
+	+  This file is incomplete without MIL-DTL-5096J.
+	+
+	+  The following set of declarations may be referred to by using a
+	+  public entity as follows:
+	+
+	+  <!ENTITY % m5096wc PUBLIC "-//USA-DOD//DTD 5096J-DV9bD2P0//EN" >
+	+  %m5096wc;
+	+
+	+  NOTE: In order to parse the following DTD subset alone, append
+	+  the following statement to the beginning of the file:
+	+
+	+		<!DOCTYPE doc [
+	+
+	+		and the associated  ]>  to the end of the file.
+	+
+	+  NOTE: The start and end of this file are marked with notations.
+	+  If these notations are not present, the file may not be complete!
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+
+	+	AUTHORED BY: Johnny Sullivan, TMSS, AF TDD
+	+	Modified By: Carrie Wooddell, TMSS
+	+	Modified By: Jeff Mueller, TMSS
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  OTHER DTDS NEEDED:		
+	+  
+	+			38784STD-BV9b.dtd
+	+	
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  MODIFICATIONS SINCE PREVIOUS RELEASE:  (previous release: 5096J-DV9bD1P0.dtd)
+	+
+	+	TCN: 5096J-D-23117-02
+	+	Description: Added syssubcols toggle attribute to sectatt entity. 
+	+ This toggles whether the WUC column is split into SYS and SUB columns.
+	+	JLM, 22 SEP 2023
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+                      ENTITY DECLARATIONS
+-->
+
+<!ENTITY % bodyele      "inspection, lubricate?" >
+
+<!-- TCN#: None. V8a Update-->
+<!--<!ENTITY % fig		"(title?, graphic)" >-->
+<!ENTITY % fig    "title?, (graphic | tabdisplay)" >
+
+<!--TCN: 5096G-D-19247-02.  Added optional <workareadiagrams> to frnt entity.  JLM.  02/27/2023-->
+<!-- TCN#: 38784STD-19330-04 -->
+<!--TCN: 5096G-D-19052-01.  Added optional <safesum> to frnt entity.  JLM.  02/21/2019-->
+<!--TCN: 5096F-D-12090-01.  Removed <contents>/<volcontents> as it was incorrectly added in previous version.  CBW.  5/21/14-->
+<!--<!ENTITY % frnt         "(idinfo, lep, verstat?, (contents | volcontents)?, intro)" >-->
+<!ENTITY % frnt         "idinfo, ((lep, listofchanges?) | listofchanges), verstat?, intro, safesum?, workareadiagrams?" >
+
+<!ENTITY % fpi          "card*">
+
+<!--TCN: 5096G-D-19052-01.  Added %safesum entity so <safesum> has a content model of (card+).  JLM.  02/21/2019-->
+<!ENTITY % safesum          "card+">
+
+<!--TCN: 5096G-D-19052-01.  Added SAFESUM to enumerated options of attribute grouping.  JLM.  02/21/2019-->
+<!ENTITY % group        "(INTRO|SAFESUM|PREP|PRE|EOR|THRU|BPO|HPO|PE|ISO|OTHER)" >
+
+<!ENTITY % sect         "card*" >
+
+<!-- TCN#: 38784STD-20267-01 -->
+<!ENTITY % secur "security (u | c | s | n) 'n'
+			caveat	CDATA		#IMPLIED
+			cui	CDATA		#IMPLIED
+			fgi		CDATA		#IMPLIED" >
+
+<!ENTITY % parazero     "title?, warning*, caution?, note?, (para, note?)?, (step1, step1+)?" >
+
+<!ENTITY % nparcon      "title?, warning*, caution?, note?, para, note?, (step1, step1+)?" >
+
+<!ENTITY % yesorno "NUMBER" >
+
+<!ENTITY % delstat    "delete  | real | reserve | NA" >
+
+<!ENTITY % status     "empty | deleted | reserved | notapp" >
+
+<!ENTITY % chgatt "deltype (%delstat;) #IMPLIED
+	inschlvl NMTOKEN #IMPLIED
+	delchlvl NMTOKEN #IMPLIED
+	modchlvl NMTOKEN #IMPLIED
+	chremarkref IDREF #IMPLIED 
+	status  (%status;) #IMPLIED
+	revchg %yesorno; '0'" >
+
+<!ENTITY % bodyatt "label CDATA #IMPLIED
+	sssn CDATA #IMPLIED
+	indexid  CDATA  #IMPLIED 
+	%chgatt;" >
+
+<!ENTITY % chapatt "id ID #IMPLIED
+	%secur;
+	%bodyatt;" >
+	
+<!ENTITY % verified "verdate CDATA #IMPLIED
+	verrem CDATA #IMPLIED
+	verstatus (unver | ver | notapplicable) 'unver'" >
+	
+<!ENTITY % para0att "emergency %yesorno; '0'
+	id ID #IMPLIED
+	esds %yesorno; '0'
+	nsp %yesorno; '0'
+	fcp %yesorno; '0'
+	hcp %yesorno; '0'
+	hci %yesorno; '0'
+	ocp %yesorno; '0'
+	oci %yesorno; '0'
+	csp %yesorno; '0'
+	applicref IDREFS #IMPLIED
+	%verified;
+	%secur;
+	%bodyatt;" >
+
+<!ENTITY % doc "docwc">
+
+<!-- CCB#  Needed to solve spacing problem in front matter -->
+<!ENTITY % tabl "title?, tgroup+" >
+
+<!ENTITY % actatt       "%para0att;
+			cardno CDATA #IMPLIED
+			wucsys CDATA #IMPLIED
+			wucsub CDATA #IMPLIED
+			area   CDATA #IMPLIED
+			minute CDATA #IMPLIED" >
+
+<!--TCN: 5096J-D-23117-02.  Added syssubcols attribute. -->
+<!--TCN: 5096G-D-19247-08.  Added numcols attribute to the sectatt entity.  JLM.  02/27/2023-->
+<!ENTITY % sectatt "%chapatt;
+	numcols (2 | 3 | 4) #IMPLIED
+	syssubcols %yesorno; '1'" >
+
+<!--TCN: 5096G-D-19247-08.  Added 4 toggle attributes (pre, th, bpo, bpopr) to the stepatt entity.  JLM.  02/27/2023-->			
+<!ENTITY % stepatt "label CDATA #IMPLIED
+	sssn CDATA #IMPLIED
+	id ID #IMPLIED
+	esds %yesorno; '0'
+	nsp %yesorno; '0'
+	fcp %yesorno; '0'
+	hcp %yesorno; '0'
+	hci %yesorno; '0'
+	ocp %yesorno; '0'
+	oci %yesorno; '0'
+	csp %yesorno; '0'
+	applicref IDREFS #IMPLIED
+	%chgatt;
+	%verified;
+	pre %yesorno; '0'
+	th %yesorno; '0'
+	bpo %yesorno; '0'
+	bpopr %yesorno; '0'">
+	
+<!ENTITY % taskatt      "%stepatt;
+			%secur;" >
+			
+<!-- TCN#: None. V9b Update -->
+<!-- TCN#: None. V9a Update-->
+<!ENTITY % m38784std    PUBLIC "-//USA-DOD//DTD 38784STD-BV9b//EN">
+<!-- 
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  DTD TITLE:	General Style and Format
+	+
+	+  SPECIFICATION NUMBER:	MIL-STD-38784
+	+
+	+  SPECIFICATION POC:	Jeff Mueller
+	+
+	+  DOCUMENT TYPE DEFINITION (DTD):	38784STD-BV9b.dtd
+	+	
+	+  RELEASE DATE:  17 November 2020
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+  This file is made available to provide the user with a digital 
+	+  representation of the DTD found in MIL-STD-38784.
+	+  This file is incomplete without MIL-STD-38784.
+	+
+	+  The following set of declarations may be referred to by using a
+	+  public entity as follows:
+	+
+	+  <!ENTITY % m38784 PUBLIC "-//USA-DOD//DTD 38784STD-BV9b//EN" >
+	+  %m38784;
+	+
+	+  NOTE: In order to parse the following DTD subset alone, append
+	+  the following statement to the beginning of the file:
+	+
+	+		<!DOCTYPE doc [
+	+
+	+		and the associated  ]>  to the end of the file.
+	+
+	+  NOTE: The start and end of this file are marked with notations.
+	+  If these notations are not present, the file may not be complete!
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+	AUTHORED BY: Tom Patterson, TMSS
+	+ MODIFIED BY: Jeff Mueller, TMSS
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  OTHER DTDS NEEDED:		
+	+  	
+	+	NONE	
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  MODIFICATIONS SINCE PREVIOUS RELEASE:  
+	+			(previous release: 38784STD-BV9a.dtd)
+	+	
+	+	TCN#: 38784STD-19031-01
+	+	Description: Added element/attribute support for CSP markings.
+	+ Attribute for csp added to objmedia element and stepatt and para0att entities.
+	+	Added csp element to text entity.
+	+	JLM, 17 NOV 2020
+	+
+	+	TCN#: 38784STD-20225-01
+	+	Description: Added optional ID attributes to foreword, intro, preface, contents, illuslist,
+	+ and tablelist. Also added chgatt entity to illuslist.
+	+	JLM, 17 NOV 2020
+	+
+	+	TCN#: 38784STD-B-19053-01
+	+	Description: Added safesumatts entity to safesum element so the safety summary attributes 
+	+ can be redefined if needed.
+	+	JLM, 17 NOV 2020
+	+
+	+	TCN#: 38784STD-19309-01
+	+	Description: Added termsect element to fpi entity along with termlist, termrow, and 
+	+ termtitle elements to support a list terms in the introduction.
+	+	JLM, 17 NOV 2020
+	+
+	+	TCN#: 38784STD-20029-03
+	+	Description: Added shading attribute to tabatts entity for alternate row 
+	+ shading in tables.
+	+	JLM, 17 NOV 2020
+	+
+	+	TCN#: 38784STD-19330-04
+	+	Description: Added element/attribute support for change highlighting, list of changes, and 
+	+ paper/PDF output. Added highlight and output attributes to docatt entity. Added modchlvl and 
+	+ chremarkref attributes to chgatt entity. In the change element, added modify to possible values 
+	+ of the change attribute. Added listofchanges element to frnt and auxfrnt entities. Added new elements 
+	+ listofchanges, revision, and changeremark.
+	+	JLM, 17 NOV 2020
+	+
+	+	TCN#: 38784STD-20267-01
+	+	Description: Added element/attribute support for CUI markings.
+	+ Added cui attribute to secur entity. Added cuiwarning and cuidesind to idinf entity.
+	+	Added elements cuicomponent, cuioffice, cuicategory, dissem, and cuipoc to cuidesind.
+	+	JLM, 17 NOV 2020
+	+
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  -->
+
+<!ENTITY % delstat    "delete  | real | reserve | NA" >
+
+<!ENTITY % status     "empty | deleted | reserved | notapp" >
+
+<!ENTITY % yesorno "NUMBER" >
+
+<!-- TCN#: 38784STD-19330-04 -->
+<!-- CCB# 98-006-08 -->
+<!ENTITY % chgatt
+"deltype (%delstat;) #IMPLIED
+inschlvl NMTOKEN #IMPLIED
+delchlvl NMTOKEN #IMPLIED
+modchlvl NMTOKEN #IMPLIED
+chremarkref IDREF #IMPLIED 
+status  (%status;) #IMPLIED
+revchg %yesorno; '0'" > 
+
+
+<!ENTITY % subfig		"(graphic, legend?)" >
+
+<!-- CCB#: None. Added support for CGMs and hotlinking graphics -->
+<!ENTITY % cgmatts	"id		ID		#IMPLIED
+				title		CDATA		#IMPLIED
+				descript	CDATA		#IMPLIED
+				visibility	(visible | hidden)	'visible'
+				interactivity	(interactive | none)	'none'
+				%chgatt;">
+
+<!-- CCB# 38784std-01276-01 -->
+<!ENTITY % pubatts 	"controlno	CDATA	'00000000'
+			cycle	        CDATA   'new'	
+			chglevel	NUMBER	#IMPLIED
+			initlabel	NUMBER	#IMPLIED
+			initpage	NUMBER	'1'
+			docno		CDATA	#IMPLIED
+			highguid	NUMBER	'0'
+			labelstyle      CDATA   'FAN'" >
+			
+<!-- CCB#: 38784-B-02030-28 -->
+<!ENTITY % descatts
+"attachpart %yesorno; '0'      
+kit %yesorno; '0' 
+quickchgexpl %yesorno; '0'
+%chgatt;" >
+
+<!-- TCN#: 38784STD-20267-01 -->
+<!-- CCB# 8139-001-03 -->
+<!-- CCB#: 38784-B-02303-07 -->
+<!ENTITY % secur "security (u | c | s | n) 'n'
+			caveat	CDATA		#IMPLIED
+			cui	CDATA		#IMPLIED
+			fgi		CDATA		#IMPLIED" >
+
+<!-- CCB#: 38784-B-02212-04 -->
+<!ENTITY % verified
+"verdate CDATA #IMPLIED
+verrem CDATA #IMPLIED
+verstatus (unver | ver | notapplicable) 'unver'" >
+
+<!-- CCB# 0292-05 -->
+<!--ENTITY % itemid
+"unit CDATA #IMPLIED
+module CDATA #IMPLIED
+lru CDATA #IMPLIED
+compon CDATA #IMPLIED
+partno CDATA #IMPLIED
+refdes CDATA #IMPLIED" >
+
+<!ENTITY % content
+"skilltrk NMTOKENS #IMPLIED
+contype (desc | proc) #IMPLIED
+assocfig IDREFS #IMPLIED
+assoctab IDREFS #IMPLIED" >
+
+<!ENTITY % db "%itemid; %content;" -->
+
+<!-- TCN#: 38784STD-19330-04 -->
+<!-- CCB# 38784-01165-04 -->
+<!-- CCB# 38784-01080-09 -->
+<!-- CCB# 38784-01122-05 -->
+<!-- CCB# 9141-001-03 -->
+<!-- CCB#: 38784-B-03309-01 -->
+<!ENTITY % docatt
+"docid CDATA #IMPLIED
+docstat (revision | change | prelim | draft | formal) 'prelim'
+output (paper | PDF) 'paper'
+highlight %yesorno; '0'
+verstatpg (ver | unver) 'unver'
+index %yesorno; '0'">
+
+<!-- CCB# 0292-05 -->
+<!ENTITY % bodyatt
+"label CDATA #IMPLIED
+sssn CDATA #IMPLIED
+indexid  CDATA  #IMPLIED 
+%chgatt;" >
+
+<!-- CCB# 1024-03 -->
+<!ENTITY % chapatt
+"id ID #IMPLIED
+%secur;
+%bodyatt;" >
+
+<!ENTITY % sectatt "%chapatt;" >
+
+<!-- TCN#: 38784STD-19031-01 -->
+<!-- * 8139-001-04 * -->
+<!ENTITY % para0att
+"emergency %yesorno; '0'
+id ID #IMPLIED
+esds %yesorno; '0'
+nsp %yesorno; '0'
+fcp %yesorno; '0'
+hcp %yesorno; '0'
+hci %yesorno; '0'
+ocp %yesorno; '0'
+oci %yesorno; '0'
+csp %yesorno; '0'
+applicref IDREFS #IMPLIED
+%verified;
+%secur;
+%bodyatt;" >
+
+<!ENTITY % sub1att "%para0att;" >
+
+<!ENTITY % sub2att "%para0att;" >
+
+<!ENTITY % sub3att "%para0att;" >
+
+<!-- CCB# 9141-001-02 -->
+<!-- CCB# 0070-001-01 -->
+<!ENTITY % subatts "%para0att;" >
+
+<!-- CCB# 0342-03 -->
+<!-- CCB# 8364-001-01-->
+<!-- CCB# 0039-001-17 -->
+<!-- CCB# 9141-001-06 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-02044-04 -->
+<!ENTITY % graphatt
+"id ID #IMPLIED
+boardno ENTITY #REQUIRED
+graphsty NMTOKEN #IMPLIED
+llcordra CDATA #IMPLIED
+rucordra CDATA #IMPLIED
+reprowid NUTOKEN #IMPLIED
+reprodep NUTOKEN #IMPLIED
+hscale NUMBER #IMPLIED
+vscale NUMBER #IMPLIED 
+scalefit %yesorno; #IMPLIED
+hplace (left | right | center) #IMPLIED
+vplace (top | middle | bottom) #IMPLIED
+coordst CDATA #IMPLIED
+coordend CDATA #IMPLIED
+color %yesorno; '0'
+icon (yes|no) 'no'
+%chgatt; ">
+
+<!-- TCN#: 38784STD-19031-01 -->
+<!-- CCB# 0292-05 -->
+<!-- CCB# 1024-03 -->
+<!-- CCB# 8139-001-04 -->
+<!-- CCB#: 38784-B-02324-02 -->
+<!-- CCB#: 38784-B-02177-02 -->
+<!ENTITY % stepatt
+"label CDATA #IMPLIED
+sssn CDATA #IMPLIED
+id ID #IMPLIED
+esds %yesorno; '0'
+nsp %yesorno; '0'
+fcp %yesorno; '0'
+hcp %yesorno; '0'
+hci %yesorno; '0'
+ocp %yesorno; '0'
+oci %yesorno; '0'
+csp %yesorno; '0'
+applicref IDREFS #IMPLIED
+%chgatt;
+%verified;">
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ENTITY % entryatt
+"colname NMTOKEN #IMPLIED
+spanname NMTOKEN #IMPLIED
+id ID #IMPLIED
+morerows NUMBER '0'
+colsep %yesorno; #IMPLIED
+rowsep %yesorno; #IMPLIED
+rotate %yesorno; '0'
+valign (top | middle | bottom) #IMPLIED
+align (left | right | center | justify | char) #IMPLIED
+charoff NUTOKEN #IMPLIED
+char CDATA #IMPLIED
+%chgatt; " >
+
+<!-- TCN#: 38784STD-20029-03 -->
+<!-- CCB#: None. -->
+<!ENTITY % tabatts
+"tabstyle NMTOKEN #IMPLIED
+frame (top | bottom | topbot | all | sides | none ) 'all'
+colsep %yesorno; '1'
+rowsep %yesorno; '0'
+shading %yesorno; '0'
+orient (port | land1) 'port'
+pgwide %yesorno; '1'
+cellcont (Continued | Cont) 'Continued'
+id ID #IMPLIED
+footnotes (page | end) #IMPLIED
+leftind  CDATA  #IMPLIED  
+rightind CDATA  #IMPLIED
+leftmar  NUTOKEN  #IMPLIED
+rightmar NUTOKEN  #IMPLIED
+topmar   NUTOKEN  #IMPLIED
+botmar   NUTOKEN  #IMPLIED
+mindepth NUTOKEN  #IMPLIED 
+pgdeep  %yesorno;  '0'
+applicref IDREFS #IMPLIED 
+%verified;
+%bodyatt;
+%secur;" >
+
+<!-- CCB# 0292-04 -->
+<!-- CCB#: None. -->
+<!ENTITY % xtabatts
+"tabstyle NMTOKEN #IMPLIED
+frame (top | bottom | topbot | all | sides | none ) 'all'
+colsep %yesorno; '1'
+rowsep %yesorno; '0'
+orient (port | land1) 'port'
+pgwide %yesorno; '1'
+cellcont (Continued | Cont) 'Continued'
+id ID #IMPLIED
+footnotes (page | end) #IMPLIED
+applicref IDREFS #IMPLIED 
+leftind  CDATA  #IMPLIED  
+rightind CDATA  #IMPLIED
+leftmar  NUTOKEN  #IMPLIED
+rightmar NUTOKEN  #IMPLIED
+topmar   NUTOKEN  #IMPLIED
+botmar   NUTOKEN  #IMPLIED
+mindepth NUTOKEN  #IMPLIED 
+pgdeep  %yesorno;  '0'
+%verified;
+%bodyatt;
+%secur;" >
+
+<!-- CCB# 38784-01165-01 -->
+<!-- CCB# 8215-001-04 -->
+<!-- CCB#: 38784-04161-01 -->
+<!-- CCB#: None. -->
+<!ENTITY % figatts
+"pgwide %yesorno; '1'
+orient (port | land | land2) 'port'
+id ID #IMPLIED
+applicref IDREFS #IMPLIED
+legend %yesorno; '0'
+nxtpg %yesorno; '0'
+%verified;
+%bodyatt;
+%secur;" >
+
+<!-- CCB# 0039-001-12 -->
+<!-- CCB# 0039-001-13 -->
+<!-- CCB#: 38784-B-03330-01 -->
+<!-- CCB#: 38784-B-02030-28 -->
+<!ENTITY % mpl "(ipbfigureno?, ipbfigindex, (partno, ipbpartnosym?, (ipbcagecodes | ipbcage), ipbdesc, ipbunits, ipbuseoncode?, ipbsmrcodes)+)+" >
+
+<!-- CCB#: 38784-B-03190-01 -->
+<!ENTITY % mplatts 
+"sepmanual %yesorno; '0'    
+id ID #IMPLIED
+shown %yesorno; '1'     
+attachpart %yesorno; '0'  
+marking %yesorno; '0'    
+kit %yesorno; '0' 
+quickchgexpl %yesorno; '0' " >
+
+<!ENTITY % lineatt 
+"quad (left | center | right | justify) left
+indent CDATA  #IMPLIED " -- specified in ens -- >
+
+<!-- TCN#: 38784STD-B-19053-01 -->
+<!ENTITY % safesumatts "%para0att;" >
+
+<!-- CCB#: 38784-B-01165-06 -->
+<!ENTITY % icon "graphic+, hazmat+, seqno" >
+
+<!ENTITY % list "randlist | deflist | seqlist" >
+
+<!-- TCN#: 38784STD-19031-01 -->
+<!-- CCB# 38784-01165-07 -->
+<!-- CCB# 38784-01165-08 -->
+<!-- CCB#: 38784-B-04245-02 -->
+<!-- CCB# 8139-001-04 -->
+<!-- CCB# 9092-001-12 -->
+<!ENTITY % text "(#PCDATA | change | tabmat | ftnref | xref | verbatim | 
+emphasis | applicabil | extapplicabil | graphic | extref | dataiden | 
+hcp | hci | esds | nsp | oci | ocp | fcp | csp | acronym | prindex | secindex | 
+nameloc | clink | ilink | object)+" >
+
+<!-- TCN#: 38784STD-19330-04 -->
+<!-- CCB# 9141-001-01 --> 
+<!-- CCB#: 38784-B-04147-01 -->
+<!ENTITY % frnt "warnpage?, idinfo, chginssht?, (((lep | vollep), listofchanges?) | 
+listofchanges), verstat?, tpdr?, chgrec?, (contents | volcontents), (illuslist| volilluslist)?, (tablelist | 
+voltablelist)?, (foreword | preface | intro), safesum?" > 
+
+<!-- TCN#: 38784STD-19330-04 -->
+<!-- CCB# 38784std-01276-06 --> 
+<!-- CCB#: 38784-B-04147-01 -->
+<!ENTITY % auxfrnt "warnpage?, idinfo, chginssht?, (((lep | vollep), listofchanges?) | 
+listofchanges), verstat?, tpdr?, chgrec?, (contents | volcontents), (illuslist| volilluslist)?, (tablelist | 
+voltablelist)?, (foreword | preface | intro)?, safesum?" >
+
+<!-- TCN#: 38784STD-20267-01 -->
+<!-- CCB# 38784std-01276-02 -->
+<!-- CCB# 0180-01-17 -->
+<!-- CCB# 9092-001-02 -->
+<!-- CCB# 9141-001-01 -->
+<!-- CCB#: 38784-B-02030-22 -->
+<!ENTITY % idinf "tmidno+,  (chgnum, chgdate)?, chghistory, pretmidno*, volnum?,
+revnum?, doctype, maintlvl?, prtitle, subtitle?, (mfr+,
+contractno+)?, seal?, supersed?, suppl*, effdatenot?, volnot?,
+discl?, distrib, expcont?, destr?, copyright*, cogact?, moveddata?, cuiwarning?, authnot, downgrd?,
+pubdate, cuidesind?" >
+
+<!-- TCN#: 38784STD-19309-01 -->
+<!-- CCB# 9092-001-05 -->
+<!-- CCB#: 38784-B-03057-22 -->
+<!ENTITY % fpi "para0, (para0 | applicdef | symsect | abbrsect | termsect | 
+internatlstd | lrp | tctolist | ratddesc | tmimprep)*" >
+
+<!ENTITY % ddchap "dddesc, (ddindex, ddsheet+)?" >
+
+<!ENTITY % rr "appendix*, glossary?, index?, foldsect?" >
+
+<!ENTITY % wcn "warning*, caution?, note?" >
+
+<!-- CCB#: 38784-B-02268-08 ->
+<!ENTITY % titles "title" -->
+
+<!-- CCB#: 38784-B-03057-01 -->
+<!-- CCB#: 38784-B-02107-03 -->
+<!ENTITY % cntnt "(cntentry* | #PCDATA)*" >
+
+<!ENTITY % lepcontents "lepentry+">
+
+<!ENTITY % safesum "para0+" >
+
+<!ENTITY % append "title, para0+" >
+
+<!-- CCB# 0135-01-06 -->
+<!ENTITY % glossry "(letter?, glosslist)+" >
+
+<!-- CCB# 38784-01165-01 -->
+<!-- CCB#: 38784-B-1019-08 -->
+<!-- TCN#: 38784-B-07269-01 -->
+<!ENTITY % fig "title, (((subfig | subfigfo), (subfig | subfigfo)+) | ((graphic, legend?) | tabdisplay)+)" >
+
+<!-- CCB# 0292-11 -->
+<!-- CCB# 9092-001-07 -->
+<!ENTITY % tabl "title, tgroup+" >
+
+<!ENTITY % stepcon "%wcn;, para, note?" >
+
+<!-- TCN#: 38784STD-B-15079-01 -->
+<!-- CCB# 8139-001-11 -->
+<!-- ENTITY % bodyele "chapter, chapter+, ipbchap?, ddchapter?" -->
+<!ENTITY % bodyele "chapter, ((chapter+, ipbchap?) | ipbchap), ddchapter?" >
+
+<!-- CCB#: 38784-B-03071-01 -->
+<!-- If the FRN value is selected for the service attribute, then the contents of the
+	FRN attribute on the doc element shall appear in the LEP in place of "USAF" -->
+<!ENTITY % service "(AF | NAVAIR | NAVSEA | SPAWARS | ARMY | MC | DLA | CG | DOD | FRN)" >
+
+<!ENTITY % paracon "(%text; | %list;)+" >
+
+<!-- CCB# 0292-12 -->
+<!ENTITY % nparcon "title, %wcn;, para, note?, (step1, step1+)?" >
+
+<!-- CCB# 38784std-03057-19 -->
+<!-- CCB# 38784std-01276-08 -->
+<!-- CCB# 0292-12 -->
+<!ENTITY % nparcon1 "(title)?, %wcn;, para, note?, (step1, step1+)?" >
+
+<!ENTITY % parazero "title, %wcn;, (para, note?)?, (step1, step1+)?" >
+
+<!-- CCB#: None. -->
+<!ENTITY % subpara3.mdl "(%nparcon1;, subpara4*)" >
+<!ENTITY % step1.mdl "(%stepcon;, (step2, step2+)?)" >
+<!ENTITY % step2.mdl "(%stepcon;, (step3, step3+)?)" >
+<!ENTITY % step3.mdl "(%stepcon;, (step4, step4+)?)" >
+
+<!-- CCB#: 38784-B-01325-05 -->
+<!ENTITY % chap "title, ((section, (note?, section)+) | para0+)" >
+
+<!ENTITY % sect "title, para0+" >
+
+<!ENTITY % chgsht "chgnum, address, date, prtitle, effdatenot?, discl?, 
+distrib, expcont?, destr?, chgpara+, chglist, sigblock?" >
+
+<!ENTITY % entry "(%text; | %list; | warning | caution | note )+" >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!-- CCB#: 38784-B-03078-01 -->
+<!ENTITY % symsect "(%parazero;, subpara1*)?, (symtitle?, (symrow+ | (term, def)+))" >
+
+<!-- CCB# 38784-01165-08 -->
+<!ENTITY % exclus "figure | table | foldout | objmedia" >
+
+<!-- CCB# 38784-01165-08 -->
+<!ENTITY % inclus "figure | table | foldout | objmedia" >
+
+<!-- CCB# 0070-001-06 -->
+<!-- CCB#: 38784-B-03078-01 -->
+<!ENTITY % lrp "(%parazero;, subpara1*)?, lrptable?" >
+
+<!-- CCB# 8139-001-11 -->
+<!-- CCB#: 38784-B-02030-28 -->
+<!ENTITY % ipbforwd "(para0+, ipbmodelcover, ipbserialization?, ipbfinding?, 
+ipbsimassem?, ipbquickchgexpl?, ipbshtnoexpl?, ipbuseonexpl, ipbsmrexpl, 
+ipbhcidesc?, ipbesdsdesc?, ipbpartstd, ipbmfrlist?, para0*)" >
+
+<!-- CCB# 38784std-01276-05 -->
+<!ENTITY % doc "(volume, volume+) | (front, body, rear?)">
+
+<!-- CCB# 99112-00-07 -->
+<!ENTITY expcontnot "This document contains
+technical data whose export is restricted by the Arms Export
+Control Act (Title 22, U.S.C. SEC 2751, <underline>et</underline> <underline>
+seq</underline>.) or the Export
+Administration Act of 1979, as amended, Title 50, U.S.C., App
+2401 <underline>et</underline> <underline>
+seq</underline>. Violations of these export laws are subject to
+severe criminal penalties. Disseminate in accordance with 
+provisions of DoD Directive 5230.25." >
+
+<!ENTITY suppnotice "A suitable reference to this supplement will
+be made on the title page of the basic publication." >
+
+<!-- NOTATION DECLARATIONS -->
+<!NOTATION cgm PUBLIC
+ "-//USA-DOD//NOTATION Computer Graphics Metafile//EN" >
+ 
+<!NOTATION cgmbin PUBLIC
+ "ISO 8632/3//NOTATION CGM Binary text encoding//EN" >
+
+<!NOTATION fax PUBLIC
+ "-//USA-DOD//NOTATION CCITT Group 4 Facsimile//EN" >
+
+<!NOTATION faxtile PUBLIC
+ "-//USA-DOD//NOTATION CCITT Group 4 Facsimile Type 2 Tiled Raster//EN" >
+
+<!NOTATION iges PUBLIC
+ "-//USA-DOD//NOTATION Initial Graphics Exchange Specification//EN" >
+
+<!NOTATION epsi	SYSTEM "Encapsulated PostScript Interchange" >
+
+<!NOTATION eps	SYSTEM "Encapsulated PostScript" >
+
+<!NOTATION id	SYSTEM "IslandDraw" >
+
+<!NOTATION tif	SYSTEM "TIFF 5.x" >
+
+<!NOTATION tiff	SYSTEM "TIFF 5.x" >
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION BMP	PUBLIC
+"+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Microsoft Windows bitmap//EN">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION CGM-CHAR	PUBLIC "ISO 8632/2//NOTATION Character encoding//EN">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION CGM-BINARY	PUBLIC "ISO 8632/3//NOTATION Binary encoding//EN">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION CGM-CLEAR	PUBLIC "ISO 8632/4//NOTATION Clear text encoding//EN">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION DITROFF	SYSTEM "DITROFF">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION DVI		SYSTEM "DVI">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION EQN		SYSTEM "EQN">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION GIF		SYSTEM "GIF">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION GIF87a       PUBLIC
+"-//CompuServe//NOTATION Graphics Interchange Format 87a//EN">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION GIF89a       PUBLIC
+"-//CompuServe//NOTATION Graphics Interchange Format 89a//EN">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION JPG		SYSTEM "JPG">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION JPEG		SYSTEM "JPG">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION PCX		PUBLIC 
+"+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION ZSoft PCX bitmap//EN">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION PIC		SYSTEM "PIC">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION PNG          SYSTEM "http://www.w3.org/TR/REC-png">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION PS		SYSTEM "PS">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION SGML		PUBLIC 
+"ISO 8879:1986//NOTATION Standard Generalized Markup Language//EN">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION TBL		SYSTEM "TBL">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION TEX		PUBLIC 
+"+//ISBN 0-201-13448-9::Knuth//NOTATION The TeXbook//EN">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION WMF		PUBLIC 
+"+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Microsoft Windows Metafile//EN">
+
+<!-- CCB#: 38784-B-05026-01 -->
+<!NOTATION WPG		SYSTEM "WPG"> <!--WordPerfect Graphic format-->
+
+<!ENTITY % charent PUBLIC "-//JCALS//ENTITIES supported ISO entities v1//EN">
+%charent;
+
+<!-- CCB# 8215-001-02 -->
+<!ENTITY % local-big-symbols "INCLUDE" >
+<!ENTITY % eps-big PUBLIC "-//JCALS//ENTITIES big EPS symbols v1//EN">
+%eps-big;
+
+<!ENTITY % local-small-symbols "INCLUDE" >
+<!ENTITY % eps-sml PUBLIC "-//JCALS//ENTITIES small EPS symbols v1//EN">
+%eps-sml;
+
+<!-- *
+     **************************************************************************
+     *
+     *              ELEMENT and ATTRIBUTE LIST DECLARATIONS
+  -->
+
+<!-- CCB#: 38784-B-03078-01 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT abbrsect	- -  ((%parazero;, subpara1*)?, (abbrtitle?, acronymlist)) >
+<!ATTLIST abbrsect	%para0att; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT abbrtitle	- -  (%text;)   -(%exclus;) >
+<!ATTLIST abbrtitle	%secur;
+				%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT acronym	- -  (def, term)   -(acronym | %exclus;) >
+<!ATTLIST acronym		%chgatt; >
+
+<!-- CCB# 0070-001-02 -->
+<!-- CCB#: 38784-B-02303-02 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT acronymlist	- o  (acronymrow+ | (term, def)+)   -(acronym | %exclus;) >
+<!ATTLIST acronymlist	rtermwidth NUTOKEN "2.5in" 
+			ltermwidth NUTOKEN "1in"
+			autobuild CDATA #CONREF 
+			%chgatt;>
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!ELEMENT acronymrow - - (term, def) >
+<!ATTLIST acronymrow	%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT activity	- -  (%text;) >
+<!ATTLIST activity	%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT address	- -  (%text;) >
+<!ATTLIST address		%chgatt; >
+
+<!ELEMENT appendix	- -  (%append;)   +(ftnote | %inclus;) >
+<!ATTLIST appendix	%chapatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-03057-10 -->
+<!ELEMENT applic	- -  (term, def) >
+<!ATTLIST applic	id ID #REQUIRED 
+			flagnote %yesorno; '1'
+			%chgatt;>
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT applicabil	- -  (%text;)   -(applicabil | %exclus;) >
+<!ATTLIST applicabil	applicref IDREFS #REQUIRED
+			%secur; 
+			%chgatt;>
+
+<!-- CCB# 38784-01165-04 -->
+<!-- CCB#: 38784-B-03078-01 -->
+<!ELEMENT applicdef	- -  ((%parazero;, subpara1*)?, (appltitle?, applichd?, applic+)) >
+<!ATTLIST applicdef	rtermwidth NUTOKEN "2.5in"
+			ltermwidth NUTOKEN "1in"
+			%para0att; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT applichd	- -  (term, def) >
+<!ATTLIST applichd	%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT appltitle	- -  (%text;)   -(%exclus;) >
+<!ATTLIST appltitle	%secur; 
+				%chgatt;>
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT authnot	- -  (%text;) >
+<!ATTLIST authnot		%chgatt;>
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT auxfront	- -  (%auxfrnt;)   +(ftnote) >
+<!ATTLIST auxfront	%chgatt;>
+
+<!-- CCB#: None. Added support for CGMs and hotlinking graphics -->
+<!ELEMENT bindByCoords - o (xref*) >
+<!ATTLIST bindbyCoords	coords	CDATA	#REQUIRED
+				%cgmatts; >
+
+<!-- CCB#: None. Added support for CGMs and hotlinking graphics -->
+<!ELEMENT bindById - o (xref*) >
+<!ATTLIST bindById	objectid	CDATA	#REQUIRED
+				%cgmatts; >
+
+<!-- CCB#: None. Added support for CGMs and hotlinking graphics -->
+<!ELEMENT bindByName - o (xref*) >
+<!ATTLIST bindByName	apstargetname	CDATA	#REQUIRED
+				%cgmatts;>
+
+<!-- CCB# 9092-001-14 -->
+<!-- CCB# 8139-001-11 -->
+<!ELEMENT body		- -  (%bodyele;)   +(ftnote) >
+<!ATTLIST body		numcols (1| 2)  #REQUIRED >
+
+<!ELEMENT brk		- o  EMPTY >
+<!ATTLIST brk		type (col | line | npg ) "line">
+
+<!-- CCB# 0180-01-14 -->
+
+<!-- CCB#: 38784-B-02212-02 -->
+<!ELEMENT caution	- -  (para*)
+			  -(%list; | %exclus; | warning | caution) >
+<!ATTLIST caution	%chgatt; >
+
+<!-- TCN#: 38784STD-19330-04 -->
+<!-- CCB#: 38784-B-03344-02 -->
+<!ELEMENT change	- -  (%text;)  -(%exclus;) >
+<!ATTLIST change	level NMTOKEN #REQUIRED
+			change (add | delete | modify) "add"
+			chremarkref IDREF #IMPLIED
+			mark %yesorno; "1"
+			revchg %yesorno; '0'
+			%secur; >
+
+<!ELEMENT chapter	- -  (%chap;)  +(%inclus;) >
+<!ATTLIST chapter	%chapatt; >
+
+<!-- TCN#: 38784STD-19330-04 -->
+<!ELEMENT changeremark	- - (#PCDATA) >
+<!ATTLIST changeremark	id ID #IMPLIED >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT chgdate	- -  (%text;) >
+
+<!-- CCB# 38784std-01276-04 -->
+<!--ELEMENT chghist	- -  (date+) -->
+
+<!-- CCB# 38784std-01276-03 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT chghistory	- -  (chginfo*) >
+
+<!-- CCB# 38784std-01276-03 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT chginfo	- -  (chgtxt?, date) >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT chginssht	-  - (%chgsht;) >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT chglist	- -  (tabmat | (removepg, insertpg)+) >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT chgnum	- -  (%text;) >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT chgpara	- -  (%text;) >
+
+<!ELEMENT chgrec	- o  EMPTY >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB# 38784std-01276-03 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT chgtxt	- -  (%text;) >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB# 38784-01165-07 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!element clink 	- - (%text;) >
+<!attlist clink		HyBase   NAME     #FIXED hylink
+   			HyBnames CDATA    #FIXED "refsub linkend"
+   			anchrole CDATA    #FIXED "refmark refsub #LIST"
+   			anchcstr NAMES    "self required"
+   			linkend  CDATA #IMPLIED
+			%chgatt; >
+   			
+<!-- CCB#: 38784-B-03057-01 -->
+<!-- CCB#: 38784-B-02107-03 -->
+<!ELEMENT cntentry - - (label, title, pageno)>
+<!ATTLIST cntentry	inlevel	NUMBER #IMPLIED
+				%chgatt;>
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- 9092-001-02 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT cogact	- -  (%text;) >
+<!ATTLIST cogact		%chgatt;>
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT colspec	- o  EMPTY >
+<!ATTLIST colspec	colname NMTOKEN #IMPLIED
+			colnum  NUMBER  #IMPLIED
+			align (left | right | center | justify | char) #IMPLIED
+			charoff NUTOKEN #IMPLIED
+			char CDATA #IMPLIED
+			leftmar  NUTOKEN  #IMPLIED
+			rightmar NUTOKEN  #IMPLIED
+			topmar   NUTOKEN  #IMPLIED
+			botmar   NUTOKEN  #IMPLIED
+			mindepth NUTOKEN  #IMPLIED
+			colwidth CDATA #IMPLIED
+			colsep %yesorno; #IMPLIED
+			rowsep %yesorno; #IMPLIED
+			%chgatt; >
+
+<!-- TCN#: 38784STD-20225-01 -->
+<!-- CCB# 38784-01165-04 -->
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!-- CCB#: 38784-B-03057-09 -->
+<!ELEMENT contents	- o  (%cntnt;) -(note)>
+<!ATTLIST contents 	autobuild CDATA #CONREF
+			id ID #IMPLIED
+			%chgatt; >
+
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT contractno	- -  (%text;) >
+<!ATTLIST contractno	%secur;>
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT copyright	- -  (%text;) >
+<!ATTLIST copyright	%chgatt; >
+
+<!-- TCN#: 38784STD-19031-01 -->
+<!ELEMENT csp		- o EMPTY >
+<!ATTLIST csp		%chgatt; >
+
+<!-- TCN#: 38784STD-20267-01 -->
+<!ELEMENT cuicategory		- -  (%text;) >
+
+<!-- TCN#: 38784STD-20267-01 -->
+<!ELEMENT cuicomponent		- -  (%text;) >
+
+<!-- TCN#: 38784STD-20267-01 -->
+<!ELEMENT cuidesind		- -  (cuicomponent?, cuioffice, cuicategory, (distrib | dissem), cuipoc) >
+
+<!-- TCN#: 38784STD-20267-01 -->
+<!ELEMENT cuioffice		- -  (%text;) >
+
+<!-- TCN#: 38784STD-20267-01 -->
+<!ELEMENT cuipoc		- -  (%text;) >
+
+<!-- TCN#: 38784STD-20267-01 -->
+<!ELEMENT cuiwarning		- -  (%text;) >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT dataiden	- -  (%text;)   -(dataiden | %exclus;) >
+<!ATTLIST dataiden	type CDATA #REQUIRED
+			%secur;
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT date		- -  (%text;)   -(%exclus;) >
+<!ATTLIST date	%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT dateinc	- -  (%text;)   -(%exclus;) >
+<!ATTLIST dateinc	%chgatt; >
+
+<!-- CCB#: 38784-B-135-01-12 -->
+<!-- CCB#: None. -->
+<!ELEMENT ddchapter	- -  (%ddchap;)   +(%inclus;) >
+<!ATTLIST ddchapter	%chapatt; 
+				numcols (1 | 2) '1'
+				paranumbers %yesorno; '0'>
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT dddesc	- -  (%parazero;, subpara1*) >
+<!ATTLIST dddesc	%para0att; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ddindex	- -  (%parazero;, subpara1*, ddlist) >
+<!ATTLIST ddindex	%para0att; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ddlist	- o  (partno, pageno)* >
+<!ATTLIST ddlist		%chgatt; >
+
+<!-- CCB# 38784std-01276-07 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-04189-01 -->
+<!ELEMENT ddsheet	- -  ((nomen, (partno+ | modelno+ | typedes+)), para0+) >
+<!ATTLIST ddsheet		%chgatt;>
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT def		- -  (%text;)   -(%exclus;) >
+<!ATTLIST def		%secur; 
+				%chgatt; >
+
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT defhd		- -  (term, def) >
+<!ATTLIST defhd		%chgatt; >
+
+<!ELEMENT deflist	- -  (title?, defhd?, (term, def)+) >
+<!ATTLIST deflist	rtermwidth NUTOKEN "1.9in" 
+			ltermwidth NUTOKEN "0.7in" 
+			%chgatt;
+			%secur; >
+
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT destr		- -  (%text;) >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT discl		- -  (%text;) >
+<!ATTLIST discl		disclos1 CDATA #IMPLIED>
+
+<!-- TCN#: 38784STD-20267-01 -->
+<!ELEMENT dissem		- -  (%text;) >
+
+<!-- CCB#: 38784-B-04259-01 -->
+<!-- CCB# 38784-01066-05 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT distrib	- -  (%text;) >
+<!ATTLIST distrib	type (A | B | C | D | E | F | X) #REQUIRED>
+
+<!-- CCB# 38784std-01276-05 -->
+<!-- CCB# 38784std-01276-01 -->
+<!-- CCB# 38784-01165-07 -->
+<!-- CCB# 9141-001-01 --> 
+<!-- CCB#: 38784-B-01325-05 -->
+<!-- CCB#: 38784-B-03071-01 -->
+<!ELEMENT doc		- -  (%doc;)
+			+(pgbrk | brk | subjinfo | line | modreq | location | note) >
+<!ATTLIST doc		service %service; #REQUIRED
+				FRN CDATA #IMPLIED
+			%docatt; 
+			%secur;
+			%pubatts;
+			HyTime NAME #FIXED "HyDoc">
+
+
+<!-- CCB#: None Removed docpart and docpartn as they are not allowed in any elements-->
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT doctype 	- -  (%text;) >
+<!ATTLIST doctype		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT downgrd	- -  (phrase | oadr) >
+<!ATTLIST downgrd		%chgatt; >
+                                           
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ecpno		- -  (%text;)   -(%exclus;) >
+<!ATTLIST ecpno		%chgatt; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT effdatenot	- -  (%text;) >
+<!ATTLIST effdatenot	%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-02303-01 -->
+<!-- CCB#: 38784-B-04287-02 -->
+<!-- TCN#: 38784STD-B-11326-01 -->
+<!ELEMENT emphasis	- -  (%text;)   -(%exclus;) >
+<!ATTLIST emphasis	type (u|b|bu|i|bi|q|qa|x|o|sup|sub|ui) #REQUIRED
+			fontsize NUTOKEN #IMPLIED 
+			color  (black | white | red | orange | yellow | green |
+				blue | violet | brown | gray) #IMPLIED
+			%chgatt;  >
+
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT entry		- -  (%entry;) >
+<!ATTLIST entry		%entryatt;
+			%secur; >
+
+
+<!-- CCB# 38784-01165-04 --> 
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT entrytbl	- -  (colspec*, spanspec*, thead?, tbody)  -(entrytbl) >
+<!ATTLIST entrytbl	cols NUMBER #REQUIRED
+			colname NMTOKEN #IMPLIED
+			spanname NMTOKEN #IMPLIED
+			colsep %yesorno; #IMPLIED
+			rowsep %yesorno; #IMPLIED
+			align (left | right | center | justify | char) #IMPLIED
+			charoff NUTOKEN #IMPLIED
+			char CDATA #IMPLIED
+			%secur; 
+			%chgatt; >
+
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT esds		- o  EMPTY >
+<!ATTLIST esds		%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT expcont	- -  (%text;) +(underline) >
+
+<!-- CCB#: 38784-B-04245-02 -->
+<!ELEMENT extapplicabil	- -  (%text;)   -(applicabil | extapplicabil | %exclus;) >
+<!ATTLIST extapplicabil	targetdoc CDATA #REQUIRED
+			targetid CDATA #IMPLIED 
+			displayvalue CDATA #IMPLIED
+			HyTime NAME #FIXED "clink"
+			HyNames NAMES #FIXED "linkend xrefid"
+			%secur; 
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB# 38784std-02268-10 -->
+<!-- CCB# 38784-01165-07 -->
+<!ELEMENT extref	- o  EMPTY >
+<!ATTLIST extref	targetdoc CDATA #REQUIRED
+			targetid CDATA #IMPLIED 
+			displayvalue CDATA #IMPLIED
+			HyTime NAME #FIXED "clink"
+			HyNames NAMES #FIXED "linkend xrefid" 
+			%chgatt; >
+
+<!-- CCB# 8139-001-04 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT fcp		- o EMPTY >
+<!ATTLIST fcp		%chgatt; >
+
+<!-- CCB# 38784-01122-03 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT figno		- - (%text;) >
+<!ATTLIST figno		%chgatt; >
+
+<!-- CCB# 0292-11 -->
+<!-- CCB# 9092-001-07 -->
+<!-- CCB# 9092-001-08 -->
+<!-- CCB# 8215-001-04 -->
+<!-- CCB#: 38784-B-02303-08 ->
+<!ELEMENT figtable	- -  (tgroup+)   -(%exclus;) +(tfnref | tfoot | tfndisplay)>
+<!ATTLIST figtable	label CDATA #IMPLIED
+			frame (top | bottom | topbot | all | sides | none) "all"
+			colsep %yesorno; "1"
+			rowsep %yesorno; "0"
+			tbwidth NUTOKEN #IMPLIED
+			tbdepth NUTOKEN #IMPLIED
+			horrefpt (left | right) "left"
+			verrefpt (vtop | vbottom) "vtop"
+			coordst CDATA "0,10000"
+			assocfig IDREF #IMPLIED
+			%chgatt;
+			%secur; -->
+
+<!ELEMENT figure	- -  (%fig;)   -(%exclus;) >
+<!ATTLIST figure	%figatts; >
+
+<!-- CCB# 8231-001-01 -->
+<!ELEMENT foldout	- -  (%fig;)   -(%exclus;) >
+<!ATTLIST foldout	pgstyle (11x17 | 11x20.5 | 11x24 | 11x27.5 | 
+				11x31 | 11x34.5 | 11x38 | 11x41.5 | 11x45) #IMPLIED
+			blankapron %yesorno; '1'
+			%figatts; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!ELEMENT foldsect	- -  (foldout+) -(note)>
+<!ATTLIST foldsect	%chgatt; >
+
+<!-- TCN#: 38784STD-20225-01 -->
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-02030-21 -->
+<!ELEMENT foreword	- -  (%fpi;)   +(figure | table) >
+<!ATTLIST foreword	id ID #IMPLIED
+			%chgatt; >
+
+<!-- CCB# 9092-001-14 -->
+<!ELEMENT front		- -  (%frnt;)   +(ftnote) >
+<!ATTLIST front		t2page %yesorno; "0" 
+			numcols ( 1 | 2 ) #REQUIRED >
+			
+			
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT ftnote	- -  (%text; | %list;)+  -(ftnote | ftnref | %exclus;) >
+<!ATTLIST ftnote	id ID #REQUIRED
+			%secur; 
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT ftnref	- o  EMPTY >
+<!ATTLIST ftnref	xrefid IDREF #REQUIRED
+			mark (num | sym | alpha) "num" 
+			%chgatt; >
+
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!ELEMENT glossary	- o  (%glossry;) -(note)>
+<!ATTLIST glossary	id ID #IMPLIED
+			%secur;
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!-- CCB# 0135-01-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT glosslist	- - (glossrow+ | (letter?, (term, def))+) >
+<!ATTLIST glosslist	%chgatt; >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!ELEMENT glossrow	- - (letter?, (term, def)) >
+<!ATTLIST glossrow	%chgatt; >
+
+
+<!-- CCB#: None. Added support for CGMs and hotlinking graphics -->
+<!ELEMENT graphic	- o  (bindById | bindByName | bindByCoords)* >
+<!ATTLIST graphic	%graphatt;
+			%secur; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT hazmat	- -  (%text;) >
+<!ATTLIST hazmat	%secur; 
+			%chgatt; >
+
+<!-- CCB# 8139-001-04 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT hci		- o  EMPTY >
+<!ATTLIST hci		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT hcp		- o  EMPTY >
+<!ATTLIST hcp		%chgatt; > 
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT icon		- -  (%icon;) >
+<!ATTLIST icon		id ID #IMPLIED 
+				%chgatt; >
+
+<!-- CCB# 0292-08 -->
+<!ELEMENT idinfo	- -  (%idinf;) >
+<!-- CCB#: None. Attribute serves no purpose. ->
+<!ATTLIST idinfo	tmidnolen NUTOKEN "10em"-->
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB# 38784-01165-07 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!element ilink 	- - (%text;) >
+<!attlist ilink		anchrole CDATA #REQUIRED 
+			linkends IDREFS #REQUIRED 
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!ELEMENT illlistrow	- - (figno, title, pageno) >
+<!ATTLIST illlistrow	%chgatt; >
+
+<!-- TCN#: 38784STD-20225-01 -->
+<!-- CCB# 38784-01122-03 -->
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-02303-02 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!-- CCB#: 38784-B-03057-09 -->
+<!ELEMENT illuslist	- o  (illlistrow* | (figno, title, pageno)*) -(note)>
+<!ATTLIST illuslist	autobuild CDATA #CONREF
+			id ID #IMPLIED 
+			%chgatt; >
+
+<!-- CCB# 0292-09 -->
+<!-- CCB# 1005-01 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB# 98-007-25 -->
+<!-- CCB#: 38784-B-02303-02 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!-- CCB#: 38784-B-03190-02 -->
+<!-- TCN#: 38784-B-06102-01 -->
+<!ELEMENT index		- o  (indexrow+ | (letter?, (prentry, secentry*))+) -(note)>
+<!ATTLIST index		autobuild CDATA #CONREF
+			type (parano | pageno | both) 'parano'
+			id ID #IMPLIED
+			%secur; 
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!ELEMENT indexrow	- - (letter?, (prentry, secentry*)) >
+<!ATTLIST indexrow	%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT insertpg	- -  (%text;) >
+<!ATTLIST insertpg	%chgatt; >
+
+<!-- CCB# 8139-001-01 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT internatlstd	- -  (%text;) >
+<!ATTLIST internatlstd	%verified;
+			%chgatt; >
+
+<!-- TCN#: 38784STD-20225-01 -->
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-02030-21 -->
+<!ELEMENT intro		- -  (%fpi;)   +(figure | table) >
+<!ATTLIST intro		id ID #IMPLIED
+			%chgatt; >
+
+<!-- CCB# 0039-001-06 -->
+<!-- CCB#: 38784-B-02030-28 ->
+<!ELEMENT ipbassy     - o  EMPTY -->
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbcage     - -  (%text;) >
+<!ATTLIST ipbcage		%chgatt; >
+
+<!-- CCB#: 38784-B-02030-28 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-02142-02 -->
+<!ELEMENT ipbcagecodes - - (ipbcage+) +(tfoot | tfnref) >
+<!ATTLIST ipbcagecodes	%chgatt; >
+
+<!ELEMENT ipbchap	- -  (ipbfwordchap, ipbpl, ipbnumindx?, ipbrfdsindx?) >
+<!ATTLIST ipbchap	%chapatt; >
+
+<!-- CCB# 0039-001-10 -->
+<!-- CCB# 0039-001-13-->
+<!-- CCB#: 38784-B-03330-01 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbdesc     - -  (nomen, ipbrefdes*, ipbsssn*, remarks?) >
+<!ATTLIST ipbdesc		%descatts;>
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbesdsdesc     - -  (%parazero;, subpara1*) >
+<!ATTLIST ipbesdsdesc     %para0att; >
+
+<!-- CCB#: 38784-B-02030-27 => 	This element appears second in the Figure &
+				Index/Sheet No column of the PL. -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-03239-01 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbfigindex     - -  (%text;) >
+<!ATTLIST ipbfigindex     shown %yesorno; '1'
+		       follows %yesorno; '0'
+			 %chgatt; >
+
+<!-- CCB# 0039-001-12 -->
+<!-- CCB#: 38784-B-02030-27 => 	This element appears first in the Figure &
+				Index/Sheet No column of the PL. -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbfigureno     - -  (%text;) >
+<!ATTLIST ipbfigureno		%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbfinding     - -  (%parazero;, subpara1*) >
+<!ATTLIST ipbfinding     %para0att; >
+
+<!ELEMENT ipbfwordchap     - -  (%ipbforwd;)   +(figure | table) >
+<!ATTLIST ipbfwordchap     %chapatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT ipbgroup10   - o  EMPTY >
+<!ATTLIST ipbgroup10	%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbhcidesc     - -  (%parazero;, subpara1*) >
+<!ATTLIST ipbhcidesc     %para0att; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbmfrlist     - -  (%parazero;, subpara1*) >
+<!ATTLIST ipbmfrlist     %para0att; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbmodelcover     - -  (%parazero;, subpara1*) >
+<!ATTLIST ipbmodelcover     %para0att; >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT ipbnumgrp    - -  ((ipbnumgrprow+ | (partno, ipbfigindex)+)) >
+<!ATTLIST ipbnumgrp	%chgatt; >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!ELEMENT ipbnumgrprow	- -	(partno, ipbfigindex) >
+<!ATTLIST ipbnumgrprow	%chgatt; >
+
+<!-- CCB# 1024-03 -->
+<!-- CCB# 0292-05 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!ELEMENT ipbnumindx    - o  (ipbnumgrp)  -(note) +(ipbgroup10) >
+<!ATTLIST ipbnumindx    cols (2 | 3) "3"
+                     autobuild NUMBER #CONREF
+                     id ID #IMPLIED
+		     label CDATA #IMPLIED
+		     sssn CDATA #IMPLIED
+		     indexid  CDATA  #IMPLIED
+		     %secur; 
+		     %chgatt; > 
+
+<!-- CCB#: 38784-B-02030-28 ->
+<!ELEMENT ipbpartname     - -  (%text;) >
+<!ATTLIST ipbpartname     %secur; -->
+
+<!-- CCB# 0039-001-08 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT ipbpartnosym	- -	(%text;) > 
+<!ATTLIST ipbpartnosym		%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbpartstd     - -  (%parazero;, subpara1*) >
+<!ATTLIST ipbpartstd     %para0att; >
+
+
+<!ELEMENT ipbpl     - -  (ipbplgrp+) +(ipbplbrk)>
+<!ATTLIST ipbpl     %chapatt; >
+
+
+<!ELEMENT ipbpl0      - -  (%mpl;, ipbpl1*) >
+<!ATTLIST ipbpl0      %verified;
+                   %bodyatt;
+                   %mplatts; >
+	
+<!-- CCB# 0070-001-04 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!-- CCB#: 38784-B-02142-02 -->
+<!-- TCN#: 38784STD-B-13088-01 -->
+<!ELEMENT ipbpl0tbl   - -  (ipbpl0+, ipbuseoncodelist?) +(tfndisplay | note) >
+<!ATTLIST ipbpl0tbl		numsmrcols	(1 | 2 | 3 | 4 | 5)	"1"
+											%chgatt; >
+
+<!-- CCB#: 38784-B-02030-28 -->
+<!ELEMENT ipbpl0tblfoot - o EMPTY >
+<!ATTLIST ipbpl0tblfoot	%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbpl1      - -  (%mpl;, ipbpl2*) >
+<!ATTLIST ipbpl1      %mplatts;
+                   %bodyatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbpl2      - -  (%mpl;, ipbpl3*) >
+<!ATTLIST ipbpl2      %mplatts;
+                   %bodyatt; >
+                    
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbpl3     - -  (%mpl;, ipbpl4*) >
+<!ATTLIST ipbpl3     %mplatts;
+                  %bodyatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbpl4      - -  (%mpl;, ipbpl5*) >
+<!ATTLIST ipbpl4      %mplatts;
+                   %bodyatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbpl5      - -  (%mpl;, ipbpl6*) >
+<!ATTLIST ipbpl5      %mplatts;
+                   %bodyatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbpl6      - -  (%mpl;, ipbpl7*) >
+<!ATTLIST ipbpl6      %mplatts;
+                   %bodyatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbpl7      - -  (%mpl;) >
+<!ATTLIST ipbpl7      %mplatts;
+                   %bodyatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT ipbplbrk  - o  EMPTY >
+<!ATTLIST ipbplbrk	%chgatt; >
+
+<!-- CCB# 0070-001-04 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-02030-28 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!-- CCB#: 38784-B-04231-04 -->
+<!ELEMENT ipbplgrp    - -  (figure, ipbpl0tbl, ipbuseoncodelist?, ipbpl0tblfoot?) -(note)>
+<!ATTLIST ipbplgrp	%chgatt;>
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbquickchgexpl     - -  (%parazero;, subpara1*) >
+<!ATTLIST ipbquickchgexpl     %para0att; >
+
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbrefdes     - -  (%text;) >
+<!ATTLIST ipbrefdes     %secur; 
+				%chgatt; >
+
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT ipbrfdsgrp    -  -  ((ipbrfdsgrprow+ | (ipbrefdes?, ipbsssn?, ipbfigindex)+)) >
+<!ATTLIST ipbrfdsgrp	%chgatt; >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!ELEMENT ipbrfdsgrprow	- - (ipbrefdes?, ipbsssn?, ipbfigindex) >
+<!ATTLIST ipbrfdsgrprow	%chgatt; >
+
+<!-- CCB#: 38784-B-01325-05 -->
+<!ELEMENT ipbrfdsindx     - o  (ipbrfdsgrp) -(note) +(ipbgroup10) >
+<!ATTLIST ipbrfdsindx     autobuild NUMBER #CONREF 
+                       type (refdes | sssn | both) "refdes"
+                       cols (2 | 3) "3"
+                       %chapatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbserialization     - -  (%parazero;, subpara1*, ipbsertable) >
+<!ATTLIST ipbserialization     %para0att; >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!ELEMENT ipbserrow	- - (nomen, modelno, serno) >
+<!ATTLIST ipbserrow	%chgatt; >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!ELEMENT ipbsertable     - -  (title?, (ipbserrow+ | (nomen, modelno, serno)+)) >
+<!ATTLIST ipbsertable     col1width CDATA "1.75in"
+                       	  col2width CDATA "1.25in" 
+                       	  %xtabatts; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbshtnoexpl     - -  (%parazero;, subpara1*) >
+<!ATTLIST ipbshtnoexpl     %para0att; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbsimassem     - -  (%parazero;, subpara1*) >
+<!ATTLIST ipbsimassem     %para0att; >
+
+
+<!-- CCB# 38784-01129-02 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- TCN#: 38784STD-B-13088-01 -->
+<!ELEMENT ipbsmrcode     - -  (%text;) >
+<!ATTLIST ipbsmrcode		service  (army | navy | af | marine | cg)   'af'
+												%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbsmrcodes    - -  (ipbsmrcode)+ >
+<!ATTLIST ipbsmrcodes	%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbsmrexpl     - -  (%parazero;, subpara1*) >
+<!ATTLIST ipbsmrexpl     %para0att; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-02030-28 -->
+<!ELEMENT ipbsssn     - -  (%text;) >
+<!ATTLIST ipbsssn     %secur;
+			    %chgatt; 
+			   showinftn %yesorno; "0" 
+			   hidesssn %yesorno; "0" >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbunits     - -  (%text;) >
+<!ATTLIST ipbunits     %secur;
+			     %chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbuseoncode     - -  (%text;) >
+<!ATTLIST ipbuseoncode     %secur;
+				   %chgatt; >
+
+<!-- CCB#: 38784-B-01325-05 -->
+<!ELEMENT ipbuseoncodelist     - -  (term, def)+   +(note) >
+<!ATTLIST ipbuseoncodelist     %bodyatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ipbuseonexpl     - -  (%parazero;, subpara1*) >
+<!ATTLIST ipbuseonexpl     %para0att; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT item		- -  (%text;)  -(%exclus;) >
+<!ATTLIST item		label CDATA #IMPLIED
+			%secur;
+			%chgatt; >
+			
+<!-- CCB#: 38784-B-03057-01 -->
+<!-- CCB#: 38784-B-02107-03 -->
+<!ELEMENT label - - (%text;)>
+<!ATTLIST label	%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB # 0039-001-05 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT legend	- - (tabmat) >
+<!ATTLIST legend	%chgatt; >
+		
+<!-- CCB# 38784std-01276-04 -->
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!-- CCB#: 38784-B-02107-04 -->
+<!ELEMENT lep		- -  (lepcontents) -(note)>  
+<!ATTLIST lep	lepcount NUMBER '0'>
+ 
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT lepchg	- -  (%text;) > 
+<!ATTLIST lepchg		%chgatt; >
+
+<!-- CCB#: None. Removed unnecessary "+" -->
+<!ELEMENT lepcontents	- o (%lepcontents;) >
+<!ATTLIST lepcontents	autobuild CDATA #CONREF >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT lepentry	- - (leppage, lepchg) >
+<!ATTLIST lepentry	%chgatt; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT leppage	- -  (%text;) >
+<!ATTLIST leppage		%chgatt; >
+
+<!-- CCB# 98-007-25 -->			
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT letter	- - (%text;) >
+<!ATTLIST letter	%chgatt; >
+
+<!ELEMENT line		- -  (%text;) > 
+<!ATTLIST line		prespace   CDATA  #IMPLIED
+			postspace  CDATA  #IMPLIED
+			%lineatt;
+			%chgatt; >
+
+<!-- TCN#: 38784STD-19330-04 -->
+<!ELEMENT listofchanges	- - ((pubdate, revision*, changeremark*) | changeremark*) -(note) > 
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT location	- o  EMPTY >
+<!ATTLIST location	xrefid IDREF #REQUIRED 
+				%chgatt; >
+
+<!ELEMENT lrp		- -  (%lrp;) >
+<!ATTLIST lrp		ltermwidth NUTOKEN "1.63in"
+			rtermwidth NUTOKEN "1.9in"
+			%para0att; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- Please note: According to spec, only the tmidno and title elements may
+     be used for the lrp. The partno, modelno, and typedes elements were left
+     in only for backwards compatability and possible future expansion. -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT lrpentry - -	((partno | (modelno | typedes))*, tmidno+, title)>
+<!ATTLIST lrpentry	id ID #IMPLIED 
+				%chgatt;>
+
+<!-- CCB# 0070-001-06 -->
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT lrptable	- - (lrpentry+) >
+<!ATTLIST lrptable	id ID #IMPLIED
+			%bodyatt;
+			%secur; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT maintlvl	- -  (%text;) >
+<!ATTLIST maintlvl	%chgatt; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT mfr		- -  (%text;) >
+<!ATTLIST mfr		%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT modelno	- -  (%text;)   -(%exclus;) >
+<!ATTLIST modelno	%secur;>
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT modreq	- -   (mrinfo?, mrmod, mrrespns?) >
+<!ATTLIST modreq	id  ID  #IMPLIED
+			xref  NMTOKEN  #IMPLIED
+			refpos  (prexref | postxref | xref) "xref"
+			by   CDATA  #REQUIRED
+			date  CDATA  #REQUIRED
+			organiz  NMTOKEN  #IMPLIED
+			orgcat  NMTOKEN  #IMPLIED
+			cmntrcat  NMTOKEN  #IMPLIED
+			priority   (1|2|3|4|5) #IMPLIED
+			category  NMTOKEN  #IMPLIED
+			topic  CDATA  #IMPLIED 
+			%chgatt; >
+
+<!-- CCB# 0180-01-17 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT moveddata	- -  (%text;) >
+<!ATTLIST moveddata	%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT mrchgtxt	- -   ANY >
+<!ATTLIST mrchgtxt	chgloc   NUMBER  #IMPLIED
+			chglen   NUMBER  #IMPLIED
+			action   (insert|delete|replace) "replace" >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT mrgenmod	- -  (mrpara | mrlist)+>
+<!ATTLIST mrgenmod	%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT mrinfo	- -   ANY >
+<!ATTLIST mrinfo		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT mrinstr	- -  (mrpara | mrlist)+>
+<!ATTLIST mrinstr		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT mritem	- -  (%text;) >
+<!ATTLIST mritem		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT mrlist	- -  (mritem+) >
+<!ATTLIST mrlist		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT mrmod		- -  (mrreason?, (mrgenmod|(mrinstr?, mrchgtxt))) >
+<!ATTLIST mrmod		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT mrpara	- -  (%text;) >
+<!ATTLIST mrpara		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT mrreason	- -  (mrpara | mrlist)+ >
+<!ATTLIST mrreason	%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT mrrespns	- -   (mrpara | mrlist)* >
+<!ATTLIST mrrespns	disposn  NMTOKEN  #IMPLIED
+			status  NMTOKEN  #IMPLIED >
+
+<!-- CCB# 38784-01165-07 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!element nameloc	- -	(nmlist)* >
+<!attlist nameloc	HyBase   NAME     #FIXED nameloc
+   			id  ID  #IMPLIED 
+			%chgatt; >
+
+<!-- CCB# 38784-01165-07 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!element nmlist	- -	(%text;) >
+<!attlist nmlist	HyBase   NAME     #FIXED nmsploc
+   			impsrc   NAME     #FIXED grovert
+   			HyBnames CDATA    #FIXED "locsrc docorsub
+                             namespc nametype
+                                #MAPTOKEN elements element
+                                #MAPTOKEN entities entity"
+			nametype (entity|element) entity
+			docorsub ENTITY	#IMPLIED
+			notspace NAME ERROR
+			notname NAME ERROR 
+			notprop	NAME ERROR
+			direct (direct|indirect) indirect
+			locsrc CDATA  #IMPLIED
+			cantcnst NAME ERROR 
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT nomen		- -  (%text;)   -(%exclus;) >
+<!ATTLIST nomen		%secur; 
+				%chgatt; >
+
+<!ELEMENT none		- o EMPTY >
+
+<!-- CCB#: 38784-B-02212-02 -->
+<!ELEMENT note		- - (para*)  -(%list; | %exclus; | warning | caution) >
+<!ATTLIST note		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT nsn		- - (%text;) >
+<!ATTLIST nsn		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT nsp		- o EMPTY >
+<!ATTLIST nsp		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT oadr		- - (%text;) >
+<!ATTLIST oadr		%chgatt; >
+
+<!-- CCB# 38784-01165-08 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT object - - (param*) >
+<!ATTLIST object objectno ENTITY #REQUIRED 
+		 reprowid NUTOKEN #IMPLIED
+		 reprodep NUTOKEN #IMPLIED
+		 type CDATA #IMPLIED
+		 %secur; 
+		 %chgatt; >
+
+<!-- TCN#: 38784STD-19031-01 -->
+<!-- CCB# 38784-01165-08 -->
+<!ELEMENT objmedia - - (title, ((subobjmed, subobjmed+) | object)) -(%exclus;) >
+<!ATTLIST objmedia	id ID #IMPLIED
+			esds %yesorno; '0'
+			nsp %yesorno; '0'
+			fcp %yesorno; '0'
+			hcp %yesorno; '0'
+			hci %yesorno; '0'
+			ocp %yesorno; '0'
+			oci %yesorno; '0'
+			csp %yesorno; '0'
+			%bodyatt;
+			%secur; >
+			
+<!-- CCB# 8139-001-04 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT oci		- o EMPTY >
+<!ATTLIST oci		%chgatt; >
+
+<!-- CCB# 8139-001-04 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT ocp		- o EMPTY >
+<!ATTLIST ocp		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-03057-01 -->
+<!-- CCB# 38784-01122-03 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT pageno	- - (%text;) >
+<!ATTLIST pageno		%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT para		- - (%paracon;) >
+<!ATTLIST para		id ID #IMPLIED
+			xrefid IDREF #IMPLIED
+			%chgatt;
+			%secur; >
+		 
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!ELEMENT para0		- -  (%parazero;, subpara1*) +(note)>
+<!ATTLIST para0		%para0att; >
+
+<!-- CCB# 38784-01165-08 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT param - - (%text;) >
+<!ATTLIST param		%chgatt; >
+
+<!-- CCB#: None. Removed paratitle, unused element. ->
+<!ELEMENT paratitle	- - (%text;)-->
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT partno	- -  (%text;)   -(%exclus;) >
+<!ATTLIST partno	%secur; 
+			%chgatt; >
+
+<!-- CCB# 38784std-01241-04 -->
+<!-- CCB# 38784-01122-13 -->
+<!ELEMENT pgbrk		- o  EMPTY >
+<!ATTLIST pgbrk		pgnum		CDATA 		#IMPLIED
+			pgnumber	CDATA 		#IMPLIED
+			pgdesc 		CDATA		#IMPLIED
+			nxtpgnum	CDATA		#IMPLIED
+			nxtpgdesc	CDATA		#IMPLIED
+			seqnum		CDATA		#IMPLIED
+			prefix		CDATA		#IMPLIED
+			paraflag	%yesorno;	"0" 
+			hyphflag	NUMBER		#IMPLIED 
+			shrink		NUMBER		"100"
+			rectover	NUMBER		#IMPLIED
+			chglevel	CDATA		#IMPLIED
+			security	CDATA		#IMPLIED
+			empty		NUMBER		"0"
+			ignore		CDATA		#IMPLIED
+			chgstatus	CDATA		#IMPLIED
+			prevchgstatus	CDATA		#IMPLIED
+			emergency (0 | 1) #IMPLIED
+			status (%status;) #IMPLIED >
+
+<!-- CCB#: None. Removed unused element. ->
+<!ELEMENT pgnumber	- - (%text;)-->
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT phrase	- -  (%text;) >
+<!ATTLIST phrase		%chgatt; >
+
+<!-- CCB#: 38784-B-02212-02 ->
+<!ELEMENT precaut	- -  (%text;)
+				-(%exclus; | warning | caution | precaut) >
+<!ATTLIST precaut	%secur; -->
+
+<!-- TCN#: 38784STD-20225-01 -->
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-02030-21 -->
+<!ELEMENT preface	- -  (%fpi;)   +(figure | table) >
+<!ATTLIST preface		id ID #IMPLIED
+			%chgatt;>
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT prentry	- - (topic) -(%exclus;) >
+<!ATTLIST prentry	%secur; 
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT pretmidno     - -  (%text;) >
+<!ATTLIST pretmidno     service %service; #IMPLIED
+                        %secur; 
+				%chgatt; >
+
+<!-- CCB# 0342-02 -->
+<!-- CCB# 9092-001-12 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: None. -->
+<!ELEMENT prindex	- - (%text;) -(prindex) >
+<!ATTLIST prindex	pridnbr CDATA #IMPLIED
+			display %yesorno; '1'
+			%secur; 
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT prtitle	- -  ((nomen, (modelno | partno | typedes | pslist |
+				nsn)+, serno*) | subject) >
+<!ATTLIST prtitle		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT pslist	- -  (partno, serno+)+ >
+<!ATTLIST pslist		%chgatt; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT pubdate	- -  (%text;) >
+<!ATTLIST pubdate		%chgatt; >
+
+<!ELEMENT randlist	- -  (title?, item+) >
+<!ATTLIST randlist	prefix CDATA #IMPLIED
+			%chgatt;
+			%secur; >
+
+<!-- CCB# 9092-001-05 -->
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT ratd		- - (ratdentry+) >
+<!ATTLIST ratd		id ID #IMPLIED
+			%bodyatt;
+			%secur; >
+
+<!-- CCB# 9092-001-05 -->
+<!-- CCB#: 38784-B-03078-01 -->
+<!ELEMENT ratddesc	- -  ((%parazero;, subpara1*)?, ratd?)  >
+<!ATTLIST ratddesc	%para0att; >
+
+<!-- CCB# 9092-001-05 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- TCN#: 38784-B-05166-01 -->
+<!ELEMENT ratdentry	- - (typeno, date?, title, ecpno?, dateinc?, remarks?) >
+<!ATTLIST ratdentry	id ID #IMPLIED
+			%chgatt; >
+
+<!-- CCB# 9092-001-14 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT rear		- -  (%rr;) >
+<!ATTLIST rear		numcols ( 1 | 2 ) #REQUIRED 
+				%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT remarks	- -  (%text;)   -(%exclus;) >
+<!ATTLIST remarks	%secur; 
+			%chgatt; >
+
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT removepg	- -  (%text;) >
+<!ATTLIST removepg		%chgatt; >
+
+<!-- TCN#: 38784STD-19330-04 -->
+<!ELEMENT revision	- - (pubdate, revnum, changeremark*) >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!ELEMENT revnum	- -  (%text;) >
+<!ATTLIST revnum		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT row		- -  (entry | entrytbl)+ >
+<!ATTLIST row		rowsep %yesorno; #IMPLIED
+ 			valign (top | bottom | middle) #IMPLIED
+			%secur; 
+			%chgatt; >
+
+<!-- TCN#: 38784STD-B-19053-01 -->
+<!-- CCB#: 38784-B-1019-09 -->
+<!-- Please note that in a 5x8 Job Guide, a para0 shall be used for the safety summary in place of the safesum element -->
+<!ELEMENT safesum	- -  (%safesum;)
+			+(figure | table | warning | caution) >
+<!ATTLIST safesum	%safesumatts; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT seal		- o  EMPTY >
+<!ATTLIST seal		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT secentry	- - (topic) -(%exclus;) >
+<!ATTLIST secentry	%chgatt; >
+
+<!-- CCB# 0342-02 -->
+<!-- CCB# 9092-001-12 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: None. -->
+<!ELEMENT secindex	- - (%text;) -(secindex) >
+<!ATTLIST secindex	pridnbr CDATA #REQUIRED 
+				display %yesorno; '1'
+				%chgatt; >
+
+<!-- CCB#: 38784-B-01325-05 -->
+<!ELEMENT section	- -  (%sect;) +(note)>
+<!ATTLIST section	%sectatt; >
+
+<!-- CCB#: 38784-B-02107-01 -->
+<!ELEMENT seqlist	- -  (title?, item+) >
+<!ATTLIST seqlist	numstyle (alphauc | alphalc | arabic | romanuc | romanlc) 'arabic'
+			%chgatt;
+			%secur; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT seqno		- -  (%text;) >
+<!ATTLIST seqno		%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT serno		- -  (%text;)   -(%exclus;) >
+<!ATTLIST serno		%chgatt;
+			%secur; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT sigblock	- -  (%text;) >
+<!ATTLIST sigblock	%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT spanspec	- o  EMPTY >
+<!ATTLIST spanspec	namest NMTOKEN #REQUIRED
+			nameend NMTOKEN #REQUIRED
+			spanname NMTOKEN #IMPLIED
+			align (left | right | center | justify | char) "center"
+			charoff NUTOKEN #IMPLIED
+			char CDATA #IMPLIED
+			colsep %yesorno; #IMPLIED
+			rowsep %yesorno; #IMPLIED 
+			%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT step1		- -  %step1.mdl; >
+<!ATTLIST step1		%stepatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT step2		- -  %step2.mdl; >
+<!ATTLIST step2		%stepatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT step3		- -  %step3.mdl; >
+<!ATTLIST step3		%stepatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT step4		- -  (%stepcon;) >
+<!ATTLIST step4		%stepatt; >
+
+<!-- CCB#: 38784-B-02044-03 -->
+<!-- TCN#: 38784-B-07269-01 -->
+<!ELEMENT subfig	- -  ((%subfig;) | tabdisplay) >
+<!ATTLIST subfig	orient (port | land1 ) 'port'
+			id ID #IMPLIED
+			label CDATA #IMPLIED
+			applicref IDREFS #IMPLIED
+			%chgatt;
+			%secur; >
+
+<!-- CCB#: 38784-B-1019-08 -->
+<!-- TCN#: 38784-B-07269-01 -->
+<!ELEMENT subfigfo	- -  ((graphic, legend?) | tabdisplay)>
+<!ATTLIST subfigfo	orient (port | land1 ) 'port'
+				id ID #IMPLIED
+				label CDATA #IMPLIED
+				applicref IDREFS #IMPLIED
+				pgstyle (11x17 | 11x20.5 | 11x24 | 11x27.5 | 11x31 |
+					   11x34.5 | 11x38 | 11x41.5 | 11x45) #IMPLIED
+				blankapron %yesorno; '1'
+				%chgatt;
+				%secur; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT subject	- -  (%text;) >
+<!ATTLIST subject	%secur;
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT subjinfo	- o  EMPTY >
+<!ATTLIST subjinfo	subjup CDATA #REQUIRED
+			subjlwr CDATA #REQUIRED
+			infoup CDATA #REQUIRED
+			infolwr CDATA #REQUIRED 
+			%chgatt; >
+			
+<!-- CCB# 38784-01165-08 -->
+<!ELEMENT subobjmed - - (object) >
+<!ATTLIST subobjmed	id ID #IMPLIED
+			label CDATA #IMPLIED
+			%chgatt;
+			%secur; >
+			
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT subpara1	- -  (%nparcon;, subpara2*) >
+<!ATTLIST subpara1	%sub1att; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT subpara2	- -  (%nparcon1;, subpara3*) >
+<!ATTLIST subpara2	%sub2att; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB# 9141-001-02 -->
+<!ELEMENT subpara3	- -  %subpara3.mdl; >
+<!ATTLIST subpara3	%sub3att; >
+
+<!-- CCB# 9141-001-02 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- TCN#: 38784-B-06158-01 -->
+<!ELEMENT subpara4	- -  (%nparcon1;, subpara5*) >
+<!ATTLIST subpara4	%subatts; 
+										moretocspc %yesorno; '0'>
+
+<!-- CCB# 0070-001-01 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT subpara5	- -  (%nparcon1;, subpara6*) >
+<!ATTLIST subpara5	%subatts; >
+ 
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT subpara6	- -  (%nparcon1;, subpara7*) >
+<!ATTLIST subpara6	%subatts; >
+ 
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT subpara7	- -  (%nparcon1;, subpara8*) >
+<!ATTLIST subpara7	%subatts; >
+
+<!-- CCB# 38784std-03057-19 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT subpara8	- -  (%nparcon1;) >
+<!ATTLIST subpara8	%subatts; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT subtitle	- -  (%text;) >
+<!ATTLIST subtitle	%secur; 
+				%chgatt; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT supersed	- -  (%text;) >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT suppl		- -  (%text;) >
+<!ATTLIST suppl		%chgatt; >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!ELEMENT symrow - - (term, def) >
+<!ATTLIST symrow		%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT symsect	- -  (%symsect;) >
+<!ATTLIST symsect	rtermwidth NUTOKEN "2.75in"
+			ltermwidth NUTOKEN "0.75in"
+			%para0att; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT symtitle	- -   (%text;)  -(%exclus;) >
+<!ATTLIST symtitle	%chgatt; >
+
+<!-- TCN#: 38784-B-07269-01 -->
+<!ELEMENT tabdisplay	- -  (tgroup+)   -(%exclus;) +(tfoot | tfnref | tfndisplay)>
+<!ATTLIST tabdisplay	label CDATA #IMPLIED
+			frame (top | bottom | topbot | all | sides | none) "all"
+			colsep %yesorno; "1"
+			rowsep %yesorno; "0"
+			tbwidth NUTOKEN #IMPLIED
+			tbdepth NUTOKEN #IMPLIED
+			horrefpt (left | right) "left"
+			verrefpt (vtop | vbottom) "vtop"
+			coordst CDATA "0,10000"
+			assocfig IDREF #IMPLIED
+			%chgatt;
+			%secur; >
+
+<!-- CCB# 0292-11 -->
+<!-- CCB# 9092-001-08 -->
+<!-- CCB#: 38784-B-03015-01 -->
+<!ELEMENT table		- -  (%tabl;)
+			-(%exclus;) +(tfnref | tfoot | tfndisplay | tfnid) >
+<!ATTLIST table		%tabatts; 
+				continued %yesorno; '0' >
+
+<!-- TCN#: 38784STD-20225-01 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB# 38784-01122-03 -->
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-02303-02 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!-- CCB#: 38784-B-03057-09 -->
+<!ELEMENT tablelist	- o  (tbllistrow* | (tabno, title, pageno)*) -(note)>
+<!ATTLIST tablelist	autobuild CDATA #CONREF
+			id ID #IMPLIED
+			%chgatt; >
+
+<!ELEMENT tabmat	- -  (tgroup+)  -(%exclus;) >
+<!ATTLIST tabmat	%tabatts; >
+
+<!-- CCB# 38784-01122-03 -->
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT tabno		- - (%text;) >
+<!ATTLIST tabno		%chgatt; >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!ELEMENT tbllistrow	- - (tabno, title, pageno) >
+<!ATTLIST tbllistrow	%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT tbody		- -  (row+) >
+<!ATTLIST tbody		valign (top | middle | bottom) "top" 
+				%chgatt; >
+
+<!-- CCB#: 38784-B-03078-01 -->
+<!ELEMENT tctolist     - -  ((%parazero;, subpara1*)?, tctotbl?) >
+<!ATTLIST tctolist     %para0att; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT tctono	- -  (%text;)   -(%exclus;) >
+<!ATTLIST tctono	%chgatt; 
+			%secur; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT tctorow	- -  (tctono, title, date) >
+<!ATTLIST tctorow	%chgatt; >
+
+<!--#8299-003-02-->
+<!-- CCB# 0292-08 -->
+<!ELEMENT tctotbl	- -  (tctorow+) >
+<!ATTLIST tctotbl	id ID #IMPLIED
+			%bodyatt;
+			%secur; >
+			
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03190-01 -->
+<!ELEMENT term		- -  (%text;)   -(%exclus;) >
+<!ATTLIST term		id ID #IMPLIED
+				%secur; 
+				%chgatt; >
+
+<!-- TCN#: 38784STD-19309-01 -->
+<!ELEMENT termlist	- -  (termrow+)   -(%exclus;) >
+<!ATTLIST termlist	rtermwidth NUTOKEN "2.5in" 
+			ltermwidth NUTOKEN "1in"
+			%chgatt;>
+
+<!-- TCN#: 38784STD-19309-01 -->
+<!ELEMENT termrow - - (term, def) >
+<!ATTLIST termrow	%chgatt; >
+
+<!-- TCN#: 38784STD-19309-01 -->
+<!ELEMENT termsect	- -  ((%parazero;, subpara1*)?, (termtitle?, termlist)) >
+<!ATTLIST termsect	%para0att; >
+
+<!-- TCN#: 38784STD-19309-01 -->
+<!ELEMENT termtitle	- -  (%text;)   -(%exclus;) >
+<!ATTLIST termtitle	%secur;
+				%chgatt; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT tfnid		- -  (%text;)>
+<!ATTLIST tfnid		id  ID  #REQUIRED
+			tfntype  (num | alpha | sym) "num"
+			tfnsymbol CDATA #IMPLIED
+			tfnval  CDATA #IMPLIED  
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT tfnref	- o   EMPTY >
+<!ATTLIST tfnref	xrefid  IDREF  #REQUIRED 
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!ELEMENT tfndisplay	- o   EMPTY >  
+<!ATTLIST tfndisplay	%chgatt; >
+
+<!-- CCB# 9092-001-08 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT tfoot		- -  ((colspec*, spanspec*, row+) | tfnid+)	-(entrytbl)>
+<!ATTLIST tfoot		%chgatt; >
+			
+<!-- CCB # 38784-01165-04 -->
+<!-- CCB#: 38784-B-03078-02 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT tgroup	- -  (colspec*, spanspec*, (thead?, tfoot?, tbody))>
+<!ATTLIST tgroup	cols NUMBER #REQUIRED
+		colsep %yesorno; #IMPLIED
+		rowsep %yesorno; #IMPLIED
+		align (left | right | center | justify | char) "left"
+		leftind  CDATA  #IMPLIED  
+		rightind CDATA  #IMPLIED
+		leftmar  NUTOKEN  #IMPLIED
+		rightmar NUTOKEN  #IMPLIED
+		topmar   NUTOKEN  #IMPLIED
+		botmar   NUTOKEN  #IMPLIED
+		mindepth NUTOKEN  #IMPLIED 
+		charoff NUTOKEN #IMPLIED
+		char CDATA #IMPLIED 
+		%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT thead		- -  (colspec*, spanspec*, row+)   -(entrytbl) >
+<!ATTLIST thead		valign (top | middle | bottom) "bottom" 
+				%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!ELEMENT title		- -  (%text;)   -(%exclus; | note) >
+<!ATTLIST title		%secur; 
+				%chgatt; >
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT tmidno	- -  (%text;)   -(%exclus;) >
+<!ATTLIST tmidno	service %service; #IMPLIED
+			%chgatt;
+			%secur; >
+
+<!ELEMENT tmimprep	- -  (%parazero;, subpara1*) >
+<!ATTLIST tmimprep	%para0att; >
+
+<!-- CCB# 0292-09 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!-- CCB#: 38784-B-03190-02 -->
+<!ELEMENT topic		- -  (%text;)   -(%exclus;) >
+<!ATTLIST topic		page CDATA #IMPLIED 
+				para CDATA #IMPLIED
+				%chgatt; >
+
+<!-- CCB # 9092-001-03 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT tpdr		- - (tpdrtbl | none) >	
+<!ATTLIST tpdr		%chgatt; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT tpdrlocation	- -  (%text;) >
+<!ATTLIST tpdrlocation		%chgatt; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT tpdrno	- -  (%text;) >
+<!ATTLIST tpdrno	%secur;
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!ELEMENT tpdrrow	- - (activity, tpdrno, tpdrlocation) >
+<!ATTLIST tpdrrow		%chgatt; >
+
+<!-- CCB#: 38784-B-02303-02 -->
+<!-- CCB# 0292-08 -->
+<!ELEMENT tpdrtbl	- -  (tpdrrow+ | (activity, tpdrno, tpdrlocation)+)>
+<!ATTLIST tpdrtbl	id ID #IMPLIED
+			%bodyatt;
+			%secur; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT typedes	- -  (%text;)   -(%exclus;) >
+<!ATTLIST typedes	%secur;
+			%chgatt; >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT typeno	- -  (%text;)   -(%exclus;) >
+<!ATTLIST typeno	%secur; 
+			%chgatt; >
+
+<!-- CCB#: 38784-B-04287-02 -->
+<!ELEMENT underline - - (%text;) -(%exclus;) >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- TCN#: 38784-B-05166-02 -->
+<!ELEMENT verbatim	- -  (#PCDATA) >
+<!ATTLIST verbatim	allowbrk %yesorno; "1"
+			%secur;
+			%chgatt; >
+
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-03092-02 -->
+<!ELEMENT verstat	- o  (tabmat?) >
+<!ATTLIST verstat		autobuild %yesorno; "1"
+				agency CDATA #IMPLIED 
+				%chgatt; >
+
+<!-- CCB# 38784-01192-05 -->
+<!-- CCB# 9141-001-01 --> 
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!ELEMENT volcontents	- o  (%cntnt;) -(note)>
+<!ATTLIST volcontents 	autobuild CDATA #CONREF >
+			
+<!-- CCB# 38784-01122-03 -->			
+<!-- CCB# 9141-001-01 -->
+<!-- CCB# 0292-08 --> 
+<!-- CCB#: 38784-B-02303-02 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!ELEMENT volilluslist	- o  (illlistrow* | (figno, title, pageno)*) -(note)>
+<!ATTLIST volilluslist	autobuild CDATA #CONREF>
+
+<!-- CCB# 9141-001-01 --> 
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!ELEMENT vollep	- -  (vollepcontents) -(note)>  
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT vollepchg	- -  (%text;) > 
+<!ATTLIST vollepchg		%chgatt; >
+
+<!-- CCB# 9141-001-01 --> 
+<!-- CCB#: 38784-B-02107-04 -->
+<!ELEMENT vollepcontents	- o (vollepentry+) >
+<!ATTLIST vollepcontents	autobuild CDATA #CONREF
+				lepcount CDATA #IMPLIED   >
+
+<!-- CCB# 38784-01192-05 -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT vollepentry	- - (volleppage, vollepchg) >
+<!ATTLIST vollepentry		%chgatt; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT volleppage	- -  (%text;) >
+<!ATTLIST volleppage		%chgatt; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT volnot	- -  (%text;) >
+<!ATTLIST volnot		%chgatt; >
+
+<!-- CCB#: 38784-B-03302-07ATI -->
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT volnum	- -  (%text;) >
+<!ATTLIST volnum		%chgatt; >
+
+<!-- CCB# 38784-01122-03 -->
+<!-- CCB# 9141-001-01 --> 
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-02303-02 -->
+<!-- CCB#: 38784-B-01325-05 -->
+<!ELEMENT voltablelist	- o  (tbllistrow* | (tabno, title, pageno)*) -(note)>
+<!ATTLIST voltablelist	autobuild CDATA #CONREF >
+
+<!-- CCB# 9141-001-01 --> 
+<!ELEMENT volume 	- -  ((front | auxfront), body, rear?) >
+<!ATTLIST volume	%bodyatt; 
+			%secur;
+			%docatt;
+			service %service; #REQUIRED
+			volpages %yesorno; "0"
+			resetnbrs %yesorno; "1" > 
+
+<!-- CCB#: 38784-B-02212-02 -->
+<!ELEMENT warning	- -  (icon?, para*)
+			-(%list; | %exclus; | warning | caution) >
+<!ATTLIST warning	%chgatt; >
+
+<!-- CCB# 0292-08 -->
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT warnpage	- -  (wpgentry+) >
+<!ATTLIST warnpage	%chgatt; >
+
+
+<!-- CCB#: 38784-B-01165-09 -->
+<!ELEMENT wpgentry	- -  (title, para+) >
+<!ATTLIST wpgentry	warnbox %yesorno; #IMPLIED
+			%chgatt;
+			titlefont (10pt | 14pt) "14pt"
+			line %yesorno; #IMPLIED >
+
+<!-- CCB#: 38784-B-02191-06 -->
+<!-- CCB#: 38784-B-03190-01 -->
+<!-- CCB# 38784-01165-07 -->
+<!ELEMENT xref		- o  EMPTY >
+<!ATTLIST xref	xrefid IDREF #IMPLIED
+			displayvalue CDATA #IMPLIED
+			HyTime NAME #FIXED "clink"
+			HyNames NAMES #FIXED "linkend xrefid"
+			%chgatt; >
+						
+
+
+
+
+
+<!-- ************************ END OF FILE ************************** -->
+
+
+<!-- *******ELEMENT and ATTRIBUTE LIST DECLARATIONS *************-->
+
+<!ELEMENT action	- o (task, subaction1*) +(note) >
+<!ATTLIST action	%actatt; >
+
+<!--TCN: 5096H-D-21209-01.  Added id attribute to <heading>.  JLM.  02/27/2023-->
+<!--TCN: 5096G-D-19247-03.  Made inspreq implied instead of required.  JLM.  02/27/2023-->
+<!-- CCB#: 5096F-D-05222-01 ->
+<!- Further review of the specification has indicated that some of these "types"
+    go against spec. The only card types allowed per spec are the "I" cards for
+    front matter material and "BA" cards for inspection and lubrication cards.
+    The other types should not be used and will be removed pending the outcome
+    of a specification change request. -->
+<!--TCN: 5096F-D-05236-01. Remove types: A and AB as they are not specification compliant.  CBW. 5/28/14-->
+<!ELEMENT card		- - (para0* | action* | majaction*) +(heading | figure | applicdef) >
+<!ATTLIST card		type (B | I | BA) 'BA'
+			cardno   CDATA   #IMPLIED
+			area     CDATA   #IMPLIED
+			mechtype CDATA   #IMPLIED
+			mechno   CDATA   #IMPLIED
+			cardtime CDATA   #IMPLIED
+			inspreq  CDATA   #IMPLIED
+			inspreqln2 CDATA #IMPLIED
+			grouping %group; #REQUIRED
+			power (on | off | onoff) #IMPLIED
+ 			service (in | out | inout) #IMPLIED
+			figure   CDATA   #IMPLIED
+			figureback   CDATA   #IMPLIED
+			reset  (yes | no) "yes"
+			%chgatt;
+			id ID #IMPLIED >
+
+<!-- TCN #: 5096F-D-05264-01 -->
+<!--<!ELEMENT docwc		- - (front, body) +(pgbrk | figure | table | note) >-->
+<!ELEMENT docwc		- - (front, body) +(pgbrk | note) >
+<!ATTLIST docwc		classification (yes | no) "no">
+
+<!--TCN: 5096H-D-21209-01.  Added id attribute to <heading>.  JLM.  02/27/2023-->
+<!ELEMENT heading	- o (%text;) >
+<!ATTLIST heading	%secur; 
+			%chgatt;
+			id ID #IMPLIED >
+
+<!ELEMENT inspection	- - (section+) >
+<!ATTLIST inspection	%secur; >
+
+<!ELEMENT lubricate	- - (section+) >
+<!ATTLIST lubricate	%secur; 
+				%chgatt; >
+
+<!ELEMENT majaction	- o (heading?, action*) >
+<!ATTLIST majaction	%chgatt; >
+
+<!ELEMENT subaction1	- o (task, subaction2*) >
+<!ATTLIST subaction1	%actatt; >
+
+<!ELEMENT subaction2	- o (task) >
+<!ATTLIST subaction2	%actatt; >
+
+<!ELEMENT task		- o (warning*, caution?, para) >
+<!ATTLIST task		%taskatt;
+			power  (on | off) 'off'
+			symbol CDATA #IMPLIED >
+			
+<!--TCN: 5096G-D-19247-02.  Added optional <workareadiagrams> to frnt entity.  JLM.  02/27/2023-->
+	<!ELEMENT workareadiagrams	- - (card+) >
+	<!ATTLIST workareadiagrams	%secur; 
+			id ID #IMPLIED >

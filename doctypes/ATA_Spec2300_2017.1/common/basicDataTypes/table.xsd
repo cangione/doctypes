@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.ataebiz.org/XMLSchema"
+           targetNamespace="http://www.ataebiz.org/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<!-- ================================================================
+
+Limitations of Liability: 
+
+1.  This material is provided "As Is" and neither Air Transport Association of America, Inc. (ATA) 
+    nor any person who has contributed to the creation, revision or maintenance of the material 
+    makes any representations or warranties, express or implied, including but not limited to, 
+    warranties of merchantability or fitness for any particular purpose. 
+
+2.  Neither ATA nor any person who has contributed to the creation, revision or maintenance of 
+    this material shall be liable for any direct, indirect, special or consequential damages or 
+    any other liability arising from any use of this material. 
+
+3.  Revisions to this document may occur after its issuance. The user is responsible for determining 
+    if revisions to the material contained in this document have occurred and are applicable. 
+
+Copyright 2017, Air Transport Association of America, Inc., d/b/a Airlines for America. All rights reserved.
+
+================================================================= -->
+	<xs:annotation>
+		    <xs:documentation>Version Number: 2017.1</xs:documentation>
+		    <xs:documentation>Revision Date: 2017-10-31</xs:documentation>
+		    <xs:documentation>Revision Comments: Spec 2300 revision 2017.1</xs:documentation>
+	  </xs:annotation>
+	  <xs:include schemaLocation="../attrs/commonAttrs.xsd"/>
+	  <xs:include schemaLocation="./figure.xsd"/>
+	  <xs:include schemaLocation="./multimedia.xsd"/>
+	  <xs:include schemaLocation="./extApplication.xsd"/>
+	  <xs:include schemaLocation="./text.xsd"/>
+	  <xs:include schemaLocation="./wcn.xsd"/>
+	  <xs:include schemaLocation="./invalidConfig.xsd"/>
+	  <xs:annotation>
+		    <xs:documentation>Table schema specialization for ATA FOIG table that has been redefined and extended from the ATA CALS Core Table schema.</xs:documentation>
+	  </xs:annotation>
+	  <!--=====================================================-->
+	<!-- Redefine of Core table schema for ATA FOIG-->
+	<!--=====================================================-->
+	<xs:redefine schemaLocation="./coreTable.xsd">
+		<!--=====================================================-->
+		<!--Table Title Content model-->
+		<!--=====================================================-->
+		<xs:complexType name="tblTitleType" mixed="true">
+			      <xs:annotation>
+				        <xs:documentation>redefine the table title to match FOIG title/name structure</xs:documentation>
+			      </xs:annotation>
+			      <xs:complexContent>
+				        <xs:extension base="tblTitleType">
+					          <xs:choice minOccurs="0" maxOccurs="unbounded">
+						            <xs:group ref="basicMixedContentGroup"/>
+					          </xs:choice>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+		    <!--=====================================================-->
+		<!--  Redefine table element definition -->
+		<!--=====================================================-->
+		<xs:complexType name="tableType">
+			      <xs:annotation>
+				        <xs:documentation>main FOIG table container extended from ATA CALS core table</xs:documentation>
+			      </xs:annotation>
+			      <xs:complexContent>
+				        <xs:extension base="tableType">
+					          <xs:attributeGroup ref="fomlTableAttGrp"/>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+		    <!--=====================================================-->
+		<!-- table content group-->
+		<!--=====================================================-->
+		<xs:group name="tableCoreContentGroup">
+			      <xs:annotation>
+				        <xs:documentation>basic table content group being extended to include FOIG figure</xs:documentation>
+			      </xs:annotation>
+			      <xs:choice>
+				        <xs:group ref="tableCoreContentGroup"/>
+				        <xs:element ref="figure" maxOccurs="unbounded"/>
+			      </xs:choice>
+		    </xs:group>
+		    <!--=====================================================-->
+		<!-- Redefine tgroup element definition -->
+		<!--=====================================================-->
+		<xs:complexType name="tgroupType">
+			      <xs:annotation>
+				        <xs:documentation>CALS table grouping container of header, body and footer - extended to include FOIG attributes.</xs:documentation>
+			      </xs:annotation>
+			      <xs:complexContent>
+				        <xs:extension base="tgroupType">
+					          <xs:attributeGroup ref="fomlTgroupAttGrp"/>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+		    <!--=====================================================-->
+		<!-- Redefine thead element definition -->
+		<!--=====================================================-->
+		<xs:complexType name="theadType">
+			      <xs:annotation>
+				        <xs:documentation>container of all heading rows within a table group (tgroup) - extended to include FOIG attributes</xs:documentation>
+			      </xs:annotation>
+			      <xs:complexContent>
+				        <xs:extension base="theadType">
+					          <xs:attributeGroup ref="idAttGrp"/>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+		    <!--=====================================================-->
+		<!-- Redefine tfoot element definition -->
+		<!--=====================================================-->
+		<xs:complexType name="tfootType">
+			      <xs:annotation>
+				        <xs:documentation>container of all footer rows within a table group (tgroup) - extended to include FOIG attributes</xs:documentation>
+			      </xs:annotation>
+			      <xs:complexContent>
+				        <xs:extension base="tfootType">
+					          <xs:attributeGroup ref="idAttGrp"/>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+		    <!--=====================================================-->
+		<!--  Redefine tbody element definition -->
+		<!--=====================================================-->
+		<xs:complexType name="tbodyType">
+			      <xs:annotation>
+				        <xs:documentation>container of all table body rows within a table group (tgroup) - extended to include FOIG attributes</xs:documentation>
+			      </xs:annotation>
+			      <xs:complexContent>
+				        <xs:extension base="tbodyType">
+					          <xs:attributeGroup ref="idAttGrp"/>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+		    <!--=====================================================-->
+		<!-- Redefine row element definition -->
+		<!--=====================================================-->
+		<xs:complexType name="rowType">
+			      <xs:annotation>
+				        <xs:documentation>container for a table row - extended to include FOIG attributes</xs:documentation>
+			      </xs:annotation>
+			      <xs:complexContent>
+				        <xs:extension base="rowType">
+					          <xs:attributeGroup ref="idAttGrp"/>
+					          <xs:attributeGroup ref="valignAttGrp"/>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+		    <!--=====================================================-->
+		<!-- Redefine entry Content-->
+		<!--=====================================================-->
+		<xs:complexType name="entryType">
+			      <xs:annotation>
+				        <xs:documentation>container for a table cell - extended to include the actual FOIG content model for a FOIG table cell.</xs:documentation>
+			      </xs:annotation>
+			      <xs:complexContent>
+				        <xs:extension base="entryType">
+					          <xs:choice>
+						            <xs:choice minOccurs="0" maxOccurs="unbounded">
+							              <xs:group ref="shortTextGroupType"/>
+							              <xs:group ref="wcnGroupType"/>
+							              <xs:element ref="figure"/>
+							              <xs:element ref="multimedia"/>
+							              <xs:element ref="extApplication"/>
+							              <xs:group ref="entryExtensionGroup"/>
+						            </xs:choice>
+						            <xs:element ref="invalidConfig"/>
+					          </xs:choice>
+					          <xs:attribute name="rowHeader" type="xs:boolean" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>Tag the entry content as part of the "row header".</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+					          <xs:attribute name="bgColor" type="xs:string" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>table cell background color. Use of CSS3 color specification notations.</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+					          <xs:attributeGroup ref="idAttGrp"/>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+		    <!--=====================================================-->
+		<!-- Redefine table-footnote Content-->
+		<!--=====================================================-->
+		<xs:complexType name="ftnoteType">
+			      <xs:annotation>
+				        <xs:documentation>container for the footer of the table - extended to include the actual FOIG content model for the table foot note</xs:documentation>
+			      </xs:annotation>
+			      <xs:complexContent>
+				        <xs:extension base="ftnoteType">
+					          <xs:choice>
+						            <xs:group ref="textGroupType" maxOccurs="unbounded"/>
+					          </xs:choice>
+					          <xs:attributeGroup ref="idAttGrp"/>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:redefine>
+	  <!--=====================================================-->
+	<!-- local attribute groups -->
+	<!-- ====================================================-->
+	<xs:attributeGroup name="fomlTableAttGrp">
+		    <xs:attributeGroup ref="idAttGrp"/>
+		    <xs:attribute name="tablewidth" type="xs:string" use="optional"/>
+	  </xs:attributeGroup>
+	  <xs:attributeGroup name="fomlTgroupAttGrp">
+		    <xs:attributeGroup ref="idAttGrp"/>
+		    <xs:attribute name="tabstyle" type="xs:NMTOKEN"/>
+	  </xs:attributeGroup>
+	  <xs:attributeGroup name="idAttGrp">
+		    <xs:attribute name="id" type="idType" use="optional"/>
+	  </xs:attributeGroup>
+</xs:schema>

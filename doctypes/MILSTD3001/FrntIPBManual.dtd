@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--<!DOCTYPE ipbmanualfrnt [
+-->
+<!--
+PUBLIC "-//USA-DOD//DTD Front Matter IPB Manual 3001 Part 8 Draft XML V307 08242016//EN"
+-->
+
+<!--   DTD for the Front Matter of Stand Alone IPB Manuals
+-->
+<!-- 
+Define parameter entities containing content models for the Information Modules and Common Elements
+-->
+<!ENTITY % pointpage "">
+
+<!ENTITY % common.ent PUBLIC "-//USA-DOD//ENTITIES 3001 Common Draft XML V307 08242016//EN" "Common.ent">
+
+<!ENTITY % ibpdata.ent PUBLIC "-//USA-DOD//ENTITIES 3001 IPB DATA Draft XML V307 08242016//EN" "Ipbdata.ent">
+
+<!ENTITY % front.ent PUBLIC "-//USA-DOD//ELEMENTS FRONT MATTER 3001 Part 1 Draft XML V307 08242016//EN" "Front.ent">
+
+%common.ent;
+
+%ibpdata.ent;
+
+%front.ent;
+<!--
+]>
+-->

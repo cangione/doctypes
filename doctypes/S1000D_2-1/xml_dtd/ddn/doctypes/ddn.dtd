@@ -1,0 +1,19 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                    Data Dispatch Note (DDN)                        *
+    *                 XML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.1                            *
+    *                       Date: 2004-02-29                             *
+    *                                                                    *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    *                                                                    *
+    ********************************************************************** -->
+<!DOCTYPE ddn PUBLIC
+  "-//S1000D//DTD Data Dispatch Note 20040229//EN//XML"
+  "../dtd/ddn.dtd" 
+  []>

@@ -1,0 +1,17 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                 XML Document Type Definition                       *
+    *                    Data Dispatch Note (DDN)                        *
+    *                                                                    *
+    *                     Release Version 2.3                            *
+    *                       Date: 2007-02-28                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE ddn PUBLIC "-//S1000D//DTD Data Dispatch Note 20070228//EN//XML"
+  "../dtd/ddn.dtd" [
+  ]>

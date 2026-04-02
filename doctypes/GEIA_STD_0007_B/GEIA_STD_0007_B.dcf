@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE DocumentTypeConfiguration PUBLIC "-//Arbortext//DTD Document Type Configuration 2.0//EN"
+ "dcfdtd.dtd">
+<!-- GEIA STD 0007 B DCF File -->
+<DocumentTypeConfiguration>
+	<Options allowApplicationToolbar="yes" allowComposeStylesheetList="yes" allowFosiMod="yes" allowTouchup="yes" protected="no"/>
+	<NewDialog>
+		<New category="GEIA STD 0007 B" description="(GEIA-STD-0007) GEIA-STD-0007 Root Element" templateFile="templates/GEIA_STD_0007_root.xml"/>
+		<New category="GEIA STD 0007 B" description="(full_file) Full File" templateFile="templates/fullfile.xml"/>
+		<New category="GEIA STD 0007 B" description="(change_file) Change File" templateFile="templates/changefile.xml"/>
+	</NewDialog>
+	<ElementOptions>
+		<ElementOption category="division" element="GEIA-STD-0007"/>
+		<ElementOption category="division" element="full_file"/>
+		<ElementOption category="division" element="change_file"/>
+	</ElementOptions>
+	<Display></Display>
+	<Specials></Specials>
+	<ContextTransformations></ContextTransformations>
+	<Lists></Lists>
+	<FrameSets></FrameSets>
+	<Composition></Composition>
+</DocumentTypeConfiguration>

@@ -1,0 +1,47 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                 XML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2004-06SE: Update public identifier date of entity %EXTDMC;.*
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % DMADDR1 PUBLIC                                          *
+    * "-//S1000D//ENTITIES DM Address Details 1st Part 20050501//EN//XML"*
+    * "dmaddr1.ent">                                                     *
+    * %DMADDR1;                                                          *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %EXTDMC; (Data Module Code Breakdown) containing:-   *
+    * the formal public identifier for the Data Module Code Breakdown    *
+    * public text.                                                       *
+    ********************************************************************** -->
+<!ENTITY % EXTDMC PUBLIC 
+  "-//S1000D//ELEMENTS Data Module Code Breakdown 20050501//EN//XML" 
+  "dmc.ent">
+<!-- Public identifier date updated -->  
+
+
+<!--**********************************************************************
+    * Define Entity %DMC; (Data Module Code)     containing:-            *
+    *  age or avee (further breakdown is contained in entity %EXTDMC;)   *
+    ********************************************************************** -->
+<!ENTITY % DMC "age | avee" >
+
+
+<!--**********************************************************************
+    * Call the Data Module Code Breakdown Public Text. The formal public *
+    * identifier is stored in the entity %EXTDMC;                        *
+    ********************************************************************** -->
+%EXTDMC;
+
+
+
+<!--** End of XML DMADDR1 Entity **-->

@@ -1,0 +1,205 @@
+<!-- Fragment document type declaration subset:
+Arbortext, Inc., 1988-2005, v.4002
+<!DOCTYPE OUTSPEC PUBLIC "-//ArborText//DTD OUTPUT SPEC MIL-PRF-28001 REV B AMEND 1 19961231//EN" [
+<!ENTITY changeatts PUBLIC "-//USA-DOD//DTD CHANGEATTS 83495B1BV6aD0P0//EN">
+]>
+-->
+<!--Front Matter Formatting-->
+<?Pub Caret>
+<!--A-->
+<!--B-->
+<!--C-->
+<e-i-c gi="chgdate" context="idinfo"><?Pub Lcl _id="f60"><?Pub Dtl>
+<charlist>
+<suppress sup="1">
+<savetext textid="chgdate.txt" conrule="#CONTENT">
+<savetext textid="leptab1.app" conrule="<leptab1.fmt>,\Original Issue\,dotfill,@65mm,\ \,chgnum.txt,\ \,dotfill,chgdate.txt,</leptab1.fmt>"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="chgnum" context="idinfo"><?Pub Lcl _id="f66"><?Pub Dtl>
+<charlist>
+<suppress sup="1"></charlist>
+<att>
+<fillval attname="get_chgnum" attloc="system-func" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="chgnum.txt"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="chgtxt" context="* chginfo"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist>
+<suppress sup="1">
+<savetext textid="chgtxt.txt" conrule="#CONTENT"></charlist>
+</e-i-c>
+<e-i-c gi="copyright"><?Pub Lcl _id="f71"><?Pub Dtl>
+<charlist charsubsetref="own-line">
+<usetext source="\&copy; \" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="line" context="* copyright"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist inherit="1" charsubsetref="own-line prespace.2 postspace.2">
+<font size="8pt">
+<indent leftind="4.5mm" firstln="4.5mm"></charlist>&changeatts;
+</e-i-c>
+<!--D-->
+<e-i-c gi="date" context="* chginfo"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist>
+<suppress sup="1">
+<savetext textid="date.txt" conrule="#CONTENT">
+<savetext textid="leptab1.app" conrule="<leptab1.fmt>,\Change\,dotfill,@65mm,\ \,chgtxt.txt,\ \,dotfill,date.txt,</leptab1.fmt>"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="date" context="tctotbl"><?Pub Dtl>
+<charlist>
+<suppress sup="1">
+<savetext textid="tctdate.txt" conrule="#CONTENT"></charlist>
+</e-i-c>
+<e-i-c gi="distrib"><?Pub Dtl>
+<charlist charsubsetref="own-line prespace.20"></charlist>
+</e-i-c>
+<e-i-c gi="doctype"><?Pub Lcl _id="f81"><?Pub Dtl>
+<charlist charsubsetref="own-line allcaps quad.centre">
+<font size="18pt">
+<postsp minimum="15mm" nominal="15mm" maximum="15mm" condit="keep" priority="force">
+<usetext source="\TECHNICAL MANUAL\" placemnt="before">
+<subchars charsubsetref="own-line">
+<font size="18pt"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<!--E-->
+<!--F-->
+<!--G-->
+<!--H-->
+<!--I-->
+<!--J-->
+<!--K-->
+<!--L-->
+<e-i-c gi="leptext.fmt"><?Pub Dtl>
+<charlist charsubsetref="own-line">
+<usetext source="\Put the pages which make the change into the manual. Discard the pages you have replaced and/or removed in accordance with your applicable Security Regulations\">
+</usetext>
+<usetext source="!<note><line>On a page you have put in, the text which has been changed, and
+the new text which has been added, is shown by a vertical line. The vertical
+line is put in:</line><line>- the left margin for a left page</line><line>- the right margin for a right page</line><line>A change to an illustration is shown by corner marks or a small hand; a finger on the hand points to the changed area.</line></note>!">
+</usetext>
+<usetext source="\The date we supplied the first issue of the pages,and the dates we supplied the change pages, are:\">
+<subchars charsubsetref="own-line prespace.7 postspace.7"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="lep">
+<charlist charsubsetref="own-line">
+<textbrk startpg="recto" pageid="lep.page" newpgmdl="local" startln="1" endln="1">
+<usetext source="lephead.txt" placemnt="before">
+<subchars charsubsetref="own-line quad.centre font.12 bold postspace.4"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset>
+<usetext source="<leptext.fmt>,</leptext.fmt>" placemnt="before"></usetext>
+<usetext source="<own-line.fmt>,leptab1.app,</own-line.fmt>" placemnt="before">
+</usetext>
+<usetext source="\The total number of pages for this publication is \,pagecount.txt,\ as shown in the list below.\">
+<subchars charsubsetref="own-line prespace.7 postspace.7"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="lepcontents"><?Pub Lcl _id="f1">
+<charlist charsubsetref="own-line"></charlist>
+<att>
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<specval attname="autobuild" attloc="lepcontents" attval="#EQ#\1\">
+<charsubset charsubsetref="own-line">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" condit="keep" priority="force">
+<usetext source="\Page Number\,7pi,\*Change Number\,spcfill,\Page Number\,7pi,\*Change Number\">
+<subchars charsubsetref="own-line"></subchars>
+</usetext>
+<usetext source="<lep2.fmt>,lep2.app,</lep2.fmt>">
+<subchars charsubsetref="own-line"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<!--M-->
+<e-i-c gi="mfr"><?Pub Lcl _id="f94"><?Pub Dtl>
+<charlist charsubsetref="own-line quad.centre">
+<postsp minimum="65mm" nominal="65mm" maximum="65mm" priority="med"></charlist>
+</e-i-c>
+<e-i-c gi="modelno" occur="last"><?Pub Lcl _id="f96"><?Pub Dtl>
+<charlist charsubsetref="own-line bold allcaps quad.centre">
+<font size="28pt">
+<postsp minimum="60mm" nominal="60mm" maximum="60mm" condit="keep" priority="med">
+</charlist>
+</e-i-c>
+<e-i-c gi="modelno"><?Pub Lcl _id="f96"><?Pub Dtl>
+<charlist charsubsetref="own-line bold allcaps quad.centre">
+<font size="28pt"></charlist>
+</e-i-c>
+<!--N-->
+<e-i-c gi="nomen" context="prtitle"><?Pub Lcl _id="f97"><?Pub Dtl>
+<charlist charsubsetref="own-line quad.centre allcaps">
+<font size="28pt" weight="bold">
+<postsp minimum="15mm" nominal="15mm" maximum="15mm" condit="keep" priority="med">
+</charlist>
+</e-i-c>
+<!--O-->
+<!--P-->
+<e-i-c gi="prtitle"><?Pub Lcl _id="f107"><?Pub Dtl>
+<charlist charsubsetref="own-line"></charlist>
+</e-i-c>
+<!--Q-->
+<!--R-->
+<!--S-->
+<!--T-->
+<e-i-c gi="tctotbl"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist charsubsetref="own-line">
+<ruling thick="1pt" placemnt="after" type="single">
+<presp minimum="2mm" nominal="2mm" maximum="2mm" condit="discard" priority="force">
+<postsp minimum="2mm" nominal="2mm" maximum="2mm" condit="discard" priority="force">
+<textbrk startln="1" endln="1"></ruling>
+<ruling thick="1pt" type="single">
+<presp minimum="2mm" nominal="2mm" maximum="2mm" condit="discard" priority="force">
+<postsp minimum="2mm" nominal="2mm" maximum="2mm" condit="discard" priority="force">
+<textbrk startln="1" endln="1"></ruling>
+<usetext source="13mm,\TCTO No.\,58mm,\Title\,53mm,\TCTO Date\">
+<subchars charsubsetref="own-line"></subchars>
+</usetext>
+<ruling thick="1pt" type="single">
+<presp minimum="2mm" nominal="2mm" maximum="2mm" condit="discard" priority="force">
+<postsp minimum="2mm" nominal="2mm" maximum="2mm" condit="discard" priority="force">
+<textbrk startln="1" endln="1"></ruling>
+</charlist>
+</e-i-c>
+<e-i-c gi="tctono"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist>
+<suppress sup="1">
+<savetext textid="tctno.txt" conrule="#CONTENT"></charlist>
+</e-i-c>
+<e-i-c gi="tctorow"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist>
+<usetext source="@13mm,tctno.txt,@86mm,tctotbl.txt,@146mm,tctdate.txt" placemnt="after">
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="title" context="tctotbl"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist>
+<suppress sup="1">
+<savetext textid="tctotbl.txt" conrule="#CONTENT"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="tctolist"><?Pub Dtl>
+<charlist charsubsetref="own-line prespace.4 postspace.4 quad.left bold">
+</charlist>
+</e-i-c>
+<e-i-c gi="title" context="tmimprep"><?Pub Dtl>
+<charlist charsubsetref="own-line prespace.4 postspace.4 quad.left bold">
+</charlist>
+</e-i-c>
+<!--U-->
+<!--V-->
+<!--w-->
+<!--X-->
+<!--Y-->
+<!--Z-->
+<?Pub *0000007701>

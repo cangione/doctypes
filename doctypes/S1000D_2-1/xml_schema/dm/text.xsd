@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    *                                                                    *
+    * Amendment:-                                                        *
+    ********************************************************************** -->
+
+
+	<!-- use 	<xs:complexType mixed="true"> -->
+	<xs:group name="text">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %text; (Running Text) containing:-                   *
+    *   Parsed Character Data.                                           *
+    *  or                                                                *
+    *   xref     - Mandatory Single     contains applic, Definition      *
+    *                                   stored in entity %SPARCON;.      *
+    *  or                                                                *
+    *   indxflag - Mandatory Single     contains No Other Tags.          *
+    *  or                                                                *
+    *   change   - Mandatory Single     contains Definition stored in    *
+    *                                   entity %text;                    *
+    *  or                                                                *
+    *   emphasis - Mandatory Single     contains Definition stored in    *
+    *                                   entity %text;                    *
+    *  or                                                                *
+    *   symbol   - Mandatory Single     contains applic.                 *
+    *  or                                                                *
+    *   subscrpt - Mandatory Single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *  or                                                                *
+    *   supscrpt - Mandatory Single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *  or                                                                *
+    *   refdm    - Mandatory Single     contains Definition stored in    *
+    *                                   entity %ALLDMC;                  *
+    *  or                                                                *
+    *   reftp    - Mandatory Single     contains techpub.                *
+    *  or                                                                *
+    *   acronym  - Mandatory Single     contains acroterm, acrodef.      *
+    *  or                                                                *
+    *   acroterm - Mandatory Single     contains Definition stored in    *
+    *                                            entity %SPARCON;.       *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice> 
+			<xs:element ref="xref"/>
+			<xs:element ref="indxflag"/>
+			<xs:element ref="change"/>
+			<xs:element ref="emphasis"/>
+			<xs:element ref="symbol"/>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+			<xs:element ref="refdm"/>
+			<xs:element ref="reftp"/>
+			<xs:element ref="acronym"/>
+			<xs:element ref="acroterm"/> 
+		</xs:choice>
+	</xs:group>
+
+
+</xs:schema>

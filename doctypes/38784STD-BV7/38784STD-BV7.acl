@@ -1,0 +1,42 @@
+#-------------------------------------------------------------------------------
+# (c) 2019  -  Global Publishing Solutions Ltd (GPSL)
+#-------------------------------------------------------------------------------
+# File name:   38784STD-BV7.acl
+# Date:        8th May 2019
+# Version:     2.0
+#-------------------------------------------------------------------------------
+
+
+# -----------------------------------------------
+# Forward declarations
+# -----------------------------------------------
+
+function main::needs_emergency_borders()       {}
+
+# -----------------------------------------------
+# End of forward declarations
+# -----------------------------------------------
+
+
+#-------------------------------------------------------------------------------
+# Function:     needs_emergency_borders(wid, oid)
+#
+# Description:
+#   FOSI callback to determine if page has been formatted on a large page size
+#   to accomodate an emergency border.
+#
+# Parameters:
+#   wid         view of document being formatted
+#   oid         oid for element being formatted (perhaps gentext)
+#
+# Returns:
+#   1 to indicate yes, an emergency border should be used
+#   0 to indicate no, an emergency border should not be used
+#-------------------------------------------------------------------------------
+function main::needs_emergency_borders(wid, oid = oid_caret()) {
+  local info[];
+  local doc = oid_doc(oid);
+  
+  page_info(info, doc);
+  return ("bleedclass" in info);
+}

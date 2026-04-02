@@ -1,0 +1,118 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                 XML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. Reflect the changes done for the DM DTD.                        *
+    *====================================================================*
+    * Typical invocation:-                                               *
+    * <!ENTITY % LISTCODE PUBLIC                                         *
+    *   "-//S1000D//ELEMENTS List Code Definitions 20030531//EN//XML"    *
+    *   "listcode.ent">                                                  *
+    * %LISTCODE;                                                         *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Element sendid (Senders Identification) containing:-        *
+    *  Parsed Character Data.                                            *
+    * may contain the NCAGE code                                         *
+    ********************************************************************** -->
+<!ELEMENT sendid  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element diyear (Data Identification Year) containing:-      *
+    *  Parsed Character Data                                             *
+    ********************************************************************** -->
+<!ELEMENT diyear  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element seqnum (Sequence Number of DDN, DML or COM for      *
+    *                        current year)                               *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT seqnum  (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Entity %SPAR; (Simple Paragraphs) containing:-              *
+    *====================================================================*
+    * Optional  Repeatable Group.                                        *
+    *====================================================================*
+    *  Parsed Character Data.                                            *
+    *  or                                                                *
+    *   p        - mandatory single     contains Definition stored in    *
+    *                                   entity %SPARCON;                 *
+    *====================================================================*
+    ********************************************************************** -->
+<!-- <!ENTITY % SPAR "(#PCDATA | p)*" > -->
+
+
+<!--**********************************************************************
+    * Define Entity %SPARCON; (Simple Paragraph Continuation)            *
+    * containing:-                                                       *
+    *====================================================================*
+    * Optional Repeatable Group                                          *
+    *====================================================================*
+    *  Parsed Character Data.                                            *
+    *  or                                                                *
+    *   subscrpt - mandatory single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *  or                                                                *
+    *   supscrpt - mandatory single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *====================================================================*
+    ********************************************************************** -->
+<!-- <!ENTITY % SPARCON "(#PCDATA | subscrpt | supscrpt)*" > -->
+
+
+<!--**********************************************************************
+    * Define Elements subscrpt (Sub Script) & supscrpt (Super Script)    *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT subscrpt  (#PCDATA) >
+<!ELEMENT supscrpt  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element p (Simple Paragraph) containing:-                   *
+    *====================================================================*
+    * Optional Repeatable Group                                          *
+    *====================================================================*
+    *  Parsed Character Data.                                            *
+    *  or                                                                *
+    *   subscrpt - mandatory single     contains Parsed Character Data.  *
+    *  or                                                                *
+    *   supscrpt - mandatory single     contains Parsed Character Data.  *
+    *====================================================================*
+    ********************************************************************** -->
+<!ELEMENT p  (#PCDATA | subscrpt | supscrpt)* >
+
+
+<!--**********************************************************************
+    * Define Element remarks (Remarks) containing:-                      *
+    *====================================================================*
+    * Optional  Repeatable Group.                                        *
+    *====================================================================*
+    *   Parsed Character Data.                                           *
+    *  or                                                                *
+    *   p        - mandatory single     contains Parsed Character Data or*
+    *                                            subscrpt or supscrpt.   *
+    *====================================================================*
+    ********************************************************************** -->
+<!ELEMENT remarks  (#PCDATA | p)* >
+<!-- Content model changed to allow simple paragraph structures on remarks -->
+
+
+
+<!--** End of XML LISTCODE Entity **-->

@@ -1,0 +1,262 @@
+<!-- *****  START OF FILE ***** -->
+<!--  **************************************************************************
+      SPECIAL NOTE: 
+	This DTD was modified for the Arbortext implementation.
+      Changes:
+      20030120 modified to reference the latest version of 38784 (Draft V7 to 
+               include updated support for the change application)
+      20040220 - removed 38784 subset in favor of an entity to 38784 directory
+               - added %chgatt; to actionblk
+      ********************************************************************** -->
+
+<!-- 
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  DTD TITLE:	Inspection Manual
+	+
+	+  SPECIFICATION NUMBER:	MIL-PRF-5096F
+	+
+	+  SPECIFICATION POC:	Bill Garrity
+	+
+	+  DOCUMENT TYPE DEFINITION (DTD):	5096F-AV6D0P0
+	+
+	+  MIL-STANDARD VERSION:	38784STD-BV6
+	+
+	+  LAST MODIFICATION:	29 October 2001
+	+	
+	+	NOTICE:  "Continue" cannot be used at this time.  This issue
+	+	has been brought to the attention of DataLogics.
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+  This file is made available to provide the user with a digital 
+	+  representation of the DTD found in:  Appendix A of MIL-PRF-5096F
+	+  This file is incomplete without MIL-PRF-5096F.
+	+
+	+  The following set of declarations may be referred to by using a
+	+  public entity as follows:
+	+
+	+  <!ENTITY % m5096im PUBLIC "-//USA-DOD//DTD 5096F-AV6D0P0//EN" >
+	+  %m5096im;
+	+
+	+  NOTE: In order to parse the following DTD subset alone, append
+	+  the following statement to the beginning of the file:
+	+
+	+		
+	+
+	+		and the associated  ]>  to the end of the file.
+	+
+	+  NOTE: The start and end of this file are marked with notations.
+	+  If these notations are not present, the file may not be complete!
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+	AUTHORED BY: Ron Craft, TMSS, AF IDE PO
+	+
+	+	NOTE: This is originally Andy Sebastian's work from his
+	+	legacy directory.  
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+	MODIFICATIONS:
+	+	
+	+	CCB #: NONE
+	+	Description:  Updated to V6, doc entity was defined as (docim)
+	+	
+	+	rsc, 29 October
+	+
+	+
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+                      ENTITY DECLARATIONS
+-->
+<!ENTITY % doc		"(docim)" >
+
+<!-- CCB #: 01003-00-04 -->
+<!ENTITY % fig		"(title?, graphic)" >
+
+<!ENTITY % bodyele      "schedreq, specreq, replacesched, restrictions" >
+
+<!ENTITY % titles       "title" >
+
+<!ENTITY % sect         "(%titles;)?, sectnote*, actiontbl" >
+
+<!ENTITY % wcn 		"warning*, caution?, note?" >
+
+<!ENTITY % parazero	"(%titles;)?, %wcn;, (para, note?)?, (step1, step1+)?">
+
+<!-- ATI added entity to 38784 -->
+<!ENTITY % m38784       PUBLIC "-//USA-DOD//DTD 38784STD-BV7//EN" >
+%m38784;
+
+<!ENTITY % taskatt      "%stepatt;
+			%secur;" >
+
+<!--  NOTE:  Not all attributes are used at one time.  i.e., baselevel actions
+	   	need fsc and pn.  Replacement sched has qty.  -->
+	   	
+<!ENTITY % actatt       "%para0att;
+			cardno CDATA #IMPLIED
+			wucsys CDATA #IMPLIED
+			wucsub CDATA #IMPLIED
+			area   CDATA #IMPLIED
+			minute CDATA #IMPLIED
+			form   CDATA #IMPLIED
+			qty    CDATA #IMPLIED
+			fsc    CDATA #IMPLIED
+			pn     CDATA #IMPLIED" >
+
+
+
+<!-- *
+     **************************************************************************
+     *
+     *              ELEMENT and ATTRIBUTE LIST DECLARATIONS
+  -->
+
+<!ELEMENT acceptfcfreq	- - (%sect;) >
+<!ATTLIST acceptfcfreq	sectpart (sect|part) "sect"
+			%sectatt; >
+
+<!ELEMENT action	- - (task, subaction1*) >
+<!ATTLIST action	%actatt; >
+
+<!-- Arbortext 20040220: SFORT
+     added %chgatt; -->
+<!ELEMENT actionblk	- - (action+) >
+<!ATTLIST actionblk	inspection (hsc|miniso|majiso) #IMPLIED
+			system     CDATA		   #IMPLIED
+			hours      CDATA		   #IMPLIED
+			days       CDATA		   #IMPLIED 
+                  %chgatt; >
+
+<!ELEMENT actiontbl	- - (actionblk+) -(table) >
+<!ATTLIST actiontbl	frame (none|all|topbot|top|bottom|sides) 'none'
+			colsep %yesorno; '0'
+			rowsep %yesorno; '0'
+			pgwide %yesorno; '1'
+			pgdeep %yesorno; '0'
+			orient (port|land1|land2) 'port'
+			cellcont (Continued|Cont) 'Continued'
+			id ID #IMPLIED
+			footnotes (page|end) #IMPLIED
+			leftind  CDATA   #IMPLIED
+			rightind CDATA   #IMPLIED
+			leftmar  NUTOKEN #IMPLIED
+			rightmar NUTOKEN #IMPLIED
+			topmar   NUTOKEN #IMPLIED
+			botmar   NUTOKEN #IMPLIED
+			applicref IDREFS #IMPLIED
+			%verified;
+			%bodyatt;
+			%secur; >
+
+<!ELEMENT baselvl	- - (%sect;) >
+<!ATTLIST baselvl	sectpart (sect|part) "sect"	
+			%sectatt; >
+
+<!ELEMENT bpostflt	- - (%sect;) >
+<!ATTLIST bpostflt	sectpart (sect|part) "sect"
+			%sectatt; >
+
+<!ELEMENT depot		- - (%sect;) >
+<!ATTLIST depot		sectpart (sect|part) "sect"
+			%sectatt; >
+
+<!ELEMENT docim		- - (front, body)  +(brk|line) >
+<!ATTLIST docim		service %service; 'AF'
+			tocstyle NUMBER #IMPLIED
+			%docatt;
+			%secur; >
+
+<!ELEMENT endrunway	- - (%sect;) >
+<!ATTLIST endrunway	sectpart (sect|part) "sect"
+			%sectatt; >
+
+<!ELEMENT hsc		- - (%sect;)>
+<!ATTLIST hsc		%sectatt; >
+
+<!ELEMENT histdoc	- - (%sect;) >
+<!ATTLIST histdoc	sectpart (sect|part) "sect"
+			%sectatt; >
+
+<!ELEMENT hpostflt	- - (%sect;) >
+<!ATTLIST hpostflt	sectpart (sect|part) "sect"
+			%sectatt; >
+
+<!-- had to add hsc, minor, major to iso because they are required "parts"
+	see paragraph 3.2.2.6 in the spec  7 Dec 99, np -->
+<!ELEMENT iso		- - ((hsc, minor, major), (section*|part*)) >
+<!ATTLIST iso		%sectatt; >
+
+<!ELEMENT major		- - (%sect;) >
+<!ATTLIST major		%sectatt; >
+
+<!ELEMENT minor		- - (%sect;) >
+<!ATTLIST minor		%sectatt; >
+
+<!ELEMENT part		- - (%sect;) >
+<!ATTLIST part		%sectatt; >
+
+<!ELEMENT pe		- - (%sect;) >
+<!ATTLIST pe		sectpart (sect|part) "sect"
+			%sectatt; >
+
+<!ELEMENT preflt	- - (%sect;) >
+<!ATTLIST preflt	sectpart (sect|part) "sect"
+			%sectatt; >
+
+<!ELEMENT replace	- - (%sect;) >
+<!ATTLIST replace	%sectatt; >
+
+
+<!ELEMENT replacesched	- - ((%titles;, replace), 
+				(section*|part*)) >
+<!ATTLIST replacesched	chapsect (chap|sect) 'chap'
+			%chapatt; >
+
+<!ELEMENT restrictions	- - (%titles;, baselvl?, suprepair?,
+				(section*|part*)) >
+<!ATTLIST restrictions	chapsect (chap|sect) 'chap'
+			%chapatt; >
+
+<!ELEMENT schedreq	- - (%titles;, preflt?, endrunway?, thruflt?, bpostflt?,
+				hpostflt?, (pe|iso)?, (section*|part*)) >
+<!ATTLIST schedreq	chapsect (chap|sect) 'chap'
+			%chapatt; >
+
+<!ELEMENT sectnote	- - ((%titles;)?, para+) >
+<!ATTLIST sectnote	xrefid IDREF #IMPLIED
+			%chgatt; >
+
+<!ELEMENT specoccur	- - (%sect;) >
+<!ATTLIST specoccur	sectpart (sect|part) "sect"
+			%sectatt; >
+
+<!ELEMENT specreq	- - (%titles;, specoccur?, depot?, acceptfcfreq?,
+				histdoc?, (section*|part*)) >
+<!ATTLIST specreq	chapsect (chap|sect) 'chap'
+			%chapatt; >
+
+<!ELEMENT subaction1	- o (task?, subaction2*) >
+<!ATTLIST subaction1	%actatt; >
+
+<!ELEMENT subaction2	- o (task) >
+<!ATTLIST subaction2	%actatt; >
+
+<!ELEMENT suprepair	- - (%sect;) >
+<!ATTLIST suprepair	sectpart (sect|part) "sect"
+			%sectatt; >
+
+<!ELEMENT task		- - (warning*, caution?, note?, para) >
+<!ATTLIST task		%taskatt;
+			power  (on|off) 'off'
+			symbol CDATA #IMPLIED >
+
+<!ELEMENT thruflt	- - (%sect;) >
+<!ATTLIST thruflt	sectpart (sect|part) "sect"
+			%sectatt; >
+
+<!-- *
+     *                           END OF FILE
+     **************************************************************************
+-->

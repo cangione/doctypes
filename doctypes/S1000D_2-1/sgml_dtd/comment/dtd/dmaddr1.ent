@@ -1,0 +1,43 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    *====================================================================*
+    * Typical invocation:-                                               *
+    * <!ENTITY % DMADDR1 PUBLIC                                          *
+    * "-//S1000D//ENTITIES DM Address Details 1st Part 20030531//EN">    *
+    * %DMADDR1;                                                          *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %EXTDMC; (Data Module Code Breakdown) containing:-   *
+    * the formal public identifier for the Data Module Code Breakdown    *
+    * public text.                                                       *
+    ********************************************************************** -->
+<!ENTITY % EXTDMC
+  PUBLIC "-//S1000D//ELEMENTS Data Module Code Breakdown 20030531//EN" >
+
+
+<!--**********************************************************************
+    * Define Entity %DMC; (Data Module Code)     containing:-            *
+    *  age Or avee (further breakdown is contained in entity %EXTDMC;)   *
+    ********************************************************************** -->
+<!ENTITY % DMC "age | avee" >
+
+
+<!--**********************************************************************
+    * Call the Data Module Code Breakdown Public Text. The formal public *
+    * identifier is stored in the entity %EXTDMC;                        *
+    ********************************************************************** -->
+%EXTDMC;
+
+
+
+<!--** End of DMADDR1 Entity **-->

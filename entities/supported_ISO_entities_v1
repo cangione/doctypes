@@ -1,0 +1,349 @@
+<!--  ########  [  ISO character entities supported by JCALS  ]  ######## -->
+<!--
+      LAST UPDATE: 3 November 1994
+      BY:          Simon Wickes
+     
+      PUBLIC ID:   -//JCALS//ENTITIES supported ISO entities v1//EN
+
+      COMMENTS:
+        This file consists of all character entities from the ISO
+        sets that are supported by the JCALS publishing system.
+
+-->
+
+<!--
+    CSCI:   Workstation Management
+    CSU:    Authoring Tools,
+             DTDs and FOSIs
+    CSU ID: 01-03-0130
+
+     Project:         JCALS System
+     Contract Number: DAHC94-89-C-008
+-->
+
+<!--
+    Character entity set. Typical invocation:
+    
+    <!ENTITY % charent PUBLIC "-//JCALS//ENTITIES supported ISO entities v1//EN">
+    %charent;
+-->
+
+
+<!ENTITY Aacute   SDATA "[Aacute]"  --=capital A, acute accent-->
+<!ENTITY aacute   SDATA "[aacute]"  --=small a, acute accent-->
+<!ENTITY Acirc    SDATA "[Acirc ]"  --=capital A, circumflex accent-->
+<!ENTITY acirc    SDATA "[acirc ]"  --=small a, circumflex accent-->
+<!ENTITY acute    SDATA "[acute ]"  --=acute accent-->
+<!ENTITY AElig    SDATA "[AElig ]"  --=capital AE diphthong (ligature)-->
+<!ENTITY aelig    SDATA "[aelig ]"  --=small ae diphthong (ligature)-->
+<!ENTITY Agr      SDATA "[Agr   ]"  --=capital Alpha, Greek-->
+<!ENTITY agr      SDATA "[agr   ]"  --=small alpha, Greek-->
+<!ENTITY Agrave   SDATA "[Agrave]"  --=capital A, grave accent-->
+<!ENTITY agrave   SDATA "[agrave]"  --=small a, grave accent-->
+<!ENTITY aleph    SDATA "[aleph ]"  --/aleph =aleph, Hebrew-->
+<!ENTITY alpha    SDATA "[alpha ]"  --=small alpha, Greek-->
+<!ENTITY amp      SDATA "[amp   ]"  --=ampersand-->
+<!ENTITY and      SDATA "[and   ]"  --/wedge /land B: =logical and-->
+<!ENTITY ang      SDATA "[ang   ]"  --/angle - angle-->
+<!ENTITY ap       SDATA "[ap    ]"  --/approx R: =approximate-->
+<!ENTITY ape      SDATA "[ape   ]"  --/approxeq R: approximate, equals-->
+<!ENTITY Aring    SDATA "[Aring ]"  --=capital A, ring-->
+<!ENTITY aring    SDATA "[aring ]"  --=small a, ring-->
+<!ENTITY ast      SDATA "[ast   ]"  --/ast B: =asterisk-->
+<!ENTITY Atilde   SDATA "[Atilde]"  --=capital A, tilde-->
+<!ENTITY atilde   SDATA "[atilde]"  --=small a, tilde-->
+<!ENTITY Auml     SDATA "[Auml  ]"  --=capital A, dieresis or umlaut mark-->
+<!ENTITY auml     SDATA "[auml  ]"  --=small a, dieresis or umlaut mark-->
+<!ENTITY beta     SDATA "[beta  ]"  --=small beta, Greek-->
+<!ENTITY Bgr      SDATA "[Bgr   ]"  --=capital Beta, Greek-->
+<!ENTITY bgr      SDATA "[bgr   ]"  --=small beta, Greek-->
+<!ENTITY bottom   SDATA "[bottom]"  --/bot B: =perpendicular-->
+<!ENTITY breve    SDATA "[breve ]"  --=breve-->
+<!ENTITY brvbar   SDATA "[brvbar]"  --=broken (vertical) bar-->
+<!ENTITY bsol     SDATA "[bsol  ]"  --/backslash =reverse solidus-->
+<!ENTITY bull     SDATA "[bull  ]"  --/bullet B: =round bullet, filled-->
+<!ENTITY cap      SDATA "[cap   ]"  --/cap B: =intersection-->
+<!ENTITY caron    SDATA "[caron ]"  --=caron-->
+<!ENTITY Ccedil   SDATA "[Ccedil]"  --=capital C, cedilla-->
+<!ENTITY ccedil   SDATA "[ccedil]"  --=small c, cedilla-->
+<!ENTITY cedil    SDATA "[cedil ]"  --=cedilla-->
+<!ENTITY cent     SDATA "[cent  ]"  --=cent sign-->
+<!ENTITY check    SDATA "[check ]"  --/checkmark =tick, check mark-->
+<!ENTITY chi      SDATA "[chi   ]"  --=small chi, Greek-->
+<!ENTITY circ     SDATA "[circ  ]"  --=circumflex accent-->
+<!ENTITY clubs    SDATA "[clubs ]"  --/clubsuit =club suit symbol-->
+<!ENTITY colon    SDATA "[colon ]"  --/colon P:-->
+<!ENTITY comma    SDATA "[comma ]"  --P: =comma-->
+<!ENTITY commat   SDATA "[commat]"  --=commercial at-->
+<!ENTITY cong     SDATA "[cong  ]"  --/cong R: =congruent with-->
+<!ENTITY copy     SDATA "[copy  ]"  --=copyright sign-->
+<!ENTITY cup      SDATA "[cup   ]"  --/cup B: =union or logical sum-->
+<!ENTITY curren   SDATA "[curren]"  --=general currency sign-->
+<!ENTITY dagger   SDATA "[dagger]"  --/dagger B: =dagger-->
+<!ENTITY Dagger   SDATA "[Dagger]"  --/ddagger B: =double dagger-->
+<!ENTITY darr     SDATA "[darr  ]"  --/downarrow A: =downward arrow-->
+<!ENTITY dArr     SDATA "[dArr  ]"  --/Downarrow A: down dbl arrow -->
+<!ENTITY dash     SDATA "[dash  ]"  --=hyphen (true graphic)-->
+<!ENTITY dblac    SDATA "[dblac ]"  --=double acute accent-->
+<!ENTITY deg      SDATA "[deg   ]"  --=degree sign-->
+<!ENTITY Delta    SDATA "[Delta ]"  --=capital Delta, Greek-->
+<!ENTITY delta    SDATA "[delta ]"  --=small delta, Greek-->
+<!ENTITY Dgr      SDATA "[Dgr   ]"  --=capital Delta, Greek-->
+<!ENTITY dgr      SDATA "[dgr   ]"  --=small delta, Greek-->
+<!ENTITY diam     SDATA "[diam  ]"  --/diamond B: open diamond-->
+<!ENTITY diams    SDATA "[diams ]"  --/diamondsuit =diamond suit symbol-->
+<!ENTITY die      SDATA "[die   ]"  --=dieresis-->
+<!ENTITY divide   SDATA "[divide]"  --/div B: =divide sign-->
+<!ENTITY dollar   SDATA "[dollar]"  --=dollar sign-->
+<!ENTITY Dot      SDATA "[Dot   ]"  --=dieresis or umlaut mark-->
+<!ENTITY dot      SDATA "[dot   ]"  --=dot above-->
+<!ENTITY Eacute   SDATA "[Eacute]"  --=capital E, acute accent-->
+<!ENTITY eacute   SDATA "[eacute]"  --=small e, acute accent-->
+<!ENTITY Ecirc    SDATA "[Ecirc ]"  --=capital E, circumflex accent-->
+<!ENTITY ecirc    SDATA "[ecirc ]"  --=small e, circumflex accent-->
+<!ENTITY EEgr     SDATA "[EEgr  ]"  --=capital Eta, Greek-->
+<!ENTITY eegr     SDATA "[eegr  ]"  --=small eta, Greek-->
+<!ENTITY Egr      SDATA "[Egr   ]"  --=capital Epsilon, Greek-->
+<!ENTITY egr      SDATA "[egr   ]"  --=small epsilon, Greek-->
+<!ENTITY Egrave   SDATA "[Egrave]"  --=capital E, grave accent-->
+<!ENTITY egrave   SDATA "[egrave]"  --=small e, grave accent-->
+<!ENTITY empty    SDATA "[empty ]"  --/emptyset /varnothing =small o, slash-->
+<!ENTITY emsp     SDATA "[emsp  ]"  --=em space-->
+<!ENTITY ensp     SDATA "[ensp  ]"  --=en space (1/2-em)-->
+<!ENTITY epsi     SDATA "[epsi  ]"  --=small epsilon, Greek-->
+<!ENTITY epsis    SDATA "[epsis ]"  --/straightepsilon-->
+<!ENTITY epsiv    SDATA "[epsiv ]"  --/varepsilon-->
+<!ENTITY equals   SDATA "[equals]"  --=equals sign R:-->
+<!ENTITY equiv    SDATA "[equiv ]"  --/equiv R: =identical with-->
+<!ENTITY eta      SDATA "[eta   ]"  --=small eta, Greek-->
+<!ENTITY ETH      SDATA "[ETH   ]"  --=capital Eth, Icelandic-->
+<!ENTITY eth      SDATA "[eth   ]"  --=small eth, Icelandic-->
+<!ENTITY Euml     SDATA "[Euml  ]"  --=capital E, dieresis or umlaut mark-->
+<!ENTITY euml     SDATA "[euml  ]"  --=small e, dieresis or umlaut mark-->
+<!ENTITY excl     SDATA "[excl  ]"  --=exclamation mark-->
+<!ENTITY exist    SDATA "[exist ]"  --/exists =at least one exists-->
+<!ENTITY filig    SDATA "[filig ]"  --small fi ligature-->
+<!ENTITY fllig    SDATA "[fllig ]"  --small fl ligature-->
+<!ENTITY fnof     SDATA "[fnof  ]"  --=function of (italic small f)-->
+<!ENTITY forall   SDATA "[forall]"  --/forall =for all-->
+<!ENTITY frac12   SDATA "[frac12]"  --=fraction one-half-->
+<!ENTITY frac14   SDATA "[frac14]"  --=fraction one-quarter-->
+<!ENTITY frac34   SDATA "[frac34]"  --=fraction three-quarters-->
+<!ENTITY Gamma    SDATA "[Gamma ]"  --=capital Gamma, Greek-->
+<!ENTITY gamma    SDATA "[gamma ]"  --=small gamma, Greek-->
+<!ENTITY ge       SDATA "[ge    ]"  --/geq /ge R: =greater-than-or-equal-->
+<!ENTITY Ggr      SDATA "[Ggr   ]"  --=capital Gamma, Greek-->
+<!ENTITY ggr      SDATA "[ggr   ]"  --=small gamma, Greek-->
+<!ENTITY grave    SDATA "[grave ]"  --=grave accent-->
+<!ENTITY gt       SDATA "[gt    ]"  --=greater-than sign R:-->
+<!ENTITY hairsp   SDATA "[hairsp]"  --=hair space-->
+<!ENTITY harr     SDATA "[harr  ]"  --/leftrightarrow A: l&r arrow -->
+<!ENTITY hearts   SDATA "[hearts]"  --/heartsuit =heart suit symbol-->
+<!ENTITY hellip   SDATA "[hellip]"  --=ellipsis (horizontal)-->
+<!ENTITY horbar   SDATA "[horbar]"  --=horizontal bar-->
+<!ENTITY hyphen   SDATA "[hyphen]"  --=hyphen-->
+<!ENTITY Iacute   SDATA "[Iacute]"  --=capital I, acute accent-->
+<!ENTITY iacute   SDATA "[iacute]"  --=small i, acute accent-->
+<!ENTITY Icirc    SDATA "[Icirc ]"  --=capital I, circumflex accent-->
+<!ENTITY icirc    SDATA "[icirc ]"  --=small i, circumflex accent-->
+<!ENTITY iexcl    SDATA "[iexcl ]"  --=inverted exclamation mark-->
+<!ENTITY iff      SDATA "[iff   ]"  --/iff =if and only if-->
+<!ENTITY Igr      SDATA "[Igr   ]"  --=capital Iota, Greek-->
+<!ENTITY igr      SDATA "[igr   ]"  --=small iota, Greek-->
+<!ENTITY Igrave   SDATA "[Igrave]"  --=capital I, grave accent-->
+<!ENTITY igrave   SDATA "[igrave]"  --=small i, grave accent-->
+<!ENTITY image    SDATA "[image ]"  --/Im - imaginary-->
+<!ENTITY infin    SDATA "[infin ]"  --/infty =infinity-->
+<!ENTITY inodot   SDATA "[inodot]"  --/imath =small i, no dot-->
+<!ENTITY int      SDATA "[int   ]"  --/int L: =integral operator-->
+<!ENTITY iota     SDATA "[iota  ]"  --=small iota, Greek-->
+<!ENTITY iquest   SDATA "[iquest]"  --=inverted question mark-->
+<!ENTITY isin     SDATA "[isin  ]"  --/in R: =set membership-->
+<!ENTITY Iuml     SDATA "[Iuml  ]"  --=capital I, dieresis or umlaut mark-->
+<!ENTITY iuml     SDATA "[iuml  ]"  --=small i, dieresis or umlaut mark-->
+<!ENTITY kappa    SDATA "[kappa ]"  --=small kappa, Greek-->
+<!ENTITY Kgr      SDATA "[Kgr   ]"  --=capital Kappa, Greek-->
+<!ENTITY kgr      SDATA "[kgr   ]"  --=small kappa, Greek-->
+<!ENTITY KHgr     SDATA "[KHgr  ]"  --=capital Chi, Greek-->
+<!ENTITY khgr     SDATA "[khgr  ]"  --=small chi, Greek-->
+<!ENTITY Lambda   SDATA "[Lambda]"  --=capital Lambda, Greek-->
+<!ENTITY lambda   SDATA "[lambda]"  --=small lambda, Greek-->
+<!ENTITY lang     SDATA "[lang  ]"  --/langle O: =left angle bracket-->
+<!ENTITY laquo    SDATA "[laquo ]"  --=angle quotation mark, left-->
+<!ENTITY larr     SDATA "[larr  ]"  --/leftarrow /gets A: =leftward arrow-->
+<!ENTITY lArr     SDATA "[lArr  ]"  --/Leftarrow A: =is implied by-->
+<!ENTITY lcub     SDATA "[lcub  ]"  --/lbrace O: =left curly bracket-->
+<!ENTITY ldquo    SDATA "[ldquo ]"  --=double quotation mark, left-->
+<!ENTITY ldquor   SDATA "[ldquor]"  --=rising dbl quote, left (low)-->
+<!ENTITY le       SDATA "[le    ]"  --/leq /le R: =less-than-or-equal-->
+<!ENTITY Lgr      SDATA "[Lgr   ]"  --=capital Lambda, Greek-->
+<!ENTITY lgr      SDATA "[lgr   ]"  --=small lambda, Greek-->
+<!ENTITY lowbar   SDATA "[lowbar]"  --=low line-->
+<!ENTITY lpar     SDATA "[lpar  ]"  --O: =left parenthesis-->
+<!ENTITY lsqb     SDATA "[lsqb  ]"  --/lbrack O: =left square bracket-->
+<!ENTITY lsquo    SDATA "[lsquo ]"  --=single quotation mark, left-->
+<!ENTITY lsquor   SDATA "[lsquor]"  --=rising single quote, left (low)-->
+<!ENTITY Lstrok   SDATA "[Lstrok]"  --=capital L, stroke-->
+<!ENTITY lstrok   SDATA "[lstrok]"  --=small l, stroke-->
+<!ENTITY lt       SDATA "[lt    ]"  --=less-than sign R:-->
+<!ENTITY macr     SDATA "[macr  ]"  --=macron-->
+<!ENTITY mdash    SDATA "[mdash ]"  --=em dash-->
+<!ENTITY Mgr      SDATA "[Mgr   ]"  --=capital Mu, Greek-->
+<!ENTITY mgr      SDATA "[mgr   ]"  --=small mu, Greek-->
+<!ENTITY micro    SDATA "[micro ]"  --=micro sign-->
+<!ENTITY middot   SDATA "[middot]"  --/centerdot B: =middle dot-->
+<!ENTITY minus    SDATA "[minus ]"  --B: =minus sign-->
+<!ENTITY mu       SDATA "[mu    ]"  --=small mu, Greek-->
+<!ENTITY nabla    SDATA "[nabla ]"  --/nabla =del, Hamilton operator-->
+<!ENTITY nbsp     SDATA "[nbsp  ]"  --=no break (required) space-->
+<!ENTITY ndash    SDATA "[ndash ]"  --=en dash-->
+<!ENTITY ne       SDATA "[ne    ]"  --/ne /neq R: =not equal-->
+<!ENTITY Ngr      SDATA "[Ngr   ]"  --=capital Nu, Greek-->
+<!ENTITY ngr      SDATA "[ngr   ]"  --=small nu, Greek-->
+<!ENTITY ni       SDATA "[ni    ]"  --/ni /owns R: =contains-->
+<!ENTITY nldr     SDATA "[nldr  ]"  --=double baseline dot (en leader)-->
+<!ENTITY not      SDATA "[not   ]"  --/neg /lnot =not sign-->
+<!ENTITY notin    SDATA "[notin ]"  --N: negated set membership-->
+<!ENTITY Ntilde   SDATA "[Ntilde]"  --=capital N, tilde-->
+<!ENTITY ntilde   SDATA "[ntilde]"  --=small n, tilde-->
+<!ENTITY nu       SDATA "[nu    ]"  --=small nu, Greek-->
+<!ENTITY num      SDATA "[num   ]"  --=number sign-->
+<!ENTITY numsp    SDATA "[numsp ]"  --=digit space (width of a number)-->
+<!ENTITY Oacute   SDATA "[Oacute]"  --=capital O, acute accent-->
+<!ENTITY oacute   SDATA "[oacute]"  --=small o, acute accent-->
+<!ENTITY Ocirc    SDATA "[Ocirc ]"  --=capital O, circumflex accent-->
+<!ENTITY ocirc    SDATA "[ocirc ]"  --=small o, circumflex accent-->
+<!ENTITY OElig    SDATA "[OElig ]"  --=capital OE ligature-->
+<!ENTITY oelig    SDATA "[oelig ]"  --=small oe ligature-->
+<!ENTITY ogon     SDATA "[ogon  ]"  --=ogonek-->
+<!ENTITY Ogr      SDATA "[Ogr   ]"  --=capital Omicron, Greek-->
+<!ENTITY ogr      SDATA "[ogr   ]"  --=small omicron, Greek-->
+<!ENTITY Ograve   SDATA "[Ograve]"  --=capital O, grave accent-->
+<!ENTITY ograve   SDATA "[ograve]"  --=small o, grave accent-->
+<!ENTITY OHgr     SDATA "[OHgr  ]"  --=capital Omega, Greek-->
+<!ENTITY ohgr     SDATA "[ohgr  ]"  --=small omega, Greek-->
+<!ENTITY ohm      SDATA "[ohm   ]"  --=ohm sign-->
+<!ENTITY Omega    SDATA "[Omega ]"  --=capital Omega, Greek-->
+<!ENTITY omega    SDATA "[omega ]"  --=small omega, Greek-->
+<!ENTITY oplus    SDATA "[oplus ]"  --/oplus B: plus sign in circle-->
+<!ENTITY or       SDATA "[or    ]"  --/vee /lor B: =logical or-->
+<!ENTITY ordf     SDATA "[ordf  ]"  --=ordinal indicator, feminine-->
+<!ENTITY ordm     SDATA "[ordm  ]"  --=ordinal indicator, masculine-->
+<!ENTITY Oslash   SDATA "[Oslash]"  --=capital O, slash-->
+<!ENTITY oslash   SDATA "[oslash]"  --=small o, slash-->
+<!ENTITY Otilde   SDATA "[Otilde]"  --=capital O, tilde-->
+<!ENTITY otilde   SDATA "[otilde]"  --=small o, tilde-->
+<!ENTITY otimes   SDATA "[otimes]"  --/otimes B: multiply sign in circle-->
+<!ENTITY Ouml     SDATA "[Ouml  ]"  --=capital O, dieresis or umlaut mark-->
+<!ENTITY ouml     SDATA "[ouml  ]"  --=small o, dieresis or umlaut mark-->
+<!ENTITY para     SDATA "[para  ]"  --=pilcrow (paragraph sign)-->
+<!ENTITY part     SDATA "[part  ]"  --/partial =partial differential-->
+<!ENTITY percnt   SDATA "[percnt]"  --=percent sign-->
+<!ENTITY period   SDATA "[period]"  --=full stop, period-->
+<!ENTITY permil   SDATA "[permil]"  --=per thousand-->
+<!ENTITY perp     SDATA "[perp  ]"  --/perp R: =perpendicular-->
+<!ENTITY Pgr      SDATA "[Pgr   ]"  --=capital Pi, Greek-->
+<!ENTITY pgr      SDATA "[pgr   ]"  --=small pi, Greek-->
+<!ENTITY PHgr     SDATA "[PHgr  ]"  --=capital Phi, Greek-->
+<!ENTITY phgr     SDATA "[phgr  ]"  --=small phi, Greek-->
+<!ENTITY Phi      SDATA "[Phi   ]"  --=capital Phi, Greek-->
+<!ENTITY phis     SDATA "[phis  ]"  --/straightphi - straight phi-->
+<!ENTITY phiv     SDATA "[phiv  ]"  --/varphi - curly or open phi-->
+<!ENTITY Pi       SDATA "[Pi    ]"  --=capital Pi, Greek-->
+<!ENTITY pi       SDATA "[pi    ]"  --=small pi, Greek-->
+<!ENTITY piv      SDATA "[piv   ]"  --/varpi-->
+<!ENTITY plus     SDATA "[plus  ]"  --=plus sign B:-- >
+<!ENTITY plusmn   SDATA "[plusmn]"  --/pm B: =plus-or-minus sign-->
+<!ENTITY pound    SDATA "[pound ]"  --=pound sign-->
+<!ENTITY prime    SDATA "[prime ]"  --/prime =prime or minute-->
+<!ENTITY Prime    SDATA "[Prime ]"  --=double prime or second-->
+<!ENTITY prod     SDATA "[prod  ]"  --/prod L: product operator-->
+<!ENTITY prop     SDATA "[prop  ]"  --/propto R: =is proportional to-->
+<!ENTITY PSgr     SDATA "[PSgr  ]"  --=capital Psi, Greek-->
+<!ENTITY psgr     SDATA "[psgr  ]"  --=small psi, Greek-->
+<!ENTITY Psi      SDATA "[Psi   ]"  --=capital Psi, Greek-->
+<!ENTITY psi      SDATA "[psi   ]"  --=small psi, Greek-->
+<!ENTITY puncsp   SDATA "[puncsp]"  --=punctuation space (width of comma)-->
+<!ENTITY quest    SDATA "[quest ]"  --=question mark-->
+<!ENTITY quot     SDATA "[quot  ]"  --=quotation mark-->
+<!ENTITY radic    SDATA "[radic ]"  --/surd =radical-->
+<!ENTITY rang     SDATA "[rang  ]"  --/rangle C: =right angle bracket-->
+<!ENTITY raquo    SDATA "[raquo ]"  --=angle quotation mark, right-->
+<!ENTITY rarr     SDATA "[rarr  ]"  --/rightarrow /to A: =rightward arrow-->
+<!ENTITY rArr     SDATA "[rArr  ]"  --/Rightarrow A: =implies-->
+<!ENTITY rcub     SDATA "[rcub  ]"  --/rbrace C: =right curly bracket-->
+<!ENTITY rdquo    SDATA "[rdquo ]"  --=double quotation mark, right-->
+<!ENTITY rdquor   SDATA "[rdquor]"  --rising dbl quote, right (high)-->
+<!ENTITY real     SDATA "[real  ]"  --/Re - real-->
+<!ENTITY reg      SDATA "[reg   ]"  --/circledR =registered sign-->
+<!ENTITY Rgr      SDATA "[Rgr   ]"  --=capital Rho, Greek-->
+<!ENTITY rgr      SDATA "[rgr   ]"  --=small rho, Greek-->
+<!ENTITY rho      SDATA "[rho   ]"  --=small rho, Greek-->
+<!ENTITY ring     SDATA "[ring  ]"  --=ring-->
+<!ENTITY rpar     SDATA "[rpar  ]"  --C: =right parenthesis-->
+<!ENTITY rsqb     SDATA "[rsqb  ]"  --/rbrack C: =right square bracket-->
+<!ENTITY rsquo    SDATA "[rsquo ]"  --=single quotation mark, right-->
+<!ENTITY rsquor   SDATA "[rsquor]"  --rising single quote, right (high)-->
+<!ENTITY sect     SDATA "[sect  ]"  --=section sign-->
+<!ENTITY semi     SDATA "[semi  ]"  --=semicolon P:-->
+<!ENTITY sfgr     SDATA "[sfgr  ]"  --=final small sigma, Greek-->
+<!ENTITY Sgr      SDATA "[Sgr   ]"  --=capital Sigma, Greek-->
+<!ENTITY sgr      SDATA "[sgr   ]"  --=small sigma, Greek-->
+<!ENTITY shy      SDATA "[shy   ]"  --=soft hyphen-->
+<!ENTITY Sigma    SDATA "[Sigma ]"  --=capital Sigma, Greek-->
+<!ENTITY sigma    SDATA "[sigma ]"  --=small sigma, Greek-->
+<!ENTITY sigmav   SDATA "[sigmav]"  --/varsigma-->
+<!ENTITY sim      SDATA "[sim   ]"  --/sim R: =similar-->
+<!ENTITY sol      SDATA "[sol   ]"  --=solidus-->
+<!ENTITY spades   SDATA "[spades]"  --/spadesuit =spades suit symbol-->
+<!ENTITY sub      SDATA "[sub   ]"  --/subset R: =subset or is implied by-->
+<!ENTITY sube     SDATA "[sube  ]"  --/subseteq R: =subset, equals-->
+<!ENTITY sum      SDATA "[sum   ]"  --/sum L: summation operator-->
+<!ENTITY sup      SDATA "[sup   ]"  --/supset R: =superset or implies-->
+<!ENTITY sup1     SDATA "[sup1  ]"  --=superscript one-->
+<!ENTITY sup2     SDATA "[sup2  ]"  --=superscript two-->
+<!ENTITY sup3     SDATA "[sup3  ]"  --=superscript three-->
+<!ENTITY supe     SDATA "[supe  ]"  --/supseteq R: =superset, equals-->
+<!ENTITY szlig    SDATA "[szlig ]"  --=small sharp s, German (sz ligature)-->
+<!ENTITY tau      SDATA "[tau   ]"  --=small tau, Greek-->
+<!ENTITY Tgr      SDATA "[Tgr   ]"  --=capital Tau, Greek-->
+<!ENTITY tgr      SDATA "[tgr   ]"  --=small tau, Greek-->
+<!ENTITY there4   SDATA "[there4]"  --/therefore R: =therefore-->
+<!ENTITY Theta    SDATA "[Theta ]"  --=capital Theta, Greek-->
+<!ENTITY thetas   SDATA "[thetas]"  --straight theta-->
+<!ENTITY THgr     SDATA "[THgr  ]"  --=capital Theta, Greek-->
+<!ENTITY thgr     SDATA "[thgr  ]"  --=small theta, Greek-->
+<!ENTITY thinsp   SDATA "[thinsp]"  --=thin space (1/6-em)-->
+<!ENTITY THORN    SDATA "[THORN ]"  --=capital THORN, Icelandic-->
+<!ENTITY thorn    SDATA "[thorn ]"  --=small thorn, Icelandic-->
+<!ENTITY tilde    SDATA "[tilde ]"  --=tilde-->
+<!ENTITY times    SDATA "[times ]"  --/times B: =multiply sign-->
+<!ENTITY trade    SDATA "[trade ]"  --=trade mark sign-->
+<!ENTITY Uacute   SDATA "[Uacute]"  --=capital U, acute accent-->
+<!ENTITY uacute   SDATA "[uacute]"  --=small u, acute accent-->
+<!ENTITY uarr     SDATA "[uarr  ]"  --/uparrow A: =upward arrow-->
+<!ENTITY uArr     SDATA "[uArr  ]"  --/Uparrow A: up dbl arrow -->
+<!ENTITY Ucirc    SDATA "[Ucirc ]"  --=capital U, circumflex accent-->
+<!ENTITY ucirc    SDATA "[ucirc ]"  --=small u, circumflex accent-->
+<!ENTITY Ugr      SDATA "[Ugr   ]"  --=capital Upsilon, Greek-->
+<!ENTITY ugr      SDATA "[ugr   ]"  --=small upsilon, Greek-->
+<!ENTITY Ugrave   SDATA "[Ugrave]"  --=capital U, grave accent-->
+<!ENTITY ugrave   SDATA "[ugrave]"  --=small u, grave accent-->
+<!ENTITY uml      SDATA "[uml   ]"  --=umlaut mark-->
+<!ENTITY Upsi     SDATA "[Upsi  ]"  --=capital Upsilon, Greek-->
+<!ENTITY upsi     SDATA "[upsi  ]"  --=small upsilon, Greek-->
+<!ENTITY Uuml     SDATA "[Uuml  ]"  --=capital U, dieresis or umlaut mark-->
+<!ENTITY uuml     SDATA "[uuml  ]"  --=small u, dieresis or umlaut mark-->
+<!ENTITY verbar   SDATA "[verbar]"  --/vert =vertical bar-->
+<!ENTITY Xgr      SDATA "[Xgr   ]"  --=capital Xi, Greek-->
+<!ENTITY xgr      SDATA "[xgr   ]"  --=small xi, Greek-->
+<!ENTITY xhArr    SDATA "[xhArr ]"  --/Longleftrightarrow A: long l&r dbl arr-->
+<!ENTITY Xi       SDATA "[Xi    ]"  --=capital Xi, Greek-->
+<!ENTITY xi       SDATA "[xi    ]"  --=small xi, Greek-->
+<!ENTITY Yacute   SDATA "[Yacute]"  --=capital Y, acute accent-->
+<!ENTITY yacute   SDATA "[yacute]"  --=small y, acute accent-->
+<!ENTITY yen      SDATA "[yen   ]"  --/yen =yen sign-->
+<!ENTITY yuml     SDATA "[yuml  ]"  --=small y, dieresis or umlaut mark-->
+<!ENTITY zeta     SDATA "[zeta  ]"  --=small zeta, Greek-->
+<!ENTITY Zgr      SDATA "[Zgr   ]"  --=capital Zeta, Greek-->
+<!ENTITY zgr      SDATA "[zgr   ]"  --=small zeta, Greek-->

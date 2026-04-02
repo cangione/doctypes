@@ -1,0 +1,756 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		xmlns:xlink="http://www.w3.org/1999/xlink"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 1998-55D:  Remove call of ISO entity definitions; now done  *
+    *                   in entity %ISOENTS;, called by %COMPS;.          *
+    * 3. CPF 2000-01D:  Add element acronym to entity %text; and         *
+    *                   introduce its subelements acroterm and acrodef.  *
+    * 4. CPF 2000-13UK and CPF 2002-28FR: Introduce entities %SPAR; and  *
+    *                   %SPARCON; defining a "simple" text paragraph     *
+    *                   structure for use on rfu and remarks.            *
+    *                   In addition, introduce new element p for this    *
+    *                   purpose containing Parsed Character Data.        * 
+    * 5. CPF 2001-74SE: Change declaration of values for attribute emph  *
+    *                   of element emphasis to %EMPHS; (declaration in   *
+    *                   S1000D.CFG).                                     *
+    *                   Change declaration of values for attribute       *
+    *                   acrotype of element acronym to %ACROTYPS;        *
+    *                   (declaration in S1000D.CFG).                     *
+    * 6. CPF 2002-26UK: Introduce entity %PUBREF; that defines a         *
+    *                   substructure for publication references          *
+    *                 	containing elements pubcode, pubtitle and        *
+    *                   pubdate.                                         *
+    * 7. CPF 2002-29FR: Amend elements graphic and symbol by optional    *
+    *                   attributes reprowid and reprohgt.                *
+    * 8. CPF 2002-38SE: Introduce entities %HEADING1;, %NP; and %WC; due *
+    *                   removal of element specpara. Redefine content    *
+    *                   model in entity %spcpara; for the same reason.   *
+    *                   Introduce entity %CHECKSTP; to allow optional    *
+    *                   attributes check and skill on all step levels.   *
+    * 9. CPF 2002-39SE: Amend elements graphic and symbol by optional    *
+    *                   attribute reproscl.                              *
+    * 10. Bug fix:      End tag for xref made mandatory. It uses now     *
+    *                   the new entity %SPARCON; in its content model.   * 
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % COMMON                                                  *
+    *   PUBLIC "-//S1000D//ENTITIES Common Entities 20030531//EN" >      *
+    * %COMMON;                                                           *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Call the XLINK Definition Public Text. The formal public           *
+    * identifier is stored in the entity %EXTXLINK;                      *
+    ********************************************************************** -->
+<!-- %EXTXLINK; -->
+	<xs:import 	namespace="http://www.w3.org/1999/xlink" 
+			schemaLocation="xlink.xsd"/>
+
+
+<!--**********************************************************************
+    * Define the pdf Notation, to the Public Identifier for PDF files.   *
+    ********************************************************************** -->
+<xs:notation name="pdf" public="-//Adobe Inc.//NOTATION Portable Document Format//EN"/>
+
+
+<!--**********************************************************************
+    * Define the gif Notation, to the Public Identifier for GIF          *
+    * graphics.                                                          *
+    ********************************************************************** -->
+<xs:notation name="gif" public="+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION CompuServe Graphic Interchange Format//EN"/>
+
+
+<!--**********************************************************************
+    * Define the png Notation, to the Public Identifier for PNG graphics.*
+    ********************************************************************** -->
+<xs:notation name="png" public="-//W3C//NOTATION Portable Network Graphics//EN"/>
+
+
+<!--**********************************************************************
+    * Define the cgm Notation, to the Public Identifier for CGM          *
+    * graphics.                                                          *
+    ********************************************************************** -->
+<xs:notation name="cgm" public="-//USA-DOD//NOTATION Computer Graphics Metafile//EN"/>
+
+
+<!--**********************************************************************
+    * Define the fax Notation, to the Public Identifier for CCITT Group 4*
+    * images.                                                            *
+    ********************************************************************** -->
+<xs:notation name="fax" public="-//USA-DOD//NOTATION CCITT Group 4 Facsimile//EN"/>
+
+
+<!--**********************************************************************
+    * Define the JPEG Notation, to the Public Identifier for JPEG        *
+    * images.                                                            *
+    ********************************************************************** -->
+<xs:notation name="jpeg" public="+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint Photographic Experts Group Raster//EN"/>
+
+
+<!--**********************************************************************
+    * Define the tiff Notation, to the Public Identifier for TIFF        *
+    * images.                                                            *
+    ********************************************************************** -->
+<xs:notation name="tiff" public="+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Aldus/Microsoft Tagged Interchange File Format//EN"/>
+
+
+	<xs:simpleType name="yesorno">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %yesorno; (Yes or No Attribute Answer) containing:-  *
+    *  NUMBER                                                            *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:attributeGroup name="CHECKSTP">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %CHECKSTP; (Check and Skill Attributes on Steps)     *
+    * containing:-                                                       *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *                                                                    *
+    *  check  - CDATA     - IMPLIED   - Identifies an optional checkpoint*
+    *                                   as the supervisor qualification. *
+    *  skill  - Declared  - IMPLIED   - Identifies the optional skill    *
+    *                                   necessary to perform the actions.*
+    *           - %SKILL;   - contains definition stored in entity.      *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="check" type="xs:string"/>
+		<xs:attribute name="skill" type="SKILL"/>
+	</xs:attributeGroup>
+ 
+	<xs:group name="HEADING1">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %HEADING1; (Numbered Paragraphs/Steps Heading)       *
+    * containing:-                                                       *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  title    - Optional   Single      contains definition stored in   *
+    *                                    entity %text;                   *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="title" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="WC">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %WC; (Warning and Caution) containing:-              *
+    *  warning  - Optional Repeatable  contains applic,symbol,para,%list;*
+    *  caution  - Optional Repeatable  contains applic,symbol,para,%list;*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="warning" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="caution" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+
+	<!-- call with minOccurs="0" !-->
+	<xs:group name="NP">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %NP; (Note or Paragraph) containing:-                *
+    *====================================================================*
+    * Optional  Repeatable Group.                                        *
+    *====================================================================*
+    *   note     - Mandatory Single     contains applic, symbol, para,   *
+    *                                   Definition stored in entity      *
+    *                                   %list;                           *
+    *  or                                                                *
+    *   para     - Mandatory Single     contains applic,                 *
+    *                                   Definition stored in entity      *
+    *                                   %paracon;                        *
+    *====================================================================*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="note"/>
+			<xs:element ref="para"/>
+		</xs:choice>
+	</xs:group>
+
+	<xs:group name="spcpara">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %spcpara; (Special Paragraphs) containing:-          *
+    *  Definition stored in entity %WC;                                  *
+    *           - Optional Single      contains warning, caution         *
+    *  note     - Optional Repeatable  contains applic,symbol,para,%list;*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group ref="WC"/>
+			<xs:element ref="note" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="list">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %list; (Types of Lists) containing:-                 *
+    *  seqlist  - Mandatory  Single      contains title, item.           *
+    * or                                                                 *
+    *  randlist - Mandatory  Single      contains title, item.           *
+    * or                                                                 *
+    *  deflist  - Mandatory  Single      contains title, term, def.      *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="seqlist"/>
+			<xs:element ref="randlist"/>
+			<xs:element ref="deflist"/>
+		</xs:choice>
+	</xs:group>
+
+	<!-- call with mixed="true" -->
+	<xs:group name="SPAR">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %SPAR; (Simple Paragraphs) containing:-              *
+    *====================================================================*
+    * Optional  Repeatable Group.                                        *
+    *====================================================================*
+    *   Parsed Character Data.                                           *
+    *  or                                                                *
+    *   p        - Mandatory Single     contains Definition stored in    *
+    *                                   entity %SPARCON;                 *
+    *====================================================================*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="p"/>
+		</xs:sequence>
+	</xs:group>
+
+	<!-- call with mixed="true" -->
+	<xs:group name="SPARCON">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %SPARCON; (Simple Paragraph Continuation)            *
+    * containing:-                                                       *
+    *====================================================================*
+    * Optional Repeatable Group                                          *
+    *====================================================================*
+    *  Parsed Character Data.                                            *
+    *  or                                                                *
+    *   subscrpt - Mandatory Single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *  or                                                                *
+    *   supscrpt - Mandatory Single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *====================================================================*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+		</xs:choice>
+	</xs:group>
+
+	<xs:element name="p">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element p (Simple Paragraph) containing:-                   *
+    *  Definition stored in entity %SPARCON;                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:group ref="SPARCON" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="acronym">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element acronym (Acronym Term and Definition) containing:-  *
+    *   acroterm   - Mandatory Single     contains Definition stored in  *
+    *                                              entity %SPARCON;.     *
+    *   acrodef    - Mandatory Single     contains Definition stored in  *
+    *                                              entity %SPARCON;.     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  acrotype   - %ACROTYPS;            - Type of acronym/abbrev.      *
+    *                                       %ACROTYPS; decl in S1000D.CFG*
+    *  Attribute Definition List stored in entity %bodyatt;.             *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="acroterm"/>
+				<xs:element ref="acrodef"/>
+			</xs:sequence>
+			<xs:attribute ref="acrotype"/>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="acroterm">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element acroterm (Acronym Term) containing:-                *
+    *   Definition stored in entity %SPARCON;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xrefid    - IDREF    - IMPLIED  - Cross reference ID.             *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:group ref="SPARCON" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:attribute name="xrefid" type="xs:ID"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="acrodef">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element acrodef (Acronym Definition) containing:-           *
+    *   Definition stored in entity %SPARCON;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;.             *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:group ref="SPARCON" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+		
+	<xs:element name="xref">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element xref (Cross Reference) containing:-                 *
+    *   applic   - Optional  Single     contains type, model.            *
+    *   Definition stored in entity %SPARCON;                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xrefid    - IDREF    - IMPLIED  - Cross reference ID.             *
+    *  xidtype   - DECLARED - IMPLIED  - Type of ID.                     *
+    *            - "figure"   - Cross reference to a figure.             *
+    *            - "table"    - Cross reference to a table.              *
+    *            - "supply"   - Cross reference to Supply.               *
+    *            - "supequip" - Cross reference to Support Equipment.    *
+    *            - "spares"   - Cross reference to Spares.               *
+    *            - "para"     - Cross reference to a paragraph.          *
+    *            - "step"     - Cross reference to a procedural step.    *
+    *            - "sheet"    - Cross reference to a sheet.              *
+    *            - "hotspot"  - Cross reference to a graphical hotspot.  *
+    *            - "other"    - Cross reference to any other element.    *
+    *  target    - CDATA    - IMPLIED  - Cross reference name or URI.    *
+    *  destitle  - CDATA    - IMPLIED  - Label/name of link destination. *
+    *  pretext   - CDATA    - IMPLIED  - Text that will precede the cross*
+    *                                    reference.                      *
+    *  posttext  - CDATA    - IMPLIED  - Text that will follow the cross *
+    *                                    reference.                      *
+    *  Attribute Definition List stored in entity %XLINKATT3;            *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:element ref="applic" minOccurs="0"/>
+				<xs:group ref="SPARCON" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+
+			<xs:attribute name="xrefid" type="xs:IDREF"/>
+			<xs:attribute name="xidtype">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="figure"/>
+						<xs:enumeration value="table"/>
+						<xs:enumeration value="supply"/>
+						<xs:enumeration value="supequip"/>
+						<xs:enumeration value="spares"/>
+						<xs:enumeration value="para"/>
+						<xs:enumeration value="step"/>
+						<xs:enumeration value="sheet"/>
+						<xs:enumeration value="hotspot"/>
+						<xs:enumeration value="other"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="target" type="xs:string"/>
+			<xs:attribute name="destitle" type="xs:string"/>
+			<xs:attribute name="pretext" type="xs:string"/>
+			<xs:attribute name="posttext" type="xs:string"/>
+			<xs:attributeGroup ref="xlink:XLINKATT3"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="indxflag">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element indxflag (Index Flag) containing:-                  *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  ref1     - CDATA    - IMPLIED  - First level reference.           *
+    *  ref2     - CDATA    - IMPLIED  - Second level reference.          *
+    *  ref3     - CDATA    - IMPLIED  - Third level reference.           *
+    *  ref4     - CDATA    - IMPLIED  - Fourth level reference.          *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:group ref="gen_inc" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:attribute name="ref1" type="xs:string"/>
+			<xs:attribute name="ref2" type="xs:string"/>
+			<xs:attribute name="ref3" type="xs:string"/>
+			<xs:attribute name="ref4" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="change">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element change (Change Marker) containing:-                 *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *   Definition stored in entity %text;                               *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice  minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="gen_inc"/>	
+				<xs:group ref="text"/>
+			</xs:choice>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="emphasis">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element emphasis (Phrase Emphasis) containing:-             *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  Definition stored in entity %text;                                *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  emph     - %EMPHS;             - Identifying the type of emphasis.*
+    *                                   %EMPHS; declared in S1000D.CFG.  *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="gen_inc"/>	
+				<xs:group ref="text"/>
+			</xs:choice>
+			<xs:attribute ref="emph"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="symbol">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element symbol (Symbol) containing:-                        *
+    *   applic   - Optional  Single     contains type, model.            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  boardno  - ENTITY   - REQUIRED - Unique graphic identifier.       *
+    *  id       - ID       - IMPLIED  - Unique identifier of symbol      *
+    *  reprowid - CDATA    - IMPLIED  - Reproduction area width in mm.   *
+    *  reprohgt - CDATA    - IMPLIED  - Reproduction area height in mm.  *
+    *  reproscl - CDATA    - IMPLIED  - Reproduction scaling (yes/no)    *
+    *  Attribute Definition List stored in entity %XLINKATT1;            *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="gen_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="applic" minOccurs="0"/>
+			</xs:choice>
+			<xs:attribute name="boardno" type="xs:ENTITY" use="required"/>
+			<xs:attribute name="id" type="xs:ID"/>
+			<xs:attribute name="reprowid" type="xs:string"/>
+			<xs:attribute name="reprohgt" type="xs:string"/>
+			<xs:attribute name="reproscl" type="xs:string"/>
+			<xs:attributeGroup ref="xlink:XLINKATT1"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="graphic">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element graphic (Graphic / Image) containing:-              *
+    *  hotspot - Optional Repeatable   contains applic and optional      *
+    *                                  repeatable group consisting of    *
+    *                                  hotspot or xref.                  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  boardno  - ENTITY   - REQUIRED - Unique graphic identifier.       *
+    *  id       - ID       - IMPLIED  - Unique identifier of graphic     *
+    *  reprowid - CDATA    - IMPLIED  - Reproduction area width in mm.   *
+    *  reprohgt - CDATA    - IMPLIED  - Reproduction area height in mm.  *
+    *  reproscl - CDATA    - IMPLIED  - Reproduction scaling (yes/no)    *
+    *  Attribute Definition List stored in entity %XLINKATT0;            *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="hotspot" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="boardno" type="xs:ENTITY" use="required"/>
+			<xs:attribute name="id" type="xs:ID"/>
+			<xs:attribute name="reprowid" type="xs:string"/>
+			<xs:attribute name="reprohgt" type="xs:string"/>
+			<xs:attribute name="reproscl" type="xs:string"/>
+			<xs:attributeGroup ref="xlink:XLINKATT0"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="hotspot">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element hotspot (Graphical Hotspot) containing:-            *
+    *   applic   - Optional  Single     contains type, model.            *
+    *====================================================================*
+    *  Optional Repeatable Group.                                        *
+    *====================================================================*
+    *    hotspot - Mandatory Single   contains applic, optional          *
+    *                                 repeatable group consisting of     *
+    *                                 hotspot or xref.                   *
+    *   or                                                               *
+    *    xref    - Mandatory Single   contains applic, optional          *
+    *                                 repeatable group consisting of     *
+    *                                 Parsed Character Data or subscrpt  *
+    *                                 or supscrpt.                       *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED  - Unique identifier of hotspot     *
+    *  apsid    - CDATA    - IMPLIED  - Unique identifier of CGM APS     *
+    *  apsname  - CDATA    - IMPLIED  - CGM APS name attribute           *
+    *  type     - CDATA    - IMPLIED  - Type of graphical hotspot        *
+    *  title    - CDATA    - IMPLIED  - Label / Screentip of hotspot     *
+    *  descript - CDATA    - IMPLIED  - Description of graphical hotspot *
+    *  coords   - CDATA    - IMPLIED  - Closed polygon coordinates of    *
+    *                                   graphical hotspot picking region *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="applic" minOccurs="0"/>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="hotspot"/>
+					<xs:element ref="xref"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID"/>
+			<xs:attribute name="apsid" type="xs:string"/>
+			<xs:attribute name="apsname" type="xs:string"/>
+			<xs:attribute name="type" type="xs:string"/>
+			<xs:attribute name="title" type="xs:string"/>
+			<xs:attribute name="descript" type="xs:string"/>
+			<xs:attribute name="coords" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="subscrpt">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element subscrpt (Sub Script) containing:-                  *
+    *  Replaceable Character Data.                                       *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true"/>	 
+	</xs:element>
+
+	<xs:element name="supscrpt">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element supscrpt (Super Script) containing:-                *
+    *  Replaceable Character Data.                                       *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true"/>
+	</xs:element>
+
+	<xs:group name="titles">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %titles; (Title Structure) containing:-              *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  title    - Mandatory  Single      contains Definition stored in   *
+    *                                    entity %text;                   *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="title"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:element name="title">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element title (Title) containing:-                          *
+    *  Definition stored in entity %text;                                *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %secur;                 *
+    **********************************************************************
+    * EXCLUSION: figure, foldout, table.                                 *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">	
+			<xs:group ref="text" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:group name="PUBREF">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %PUBREF; (Publication Reference) containing:-        *
+    *  pubcode   - Mandatory Single     contains Parsed Character Data,  *
+    *                                   pmc.                             *
+    *  pubtitle  - Optional  Single     contains Parsed Character Data.  *
+    *  pubdate   - Optional  Single     contains No Other Tags.          *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pubcode"/>
+			<xs:element ref="pubtitle" minOccurs="0"/>
+			<xs:element ref="pubdate" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:element name="pubcode">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element pubcode (Publication code) containing:-             *
+    *   Parsed Character Data                                            *
+    *  or                                                                *
+    *   pmc      - Mandatory Single     contains modelic, pmissuer,      *
+    *                                            pmnumber, pmvolume.     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  pubcodsy   - CDATA   - IMPLIED - Publication coding system/scheme.*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">	
+			<xs:sequence>
+				<xs:element ref="pmc" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="pubcodsy" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="pubtitle">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element pubtitle (Publication title) containing:-           *
+    *  Parsed Character Data.                                            *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true"/>
+	</xs:element>
+
+	<xs:element name="pubdate">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element pubdate (Publication date) containing:-             *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Definition stored in entity %DATE;.                               *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attributeGroup ref="DATE"/>
+		</xs:complexType>
+	</xs:element>
+
+
+</xs:schema>

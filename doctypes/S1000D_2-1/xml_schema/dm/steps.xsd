@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2001-42D:  Allow elements step2, step3, step4 and step5 to  *
+    *                   be used "zero or multiple" within the context of *
+    *                   element step1.                                   *
+    * 3. CPF 2002-38SE: Redefine content model in entity %stepcon; due to*
+    *                   - deletion of element specpara                   *
+    *                   - introduction of optional subelement title on   *
+    *                     elements step1, step2, step3, step4 and step5. *
+    *                   Introduce optional attributes check and skill on *
+    *                   all step levels, defined in entity %CHECKSTP;.   *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTSTEP                                                 *
+    *   PUBLIC "-//S1000D//ELEMENTS Steps Breakdown 20030531//EN" >      *
+    * %EXTSTEP;                                                          *
+    ********************************************************************** -->
+
+
+	<xs:group name="stepcon">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %stepcon; (Step Content) containing:-                *
+    *  Definition stored in entity %HEADING1;                            *
+    *  Definition stored in entity %WC;                                  *
+    *  Definition stored in entity %NP;                                  *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group ref="HEADING1"/>
+			<xs:group ref="WC"/>
+			<xs:group ref="NP" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:element name="step1">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element step1 (Procedural Step Level 1) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *  step2    - Optional  Repeatable   contains Definition stored in   *
+    *                                    entity %stepcon;, step3.        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>	
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>			
+				<xs:sequence>
+					<xs:group ref="stepcon" minOccurs="0"/>
+					<xs:element ref="step2" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attributeGroup ref="CHECKSTP"/>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="step2">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element step2 (Procedural Step Level 2) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *  step3    - Optional  Repeatable   contains Definition stored in   *
+    *                                    entity %stepcon;, step4.        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>	
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:group ref="stepcon" minOccurs="0"/>
+					<xs:element ref="step3" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attributeGroup ref="CHECKSTP"/>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>	
+	</xs:element>
+
+	<xs:element name="step3">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element step3 (Procedural Step Level 3) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *  step4    - Optional  Repeatable   contains Definition stored in   *
+    *                                    entity %stepcon;, step5.        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:group ref="stepcon" minOccurs="0"/>
+					<xs:element ref="step4" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attributeGroup ref="CHECKSTP"/>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="step4">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element step4 (Procedural Step Level 4) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *  step5    - Optional  Repeatable   contains Definition stored in   *
+    *                                    entity %stepcon;                *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>	
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:group ref="stepcon" minOccurs="0"/>	
+					<xs:element ref="step5" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attributeGroup ref="CHECKSTP"/>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="step5">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element step5 (Procedural Step Level 5) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>	
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:group ref="stepcon" minOccurs="0"/>
+			</xs:choice>
+			<xs:attributeGroup ref="CHECKSTP"/>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+
+</xs:schema>

@@ -1,0 +1,39 @@
+Log filename: "C:\GPSL\Lockheed-2\custom2\doctypes\38784STD-BV9b\38784STD-BV9b3.log"
+Document type compile date: Mon Dec 30 01:01:23 2024
+Version "Arbortext Architect 7.1 M060 November 15, 2019"   R71M060-319
+Platform: Windows 10 Pro
+
+Host: LAPTOP-5SCPG8B5   Login: peghe
+
+Catalog path: "C:\GPSL\Lockheed-2\custom2\doctypes;C:\Program Files\PTC\Arbortext Editor\application\com.ptc.arbortext.techinfo\doctypes;C:\Program Files\PTC\Arbortext Editor\adapters\com.ptc.prowt.arbortext\doctypes;C:\Program Files\PTC\Arbortext Editor\doctypes;C:\Program Files\PTC\Arbortext Editor\doctypes;"
+
+
+Update (.ptd file written) or Validate (.ptd file not written): Update
+XML or SGML Application: SGML
+Force Compile: Yes
+Top level element: doc
+Public ID: (not specified)
+DTD Path: "C:\GPSL\Lockheed-2\custom2\doctypes\38784STD-BV9b\38784STD-BV9b.dtd"
+PTD Path: "C:\GPSL\Lockheed-2\custom2\doctypes\38784STD-BV9b\38784STD-BV9b.ptd"
+ATI Tag Path: "C:\Program Files\PTC\Arbortext Editor\lib\dtgen\atitag.cf"
+Message File Path: (not specified)
+SGML Declaration Path: (not specified) using "C:\Users\peghe\Desktop"
+
+Entity Name: %charent
+Public Identifier: "-//JCALS//ENTITIES supported ISO entities v1//EN"
+System Identifier: (none)
+Resolved Path: "C:\GPSL\Lockheed-2\custom2\entities\supported_ISO_entities_v1"
+Catalog File: "C:\GPSL\Lockheed-2\custom2\doctypes\catalog"
+
+Entity Name: %eps-big
+Public Identifier: "-//JCALS//ENTITIES big EPS symbols v1//EN"
+System Identifier: (none)
+Resolved Path: "C:\GPSL\Lockheed-2\custom2\entities\big_EPS_symbols_v1"
+Catalog File: "C:\GPSL\Lockheed-2\custom2\doctypes\catalog"
+
+Entity Name: %eps-sml
+Public Identifier: "-//JCALS//ENTITIES small EPS symbols v1//EN"
+System Identifier: (none)
+Resolved Path: "C:\GPSL\Lockheed-2\custom2\entities\small_EPS_symbols_v1"
+Catalog File: "C:\GPSL\Lockheed-2\custom2\doctypes\catalog"
+

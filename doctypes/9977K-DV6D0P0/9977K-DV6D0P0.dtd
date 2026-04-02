@@ -1,0 +1,109 @@
+<!-- ************************ START OF FILE *************************** -->
+
+<!--  **************************************************************************
+      SPECIAL NOTE: 
+	This DTD was modified for the Arbortext implementation.
+      Changes:
+      20030116 modified to reference the latest version of 38784 (Draft V7 to 
+               include updated support for the change application)
+      20040220 - removed 38784 subset in favor of an entity to 38784 directory
+               - removed 9977 appendix A in favor of an entity to the file
+
+      ********************************************************************** -->
+<!--
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++  DTD TITLE:	Nonnuclear Munitions Loading Procedures Manual
++
++  SPECIFICATION NUMBER:	MIL-PRF-9977K
++
++  SPECIFICATION POC:	Bill Garrity
++
++  DOCUMENT TYPE DEFINITION (DTD):	9977K-DV6D0P0
++
++  MIL-STANDARD VERSION:	38784STD-BV6
++
++  LAST MODIFICATION:	30 MAY 2002
++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++                                                                         +
++  SUPPLEMENT NOTICE: This file is made available to provide the user     +
++  with a digital representation of the DTD found in Appendix D of        +
++  MIL-PRF-9977K. This file is incomplete without MIL-PRF-9977K.          +
++                                                                         +
++  NOTE: The start and end of this file are marked with a row of          +
++  asterisks. If these rows are not present the file may not be complete! +
++                                                                         +
++  MIL-PRF-9977K Nonnuclear Munitions Loading Procedures DTD              +
++                                                                         +
++  The following set of declarations may be referred to by using a public +
++  entity as follows:                                                     +
++  <!ENTITY % mnnmunld PUBLIC "-//USA-DOD//DTD MIL-PRF-9977K-DV6D0P0//EN" >   +
++  %mnnmunld;                                                             +
++                                                                         +
++  NOTE: In order to parse the following DTD subset alone, append the     +
++  following statement to the beginning of the file:                      +
++  <!DOCTYPE doc [and the associated "]>" to the end of the file.  	  +
++                                                                         +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++                                                                         +
++ AUTHORED BY: Pam Carter                                                 +
++              Michelle Lindke                                            +
++              Rick Schochler                                             +
++              Curtis Snider						  +
++                                              				  +
++ Prepared for TMSS Release By:  Ron Craft				  +
++									  +                                                                         +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++                                                                         +
++ OTHER DTDS NEEDED:                                                      +
++                                                                         +
++ 9977K-AV6D0P0.dtd                                                       +
++ 38784STD-BV6.dtd                                                        +
++                                                                         +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-->
+<!-- ENTITY DECLARATIONS -->
+
+<!ENTITY % doc "docnnmunld" >
+
+<!ENTITY % mnucbasld PUBLIC "-//USA-DOD//DTD 9977K-AV6D0P0//EN" >
+
+<!ENTITY % bodyele "suppinfo, munitldproc+" >
+
+<!-- %mnucbasld;
+-->
+
+<!ENTITY % mnucbasld PUBLIC "-//USA-DOD//DTD 9977K-AV6D0P0//EN" >
+%mnucbasld;
+
+
+
+
+<!ENTITY note5 "With local commander approval, the following
+fuzes may remain installed. " >
+
+
+<!-- ELEMENT and ATTRIBUTE LIST DECLARATIONS -->
+
+<!ELEMENT docnnmunld - - (front, body, rear?) +(pgbrk | brk |
+				subjinfo | line | modreq | location) >
+
+<!ELEMENT fuzerem - o (%text1;) >
+<!ATTLIST fuzerem %sub1att; >
+
+<!ELEMENT munitldproc - - (%titles, general, rackload, munitunloadproc)
+					+(figure | table | foldout) >
+<!ATTLIST munitldproc %chapatt; >
+
+<!ELEMENT munitunloadproc - o (%parazero, safing, preunload, unload+, (fuzerem | sensorrem)) >
+<!ATTLIST munitunloadproc %sectatt; >
+
+<!ELEMENT sensorrem - o (%text1;) >
+<!ATTLIST sensorrem %sub1att; >
+
+<!ELEMENT suppinfo - - (%titles, gensafreq, emergproc, airdesc, genproc, 
+					airprep, fctfuncchk, strayvoltchk, 
+					section*) +(figure | table | foldout) >
+<!ATTLIST suppinfo %chapatt; >
+
+<!-- **************************** END OF FILE **************************** -->

@@ -1,0 +1,237 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2002-11FR: Move call of entities %INTERACT;, %EXTLIST;,     *
+    *                   %CAPGRP;, %PRELREQ;, %CLOSEREQ; and %WCNP; to    *
+    *                   file PROCESS.DTD.                                *
+    * 3. CPF 2004-32US: Expand Process DM to include <step1> content:    *
+    *                   Include the schema for the interactive PARACON.  *
+    *                   Add <prelreqs> and <closereqs> to <process>.     *
+    *                   Added bodyatt group attributes instead of a      *
+    *                     single ID in many elements.                    *
+    *                   Removed the <precond> element and replaced with  *
+    *                     interactive <applic> containing <expression>.  *
+    *                   Added STEP1 group content to <dm-node>.          *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % PROCESS PUBLIC                                          *
+    *  "-//S1000D//ELEMENTS Process Module Breakdown 20050501//EN" >     *
+    * %PROCESS;                                                          *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing:- process.  *
+    ********************************************************************** -->
+
+<!ENTITY % CONTENT "process" >
+
+
+<!--**********************************************************************
+    * Call the Interactive Step Public Text.                             *
+    * The formal public identifier is stored in entity %STEPINTERACT;.   *
+    ********************************************************************** -->
+
+%STEPINTERACT;
+<!-- Call of this new entity included -->
+
+
+<!--**********************************************************************
+    * Define Element process (Maintenance Process Flow) containing:-     *
+    **********************************************************************
+    * The process element is a group of data module sequences that are   *
+    * grouped together to create a maintenance process flow.             *
+    * This element employs the 'Wrapper' class                           *
+    **********************************************************************
+    *   variable-declaratons                                             *
+    *             - Optional  Single      Variable declarations          *
+    *   prelreqs  - Optional  Single      contains pmd, reqconds,        *
+    *                                      reqpers, supequip, supplies,  *
+    *                                      spares, safety.               *
+    *   dm-seq    - Mandatory Single      Sequence of Data Modules       *
+    *   closereqs - Optional  Single      contains reqconds.             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %bodyatt;                            *
+    *   Definition stored in entity %secur;                              *
+    ********************************************************************** -->
+<!ELEMENT process - - (variable-declarations?, prelreqs?, dm-seq, 
+                       closereqs?) >
+<!ATTLIST process
+	%bodyatt;
+	%secur; >
+
+
+<!--**********************************************************************
+    * Define Element dm-seq (Data Module Sequence) containing:-          *
+    **********************************************************************
+    * The dm-seq element sequences multiple Data Modules and/or the      *
+    * interactive constructs of Alternates, If-Then-Else, and Loops.     *
+    * This element employs the 'Node Sequence' class.                    *
+    **********************************************************************
+    *   dm-node       \                        Data Module node          *
+    *   dm-node-alt    >Mandatory Repeatable   Alted Data Module node    *
+    *   dm-if         /                        If-Then-Else DM node      *
+    *   dm-loop      /                         Loop Data Module node     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %bodyatt;                            *
+    *   Definition stored in entity %secur;                              *
+    ********************************************************************** -->
+<!ELEMENT dm-seq - - ((dm-node | dm-node-alt | dm-if | dm-loop)+) >
+<!ATTLIST dm-seq
+	%bodyatt;
+	%secur; >
+
+
+<!--**********************************************************************
+    * Define Element dm-node (Data Module Node) containing:-             *
+    **********************************************************************
+    * The dm-node element either references another DM, contains a       *
+    * dialog, or contains another sequence of dm-nodes.                  *
+    * This element employs the 'Node' class.                             *
+    **********************************************************************
+    *   applic      - Optional Single       Applicability                *
+    *   preset      - Optional Repeatable   Changes to variable values   *
+    *   refdm  \                          / Data Module reference        *
+    *   step1   \                        /  Step content                 *
+    *   dialog   >  - Mandatory Single  <   Dialog to collect prop values*
+    *   extapp  /                        \  External application call    *
+    *   dm-seq /                          \ Sequence of dm-nodes         *
+    *   postset     - Optional Repeatable   Changes to variable values   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %bodyatt;                            *
+    *   Definition stored in entity %secur;                              *
+    ********************************************************************** -->
+<!ELEMENT dm-node - - (applic?, preset*, 
+                       (refdm | (%STEP1;)+ | %DIALOG; | extapp | dm-seq),
+                        postset*) >
+<!ATTLIST dm-node
+	%bodyatt;
+	%secur; >
+
+
+<!--**********************************************************************
+    * Define Element dm-node-alt (DM Node Alternatives) containing:-     *
+    **********************************************************************
+    * The dm-node-alt element is a pointer to multiple Data Module       *
+    * Nodes where only one is valid determined by applicability          *
+    * on the contained Data Module Nodes.                                *
+    * This element employs the 'Node Alternate' class.                   *
+    **********************************************************************
+    *   dm-node      - Mandatory Repeatable   Data Module Nodes          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %bodyatt;                            *
+    *   name     - CDATA    - IMPLIED       - Name of the node           *
+    *   Definition stored in entity %secur;                              *
+    ********************************************************************** -->
+<!ELEMENT dm-node-alt - - (dm-node+) >
+<!ATTLIST dm-node-alt
+	%bodyatt;
+	name      CDATA      #IMPLIED 
+	%secur; >
+
+
+<!--**********************************************************************
+    * Define Element dm-if (If-Then-Else DM Nodes) containing:-          *
+    **********************************************************************
+    * The dm-if element provides an If-Then-Else conditional selection   *
+    * of Data Module Nodes depending on an expression.                   *
+    * This element employs the 'If Node' class.                          *
+    **********************************************************************
+    *   expression   - Mandatory Single  Expression to evaluate          *
+    *   dm-then-seq  - Mandatory Single  Then branch to a dm-seq         *
+    *   dm-else-seq  - Optional  Single  Else branch to a dm-seq         *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %bodyatt;                            *
+    ********************************************************************** -->
+<!ELEMENT dm-if - - (expression, dm-then-seq, dm-else-seq?) >
+<!ATTLIST dm-if
+	%bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element dm-then-seq (Then Branch DM Sequence) containing:-  *
+    **********************************************************************
+    * The dm-then-seq element provides an explicit tag for the Then      *
+    * branch of an If-Then-Else construct.  This is the sequence to be   *
+    * performed when the dm-if expression evaluates to true.             *
+    * This element employs the 'Node Sequence' class.                    *
+    **********************************************************************
+    *   dm-node     \                          / Data Module node        *
+    *   dm-node-alt  \ - Mandatory Repeatable /  Alted Data Module node  *
+    *   dm-if        /                        \  If-Then-Else DM node    *
+    *   dm-loop     /                          \ Loop Data Module node   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %bodyatt;                            *
+    *   Definition stored in entity %secur;                              *
+    ********************************************************************** -->
+<!ELEMENT dm-then-seq - - ((dm-node | dm-node-alt | dm-if | dm-loop)+) >
+<!ATTLIST dm-then-seq
+	%bodyatt;
+	%secur; >
+
+
+<!--**********************************************************************
+    * Define Element dm-else-seq (Else Branch DM Sequence) containing:-  *
+    **********************************************************************
+    * The dm-else-seq provides an explicit tag for the Else branch of    *
+    * an If-Then-Else construct.  This is the sequence to be performed   *
+    * when the dm-if expression evaluates to false.                      *
+    * This element employs the 'Node Sequence' class.                    *
+    **********************************************************************
+    *   dm-node     \                          / Data Module node        *
+    *   dm-node-alt  \ - Mandatory Repeatable /  Alted Data Module node  *
+    *   dm-if        /                        \  If-Then-Else DM node    *
+    *   dm-loop     /                          \ Loop Data Module node   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %bodyatt;                            *
+    *   Definition stored in entity %secur;                              *
+    ********************************************************************** -->
+<!ELEMENT dm-else-seq - - ((dm-node | dm-node-alt | dm-if | dm-loop)+) >
+<!ATTLIST dm-else-seq
+	%bodyatt;
+	%secur; >
+
+
+<!--**********************************************************************
+    * Define Element dm-loop (Loop Data Module Nodes) containing:-       *
+    **********************************************************************
+    * The dm-loop element provides a looping construct for Data Module   *
+    * Nodes depending on an expression.  The construct allows for        *
+    * setting an initial condition and incrementing at loop completion.  *
+    * This element employs the 'Loop Node' class.                        *
+    **********************************************************************
+    *   preset       - Optional  Single  Initial condition variable value*
+    *   expression   - Mandatory Single  Expression to evaluate for loop *
+    *   dm-seq       - Mandatory Single  Seq of Data Modules to loop     *
+    *   assertion    - Optional  Single  Loop end variable value         *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %bodyatt;                            *
+    ********************************************************************** -->
+<!ELEMENT dm-loop - - (preset?, expression, dm-seq, assertion?) >
+<!ATTLIST dm-loop
+	%bodyatt; >
+
+
+<!--**********************************************************************
+    * Call the Interactive Paragraph Content Public Text.                *
+    * The formal public identifier is stored in the entity               *
+    * %PARACONINTERACT;                                                  *
+    ********************************************************************** -->
+
+%PARACONINTERACT;
+<!-- Call of this new entity included -->

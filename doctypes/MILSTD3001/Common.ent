@@ -1,0 +1,922 @@
+<!--PUBLIC "-//USA-DOD//ENTITIES 3001 Common Draft XML V307 08242016//EN" -->
+
+<!ENTITY % atimath PUBLIC "-//ArborText//ELEMENTS XML Math Equation Structures//EN" "atimathx.dtd">
+%atimath;
+
+<!ENTITY % refentry "(effect?, title, reference)">
+<!ENTITY % mathtxt "fd | f">
+<!ENTITY % mathcon "fd">
+<!ENTITY % secur "security (u | c | s | ts) 'u'">
+
+<!ENTITY % delstat "delete | real | reserve | na">
+
+<!ENTITY % status "empty | deleted | reserved | notapp">
+
+<!ENTITY % service "service (af | navair | navsea | spawars | army | mc | dla | cg) #IMPLIED">
+
+<!ENTITY % deletenote "deletenote CDATA #IMPLIED">
+
+<!ENTITY % itemid
+"unit CDATA #IMPLIED
+module CDATA #IMPLIED
+wra CDATA #IMPLIED
+compon CDATA #IMPLIED
+partno CDATA #IMPLIED
+refdes CDATA #IMPLIED">
+
+<!ENTITY % refs
+"id             ID              #IMPLIED">
+
+<!ENTITY % cardchgatt 
+"change (insert | delete | modified) #IMPLIED
+chgnum CDATA #IMPLIED
+chgdate CDATA #IMPLIED">
+
+<!ENTITY % cardatt 
+"label CDATA #IMPLIED
+databaseident CDATA #IMPLIED
+sssn CDATA #IMPLIED
+config CDATA  #IMPLIED
+skilltrk CDATA #IMPLIED
+%cardchgatt;
+%refs;
+%deletenote;">
+
+<!ENTITY % tskcardatt 
+"%cardatt;
+time CDATA #IMPLIED
+with-supportcards (yes | no) 'no'">
+
+<!ENTITY % chgatt
+"deltype (%delstat;) #IMPLIED
+inschlvl NMTOKEN #IMPLIED
+delchlvl NMTOKEN #IMPLIED
+status (%status;) #IMPLIED
+revchg (revchg-app | revchg-notapp) 'revchg-notapp'
+chgnum CDATA #IMPLIED
+chgdate CDATA #IMPLIED
+mark (mark-app | mark-notapp) #IMPLIED ">
+
+<!ENTITY % bodyatt
+"label CDATA #IMPLIED
+databaseident CDATA #IMPLIED
+sssn CDATA #IMPLIED
+config CDATA  #IMPLIED
+skilltrk CDATA #IMPLIED
+%chgatt;
+%refs;">
+
+<!ENTITY % wpatt
+"emergency  (emerg-app | emerg-notapp) #IMPLIED
+label CDATA #IMPLIED
+databaseident CDATA #IMPLIED
+sssn CDATA #IMPLIED
+config CDATA  #IMPLIED
+skilltrk CDATA #IMPLIED
+%chgatt;
+id  ID  #IMPLIED">
+
+<!ENTITY % itemchars  
+"esds (esds-app | esds-notapp) #IMPLIED
+hci (hci-app | hci-notapp) #IMPLIED
+hcp (hcp-app | hcp-notapp) #IMPLIED
+csi (csi-app | csi-notapp) #IMPLIED
+csp (csp-app | csp-notapp) #IMPLIED
+oci (oci-app | oci-notapp) #IMPLIED
+ocp (ocp-app | ocp-notapp) #IMPLIED
+cai (cai-app | cai-notapp) #IMPLIED
+ods (ods-app | ods-notapp) #IMPLIED
+">
+
+<!ENTITY % stepatt
+"emergency  (emerg-app | emerg-notapp) #IMPLIED
+applicref IDREFS #IMPLIED
+qap (qap-app | qap-notapp) #IMPLIED
+%itemchars;
+%bodyatt;">
+
+<!ENTITY % docatt
+"docid  ID      #IMPLIED
+docstat (revision | change | prelim | formal) #IMPLIED ">
+
+<!ENTITY % numberoftmidnos
+"numberoftmidnos (1 | 2 | 3 | 4) '1'">
+ 
+<!ENTITY % figatts
+"orient (port | land) 'port'
+label CDATA #IMPLIED
+databaseident CDATA #IMPLIED
+sssn CDATA #IMPLIED
+config CDATA  #IMPLIED
+skilltrk CDATA #IMPLIED
+id             ID              #REQUIRED
+assocfig IDREFS  #IMPLIED
+assoctab IDREFS  #IMPLIED
+%chgatt;
+%secur;">
+
+<!ENTITY % graphatt
+"boardno ENTITY #REQUIRED
+graphsty NMTOKEN #IMPLIED
+llcordra CDATA #IMPLIED
+rucordra CDATA #IMPLIED
+rotation CDATA #IMPLIED
+scalefit NMTOKEN '1'
+reprowid CDATA #IMPLIED
+reprodep CDATA #IMPLIED
+hscale CDATA  #IMPLIED
+hplace (left | right | center| none) #IMPLIED
+vscale CDATA  #IMPLIED
+vplace (top | middle | bottom) #IMPLIED
+coordst CDATA #IMPLIED
+coordend CDATA #IMPLIED
+%chgatt;">
+
+<!ENTITY % fig  "effect?, title, ((subfig, subfig+) | (graphic) | figtable)">
+
+<!ENTITY % list "randlist | deflist | seqlist">
+
+<!ENTITY % paracon "para | table | %list; | note | %mathcon;" >
+
+<!ENTITY % proccon "(warning*, caution*, (para | deflist | randlist | note | table)*)">
+
+<!ENTITY % stepcon "warning*, caution*, note*, (para+, (table | note | randlist | deflist)*)">
+
+<!ENTITY %  notecon  "(para | %list; | table)+" >
+
+<!ENTITY  % cautioncon  "(para | %list; | table)+" >
+
+<!ENTITY % wpinfogeneric "titleblk, wpinfo, intro?, titledpara+, figsect?, foldsect?">
+
+<!ENTITY % text "change  | emphasis | subscrpt | supscrpt | block-text | extref | graphic |  verbatim | xref | figref | tfndisplay | tfnid | tfnref | xlink | external | %mathtxt; %pointpage;">
+
+<!ENTITY % pctext "change | emphasis | subscrpt | supscrpt| extref | graphic | verbatim | xref | figref | %mathtxt;">
+
+<!ENTITY % titletext "change | emphasis | subscrpt | supscrpt | extref | verbatim | xref | figref">
+
+<!-- NOTE: The system identifiers in the following ENTITY declarations
+     must reflect your installation of the XML ISO character sets. -->
+<!ENTITY % ISOlat1 PUBLIC "ISO 8879:1986//ENTITIES Added Latin 1//EN//XML"  "isolat1.pen">
+<!ENTITY % ISOpub PUBLIC "ISO 8879:1986//ENTITIES Publishing//EN//XML" "isopub.pen">
+<!ENTITY % ISOgrk1 PUBLIC "ISO 8879:1986//ENTITIES Greek Letters//EN//XML" "isogrk1.pen">
+<!ENTITY % ISOgrk3 PUBLIC "ISO 8879:1986//ENTITIES Greek Symbols//EN//XML" "isogrk3.pen">
+<!ENTITY % ISOnum PUBLIC "ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML" "isonum.pen">
+<!ENTITY % ISOtech PUBLIC "ISO 8879:1986//ENTITIES General Technical//EN//XML" "isotech.pen">
+
+%ISOlat1;%ISOpub;%ISOgrk1;%ISOgrk3;%ISOnum;%ISOtech;
+
+
+<!--NOTATION DECLARATIONS -->
+<!NOTATION png PUBLIC "-//TEI//NOTATION IETF RFC2083 Portable Network Graphics//EN">
+<!NOTATION cgmbin PUBLIC "ISO 8632/3//NOTATION CGM Binary text encoding//EN">
+<!NOTATION cgmchar PUBLIC "ISO 8632/4//NOTATION Character encoding//EN">
+<!NOTATION cgmclear PUBLIC "ISO 8632/2//NOTATION Clear text encoding//EN">
+<!NOTATION fax PUBLIC "-//USA-DOD//NOTATION CCITT Group 4 Facsimile Type1 Untiled Raster//EN">
+<!NOTATION faxtile PUBLIC "-//USA-DOD//NOTATION CCITT Group 4 Facsimile Type2 Tiled Raster//EN">
+<!NOTATION bmp PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Microsoft Windows Bitmap//EN">
+<!NOTATION jpeg PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint Photographic Experts Group raster//EN">
+<!NOTATION tif PUBLIC "-//Aldus//NOTATION Tagged Image File Format//EN">
+<!NOTATION math-eqn PUBLIC "-//USA-DOD//NOTATION EQN Mathematical Notation//EN">
+<!NOTATION math-tex PUBLIC "-//USA-DOD//NOTATION TEX Mathematical Notation//EN">
+<!NOTATION mathsmff PUBLIC "-//USA-DOD//NOTATION IBM Scientific and
+Mathematical Formula Format//EN" >
+<!NOTATION svg SYSTEM "http://www.w3.org/TR/SVG/">
+
+<!-- ELEMENT AND ATTRIBUTE LIST DECLARATIONS  -->
+
+<!-- Work Package Title Block Elements. Consists of the Work Package Title and Notices.   -->
+<!ELEMENT titleblk  (wptitle, wpnotices?)>
+<!ATTLIST titleblk %secur;
+                                %chgatt;>
+
+<!-- Maintenance Level (i.e. "ORGANIZATIONAL MAINTENANCE WITH ILLUSTRATED PARTS BREAKDOWN") -->
+<!ELEMENT maintlvl  (#PCDATA)>
+<!ATTLIST maintlvl %secur;
+                                %chgatt;>
+
+<!-- Work Package Title. Consists of Maintenance Level, Work Package Subject, and System Nomenclature covered by the WP. -->
+<!ELEMENT wptitle  (maintlvl, subject, sysnomen)>
+<!ATTLIST wptitle %secur;
+                                %chgatt;>
+
+<!-- Subject.  -->
+<!ELEMENT subject   (#PCDATA)>
+<!ATTLIST subject 
+index-entry-title CDATA #IMPLIED
+%secur;
+                                %chgatt;>
+
+<!--End Item Nomenclature. -->
+<!ELEMENT sysnomen  (name, (typedes?, modeldes?, partno?, effect?)*, syscomp*)>
+<!ATTLIST sysnomen 
+index-entry-title CDATA #IMPLIED
+%secur;
+                                %chgatt;>
+
+<!-- Name -->
+<!ELEMENT name   (#PCDATA |%titletext;)* >
+<!ATTLIST name %secur;
+                                %chgatt;>
+
+<!-- Part Number. Attribute "alternate="alternate-app" should be specified for alternate part numbers included in the Support Equipment Required List. -->
+<!ELEMENT partno    (#PCDATA |%pctext;)*>
+<!ATTLIST partno %secur;
+                                %chgatt;
+	assocfig IDREFS  #IMPLIED
+	assoctab IDREFS  #IMPLIED
+        alternate (alternate-app | alternate-notapp) "alternate-notapp">
+
+<!-- Effectivity Notice. Effectivity type (e.g. 'Tail Number) is captured in attribute "effecttype". Effectivity is specified as either a single number, a bounded range, or an unbounded range.  -->
+<!ELEMENT effect    (single | boundedrange | unboundedrange)+ >
+<!ATTLIST effect
+        effecttype CDATA #IMPLIED
+        %secur;
+                                %chgatt;>
+
+<!-- Effectivity - single effectivity number such as "Tail Number X" -->
+<!ELEMENT single   EMPTY>
+<!ATTLIST single
+        number CDATA #REQUIRED
+        %secur;>
+
+<!-- Effectivity Notice - range of effectivity numbers such as "Tail Number X through Y" -->
+<!ELEMENT boundedrange   EMPTY>
+<!ATTLIST boundedrange
+        lowrange CDATA #REQUIRED
+        highrange CDATA #REQUIRED
+        %secur;>
+
+<!-- Effectivity Notice - unbounded range of effectivity numbers such as "Tail Number X and Up" -->
+<!ELEMENT unboundedrange   EMPTY>
+<!ATTLIST unboundedrange
+        lowrange CDATA #REQUIRED
+        %secur;>
+
+<!--AN Type Designator of the end item nomenclature on title page or title block. -->
+<!ELEMENT typedes   (#PCDATA |%pctext;)*>
+<!ATTLIST typedes %secur;>
+
+<!--Model Designator of the end item nomenclature on title page or title block. Attribute "type" indicates whether model is for "aircraft" or other. Model desgnators for aircraft are preceded by automatically generated text "NAVY MODEL". Other types are preceded by automatically generated text "MODEL NUMBER". If it is desired that no heading be automatically generated, users should select attribute modelno-head="off". -->
+<!ELEMENT modeldes    (#PCDATA |%pctext;)*>
+<!ATTLIST modeldes
+		modelno-head (on|off) "on"
+                type (aircraft | other) "other"
+                %secur;
+                                %chgatt;>
+
+<!--System Components. When a single manual is authorized to cover a system, all system components shall be listed below the system nomenclature. -->
+<!ELEMENT syscomp    (name?, (typedes?, modeldes?, partno?, effect?)*)>
+<!ATTLIST syscomp %secur;
+                                %chgatt;>
+
+<!-- Work Package Notices.  May consist of a Supersedure and/or Supplemental Notice in the title block of a work package -->
+<!ELEMENT wpnotices  (super?, suppl?)>
+<!ATTLIST wpnotices %secur;
+                                %chgatt;>
+
+<!--Supersedure notice -->
+<!ELEMENT super  (para)>
+<!ATTLIST super                 %secur;
+                                %chgatt;>
+
+<!-- Cross-reference notice to supplements  -->
+<!ELEMENT suppl  (para)>
+<!ATTLIST suppl %secur;
+                                %chgatt;>
+
+<!-- Work Package Information. A collection of lists that are applicable to the entire Work Package. Although each sub-element of "wpinfo" is optional, the element "wpinfo" is required. -->
+<!ELEMENT wpinfo   (reflist?, ratd?, selist?, faclist?, matlist?)>
+<!ATTLIST wpinfo %secur;
+                                %chgatt;>
+
+<!--Reference Material List.-->
+<!ELEMENT reflist  (refentry+)>
+<!ATTLIST reflist %secur;
+                                %chgatt;>
+
+<!-- An individual entry in the Reference Material List. If the reference is to another Work Package in the manual, select attribute type="internal-ref". References to specific Work Packages in External Manuals shall not be listed. -->
+<!ELEMENT refentry  %refentry;>
+ <!ATTLIST  refentry
+type (internal-ref | external-ref) "external-ref"
+id         ID       #IMPLIED
+%secur;
+                                %chgatt;>
+
+<!-- Title -->
+<!ELEMENT title   (#PCDATA |%titletext;)*>
+<!ATTLIST title %secur;
+                                %chgatt;>
+
+<!--    Record Of Applicable Technical Directives -->
+<!ELEMENT ratd   (ratdentry+, noteslist?) >
+<!ATTLIST ratd %secur;
+                                %chgatt;>
+
+<!--An individual entry in the Record Of Applicable Technical Directives -->
+<!ELEMENT ratdentry  (effect?, typeno?, date?, titleecpno, dateinc?, remarks?) >
+ <!ATTLIST  ratdentry  id         ID       #IMPLIED
+                                        %secur;
+                                %chgatt;>
+
+<!-- The type and number of the technical directive included in the Record Of Applicable Technical Directives -->
+<!ELEMENT typeno  (#PCDATA |%pctext;)*>
+<!ATTLIST typeno %secur;
+                                %chgatt;>
+
+<!-- Date -->
+<!ELEMENT date  (#PCDATA |%pctext;)*>
+<!ATTLIST date %secur;
+                                %chgatt;>
+
+<!-- Title of the technical directive and the ECP number or RAMEC, if applicable, as listed in the Record Of Applicable
+Technical Directives -->
+<!ELEMENT titleecpno   (#PCDATA |%pctext;)*>
+<!ATTLIST titleecpno %secur;
+                                %chgatt;>
+
+<!-- Date incorporated. The date the information affected by the technical directive or the ECP was incorporated into
+the WP -->
+<!ELEMENT dateinc  (#PCDATA |%pctext;)*>
+<!ATTLIST dateinc %secur;
+                                %chgatt;>
+
+<!-- Remarks -->
+<!ELEMENT remarks  (#PCDATA |%pctext;)*>
+<!ATTLIST remarks %secur;
+                                %chgatt;>
+
+<!--Support Equipment Required List. -->
+<!ELEMENT selist  (seentry+, noteslist?)>
+<!ATTLIST selist %secur;
+                                %chgatt;>
+
+<!-- An individual entry in the Support Equipment Required List. -->
+<!ELEMENT seentry  (effect?, nomen, serestrict*, partno+, cage)>
+<!ATTLIST seentry usage  (af | ns | mc | all) "all"
+                                        id         ID       #IMPLIED
+                                        %secur;
+                                %chgatt;>
+
+<!-- Nomenclature -->
+<!ELEMENT nomen  (#PCDATA |%pctext;)* >
+<!ATTLIST nomen %secur; 
+                                %chgatt;>
+
+<!-- Support Equipment Usage Restrictions. When a manual is used by other services that require usage restrictions, the
+item is identified by a symbol following the part number in parentheses. -->
+<!ELEMENT serestrict   EMPTY>
+<!ATTLIST serestrict  maintlevel (o | f | g | h | d | na)  "na"
+                           aecode (j | 8 | 9 | none) "none"
+                                %secur;
+                                %chgatt;>
+
+<!-- Cage code -->
+<!ELEMENT cage  (#PCDATA |%pctext;)*>
+<!ATTLIST cage %secur; 
+                                %chgatt;>
+
+<!--Facilities  Required List-->
+<!ELEMENT faclist  (facentry+, noteslist?)>
+ <!ATTLIST  faclist  id         ID       #IMPLIED
+                                        %secur;
+                                %chgatt;>
+
+<!-- Facilities Required Entry - an entry in the Facilities Required List -->
+<!ELEMENT facentry   (effect?, nomen, partno, cage)>
+<!ATTLIST facentry      id         ID       #IMPLIED
+                                        %secur;
+                                %chgatt;>
+
+<!--Materials Required List -->
+<!ELEMENT matlist  (matentry+, noteslist?)>
+ <!ATTLIST  matlist  id         ID       #IMPLIED
+                                        %secur;
+                                %chgatt;>
+
+<!-- An individual entry in the Materials Required List. -->
+<!ELEMENT matentry  (effect?, nomen, matrestrict*, qty?, (partno* | spec), hmwsno?)>
+ <!ATTLIST  matentry  id         ID       #IMPLIED
+%secur;
+                                %chgatt;>
+
+<!-- Materials Restrictions. If the WP contains multilevel maintenance procedures and any of the materials is authorized
+for use at only certain level(s), the restriction shall be indicated by the use of an O, I, or D. -->
+<!ELEMENT matrestrict   EMPTY>
+<!ATTLIST matrestrict  maintlevel (o | i | d)  #REQUIRED
+%secur;>
+
+<!-- Quantity -->
+<!ELEMENT qty  (#PCDATA |%pctext;)*>
+<!ATTLIST qty %secur;
+                                %chgatt;>
+
+<!-- Specification Number-->
+<!ELEMENT spec    (#PCDATA |%pctext;)*>
+<!ATTLIST spec %secur;
+                                %chgatt;>
+
+<!-- HMWS Index Number -->
+<!ELEMENT hmwsno    (#PCDATA |%pctext;)*>
+<!ATTLIST hmwsno %secur;
+                                %chgatt;>
+
+
+<!-- Introduction -->
+<!ELEMENT intro   (title, (%paracon;)*, sub-paras?)>
+<!ATTLIST intro %bodyatt;
+                %secur;>
+
+<!--            GENERAL TEXTUAL ELEMENTS    -->
+
+<!-- Procedure -->
+<!ELEMENT proc (effect?, title,  (%proccon;), step*)>
+<!ATTLIST proc
+                        %stepatt; %secur;>
+
+<!-- Procedural Step. All procedural steps are tagged as <step>, regardless of hierarchical level. If a step contains
+subordinate steps, those subordinate steps are surrounded by the wrapper element <sub-steps> -->
+<!ELEMENT step   (effect?, %stepcon;, sub-steps?)>
+<!ATTLIST step  %stepatt;
+                                  %secur;>
+
+<!-- Subordinate steps. All procedural steps are tagged as <step>, regardless of hierarchical level. If a step contains
+subordinate steps, those subordinate steps are surrounded by this wrapper element <sub-steps> -->
+<!ELEMENT sub-steps  (step+)>
+<!ATTLIST sub-steps       %secur;>
+
+<!-- Titled paragraph. Groups a title, with paragraph content, and it's sub-paragraphs. If a Titled paragraph contains
+subordinate paragraphs, those subordinate paragraphs are surrounded by wrapper element <sub-paras> -->
+<!ELEMENT titledpara   (effect?, title,  (%paracon;)*, sub-paras?)>
+<!ATTLIST titledpara    %bodyatt;
+                        %secur;>
+
+<!-- Subordinate titled paragraphs. All titled paragraphs are tagged as <titledpara>, regardless of hierarchical level.
+If a Titled paragraph contains subordinate paragraphs, those subordinate paragraphs are surrounded by this wrapper
+element <sub-paras> -->
+<!ELEMENT sub-paras  (titledpara+)>
+<!ATTLIST sub-paras       %secur;>
+
+
+<!-- Function -->
+<!ELEMENT function  (#PCDATA | %text;)*>
+<!ATTLIST function
+                 %secur;>
+
+<!--Sequence Number -->
+<!ELEMENT seqno  (#PCDATA |%pctext;)*>
+<!ATTLIST seqno   %secur;>
+
+<!-- Abbreviation List. -->
+<!ELEMENT  abbrevlist  (title?, abbreventry+, noteslist?)>
+<!ATTLIST abbrevlist   id             ID              #IMPLIED
+                        %secur;
+                                %chgatt;>
+
+<!-- Abbreviation Entry groups the abbreviation and definition in the abbreviation list. -->
+<!ELEMENT abbreventry  (abbrev, def)>
+<!ATTLIST abbreventry  id             ID              #IMPLIED
+                        %secur;
+                                %chgatt;>
+
+<!-- Abbreviation - part of the abbreviation list. -->
+<!ELEMENT abbrev  (#PCDATA | %text;)*>
+<!ATTLIST abbrev %secur;
+                                %chgatt;>
+
+<!-- Engine Start Task -->
+<!ELEMENT engstart     (title, (%proccon;), taskintro?, step*, proc*)>
+<!ATTLIST engstart %stepatt;
+                   %secur;>
+
+<!-- Preparation for use procedures -->
+<!ELEMENT prepuse   (title, (%proccon;), taskintro?, step*, proc*)>
+<!ATTLIST prepuse  %stepatt;
+                  %secur;>
+                  
+<!-- Software loading Task -->
+<!ELEMENT softload  (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST softload  	%stepatt;
+	%secur;>
+
+<!-- Task Introduction -->
+<!ELEMENT taskintro  (title, (%paracon;)*, sub-paras?)>
+<!ATTLIST taskintro %bodyatt;
+                   %secur;>
+
+<!--Units -->
+<!ELEMENT units  (#PCDATA |%pctext;)*>
+<!ATTLIST units %secur;
+                                %chgatt;>
+
+<!--Useable On Code List -->
+<!ELEMENT useoncodelist  (useonentry+) >
+<!ATTLIST useoncodelist %bodyatt;
+                       %secur;>
+
+<!--An entry in the Useable On Code List. To link a "Useable On Code" in a GAPL to a single entry in a Useable On Code List, an "id" attribute must be provided for this element; and "idref" attribute provided on element "useoncode".  -->
+<!ELEMENT useonentry  (useoncode, (typedes | modelno | partno | effect)+, remarks?) >
+<!ATTLIST useonentry  id             ID              #IMPLIED
+                       %secur;
+                                %chgatt;>
+
+<!--Useable On code. To link a Useable On Code to a single entry in a Useable On Code List, the attribute "idref" must be entered and must match the "id" attribute of element "useonentry".  -->
+<!ELEMENT useoncode  (#PCDATA | %titletext;)* >
+<!ATTLIST useoncode idref IDREF #IMPLIED
+                                        %secur;
+                                %chgatt;>
+
+<!-- Model Number -->
+<!ELEMENT modelno    (#PCDATA |%pctext;)*>
+<!ATTLIST modelno %secur;
+                                %chgatt;>
+
+<!--Reference Designator. In order to automatically generate the Numerical Index of Reference Designators, the element "refdes" must be included in the "part description" element of an IPB. -->
+<!ELEMENT refdes  (#PCDATA |%pctext;)*>
+<!ATTLIST refdes %secur;
+                                %chgatt;>
+
+<!--Paragraph-->
+<!ELEMENT para   (#PCDATA | %text;)*>
+<!ATTLIST para id             ID              #IMPLIED
+                label CDATA #IMPLIED
+               %chgatt;
+               %secur;>
+
+<!--Change. Attribute "date" identifies the effective date of the changed text.  -->
+<!ELEMENT change (#PCDATA |emphasis | subscrpt | supscrpt| block-text | extref | graphic |  verbatim | xref | figref)* >
+<!ATTLIST change level NMTOKEN #REQUIRED
+                        change (mod | add | delete) "add"
+                        date CDATA #IMPLIED
+                        mark (mark-app | mark-notapp) "mark-app"
+                        %secur;>
+
+<!-- Emphasis. Used to indicate text that is to be emphasised. Attributes include u (underline), b (bold), bu (bold underlined), i (italic), bi (bold italic), q (quoted text), and ui (underlined italics). Color attribute affects the ETM only. -->
+<!ELEMENT emphasis (#PCDATA | change | subscrpt | supscrpt | extref | graphic | verbatim | xref | figref)* >
+<!ATTLIST emphasis
+        type (u | b | bu | i | bi | q | ui | overstrike)     #REQUIRED
+        color (black | white | red | orange | yellow | green | blue | violet | brown | gray)    #IMPLIED>
+
+<!-- Subscript. Provides a method of identifying subscripted text without invoking the "Mathematical Equation" editor. -->
+<!ELEMENT subscrpt (#PCDATA)>
+
+<!-- Superscript. Provides a method of identifying superscripted text without invoking the "Mathematical Equation" editor. -->
+<!ELEMENT supscrpt  (#PCDATA)>
+
+<!-- Blocked Text. Allows the ability to offset a piece of text. Attribute "justify" can affect the justification of the offset text. -->
+<!ELEMENT block-text     (#PCDATA | change | emphasis | extref | graphic | partno |  verbatim | xref | figref)*>
+<!ATTLIST block-text  justify (left | center | right) "center">
+
+<!--Reference. Reference data may be a cross reference, an external reference, a figure reference, or entered directly as PCDATA.  -->
+<!ELEMENT reference  (#PCDATA | xref | extref | figref | graphic)*>
+<!ATTLIST reference %secur;
+                                %chgatt;>
+
+<!-- Description. A grouping of textual elements such as paragraphs and tables that comprise a description of a system,
+sub-system, components, etc. -->
+<!ELEMENT desc  (%paracon;)*>
+<!ATTLIST desc  %refs;
+                %secur;>
+
+<!-- Index Number -->
+ <!ELEMENT indexno  (#PCDATA |%pctext;)*>
+<!ATTLIST indexno
+	id             ID              #IMPLIED
+        %secur;
+                                %chgatt;>
+
+<!-- External Cross Reference.  -->
+<!ELEMENT extref    (#PCDATA) >
+<!ATTLIST extref
+		name CDATA #IMPLIED
+		href CDATA #IMPLIED
+                %secur;
+                                %chgatt;>
+
+<!-- The verbatim element was changed from CDATA to #PCDATA for the XML version of this DTD.  If there is something
+within verbatim that should not be recognized by a parser, the XML concept of a CDATA section would need to be used to
+wrap that piece of text -->
+<!ELEMENT verbatim     (#PCDATA) >
+
+<!-- Cross Reference. Refer to the MIL-STD-3001 Tagging Guidelines for usage of the Cross Reference element.  -->
+<!ELEMENT xref     EMPTY >
+<!ATTLIST xref xrefid IDREF #REQUIRED
+               xidtype (paragraph | step | table | table-footnote) #IMPLIED
+                otherwp IDREF #IMPLIED
+                otherprocedure IDREF #IMPLIED
+                pretext  CDATA #IMPLIED
+                posttext CDATA #IMPLIED
+                        %secur;
+                                %chgatt;>
+
+<!--Figure Reference to be used for displaying graphic icon as well as IDREF pointer to the titled figure. The IDREF
+pointer would not be displayed in an ETM, but would be used by the FOSI only. Note that in the 3001 V3 Toolkit, the 'boardno' attribute is no longer utilized by the viewer to resolve the referenced figure.  -->
+<!ELEMENT figref         EMPTY>
+<!ATTLIST figref boardno ENTITY #IMPLIED
+                idref IDREF #REQUIRED
+                label CDATA #IMPLIED
+                pretext  CDATA #IMPLIED
+                posttext CDATA #IMPLIED
+                                %chgatt;>
+
+<!-- Graphic. Attribute "boardno" is used to reference a grahic entity. Refer to MIL-STD-3001 Tagging Guidelines for usage of other graphic attributes. -->
+<!ELEMENT graphic    EMPTY>
+<!ATTLIST graphic %graphatt;
+                                %secur;>
+
+<!-- Random (bulleted) List. Appropriate bullet is automatically generated.  -->
+<!ELEMENT randlist  (title?, item+)>
+<!ATTLIST randlist %secur;
+                                %chgatt;>
+
+<!-- Sequential (numbered) List -->
+<!ELEMENT seqlist  (title?, item+)>
+<!ATTLIST seqlist %secur;
+                                %chgatt;>
+
+<!-- List Item -->
+<!ELEMENT  item   (para+, note*, (%list;)?)>
+<!ATTLIST item label CDATA #IMPLIED
+          id             ID              #IMPLIED
+          %secur;
+                                %chgatt;>
+
+<!-- Definition List -->
+<!ELEMENT deflist  (title?, defhd?, defentry+)>
+<!ATTLIST deflist %secur;
+                                %chgatt;>
+
+<!-- Definition Entry. Part of the Definition List, this element groups an individual term with its definition. -->
+<!ELEMENT defentry (term, def)>
+<!ATTLIST defentry id ID #IMPLIED
+%secur;
+                                %chgatt;>
+
+<!-- Definition Heads - identifies the 'column headings' of a definition list -->
+<!ELEMENT defhd  (term, def)>
+<!ATTLIST defhd %secur;
+                                %chgatt;>
+
+<!-- Term -->
+<!ELEMENT term  (#PCDATA | %pctext;)* >
+<!ATTLIST term %secur;
+                                %chgatt;>
+
+<!-- Warning. Refer to the MIL-STD-3001 Tagging Guidelines for discussion of the warning element.   -->
+<!ELEMENT warning  ((icon-set+, (nomen, (spec* | partno*), seqno?)?) | ((para | randlist | deflist)+)) >
+<!ATTLIST warning
+		warning-type (hazmat | not-hazmat) "not-hazmat"
+                 xrefid IDREF #IMPLIED
+                 %secur;
+                 %chgatt;>
+
+<!-- Caution -->
+<!ELEMENT  caution  %cautioncon; >
+<!ATTLIST caution
+                                keyword CDATA #IMPLIED
+                                xrefid IDREF #IMPLIED
+                                %secur;
+                                %chgatt;>
+
+<!-- Note -->
+<!ELEMENT  note  %notecon; >
+<!ATTLIST note
+                                keyword CDATA #IMPLIED
+                                xrefid IDREF #IMPLIED
+                                %secur;
+                                %chgatt;>
+
+<!--"Notes List". A collection of notes that may be placed after a standard table. -->
+<!ELEMENT noteslist   (notesentry)+ >
+<!ATTLIST noteslist %bodyatt;
+					%secur;>
+
+<!--A single note entry defined in the notes list. -->
+<!ELEMENT notesentry   (#PCDATA | %text;)* >
+<!ATTLIST notesentry  id             ID              #IMPLIED
+		%secur;
+                                %chgatt;>
+
+
+<!-- Icon-Set -->
+<!ELEMENT icon-set    EMPTY >
+<!ATTLIST icon-set 
+boardno ENTITY #REQUIRED
+graphsty NMTOKEN #IMPLIED
+llcordra CDATA #IMPLIED
+rucordra CDATA #IMPLIED
+rotation CDATA #IMPLIED
+scalefit NMTOKEN '0'
+reprowid CDATA #IMPLIED
+reprodep CDATA #IMPLIED
+hscale CDATA  #IMPLIED
+hplace (left | right | center| none) #IMPLIED
+vscale CDATA  #IMPLIED
+vplace (top | middle | bottom) #IMPLIED
+coordst CDATA #IMPLIED
+coordend CDATA #IMPLIED
+                                %secur;
+                                %chgatt;>
+
+<!-- Figure, Subfgure, Graphic, FigTable -->
+
+<!-- Figure Section. -->
+<!ELEMENT figsect  (figure+)>
+<!ATTLIST figsect %secur;>
+
+<!-- Fold Out Section -->
+<!ELEMENT foldsect  (foldout+)>
+<!ATTLIST foldsect %secur;>
+
+<!-- Figure. Refer to MIL-STD-3001 Tagging Guidelines for description of the "figure" element -->
+<!ELEMENT figure  (%fig;) >
+<!ATTLIST figure %figatts; >
+
+<!-- Sub Figure. Used to identify a single 'sheet' of a figure. Refer to MIL-STD-3001 Tagging Guidelines for description of the "figure" and "sub-figure" elements -->
+<!ELEMENT subfig  (graphic | figtable)>
+<!ATTLIST subfig orient (port | land) 'port'
+                        label CDATA #IMPLIED
+                        %refs;
+                        %chgatt;
+                        %secur;>
+
+<!-- Figure Table. Used to tag a table that is part of a figure -->
+<!ELEMENT figtable  (tgroup+) >
+<!ATTLIST figtable
+	frame (top | bottom | topbot | all | sides | none) #IMPLIED
+	colsep NMTOKEN #IMPLIED
+	rowsep NMTOKEN #IMPLIED
+        %chgatt;
+        %secur;>
+
+<!-- Definition. -->
+<!ELEMENT def  (#PCDATA | %pctext;)*>
+<!ATTLIST def %secur;>
+
+<!-- Table Footnote Display. Used as a placeholder at the last row of a CALS table to place all footnotes tagged within the table. Refer to MIL-STD-3001 for more information. -->
+<!ELEMENT tfndisplay   EMPTY>
+<!ATTLIST tfndisplay %secur;>
+
+<!-- Table Footnote Identification. Used to tag a table footnote.  Refer to MIL-STD-3001 for more information. -->
+<!ELEMENT tfnid  (#PCDATA | change | emphasis | extref | graphic |  verbatim | xref | figref | xlink |  subscrpt | supscrpt | external | %mathtxt;)*>
+<!ATTLIST tfnid id ID #REQUIRED
+                tfntype (num | alpha | sym) 'num'
+                tfnsymbol CDATA #IMPLIED
+                %secur;>
+
+<!-- Table Footnote Reference. Used to tag a table footnote that has already been identified within the table.  Refer to MIL-STD-3001 for more information. -->
+<!ELEMENT tfnref   EMPTY>
+<!ATTLIST tfnref xrefid IDREF #REQUIRED
+                %secur;>
+
+<!-- Foldout -->
+<!ELEMENT foldout   (%fig;) >
+<!ATTLIST foldout pgstyle (11x17 | 11x20.5 | 11x24 | 11x27.5 | 11x31 | 11x34.5 | 11x38 | 11x41.5 | 11x45 | 11x54) "11x17"
+                        %figatts;>
+
+
+<!-- CALS Table Model. NOTE: FOR I/ETM ONLY: For extremely large CALS Tables that are simple rows and columns (no spanning, no 'morerows'), the attribute 'tabstyle='simple' may be invoked to utilize a table transformation that uses less memory than the CALS transformation. This attribute does not affect the PDF. -->
+<!ELEMENT table (effect?, title?, (tgroup+ | graphic+))>
+<!ATTLIST table
+	tabstyle NMTOKEN #IMPLIED
+	numbered NMTOKEN "1"
+	frame (top | bottom | topbot | all | sides | none) #IMPLIED
+	colsep NMTOKEN #IMPLIED
+	rowsep NMTOKEN #IMPLIED
+	orient (port | land) #IMPLIED
+	pgwide NMTOKEN  #IMPLIED
+	%bodyatt;
+	%secur;
+>
+
+<!-- Table Group -->
+<!ELEMENT tgroup (colspec*, spanspec*, thead?, tfoot?, tbody)>
+<!ATTLIST tgroup
+	cols NMTOKEN #REQUIRED
+	tgroupstyle NMTOKEN #IMPLIED
+	colsep NMTOKEN #IMPLIED
+	rowsep NMTOKEN  #IMPLIED
+	align (left | right | center | justify | char) "left"
+	charoff NMTOKEN "50"
+	char CDATA ""
+	%secur;
+>
+
+<!-- Table Head -->
+<!ELEMENT thead (colspec*, row+)>
+<!ATTLIST thead
+	valign (top | middle | bottom) "bottom"
+	%secur;
+>
+
+<!-- Table Foot -->
+<!ELEMENT tfoot (colspec*, row+)>
+<!ATTLIST tfoot
+	valign (top | middle | bottom) "top"
+	%secur;
+>
+
+<!-- Column Specification -->
+<!ELEMENT colspec  EMPTY>
+<!ATTLIST colspec
+	colnum NMTOKEN #IMPLIED
+	colname NMTOKEN #IMPLIED
+	align (left | right | center | justify | char) #IMPLIED
+	charoff NMTOKEN #IMPLIED
+	char CDATA #IMPLIED
+	colwidth CDATA #IMPLIED
+	colsep NMTOKEN  #IMPLIED
+	rowsep NMTOKEN  #IMPLIED
+>
+
+<!-- Spanning Specification -->
+<!ELEMENT spanspec  EMPTY>
+<!ATTLIST spanspec
+	namest NMTOKEN #REQUIRED
+	nameend NMTOKEN #REQUIRED
+	spanname NMTOKEN #REQUIRED
+	align (left | right | center | justify | char) "center"
+	charoff NMTOKEN #IMPLIED
+	char CDATA #IMPLIED
+	colsep NMTOKEN  #IMPLIED
+	rowsep NMTOKEN  #IMPLIED
+>
+
+<!-- Table Body -->
+<!ELEMENT tbody (row+)>
+<!ATTLIST tbody
+	valign (top | middle | bottom) "top"
+	%secur;
+>
+
+<!-- Table Row -->
+<!ELEMENT row (entry | entrytbl)+>
+<!ATTLIST row
+	rowsep NMTOKEN  #IMPLIED
+	id ID #IMPLIED
+	%secur;
+>
+
+<!-- Table Entry -->
+<!ELEMENT entry (#PCDATA | refdes | para | %text; | %list; | warning | caution | note)*>
+<!ATTLIST entry
+	colname NMTOKEN #IMPLIED
+	namest NMTOKEN #IMPLIED
+	nameend NMTOKEN #IMPLIED
+	spanname NMTOKEN #IMPLIED
+	morerows NMTOKEN "0"
+	colsep NMTOKEN  #IMPLIED
+	rowsep NMTOKEN  #IMPLIED
+	rotate NMTOKEN "0"
+	valign (top | bottom | middle) #IMPLIED
+	align (left | right | center | justify | char) #IMPLIED
+	charoff NMTOKEN #IMPLIED
+	char CDATA #IMPLIED
+	%refs;
+	%secur;
+>
+
+<!-- Table-Entry -->
+<!ELEMENT entrytbl (colspec*, thead?, tbody)+>
+<!ATTLIST entrytbl
+	cols NMTOKEN #REQUIRED
+	tgroupstyle NMTOKEN #IMPLIED
+	colname NMTOKEN #IMPLIED
+	spanname NMTOKEN #IMPLIED
+	colsep NMTOKEN  #IMPLIED
+	rowsep NMTOKEN  #IMPLIED
+	align (left | right | center | justify | char) #IMPLIED
+	charoff NMTOKEN #IMPLIED
+	char CDATA #IMPLIED
+	%secur;
+>
+<!--  END CALS TABLE MODEL -->
+
+<!--Preface and Illustration Card fields authorized for periodic maintenance requirements card deck use.-->
+<!ELEMENT prefcdinfo  (title)>
+<!ATTLIST prefcdinfo %refs;
+                        %secur;>
+
+
+<!-- Externals. "xrefid" identifies an XELEMLOC -->
+<!ELEMENT external (title?)>
+<!ATTLIST external
+	type (animation | audio | video | task | process | expertsys | question) "process"
+	%bodyatt;
+>
+
+<!-- X-Link Element -->
+<!ELEMENT xlink  (#PCDATA | %text;)*>
+<!ATTLIST xlink
+	id ID #IMPLIED
+	xrefid IDREF #REQUIRED
+>
+
+<!ELEMENT start_ripple_page EMPTY >
+<!ATTLIST start_ripple_page
+	pagenum CDATA #REQUIRED
+	blankpagenum CDATA #IMPLIED>
+
+<!ELEMENT end_ripple_pages EMPTY >
+
+<!ELEMENT pgbrk EMPTY >
+

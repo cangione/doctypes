@@ -1,0 +1,7 @@
+<region xoff="1in" yoff="8in" width="7in" height="2.5in" rotation="55" valign="middle" layer="-1">
+<usetext source="watermark.txt">
+<subchars><font style="sanserif" size="110pt" weight="bold" posture="upright">
+<leading lead="72pt">
+<quadding quad="center"><highlt fontclr="gray3">
+</subchars></usetext>
+</region>

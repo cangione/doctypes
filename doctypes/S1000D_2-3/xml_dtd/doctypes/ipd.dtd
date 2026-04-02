@@ -1,0 +1,17 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                 XML Document Type Definition                       *
+    *                       Data Module (DM)                             *
+    *                                                                    *
+    *                     Release Version 2.3                            *
+    *                       Date: 2007-02-28                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE dmodule PUBLIC "-//S1000D//DTD S1000D IPD 20070228//EN//XML" 
+ "../dtd/ipd.dtd" [
+ ]>

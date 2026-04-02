@@ -1,0 +1,302 @@
+#
+# tfontsub.cf
+#
+# Defines substitutions for font family names defined in tfmfont.cf
+#
+# This is useful in cases where stylesheets refer to specific font names
+# but where the stylesheets are intended to be used on both Windows and
+# Unix, where font names are sometimes different. 
+#
+# It is also useful for specifying the handling of the four font styles:
+# serif, sanserif, monoser, and monosans.
+
+# Other than in these situations, it should not be necessary for users
+# to modify this file.
+#
+# If the family name in column 1 is not found, then the name in
+# column 2 is tried. This substitution iterates up to five times, then
+# stops.  So, it will not cause a failure if some of these definitions
+# are circular, although this is usually an error.
+#
+# Note that the following definitions, while circular, work fine:
+#
+#    Times -> Times New Roman
+#    Times New Roman -> Times
+#
+# The reason is that, generally, "Times" exists as a PostScript font on Unix
+# while "Times New Roman" does not exist.  On Windows, the opposite is true.
+# So, in practice, this will not loop.  If a Windows installation included
+# both "Times" and "Times New Roman" fonts by some quirk, and if the stylesheet
+# specified "Times New Roman", then "Times New Roman" would match an entry
+# in tfmfont.cf (or else "Times New Roman" would be found automatically via
+# a query to Windows about currently installed fonts) and substitution would never
+# happen.  If neither "Times" nor "Times New Roman" were installed in the first
+# place, then the five time rule would kick in, Epic would try "Times New Roman",
+# "Times", "Times New Roman", "Times", "Times New Roman", then fail and substitute
+# a default font as a last resort.  
+#
+# The case of the names is not significant. The names in column 1
+# must be unique. If duplicate substitutions are listed, the last
+# one takes precedence.
+#
+# The left-hand entry can be qualified by language.  For example,
+# serif/jpn -> MS PMincho
+#
+# The valid language choices are
+# jpn = Japanese
+# chs = Simplified Chinese
+# cht = Traditional Chinese
+# kor = Korean
+# en = English
+#
+# By default Epic initializes the following generic font name substitutions
+# which can be overridden here if desired:
+#
+# On Windows:
+#       Serif -> Times New Roman
+#	Sanserif -> Arial
+#	Monoser -> Courier New
+#	Monosans -> Lucida Console 
+#
+# On Unix:
+#	Serif -> Times
+#	Sanserif -> Helvetica 
+#	Monoser -> Courier
+#	Monosans -> Courier
+#
+#
+# Special declarations "windowsonly:" and "endwindowsonly:", below denote sections
+# of this file that will only be scanned in Windows.  Similarly, "unixonly:"
+# and "endunixonly:" are for UNIX-only sections.
+#
+
+windowsonly:
+#Japanese:
+Serif/jpn -> MS PMincho
+Sanserif/jpn -> MS PGothic
+Monoser/jpn -> MS Mincho
+Monosans/jpn -> MS Gothic
+
+#Korean:
+Serif/kor -> Batang
+Sanserif/kor -> Dotum
+Monoser/kor -> BatangChe
+Monosans/kor -> DotumChe
+ 
+#Simplified Chinese:
+Serif/chs -> Simsun
+Sanserif/chs -> Simhei
+Monoser/chs -> Simsun
+Monosans/chs -> Simhei
+ 
+#Traditional Chinese:
+Serif/cht -> PMingLiU
+Sanserif/cht -> PMingLiU
+Monoser/cht -> MingLiU
+Monosans/cht -> MingLiU
+ 
+# To cause English characters in areas designated with font styles
+# to be rendered in the Asian font, remove the charset designation
+# from the statements for the desired Asian language above.
+# For Japanese, for example:
+#Serif -> MS PMincho
+#Sanserif -> MS PGothic
+#Monoser -> MS Mincho
+#Monosans -> MS Gothic
+endwindowsonly:
+
+unixonly:
+#Japanese:
+Serif/jpn -> Ryumin Light KL
+Sanserif/jpn -> Gothic Medium BBB
+Monoser/jpn -> Ryumin Light KL
+Monosans/jpn -> Gothic Medium BBB
+
+#Korean:
+Serif/kor -> Myeongjo
+Sanserif/kor -> Myeongjo
+Monoser/kor -> Myeongjo
+Monosans/kor -> Myeongjo
+ 
+#Simplified Chinese:
+Serif/chs -> Song
+Sanserif/chs -> Song
+Monoser/chs -> Song
+Monosans/chs -> Song
+ 
+#Traditional Chinese:
+Serif/cht -> Sung
+Sanserif/cht -> Sung
+Monoser/cht -> Sung
+Monosans/cht -> Sung
+ 
+# To cause English characters in areas designated with font styles
+# to be rendered in the Asian font, remove the charset designation
+# from the statements for the desired Asian language above.
+# For Japanese, for example:
+#Serif -> Ryumin Light KL
+#Sanserif -> Gothic Medium BBB
+#Monoser -> Ryumin Light KL
+#Monosans -> Gothic Medium BBB
+endunixonly:
+
+#
+# Map PostScript font names to Windows font names.
+#
+#   (For situations where a stylesheet designed for common UNIX/PostScript fonts
+#    is being used on Windows)
+#
+Courier -> Courier New
+Times -> Times New Roman
+Helvetica -> Arial Unicode MS
+Bookman -> Bookman Old Style
+New Century Schoolbook -> Century Schoolbook
+Palatino -> Palatino Linotype
+
+#
+# Map Windows font names to PostScript names
+#
+#   (For situations where a stylesheet designed for common Windows fonts 
+#    is being used on Unix/PostScript)
+#
+Courier New -> Courier
+Times New Roman -> Times
+Arial -> Helvetica
+Bookman Old Style -> Bookman
+Century Schoolbook -> New Century Schoolbook
+Palatino Linotype -> Palatino
+
+#
+# Entries for common variant spellings.
+#
+ITC Avant Garde Gothic -> AvantGarde
+Avant Garde -> AvantGarde
+ITC Bookman -> Bookman
+LucidaTypewriter -> Courier
+Times-Roman -> Times
+
+#
+# Another synonym, primarily to handle usage in
+# the official DocBook stylesheet
+#
+Times Roman -> Times
+
+unixonly:
+# Default mappings for unix Asian fonts:
+AvantGarde/chs -> Song
+AvantGarde/cht -> Sung
+AvantGarde/jpn -> Gothic Medium BBB
+AvantGarde/kor -> Myeonjo
+Bookman/chs -> Song
+Bookman/cht -> Sung
+Bookman/jpn -> Ryumin Light KL
+Bookman/kor -> Myeongjo
+Courier/chs -> Song
+Courier/cht -> Sung
+Courier/jpn -> Ryumin Light KL
+Courier/kor -> Myeongjo
+Helvetica/chs -> Song
+Helvetica/cht -> Sung
+Helvetica/jpn -> Gothic Medium BBB
+Helvetica/kor -> Myeongjo
+New Century Schoolbook/chs -> Song
+New Century Schoolbook/cht -> Sung
+New Century Schoolbook/jpn -> Ryumin Light KL
+New Century Schoolbook/kor -> Myeongjo
+Palatino/chs -> Song
+Palatino/cht -> Sung
+Palatino/jpn -> Ryumin Light KL
+Palatino/kor -> Myeongjo
+Times/chs -> Song
+Times/cht -> Sung
+Times/jpn -> Ryumin Light KL
+Times/kor -> Myeongjo
+endunixonly:
+
+# -------------------------------------------------------------------------
+#
+# The following entries are obsolete, but are included for compatability
+# with pre-Epic 4.3 software.  Before Epic supported native Unicode, variant
+# fonts were used to support different locales.  Now this is unnecessary.
+#
+Arial/psa -> Helvetica
+Arial CE/psa -> Helvetica
+Arial CYR/psa -> Helvetica
+Arial Greek/psa -> Helvetica
+
+Times New Roman/psa -> Times
+Times New Roman CE/psa -> Times
+Times New Roman CYR/psa -> Times
+Times New Roman Greek/psa -> Times
+
+Courier New/psa -> Courier
+Courier New CE/psa -> Courier
+Courier New CYR/psa -> Courier
+Courier New Greek/psa -> Courier
+
+Arial/win_1250 -> Arial CE
+Arial/win_1251 -> Arial CYR
+Arial/win_1253 -> Arial Greek
+
+Courier New/win_1250 -> Courier New CE
+Courier New/win_1251 -> Courier New CYR
+Courier New/win_1253 -> Courier New Greek
+
+Times New Roman/win_1250 -> Times New Roman CE
+Times New Roman/win_1251 -> Times New Roman CYR
+Times New Roman/win_1253 -> Times New Roman Greek
+
+Arial CE/win_1251 -> Arial CYR
+Arial CE/win_1252 -> Arial
+Arial CE/win_1253 -> Arial Greek
+
+Courier New CE/win_1251 -> Courier New CYR
+Courier New CE/win_1252 -> Courier New
+Courier New CE/win_1253 -> Courier New Greek
+
+Times New Roman CE/win_1251 -> Times New Roman CYR
+Times New Roman CE/win_1252 -> Times New Roman
+Times New Roman CE/win_1253 -> Times New Roman Greek
+
+Arial CYR/win_1250 -> Arial CE
+Arial CYR/win_1252 -> Arial
+Arial CYR/win_1253 -> Arial Greek
+
+Courier New CYR/win_1250 -> Courier New CE
+Courier New CYR/win_1252 -> Courier New
+Courier New CYR/win_1253 -> Courier New Greek
+
+Times New Roman CYR/win_1250 -> Times New Roman CE
+Times New Roman CYR/win_1252 -> Times New Roman
+Times New Roman CYR/win_1253 -> Times New Roman Greek
+
+Arial Greek/win_1250 -> Arial CE
+Arial Greek/win_1251 -> Arial CYR
+Arial Greek/win_1252 -> Arial
+
+Courier New Greek/win_1250 -> Courier New CE
+Courier New Greek/win_1251 -> Courier New CYR
+Courier New Greek/win_1252 -> Courier New
+
+Times New Roman Greek/win_1250 -> Times New Roman CE
+Times New Roman Greek/win_1251 -> Times New Roman CYR
+Times New Roman Greek/win_1252 -> Times New Roman
+
+# Substitutions for alternate character sets when typesetting character
+# entities when the default character set is iso8859-1. The string
+# before '/' is the requested font family and the string following
+# is the character set. The name following '->' is the font family
+# name to be looked up in ADEPTDIR/fonts/tfmfont.cf. The character
+# set are those listed in ADEPTDIR/lib/charent.cf
+
+Helvetica/iso8859-5 -> Helvetica Cyrillic
+HelveticaBlack/iso8859-5 -> Helvetica Cyrillic
+HelveticaLight/iso8859-5 -> Helvetica Cyrillic
+Helvetica/iso8859-7 -> Helvetica Greek
+HelveticaBlack/iso8859-7 -> Helvetica Greek
+HelveticaLight/iso8859-7 -> Helvetica Greek
+
+# Inverse mappings when the default character set is not iso8859-1.
+Helvetica Cyrillic/iso8859-1 -> Helvetica
+Helvetica Greek/iso8859-1 -> Helvetica
+

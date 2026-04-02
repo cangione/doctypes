@@ -1,0 +1,1897 @@
+<!--Arbortext, Inc., 1988-2009, v.4002-->
+<!DOCTYPE DOC PUBLIC "-//USA-DOD//DTD 5096F-BV6D0P0//EN" [
+<!ENTITY styler SYSTEM "styler.gif" NDATA gif>
+<!NOTATION gif SYSTEM "gif">
+<!ENTITY ESD SYSTEM "esds.eps" NDATA eps>
+]>
+<?Pub Inc>
+<doc service="af" docid="5096F-BV6-D0P0-S2" docstat="formal"
+verstatpg="ver" cycle="0"><?Pub Caret><docfcf><front
+numcols="1"><idinfo><tmidno service="af">TO 5096F-BV6D0P0</tmidno>
+<doctype>FUNCTIONAL CHECK FLIGHT MANUAL</doctype>
+<prtitle><nomen>USAF Series</nomen>
+<modelno> Aircraft</modelno>
+<partno>Part Number PRtitle</partno>
+<nsn>National Stock Number PRtitle</nsn>
+<typedes>Type Designator PRTITLE</typedes>
+<modelno>Model Number PRTITLE</modelno>
+<partno>PRTITLE Part Number</partno>
+<pslist>
+<partno>PSLIST PARTNO</partno>
+<serno>PSLIST Serial no.</serno>
+</pslist>
+<serno>PRTITLE Serial Number</serno>
+</prtitle>
+<mfr>Bomber Aircraft Company, INC.</mfr>
+<contractno>F1234-56F&ndash;78910&ndash;11</contractno>
+<supersed>THIS PUBLICATION SUPERSEDES TO XXXXXXXX DATED 27 November
+2004.</supersed>
+<suppl>SUPPLEMENT STATEMENT</suppl>
+<discl>This is a sample disclosure notice. No actual data is contained
+in this manual. This disclosure notice is for test purposes only.
+No actual data is contained in this manual. This is a sample disclosure
+notice. No actual data is contained in this manual. This disclosure
+notice is for test purposes only. No actual data is contained in this
+manual. This is a sample disclosure notice. No actual data is contained
+in this manual. This disclosure notice is for test purposes only.
+No actual data is contained in this manual. </discl>
+<distrib>This is a sample distribution statement. This manual is for
+testing purposes only, it contains no actual technical data. This
+is a sample distribution statement. This manual is for testing purposes
+only, it contains no actual technical data. This is a sample distribution
+statement. This manual is for testing purposes only, it contains no
+actual technical data. </distrib>
+<expcont>This is a sample export control notice. his manual is for
+testing purposes only, it contains no actual technical data. This
+is a sample export control notice. his manual is for testing purposes
+only, it contains no actual technical data. This is a sample export
+control notice. his manual is for testing purposes only, it contains
+no actual technical data. This is a sample export control notice.
+his manual is for testing purposes only, it contains no actual technical
+data.</expcont>
+<note>
+<para>COMMANDERS ARE RESPONSIBLE FOR BRINGING THIS PUBLICATION TO
+THE ATTENTION OF ALL PERSONNEL CLEARED FOR OPERATION OF SUBJECT AIRCRAFT.
+</para>
+</note>
+<authnot>Published under the Authority of the Secretary of the Air
+Force.</authnot>
+<downgrd><phrase>Phase * downgrd</phrase></downgrd><pubdate>8 MARCH
+2007</pubdate></idinfo><lep><lepcontents autobuild="1"></lep>
+<contents autobuild="1">
+<illuslist autobuild="1">
+<tablelist autobuild="1">
+<foreword>
+<para0 verstatus="ver"><title>Purpose AND SCOPE</title>
+<warning>
+<para>This is a PARA within a WARNING. </para>
+</warning>
+<para>This is a PARA within a PARA0. This is a PARA within a This
+is a PARA within a WARNING. This is a PARA within a PARA0. This is
+a PARA within a PARA0. This is a PARA within a PARA0. This is a PARA
+within a PARA0. .</para>
+<subpara1 verstatus="ver"><title>This is a TITLE within a SUBPARA1</title>
+<para>This is a PARA within a SUBPARA1 element. This is a PARA within
+a SUBPARA1 element. This is a PARA within a SUBPARA1 element. This
+is a PARA within a SUBPARA1 element. </para>
+</subpara1>
+<subpara1 verstatus="ver"><title>This is a TITLE within a SUBPARA1</title>
+<para>This is a PARA within a SUBPARA1 element. This is a PARA within
+a SUBPARA1 element. This is a PARA within a SUBPARA1 element. This
+is a PARA within a SUBPARA1 element</para>
+</subpara1>
+<subpara1 verstatus="ver"><title>This is a TITLE within a SUBPARA1</title>
+<para>This is a PARA within a SUBPARA1 element. This is a PARA within
+a SUBPARA1 element. This is a PARA within a SUBPARA1 element. This
+is a PARA within a SUBPARA1 element<seqlist numstyle="alphalc"><item>Assist
+the flight crew in accomplishing Acceptance or Functional Check Flight
+(FCF) in accordance with TO1-1-300, -6 inspection manual and contractual
+requirements.</item><item>Assure compliance of the prescribed FCF
+by providing the flight crew equipment operating procedures, limits,
+pressure readings and conditions to be noted and recorded during the
+course of the FCF.</item><item>Provide the flight crew with definitive
+procedures emphasizing how a system/component will be checked when
+applying predetermined criteria.</item></seqlist></para>
+</subpara1>
+</para0>
+<para0 verdate="25 Feb. 2005" verrem="Remark Here" verstatus="ver">
+<title>Functional check flight Procedures</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. This is a PARA within a PARA0. </para>
+<subpara1><title>This is a TITLE within a SUBPARA1</title><para>This
+is a PARA within a SUBPARA1 element. This is a PARA within a SUBPARA1
+element. This is a PARA within a SUBPARA1 element. This is a PARA
+within a SUBPARA1 element</para>
+</subpara1>
+<subpara1 verdate="15 Feb. 2005" verrem="Remark entry" verstatus="ver">
+<title>This is a TITLE within a SUBPARA1</title><para>This is a PARA
+within a SUBPARA1 element. This is a PARA within a SUBPARA1 element.
+This is a PARA within a SUBPARA1 element. This is a PARA within a
+SUBPARA1 element</para>
+</subpara1>
+</para0>
+<para0><title>Completion of the Functional check flight</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. This is a PARA within a PARA0. </para>
+<subpara1><title>First Subpara1</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara2><title>Subpara2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+<subpara3><title>Subpara3</title><para>This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document.</para>
+<subpara4><title>Subpara4</title><para>This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document.</para>
+<subpara5><title>Subpara5</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+<subpara6><title>Subpara6</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+<subpara7><title>Subpara7</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+<subpara8><title>Subpara8</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+<applicdef rtermwidth="5.5in" ltermwidth="2.0in" verstatus="ver">
+<title>List of Applicability and Effectivity</title>
+<para>In this example the &ldquo;TERM&rdquo; heading is used to define
+the column used for the symbol. The &ldquo;DEFINITION&rdquo; heading
+is used to define the applicability/effectivity for the symbol used
+in the &ldquo;TERM&rdquo; column.</para>
+<appltitle>List of Applicability and Effectivity</appltitle>
+<applichd>
+<term>TERM</term><def>DEFINITION</def>
+</applichd>
+<applic id="a">
+<term>a</term><def>This is applicability a. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+<applic id="b">
+<term>b</term><def>This is applicability b. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+<applic id="c">
+<term>c</term><def>This is applicability c. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+<applic id="d">
+<term>d</term><def>This is applicability d. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+</applicdef>
+<symsect rtermwidth="6.5in" ltermwidth="1.0in" id="p-9" verstatus="ver">
+<title>Symbol Definition</title>
+<para>The following list of symbols are used in this manual and adhere
+to requirements of DoD specification MIL-STD-38784.</para>
+<symtitle>List of Symbols</symtitle>
+<term><graphic boardno="ESD" icon="yes"></term><def>This is the symbol
+used to indicate Electrostatic Discharge Sensitive parts. ESDS parts
+require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+</symsect>
+<abbrsect><title>List of Non Standard Abbreviations and
+Acronyms</title><para>This publication provides a list of non standard
+abbreviations and acronyms used throughout this document.</para>
+<abbrtitle>List of Abbreviations and Acronyms</abbrtitle>
+<acronymlist>
+<term>ABC</term><def>Alphabet Soup</def>
+<term>AC</term><def>Alternating Current</def>
+<term>ADF</term><def>Automatic Direction Finder</def>
+<term>AFB</term><def>Air Force Base</def>
+<term>AL</term><def>ALABAMA</def>
+<term>AK</term><def>ALASKA</def>
+<term>AR</term><def>ARKANSAS</def>
+<term>AS</term><def>AMERICAN SAMOA</def>
+<term>AUX</term><def>Auxiliary</def>
+<term>AZ</term><def>ARIZONA </def>
+<term>BIT</term><def>Built In Test</def>
+<term>BITE</term><def>Built In Test Equipment</def>
+<term>CA</term><def>CALIFORNIA </def>
+<term>CCA</term><def>Circuit Card Assembly</def>
+<term>CO</term><def>COLORADO </def>
+<term>CT</term><def>CONNECTICUT</def>
+<term>DC</term><def>DISTRICT OF COLUMBIA</def>
+<term>DC</term><def>Direct Current</def>
+<term>DE</term><def>DELAWARE</def>
+<term>ESDS</term><def>Electrostatic Discharge Sensitive</def>
+<term>ESMS</term><def>Electronics Support Measures System</def>
+<term>ESS</term><def>Environmental Stress Screening</def>
+<term>FL</term><def>FLORIDA</def>
+<term>FM</term><def>FEDERATED STATES OF MICRONESIA</def>
+<term>FM</term><def>Frequency Modulation</def>
+<term>GA</term><def>GEORGIA</def>
+<term>GPSL</term><def>Global Publishing Solutions Ltd</def>
+<term>GU</term><def>GUAM </def>
+<term>HI</term><def>HAWAII</def>
+<term>HMIS</term><def>Hazardous Materials Information System</def>
+<term>IA</term><def>IOWA</def>
+<term>ID</term><def>IDAHO</def>
+<term>IL</term><def>ILLINOIS</def>
+<term>IN</term><def>INDIANA</def>
+<term>JIT</term><def>Just in Time</def>
+<term>KS</term><def>KANSAS</def>
+<term>KY</term><def>KENTUCKY</def>
+<term>LA</term><def>LOUISIANA</def>
+<term>LOL</term><def>Laugh out loud</def>
+<term>MA</term><def>MASSACHUSETTS</def>
+<term>MD</term><def>MARYLAND</def>
+<term>ME</term><def>MAINE</def>
+<term>MH</term><def>MARSHALL ISLANDS</def>
+<term>MI</term><def>MICHIGAN</def>
+<term>MLG</term><def>Main Landing Gear</def>
+<term>MN</term><def>MINNESOTA</def>
+<term>MO</term><def>MISSOURI</def>
+<term>MP</term><def>NORTHERN MARIANA ISLANDS</def>
+<term>MS</term><def>MISSISSIPPI</def>
+<term>MSDS</term><def>Material Safety Data Sheet</def>
+<term>MT</term><def>MONTANA</def>
+<term>NAV</term><def>Navigation</def>
+<term>NC</term><def>NORTH CAROLINA</def>
+<term>ND</term><def>NORTH DAKOTA</def>
+<term>NE</term><def>NEBRASKA</def>
+<term>NH</term><def>NEW HAMPSHIRE</def>
+<term>NJ</term><def>NEW JERSEY</def>
+<term>NM</term><def>NEW MEXICO</def>
+<term>NP</term><def>No Problem</def>
+<term>NV</term><def>NEVADA</def>
+<term>NY</term><def>NEW YORK</def>
+<term>OH</term><def>OHIO</def>
+<term>OK</term><def>OKLAHOMA</def>
+<term>OR</term><def>OREGON</def>
+<term>OSHA</term><def>Occupational Safety and Health Act</def>
+<term>PA</term><def>PENNSYLVANIA</def>
+<term>PDQ</term><def>Pretty Darn Quick</def>
+<term>PR</term><def>PUERTO RICO</def>
+<term>PSIG</term><def>Pounds per Square Inch, Gage</def>
+<term>PW</term><def>PALAU</def>
+<term>RF</term><def>Radio Frequency</def>
+<term>RI</term><def>RHODE ISLAND</def>
+<term>SC</term><def>SOUTH CAROLINA</def>
+<term>SD</term><def>SOUTH DAKOTA</def>
+<term>SRU</term><def>Shop Replaceable Unit</def>
+<term>STBY</term><def>Standby</def>
+<term>STE</term><def>Suite</def>
+<term>TN</term><def>TENNESSEE</def>
+<term>TX</term><def>TEXAS</def>
+<term>USA</term><def>United States of America</def>
+<term>USAF</term><def>United States Air Force</def>
+<term>UT</term><def>UTAH</def>
+<term>VA</term><def>VIRGINIA </def>
+<term>VI</term><def>VIRGIN ISLANDS</def>
+<term>VT</term><def>VERMONT</def>
+<term>WA</term><def>WASHINGTON</def>
+<term>WI</term><def>WISCONSIN</def>
+<term>WPAFB</term><def>Wright Patterson Air Force Base</def>
+<term>WV</term><def>WEST VIRGINIA</def>
+<term>WY</term><def>WYOMING</def>
+<term>XMTR</term><def>Transmitter</def>
+</acronymlist>
+</abbrsect>
+<internatlstd verstatus="ver">International standardization agreement
+is entered in the internatlstd element. The contents of the agreement
+is done in the form of a NOTE per MIL-STD-38784.</internatlstd>
+<lrp verstatus="ver"><ftnote id="ftnotpg1">This is a page
+footnote.</ftnote><title>LIST OF RELATED PUBLICATIONS</title><para>This
+publication provides a referenced within this manual.</para>
+<lrptable>
+<lrpentry><tmidno>1X&ndash;XXXX-2-23-00-1</tmidno><title>Communication
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-24-00-1</tmidno><title>Electrical
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-26-00-1</tmidno><title>Fire Protection
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-29-00-1</tmidno><title>Hydraulic
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-30-00-1</tmidno><title>Ice and Rain
+Protection System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-33-00-1</tmidno><title>Lighting
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-34-00-1</tmidno><title>Navigation
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-51-00-1</tmidno><title>Standard
+Practices: Structures</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-61-00-1</tmidno><title>Propellers
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-71-00-1</tmidno><title>Airframe
+Group</title></lrpentry>
+</lrptable>
+</lrp>
+<tctolist><title>RECORD OF APPLICABLE TIME COMPLIANCE TECHNICAL
+ORDEr</title>
+<para>This publication provides a list of referenced within this manual.
+The list of applicable Time Compliance Technical Orders is a list
+of all TCTOs which affect the technical content (text or illustration)
+of this manual.</para>
+<tctotbl>
+<tctorow><tctono>TCTO number 1</tctono><title>This is the title of
+a TCTO</title><date>DATE</date></tctorow>
+<tctorow><tctono>TCTO number 2</tctono><title>This is the title of
+a TCTO</title><date>DATE</date></tctorow>
+<tctorow><tctono>TCTO number 3</tctono><title>This is the title of
+a TCTO</title><date>DATE</date></tctorow>
+<tctorow><tctono>TCTO number 4</tctono><title>This is the title of
+a TCTO</title><date>DATE</date></tctorow>
+</tctotbl>
+</tctolist>
+</foreword>
+</front><body numcols="2"><chapter crewposition="p">
+<title>Pilot's Acceptance/Functional check flight Procedures</title>
+<para0 verstatus="ver"><title>Acceptance /Functional check flight
+Briefing</title>
+<para>This is a PARA within a PARA0. .This is a PARA within a PARA0.
+.This is a PARA within a PARA0. .This is a PARA within a PARA0. .This
+is a PARA within a PARA0. .This is a PARA within a PARA0. .</para>
+<note>
+<para>This is a PARA within a NOTE. This is a PARA within a NOTE.
+This is a PARA within a NOTE. This is a PARA within a NOTE.   This
+is a PARA within a NOTE. This is a PARA within a NOTE. This is a PARA
+within a NOTE. This is a PARA within a NOTE. </para>
+<para>This is a PARA within a NOTE. This is a PARA within a NOTE.
+This is a PARA within a NOTE. This is a PARA within a NOTE.   This
+is a PARA within a NOTE. This is a PARA within a NOTE. This is a PARA
+within a NOTE. This is a PARA within a NOTE. </para>
+</note>
+<subpara1><title>Aircraft Forms</title><para>This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem>
+<para>This is a PARA within a STEP1</para></step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem></step1>
+</subpara1>
+<subpara1 verstatus="ver"><title>Preflight Inspection</title><para>This
+is a PARA within a SUBPARA1. This is a PARA within a SUBPARA1. This
+is a PARA within a SUBPARA1. This is a PARA within a SUBPARA1.<deflist>
+<defhd>
+<term>TERM1</term><def>This is a DEF within a DEFHD</def>
+</defhd>
+<term>TERM2</term><def>This is a DEF within a DEFLIST</def>
+</deflist></para>
+</subpara1>
+<subpara1 verstatus="ver"><title>Prior to Entering the Aircraft </title>
+<para>This is a PARA within a SUBPARA1. This is a PARA within a SUBPARA1.
+This is a PARA within a SUBPARA1. This is a PARA within a SUBPARA1. </para>
+</subpara1>
+<subpara1 verdate="12 Feb. 2005" verrem="Remark entry" verstatus="ver">
+<title>Interior Inspection</title><para>This is a PARA within a SUBPARA1.
+This is a PARA within a SUBPARA1. This is a PARA within a SUBPARA1.
+This is a PARA within a SUBPARA1. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1. <graphic
+boardno="vapor" reprowid="5.5in" reprodep="7.5in" hplace="center"></amplify>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1.
+.</amplify>
+</step2>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1.
+.</amplify>
+</step2>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<step3>
+<clitem>This is a CLITEM within a STEP3.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP3. This is an AMPLIFY
+statement within a STEP3. This is an AMPLIFY statement within a STEP3.
+This is an AMPLIFY statement within a STEP3. </amplify>
+</step3>
+<step3>
+<clitem>This is a CLITEM within a STEP3.</clitem><action>ction </action>
+<step4>
+<clitem>This is a CLITEM within a STEP4.</clitem><action>Action</action>
+<amplify>Amplify in a step 4.</amplify>
+</step4>
+<step4>
+<clitem>This is a CLITEM within a STEP4.</clitem><action>Action</action>
+<amplify>Amplify in a step 4.</amplify>
+</step4>
+</step3>
+</step2>
+</step1>
+<step1>
+<note>
+<para>This is a para within a note  within a STEP4. This is a para
+within a note  within a STEP4. This is a para within a note  within
+a STEP4. This is a para within a note  within a STEP4.</para>
+</note>
+<clitem>CLITEM within a STEP3.</clitem><action>Action</action>
+<amplify>AMPLIFY statement within a STEP3.</amplify>
+</step1>
+<step1>
+<clitem>CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>AMPLIFY statement within a STEP1</amplify>
+</step1>
+<subpara2><para>This is a PARA within a SUBARA2. This is a PARA within
+a SUBARA2. This is a PARA within a SUBARA2. This is a PARA within
+a SUBARA2. </para>
+<step1>
+<clitem>CLITEM within a STEP1 within a SUBARA2.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>CLITEM within a STEP1 within a SUBARA2.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>CLITEM within a STEP1 within a SUBARA2.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>CLITEM within a STEP1 within a SUBARA2.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>CLITEM within a STEP1 within a SUBARA2.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>CLITEM within a STEP1 within a SUBARA2.</clitem><action>Action</action>
+</step1>
+</subpara2>
+</subpara1>
+</para0>
+<para0><title>POST FLIGHT</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. </para>
+<step1>
+<clitem>This is a STEP1 within a PARA0. </clitem></step1>
+<step1>
+<clitem>This is a STEP1 within a PARA0. </clitem></step1>
+<step1>
+<clitem>This is a STEP1 within a PARA0. </clitem></step1>
+<subpara1><title>Second Subpara1</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara2 verstatus="ver"><title>First Subpara2</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara2>
+<subpara2><title>Second Subpara2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara3 verstatus="ver"><title>First Subpara3</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+</subpara3>
+<subpara3><title>Second Subpara3</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document.</para>
+<subpara4 verstatus="ver"><title>First Subpara4</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document.</para>
+</subpara4>
+<subpara4><title>Second Subpara4</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document.</para>
+<subpara5 verstatus="ver"><title>First Subpara5</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara5>
+<subpara5><title>Second Subpara5</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara6 verstatus="ver"><title>First Subpara6</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara6>
+<subpara6><title>Second Subpara6</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara7 verstatus="ver"><title>First Subpara7</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara7>
+<subpara7><title>Second Subpara7</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara8 verstatus="ver"><title>First Subpara8</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara8>
+<subpara8><title>Second Subpara8</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+<table frame="none" colsep="0" pgwide="0" verstatus="ver">
+<title>Sample Table Title</title><tgroup cols="2"><colspec colname="col1">
+<colspec colname="col2"><thead>
+<row>
+<entry>Column 1 header</entry>
+<entry>Column 2 header</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>Column1, row 1</entry>
+<entry>Column2, row 1</entry>
+</row>
+<row>
+<entry>Column1, row 2</entry>
+<entry>Column2, row 2</entry>
+</row>
+<row>
+<entry>Column1, row 3</entry>
+<entry>Column2, row 3</entry>
+</row>
+<row>
+<entry>Column1, row 4</entry>
+<entry>Column2, row 4</entry>
+</row>
+<row>
+<entry>Column1, row 5</entry>
+<entry>Column2, row 5</entry>
+</row>
+</tbody></tgroup></table>
+<figure verstatus="ver">
+<title>Pilot Flight Test Profile</title>
+<graphic boardno="styler" reprodep="8.0in" scalefit="1"></figure>
+</chapter><chapter crewposition="cp">
+<title>CO-Pilot's Acceptance/Functional check flight Procedures &mdash;
+Preflight</title>
+<para0><title>Acceptance /Functional check flight Briefing</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. </para>
+</para0>
+<para0><title>Preflight</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. </para>
+<subpara1><title>Aircraft Forms</title><para>This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. This is a PARA within
+a SUBPARA1. </para>
+<step1>
+<clitem>CLITEM within a step1.</clitem></step1>
+<step1>
+<clitem>CLITEM within a step1</clitem><action>Action</action>
+</step1>
+</subpara1>
+<subpara1><title>Preflight Inspection</title><para>This is a PARA
+within a SUBPARA1. This is a PARA within a SUBPARA1.This is a PARA
+within a SUBPARA1.</para>
+</subpara1>
+<subpara1><title>Before Entering Aircraft </title><para>This is a
+PARA within a SUBPARA1. This is a PARA within a SUBPARA1.This is a
+PARA within a SUBPARA1.</para>
+</subpara1>
+<subpara1><title>Interior Inspection</title><para>This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. This is a PARA within
+a SUBPARA1.</para>
+<step1>
+<clitem>CLITEM within a STEP1</clitem><action>ACTION</action>
+</step1>
+<step1>
+<clitem>CLITEM within a STEP1</clitem><action>ACTION</action>
+</step1>
+<step1>
+<clitem>CLITEM within a STEP1</clitem><action>ACTION</action>
+</step1>
+<step1>
+<clitem>CLITEM within a STEP1</clitem><action>ACTION</action>
+</step1>
+<step1>
+<note>
+<para>PARA within a NOTE within a STEP1. PARA within a NOTE within
+a STEP1. PARA within a NOTE within a STEP1. PARA within a NOTE. PARA
+within a NOTE. PARA within a NOTE. PARA within a NOTE within a STEP1. </para>
+</note>
+<clitem>CLITEM within a STEP1.</clitem><action>ACTION</action>
+<amplify>AMPLIFY statement after a STEP1. AMPLIFY statement after
+a STEP1. AMPLIFY statement after a STEP1. AMPLIFY statement after
+a STEP1.</amplify>
+</step1>
+<subpara2><para>This is a PARA within a SUBPARA2. This is a PARA within
+a SUBPARA2. This is a PARA within a SUBPARA2. This is a PARA within
+a SUBPARA2. </para>
+<step1>
+<clitem>This is a CLITEM in a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM in a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM in a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM in a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM in a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM in a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1. <graphic
+boardno="vapor" reprowid="5.5in" reprodep="7.5in" hplace="center"></amplify>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1.
+.</amplify>
+</step2>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1.
+.</amplify>
+</step2>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<step3>
+<clitem>This is a CLITEM within a STEP3.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP3. This is an AMPLIFY
+statement within a STEP3. This is an AMPLIFY statement within a STEP3.
+This is an AMPLIFY statement within a STEP3. </amplify>
+</step3>
+<step3>
+<clitem>This is a CLITEM within a STEP3.</clitem><action>ction </action>
+<amplify>Amplify in a step 3</amplify>
+<step4>
+<clitem>This is a CLITEM within a STEP4.</clitem><action>Action</action>
+<amplify>Amplify in a step 4.</amplify>
+</step4>
+<step4>
+<clitem>This is a CLITEM within a STEP4.</clitem><action>Action</action>
+<amplify>Amplify in a step 4.</amplify>
+</step4>
+</step3>
+</step2>
+</step1>
+</subpara2>
+</subpara1>
+<subpara1><title>Second Subpara1</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara2 verstatus="ver"><title>First Subpara2</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>Second Subpara2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara3 verstatus="ver"><title>First Subpara3</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document.</para>
+</subpara3>
+<subpara3><title>Second Subpara3</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document.</para>
+<subpara4 verstatus="ver"><title>First Subpara4</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document.</para>
+</subpara4>
+<subpara4><title>Second Subpara4</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document.</para>
+<subpara5 verstatus="ver"><title>First Subpara5</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.</para>
+</subpara5>
+<subpara5><title>Second Subpara5</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara6 verstatus="ver"><title>First Subpara6</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara6>
+<subpara6><title>Second Subpara6</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara7 verstatus="ver"><title>First Subpara7</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.</para>
+</subpara7>
+<subpara7><title>Second Subpara7</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara8 verstatus="ver"><title>First Subpara8</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.</para>
+</subpara8>
+<subpara8><title>Second Subpara8</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+<table frame="none" colsep="0" pgwide="0">
+<title>Sample Table Title</title><tgroup cols="2"><colspec colname="col1">
+<colspec colname="col2"><thead>
+<row>
+<entry>Column 1 header</entry>
+<entry>Column 2 header</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>Column1, row 1</entry>
+<entry>Column2, row 1</entry>
+</row>
+<row>
+<entry>Column1, row 2</entry>
+<entry>Column2, row 2</entry>
+</row>
+<row>
+<entry>Column1, row 3</entry>
+<entry>Column2, row 3</entry>
+</row>
+<row>
+<entry>Column1, row 4</entry>
+<entry>Column2, row 4</entry>
+</row>
+<row>
+<entry>Column1, row 5</entry>
+<entry>Column2, row 5</entry>
+</row>
+</tbody></tgroup></table>
+<figure>
+<title>CoPilot Flight Test Profile</title>
+<graphic boardno="styler" reprodep="8.0in" scalefit="1"></figure>
+</chapter><chapter crewposition="fe">
+<title>Flight Engineer's Acceptance/Functional check flight Procedures</title>
+<section>
+<title>Flight Engineer Section 1</title>
+<para0 verstatus="ver"><title>Before boarding the aircraft</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. </para>
+<subpara1 verstatus="ver"><title>Aircraft Forms</title><para>This
+is a PARA within a SUBPARA1. This is a PARA within a SUBPARA1. This
+is a PARA within a SUBPARA1. This is a PARA within a SUBPARA1. This
+is a PARA within a SUBPARA1. </para>
+<step1>
+<clitem>CLITEM within a STEP1. </clitem></step1>
+<step1>
+<clitem>CLITEM within a STEP1.</clitem></step1>
+</subpara1>
+<subpara1><title>Preflight Inspection</title><para>This is a PARA
+within a SUBPARA1. This is a PARA within a SUBPARA1. This is a PARA
+within a SUBPARA1. </para>
+</subpara1>
+<subpara1><title>Before Entering Aircraft </title><para>This is a
+PARA within a SUBPARA1. This is a PARA within a SUBPARA1. This is
+a PARA within a SUBPARA1. This is a PARA within a SUBPARA1. </para>
+</subpara1>
+<subpara1><title>Interior Inspection</title><para>This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<note>
+<para>This is PARA within a NOTE. This is PARA within a NOTE. This
+is PARA within a NOTE. This is PARA within a NOTE. This is PARA within
+a NOTE. </para>
+</note>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement. This is an AMPLIFY statement.
+This is an AMPLIFY statement. This is an AMPLIFY statement. </amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement statement. This is an AMPLIFY
+statement. This is an AMPLIFY statement.</amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. This is a CLITEM within a
+STEP1. </clitem><action>Action</action>
+</step1>
+<subpara2><para>This is a PARA within a SUBPARA2. This is a PARA within
+a SUBPARA2. This is a PARA within a SUBPARA2. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1. <graphic
+boardno="vapor" reprowid="5.5in" reprodep="7.5in" hplace="center"></amplify>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1.
+.</amplify>
+</step2>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1.
+.</amplify>
+</step2>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<step3>
+<clitem>This is a CLITEM within a STEP3.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP3. This is an AMPLIFY
+statement within a STEP3. This is an AMPLIFY statement within a STEP3.
+This is an AMPLIFY statement within a STEP3. </amplify>
+</step3>
+<step3>
+<clitem>This is a CLITEM within a STEP3.</clitem><action>ction </action>
+<amplify>Amplify in a step 3</amplify>
+<step4>
+<clitem>This is a CLITEM within a STEP4.</clitem><action>Action</action>
+<amplify>Amplify in a step 4.</amplify>
+</step4>
+<step4>
+<clitem>This is a CLITEM within a STEP4.</clitem><action>Action</action>
+<amplify>Amplify in a step 4.</amplify>
+</step4>
+</step3>
+</step2>
+</step1>
+</subpara2>
+</subpara1>
+<subpara1><title>Second Subpara1</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara2><title>Second Subpara2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara3><title>Second Subpara3</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document.</para>
+<subpara4><title>Second Subpara4</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document.</para>
+<subpara5><title>Second Subpara5</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara6><title>Second Subpara6</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara7><title>Second Subpara7</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara8><title>Second Subpara8</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+</section>
+<section>
+<title>Flight Engineer Section 2</title>
+<para0 verstatus="ver"><title>Before boarding the aircraft</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. </para>
+<subpara1 verstatus="ver"><title>Aircraft Forms</title><para>This
+is a PARA within a SUBPARA1. This is a PARA within a SUBPARA1. This
+is a PARA within a SUBPARA1. This is a PARA within a SUBPARA1. This
+is a PARA within a SUBPARA1. </para>
+<step1>
+<clitem>CLITEM within a STEP1. </clitem></step1>
+<step1>
+<clitem>CLITEM within a STEP1.</clitem></step1>
+</subpara1>
+<subpara1><title>Preflight Inspection</title><para>This is a PARA
+within a SUBPARA1. This is a PARA within a SUBPARA1. This is a PARA
+within a SUBPARA1. </para>
+</subpara1>
+<subpara1><title>Before Entering Aircraft </title><para>This is a
+PARA within a SUBPARA1. This is a PARA within a SUBPARA1. This is
+a PARA within a SUBPARA1. This is a PARA within a SUBPARA1. </para>
+</subpara1>
+<subpara1><title>Interior Inspection</title><para>This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<note>
+<para>This is PARA within a NOTE. This is PARA within a NOTE. This
+is PARA within a NOTE. This is PARA within a NOTE. This is PARA within
+a NOTE. </para>
+</note>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement. This is an AMPLIFY statement.
+This is an AMPLIFY statement. This is an AMPLIFY statement. </amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement statement. This is an AMPLIFY
+statement. This is an AMPLIFY statement.</amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. This is a CLITEM within a
+STEP1. </clitem><action>Action</action>
+</step1>
+<subpara2><para>This is a PARA within a SUBPARA2. This is a PARA within
+a SUBPARA2. This is a PARA within a SUBPARA2. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+</subpara2>
+</subpara1>
+</para0>
+</section>
+<section>
+<title>Flight Engineer Section 3</title>
+<phase>
+<para0><title>Phase 1 Para0</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. </para>
+<subpara1><title>Interior Inspection</title><para>This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<note>
+<para>This is PARA within a NOTE. This is PARA within a NOTE. This
+is PARA within a NOTE. This is PARA within a NOTE. This is PARA within
+a NOTE. </para>
+</note>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement. This is an AMPLIFY statement.
+This is an AMPLIFY statement. This is an AMPLIFY statement. </amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement statement. This is an AMPLIFY
+statement. This is an AMPLIFY statement.</amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. This is a CLITEM within a
+STEP1. </clitem><action>Action</action>
+</step1>
+<subpara2><para>This is a PARA within a SUBPARA2. This is a PARA within
+a SUBPARA2. This is a PARA within a SUBPARA2. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1. <graphic
+boardno="vapor" reprowid="5.5in" reprodep="7.5in" hplace="center"></amplify>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1.
+.</amplify>
+</step2>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1.
+.</amplify>
+</step2>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<step3>
+<clitem>This is a CLITEM within a STEP3.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP3. This is an AMPLIFY
+statement within a STEP3. This is an AMPLIFY statement within a STEP3.
+This is an AMPLIFY statement within a STEP3. </amplify>
+</step3>
+<step3>
+<clitem>This is a CLITEM within a STEP3.</clitem><action>ction </action>
+<amplify>Amplify in a step 3</amplify>
+<step4>
+<clitem>This is a CLITEM within a STEP4.</clitem><action>Action</action>
+<amplify>Amplify in a step 4.</amplify>
+</step4>
+<step4>
+<clitem>This is a CLITEM within a STEP4.</clitem><action>Action</action>
+<amplify>Amplify in a step 4.</amplify>
+</step4>
+</step3>
+</step2>
+</step1>
+</subpara2>
+</subpara1>
+</para0>
+</phase>
+<phase>
+<para0><title>Phase 2 Para0</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. </para>
+<subpara1><title>Interior Inspection</title><para>This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<note>
+<para>This is PARA within a NOTE. This is PARA within a NOTE. This
+is PARA within a NOTE. This is PARA within a NOTE. This is PARA within
+a NOTE. </para>
+</note>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement. This is an AMPLIFY statement.
+This is an AMPLIFY statement. This is an AMPLIFY statement. </amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement statement. This is an AMPLIFY
+statement. This is an AMPLIFY statement.</amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. This is a CLITEM within a
+STEP1. </clitem><action>Action</action>
+</step1>
+<subpara2><para>This is a PARA within a SUBPARA2. This is a PARA within
+a SUBPARA2. This is a PARA within a SUBPARA2. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+</subpara2>
+</subpara1>
+<subpara1><title>Second Subpara1</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara2><title>Second Subpara2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara3><title>Second Subpara3</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document.</para>
+<subpara4><title>Second Subpara4</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document.</para>
+<subpara5><title>Second Subpara5</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara6><title>Second Subpara6</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara7><title>Second Subpara7</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara8><title>Second Subpara8</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+</phase>
+<phase>
+<para0><title>Phase 3 Para0</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. </para>
+<subpara1><title>Interior Inspection</title><para>This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<note>
+<para>This is PARA within a NOTE. This is PARA within a NOTE. This
+is PARA within a NOTE. This is PARA within a NOTE. This is PARA within
+a NOTE. </para>
+</note>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement. This is an AMPLIFY statement.
+This is an AMPLIFY statement. This is an AMPLIFY statement. </amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement statement. This is an AMPLIFY
+statement. This is an AMPLIFY statement.</amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. This is a CLITEM within a
+STEP1. </clitem><action>Action</action>
+</step1>
+<subpara2><para>This is a PARA within a SUBPARA2. This is a PARA within
+a SUBPARA2. This is a PARA within a SUBPARA2. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+</subpara2>
+</subpara1>
+<subpara1><title>Second Subpara1</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara2><title>Second Subpara2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara3><title>Second Subpara3</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document.</para>
+<subpara4><title>Second Subpara4</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document.</para>
+<subpara5><title>Second Subpara5</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara6><title>Second Subpara6</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara7><title>Second Subpara7</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara8><title>Second Subpara8</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+</phase>
+</section>
+</chapter><chapter crewposition="lm">
+<title>Load Master's Acceptance/Functional check flight Procedures</title>
+<section>
+<title>Load Master SECTION 1</title>
+<para0><title>Cargo Compartment</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. This is a PARA within a PARA0. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY within a STEP1 . This is an AMPLIFY within
+a STEP1 . </amplify>
+<warning>
+<para>This is a PARA within a WARNING. This is a PARA within a WARNING.
+This is a PARA within a WARNING. This is a PARA within a WARNING.
+This is a PARA within a WARNING. </para>
+</warning>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY within a STEP1 . This is an AMPLIFY within
+a STEP1 . </amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<warning>
+<para>This is a PARA within a WARNING. This is a PARA within a WARNING.
+This is a PARA within a WARNING. This is a PARA within a WARNING.
+This is a PARA within a WARNING. </para>
+</warning>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+</para0>
+<table frame="none" colsep="0" pgwide="0">
+<title>Sample Table Title</title><tgroup cols="2"><colspec colname="col1">
+<colspec colname="col2"><thead>
+<row>
+<entry>Column 1 header</entry>
+<entry>Column 2 header</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>Column1, row 1</entry>
+<entry>Column2, row 1</entry>
+</row>
+<row>
+<entry>Column1, row 2</entry>
+<entry>Column2, row 2</entry>
+</row>
+<row>
+<entry>Column1, row 3</entry>
+<entry>Column2, row 3</entry>
+</row>
+<row>
+<entry>Column1, row 4</entry>
+<entry>Column2, row 4</entry>
+</row>
+<row>
+<entry>Column1, row 5</entry>
+<entry>Column2, row 5</entry>
+</row>
+</tbody></tgroup></table>
+</section>
+<section>
+<title>Load Master Section 2</title>
+<para0><title>Cargo Compartment</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. This is a PARA within a PARA0. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY within a STEP1.</amplify>
+<warning>
+<para>This is a PARA within a WARNING. This is a PARA within a WARNING.
+This is a PARA within a WARNING. This is a PARA within a WARNING.
+This is a PARA within a WARNING. </para>
+</warning>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY within a STEP1.</amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<warning>
+<para>This is a PARA within a WARNING. This is a PARA within a WARNING.
+This is a PARA within a WARNING. This is a PARA within a WARNING.
+This is a PARA within a WARNING. </para>
+</warning>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. <graphic
+boardno="vapor" reprowid="5.5in" reprodep="7.5in" hplace="center"></amplify>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1.</amplify>
+</step2>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1.</amplify>
+</step2>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<step3>
+<clitem>This is a CLITEM within a STEP3.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP3. </amplify>
+</step3>
+<step3>
+<clitem>This is a CLITEM within a STEP3.</clitem><action>ction </action>
+<amplify>Amplify in a step 3</amplify>
+<step4>
+<clitem>This is a CLITEM within a STEP4.</clitem><action>Action</action>
+<amplify>Amplify in a step 4.</amplify>
+</step4>
+<step4>
+<clitem>This is a CLITEM within a STEP4.</clitem><action>Action</action>
+<amplify>Amplify in a step 4.</amplify>
+</step4>
+</step3>
+</step2>
+</step1>
+<subpara1><title>Second Subpara1</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara2><title>Second Subpara2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara3><title>Second Subpara3</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+<subpara4><title>Second Subpara4</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+<subpara5><title>Second Subpara5</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara6><title>Second Subpara6</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara7><title>Second Subpara7</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara8><title>Second Subpara8</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+</section>
+<section>
+<title>Load Master Section 3</title>
+<phase>
+<para0><title>Phase 1 Para0</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. </para>
+<subpara1><title>Interior Inspection</title><para>This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<note>
+<para>This is PARA within a NOTE. This is PARA within a NOTE. This
+is PARA within a NOTE. This is PARA within a NOTE. This is PARA within
+a NOTE. </para>
+</note>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement. This is an AMPLIFY statement.
+This is an AMPLIFY statement. This is an AMPLIFY statement. </amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement statement. This is an AMPLIFY
+statement. This is an AMPLIFY statement.</amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. This is a CLITEM within a
+STEP1. </clitem><action>Action</action>
+</step1>
+<subpara2><para>This is a PARA within a SUBPARA2. This is a PARA within
+a SUBPARA2. This is a PARA within a SUBPARA2. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1. <graphic
+boardno="vapor" reprowid="5.5in" reprodep="7.5in" hplace="center"></amplify>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1.
+.</amplify>
+</step2>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP1. This is an AMPLIFY
+statement within a STEP1. This is an AMPLIFY statement within a STEP1.
+.</amplify>
+</step2>
+<step2>
+<clitem>This is a CLITEM within a STEP2.</clitem><action>Action</action>
+<step3>
+<clitem>This is a CLITEM within a STEP3.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement within a STEP3. This is an AMPLIFY
+statement within a STEP3. This is an AMPLIFY statement within a STEP3.
+This is an AMPLIFY statement within a STEP3. </amplify>
+</step3>
+<step3>
+<clitem>This is a CLITEM within a STEP3.</clitem><action>ction </action>
+<amplify>Amplify in a step 3</amplify>
+<step4>
+<clitem>This is a CLITEM within a STEP4.</clitem><action>Action</action>
+<amplify>Amplify in a step 4.</amplify>
+</step4>
+<step4>
+<clitem>This is a CLITEM within a STEP4.</clitem><action>Action</action>
+<amplify>Amplify in a step 4.</amplify>
+</step4>
+</step3>
+</step2>
+</step1>
+</subpara2>
+</subpara1>
+</para0>
+</phase>
+<phase>
+<para0><title>Phase 2 Para0</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. </para>
+<subpara1><title>Interior Inspection</title><para>This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<note>
+<para>This is PARA within a NOTE. This is PARA within a NOTE. This
+is PARA within a NOTE. This is PARA within a NOTE. This is PARA within
+a NOTE. </para>
+</note>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement. This is an AMPLIFY statement.
+This is an AMPLIFY statement. This is an AMPLIFY statement. </amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement statement. This is an AMPLIFY
+statement. This is an AMPLIFY statement.</amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. This is a CLITEM within a
+STEP1. </clitem><action>Action</action>
+</step1>
+<subpara2><para>This is a PARA within a SUBPARA2. This is a PARA within
+a SUBPARA2. This is a PARA within a SUBPARA2. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+</subpara2>
+</subpara1>
+<subpara1><title>Second Subpara1</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara2><title>Second Subpara2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara3><title>Second Subpara3</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document.</para>
+<subpara4><title>Second Subpara4</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document.</para>
+<subpara5><title>Second Subpara5</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara6><title>Second Subpara6</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara7><title>Second Subpara7</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara8><title>Second Subpara8</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+</phase>
+<phase>
+<para0><title>Phase 3 Para0</title>
+<para>This is a PARA within a PARA0. This is a PARA within a PARA0.
+This is a PARA within a PARA0. This is a PARA within a PARA0. This
+is a PARA within a PARA0. </para>
+<subpara1><title>Interior Inspection</title><para>This is a PARA within
+a SUBPARA1. This is a PARA within a SUBPARA1. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+</step1>
+<step1>
+<note>
+<para>This is PARA within a NOTE. This is PARA within a NOTE. This
+is PARA within a NOTE. This is PARA within a NOTE. This is PARA within
+a NOTE. </para>
+</note>
+<clitem>This is a CLITEM within a STEP1. </clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement. This is an AMPLIFY statement.
+This is an AMPLIFY statement. This is an AMPLIFY statement. </amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+<amplify>This is an AMPLIFY statement statement. This is an AMPLIFY
+statement. This is an AMPLIFY statement.</amplify>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1. This is a CLITEM within a
+STEP1. </clitem><action>Action</action>
+</step1>
+<subpara2><para>This is a PARA within a SUBPARA2. This is a PARA within
+a SUBPARA2. This is a PARA within a SUBPARA2. </para>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+<step1>
+<clitem>This is a CLITEM within a STEP1.</clitem><action>Action</action>
+</step1>
+</subpara2>
+</subpara1>
+<subpara1><title>Second Subpara1</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara2><title>Second Subpara2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara3><title>Second Subpara3</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document.</para>
+<subpara4><title>Second Subpara4</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document.</para>
+<subpara5><title>Second Subpara5</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara6><title>Second Subpara6</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara7><title>Second Subpara7</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara8><title>Second Subpara8</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+</phase>
+</section>
+</chapter></body></docfcf></doc>
+<?Pub *0000079854 0>

@@ -1,0 +1,39 @@
+Log filename: "C:\custom\doctypes\38784STD-BV8a\38784STD-BV8a.log"
+Document type compile date: Tue Jul 30 13:28:49 2019
+Version "Servigistics Arbortext Editor 7.0 M080 August 24, 2017"   R70M080-236
+Platform: Windows 10 Enterprise
+
+Host: 260-SUBELL   Login: subell
+
+Catalog path: "C:\Program Files\PTC\Arbortext Editor\application\com.ptc.arbortext.techinfo\doctypes;C:\custom\doctypes;C:\Program Files\PTC\Arbortext Editor\adapters\com.ptc.prowt.arbortext\doctypes;C:\Program Files\PTC\Arbortext Editor\doctypes;C:\Program Files\PTC\Arbortext Editor\doctypes;"
+
+
+Update (.ptd file written) or Validate (.ptd file not written): Update
+XML or SGML Application: SGML
+Force Compile: Yes
+Top level element: doc
+Public ID: (not specified)
+DTD Path: "C:\custom\doctypes\38784STD-BV8a\38784STD-BV8a.dtd"
+PTD Path: "C:\custom\doctypes\38784STD-BV8a\38784STD-BV8a.ptd"
+ATI Tag Path: "C:\Program Files\PTC\Arbortext Editor\lib\dtgen\atitag.cf"
+Message File Path: (not specified)
+SGML Declaration Path: (not specified) using "C:\custom\doctypes\38784STD-BV8a"
+
+Entity Name: %charent
+Public Identifier: "-//JCALS//ENTITIES supported ISO entities v1//EN"
+System Identifier: (none)
+Resolved Path: "NOT RESOLVED"
+Catalog File: (unknown)
+
+Entity Name: %eps-big
+Public Identifier: "-//JCALS//ENTITIES big EPS symbols v1//EN"
+System Identifier: (none)
+Resolved Path: "NOT RESOLVED"
+Catalog File: (unknown)
+
+Entity Name: %eps-sml
+Public Identifier: "-//JCALS//ENTITIES small EPS symbols v1//EN"
+System Identifier: (none)
+Resolved Path: "NOT RESOLVED"
+Catalog File: (unknown)
+

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--<!DOCTYPE frnt [
+-->
+<!--
+PUBLIC "-//USA-DOD//DTD front 3001 Part 1 Draft XML V307 08242016//EN"
+-->
+
+<!--   DTD for the Front Matter of Assembled NAVAIR Work Package Technical Manuals
+-->
+<!-- 
+Define parameter entities containing content models for the Information Modules and Common Elements
+-->
+<!ENTITY % pointpage "| start_ripple_page | end_ripple_pages | pgbrk">
+
+<!ENTITY % common.ent PUBLIC "-//USA-DOD//ENTITIES 3001 Common Draft XML V307 08242016//EN" "Common.ent">
+
+<!ENTITY % ibpdata.ent PUBLIC "-//USA-DOD//ENTITIES 3001 IPB DATA Draft XML V307 08242016//EN" "Ipbdata.ent">
+
+<!ENTITY % front.ent PUBLIC "-//USA-DOD//ELEMENTS FRONT MATTER 3001 Part 1 Draft XML V307 08242016//EN" "Front.ent">
+
+%common.ent;
+
+%ibpdata.ent;
+
+%front.ent;
+<!--
+]>
+-->

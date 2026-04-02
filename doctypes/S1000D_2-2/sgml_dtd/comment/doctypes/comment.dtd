@@ -1,0 +1,20 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                SGML Document Type Definition                       *
+    *                          Commenting                                *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE comment PUBLIC
+ "-//S1000D//DTD S1000D Commenting 20050501//EN"
+ [
+ ]>

@@ -1,0 +1,222 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. New public identifier.                                          *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % BREX                                                    *
+    *   PUBLIC "-//S1000D//ELEMENTS BREX Breakdown 20050501//EN" >       *
+    * %BREX;                                                             *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing:- brex.     *
+    ********************************************************************** -->
+<!ENTITY % CONTENT "brex" >
+
+
+<!--**********************************************************************
+    * Define Element brex (Business Rules Exchange) containing:-         *
+    **********************************************************************
+    * The Business Rules exchange element contains all the rules that    *
+    * apply regarding structural markup.                                 *
+    **********************************************************************
+    *   contextrules - Mandatory Repeatable Structural Related Rules     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Attribute Definition List stored in entity %bodyatt;.            *
+    ********************************************************************** -->
+<!ELEMENT brex - - (contextrules+) >
+<!ATTLIST brex
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element contextrules (Context for Rules) containing:-       *
+    **********************************************************************
+    * The Context Rules element contains all the rules that apply to a   *
+    * specified context (DTD/Schema). Context may also be general.       *
+    **********************************************************************
+    *   structrules   - Optional  Single      Structural Related Rules   *
+    *   notationrules - Optional  Single      Notation Rules             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   context  - CDATA    - IMPLIED      - Applicable rules context    *
+    *                                        given as SGML Public Ident  *
+    *                           not given  - Rules apply to all DTDs     *
+    *   Attribute Definition List stored in entity %bodyatt;.            *
+    ********************************************************************** -->
+<!ELEMENT contextrules - - (structrules?, notationrules?) >
+<!ATTLIST contextrules
+	     context CDATA #IMPLIED
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element structrules (Structure Rules) containing:-          *
+    **********************************************************************
+    * The Structure Rules element contains all the rules that apply      *
+    * regarding structural markup.                                       *
+    **********************************************************************
+    *   objrule  - Mandatory Repeatable  Rules for a structure object    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Attribute Definition List stored in entity %bodyatt;.            *
+    ********************************************************************** -->
+<!ELEMENT structrules - - (objrule+) >
+<!ATTLIST structrules
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element notationrules (Notation Rules) containing:-         *
+    **********************************************************************
+    * The Notation Rules element contains all the rules that apply       *
+    * regarding use of NOTATIONs within a project.                       *
+    * Note that a project should not extend the set of notations given   *
+    * by the specification!                                              *
+    **********************************************************************
+    *   notrule  - Mandatory Repeatable       Rules for a notation       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Attribute Definition List stored in entity %bodyatt;.            *
+    ********************************************************************** -->
+<!ELEMENT notationrules - - (notrule+) >
+<!ATTLIST notationrules
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element objrule (Rules for a Structure Object) containing:- *
+    **********************************************************************
+    * The Structure Object Rule element contains all the rules that      *
+    * apply to a specific markup entity, such as an element or attribute.*
+    **********************************************************************
+    *   objpath     - Mandatory Single      Object's identification      *
+    *   objuse      - Optional  Single      Object's intended usage      *
+    *   objval      - Optional  Repeatable  Object value specification   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Attribute Definition List stored in entity %bodyatt;.            *
+    ********************************************************************** -->
+<!ELEMENT objrule - - (objpath,objuse?,objval*) >
+<!ATTLIST objrule
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element notrule (Rules for a Notation) containing:-         *
+    **********************************************************************
+    * The Notation Rule element specifies if a notation must or mustn't  *
+    * be used within a project. Optionally, it can describe for what     *
+    * purpose a notation shall be used within a project.                 *
+    **********************************************************************
+    *   notname     - Mandatory Single      Name of notation concerned   *
+    *   objuse      - Optional  Single      Description of how its used  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Attribute Definition List stored in entity %bodyatt;.            *
+    ********************************************************************** -->
+<!ELEMENT notrule - -  (notname,objuse?) >
+<!ATTLIST notrule
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element objpath (Structural Object Path) containing:-       *
+    **********************************************************************
+    * The Structural Object Path element specifies the location of the   *
+    * markup entity concerned by the rules specified in elements         *
+    * objuse and objvals.                                                *
+    * The location should be specified in terms of an Xpath expression   *
+    * specifying the element or attribute name concerned.                *
+    **********************************************************************
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   objappl  - NUMBER  - IMPLIED   - specifying which objects to be  *
+    *                                    used or not                     *
+    *              - "1"     - Yes       - mandatory                     *
+    *              - "0"     - No        - not to be used                *
+    *   Attribute Definition List stored in entity %bodyatt;.            *
+    ********************************************************************** -->
+<!ELEMENT objpath - - (#PCDATA) >
+<!ATTLIST objpath
+	     objappl %yesorno; #IMPLIED 
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element objuse (Object Use Description) containing:-        *
+    **********************************************************************
+    * The Markup Use descr. element contains the verbal specification    *
+    * of for what purpose the corresponding markup entity is used.       *
+    * This spcification is particularly useful when a project applies a  *
+    * specific use of the entity, ie restricted with respect to the spec.*
+    **********************************************************************
+    *   Definition stored in entity %SPARCON;.                           *
+    *   refs      - Optional  Single      contains refdm, reftp.         *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Attribute Definition List stored in entity %bodyatt;.            *
+    ********************************************************************** -->
+<!ELEMENT objuse - - (%SPARCON;, refs?) >
+<!ATTLIST objuse
+             %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element objval (Object Value) containing:-                  *
+    **********************************************************************
+    * The objval element contains a single value or a range of values    *
+    * which are valid for the markup entity concerned (objpath).         *
+    *====================================================================*
+    *   Definition stored in entity %SPARCON;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   valtype  - Declared - IMPLIED   - Value type:                    *
+    *              - "single"             - Single value                 *
+    *              - "range"              - Range from val1 to val2      *
+    *   val1     - CDATA    - IMPLIED   - if "single", the value;        *
+    *                                     if "range" incl from           *
+    *   val2     - CDATA    - IMPLIED   - if "range", incl to            *
+    *   Attribute Definition List stored in entity %bodyatt;.            *
+    ********************************************************************** -->
+<!ELEMENT objval  - - (%SPARCON;) >
+<!ATTLIST objval
+	     valtype  (single,range) #IMPLIED
+	     val1     CDATA          #IMPLIED
+	     val2     CDATA          #IMPLIED
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element notname (Notation Name) containing:-                *
+    **********************************************************************
+    * The Notation Name element specifies a NOTATION that is             *
+    * subject of certain business rules (eg GIF might be prohibited)     *
+    **********************************************************************
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   notappl  - NUMBER  - IMPLIED   - specifying if the notation is   *
+    *                                    applied, where                  *
+    *              - "1"     - Yes       - Notation is allowed within    *
+    *                                      the project                   *
+    *              - "0"     - No        - Notation is not allowed for   *
+    *                                      some reason                   *
+    *   Attribute Definition List stored in entity %bodyatt;.            *
+    ********************************************************************** -->
+<!ELEMENT notname - - (#PCDATA) >
+<!ATTLIST notname
+	     notappl %yesorno; #IMPLIED 
+             %bodyatt; >

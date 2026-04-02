@@ -1,0 +1,61 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                 XML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. New public identifier.                                          *
+    * 2. CPF 2002-12FR: New element pmc introduced to allow for          *
+    *                   references to publication modules.               *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTPMC PUBLIC                                           *
+    * "-//S1000D//ELEMENTS Publication Module Code Breakdown             *
+    *             20030531//EN//XML" "pmc.ent">                          *
+    * %EXTPMC;                                                           *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Element pmc (Publication Module Code) containing:-          *
+    *   modelic  - Mandatory Single     contains Parsed Character Data.  *
+    *   pmissuer - Mandatory Single     contains Parsed Character Data.  *
+    *   pmnumber - Mandatory Single     contains Parsed Character Data.  *
+    *   pmvolume - Mandatory Single     contains Parsed Character Data.  * 
+    ********************************************************************** -->
+<!ELEMENT pmc   (modelic, pmissuer, pmnumber, pmvolume) >
+
+
+<!--**********************************************************************
+    * Define Element pmissuer (5-character NCAGE Code of Issuing         *
+    *                          Authority (YYYYY))                        *
+    * containing:-                                                       *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+<!ELEMENT pmissuer   (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element pmnumber (5-digit Publication Module Number (XXXXX) *
+    *                          starting at 00001)                        *
+    * containing:-                                                       *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+<!ELEMENT pmnumber   (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element pmvolume (2-digit sequential Publication Volume     *
+    *                          Number (NN), default is 00 for a single   *
+    *                          volume publication)                       *
+    * containing:-                                                       *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+<!ELEMENT pmvolume   (#PCDATA) >
+
+
+<!--** End of XML EXTPMC Entity **-->

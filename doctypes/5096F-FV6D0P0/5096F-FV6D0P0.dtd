@@ -1,0 +1,201 @@
+
+<!-- *****  START OF FILE ***** -->
+<!--  **************************************************************************
+      SPECIAL NOTE: 
+	This DTD was modified for the Arbortext implementation.
+      Changes:
+      20040220 - removed 38784 subset in favor of an entity to 38784 directory
+      ********************************************************************** -->
+
+<!-- 
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  DTD TITLE:	Checklist
+	+
+	+  SPECIFICATION NUMBER:	MIL-PRF-5096F
+	+
+	+  SPECIFICATION POC:	Bill Garrity
+	+
+	+  DOCUMENT TYPE DEFINITION (DTD):	5096F-FV6D0P0
+	+
+	+  MIL-STANDARD VERSION:	38784STD-BV6
+	+
+	+  LAST MODIFICATION:	31 December 2001
+	+	
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+  This file is made available to provide the user with a digital 
+	+  representation of the DTD found in:  Appendix F of MIL-PRF-5096F
+	+  This file is incomplete without MIL-PRF-5096F.
+	+
+	+  The following set of declarations may be referred to by using a
+	+  public entity as follows:
+	+
+	+  <!ENTITY % m5096cl PUBLIC "-//USA-DOD//DTD 5096F-FV6D0P0//EN" >
+	+  %m5096cl;
+	+
+	+  NOTE: In order to parse the following DTD subset alone, append
+	+  the following statement to the beginning of the file:
+	+
+	+		<!DOCTYPE doc [
+	+
+	+		and the associated  ]>  to the end of the file.
+	+
+	+  NOTE: The start and end of this file are marked with notations.
+	+  	 If these notations are not present, the file may not be complete!
+	+
+	+  IMPORTANT NOTE:  The emergency borders do not print correctly at
+	+		    this time.  
+	+
+	+  ADDITIONAL NOTE: The "line" element is used as a newline character.
+	+	To get the proper output, use the tags like this: <line></line> 
+	+	where you want the line to break, otherwise the output gets an 
+	+	extra blank line.  np, 23 Feb 00
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+	AUTHORED BY: Stephen Raney, TMSS, AF IDE PO
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+	MODIFICATIONS:
+	+
+	+	CCB #: None.
+	+	Description:  Updated to MIL-STD-38784 Version 6.
+	+	sr, 31- December - 2001
+	+	
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+                      ENTITY DECLARATIONS
+-->
+
+<!ENTITY % secur "security (u | c | s | n) 'n'">
+
+<!ENTITY % verified
+"verdate CDATA #IMPLIED
+verrem CDATA #IMPLIED
+verstatus (unver | ver) 'unver'" >
+
+<!ENTITY % yesorno "NUMBER" >
+
+<!-- Arbortext 20030116: SFORT 
+     verstatpg attributes changed from verified | unverified to ver | unver to match 38784 -->
+<!ENTITY % docatt
+"docid CDATA #IMPLIED
+docstat (revision | change | prelim | draft | formal) 'prelim'
+verstatpg (ver | unver) 'unver'
+cover %yesorno; '0'
+%verified;">  
+
+<!ENTITY % itemid
+"unit CDATA #IMPLIED
+module CDATA #IMPLIED
+lru CDATA #IMPLIED
+compon CDATA #IMPLIED
+partno CDATA #IMPLIED
+refdes CDATA #IMPLIED" >
+
+<!ENTITY % content
+"skilltrk NMTOKENS #IMPLIED
+contype (desc | proc) #IMPLIED
+assocfig IDREFS #IMPLIED
+assoctab IDREFS #IMPLIED" >
+
+<!ENTITY % db "%itemid; %content;" >
+
+<!ENTITY % delstat    "delete  | real | reserve | NA" >
+<!ENTITY % status     "empty | deleted | reserved | notapp" >
+
+<!ENTITY % chgatt
+"deltype (%delstat;) #IMPLIED
+inschlvl NMTOKEN #IMPLIED
+delchlvl NMTOKEN #IMPLIED
+status  (%status;) #IMPLIED
+revchg %yesorno; '0'" > 
+
+<!ENTITY % bodyatt
+"label CDATA #IMPLIED
+sssn CDATA #IMPLIED
+indexid  CDATA  #IMPLIED
+%chgatt;
+%db;" >
+
+
+<!ENTITY % frnt "(idinfo, lep, verstat?, contents, illuslist?, tablelist?,
+foreword, safesum?)">
+
+<!ENTITY % titles "(title)">
+
+<!ENTITY % chapatt
+"pageltr CDATA #IMPLIED
+emergency %yesorno; '0'
+id ID #IMPLIED
+%secur;
+%bodyatt;" >
+
+<!ENTITY % chap "(%titles;, task+)" >
+
+<!ENTITY % bodyele "(chapter+ | task+)" >
+
+<!ENTITY % stepcon "(warning*, caution?, note?, (clitem, action?), note?)" >
+
+<!ENTITY % stepatt
+"label CDATA #IMPLIED
+sssn CDATA #IMPLIED
+id ID #IMPLIED
+esds %yesorno; '0'
+nsp %yesorno; '0'
+fcp %yesorno; '0'
+hcp %yesorno; '0'
+hci %yesorno; '0'
+ocp %yesorno; '0'
+oci %yesorno; '0'
+applicref IDREFS #IMPLIED
+%verified;
+%chgatt;">
+ <!ENTITY % doc "doccl">
+
+<!-- ATI added entity to 38784 -->
+<!ENTITY % m38784       PUBLIC "-//USA-DOD//DTD 38784STD-BV7//EN" >
+%m38784;
+
+<!ENTITY forewordpara "This checklist is a step by step guide in abbreviated
+form for use as a reference to insure accomplishment of selected tasks by a
+predetermined sequence procedure. The intent of this checklist is to eliminate
+the probability of omission of a step in the accomplishment of the intended
+task. The procedures contained herein are presented in the shortest practical
+form for use by qualified personnel and are not intended to provide full
+technical instructions. This checklist provides, in an abbreviated form,
+procedures for (appropriate tasks, inspections, etc.). These procedures are
+derived from, but do not replace, the detailed procedures contained in
+Technical Orders (TO). When malfunctions occur reference to the TO shall be
+made." >
+
+<!-- ELEMENT and ATTRIBUTE LIST DECLARATIONS -->
+
+<!ENTITY % taskatt "%para0att;,
+	special NOTOKEN #IMPLIED" >
+
+<!-- ATI 20040220:  Added %chgatt; -->
+<!ELEMENT action     - o  (%text;) >
+<!ATTLIST action     %secur; 
+                     %chgatt; >
+
+<!-- ATI 20040220:  Added %chgatt; -->
+<!ELEMENT clitem     - o  (%text;) >
+<!ATTLIST clitem     %secur; 
+                     %chgatt; >
+
+<!ELEMENT doccl     - -  (front, body)     +(pgbrk | brk | subjinfo |
+		    line | modreq | location) >
+<!ATTLIST doccl     service %service; 'AF'
+		    pagesize (5x8 | 8.5x11) "5x8"
+                    %docatt;
+                    %secur; >
+
+<!ELEMENT task     - o  ((%titles;)?, warning*, caution?, note?, para*, 
+			(step1, step1+)?) >
+<!ATTLIST task     %para0att;
+                   special NMTOKENS #IMPLIED
+                   nr NMTOKENS #IMPLIED >
+
+<!-- **************************** END OF FILE **************************** -->

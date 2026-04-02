@@ -1,0 +1,342 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                    Publication Module (PM)                         *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    *                                                                    *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. New Publication Module DTD Public Identifier                    *
+    *                                                                    *
+    *====================================================================*
+    * The following DOCTYPE statement may be used to call this set of    *
+    * declarations:-                                                     *
+    *                                                                    *
+    * <!DOCTYPE pm PUBLIC                                                *
+    * "-//S1000D//DTD Publication Module 20030531//EN" []>               *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %PMCOMPS; (Publication Module Components)            *
+    * containing:- the formal public identifier for the component        * 
+    * definitions.                                                       *
+    ********************************************************************** -->
+<!ENTITY % PMCOMPS PUBLIC 
+ "-//S1000D//ENTITIES Publication Module Component Definitions 20030531//EN" >
+
+<!--**********************************************************************
+    * Call the Components Definition Public Text. The formal public      *
+    * identifier is stored in the entity %PMCOMPS;                       *
+    ********************************************************************** -->
+%PMCOMPS;
+  
+
+<!--**********************************************************************
+    * Define Element pm (Publication Module) containing:-                *
+    *   idstatus  - Mandatory   Single      contains pmaddres, pmstatus. *
+    *   content   - Mandatory   Single      contains pmentry.            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED  - Unique identifier of element.    *
+    ********************************************************************** -->
+<!ELEMENT pm 	     - - (idstatus, content) >
+<!ATTLIST pm
+	  id            ID      #IMPLIED >
+
+
+<!--**********************************************************************
+    * Define Element idstatus (Identification and Status Section)        *
+    *  containing:-                                                      *
+    *   pmaddres  - Mandatory   Single      contains pmc, pmtitle, issno,*
+    *                                                issdate, language.  *
+    *   pmstatus  - Mandatory   Single      contains security, datarest, *
+    *                                                rpc, orig, effect,  *
+    *                                                media, qa, rfu,     *
+    *                                                remarks.            *
+    ********************************************************************** -->
+<!ELEMENT idstatus   - - (pmaddres, pmstatus) >
+
+
+<!--**********************************************************************
+    * Define Element pmaddres (Publication Module Address) containing:-  *
+    *   pmc       - Mandatory   Single    contains modelic, pmissuer     *
+    *                                              pmnumber, pmvolume.   *
+    *   pmtitle   - Mandatory   Single    contains Parsed Character Data.*
+    *   issno     - Mandatory   Single    contains No Other Tags.        *
+    *   issdate   - Mandatory   Single    contains No Other Tags.        *
+    *   language  - Optional    Single    contains No Other Tags.        *
+    ********************************************************************** -->
+<!ELEMENT pmaddres   - - (pmc, pmtitle, issno, issdate, language?) >
+
+
+<!--**********************************************************************
+    * Define Element pmtitle (Publication Module Title) containing:-     *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+<!ELEMENT pmtitle  - - (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element pmstatus (Publication Module Status) containing:-   *
+    *   security  - Mandatory Single      contains No Other Tags.        *
+    *   datarest  - Optional  Single      contains instruct, inform.     *
+    *   rpc       - Mandatory Single      contains Parsed Character Data.*
+    *   orig      - Optional  Single      contains Parsed Character Data.*
+    *   effect    - Optional  Single      contains Parsed Character Data.*
+    *   media     - Optional  Repeatable  contains No Other Tags.        *
+    *   qa        - Mandatory Single      contains unverif, firstver,    *
+    *                                              secver.               *
+    *====================================================================*
+    * Optional Repeatable Group                                          *
+    *====================================================================*
+    *  sbc      - Mandatory Single      contains Definition stored in    *
+    *                                            entity %SBC;.           *
+    * or                                                                 *
+    *  fic      - Mandatory Single      contains Definition stored in    *
+    *                                            entity %FIC;.           *
+    *====================================================================*
+    *   rfu       - Optional    Single   contains Definition stored in   *
+    *                                             entity %SPAR;.         *
+    *   remarks   - Optional    Single   contains Definition stored in   *
+    *                                             entity %SPAR;.         *
+    ********************************************************************** -->
+<!ELEMENT pmstatus   - -  (security, datarest?, rpc, orig?, effect?, 
+                           media*, qa, (sbc|fic)*, rfu? ,remarks?) >
+
+
+<!--**********************************************************************
+    * Define Element orig (Originator) containing:-                      *
+    *   Parsed Character Data.                                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   origname - %ORGNAME - The name or NCAGE code of the Originator.  *
+    *   id       - ID       - IMPLIED - Unique identifier of Originator  *
+    ********************************************************************** -->
+<!ELEMENT orig     - O (#PCDATA) >
+<!ATTLIST orig
+            origname  %ORGNAME;  #IMPLIED
+            id        ID         #IMPLIED >
+
+
+<!--**********************************************************************
+    * Define Element effect (Effectivity) containing:-                   *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+<!ELEMENT effect - - (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element media (Distribution Media) containing:-             *
+    *   No Other Tags.                                                   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   type     - CDATA  - REQUIRED     Media type (CD-ROM, WEB URL,    *
+    *                                                PAPER, ...)         *
+    *   code     - CDATA  - REQUIRED     Media identification/label      *
+    *   volume   - CDATA  - IMPLIED      Media volume if required        *
+    *   location - CDATA  - IMPLIED      Media location if required      *
+    ********************************************************************** -->
+<!ELEMENT media  - - EMPTY  >
+<!ATTLIST media
+               type	CDATA    #REQUIRED 
+               code  	CDATA    #REQUIRED 
+               volume  	CDATA    #IMPLIED 
+               location CDATA    #IMPLIED  >
+
+
+<!--**********************************************************************
+    * Define Element qa (Quality Assurance Status) containing:-          *
+    *   unverif  - Mandatory Single     contains No Other Tags.          *
+    *  or                                                                *
+    *   firstver - Mandatory Single     contains No Other Tags.          *
+    *   secver   - Optional  Single     contains No Other Tags.          *
+    ********************************************************************** -->
+<!ELEMENT qa - O (unverif | (firstver, secver?)) >
+
+
+<!--**********************************************************************
+    * Define Element rfu (Reason For Update) containing:-                *
+    *   Definition stored in entity %SPAR;                               *
+    ********************************************************************** -->
+<!ELEMENT rfu - - (%SPAR;) >
+
+
+<!--**********************************************************************
+    * Define Element content (Publication Module Content) containing:-   *
+    *   pmentry   - Mandatory Repeatable  contains title, refpm, refextp,*
+    *                                              pmentry.              *
+    ********************************************************************** -->
+<!ELEMENT content  - -  (pmentry+) >
+
+
+<!--**********************************************************************
+    * Define Element pmentry (Publication Module Entry) containing:-     *
+    *   title     - Mandatory   Single   contains Parsed Character Data. *
+    *====================================================================*
+    *   Mandatory Repeatable Group                                       *
+    *====================================================================*
+    *   refdm     - Mandatory   Single   contains dmc, dmtitle, issno,   *
+    *                                             issdate, language.     *
+    *  or                                                                *
+    *   refpm     - Mandatory   Single   contains pmc, pmtitle, issno,   *
+    *                                             issdate, language,     *
+    *                                             security, rpc, media or*
+    *                                             Definition stored in   *
+    *                                             entity %XLINKEXT;.     *
+    *  or                                                                *
+    *   refextp   - Mandatory   Single   contains pubcode, pubtitle,     *
+    *                                             pubdate, security,     *
+    *                                             rpc, media or          *
+    *                                             Definition stored in   *
+    *                                             entity %XLINKEXT;.     *
+    *   or                                                               *
+    *    pmentry  - Mandatory   Single   contains title, refdm or refpm  *
+    *                                            or refexttp or pmentry. *
+    *====================================================================*
+    ********************************************************************** -->
+<!ELEMENT pmentry - O (title, (refdm | refpm | refextp | pmentry)+) >
+
+
+<!--**********************************************************************
+    * Define Element title (Title) containing:-                          *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+<!ELEMENT title     - O (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element refdm (Reference Data Module) containing:-          *
+    *   dmc      - Mandatory   Single   contains ave, agee.              *
+    *   dmtitle  - Optional    Single   contains techname, infoname.     *
+    *   issno    - Optional    Single   contains No Other Tags.          *
+    *   issdate  - Optional    Single   contains No Other Tags.          *
+    *   language - Optional    Single   contains No Other Tags.          *
+    ********************************************************************** -->
+<!ELEMENT refdm  - - (dmc, dmtitle?, issno?, issdate?, language?)  >
+
+
+<!--**********************************************************************
+    * Define Element refpm (Reference Publication Module) containing:-   *
+    *   pmc      - Mandatory   Single    contains modelic, pmissuer,     *
+    *                                             pmnumber, pmvolume.    *
+    *   pmtitle  - Optional  Single      contains Parsed Character Data. *
+    *   issno    - Optional  Single      contains No Other Tags.         *
+    *   issdate  - Optional  Single      contains No Other Tags.         *
+    *   language - Optional  Single      contains No Other Tags.         *
+    *   security - Optional  Single      contains No Other Tags.         *
+    *   rpc      - Optional  Single      contains No Other Tags.         *
+    *   media    - Optional  Repeatable  contains No Other Tags.         *
+   ********************************************************************** -->
+<!ELEMENT refpm  - - (pmc, pmtitle?, issno?, issdate?, language?, 
+                      security?, rpc?, media*) >
+
+
+<!--**********************************************************************
+    * Define Element refextp (Reference External Technical Publication)  *
+    *  containing:-                                                      *
+    *   pubcode  - Mandatory Single      contains Parsed Character Data. *
+    *   pubtitle - Optional  Single      contains Parsed Character Data. *
+    *   pubdate  - Optional  Single      contains No Other Tags.         *
+    *   security - Optional  Single      contains No Other Tags.         *
+    *   rpc      - Optional  Single      contains No Other Tags.         *
+    *   media    - Optional  Repeatable  contains No Other Tags.         *
+    ********************************************************************** -->
+<!ELEMENT refextp - - (pubcode, pubtitle?, pubdate?, security?, rpc?, 
+                       media*) >
+
+
+<!--**********************************************************************
+    * Define Element pubcode (Publication Code) containing:-             *
+    *   Parsed Character Data.                                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   pubcodsy - CDATA - IMPLIED - Publication coding system/scheme.   *
+    ********************************************************************** -->
+<!ELEMENT pubcode - - (#PCDATA) >
+<!ATTLIST pubcode
+               pubcodsy  CDATA    #IMPLIED  >
+
+
+<!--**********************************************************************
+    * Define Element pubtitle (Publication Title) containing:-           *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+<!ELEMENT pubtitle - - (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element pubdate (Publication Date) containing:-             *
+    *   No Other Tags.                                                   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %DATE;.                              *
+    ********************************************************************** -->
+<!ELEMENT pubdate - -  EMPTY  >
+<!ATTLIST pubdate  %DATE; >
+              
+               
+<!--**********************************************************************
+    * Define Element unverif (Unverified) containing:-                   *
+    *   No Other Tags.                                                   *
+    ********************************************************************** -->
+<!ELEMENT unverif - -  EMPTY  >
+
+
+<!--**********************************************************************
+    * Define Element firstver (First Verification) containing:-          *
+    *   No Other Tags.                                                   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type   - Declared - REQUIRED - Type of verification performed.    *
+    *            - "tabtop"   - Performed with only designs and drawings.*
+    *            - "onobject" - Performed with actual piece of equipment.*
+    *            - "ttandoo"  - Performed by both the above ways.        *
+    ********************************************************************** -->
+<!ELEMENT firstver  - - EMPTY  >
+<!ATTLIST firstver
+               type (tabtop | onobject | ttandoo)   #REQUIRED  >
+
+
+<!--**********************************************************************
+    * Define Element secver (Second Verification) containing:-           *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type   - Declared - REQUIRED - Type of verification performed.    *
+    *            - "tabtop"   - Performed with only designs and drawings.*
+    *            - "onobject" - Performed with actual piece of equipment.*
+    *            - "ttandoo"  - Performed by both the above ways.        *
+    ********************************************************************** -->
+<!ELEMENT secver  - - EMPTY  >
+<!ATTLIST secver
+               type (tabtop | onobject | ttandoo)   #REQUIRED  >
+
+
+<!--**********************************************************************
+    * Define Element sbc (System Breakdown Code) containing:-            *
+    *   Definition stored in entity %SBC;                                *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED  - Unique identifier of system      *
+    *                                   breakdown code                   *
+    ********************************************************************** -->
+<!ELEMENT sbc - O (%SBC;) >
+<!ATTLIST sbc
+            id   ID  #IMPLIED >
+
+
+<!--**********************************************************************
+    * Define Element fic (Functional Item Code) containing:-             *
+    *   Definition stored in entity %FIC;                                *
+    ********************************************************************** -->
+<!ELEMENT fic - O (%FIC;) >
+
+
+<!--** End of PM DTD **-->

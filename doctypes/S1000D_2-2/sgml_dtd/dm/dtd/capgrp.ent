@@ -1,0 +1,262 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2002-11FR and CPF 2004-06SE:                                *
+    *                   Change content model of element <reftp>.         *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % CAPGRP                                                  *
+    *   PUBLIC "-//S1000D//ELEMENTS Caption Group 20050501//EN" >        *
+    * %CAPGRP;                                                           *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element capgrp (Caption Group) containing:-                 *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  colspec  - Optional   Repeatable  contains No Other Tags.         *
+    *  spanspec - Optional   Repeatable  contains No Other Tags.         *
+    *  capbody  - Mandatory  Single      contains caprow.                *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  cols     - NUMBER   - REQUIRED - Number of columns in caption     *
+    *                                    group                           *
+    *  align    - Declared - "left"   - Align Caption Group              *
+    *           - "left"   - Quad (flush) left.                          *
+    *           - "center" - Centered.                                   *
+    *           - "right"  - Quad (flush) right.                         *
+    *  toctype  - Declared - "none"   - Identifies the appropriate Table *
+    *                                   of Contents                      *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    *  colsep   - NUMBER   - IMPLIED  - Internal Column rulings.         *
+    *           - "0"      - Do Not display internal column rulings.     *
+    *           - "1"      - Display internal column rulings.            *
+    *  rowsep   - NUMBER   - IMPLIED  - Internal Row rulings.            *
+    *           - "0"      - Do Not display internal row rulings.        *
+    *           - "1"      - Display internal row rulings.               *
+    ********************************************************************** -->
+
+<!ELEMENT capgrp - - (applic?, colspec*, spanspec*, capbody) >
+<!ATTLIST capgrp
+            cols   NUMBER  #REQUIRED
+            align (left | right | center) "left"
+            toctype (none | redtoc | comdtoc | ambertoc | greentoc | yelowtoc)
+             "none"
+            %bodyatt;
+            colsep %yesorno; #IMPLIED
+            rowsep %yesorno; #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element capbody (Caption Group Body) containing:-           *
+    *   applic   - Optional   Single      contains type, model.          *
+    *   caprow   - Mandatory  Repeatable  contains capentry.             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  valign   - Declared - "top"    - Text vertical positioning within *
+    *                                 - the entries.                     *
+    *           - "top"    - Align text vertically to top of entries.    *
+    *           - "middle" - Approximately vertically centered.          *
+    *           - "bottom" - Align text vertically to bottom of entries. *
+    ********************************************************************** -->
+
+<!ELEMENT capbody - O (applic?, caprow+) >
+<!ATTLIST capbody
+              valign       (top | middle | bottom)  "top"  >
+
+
+
+<!--**********************************************************************
+    * Define Element caprow (Row of Captions) containing:-               *
+    *====================================================================*
+    * Mandatory Repeatable Group                                         *
+    *====================================================================*
+    *   applic   - Optional   Single      contains type, model.          *
+    *   capentry - Mandatory  Single      contains applic, caption,      *
+    *                                      captext.                      *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  rowsep   - NUMBER   - IMPLIED  - Internal Row rulings.            *
+    *           - "0"      - Do Not display internal row rulings.        *
+    *           - "1"      - Display internal row rulings.               *
+    *  Attribute Definition list stored in entity %bodyatt;.             *
+    ********************************************************************** -->
+
+<!ELEMENT caprow       - O       (applic?, capentry)+ >
+<!ATTLIST caprow
+              rowsep       %yesorno;      #IMPLIED
+              %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element capentry (Caption Group Entry) containing:-         *
+    *  applic   - Optional  Single     contains type, model.             *
+    *====================================================================*
+    * Optional Repeatable Group                                          *
+    *====================================================================*
+    *  caption  - Mandatory Single     contains applic, capline.         *
+    * or                                                                 *
+    *  captext  - Mandatory Single     contains Parsed Character Data,   *
+    *                                   xref, indxflag, change, emphasis,*
+    *                                   subscrpt, supscrpt, refdm, reftp,*
+    *                                   acronym, acroterm.               *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  colname  - NMTOKEN  - IMPLIED  - Column name of entry.            *
+    *  namest   - NMTOKEN  - IMPLIED  - Name of the left most column of  *
+    *                      - the span.                                   *
+    *  nameend  - NMTOKEN  - IMPLIED  - Name of the right most column of *
+    *                      - the span.                                   *
+    *  spanname - NMTOKEN  - IMPLIED  - Name of horizontal span.         *
+    *  morerows - NUMBER   - "0"      - Number of additional rows in a   *
+    *                      - vertical straddle.                          *
+    *  colsep   - NUMBER   - IMPLIED  - Internal Column rulings.         *
+    *           - "0"      - Do Not display internal column rulings.     *
+    *           - "1"      - Display internal column rulings.            *
+    *  rowsep   - NUMBER   - IMPLIED  - Internal Row rulings.            *
+    *           - "0"      - Do Not display internal row rulings.        *
+    *           - "1"      - Display internal row rulings.               *
+    *  valign   - Declared - "top"    - Text vertical positioning within *
+    *                      - the entries.                                *
+    *           - "top"    - Align text vertically to top of entries.    *
+    *           - "middle" - Approximately vertically centered.          *
+    *           - "bottom" - Align text vertically to bottom of entries. *
+    *  align    - Declared - IMPLIED  - Text horizontal position within  *
+    *                      - the column.                                 *
+    *           - "left"   - Quad (flush) left.                          *
+    *           - "center" - Centered.                                   *
+    *           - "right"  - Quad (flush) right.                         *
+    *           - "justify"- Both quad left and quad right.              *
+    ********************************************************************** -->
+
+<!ELEMENT capentry - O (applic?, (caption | captext)?) >
+<!ATTLIST capentry
+              colname      NMTOKEN        #IMPLIED
+              namest       NMTOKEN        #IMPLIED
+              nameend      NMTOKEN        #IMPLIED
+              spanname     NMTOKEN        #IMPLIED
+              morerows     NUMBER         "0"
+              colsep       %yesorno;      #IMPLIED
+              rowsep       %yesorno;      #IMPLIED
+              valign       (top | bottom | middle)  "top"
+              align        (left | right | center | justify)
+                                          #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element caption (Caption) containing:-                      *
+    *  applic   - Optional  Single      contains type, model.            *
+    *  capline  - Mandatory Repeatable  contains Parsed Character Data.  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  colour  - %COLOURS; -         - Color of Caption.                 *
+    *                                  %COLOURS; declared in S1000D.CFG. *
+    *  width   - CDATA    - IMPLIED - Width of caption box               *
+    *  height  - CDATA    - IMPLIED - Height of caption box              *
+    *  sysid   - CDATA    - IMPLIED - External flight systems identifier *
+    *                                 for caption                        *
+    *  align   - Declared - "center" - Alignment of text within Caption  *
+    *                                  box.                              *
+    *          - "left"   - Quad (flush) left.                           *
+    *          - "center" - Centered.                                    *
+    *          - "right"  - Quad (flush) right.                          *
+    *          - "justify"- Both quad left and quad right.               *
+    *  toctype - Declared - "none"   - Identifies the appropriate Table  *
+    *                                  of Contents                       *
+    *  type    - Declared - "primary" - Type of caption                  *
+    *          - "primary"   - Primary level caption                     *
+    *          - "secondary" - Secondary level caption                   *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT caption - O (applic?, capline+) >
+<!ATTLIST caption
+            colour %COLOURS;
+            width  CDATA #IMPLIED
+            height CDATA #IMPLIED
+            sysid  CDATA #IMPLIED
+            align (left | right | justify | center) "center"
+            toctype (none | redtoc | combtoc | ambertoc | greentoc | yelowtoc)
+             "none"
+            type (primary | secondary) "primary"
+            %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element capline (Caption line of text) containing:-         *
+    *====================================================================*
+    *  Mandatory Repeatable Group.                                       *
+    *====================================================================*
+    *   Parsed Character Data.                                           *
+    *  or                                                                *
+    *   acroterm  - Mandatory Single     contains definition stored in   *
+    *                                             entity %SPARCON;.      *
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ELEMENT capline - O (#PCDATA | acroterm)+ >
+
+
+
+<!--**********************************************************************
+    * Define Element captext (Caption Text [not within a caption box])   *
+    * containing:-                                                       *
+    *====================================================================*
+    *  Mandatory Repeatable Group.                                       *
+    *====================================================================*
+    *   Parsed Character Data.                                           *
+    *  or                                                                *
+    *   xref     - Mandatory Single     contains applic, Definition      *
+    *                                   stored in entity %SPARCON;.      *
+    *  or                                                                *
+    *   indxflag - Mandatory Single     contains No Other Tags.          *
+    *  or                                                                *
+    *   change   - Mandatory Single     contains Definition stored in    *
+    *                                   entity %text;                    *
+    *  or                                                                *
+    *   emphasis - Mandatory Single     contains Definition stored in    *
+    *                                   entity %text;                    *
+    *  or                                                                *
+    *   subscrpt - Mandatory Single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *  or                                                                *
+    *   supscrpt - Mandatory Single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *  or                                                                *
+    *   refdm    - Mandatory Single     contains applic, Definition      *
+    *                                   stored in entity %ALLDMC;,       *
+    *                                   issno, dmtitle.                  *
+    *  or                                                                *
+    *   reftp    - Mandatory Single     contains applic, Definition      *
+    *                                   stored in entity %TEXT-NOREFS;,  *
+    *                                   Definition stored in entity      *
+    *                                   %PUBREF;.                        *
+    *   acronym  - Mandatory Single     contains acroterm, acrodef.      *
+    *  or                                                                *
+    *   acroterm  - Mandatory Single    contains Definition stored in    *
+    *                                   entity %SPARCON;.                *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT captext - O (#PCDATA | xref | indxflag | change | emphasis |
+                       subscrpt | supscrpt | refdm | reftp |
+                       acronym | acroterm)+ >
+<!ATTLIST captext
+            %INSDEL; >
+

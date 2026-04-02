@@ -1,0 +1,506 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2002-06F: Change content models of supequi, supply and      *
+    *                  spare. Entity %NIC; redefined and renamed to %NI;.*
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % PRELREQ PUBLIC                                          *
+    *   "-//S1000D//ELEMENTS Preliminary Requirements 20030531//EN" >    *
+    * %PRELREQ;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element prelreqs (Preliminary Requirements) containing:-    *
+    *  pmd      - Optional   Single      contains thi, zone, accpnl,     *
+    *                                     avehcfg, opndurn.              *
+    *  reqconds - Mandatory  Single      contains noconds, reqcond,      *
+    *                                     reqcondm, reqcontp.            *
+    *  reqpers  - Optional   Single      contains asrequir, person,      *
+    *                                     perscat, perskill, trade,      *
+    *                                     esttime.                       *
+    *  supequip - Mandatory  Single      contains nosupeq, supeqli.      *
+    *  supplies - Mandatory  Single      contains nosupply, supply.      *
+    *  spares   - Mandatory  Single      contains nospares, sparesli.    *
+    *  safety   - Mandatory  Single      contains nosafety, safecond.    *
+    ********************************************************************** -->
+
+<!ELEMENT prelreqs - O (pmd?, reqconds, reqpers?, supequip, supplies, spares,
+                        safety) >
+
+
+
+<!--**********************************************************************
+    * Call the Product Management Data Public Text.                      *
+    * The formal public identifier is stored in entity %PMDATA;          *
+    ********************************************************************** -->
+
+%PMDATA;
+
+
+
+<!--**********************************************************************
+    * Define Element reqconds (Required Conditions) containing:-         *
+    *  noconds  - Mandatory  Single      contains No Other Tags.         *
+    * or                                                                 *
+    *====================================================================*
+    * Mandatory Repeatable Group                                         *
+    *====================================================================*
+    *  reqcond  - Mandatory  Single      contains applic and Definition  *
+    *                                     stored in entity %text;        *
+    * or                                                                 *
+    *  reqcondm - Mandatory  Single      contains applic, reqcond, reqdm.*
+    * or                                                                 *
+    *  reqcontp - Mandatory  Single      contains applic, reqcond, reqtp.*
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ELEMENT reqconds - O (noconds | (reqcond | reqcondm | reqcontp)+) >
+
+
+<!--**********************************************************************
+    * Define Element noconds (No Required Conditions) containing:-       *
+    *   No Other Tags.                                                   *
+    ********************************************************************** -->
+
+<!ELEMENT noconds - O EMPTY >
+
+
+
+<!--**********************************************************************
+    * Define Element reqcondm (Required Condition Data Modules)          *
+    * containing:-                                                       *
+    *  applic    - Optional  Single     contains type, model.            *
+    *====================================================================*
+    * Mandatory Repeatable Group                                         *
+    *====================================================================*
+    *  reqcond   - Mandatory Single     contains Definition stored in    *
+    *                                   entity %text;                    *
+    *  reqdm     - Mandatory Single     contains Definition stored in    *
+    *                                   entity %ALLDMC;                  *
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ELEMENT reqcondm - O (applic?, (reqcond, reqdm)+) >
+
+
+
+<!--**********************************************************************
+    * Define Element reqcond (Required Condition) containing:-           *
+    *  applic    - Optional  Single     contains type, model.            *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  Definition stored in entity %text;                                *
+    *====================================================================*
+    **********************************************************************
+    * EXCLUSION: refdm, reftp.                                           *
+    ********************************************************************** -->
+
+<!ELEMENT reqcond - O (applic?, (%text;)+)  -(refdm | reftp)>
+
+
+
+<!--**********************************************************************
+    * Define Element reqdm (Required Data Module) containing:-           *
+    *  Definition stored in entity %ALLDMC;                              *
+    *  issno    - Optional   Single      contains No Other Tags.         *
+    *  dmtitle  - Optional   Single      contains techname, infoname.    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  target  - CDATA   - IMPLIED - Cross reference ID within target DM *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT reqdm - O ((%ALLDMC;), issno?, dmtitle?) >
+<!ATTLIST reqdm
+            target  CDATA   #IMPLIED
+            %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element reqcontp (Required Condition Technical              *
+    *                          Publications)                             *
+    * containing:-                                                       *
+    *  applic    - Optional  Single     contains type, model.            *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  reqcond   - Mandatory Single     contains Definition stored in    *
+    *                                   entity %text;                    *
+    *  reqtp     - Mandatory Single     contains Definition stored in    *
+    *                                   entity %text;                    *
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ELEMENT reqcontp - O (applic?, (reqcond, reqtp)+) >
+
+
+
+<!--**********************************************************************
+    * Define Element reqtp (Required Technical Publication)              *
+    * containing:-                                                       *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  Definition stored in entity %text;                                *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    **********************************************************************
+    * EXCLUSION: refdm, reftp.                                           *
+    ********************************************************************** -->
+
+<!ELEMENT reqtp - O (%text;)+  -(refdm | reftp) >
+<!ATTLIST reqtp
+            %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element reqpers (Required Persons) containing:-             *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+    *  asrequir  - Mandatory Single     contains No Other Tags.          *
+    * or                                                                 *
+    *  person    - Mandatory Single     contains No Other Tags.          *
+    *++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+    *====================================================================*
+    * Optional Single Group                                              *
+    *====================================================================*
+    *  perscat   - Mandatory Single     contains No Other Tags.          *
+    *  perskill  - Optional  Single     contains No Other Tags.          *
+    *  trade     - Optional  Single     contains Parsed Character Data.  *
+    *  esttime   - Optional  Single     contains Parsed Character Data.  *
+    *====================================================================*
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT reqpers - O  ((asrequir | person),
+                          (perscat,perskill?,trade?,esttime?)?)+  >
+<!ATTLIST reqpers
+            %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element asrequir (As Required) containing:-                 *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+
+<!ELEMENT asrequir - O EMPTY >
+
+
+
+<!--**********************************************************************
+    * Define Element person (Personnel) containing:-                     *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  man      - NMTOKEN  - REQUIRED - Man identifier.                  *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT person - O EMPTY>
+<!ATTLIST person
+             man NMTOKEN #REQUIRED
+             %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element perscat (Personnel Category) containing:-           *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  category - Declared - REQUIRED - Personnel category of required   *
+    *                                   trade to complete the task.      *
+    *             Definition stored in entity %CATEG;                    *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT perscat - O EMPTY >
+<!ATTLIST perscat
+            category %CATEG; #REQUIRED
+            %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element perskill (Personnel Skill Level) containing:-       *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  skill    - Declared - REQUIRED - Personnel skill level            *
+    *             Definition stored in entity %SKILL;                    *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT perskill - O EMPTY>
+<!ATTLIST perskill
+             skill %SKILL; #REQUIRED
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element trade (Personnel Trade Code) containing:-           *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT trade - O (#PCDATA) >
+<!ATTLIST trade
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element esttime (Estimated Time Spent) containing:-         *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT esttime - O (#PCDATA) >
+<!ATTLIST esttime
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element supequip (Support Equipment) containing:-           *
+    *  nosupeq  - Mandatory Single       contains No Other Tags.         *
+    * or                                                                 *
+    *  supeqli  - Mandatory Single       contains supequi.               *
+    ********************************************************************** -->
+
+<!ELEMENT supequip - O (nosupeq | supeqli) >
+
+
+
+<!--**********************************************************************
+    * Define Element nosupeq (No Support Equipment) containing:-         *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+
+<!ELEMENT nosupeq - O EMPTY >
+
+
+
+<!--**********************************************************************
+    * Define Element supeqli (Support Equipment List) containing:-       *
+    *  supequi  - Mandatory Repeatable   contains applic, nomen, nsn,    *
+    *                                    identno, csnref, qty.           *
+    ********************************************************************** -->
+
+<!ELEMENT supeqli - O (supequi+) >
+
+
+
+<!--**********************************************************************
+    * Define Element supequi (Support Equipment Item) containing:-       *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  nomen    - Mandatory Single       contains Parsed Character Data. *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *  csnref   - Mandatory Single       contains No Other Tags.         *
+    * or                                                                 *
+    *  nsn      - Mandatory Single       contains No Other Tags.         *
+    * or                                                                 *
+    *  identno  - Mandatory Single       contains mfc, pnr, serialno.    *
+    *====================================================================*
+    *  qty      - Mandatory Single       contains Parsed Character Data. *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT supequi - O (applic?, nomen, (csnref | nsn | identno)+, qty) >
+<!-- Content model changed  -->
+<!ATTLIST supequi
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Call the NOMEN and IDENTNO Public Text.                            *
+    * The formal public identifier is stored in entity %NI;              *
+    ********************************************************************** -->
+
+%NI;
+<!-- Call of entity %NI; instead of %NIC; -->
+
+
+
+<!--**********************************************************************
+    * Define Element qty (Quantity) containing:-                         *
+    *   Parsed Character Data.                                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom    - CDATA  - IMPLIED - Unit of measurement.                  *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+
+<!ELEMENT qty  - O  (#PCDATA) >
+<!ATTLIST qty
+            uom  CDATA #IMPLIED
+            %INSDEL;  >
+
+
+<!--**********************************************************************
+    * Define Element supplies (Supplies) containing:-                    *
+    *  nosupply - Mandatory  Single      contains No Other Tags.         *
+    * or                                                                 *
+    *  supplyli - Mandatory  Single      contains supply.                *
+    ********************************************************************** -->
+
+<!ELEMENT supplies - O (nosupply | supplyli) >
+
+
+
+<!--**********************************************************************
+    * Define Element nosupply (No Supplies) containing:-                 *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+
+<!ELEMENT nosupply - O EMPTY >
+
+
+
+<!--**********************************************************************
+    * Define Element supplyli (Supply List) containing:-                 *
+    *  supply   - Mandatory Repeatable   contains applic, nomen, nsn,    *
+    *                                    identno, csnref, qty.           *
+    ********************************************************************** -->
+
+<!ELEMENT supplyli - O (supply+)>
+
+
+<!--**********************************************************************
+    * Define Element supply (Supply Item) containing:-                   *
+    *  applic   - Optional  Single       contains type, model.           *
+    *  nomen    - Mandatory Single       contains Parsed Character Data. *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *  csnref   - Mandatory Single       contains No Other Tags.         *
+    * or                                                                 *
+    *  nsn      - Mandatory Single       contains No Other Tags.         *
+    * or                                                                 *
+    *  identno  - Mandatory Single       contains mfc, pnr, serialno.    *
+    *====================================================================*
+    *  qty      - Mandatory  Single      contains Parsed Character Data. *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT supply - O (applic?, nomen, (csnref | nsn | identno)+, qty) >
+<!-- Content model changed  -->
+<!ATTLIST supply
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element spares (Spares) containing:-                        *
+    *  nospares - Mandatory  Single      contains No Other Tags.         *
+    * or                                                                 *
+    *  sparesli - Mandatory  Single      contains spare.                 *
+    ********************************************************************** -->
+
+<!ELEMENT spares - O (nospares | sparesli) >
+
+
+
+<!--**********************************************************************
+    * Define Element nospares (No Spares) containing:-                   *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+
+<!ELEMENT nospares - O EMPTY >
+
+
+
+<!--**********************************************************************
+    * Define Element sparesli (Spare List) containing:-                  *
+    *  spare    - Mandatory Repeatable   contains applic, nomen, nsn,    *
+    *                                    identno, csnref, qty.           *
+    ********************************************************************** -->
+
+<!ELEMENT sparesli - O (spare+) >
+
+
+<!--**********************************************************************
+    * Define Element spare (Spare Item) containing:-                     *
+    *  applic   - Optional  Single       contains type, model.           *
+    *  nomen    - Mandatory Single       contains Parsed Character Data. *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *  csnref   - Mandatory Single       contains No Other Tags.         *
+    * or                                                                 *
+    *  nsn      - Mandatory Single       contains No Other Tags.         *
+    * or                                                                 *
+    *  identno  - Mandatory Single       contains mfc, pnr, serialno.    *
+    *====================================================================*
+    *  qty      - Mandatory  Single      contains Parsed Character Data. *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT spare - O (applic?, nomen, (csnref | nsn | identno)+, qty) >
+<!-- Content model changed  -->
+<!ATTLIST spare
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element safety (Safety Conditions) containing:-             *
+    *  nosafety - Mandatory  Single      contains No Other Tags.         *
+    * or                                                                 *
+    *  safecond - Mandatory  Single      contains Definition stored in   *
+    *                                    entity %spcpara;                *
+    ********************************************************************** -->
+
+<!ELEMENT safety - O (nosafety | safecond) >
+
+
+
+<!--**********************************************************************
+    * Define Element nosafety (No Safety Conditions) containing:-        *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+
+<!ELEMENT nosafety - O EMPTY >
+
+
+
+<!--**********************************************************************
+    * Define Element safecond (Safety Condition) containing:-            *
+    *  Definition stored in entity %spcpara;                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED - Unique identifier of safety       *
+    *                                  conditions                        *
+    ********************************************************************** -->
+
+<!ELEMENT safecond - O (%spcpara;) >
+<!ATTLIST safecond
+            id    ID  #IMPLIED >

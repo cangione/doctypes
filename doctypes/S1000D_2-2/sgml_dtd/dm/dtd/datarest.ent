@@ -1,0 +1,166 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2004-22GB: Replace content model of element <copyright> by  *
+    *                   mandatory repeatable sub element <para>.         *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTRESTR PUBLIC                                         *
+    *   "-//S1000D//ELEMENTS Data Restrictions 20050501//EN">            *
+    * %EXTRESTR;                                                         *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Element datarest (Data Restrictions) containing:-           *
+    *  instruct  - Mandatory   Single    contains distrib, handling,     *
+    *                                             destruct, disclose.    *
+    *  inform    - Optional    Single    contains copyright, polref,     *
+    *                                             datacond.              *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT datarest   - O   (instruct, inform?) >
+<!ATTLIST datarest   %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element instruct (Specific Instructions) containing:-       *
+    *  distrib  - Mandatory   Single    contains Parsed Character Data.  *
+    *  expcont  - Optional    Single    contains Parsed Character Data.  *
+    *  handling - Optional    Single    contains Parsed Character Data.  *
+    *  destruct - Optional    Single    contains Parsed Character Data.  *
+    *  disclose - Optional    Single    contains Parsed Character Data.  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT instruct   - O   (distrib, expcont?, handling?, destruct?, 
+                            disclose?) >
+<!ATTLIST instruct   %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element distrib (Distribution Requirements) containing:-    *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT distrib   - O   (#PCDATA) >
+<!ATTLIST distrib   %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element expcont (Export Control Notice) containing:-        *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT expcont   - O   (#PCDATA) >
+<!ATTLIST expcont   %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element handling (Data Handling Requirements) containing:-  *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT handling   - O   (#PCDATA) >
+<!ATTLIST handling   %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element destruct (Destruction Requirements) containing:-    *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT destruct   - O   (#PCDATA) >
+<!ATTLIST destruct   %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element disclose (Intended Use or Disclosure) containing:-  *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT disclose   - O   (#PCDATA) >
+<!ATTLIST disclose   %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element inform (Additional Information)  containing:-       *
+    *  copyright - Mandatory  Single    contains para.                   *
+    *  polref    - Optional   Single    contains Parsed Character Data.  *
+    *  datacond  - Optional   Single    contains Parsed Character Data.  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT inform   - O   (copyright, polref?, datacond?) >
+<!ATTLIST inform   %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element copyright (Copyright) containing:-                  *
+    *  para     - Mandatory Repeatable  contains applic, definition      *
+    *                                   stored in entity %paracon;.      *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT copyright - - (para+) >
+<!ATTLIST copyright   %bodyatt; >
+<!-- Content model changed -->
+
+
+<!--**********************************************************************
+    * Define Element polref (Security Policy Document Reference)         *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT polref   - O   (#PCDATA) >
+<!ATTLIST polref   %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element datacond (Specific Conditions) containing:-         *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT datacond   - O   (#PCDATA) >
+<!ATTLIST datacond   %bodyatt; >
+
+
+<!--** End of DATAREST Entity **-->

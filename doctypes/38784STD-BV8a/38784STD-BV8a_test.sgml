@@ -1,0 +1,68 @@
+<!DOCTYPE DOC PUBLIC "-//USA-DOD//DTD 38784STD-BV8a//EN" [
+<!--ArborText, Inc., 1988-1998, v.4002-->
+<!ENTITY fig8-1.1a SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA eps>
+<!ENTITY lt SDATA "[lt     ]">
+<!ENTITY gt SDATA "[gt     ]">
+<!ENTITY amp SDATA "[amp    ]">
+<!ENTITY eye SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/goggles.eps" NDATA eps>
+<!ENTITY chem SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/chemical.eps" NDATA eps>
+<!ENTITY d09001 SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA cgmbin>
+<!ENTITY d09002 SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA cgmbin>
+<!ENTITY d09003 SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA cgmbin>
+<!ENTITY emergver SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA eps>
+<!ENTITY fig8-1a SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA cgmbin>
+<!ENTITY fig8-1b SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA cgmbin>
+<!ENTITY fig8-2 SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA cgmbin>
+<!ENTITY fig8-3 SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA cgmbin>
+<!ENTITY fig8-4 SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA cgmbin>
+<!ENTITY fig8-5 SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA cgmbin>
+<!ENTITY fig8-6 SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA cgmbin>
+<!ENTITY f03-004r0 SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA cgmbin>
+<!ENTITY f05-021r0 SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/f0140001.eps" NDATA cgmbin>
+<!ENTITY fire SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/fire.eps" NDATA eps>
+<!ENTITY vapor SYSTEM "/jcals/wss_data/sgml_applications/JCALS-standards/graphics/vapor.eps" NDATA eps>
+]>
+<doc service="frn" frn="ROK" docid="d09" docstat="revision" verstatpg="unver"
+security="u" caveat="&ensp;&ensp;&emsp;NATO&ensp;&ensp;&ensp;&ensp;&nbsp;">
+<front numcols="2"><idinfo><tmidno></tmidno><chghistory><chginfo><date></date>
+</chginfo></chghistory><pretmidno></pretmidno>
+<doctype></doctype>
+<maintlvl></maintlvl>
+<prtitle><subject></subject>
+</prtitle><?Pub Caret>
+<mfr></mfr>
+<contractno></contractno>
+<supersed></supersed>
+<discl></discl>
+<distrib type="b"> </distrib>
+<expcont></expcont>
+<destr></destr>
+<cogact></cogact>
+<authnot></authnot>
+<pubdate></pubdate></idinfo><lep><lepcontents autobuild="1"></lep>
+<tpdr><tpdrtbl><activity></activity><tpdrno></tpdrno><tpdrlocation></tpdrlocation>
+<activity></activity><tpdrno></tpdrno><tpdrlocation></tpdrlocation><activity></activity>
+<tpdrno></tpdrno><tpdrlocation></tpdrlocation><activity></activity><tpdrno></tpdrno>
+<tpdrlocation></tpdrlocation></tpdrtbl></tpdr>
+<contents autobuild="1">
+<illuslist autobuild="1">
+<tablelist autobuild="1">
+<preface><para0><title><esds><prindex pridnbr="fr001"></prindex> </title>
+<para> </para>
+</para0><tmimprep caveat="NoForn" fgi="Frn"><title></title><para>.</para>
+</tmimprep></preface>
+<safesum><para0><title></title><para></para>
+</para0></safesum></front><body numcols="2"><chapter id="c1" caveat="noforn">
+<title security="n"></title>
+<para0 id="p0test"><title></title><para></para>
+<subpara1><title></title><para> </para>
+<subpara2><para></para>
+<subpara3><para></para>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0></chapter><chapter>
+<title></title>
+<para0><title></title><para></para>
+</para0></chapter></body><rear numcols="1"></rear></doc>
+<?Pub *0000003914 0>

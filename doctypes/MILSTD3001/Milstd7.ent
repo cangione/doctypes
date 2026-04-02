@@ -1,0 +1,609 @@
+<!--PUBLIC "-//USA-DOD//ELEMENTS 3001 Part 7 Draft XML V307 08242016//EN" -->
+
+<!-- 	DTD for Periodic Maintenance Requirements
+-->
+
+<!ENTITY % taskmrcparacon "para | %list; | note" >
+
+<!ENTITY % phasefront "secd?, consumcd?, rplcd?, wrkareacd?, zonecd?, zonetltcd?, zoneinspcd?, accpnlcd?, antcd?, phsccd?">
+
+<!ENTITY % taskcards "((tskcd | prestskcd | asstskcd | lubtskcd)+,  supportcd*, qacd*)*">
+
+<!ENTITY % enginetaskcards "((tskcd | prestskcd | asstskcd | lubtskcd)+,  supportcd*)*">
+
+<!ENTITY % taskcon "(primecdinfo, assistinfo?, tasknote*, wpinfo?, (%proccon;), step*, proc*)">
+
+<!ENTITY % chkproccon "(warning*, caution*, (para | deflist | randlist | note | table)*)">
+
+<!--  PERIODIC MAINTENANCE REQUIREMENTS INFORMATION MODULE. -->
+<!ELEMENT pmrim    (pmrcset)+>
+<!ATTLIST pmrim 	%docatt;
+			%numberoftmidnos;
+			%secur;>
+
+<!--Periodic Maintenance Information Card Sets. Consists of Aircraft Card Set "acset", Quick Engine Change Assembly Card Set "qecaset", Airborne armament equipment (AAE)/Special stores (SS) Card Set "aaesset", Support Equipment (SE)/automatic test equipment (ATE) Card Set "sseset", Powered aerial target (PAT) Card Set "patset", Powered surface target (PST) Card Set "pstset", Aviation life support systems (ALSS) Card Set "alsset", Airborne mine countermeasure (AMCM) equipment Card Set "amcmset", and Unmanned aerial vehicle (UAV) Card Set "uavset". -->
+<!ELEMENT pmrcset   (acset |  qecaset | aaesset | sseset | patset | pstset | alsset | amcmset | uavset)+  >
+<!ATTLIST pmrcset 	%docatt;
+					%secur;>
+
+<!--	Aircraft Card Set -->
+<!ELEMENT acset    (pmidk | turnchklst | dayinspdk | spinspdk |  presdk | conddk | phmaintdk)+ >
+<!ATTLIST acset	 	%docatt;
+					%secur;>
+
+<!--Quick Engine Change Assembly Card Set -->
+<!ELEMENT qecaset    (qecadk) >
+<!ATTLIST qecaset	 	%docatt;
+					%secur;>
+
+<!--Airborne armament equipment  (AAE)/Special stores (SS) Card Set-->
+<!ELEMENT aaesset    (pmidk | dayinspdk | spinspdk)+ >
+<!ATTLIST aaesset	 	%docatt;
+					%secur;>
+
+<!-- Support Equipment (SE)/automatic test equipment (ATE) Card Set -->
+<!ELEMENT sseset    (preopdk | dayinspdk | spinspdk | presdk | conddk | calendardk | startdk)+ >
+<!ATTLIST sseset	 	%docatt;
+					%secur;>
+
+<!--Powered aerial target (PAT) Card Set-->
+<!ELEMENT patset    (acptbldupdk  | prelnchdk | postlnchdk)+ >
+<!ATTLIST patset 	 	%docatt;
+					%secur;>
+
+<!--Powered surface target (PST) Card Set  -->
+<!ELEMENT pstset    (preopdk| pmrdk)+ >
+<!ATTLIST pstset 	 	%docatt;
+					%secur;>
+
+<!-- Aviation life support systems (ALSS) Card Set -->
+<!ELEMENT alsset    (pmrdk)   >
+<!ATTLIST alsset 	 	%docatt;
+					%secur;>
+
+<!--Airborne mine countermeasure (AMCM) equipment Card Set  -->
+<!ELEMENT amcmset    (pmidk | turnchklst | dayinspdk| spinspdk | presdk | conddk |  calendardk | hourdk | startdk)+ >
+<!ATTLIST amcmset 	 	%docatt;
+					%secur;>
+
+<!-- Unmanned aerial vehicle (UAV) Card Set -->
+<!ELEMENT uavset    (pmidk|  turnchklst| dayinspdk| spinspdk|  presdk| conddk  |calendardk | hourdk | startdk)+ >
+<!ATTLIST uavset 	 	%docatt;
+				%secur;>
+
+				<!-- CARD DECKS -->
+
+<!--Periodic Maintenance Information Card Decks-->
+<!ELEMENT pmidk   (fmcds, introcd?, (introaplcd | alssintroaplcd)?, rrschtrkcd?, inspindcd?, condinspcd?, phchgcd?, refcd?, secd?, consumcd?, rplcd?, antcd?, %taskcards;) >
+<!ATTLIST 	 pmidk	%wpatt;
+			%secur;>
+
+<!--Periodic Maintenance Requirements Card Decks-->
+<!ELEMENT pmrdk (fmcds, introcd?, (introaplcd | alssintroaplcd)?, rrschtrkcd?, inspindcd?, condinspcd?, phchgcd?, defcd?, refcd?, abindxcd?, secd?, consumcd?, rplcd?, antcd?, ((%taskcards;) | (alsstskcds)+) ) >
+<!ATTLIST 	 pmrdk	%wpatt;
+			%secur;>
+
+<!--Turnaround Checklist -->
+<!ELEMENT turnchklst   (fmcl, introaplcd?, reflist?, chklst)>
+<!ATTLIST  turnchklst	%wpatt;
+			%secur;>
+
+<!--Preoperational Checklist Card Deck -->
+<!ELEMENT preopdk       (fmcl, introaplcd?, reflist?, chklst, functionalcheck?)>
+<!ATTLIST preopdk 	%wpatt;
+			%secur;>
+					
+<!--Daily Inspection Card Deck or Daily Inspection/Servicing Card Deck-->
+<!ELEMENT dayinspdk   (fmcds, introaplcd, defcd, refcd?, abindxcd, secd?, consumcd?, rplcd?, (wrkareacd | zonecd)?, accpnlcd?, antcd?, ((%taskcards;) | psetskcds+) )>
+<!ATTLIST 	 dayinspdk	%wpatt;
+					%secur;>
+
+<!--Special Inspection Card Deck -->
+<!ELEMENT spinspdk    (fmcds, introaplcd, defcd, refcd?, abindxcd, secd?, consumcd?, rplcd?, (wrkareacd | zonecd)?, zonetltcd?, zoneinspcd?, accpnlcd?, antcd?, ((%taskcards;) | psetskcds+))>
+<!ATTLIST 	 spinspdk	%wpatt;
+					%secur;>
+
+<!--Preservation/Depresservation Card Deck -->
+<!ELEMENT presdk   (fmcds, introaplcd, defcd, refcd?, abindxcd, secd?, consumcd?, rplcd?, (wrkareacd | zonecd)?, zonetltcd?, zoneinspcd?, accpnlcd?, antcd?, ((%taskcards;) | psetskcds+) )>
+<!ATTLIST 	 presdk	%wpatt;
+			%secur;>
+
+<!--Conditional Inspection Card Deck -->
+<!ELEMENT conddk   (fmcds, introaplcd, defcd, refcd?, abindxcd, secd?, consumcd?, rplcd?, (wrkareacd | zonecd)?, zonetltcd?, zoneinspcd?, accpnlcd?, antcd?, ((%taskcards;) | psetskcds+) )>
+<!ATTLIST 	 conddk	%wpatt;
+			%secur;>
+
+
+<!--Phased Maintenance Card Deck -->
+<!ELEMENT phmaintdk    (fmcds, introaplcd, refcd?, defcd,  abindxcd, secd?, consumcd?, rplcd?, (wrkareacd | zonecd)?, zonetltcd?, zoneinspcd?, accpnlcd?, antcd?, phsccd?, phtskcds+)>
+<!ATTLIST 	 phmaintdk	%wpatt;
+					%secur;>
+
+<!--QECA Card Deck -->
+<!ELEMENT qecadk     (fmcds, introaplcd, refcd?, defcd, abindxcd, secd?, consumcd?, rplcd?, (wrkareacd | zonecd)?, qecacd+, engine-tskcds?, aircraft-qetskcds+)>
+<!ATTLIST 	 qecadk	%wpatt;
+					%secur;>
+
+<!--Calendar Maintenance Requirements Card Deck -->
+<!ELEMENT calendardk      (fmcds, introaplcd, defcd, refcd?, abindxcd, secd?, consumcd?, rplcd?, (wrkareacd | zonecd)?, accpnlcd?, ((%taskcards;) | psetskcds+))>
+<!ATTLIST 	 calendardk 	%wpatt;
+					%secur;>
+
+<!--Start Maintenance Requirements Card Deck -->
+<!ELEMENT startdk      (fmcds, introaplcd, defcd, refcd?, abindxcd, secd?, consumcd?, rplcd?, (wrkareacd | zonecd)?, accpnlcd?, ((%taskcards;) | psetskcds+))>
+<!ATTLIST 	 startdk 	%wpatt;
+					%secur;>
+
+<!--Acceptance/Initial Build-up Card Deck -->
+<!ELEMENT acptbldupdk      (fmcds, introaplcd, defcd, refcd?, abindxcd, secd?, consumcd?, rplcd?, (wrkareacd | zonecd)?, accpnlcd?, %taskcards;)>
+<!ATTLIST 	 acptbldupdk 	%wpatt;
+					%secur;>
+
+<!--Prelaunch Card Deck -->
+<!ELEMENT prelnchdk      (fmcds, introaplcd, defcd, refcd?, abindxcd, secd?, (wrkareacd | zonecd)?, accpnlcd?, %taskcards;)>
+<!ATTLIST 	 prelnchdk 	%wpatt;
+					%secur;>
+
+<!--Postlaunch/Servicing Card Deck -->
+<!ELEMENT postlnchdk      (fmcds, introaplcd, defcd, refcd?, abindxcd, secd?, consumcd?, rplcd?, (wrkareacd | zonecd)?, accpnlcd?, %taskcards;)>
+<!ATTLIST 	 postlnchdk 	%wpatt;
+					%secur;>
+
+<!--Hour Maintenance Requirements Card Deck -->
+<!ELEMENT hourdk      (fmcds, defcd, refcd?, abindxcd, secd?, consumcd?, rplcd?, (wrkareacd | zonecd)?, accpnlcd?, %taskcards;)>
+<!ATTLIST 	 hourdk 	%wpatt;
+					%secur;>
+
+			<!--CARD TYPES -->
+
+<!--Introduction Card -->
+<!ELEMENT introcd     (prefcdinfo, introduction) >
+<!ATTLIST 	 introcd 	%cardatt;>
+
+<!--Introduction and Application Statement Card -->
+<!ELEMENT introaplcd    (prefcdinfo, introduction, hazmatstatement?, application, formatdesc?) >
+<!ATTLIST 	 introaplcd %cardatt;>
+
+<!--Introduction and Application Statement Card for ALSS maintenance requirements -->
+<!ELEMENT alssintroaplcd    (prefcdinfo, introduction, hazmatstatement?, application, alsselist?) > 
+<!ATTLIST 	 alssintroaplcd %cardatt;>
+
+<!--Definition Cards -->
+<!ELEMENT defcd    (prefcdinfo, title?,  deflist)> 
+<!ATTLIST 	 defcd %cardatt;>
+
+<!--Removal/Replacement Schedule and Special Tracking Requirements Card -->
+<!ELEMENT rrschtrkcd     (prefcdinfo, title?, (%paracon;)*,  rrschlist+) >
+<!ATTLIST 	 rrschtrkcd %cardatt;>
+
+<!--Inspection Requirements Index Cards -->
+<!ELEMENT inspindcd     (prefcdinfo, title?,  (%paracon;)*, sysindex, inspindex+)>
+<!ATTLIST 	 inspindcd %cardatt;>
+
+<!--Conditional Inspection Listing Cards -->
+<!ELEMENT condinspcd      (prefcdinfo, title?,  (%paracon;)*, condinsplist+)>
+<!ATTLIST 	 condinspcd %cardatt;>
+
+
+<!--Phase Change Implementation Card -->
+<!ELEMENT phchgcd    (prefcdinfo, title?,  (%paracon;)*)>
+<!ATTLIST 	 phchgcd %cardatt;>
+
+<!-- Reference Publication Card -->
+<!ELEMENT refcd (prefcdinfo, reflist)>
+<!ATTLIST 	 refcd %cardatt;>
+
+<!--Abbreviations, Index, and Checkflight Requirements Card -->
+<!ELEMENT abindxcd    (prefcdinfo, abbrevlist, indexcflist?)>
+<!ATTLIST 	 abindxcd %cardatt;>
+
+<!--Special Tools/Support Equipment List Cards -->
+<!ELEMENT secd    (prefcdinfo, title?,  (%paracon;)*, useoncodelist?, stsetable?)>
+<!ATTLIST 	 secd %cardatt;>
+
+<!--Consumable Maintenance Material List Cards -->
+<!ELEMENT consumcd    (prefcdinfo, title?,  (%paracon;)*, useoncodelist?, consumtable?)>
+<!ATTLIST 	 consumcd %cardatt;>
+
+<!--Replacement Parts List Cards -->
+<!ELEMENT rplcd    (prefcdinfo, title?,  (%paracon;)*,  useoncodelist?, rpltable?)>
+<!ATTLIST 	 rplcd %cardatt;>
+
+<!--Work Area Cards-->
+<!ELEMENT wrkareacd    (prefcdinfo, title?,  ((%paracon;) | figure | graphic)*)>
+<!ATTLIST 	 wrkareacd %cardatt;>
+
+<!--Zone Cards -->
+<!ELEMENT zonecd    (prefcdinfo, title?,  ((%paracon;) | figure | graphic)*)>
+<!ATTLIST 	 zonecd %cardatt;>
+
+<!--Zone title and Description Cards -->
+<!ELEMENT zonetltcd    (prefcdinfo, title?,  (%paracon;)*,  zonelist+)>
+<!ATTLIST 	 zonetltcd %cardatt;>
+
+<!--Zonal Inspection Criteria Card -->
+<!ELEMENT zoneinspcd   (prefcdinfo, title?, (%paracon;)*,  zoneinsplist)>
+<!ATTLIST 	 zoneinspcd %cardatt;>
+
+<!--Access Panel Cards -->
+<!ELEMENT accpnlcd   (prefcdinfo, title?, ((%paracon;) | figure | graphic | accpnlmatrix)*)>
+<!ATTLIST 	 accpnlcd %cardatt;>
+
+<!--Access Panel Matrix -->
+<!ELEMENT accpnlmatrix   (title?, (%paracon;)*)>
+<!ATTLIST 	 accpnlmatrix 
+%cardatt;>
+
+<!--Antenna Location Cards -->
+<!ELEMENT antcd   (prefcdinfo, title?, ((%paracon;) | figure | graphic)*)>
+<!ATTLIST 	 antcd 
+%cardatt;>
+
+
+<!--Checklist. -->
+<!ELEMENT chklst  (%chkproccon;, check+)>
+<!ATTLIST 	 chklst %refs;
+			%secur;>
+
+<!--Functional Check. -->
+<!ELEMENT functionalcheck (%chkproccon;, check+)>
+<!ATTLIST 	 functionalcheck %refs;
+			%secur;>
+
+<!--Individual check as part of the Checklist Task Card-->
+<!ELEMENT check  (warning*, caution*, note*, title, inspreq?, note?, sub-check?)>
+<!ATTLIST  check
+leaderdots (1 | 0) '1'
+%bodyatt;
+%secur;>
+
+<!-- Subordinate checks. All  checks are tagged as <check>, regardless of hierarchical level. If a check contains subordinate checks, those subordinate checks are surrounded by this wrapper element <sub-checks> -->
+<!ELEMENT sub-check (check+)>
+<!ATTLIST sub-check
+	%secur; 
+>
+
+<!--Inspection requirements necessary to inspect for integrity and to perform servicing checks prior to flight or operation. Part of the Checklist Task Card-->
+<!ELEMENT inspreq   (para+)>
+<!ATTLIST 	 inspreq		%secur;>
+
+<!--Phase Sequence Control Cards -->
+<!ELEMENT phsccd    (prefcdinfo, scc*)>
+<!ATTLIST 	 phsccd 	%cardatt;>
+
+<!-- Sequence Control Chart -->
+<!ELEMENT scc (table | graphic)+>
+<!ATTLIST scc 	%refs;
+%chgatt;
+%secur;>
+
+<!-- Task Cards Grouped by Phase -->
+<!ELEMENT phtskcds (phase, %phasefront;, %taskcards;)>
+<!ATTLIST phtskcds
+%chgatt;	
+%secur;>
+
+<!-- Engine Task Cards generic to all Aircraft -->
+<!ELEMENT engine-tskcds %enginetaskcards;>
+<!ATTLIST engine-tskcds
+%chgatt;
+	%secur;>
+
+<!-- QEC Task Cards grouped by Aircraft -->
+<!ELEMENT aircraft-qetskcds (aircraft, %enginetaskcards;)>
+<!ATTLIST aircraft-qetskcds
+%chgatt;
+%secur;>
+
+<!-- Aircraft - QEC. Engine cards shall be numbered with consecutive hundred series cards assigned to each QEC required.  If the engine cards are numbered 1 through 69, for example, the QEC cards applicable to the first airframe would be numbered starting with 101, the QEC cards applicable to the second airframe would be numbered starting with 201, etc. -->
+<!ELEMENT aircraft (sysnomen)>
+<!ATTLIST aircraft 
+%chgatt;
+	%secur;>
+
+<!-- Task Cards grouped by ALSS Equipment -->
+<!ELEMENT alsstskcds (sysnomen, %taskcards;)>
+<!ATTLIST alsstskcds	
+	%secur;>
+
+<!-- Task Cards grouped by Peculiar Support Equipment -->
+<!ELEMENT psetskcds (psegroup, %taskcards;)>
+<!ATTLIST psetskcds	
+%chgatt;	
+%secur;>
+
+<!-- Peculiar Support Equipment Group -->
+<!ELEMENT psegroup (#PCDATA | %text;)*>
+<!ATTLIST psegroup	
+	%secur;>
+	
+<!--QECA Sequence Control Cards -->
+<!ELEMENT qecacd     (prefcdinfo, scc*)>
+<!ATTLIST 	 qecacd
+%cardatt;>
+
+<!--Task Cards -->
+<!ELEMENT tskcd    (%taskcon;) >
+<!ATTLIST 	 tskcd 	
+%tskcardatt;>
+
+<!--Preservation task card. -->
+<!ELEMENT prestskcd    (%taskcon;)>
+<!ATTLIST 	 prestskcd
+%tskcardatt;>
+
+<!--Assist cards to supplement the task card requirements-->
+<!ELEMENT asstskcd    (%taskcon;)>
+<!ATTLIST 	 asstskcd
+%tskcardatt;>
+
+<!--Lubrication task cards. Used to clarify the lubrication task-->
+<!ELEMENT lubtskcd    (%taskcon;)>
+<!ATTLIST 	 lubtskcd 
+%tskcardatt;>
+
+<!--Assist Information. A container element for the assisting information. If assistants are required, each total time required shall be indicated in hours and tenths of hours in parenthesis in the upper right-hand corner following the assistants' rating -->
+<!ELEMENT assistinfo   (assist+)>
+<!ATTLIST assistinfo %secur;>
+
+<!-- An individual "Assist" Information. If an assistan is required, the total time required shall be indicated in hours and tenths of hours in parenthesis in the upper right-hand corner following the rating  -->
+<!ELEMENT assist   (#PCDATA | %text;)*>
+<!ATTLIST assist %secur;>
+
+<!-- Task Note -->
+<!ELEMENT  tasknote  (para | %list;)+ >
+<!ATTLIST tasknote
+                                %secur;
+                                %chgatt;>
+                                
+<!--Support Card for Illustrations and Tables -->
+<!ELEMENT supportcd    (prefcdinfo, (para | %list; | table | figure)+)>
+<!ATTLIST 	 supportcd 
+%cardatt;>
+
+<!--QA Cards -->
+<!ELEMENT qacd    (%taskcon;)>
+<!ATTLIST 	 qacd 
+%cardatt;>
+
+	<!--	CARD ELEMENTS-->
+
+<!--Maintenance Requirements Card Format Description -->
+<!ELEMENT formatdesc   (title, (%paracon;)*)>
+<!ATTLIST 	 formatdesc 	%secur;>
+
+<!--ALSS maintenance requirements card applicable equipment list -->
+<!ELEMENT alsselist   (title?,  alsseentry+, noteslist?)>
+<!ATTLIST 	 alsselist 		%refs;
+					%secur;>
+
+<!--ALSS maintenance requirements card applicable equipment list entry -->
+<!ELEMENT alsseentry   (nomen, partno)>
+<!ATTLIST alsseentry 		%refs;
+					%secur;>
+
+<!--Removal/Replacement Schedule and Special Tracking List -->
+<!ELEMENT rrschlist    (systitle, rrschentry+, noteslist?)>
+<!ATTLIST 	 rrschlist %refs;
+					%secur;>
+
+<!--An entry in the Removal/Replacement Schedule and Special Tracking List -->
+<!ELEMENT rrschentry   (nomen, partno*, disposition, reminterval, remarks?)>
+<!ATTLIST 	 rrschentry 	%refs;
+						%secur;>
+
+<!--Disposition information.  Action to be taken with the removed item as part of the Removal/Replacement Schedule and Special Tracking List -->
+<!ELEMENT disposition    (#PCDATA | %text;)*>
+<!ATTLIST 	 disposition 	%secur;>
+
+<!--Removal interval - the removal interval in calendar time, hours, cycles, or events shall be expressed. Part of the Removal/Replacement Schedule and Special Tracking List -->
+<!ELEMENT reminterval    (#PCDATA | %text;)*>
+<!ATTLIST 	 reminterval 		%secur;>
+
+<!--System Index -->
+<!ELEMENT sysindex   (sysentry+, noteslist?)>
+<!ATTLIST sysindex columns (1 | 2) "1"
+			%refs;
+			%secur;>
+
+<!--An entry in the System Index as part of the Inspection Requirements Index Cards -->
+<!ELEMENT sysentry   (syscode, systitle, pmicno)>
+<!ATTLIST sysentry 	%refs;
+			%secur;>
+
+<!--The system code for an entry in the System Index as part of the Inspection Requirements Index Cards -->
+<!ELEMENT syscode   (#PCDATA | %text;)*>
+<!ATTLIST syscode 	%secur;>
+
+<!--The identity of the PMIC card(s) which list the task cards for each system. Part of the Inspection Requirements Index Cards -->
+<!ELEMENT pmicno    (#PCDATA | %text;)*>
+<!ATTLIST pmicno 	%secur;>
+
+<!--System title for an entry in the System Index as part of the Inspection Requirements Index Cards -->
+<!ELEMENT systitle    (#PCDATA | %text;)*>
+<!ATTLIST systitle 	%secur;>
+
+<!--Inspection Index -->
+<!ELEMENT inspindex   (systitle, syscode, indpentry+)>
+<!ATTLIST inspindex 
+					%refs;
+					%secur;>
+
+<!--An entry in the Inspection Index as part of the Inspection Requirements Index Cards -->
+<!ELEMENT indpentry   (subsystitle, taskcno)>
+<!ATTLIST indpentry  %refs;
+					%secur;>
+
+<!--Subsystem title on an Inspection Requirements Entry-->
+<!ELEMENT subsystitle    (#PCDATA | %text;)*>
+<!ATTLIST subsystitle 	%secur;>
+
+<!--Task Card Number -->
+<!ELEMENT taskcno   (#PCDATA | %text;)*>
+<!ATTLIST taskcno 	%secur;>
+
+<!--Conditional Inspection List -->
+<!ELEMENT condinsplist   (title,   condinspentry+, noteslist?)>
+<!ATTLIST condinsplist %refs;
+					%secur;>
+
+<!--An entry in the Conditional Inspection List -->
+<!ELEMENT condinspentry   (condition, taskreq)>
+<!ATTLIST condinspentry %refs;
+					%secur;>
+
+<!--Condition-->
+<!ELEMENT condition  (para*)>
+<!ATTLIST condition     %secur;>
+
+
+<!--The task requirement including a brief description of what is to be performed and a reference to the publications containing the detailed inspection requirements. Part of the Conditional Inspection List -->
+<!ELEMENT taskreq   (#PCDATA | %text;)*>
+<!ATTLIST taskreq 	%secur;>
+
+<!-- Index/Checkflight Requirements List -->
+<!ELEMENT indexcflist   (title, table)>
+<!ATTLIST indexcflist     %refs;
+					%secur;>
+
+<!--Special Tools/Support Equipment Table -->
+<!ELEMENT stsetable  (title?, stseentry+, noteslist?)>
+<!ATTLIST stsetable     %refs;
+					%secur;>
+
+<!--An entry in the Special Tools/Support Equipment Table -->
+<!ELEMENT  stseentry  (nomen, partno, units)>
+<!ATTLIST stseentry      %refs;
+			%secur;>
+
+<!--Consumable Maintenance Material List-->
+<!ELEMENT consumtable  (title?, consumentry+, noteslist?)>
+<!ATTLIST consumtable      %refs;
+			%secur;>
+
+<!--An entry in the Consumable Maintenance Material List-->
+<!ELEMENT  consumentry  (nomen, (partno|spec|typedes), hmwsindexno?)>
+<!ATTLIST consumentry      %refs;
+			%secur;>
+
+<!--Phase Number -->
+<!ELEMENT phase     EMPTY>
+<!ATTLIST phase  phaseno CDATA #REQUIRED
+			%secur;>
+
+<!--HMWS index number -->
+<!ELEMENT hmwsindexno     (#PCDATA | %text;)*>
+<!ATTLIST hmwsindexno  %secur;>
+
+<!--Replacement Parts List Table-->
+<!ELEMENT rpltable   (title?, rplentry+, noteslist?)>
+<!ATTLIST rpltable  %refs;	
+					%secur;>
+
+<!--An entry in the Replacement Parts List Table-->
+<!ELEMENT  rplentry   (nomen, (partno|spec|typedes), units)>
+<!ATTLIST rplentry  %refs;
+		%secur;>
+
+<!--Work Area or Zone Listing-->
+<!ELEMENT arealist     (areaentry)+>
+<!ATTLIST arealist  %refs;
+					%secur;>
+
+<!--An entry in the Work Area or Zone Listing-->
+<!ELEMENT areaentry     (indexno, area)>
+<!ATTLIST areaentry  %refs;
+					%secur;>
+
+<!--Area Information in the Work Area or Zone Listing-->
+<!ELEMENT area      (#PCDATA | %text;)*>
+<!ATTLIST area  %secur;>
+
+
+<!--Zone Title and Description List -->
+<!ELEMENT zonelist     (title?, (generalzoneentry | zoneentry)+)>
+<!ATTLIST zonelist  %refs;
+					%secur;>
+<!--General Zone Entry. Groups a General Area with its work zone descriptions.  -->
+<!ELEMENT generalzoneentry (generalarea, zoneentry+)>
+<!ATTLIST generalzoneentry  %refs;
+					%secur;>
+					
+<!--An entry in the Zone Title and Description List -->
+<!ELEMENT zoneentry     ((zoneno, area, desc), zoneentry?)>
+<!ATTLIST zoneentry   %refs;
+					%secur;>
+
+<!--Identifies the General Area on the Zone Title and Description List -->
+<!ELEMENT generalarea     (zoneno, area)>
+<!ATTLIST generalarea  %secur;>
+
+<!-- The number assigned the general area or zone entry in the Zone Title and Description List. -->
+<!ELEMENT zoneno     (#PCDATA | %text;)*>
+<!ATTLIST zoneno  %secur;>
+
+<!--Zonal Inspection Criteria List -->
+<!ELEMENT zoneinsplist     (title, zoneinspentry+)>
+<!ATTLIST zoneinsplist  %refs;
+					%secur;>
+
+<!--An entry in the Zonal Inspection Criteria List -->
+<!ELEMENT zoneinspentry     (title, criteria)>
+<!ATTLIST zoneinspentry   %refs;
+%secur;>
+
+<!--Criteria information on the Zonal Inspection Criteria List -->
+<!ELEMENT criteria     (#PCDATA | %text;)*>
+<!ATTLIST criteria  %secur;>
+
+<!--Prime and Decimal Card fields authorized for periodic maintenance requirements card deck use.-->
+<!ELEMENT primecdinfo     (insptyint, elecpwr, hydpwr, condair, time?, rtgblk?, mosblk?, tasktitle)>
+<!ATTLIST primecdinfo  %refs;
+			%secur;>
+
+<!--Inspection type/interval.  Used to designate the inspection type interval such as special 7-day, daily, postlauch, phase, engine. -->
+<!ELEMENT insptyint     (#PCDATA | %text;)*>
+<!ATTLIST insptyint  	%secur;>
+
+<!--Electric Power Requirements required to complete the tasks -->
+<!ELEMENT elecpwr   EMPTY>
+<!ATTLIST elecpwr require (on | off | na) #REQUIRED
+				 	%secur;>
+
+<!--Hydraulic Power Requirements required to complete the tasks -->
+<!ELEMENT hydpwr   EMPTY>
+<!ATTLIST hydpwr require (on | off | na) #REQUIRED
+				 	%secur;>
+
+<!--Conditioned Air Requirements required to complete the tasks -->
+<!ELEMENT condair    EMPTY>
+<!ATTLIST condair require (on | off | na) #REQUIRED
+				 	%secur;>
+
+<!--Total elapsed maintenance time necessary to accomplish the requirements of the prime card and decimal cards. -->
+<!ELEMENT time     (#PCDATA | %text;)*>
+<!ATTLIST time  %secur;>
+
+<!--Rating Block of the prime card and decimal cards. -->
+<!ELEMENT rtgblk      (rtg?, rtgmosno?)>
+<!ATTLIST rtgblk  %secur;>
+
+<!--Navy rating that is responsible for the task in accordance with NAVPERS 18068.-->
+<!ELEMENT  rtg     (#PCDATA | %text;)*>
+<!ATTLIST rtg  %secur;>
+
+<!--Number assigned to identify individuals within each of the rates required to complete the inspection -->
+<!ELEMENT  rtgmosno     (#PCDATA | %text;)*>
+<!ATTLIST rtgmosno  %secur;>
+
+<!--Military Occupational Specialty and Number Block of the prime card and decimal cards. -->
+<!ELEMENT  mosblk      (mos?, rtgmosno?)>
+<!ATTLIST mosblk %secur;>
+
+<!--Marine Corps MOS numbers shall be assigned to identify the general technical specialty responsible for accomplishing the task.-->
+<!ELEMENT  mos     (#PCDATA | %text;)*>
+<!ATTLIST mos %secur;>
+
+<!-- Task title identifying the task(s) on the card. Not applicable for daily cards -->
+<!ELEMENT  tasktitle     (#PCDATA | %text;)*>
+<!ATTLIST tasktitle %secur;>

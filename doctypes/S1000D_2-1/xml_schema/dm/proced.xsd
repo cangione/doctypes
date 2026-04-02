@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2002-38SE: Replace call of entity %EXTSPEC; by call of      *
+    *                   %WCNP; due to deletion of element specpara.      * 
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % PROCED                                                  *
+    *   PUBLIC "-//S1000D//ELEMENTS Procedural Breakdown 20030531//EN" > *
+    * %PROCED;                                                           *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Call the Preliminary Requirements Public Text.                     *
+    * The formal public identifier is stored in the entity %PRELREQ;     *
+    ********************************************************************** -->
+<!-- %PRELREQ; -->
+	<xs:include schemaLocation="prelreq.xsd" />
+
+<!--**********************************************************************
+    * Call the Steps Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTSTEP;     *
+    ********************************************************************** -->
+<!-- %EXTSTEP; -->
+	<xs:include schemaLocation="steps.xsd" />
+
+<!--**********************************************************************
+    * Call the Caption Group Public Text.                                *
+    * The formal public identifier is stored in the entity %CAPGRP;      *
+    ********************************************************************** -->
+<!-- %CAPGRP;	-->
+	<xs:include schemaLocation="capgrp.xsd" />
+
+<!--**********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing:- proced.   *
+    ********************************************************************** -->
+	<xs:group name="CONTENT">
+		<xs:sequence>
+			<xs:element ref="proced"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="paracon">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %paracon; (Paragraph Continuation) containing:-      *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  Definition stored in entity %text;                                *
+    * or                                                                 *
+    *  Definition stored in entity %list;                                *
+    * or                                                                 *
+    *  Definition stored in entity %CAPPCON;                             *
+    *====================================================================*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:group ref="text"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:group ref="list"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:group ref="CAPPCON" minOccurs="0"/>
+		</xs:choice>
+	</xs:group>
+
+	<xs:group name="CAPPCON">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %CAPPCON; (Caption Paragraph Continuation)           *
+    * containing:-                                                       *
+    * or                                                                 *
+    *  capgrp   - Mandatory Single     contains caprow.                  *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="capgrp"/>
+		</xs:choice>
+	</xs:group>
+
+	<xs:element name="proced">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element proced (Procedural Information) containing:-        *
+    *   prelreqs - Mandatory  Single     contains pmd, reqcond, reqpers, *
+    *                                     supequip, supplies, spares,    *
+    *                                     safety.                        *
+    *   mainfunc - Mandatory  Single     contains step1.                 *
+    *   closeup  - Mandatory  Single     contains noclose, step1, refs.  *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="prelreqs"/>
+				<xs:element ref="mainfunc"/>
+				<xs:element ref="closeup"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="mainfunc">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element mainfunc (Maintenance Function) containing:-        *
+    *   step1    - Mandatory Repeatable  contains Definition stored in   *
+    *                                    entity %stepcon;, step2.        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    **********************************************************************
+    * INCLUSION:- figure, foldout, table.                                *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="fft_inc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="step1" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="closeup">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    *  Define Element closeup (Close up procedures) containing:-         *
+    *   noclose - Mandatory  Single    contains No Other Tags.           *
+    * or                                                                 *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *   step1   - Mandatory Single     contains Definition stored in     *
+    *                                   entity %stepcon;, step2.         *
+    * or                                                                 *
+    *   refs    - Mandatory Single     contains norefs, rdandrt, refdms, *
+    *                                   reftp.                           *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    **********************************************************************
+    * INCLUSION:- figure, foldout, table.                                *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="gen_inc" minOccurs="0" maxOccurs="unbounded"/>	
+				<xs:choice>
+					<xs:element ref="noclose"/>
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="step1"/>
+						<xs:element ref="refs"/>
+					</xs:choice>
+				</xs:choice>
+			</xs:choice>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="noclose">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    *  Define Element noclose (No Close Up procedures) containing:-      *
+    *  No Other Tags.                                                    *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType/>
+	</xs:element>
+
+
+</xs:schema>

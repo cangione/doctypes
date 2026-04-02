@@ -1,0 +1,527 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2001-40D:  Allow multiple, optional para after elements     *
+    *                   challeng/response and procd within element step. *
+    * 3. CPF 2001-74SE: Change declaration of values for attribute type  *
+    *                   of element drill to %DRILLTPS; (declaration in   *
+    *                   S1000D.CFG). Change declaration of values for    *
+    *                   attribute crewmem of element crewmem to          *
+    *                   %CREWMEMS; (see S1000D.CFG).                     *
+    * 4. CPF 2002-37GB: Bug fix on exclusion of element sheet within     *
+    *                   frc. Delete exclusion (see ISO 8879, Clause      *
+    *                                                        11.2.5.2).  *
+    * 5. CPF 2002-38SE: Redefine content model in entity %NPAR; due to   *
+    *                   deletion of element specpara and introduction    *
+    *                   of new entity %NP;. Replace call of entity       *
+    *                   %EXTSPEC; by call of %WCNP; for the same reason. *
+    *                   Amend content model in entity %DRLINTRO; by call *
+    *                   of entity %HEADING1; instead of defining elements*
+    *                   applic and title directly.                       *
+    *                   Amend and rearrange content model in entity      *
+    *                   %ACSTCON; by call of entities %HEADING1; and %WC;*
+    *                   Introduce optional attributes check and skill on *
+    *                   element step, defined in entity %CHECKSTP;.      *
+    * 6. Consistency:   Change declared values of attribute memorize from*
+    *                   uppercase first letters to lowercase throughout. *
+    * 7. TPSMG request: File and entity name changed from AIRCREW to CREW*
+    * 8. XML compatibility: Introduce new element challrsp to solve the  *
+    *                       ambiguity of defining element crew twice     *
+    *                       within content model of entity %ACSTCON;.    *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % CREW PUBLIC                                             *
+    *   "-//S1000D//ELEMENTS Crew Breakdown 20030531//EN" >              *
+    * %CREW;                                                             *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing :- acrw.    *
+    ********************************************************************** -->
+
+<!ENTITY % CONTENT "acrw" >
+
+
+
+<!--**********************************************************************
+    * Define Element acrw (All Crew Content) Containing:-                *
+    *  frc      - Mandatory Single     contains title, warning, caution, *
+    *                                  note, para, drill.                *
+    * or                                                                 *
+    *  descacrw - Mandatory Single     contains warning, caution, note,  *
+    *                                  para0.                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  id        - ID       - IMPLIED  - An identifier of the element    *
+    *                       which is assigned at origination and which   *
+    *                       remains unchanged as the document is revised *
+    *                       or updated even though the automatically     *
+    *                       assigned enumeration "labels" change. The    *
+    *                       value of "id" is used when making references *
+    *                       to the element from other portions of the    *
+    *                       document.                                    *
+    *  Attribute Definition list stored in entity %secur;.               *
+    ********************************************************************** -->
+
+<!ELEMENT acrw - - (frc | descacrw) >
+<!ATTLIST acrw
+             id  ID  #IMPLIED
+             %secur; >
+
+
+
+<!--**********************************************************************
+    * Define Element frc (Flight/Operator Reference Cards) containing:-  *
+    *  title    - Optional  Single      contains Definition stored in    *
+    *                                   entity %text;.                   *
+    *  Definition stored in entity %spcpara;.                            *
+    *  para     - Optional  Repeatable  contains Definition stored in    *
+    *                                   entity %paracon;.                *
+    *  drill    - Mandatory Repeatable  contains Definition stored in    *
+    *                                   entity %DRLINTRO;.               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %secur;                 *
+    **********************************************************************
+    * INCLUSION: figure, table, foldout.                                 *
+    ********************************************************************** -->
+
+<!ELEMENT frc - - (title?, (%spcpara;)?, para*, drill+)
+                   +(figure, table, foldout) >
+<!-- Exclusion of element SHEET deleted -->
+<!ATTLIST frc
+             %secur; >
+
+
+
+<!--**********************************************************************
+    * Define Element descacrw (All Crew Description) containing:-        *
+    *  Definition stored in entity %spcpara;.                            *
+    *  para0    - Optional  Repeatable  contains Definition stored in    *
+    *                                   entity %nparacon; and %SUBPAR1;. *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %secur;.                *
+    **********************************************************************
+    * INCLUSION: figure, table, foldout.                                 *
+    ********************************************************************** -->
+
+<!ELEMENT descacrw - - ((%spcpara;), para0*) +(figure, table, foldout) >
+<!ATTLIST descacrw
+             %secur; >
+
+
+
+<!--**********************************************************************
+    * Define Entity %DRLINTRO; (Drill Introduction) containing :-        *
+    *  Definition stored in entity %HEADING1;                            *
+    *  tabtitle - Optional  Single      contains Definition stored in    *
+    *                                   entity %text;.                   *
+    *  Definition stored in entity %spcpara;                             *
+    *  crew       Optional  Repeatable  contains applic, crewmem.        *
+    *  para     - Optional  Repeatable  contains Definition stored in    *
+    *                                   entity %paracon;.                *
+    ********************************************************************** -->
+
+<!ENTITY % DRLINTRO "(%HEADING1;, tabtitle?, (%spcpara;), crew*, para*)" >
+<!-- Content model changed by call of entity %HEADING1; (see COMMON.ENT)   -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %STEPS; (Multiple Steps) containing:-                *
+    *  step    - Mandatory Single     contains Definition stored in      *
+    *                                 entity %ACSTCON; and %STEPS;.      *
+    * or                                                                 *
+    *====================================================================*
+    *  if      - Mandatory Single     contains applic, condit,           *
+    *                                 Definition stored in entity %STEPS;*
+    *  elseif  - Optional  Repeatable contains applic, condit,           *
+    *                                 Definition stored in entity %STEPS;*
+    *====================================================================*
+    * or                                                                 *
+    *  case    - Mandatory Single     contains applic, condit,           *
+    *                                 Definition stored in entity %STEPS;*
+    ********************************************************************** -->
+
+<!ENTITY % STEPS  "(step | ((if, elseif*) | case))" >
+
+
+
+<!--**********************************************************************
+    * Define Element drill (Flight Drill) containing:-                   *
+    *  Definition stored in entity %DRLINTRO;                            *
+    *====================================================================*
+    * Optional Repeatable Group                                          *
+    *====================================================================*
+    *  Mandatory Repeatable Definition stored in entity %STEPS;.         *
+    * or                                                                 *
+    *  subdrill - Optional  Repeatable contains Definition stored in     *
+    *                                  entity %DRLINTRO; and %STEPS;.    *
+    *====================================================================*
+    *  ENDMATTR - Optional  Single     contains APPLIC, PARA.            * 
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  drilltyp  - %DRILLTPS;          - Drill Type                      *
+    *                                    (Flight Deck presentation)      *
+    *                                    %DRILLTPS; decl in S1000D.CFG.  *
+    *  ordered   - Declared - "on"     - Steps form part of              *
+    *                                    chronologically ordered list.   *
+    *            - "on"     - Steps must occur between neighbouring steps*
+    *                         in time.                                   *
+    *            - "off"    - Steps can occur at any time in the drill   *
+    * Attribute Definition list stored in entity %bodyatt;               *
+    * Attribute Definition list stored in entity %secur;                 *
+    ********************************************************************** -->
+
+<!ELEMENT drill - - ((%DRLINTRO;), ((%STEPS;)+ | subdrill*)*, endmattr?) >
+<!ATTLIST drill
+             drilltyp %DRILLTPS;
+             ordered (on | off) "on"
+             %bodyatt;
+             %secur; >
+<!-- Changed declaration of drilltyp -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %ACSTCON; (All Crew Step Content) containing:-       *
+    *  Definition stored in entity %HEADING1;                            *
+    *  Definition stored in entity %WC;                                  *
+    *  Optional repeatable group containing:-                            *
+    *====================================================================*
+    *    Definition stored in entity %NP;        contains note, para     *
+    *   or                                                               *
+    *====================================================================*
+    *      crew     - Optional  Repeatable  contains applic, crewmem.    *
+    *      procd    - Mandatory Single      contains Definition stored in*
+    *                                       entity %paracon;.            *
+    *====================================================================*
+    *     or                                                             *
+    *      challrsp - Mandatory Single     contains challeng, crew,      *
+    *                                               response.            *
+    *====================================================================*
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ENTITY % ACSTCON
+ "%HEADING1;, %WC;, 
+  (%NP; | ((crew*, procd) | challrsp))*" >
+<!-- Changed to allow optional multiple para after procd,challeng/response -->
+<!-- Content model heavily changed and rearranged by call of entities 
+     %HEADING1;, %WC; and %NP; (see COMMON.ENT) -->
+<!-- New element challrsp introduced for XML compatibility reasons -->
+
+
+<!--**********************************************************************
+    * Define Element challrsp (Challenge and Response) containing:-      *
+    *  challeng - Mandatory Single     contains applic, para.            *
+    *====================================================================*
+    *    crew     - Optional  Repeatable  contains applic, crewmem.      *
+    *    response - Mandatory Single      contains applic, para.         *
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ELEMENT challrsp - - (challeng, (crew*, response)+) >
+<!-- Newly introduced element -->
+
+<!--**********************************************************************
+    * Define Element step (Drill or Procedural Step) containing:-        *
+    *  Definition stored in entity %ACSTCON;                             *
+    *  Definition stored in entity %STEPS;                               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  label     - CDATA    - IMPLIED  - Drill Type                      *
+    *                                    (Flight Deck presentation)      *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    *  memorize  - Declared - "NO"     - Memorize this step.             *
+    *            - "no"     - Step not required to be memorized.         *
+    *            - "yes"    - This step must be memorized.               *
+    *  dotline   - Declared - "dot"    - Defines the seperator characters*
+    *                         between the challenge and response elements*
+    *            - "dot"    - sequence of dots.                          *
+    *            - "line"   - solid line.                                *
+    *            - "none"   - No seperator.                              *
+    *  ordered   - Declared - "on"     - Steps form part of              *
+    *                                    chronologically ordered list.   *
+    *            - "on"     - Steps must occur between neighbouring steps*
+    *                         in time.                                   *
+    *            - "off"    - Steps can occur at any time in the drill   *
+    * Attribute Definition list stored in entity %secur;                 *
+    * Attribute Definition List stored in entity %CHECKSTP;              *
+    ********************************************************************** -->
+
+<!ELEMENT step - - ((%ACSTCON;), (%STEPS;)*) >
+<!ATTLIST step
+             label    CDATA  #IMPLIED
+             %bodyatt;
+             memorize (yes | no) "no"
+             dotline  (dot | line | none) "dot"
+             ordered (on | off) "on"
+             %secur; 
+             %CHECKSTP; >
+<!-- Changed declared values of attribute memorize from uppercase first
+     letters to lowercase throughout.   -->
+<!-- Amended by permission of optional attributes ckeck and skill -->
+
+
+
+<!--**********************************************************************
+    * Define Element crew (Responsible Crew) containing:-                *
+    *  applic   - Optional  Single      contains type, model.            *
+    *  crewmem  - Mandatory Repeatable  contains applic.                 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  response  - Declared - "all"    - Responsible for step            *
+    *            - "all"    - All the identified crew members are        *
+    *                         must respond to the step.                  *
+    *            - "any"    - Any of the identified crew members can     *
+    *                         respond to the step                        *
+    ********************************************************************** -->
+
+<!ELEMENT crew - O (applic?, crewmem+) >
+<!ATTLIST crew
+             response    (all | any)  "all" >
+
+
+
+<!--**********************************************************************
+    * Define Element crewmem (Type Of Crew Member) containing:-          *
+    *  applic   - Optional   Single      contains type, model.           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  crewmem  - %CREWMEMS; - REQUIRED - Type(s) of Crew Member(s)      *
+    *                                     %CREWMEMS; decl in S1000D.CFG. *
+    ********************************************************************** -->
+
+<!ELEMENT crewmem - O (applic?) >
+<!ATTLIST crewmem
+             crewmem %CREWMEMS; #REQUIRED >
+<!-- Changed declaration of attribute CREWMEM -->
+
+
+
+<!--**********************************************************************
+    * Define the following Elements:                                     *
+    *  procd    - Procedure                                              *
+    *  challeng - Challenge                                              *
+    *  response - Response                                               *
+    *          All the above elements contain:                           *
+    *  applic   - Optional  Single     contains type, model.             *
+    *  para     - Mandatory Single     contains Definition stored in     *
+    *                                           entity %paracon;.        *
+    ********************************************************************** -->
+
+<!ELEMENT (procd | challeng | response) - - (applic? , para) >
+
+
+
+<!--**********************************************************************
+    * Define Element if (If Condition) containing:-                      *
+    *  applic   - Optional  Single     contains type, model.             *
+    *  condit   - Mandatory Single     contains Definition stored in     *
+    *                                           entity %text;.           *
+    *  Definition stored in entity %STEPS;.                              *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %bodyatt;.              *
+    ********************************************************************** -->
+
+<!ELEMENT if - - (applic?, condit, (%STEPS;)+) >
+<!ATTLIST if
+             %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element elseif (Else If Condition) containing:-             *
+    *  applic   - Optional  Single     contains type, model.             *
+    *  condit   - Mandatory Single     contains Definition stored in     *
+    *                                           entity %text;.           *
+    *  Definition stored in entity %STEPS;.                              *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %bodyatt;.              *
+    ********************************************************************** -->
+
+<!ELEMENT elseif - - (applic?, condit, (%STEPS;)+) >
+<!ATTLIST elseif
+             %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element case (Conditional Case) containing:-                *
+    *  applic   - Optional  Single     contains type, model.             *
+    *  condit   - Mandatory Single     contains Definition stored in     *
+    *                                           entity %text;.           *
+    *  Definition stored in entity %STEPS;.                              *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %bodyatt;.              *
+    ********************************************************************** -->
+
+<!ELEMENT case - -  (applic?, condit, (%STEPS;)+) >
+<!ATTLIST case
+             %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element condit (If, Elseif & Case Condition) containing:-   *
+    *  Definition stored in entity %text;.                               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %secur;.                *
+    **********************************************************************
+    * EXCLUSION: figure, foldout, table.                                 *
+    ********************************************************************** -->
+
+<!ELEMENT condit - O (%text;)+ -(figure | foldout | table) >
+<!ATTLIST condit
+             %secur; >
+
+
+
+<!--**********************************************************************
+    * Define Element subdrill (Sub Flight Drill) containing:-            *
+    *====================================================================*
+    * Optional Single Group                                              *
+    *====================================================================*
+    *  Definition stored in entity %DRLINTRO;.                           *
+    *====================================================================*
+    *====================================================================*
+    * Optional Repeatable Group                                          *
+    *====================================================================*
+    *  Definition stored in entity %STEPS;.                              *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  ordered   - Declared - "on"     - Steps form part of              *
+    *                                    chronologically ordered list.   *
+    *            - "on"     - Steps must occur between neighbouring steps*
+    *                         in time.                                   *
+    *            - "off"    - Steps can occur at any time in the drill   *
+    *  Attribute Definition list stored in entity %bodyatt;.             *
+    *  Attribute Definition list stored in entity %secur;.               *
+    ********************************************************************** -->
+
+<!ELEMENT subdrill - - ((%DRLINTRO;), (%STEPS;)*) >
+<!ATTLIST subdrill
+             ordered (on | off) "on"
+             %bodyatt;
+             %secur; >
+
+
+
+<!--**********************************************************************
+    * Define Element tabtitle (Tab Title) containing:-                   *
+    *  Definition stored in entity %text;.                               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    * Attribute Definition list stored in entity %INSDEL;.               *
+    **********************************************************************
+    * EXCLUSION: refdm, reftp, capgrp.                                   *
+    ********************************************************************** -->
+
+<!ELEMENT tabtitle - O (%text;)+ -(refdm | reftp | capgrp)>
+<!ATTLIST tabtitle
+             %INSDEL; >
+
+
+
+<!--**********************************************************************
+    * Define Element endmattr (Drill End Matter) containing:-            *
+    *  applic   - Optional  Single      contains type, model.            *
+    *  para     - Mandatory Repeatable  contains Definition stored in    *
+    *                                            entity %paracon;.       *
+    ********************************************************************** -->
+
+<!ELEMENT endmattr - O (applic?, para+) >
+
+
+
+<!--**********************************************************************
+    * Define Entity %NPAR; (Numbered Paragraphs) containing:-            *
+    *   warning - Optional   Repeatable  contains applic, symbol, para,  *
+    *                                    Definition stored in entity     *
+    *                                    %list;.                         *
+    *   caution - Optional   Repeatable  contains applic, symbol, para,  *
+    *                                    Definition stored in entity     *
+    *                                    %list;.                         *
+    *   Definition stored in Entity %NP;                                 *
+    *             - Mandatory Single     contains note, para.            *
+    *   drill     - Optional  Single     contains Definition stored in   *
+    *                                    entity %DRLINTRO; step, %STEPS;,*
+    *                                    subdrill, endmattr.             *
+    ********************************************************************** -->
+
+<!ENTITY % NPAR "warning*, caution*, %NP;, drill?" >
+<!-- Content model in entity redefined due to deletion of specpara and
+     introduction of new entity %NP;. -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %SUBPAR1; (Sub Paragraph 1) containing:-             *
+    *  subpara1 - Optional   Repeatable  contains Definition stored in   *
+    *                                    entity %nparcon;, subpara2.     *
+    ********************************************************************** -->
+
+<!ENTITY % SUBPAR1 "(subpara1*)" >
+
+
+
+<!--**********************************************************************
+    * Call the Numbered Paragraphs Public Text.                          *
+    * The formal public identifier is stored in the entity %EXTPARA;     *
+    ********************************************************************** -->
+
+%EXTPARA;
+
+
+
+<!--**********************************************************************
+    * Call the Lists Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTLIST;     *
+    ********************************************************************** -->
+
+%EXTLIST;
+
+
+
+<!--**********************************************************************
+    * Call the Figure And Table Public Text.                             *
+    * The formal public identifier is stored in the entity %EXTFTAB;     *
+    ********************************************************************** -->
+
+%EXTFTAB;
+
+
+
+<!--**********************************************************************
+    * Call the Warning, Caution, Note, Para Public Text.                 *
+    * The formal public identifier is stored in the entity %WCNP;        *
+    ********************************************************************** -->
+
+%WCNP;
+<!-- Call of entity %EXTSPEC; replaced by call of %WCNP; due to deletion
+     of element SPECPARA.  -->
+
+
+
+<!--**********************************************************************
+    * Call the Caption Group Public Text.                                *
+    * The formal public identifier is stored in the entity %CAPGRP;      *
+    ********************************************************************** -->
+
+%CAPGRP;

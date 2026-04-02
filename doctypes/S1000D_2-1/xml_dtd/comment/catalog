@@ -1,0 +1,42 @@
+SGMLDECL "../dcl/s1000dx.dcl"
+
+-- ISO 8879-1986 XML Character Entities defined in ISOENTS.ENT --
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Arrow Relations//EN//XML"      "../ent/iso-amsa.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Binary Operators//EN//XML"     "../ent/iso-amsb.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Delimiters//EN//XML"           "../ent/iso-amsc.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Negated Relations//EN//XML"    "../ent/iso-amsn.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Ordinary//EN//XML"             "../ent/iso-amso.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Relations//EN//XML"            "../ent/iso-amsr.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Box and Line Drawing//EN//XML"                     "../ent/iso-box.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Russian Cyrillic//EN//XML"                         "../ent/iso-cyr1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Non-Russian Cyrillic//EN//XML"                     "../ent/iso-cyr2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Diacritical Marks//EN//XML"                        "../ent/iso-dia.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Greek Letters//EN//XML"                            "../ent/iso-grk1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Monotoniko Greek//EN//XML"                         "../ent/iso-grk2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN//XML"                            "../ent/iso-grk3.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Alternative Greek Symbols//EN//XML"                "../ent/iso-grk4.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN//XML"                            "../ent/iso-lat1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Latin 2//EN//XML"                            "../ent/iso-lat2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN//XML"              "../ent/iso-num.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN//XML"                               "../ent/iso-pub.ent"
+PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN//XML"                        "../ent/iso-tech.ent"
+
+
+-- S1000D 2.1 COMMENT XML DTD and Entities --
+PUBLIC "-//S1000D//DTD S1000D Commenting 20040229//EN//XML"                     	"dtd/comment.dtd"
+
+PUBLIC "-//S1000D//ELEMENTS Data Restrictions 20030531//EN//XML"			"dtd/datarest.ent"
+PUBLIC "-//S1000D//ELEMENTS Dispatch Address Details 20030531//EN//XML"			"dtd/dispaddr.ent"
+PUBLIC "-//S1000D//ELEMENTS Data Module Code Breakdown 20030531//EN//XML"		"dtd/dmc.ent"
+PUBLIC "-//S1000D//ENTITIES DM Address Details 1st Part 20030531//EN//XML" 		"dtd/dmaddr1.ent"
+PUBLIC "-//S1000D//ELEMENTS DM Address Details 2nd Part 20030531//EN//XML" 		"dtd/dmaddr2.ent"
+PUBLIC "-//S1000D//ELEMENTS DM Address Details 3rd Part Reduced 20030531//EN//XML" 	"dtd/dmaddr3r.ent"
+PUBLIC "-//S1000D//ENTITIES ISO Entity Definitions 20030531//EN//XML"			"dtd/isoents.ent"
+PUBLIC "-//S1000D//ELEMENTS List Code Definitions 20030531//EN//XML"                 	"dtd/listcode.ent"  
+PUBLIC "-//S1000D//ELEMENTS Publication Module Code Breakdown 20030531//EN//XML"	"dtd/pmc.ent"
+PUBLIC "-//S1000D//ENTITIES S1000D Project Configuration//EN//XML"                   	"dtd/project.cfg"
+PUBLIC "-//S1000D//ENTITIES RDF and DC Definitions 20030531//EN//XML"			"dtd/rdfdc.ent"
+PUBLIC "-//S1000D//ENTITIES XLINK Definitions 20030531//EN//XML"	 		"dtd/xlink.ent"
+
+
+-- End of S1000D 2.1 COMMENT XML DTD and Entities --

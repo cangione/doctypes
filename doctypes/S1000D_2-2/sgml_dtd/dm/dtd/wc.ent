@@ -1,0 +1,85 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. New public identifier.                                          *
+    * 2. CPF 2002-11FR: Remove exclusion of <figure>, <foldout>, <table> *
+    *                   from <warning> and <caution>.                    *
+    *                   Move elements <note> and <para> to new file      *
+    *                   PARAGRAPHS.ENT, i.e. split WCNP.ENT into WC.ENT  *
+    *                   and PARAGRAPHS.ENT.                              *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTWC PUBLIC                                            *
+    *   "-//S1000D//ELEMENTS Warning And Caution Breakdown 20050501//EN">*
+    * %EXTWC;                                                            *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element warning (Warning) containing:-                      *
+    * applic  - Optional   Single        contains type, model.           *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *   symbol  - Mandatory  Single      contains No Other Tags.         *
+    *  or                                                                *
+    *   para    - Mandatory  Single      contains applic, Definition     *
+    *                                     stored in entity %paracon;.    *
+    *  or                                                                *
+    *   Definition stored in entity %list;                               *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type     - CDATA    - IMPLIED  - Specifies the type of Warning.   *
+    *  xrefid   - IDREF    - IMPLIED  - Specifies a unique identifier of *
+    *                                   an element.                      *
+    *  vital    - NUMBER   - "0"      - Declares if vital warning.       *
+    *           - "0"      - None Vital Warning.                         *
+    *           - "1"      - Vital Warning.                              *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT warning - - (applic?,(symbol | para | %list;)+) >
+<!ATTLIST warning
+            type        CDATA       #IMPLIED
+            xrefid      IDREF       #IMPLIED
+            vital       %yesorno;   "0"
+            %bodyatt; >
+<!-- Exclusion removed -->
+
+
+
+<!--**********************************************************************
+    * Define Element caution (Caution) containing:-                      *
+    *   applic  - Optional   Single      contains type, model.           *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *   symbol  - Mandatory  Single      contains No Other Tags.         *
+    *  or                                                                *
+    *   para    - Mandatory  Single      contains applic, Definition     *
+    *                                     stored in entity %paracon;.    *
+    *  or                                                                *
+    *   Definition stored in entity %list;                               *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type     - CDATA    - IMPLIED  - Specifies the type of Caution.   *
+    *  xrefid   - IDREF    - IMPLIED  - Specifies a unique identifier of *
+    *                                   an element.                      *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT caution - - (applic?,(symbol | para | %list;)+) >
+<!ATTLIST caution
+            type        CDATA       #IMPLIED
+            xrefid      IDREF       #IMPLIED
+            %bodyatt; >
+<!-- Exclusion removed -->

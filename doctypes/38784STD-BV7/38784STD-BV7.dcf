@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Arbortext, Inc., 1988-2004, v.4002-->
+<!DOCTYPE DocumentTypeConfiguration PUBLIC "-//Arbortext//DTD Document Type Configuration 2.0//EN"
+ "dcfdtd.dtd">
+<DocumentTypeConfiguration>
+<Options allowApplicationToolbar="no" allowComposeStylesheetList="no" allowFosiMod="yes"
+allowTouchup="yes" protected="no"/>
+<NewDialog>
+<New description="General Style and Format (38784STD-BV7)"
+sampleFile="demo.sgm" templateFile="template.sgm"/></NewDialog>
+<ElementOptions>
+<ElementOption category="division" element="abbrsect"/>
+<ElementOption category="division" element="appendix"/>
+<ElementOption category="division" element="applicdef"/>
+<ElementOption category="division" element="chapter"/>
+<ElementOption category="division" element="chginssht"/>
+<ElementOption category="title" element="chgnum"/>
+<ElementOption category="division" element="dddesc"/>
+<ElementOption category="division" element="ddindex"/>
+<ElementOption category="division" element="ddsheet"/>
+<ElementOption category="division" element="figure"/>
+<ElementOption category="division" element="foldout"/>
+<ElementOption category="division" element="ipbdesc"/>
+<ElementOption category="division" element="ipbesdsdesc"/>
+<ElementOption category="division" element="ipbfinding"/>
+<ElementOption category="division" element="ipbhcidesc"/>
+<ElementOption category="division" element="ipbmfrlist"/>
+<ElementOption category="division" element="ipbmodelcover"/>
+<ElementOption category="division" element="ipbpartstd"/>
+<ElementOption category="division" element="ipbquickchgexpl"/>
+<ElementOption category="division" element="ipbserialization"/>
+<ElementOption category="division" element="ipbsertable"/>
+<ElementOption category="division" element="ipbshtnoexpl"/>
+<ElementOption category="division" element="ipbsimassem"/>
+<ElementOption category="division" element="ipbsmrexpl"/>
+<ElementOption category="division" element="ipbuseonexpl"/>
+<ElementOption category="division" element="lrp"/>
+<ElementOption category="title" element="nomen"/>
+<ElementOption category="division" element="objmedia"/>
+<ElementOption category="division" element="para0"/>
+<ElementOption element="pgbrk" protected="yes"/><?Pub Caret1?>
+<ElementOption category="division" element="prtitle"/>
+<ElementOption category="division" element="ratddesc"/>
+<ElementOption category="division" element="section"/>
+<ElementOption category="division" element="subpara1"/>
+<ElementOption category="division" element="subpara2"/>
+<ElementOption category="division" element="subpara3"/>
+<ElementOption category="division" element="subpara4"/>
+<ElementOption category="division" element="subpara5"/>
+<ElementOption category="division" element="subpara6"/>
+<ElementOption category="division" element="subpara7"/>
+<ElementOption category="division" element="subpara8"/>
+<ElementOption category="division" element="tctolist"/>
+<ElementOption category="title" element="title"/>
+<ElementOption category="division" element="tmimprep"/>
+<ElementOption category="division" element="wpgentry"/></ElementOptions>
+<AttributeOptions>
+<AttributeOption attribute="level" dialogHidden="yes"/>
+<AttributeOption attribute="change" dialogHidden="yes"/>
+<AttributeOption attribute="inschlvl" dialogHidden="yes"/>
+<AttributeOption attribute="delchlvl" dialogHidden="yes"/></AttributeOptions>
+<Display>
+<ElementDisplay element="abbrsect" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="abbrtitle" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="activity" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="address" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="appendix" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="applicdef" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="appltitle" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="authnot" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="brk" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="chapter" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="chgdate" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="chginssht" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="chgnum" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="chgpara" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="chgrec" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="chgtxt" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="cogact" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="contents" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="contractno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="copyright" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="date" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="dateinc" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="dddesc" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ddindex" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ddlist" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ddsheet" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="def" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="destr" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="discl" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="distrib" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="docpartn" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="doctype" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ecpno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="effdatenot" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="esds" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="expcont" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="extref" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="fcp" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="figno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="figure" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="foldout" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ftnote" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ftnref" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="graphic" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="hazmat" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="hci" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="hcp" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="insertpg" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="internatlstd" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbassy" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbcage" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbdesc" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbesdsdesc" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbfigindex" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbfigureno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbfinding" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbgroup10" noTagModeDisplay="full" pair="start"
+partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbhcidesc" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbmfrlist" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbmodelcover" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbpartname" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbpartnosym" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbpartstd" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbplbrk" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbquickchgexpl" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbrefdes" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbserialization" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbsertable" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbshtnoexpl" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbsimassem" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbsmrcode" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbsmrexpl" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbsssn" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbunits" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbuseoncode" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ipbuseonexpl" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="item" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="lepchg" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="leppage" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="letter" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="line" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="location" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="lrp" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="maintlvl" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="mfr" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="modelno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="moveddata" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="mrchgtxt" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="mrinfo" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="mritem" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="mrpara" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="nmlist" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="nomen" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="none" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="nsn" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="nsp" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="oadr" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="objmedia" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="oci" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ocp" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="pageno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="para" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="para0" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="param" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="paratitle" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="partno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="pgbrk" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="pgnumber" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="phrase" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="precaut" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="pretmidno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="prtitle" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="pubdate" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="ratddesc" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="remarks" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="removepg" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="revnum" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="seal" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="section" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="seqno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="serno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="sigblock" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="subject" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="subjinfo" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="subpara1" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="subpara2" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="subpara3" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="subpara4" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="subpara5" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="subpara6" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="subpara7" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="subpara8" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="subtitle" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="supersed" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="suppl" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="symtitle" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="tabno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="tctolist" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="tctono" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="term" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="tfndisplay" noTagModeDisplay="full" pair="start"
+partialTagModeDisplay="full"/>
+<ElementDisplay element="tfnid" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="tfnref" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="title" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="tmidno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="tmimprep" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="topic" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="tpdrlocation" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="tpdrno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="typedes" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="typeno" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="verbatim" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="volcontents" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="vollepchg" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="volleppage" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="volnot" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="volnum" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="wpgentry" pair="start" partialTagModeDisplay="full"/>
+<ElementDisplay element="xref" noTagModeDisplay="full" pair="start" partialTagModeDisplay="full"/>
+</Display>
+<Specials>
+<Graphic element="graphic" entity="boardno" horizScale="hscale"
+ vertScale="vscale" cropLowerLeftX="coordst" cropLowerLeftY="coordend"
+ cropWidth="rucordra" cropHeight="llcordra" reproDepth="reprodep"
+ reproWidth="reprowid" scaleToFit="scalefit"/>
+<Paragraph element="warning"/>
+<Paragraph element="note"/>
+<Paragraph element="caution"/>
+<Paragraph element="para"/>
+<Paragraph element="typedes"/>
+<Paragraph element="partno"/>
+<Paragraph element="title"/>
+<Paragraph element="modelno"/>
+<Paragraph element="tmidno"/>
+<Paragraph element="ipbfigindex"/>
+<Paragraph element="ratdentry"/>
+<Paragraph element="topic"/>
+<Paragraph element="insertpg"/>
+<Paragraph element="step2"/>
+<Paragraph element="param"/>
+<Paragraph element="prentry"/>
+<Paragraph element="glosslist"/>
+<Paragraph element="date"/>
+<Paragraph element="step3"/>
+<Paragraph element="step4"/>
+<Paragraph element="remarks"/>
+<Paragraph element="ecpno"/>
+<Paragraph element="dateinc"/>
+<Paragraph element="typeno"/>
+<Paragraph element="mritem"/>
+<Paragraph element="tctorow"/>
+<Paragraph element="lepchg"/>
+<Paragraph element="def"/>
+<Paragraph element="tctono"/>
+<Paragraph element="item"/>
+<Paragraph element="mrlist"/>
+<Paragraph element="vollepchg"/>
+<Paragraph element="nmlist"/>
+<Paragraph element="lrpentry"/>
+<Paragraph element="letter"/>
+<Paragraph element="term"/></Specials>
+<ContextTransformations>
+<InsertAroundToFix>
+<ElementListItem element="item"/>
+<ElementListItem element="tabno"/>
+<ElementListItem element="secindex"/>
+<ElementListItem element="title"/>
+<ElementListItem element="expcont"/>
+<ElementListItem element="removepg"/>
+<ElementListItem element="leppage"/>
+<ElementListItem element="param"/>
+<ElementListItem element="internatlstd"/>
+<ElementListItem element="tfnid"/>
+<ElementListItem element="sigblock"/>
+<ElementListItem element="volleppage"/>
+<ElementListItem element="change"/>
+<ElementListItem element="ipbsmrcode"/>
+<ElementListItem element="subtitle"/>
+<ElementListItem element="contractno"/>
+<ElementListItem element="symtitle"/>
+<ElementListItem element="dataiden"/>
+<ElementListItem element="effdatenot"/>
+<ElementListItem element="ipbsssn"/>
+<ElementListItem element="tmidno"/>
+<ElementListItem element="contents"/>
+<ElementListItem element="destr"/>
+<ElementListItem element="topic"/>
+<ElementListItem element="pageno"/>
+<ElementListItem element="supersed"/>
+<ElementListItem element="precaut"/>
+<ElementListItem element="serno"/>
+<ElementListItem element="ipbpartnosym"/>
+<ElementListItem element="tpdrno"/>
+<ElementListItem element="paratitle"/>
+<ElementListItem element="date"/>
+<ElementListItem element="lepchg"/>
+<ElementListItem element="ipbfigindex"/>
+<ElementListItem element="def"/>
+<ElementListItem element="hazmat"/>
+<ElementListItem element="ipbunits"/>
+<ElementListItem element="volnot"/>
+<ElementListItem element="mfr"/>
+<ElementListItem element="seqno"/>
+<ElementListItem element="ipbfigureno"/>
+<ElementListItem element="ilink"/>
+<ElementListItem element="ftnote"/>
+<ElementListItem element="address"/>
+<ElementListItem element="emphasis"/>
+<ElementListItem element="distrib"/>
+<ElementListItem element="doctype"/>
+<ElementListItem element="pgnumber"/>
+<ElementListItem element="insertpg"/>
+<ElementListItem element="suppl"/>
+<ElementListItem element="oadr"/>
+<ElementListItem element="typedes"/>
+<ElementListItem element="appltitle"/>
+<ElementListItem element="discl"/>
+<ElementListItem element="ipbcage"/>
+<ElementListItem element="authnot"/>
+<ElementListItem element="vollepchg"/>
+<ElementListItem element="subject"/>
+<ElementListItem element="nomen"/>
+<ElementListItem element="term"/>
+<ElementListItem element="ipbrefdes"/>
+<ElementListItem element="chgtxt"/>
+<ElementListItem element="maintlvl"/>
+<ElementListItem element="chgnum"/>
+<ElementListItem element="activity"/>
+<ElementListItem element="ecpno"/>
+<ElementListItem element="tctono"/>
+<ElementListItem element="dateinc"/>
+<ElementListItem element="line"/>
+<ElementListItem element="abbrtitle"/>
+<ElementListItem element="applicabil"/>
+<ElementListItem element="mrpara"/>
+<ElementListItem element="remarks"/>
+<ElementListItem element="para"/>
+<ElementListItem element="letter"/>
+<ElementListItem element="partno"/>
+<ElementListItem element="ipbuseoncode"/>
+<ElementListItem element="volnum"/>
+<ElementListItem element="cogact"/>
+<ElementListItem element="pubdate"/>
+<ElementListItem element="nsn"/>
+<ElementListItem element="revnum"/>
+<ElementListItem element="chgdate"/>
+<ElementListItem element="ipbpartname"/>
+<ElementListItem element="figno"/>
+<ElementListItem element="tpdrlocation"/>
+<ElementListItem element="copyright"/>
+<ElementListItem element="pretmidno"/>
+<ElementListItem element="nmlist"/>
+<ElementListItem element="modelno"/>
+<ElementListItem element="moveddata"/>
+<ElementListItem element="volcontents"/>
+<ElementListItem element="prindex"/>
+<ElementListItem element="phrase"/>
+<ElementListItem element="clink"/>
+<ElementListItem element="mritem"/>
+<ElementListItem element="docpartn"/>
+<ElementListItem element="typeno"/>
+<ElementListItem element="chgpara"/></InsertAroundToFix>
+</ContextTransformations>
+</DocumentTypeConfiguration>
+<?Pub *0000021495 0?>

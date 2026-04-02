@@ -1,0 +1,4429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Ryan Mayes (USAMC Logistics Support Activity) -->
+<!--
+Document: GEIA_STD_0007_Types_B.xsd
+Last Updated: 2013
+Author: USAMC LOGSA
+Description: Defines data types used by GEIA_STD_0007_B.xsd
+-->
+<xsd:schema xmlns="http://www.geia_STD_0007.com/2006/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.geia_STD_0007.com/2006/types" elementFormDefault="qualified">
+	<xsd:simpleType name="achieved_availability_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,2})|([0-9]{0,2}\.[0-9]{0,6})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="acquisition_decision_office_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,15}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="acquisition_method_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="acquisition_method_suffix_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="activity_name_location_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,50}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="adapter_interconnector_device_required_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="additional_reference_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,32}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="additional_requirements_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="administrative_and_logistics_delay_time_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="administrative_lead_time_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="allocation_designation_description_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:pattern value="(INVRECORD)|(NOTAPPLIC)|(PERCRACRW)"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:pattern value="(PER[0-9]{2}ACFT)|(PER[0-9]{2}MISL)|(PER[0-9]{2}ENGN)|(PER[0-9]{2}LABS)|(PER[0-9]{2}TRGT)"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="allocation_extended_range_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="allocation_land_vessel_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="L"/>
+			<xsd:enumeration value="V"/>
+			<xsd:enumeration value="B"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="allocation_maintenance_level_function_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="O"/>
+			<xsd:enumeration value="OI"/>
+			<xsd:enumeration value="I"/>
+			<xsd:enumeration value="IW"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="I1"/>
+			<xsd:enumeration value="I2"/>
+			<xsd:enumeration value="T3"/>
+			<xsd:enumeration value="T"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="H"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="allocation_range_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="allocation_station_identification_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="allowance_document_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="allowance_item_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="allowance_item_quantity_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="alternate_logistics_support_analysis_control_number_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z0-9]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="annual_man_hours_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,5})|([0-9]{0,5}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="annual_number_of_missions_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,6}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="annual_operating_days_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="0"/>
+					<xsd:maxInclusive value="366"/>
+					<xsd:pattern value="[0-9]{0,3}"/>
+					<!-- Value range is 0-366-->
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+					<!--“” accommodates null values for change file element deletions-->
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="annual_operating_requirement_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,6}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="annual_operating_time_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="0"/>
+					<xsd:maxInclusive value="8784"/>
+					<xsd:pattern value="[0-9]{0,4}"/>
+					<!-- Value range is 0-8784. 8784 hours in a 366 day year.-->
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+					<!--“” accommodates null values for change file element deletions-->
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="armed_services_vocational_aptitude_battery_aptitude_element_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z| ]{0,2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="armed_services_vocational_aptitude_battery_expected_range_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="armed_services_vocational_aptitude_battery_lowest_percent_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="armed_services_vocational_aptitude_battery_test_score_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="authorized_quantity_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,5}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="automatic_data_processing_equipment_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="available_man_hour_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,6}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="available_quantity_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,5}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="axle_length_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,3})|([0-9]{0,3}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="built_in_test_cannot_duplicate_percentage_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="built_in_test_detectability_level_percentage_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="built_in_test_retest_ok_percent_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="calibration_interval_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="calibration_item_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="calibration_measurement_requirement_recommended_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="calibration_measurement_requirement_summary_parameter_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="calibration_measurement_requirement_summary_recommended_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="calibration_measurement_requirement_summary_status_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="calibration_procedure_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,20}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="calibration_required_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="calibration_standard_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="calibration_time_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,4})|([0-9]{0,4}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="caption_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,255}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="caution_warning_note_identifier_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z0-9]{0,5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="change_authority_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,15}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="circuit_breaker_group_number_Type">
+		<xsd:restriction base="xsd:integer">
+			<xsd:pattern value="[0-9]{0,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="circuit_breaker_identification_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z0-9]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="circuit_breaker_objective_state_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="open"/>
+			<xsd:enumeration value="close"/>
+			<xsd:enumeration value="verify_open"/>
+			<xsd:enumeration value="verify_closed"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="circuit_breaker_sequence_number_Type">
+		<xsd:restriction base="xsd:integer">
+			<xsd:pattern value="[0-9]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="circuit_breaker_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="electronic_circuit_breaker"/>
+			<xsd:enumeration value="electromechanical_circuit_breaker"/>
+			<xsd:enumeration value="dummy_circuit_breaker"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="cleaning_and_drying_procedures_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="commercial_and_government_entity_city_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,20}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="commercial_and_government_entity_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="commercial_and_government_entity_name_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,25}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="commercial_and_government_entity_nation_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,20}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="commercial_and_government_entity_postal_zone_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="commercial_and_government_entity_state_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="commercial_and_government_entity_street_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,25}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="common_unit_under_test_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="contact_team_delay_time_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="container_length_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="container_national_stock_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,20}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="container_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,36}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="contract_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,19}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="contractor_furnished_equipment_government_furnished_equipment_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="G"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="contractor_technical_information_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AB"/>
+			<xsd:enumeration value="AC"/>
+			<xsd:enumeration value="AD"/>
+			<xsd:enumeration value="AG"/>
+			<xsd:enumeration value="AK"/>
+			<xsd:enumeration value="AM"/>
+			<xsd:enumeration value="AN"/>
+			<xsd:enumeration value="AP"/>
+			<xsd:enumeration value="AV"/>
+			<xsd:enumeration value="AY"/>
+			<xsd:enumeration value="BB"/>
+			<xsd:enumeration value="BC"/>
+			<xsd:enumeration value="BD"/>
+			<xsd:enumeration value="BG"/>
+			<xsd:enumeration value="BK"/>
+			<xsd:enumeration value="BM"/>
+			<xsd:enumeration value="BN"/>
+			<xsd:enumeration value="BP"/>
+			<xsd:enumeration value="BV"/>
+			<xsd:enumeration value="BY"/>
+			<xsd:enumeration value="CB"/>
+			<xsd:enumeration value="CC"/>
+			<xsd:enumeration value="CD"/>
+			<xsd:enumeration value="CG"/>
+			<xsd:enumeration value="CK"/>
+			<xsd:enumeration value="CM"/>
+			<xsd:enumeration value="CN"/>
+			<xsd:enumeration value="CP"/>
+			<xsd:enumeration value="CV"/>
+			<xsd:enumeration value="CY"/>
+			<xsd:enumeration value="DB"/>
+			<xsd:enumeration value="DC"/>
+			<xsd:enumeration value="DD"/>
+			<xsd:enumeration value="DG"/>
+			<xsd:enumeration value="DK"/>
+			<xsd:enumeration value="DM"/>
+			<xsd:enumeration value="DN"/>
+			<xsd:enumeration value="DP"/>
+			<xsd:enumeration value="DV"/>
+			<xsd:enumeration value="DY"/>
+			<xsd:enumeration value="EB"/>
+			<xsd:enumeration value="EC"/>
+			<xsd:enumeration value="ED"/>
+			<xsd:enumeration value="EG"/>
+			<xsd:enumeration value="EK"/>
+			<xsd:enumeration value="EM"/>
+			<xsd:enumeration value="EN"/>
+			<xsd:enumeration value="EP"/>
+			<xsd:enumeration value="EV"/>
+			<xsd:enumeration value="EY"/>
+			<xsd:enumeration value="FB"/>
+			<xsd:enumeration value="FC"/>
+			<xsd:enumeration value="FD"/>
+			<xsd:enumeration value="FG"/>
+			<xsd:enumeration value="FK"/>
+			<xsd:enumeration value="FM"/>
+			<xsd:enumeration value="FN"/>
+			<xsd:enumeration value="FP"/>
+			<xsd:enumeration value="FV"/>
+			<xsd:enumeration value="FY"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="control_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/>
+			<xsd:enumeration value="7"/>
+			<xsd:enumeration value="8"/>
+			<xsd:enumeration value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="conversion_factor_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{0,5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="cost_per_reorder_action_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,2})|([0-9]{0,2}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="cost_per_requisition_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,2})|([0-9]{0,2}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,8}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="crest_angle_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="0"/>
+					<xsd:maxInclusive value="90"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="crew_size_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,4}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="critical_item_code_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:pattern value="[P|M|B]{1}[CAOFDSLPQ]{2,12}"/>
+					<!--The standard specifies specific codes for positions 2-13, however there is no order for the codes, which means there could be thousands of permutations, too many to list.-->
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:pattern value="[C][A]|[C][O]|[F][D]|[F][S]|[L][L]|[P][Q]|[S][Q]"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="criticality_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="currency_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="cushioning_and_dunnage_material_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="cushioning_thickness_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="custody_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="E"/>
+			<xsd:enumeration value="P"/>
+			<xsd:enumeration value="L"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="data_status_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="G"/>
+			<xsd:enumeration value="R"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="date_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([0-9]{2}[0][1]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))|([0-9]{2}[0][2]([0-2]{1}[1-9]{1}|[1][0]|[2][0]))|([0-9]{2}[0][3]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))|([0-9]{2}[0][4]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0]))|([0-9]{2}[0][5]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))|([0-9]{2}[0][6]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0]))|([0-9]{2}[0][7]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))|([0-9]{2}[0][8]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))|([0-9]{2}[0][9]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0]))|([0-9]{2}[1][0]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))|([0-9]{2}[1][1]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0]))|([0-9]{2}[1][2]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))"/>
+			<!--Format date_type is YYMMDD.   YY = 00-99. MM = 01-12. DD restricted based on MM value (01-31 depending on month).-->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="defense_logistics_information_service_screening_requirement_code_Type">
+		<xsd:annotation>
+			<xsd:documentation>DOD 4100.39-M</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="delivery_schedule_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="demilitarization_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="demilitarization_cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="design_data_category_code_contractor_recommended_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="design_data_category_code_government_required_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="design_data_category_code_scope_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,40}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="design_data_category_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="E"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="G"/>
+			<xsd:enumeration value="H"/>
+			<xsd:enumeration value="I"/>
+			<xsd:enumeration value="J"/>
+			<xsd:enumeration value="K"/>
+			<xsd:enumeration value="L"/>
+			<xsd:enumeration value="M"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="designated_rework_point_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="disassembly_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="discount_rate_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,1})|([0-9]{0,1}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="document_availability_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="document_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{9}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="document_file_extension_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,32}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="document_id_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[—A-Z0-9–-]{0,56}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="document_identifier_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="drawing_classification_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[ABCDEFGHIJ]{1}[1-3]{1}[YN]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="drawing_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[–A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;—]{0,32}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="drawing_Type">
+		<xsd:restriction base="xsd:base64Binary"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="duty_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="duty_position_requiring_a_new_or_revised_skill_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,19}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="duty_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,240}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="economic_analysis_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="element_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="E"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="end_item_acronym_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="end_item_range_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,8}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="engineering_failure_mode_mean_time_between_failure_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="environmental_handling_and_transportation_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="essentiality_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/>
+			<xsd:enumeration value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="estimated_salvage_value_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="event_trigger_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="external_or_internal_load_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="facility_area_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,6}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="facility_category_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{0,6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="facility_name_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,32}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="facility_class_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,19}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="facility_requirement_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="facility_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="failure_effect_probability_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,1})|([0-9]{0,1}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="failure_mode_classification_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="T"/>
+			<xsd:enumeration value="O"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="failure_mode_criticality_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="failure_mode_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[F|D]{1}[A-Z0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="failure_mode_ratio_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-1]{0,1})|([0]{0,1}\.[0-9]{0,3})|([1]{0,1}\.[0]{0,3})"/>
+					<!--Valid = e.g. 0,1, 0.000, 0.01, 0.999, 1.000, 1.0-->
+					<!--Invalid = e.g. 1.01-->
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="failure_probability_level_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="E"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="failure_rate_data_source_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,32}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="failure_rate_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="family_group_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="fault_isolation_ambiguity_group_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="fault_isolation_percent_failure_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,2})|([0-9]{0,2}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="federal_supply_classification_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="figure_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="fiscal_year_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="freight_classification_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="generic_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="government_designator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,20}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="graphic_source_identification_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,47}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="hardness_critical_item_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="hardness_critical_procedure_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="hazardous_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="hazardous_maintenance_procedure_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="hazardous_materials_storage_cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,8}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="hazardous_waste_disposal_cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,8}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="hazardous_waste_storage_cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,8}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="helicopter_mission_altitude_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,5}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="helicopter_mission_distance_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="helicopter_mission_payload_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,8}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="helicopter_mission_temperature_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="-460"/>
+					<xsd:pattern value="[0-9]{0,3}|[-][0-9]{0,3}"/>
+					<!--[-] allows for negative value-->
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="helicopter_mission_time_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,2})|([0-9]{0,2}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="highway_model_load_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="highway_transportation_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="highway_transporter_model_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,19}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="holding_cost_percentage_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="hour_labor_rate_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,2})|([0-9]{0,2}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="identification_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,19}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="indenture_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z*]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="industrial_materials_analysis_of_capacity_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,19}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="information_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="information_code_variant_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="inherent_availability_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,2})|([0-9]{0,2}\.[0-9]{0,6})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="inherent_maintenance_factor_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,1})|([0-9]{0,1}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="initial_bin_cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,4}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="initial_cataloging_cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,4}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="input_power_source_ac_dc_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="D"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="input_power_source_frequency_range_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="input_power_source_operating_range_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="input_power_source_percent_maximum_ripple_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,2})|([0-9]{0,2}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="input_power_source_phase_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[1-3]{1}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="input_power_source_watts_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,5}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="integrated_logistics_support_requirement_category_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="E"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="G"/>
+			<xsd:enumeration value="H"/>
+			<xsd:enumeration value="I"/>
+			<xsd:enumeration value="J"/>
+			<xsd:enumeration value="K"/>
+			<xsd:enumeration value="L"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value="O"/>
+			<xsd:enumeration value="P"/>
+			<xsd:enumeration value="Q"/>
+			<xsd:enumeration value="R"/>
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="T"/>
+			<xsd:enumeration value="U"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="interchangeability_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="OW"/>
+			<xsd:enumeration value="OR"/>
+			<xsd:enumeration value="TW"/>
+			<xsd:enumeration value="NI"/>
+			<xsd:enumeration value="NR"/>
+			<xsd:enumeration value="OM"/>
+			<xsd:enumeration value="TM"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="interest_rate_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,1})|([0-9]{0,1}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="intermediate_container_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="intermediate_container_quantity_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="interoperable_item_number_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="I"/>
+			<xsd:enumeration value="M"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="issue_number_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="inventory_storage_space_cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,2})|([0-9]{0,2}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="item_category_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="7"/>
+			<xsd:enumeration value="8"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="H"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="G"/>
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value="P"/>
+			<xsd:enumeration value="R"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="Q"/>
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="T"/>
+			<xsd:enumeration value="W"/>
+			<xsd:enumeration value="X"/>
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="Z"/>
+			<xsd:enumeration value="9"/>
+			<xsd:enumeration value="V"/>
+			<xsd:enumeration value="E"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="J"/>
+			<xsd:enumeration value="K"/>
+			<xsd:enumeration value="L"/>
+			<xsd:enumeration value="U"/>
+			<xsd:enumeration value="AA"/>
+			<xsd:enumeration value="AB"/>
+			<xsd:enumeration value="AC"/>
+			<xsd:enumeration value="AD"/>
+			<xsd:enumeration value="AE"/>
+			<xsd:enumeration value="AF"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="item_criticality_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="item_designator_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,26}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="item_function_identifier_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="item_location_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="item_management_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="item_name_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="item_name_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,19}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="item_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z0-9]{0,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="item_class_of_supply_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="item_subclass_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="job_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="job_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,40}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="julian_date_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,5}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="labor_rate_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,2})|([0-9]{0,2}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="life_cycle_status_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="P"/>
+			<xsd:enumeration value="S"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="life_span_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="line_item_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="line_replaceable_unit_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="linear_measure_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,3})|([0-9]{0,3}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="loading_factor_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,1})|([0-9]{0,1}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="logistics_considerations_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="logistics_control_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value="O"/>
+			<xsd:enumeration value="R"/>
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="T"/>
+			<xsd:enumeration value="U"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="logistics_decision_office_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,15}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="logistics_support_analysis_control_number_indenture_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="logistics_support_analysis_control_number_nomenclature_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,19}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="logistics_support_analysis_control_number_structure_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{0,18}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="logistics_support_analysis_control_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,18}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="logistics_support_analysis_control_number_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="P"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="logistics_support_analysis_recommendation_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="lot_quantity_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,6}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="maintenance_action_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="R"/>
+			<xsd:enumeration value="T"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="maintenance_interval_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="maintenance_plan_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,23}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="maintenance_procedure_identifier_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="maintenance_procedure_title_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,36}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="maintenance_replacement_rate_i_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,4})|([0-9]{0,4}\.[0-9]{0,4})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="maintenance_replacement_rate_ii_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,5})|([0-9]{0,5}\.[0-9]{0,3})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="maintenance_replacement_rate_modifier_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[ABC0123456789]{6}[W]{0,1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="maintenance_task_distribution_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="0"/>
+					<xsd:maxInclusive value="99"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="management_plan_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="managing_command_agency_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="man_hour_per_operating_hour_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,3})|([0-9]{0,3}\.[0-9]{0,5})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="material_leadtime_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="material_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,240}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="material_weight_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,3})|([0-9]{0,3}\.[0-9]{0,3})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="maximum_allowable_operating_time_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="maximum_time_to_repair_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,3})|([0-9]{0,3}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="maximum_unit_pack_cube_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,6})|([0-9]{0,4}\.[0-9]{0,3})"/>
+					<!--This allows for values up to 999999. According to MIL-STD-2073E, values greater than 9999.999 should be prefixed with an X followed by whole numbers (up to six characters, e.g. X999999). However, the X is used for reports/summaries and indicates that the value following the X is a whole number, and the decimal placeholders/slots on the report should be disregarded. In other words, it changes the field format on the report from a decimal to a whole number to accommodate more digits. From a standards/schema standpoint, the data can be manipulated as needed when creating reports/summaries (an X can be generated for the report)-->
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="maximum_unit_pack_weight_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([0-9]{0,5})|([ABC]{1}[0-9]{0,4})"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_active_maintenance_downtime_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,5})|([0-9]{0,5}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_elapsed_time_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,3})|([0-9]{0,3}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_man_hours_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,3})|([0-9]{0,3}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_man_minutes_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,4})|([0-9]{0,4}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_minute_elapsed_time_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,4})|([0-9]{0,4}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_mission_duration_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,5})|([0-9]{0,5}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_time_between_effective_function_failures_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_time_between_failures_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_time_between_maintenance_actions_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_time_between_maintenance_induced_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_time_between_maintenance_inherent_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_time_between_maintenance_no_defect_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_time_between_noneffective_function_failures_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_time_between_preventive_maintenance_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_time_between_removals_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_time_between_system_aborts_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mean_time_to_repair_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,3})|([0-9]{0,3}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="means_of_detection_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="P"/>
+			<xsd:enumeration value="H"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="measurement_base_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="G"/>
+			<xsd:enumeration value="H"/>
+			<xsd:enumeration value="K"/>
+			<xsd:enumeration value="L"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="O"/>
+			<xsd:enumeration value="R"/>
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="T"/>
+			<xsd:enumeration value="U"/>
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="E"/>
+			<xsd:enumeration value="B"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="method_of_preservation_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="military_load_classification_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="military_packing_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="military_unit_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,240}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="minimal_packing_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="minimum_equipment_list_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="minimum_replacement_unit_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="mission_phase_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z0-9*]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mission_phase_operational_mode_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="mobile_facility_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="V"/>
+			<xsd:enumeration value="X"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mobility_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="modification_or_change_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="narrative_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="national_item_identification_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="national_stock_number_activity_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="national_stock_number_cognizance_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="national_stock_number_materiel_control_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="national_stock_number_special_materiel_identification_code_materiel_management_aggregation_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="net_explosive_weight_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,10}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="next_higher_assembly_provisioning_list_item_sequence_number_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="*"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="E"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="nonoperational_fragility_factor_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="not_repairable_this_station_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="0"/>
+					<xsd:maxInclusive value="100"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="number_of_activities_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="number_of_shops_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="number_of_skids_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="number_of_systems_supported_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,6}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="number_operation_locations_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,4}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="objective_state_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="task_checked"/>
+			<xsd:enumeration value="jacked"/>
+			<xsd:enumeration value="unjacked"/>
+			<xsd:enumeration value="safety_device_established"/>
+			<xsd:enumeration value="electrical_power_established"/>
+			<xsd:enumeration value="electrical_power_from_engine_established"/>
+			<xsd:enumeration value="electrical_power_from_apu_established"/>
+			<xsd:enumeration value="external_electrical_power_established"/>
+			<xsd:enumeration value="internal_electrical_power_established"/>
+			<xsd:enumeration value="hydraulic_power_established"/>
+			<xsd:enumeration value="air_supply_established"/>
+			<xsd:enumeration value="fueled"/>
+			<xsd:enumeration value="defueled"/>
+			<xsd:enumeration value="water_supply_established"/>
+			<xsd:enumeration value="controls_status_established"/>
+			<xsd:enumeration value="controls_status_established"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="operating_time_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,4})|([0-9]{0,4}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="operation_level_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="operation_life_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="operational_availability_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,2})|([0-9]{0,2}\.[0-9]{0,6})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="operational_requirement_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="W"/>
+			<xsd:enumeration value="P"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="operational_test_program_coordinated_test_plan_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="operational_test_program_standards_for_comparison_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="operational_weight_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,3})|([0-9]{0,3}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="operations_and_maintenance_level_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="operators_manual_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,16}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="optional_procedures_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="organizational_level_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="E"/>
+			<xsd:enumeration value="F"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="overhaul_replacement_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Q"/>
+			<xsd:enumeration value="R"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="overhaul_replacement_rate_quantity_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="packaging_category_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="parameter_accuracy_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,26}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="parameter_group_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="parameter_input_or_output_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="I"/>
+			<xsd:enumeration value="O"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="parameter_range_or_value_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="R"/>
+			<xsd:enumeration value="V"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="parameter_range_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:pattern value="([0-9]{0,10})|([0-9]*\.[0-9]*)|([0-9]*\.[0-9]*(e|E)(\+|-)?[0-9]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="parameter_test_accuracy_ratio_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/>
+			<xsd:enumeration value="7"/>
+			<xsd:enumeration value="8"/>
+			<xsd:enumeration value="9"/>
+			<xsd:enumeration value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="parameter_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,12}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="percentile_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="person_identifier_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="personnel_turnover_rate_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="physical_and_mental_requirements_narrative_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="physical_security_pilferage_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="pilot_rework_overhaul_candidate_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value="A"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="precious_metal_indicator_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="preparing_activity_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,25}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="preservation_material_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="preventive_maintenance_checks_and_services_indicator_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="price_concurrent_production_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="price_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,11})|([0-9]{0,11}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="price_type_selection_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="I"/>
+			<xsd:enumeration value="M"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="procurement_quantity_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="production_lead_time_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="productivity_factor_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([0-9]{0,1})|([0-9]{0,1}\.[0-9]{0,2})"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="program_element_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z0-9]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="program_parts_selection_list_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="program_support_inventory_control_point_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="proper_shipping_name_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,60}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="prorated_exhibit_line_item_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="prorated_quantity_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,6}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="provisioning_contract_control_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="provisioning_list_category_code_list_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="E"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="G"/>
+			<xsd:enumeration value="H"/>
+			<xsd:enumeration value="J"/>
+			<xsd:enumeration value="K"/>
+			<xsd:enumeration value="L"/>
+			<xsd:enumeration value="M"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="provisioning_list_item_sequence_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-HJ-NP-Z0-9]{0,5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="provisioning_nomenclature_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="provisioning_price_used_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="provisioning_remarks_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="provisioning_system_identifier_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="provisioning_technical_documentation_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="quantity_per_activity_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="quantity_per_assembly_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="quantity_per_end_item_calculation_option_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="quantity_per_end_item_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="quantity_per_figure_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="quantity_per_task_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,3})|([0-9]{0,3}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="quantity_per_unit_pack_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="quantity_procured_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,6}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="quantity_shipped_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,6}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="rail_transportation_country_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,240}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="rail_use_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[CGABUN]{0,5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="reason_for_supercedure_deletion_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A1"/>
+			<xsd:enumeration value="B1"/>
+			<xsd:enumeration value="B2"/>
+			<xsd:enumeration value="B3"/>
+			<xsd:enumeration value="B4"/>
+			<xsd:enumeration value="B5"/>
+			<xsd:enumeration value="B6"/>
+			<xsd:enumeration value="B7"/>
+			<xsd:enumeration value="C1"/>
+			<xsd:enumeration value="D1"/>
+			<xsd:enumeration value="F1"/>
+			<xsd:enumeration value="F2"/>
+			<xsd:enumeration value="F3"/>
+			<xsd:enumeration value="G1"/>
+			<xsd:enumeration value="H1"/>
+			<xsd:enumeration value="I1"/>
+			<xsd:enumeration value="J1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="recommended_civilian_grade_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="recommended_initial_system_stock_buy_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="recommended_military_rank_rate_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="C00"/>
+			<xsd:enumeration value="E01"/>
+			<xsd:enumeration value="E02"/>
+			<xsd:enumeration value="E03"/>
+			<xsd:enumeration value="E04"/>
+			<xsd:enumeration value="E05"/>
+			<xsd:enumeration value="E06"/>
+			<xsd:enumeration value="E07"/>
+			<xsd:enumeration value="E08"/>
+			<xsd:enumeration value="E09"/>
+			<xsd:enumeration value="W01"/>
+			<xsd:enumeration value="W02"/>
+			<xsd:enumeration value="W03"/>
+			<xsd:enumeration value="W04"/>
+			<xsd:enumeration value="W05"/>
+			<xsd:enumeration value="O01"/>
+			<xsd:enumeration value="O02"/>
+			<xsd:enumeration value="O03"/>
+			<xsd:enumeration value="O04"/>
+			<xsd:enumeration value="O05"/>
+			<xsd:enumeration value="O06"/>
+			<xsd:enumeration value="O07"/>
+			<xsd:enumeration value="O08"/>
+			<xsd:enumeration value="O09"/>
+			<xsd:enumeration value="O10"/>
+			<xsd:enumeration value="O11"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="recommended_minimum_system_stock_level_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="recommended_tender_load_list_quantity_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="recurring_bin_cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,4}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="recurring_cataloging_cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,4}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="reference_designation_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="U"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="Z"/>
+			<xsd:enumeration value="H"/>
+			<xsd:enumeration value="T"/>
+			<xsd:enumeration value="R"/>
+			<xsd:enumeration value="S"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="reference_designation_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,64}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="reference_number_category_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="reference_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="32"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="reference_number_variation_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="reliability_availability_and_maintainability_indicator_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="P"/>
+			<xsd:enumeration value="M"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="reliability_availability_and_maintainability_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="reliability_centered_maintenance_disposition_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="reliability_centered_maintenance_logic_results_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="reliability_centered_maintenance_logic_utilized_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,32}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="remain_in_place_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="P"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="V"/>
+			<xsd:enumeration value="X"/>
+			<xsd:enumeration value="C"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="repair_cycle_time_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="repair_survival_rate_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="repair_work_space_cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,2})|([0-9]{0,2}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="replaced_or_superseding_provisioning_list_item_sequence_number_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="R"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="replaced_or_superseding_provisioning_list_item_sequence_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="replacement_task_distribution_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="0"/>
+					<xsd:maxInclusive value="100"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="reportable_item_control_code_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{1}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="required_days_of_stock_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="retail_stockage_criteria_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{0,2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="revision_date_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([0-9]{2}[0][1]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))|([0-9]{2}[0][2]([0-2]{1}[1-9]{1}|[1][0]|[2][0]))|([0-9]{2}[0][3]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))|([0-9]{2}[0][4]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0]))|([0-9]{2}[0][5]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))|([0-9]{2}[0][6]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0]))|([0-9]{2}[0][7]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))|([0-9]{2}[0][8]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))|([0-9]{2}[0][9]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0]))|([0-9]{2}[1][0]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))|([0-9]{2}[1][1]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0]))|([0-9]{2}[1][2]([0-2]{1}[1-9]{1}|[1][0]|[2][0]|[3][0-1]{1}))"/>
+			<!--Format revision_date_type is YYMMDD.   YY = 00-99. MM = 01-12. DD restricted based on MM value (01-31 depending on month).-->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="revision_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z| ]{0,2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="revolving_assets_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="Q{1}[0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="safety_hazard_severity_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="safety_level_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{0,2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="sampling_description_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="sampling_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ratio"/>
+			<xsd:enumeration value="value"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="sampling_value_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,3})|([0]{0,1}\.[0-9]{0,2})|([1]{0,1}\.[0]{0,2})"/>
+					<!--Valid = e.g. 0,1, 0.00, 0.01, 0.99, 1.00, 1.0-->
+					<!--Invalid = e.g. 1.01-->
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="scheduled_maintenance_interval_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,10}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="schedule_b_export_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="sea_deck_stowage_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="sectionalized_identification_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="sectionalized_item_transportation_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="security_classification_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="security_clearance_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{1}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="self_test_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="sensors_or_transducers_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="serial_number_effectivity_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="serial_number_usable_on_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z0-9]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="service_designator_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="T"/>
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="X"/>
+			<xsd:enumeration value="J"/>
+			<xsd:enumeration value="O"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="shelf_life_action_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="shelf_life_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ship_distance_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{0,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ship_time_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="shipping_configuration_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="CB"/>
+			<xsd:enumeration value="CM"/>
+			<xsd:enumeration value="CN"/>
+			<xsd:enumeration value="CR"/>
+			<xsd:enumeration value="CS"/>
+			<xsd:enumeration value="CT"/>
+			<xsd:enumeration value="CU"/>
+			<xsd:enumeration value="CY"/>
+			<xsd:enumeration value="DR"/>
+			<xsd:enumeration value="EC"/>
+			<xsd:enumeration value="ED"/>
+			<xsd:enumeration value="KE"/>
+			<xsd:enumeration value="LS"/>
+			<xsd:enumeration value="MW"/>
+			<xsd:enumeration value="MX"/>
+			<xsd:enumeration value="PT"/>
+			<xsd:enumeration value="RL"/>
+			<xsd:enumeration value="RT"/>
+			<xsd:enumeration value="SB"/>
+			<xsd:enumeration value="SD"/>
+			<xsd:enumeration value="VE"/>
+			<xsd:enumeration value="VO"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="shipping_weight_Type">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:pattern value="([0-9]{0,3})|([0-9]{0,3}\.[0-9]{0,1})"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="sketch_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="skid_area_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,5})|([0-9]{0,5}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="skill_level_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="I"/>
+			<xsd:enumeration value="A"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="skill_specialty_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="skill_specialty_evaluation_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="E"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="source_maintenance_recoverability_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="source_option_number_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="spare_factor_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="Q{1}[0-9]{0,3}|P{1}[0-9]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="spares_acquisition_integrated_with_production_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="special_maintenance_item_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="G"/>
+			<xsd:enumeration value="H"/>
+			<xsd:enumeration value="J"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="special_management_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="T"/>
+			<xsd:enumeration value="P"/>
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="special_marking_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="special_material_content_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="special_packaging_instruction_number_revision_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="special_packaging_instruction_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="speed_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="standard_interservice_agency_serial_control_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{1}[0-9]{6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="standby_time_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="0"/>
+					<xsd:maxInclusive value="8784"/>
+					<xsd:pattern value="[0-9]{0,4}"/>
+					<!-- Value range is 0-8784. 8784 hours in a 366 day year.-->
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+					<!--“” accommodates null values for change file element deletions-->
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="subtask_description_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="subtask_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0][0-9][1-9]|[0][1-9][0-9]|[1-9][0-9][0-9]"/>
+			<!--First group restricts to 001-099 (but excludes 010, 020, 030 etc.). Second group adds back exclusions (excludes 010, 020, 030 etc.). Third group restricts to 100-999.-->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="supercedure_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="supplemental_packaging_data_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,59}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="support_concept_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="E"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="G"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="support_equipment_full_item_name_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,42}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="support_equipment_grouping_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="support_equipment_recommendation_data_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="support_equipment_recommendation_data_revision_remarks_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="support_equipment_recommendation_data_status_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="G"/>
+			<xsd:enumeration value="R"/>
+			<xsd:enumeration value="U"/>
+			<xsd:enumeration value="X"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="support_equipment_required_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="support_of_support_equipment_cost_factor_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,1})|([0-9]{0,1}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="supression_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="system_end_item_identifier_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="E"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="system_equipment_quantity_per_test_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="task_associated_narrative_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="task_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-7`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="task_condition_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="task_criticality_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="task_frequency_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,3})|([0-9]{0,3}\.[0-9]{0,4})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="task_identification_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,36}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="task_performance_standard_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="task_remarks_reference_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="task_remarks_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,240}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="task_sequence_number_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,4}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="task_subtask_associated_narrative_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="WARNING"/>
+			<xsd:enumeration value="CAUTION"/>
+			<xsd:enumeration value="NOTE"/>
+			<xsd:enumeration value="SPECIAL REQUIREMENT"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="task_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="P"/>
+			<xsd:enumeration value="U"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="technical_evaluation_priority_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="technical_manual_change_number_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="technical_manual_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="technical_manual_functional_group_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,11}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="technical_manual_indenture_code_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{1}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="technical_manual_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,30}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="technical_manual_required_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,17}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="test_language_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z| ]{0,6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="test_measurement_and_diagnostic_equipment_register_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="E"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="test_measurement_and_diagnostic_equipment_register_index_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="test_points_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="test_program_instruction_technical_data_package_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="test_requirements_document_number_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,15}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="test_score_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="theater_of_operation_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{0,5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="thumbnail_Type">
+		<xsd:restriction base="xsd:base64Binary"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="tool_support_equipment_requirement_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="total_item_changes_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="total_quantity_recommended_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,6}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="total_systems_supported_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,6}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="towing_speed_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="tracked_ground_pressure_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,7}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="tracked_pad_shoe_area_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,5})|([0-9]{0,5}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="tracked_pads_touching_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="training_cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,5})|([0-9]{0,5}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="training_equipment_requirement_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="training_location_rationale_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{0,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="training_rationale_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{0,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="training_recommendation_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="J"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="transportation_character_mode_type_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="E"/>
+			<xsd:enumeration value="F"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="transportation_character_number_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="transportation_cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,3})|([0-9]{0,3}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="transportation_end_item_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="transportation_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="E"/>
+			<xsd:enumeration value="B"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="transported_configuration_number_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="type_acquisition_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type_classfication_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type_equipment_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type_of_activity_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,15}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type_of_change_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="G"/>
+			<xsd:enumeration value="L"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="Q"/>
+			<xsd:enumeration value="T"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type_of_price_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="B"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type_of_supply_system_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value="V"/>
+			<xsd:enumeration value="X"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="unit_container_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="unit_container_level_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="unit_cost_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,8}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="unit_of_issue_conversion_factor_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="unit_of_issue_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="unit_of_measure_price_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,8})|([0-9]{0,8}\.[0-9]{0,2})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="unit_of_measure_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="unit_under_test_explanation_data_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="unit_under_test_fault_isolated_replaceable_unit_test_requirements_document_indicator_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="unit_under_test_parameter_operational_specification_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="O"/>
+			<xsd:enumeration value="S"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="unit_under_test_work_package_reference_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="unit_weight_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([0-9]{0,5})|([ABC]{1}[0-9]{0,4})"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="usable_on_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z0-9]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="using_service_designator_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[AFYTSNMXJO]{0,8}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="utilization_ratio_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-1]{0,1})|([0]{0,1}\.[0-9]{0,2})|([1]{0,1}\.[0]{0,2})"/>
+					<!--Valid = e.g. 0,1, 0.00, 0.01, 0.99, 1.00, 1.0-->
+					<!--Invalid = e.g. 1.01-->
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="wearout_life_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,6}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="weight_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:pattern value="([0-9]{0,5})|([0-9]{0,5}\.[0-9]{0,1})"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="wheeled_inflation_pressure_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="wheeled_number_of_plies_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="wheeled_number_tires_Type">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:pattern value="[0-9]{0,2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="wheeled_tire_load_ratings_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="wheeled_tire_size_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="wheeled_weight_ratings_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="work_area_code_access_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="work_area_code_zone_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="work_unit_code_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9 `~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{0,11}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="wrapping_material_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z_0-9`~!@#$%^&amp;*()_+-=\[\]\\{}\|;&apos;&quot;,./?&gt;&lt;]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="year_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

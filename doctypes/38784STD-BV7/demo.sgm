@@ -1,0 +1,3012 @@
+<!--Arbortext, Inc., 1988-2016, v.4002-->
+<!DOCTYPE DOC PUBLIC "-//USA-DOD//DTD 38784STD-BV7//EN" [
+<!ENTITY styler SYSTEM "styler.gif" NDATA gif>
+<!ENTITY ESD1 SYSTEM "ESD.eps" NDATA eps>
+<!NOTATION gif SYSTEM "gif">
+<!ENTITY fullpagegraphic SYSTEM "sq1.eps" NDATA eps>
+<!ENTITY er1 SYSTEM "er.eps" NDATA eps>
+<!ENTITY star1 SYSTEM "bio.eps" NDATA eps>
+<!ENTITY radioactive SYSTEM "rada.eps" NDATA eps>
+<!ENTITY vapor1 SYSTEM "vapor.eps" NDATA eps>
+<!ENTITY computer SYSTEM "computer.eps" NDATA eps>
+<!ENTITY ipb SYSTEM "explode.eps" NDATA eps>
+<!ENTITY chem SYSTEM "chemical.eps" NDATA eps>
+<!ENTITY qtrpage SYSTEM "bio.eps" NDATA eps>
+<!ENTITY halfpage SYSTEM "hand.eps" NDATA eps>
+<!ENTITY fullpage SYSTEM "goggles.eps" NDATA eps>
+]>
+<?Pub UDT _bookmark _target>
+<?Pub Inc>
+<doc service="af" docid="1X-XXXX-2-2-1" docstat="prelim"
+verstatpg="unver" security="u" cycle="0" labelstyle="FAN"><front
+numcols="1"><idinfo><tmidno service="af" security="u">38784STD-BV7-DEMO</tmidno>
+<doctype></doctype>
+<maintlvl>Depot and Intermediate WITH<line quad="center">Illustrated
+Parts Breakdown</line></maintlvl>
+<prtitle><nomen><?Pub Dtl>ARC-XXX TRANSMITTER</nomen>
+<modelno>MODEL NUMBER</modelno>
+<partno>PRTITLE PARTNO</partno>
+<nsn>2840-00-345-6789</nsn>
+<typedes>TYPE DESIGNATOR</typedes>
+<pslist>
+<partno>PSLIST PARTNO</partno>
+<serno>PSLIST SerialnO</serno>
+</pslist><serno>PRTITLE SERIALNO</serno>
+</prtitle>
+<subtitle>Subtitle Entered Here</subtitle>
+<mfr>The Airplane Company</mfr>
+<mfr>Second Manufacture</mfr>
+<contractno>1234567890</contractno>
+<contractno>Second Contract Number here.</contractno>
+<supersed>THIS PUBLICATION SUPERSEDES TO XXXXXXXX DATED 27 November
+2004.</supersed>
+<suppl>SUPPLEMENT STATEMENT</suppl>
+<effdatenot>EFFECTIVE DATE NOTICE</effdatenot>
+<discl>This document was prepared by GPSLfor demonstration purposes
+only. It is intended to be representative of the types of elements
+appearing in a typical DoD Technical Manual. It is not intended to
+be a faithful reproduction of an actual Technical Manual and it should
+in no way be treated as if the information contained within is accurate
+or complete.</discl>
+<distrib> Distribution authorized to the Department of Defense and
+US DoD contractors only (Administrative or Operational Use) (7 March
+2003).  Questions concerning technical content or any other requests
+for this document shall be referred to ABC/ABC, XXX Some Street, Bldg
+123, AN AIRBASE AFB, XX  XXXXX-XXXX (Attention: TO Manager).</distrib>
+<expcont>&expcontnot;</expcont>
+<destr>Comply with distribution statement and destroy by any method
+that will prevent disclosure of the contents or reconstruction of
+the document. See TO 00-5-1 for specific destruction procedures and
+disposition instructions.</destr>
+<copyright>Copyright notice here</copyright>
+<cogact>Cognizant Activity Statement.</cogact>
+<moveddata>Moveddata Text</moveddata>
+<authnot>Published for test purposes only.</authnot>
+<downgrd><oadr>OADR Statement</oadr></downgrd><pubdate>14 September
+2007</pubdate></idinfo><lep><lepcontents autobuild="1"></lep>
+<verstat autobuild="1" toma="TOMA attribute">
+<tpdr><none></tpdr>
+<contents autobuild="1">
+<illuslist autobuild="1">
+<tablelist autobuild="1">
+<foreword>
+<para0 verstatus="ver"><title>First PARA0 TITLE</title>
+<para>The content of this PARA0 has samples for testing within the
+PREFACE element.</para>
+<subpara1 applicref="a" verstatus="ver"><title>Subpara1</title>
+<para><applicabil applicref="b"></applicabil> Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. <prindex pridnbr="3">F
+prindex entry</prindex>Sample data for testing purposes. Sample data
+for testing purposes.<ftnote id="ftnote-19"> This is a footnote in
+the Foreword.</ftnote></para>
+<subpara2 verstatus="ver"><title><applicabil applicref="c"></applicabil> Subpara2
+</title><para>Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara3 applicref="b" verstatus="ver"><title>Subpara3</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+</subpara3>
+<subpara3 verstatus="ver"><title>Subpara3</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+<subpara4 applicref="c" verstatus="ver"><title> Subpara4</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document.</para>
+</subpara4>
+<subpara4 verstatus="ver"><title>Subpara4</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+<subpara5 applicref="d" verstatus="ver"><title> Subpara5</title><para><applicabil
+applicref="a"></applicabil> This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document.</para>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+<subpara2 applicref="a" verstatus="ver"><title> Subpara2</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara2>
+</subpara1>
+<subpara1 verstatus="ver"><title>Subpara1</title><para><applicabil
+applicref="c"></applicabil> This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document.</para>
+</subpara1>
+</para0>
+<para0 verstatus="ver"><title>Use of "Shall", "Will", "Should", and
+"May"</title>
+<para><applicabil applicref="d"></applicabil> The word "shall" is
+used to express a provision that is binding.  The words "should" and
+"may" are used when it is necessary to express non-mandatory provisions.
+ The word "will" may be used to express a mandatory declaration of
+purpose or when it is necessary to express a future event.</para>
+</para0>
+<applicdef rtermwidth="5.5in" ltermwidth="2.0in" verstatus="ver"><title>List
+of Applicability and Effectivity</title><para>In this example the
+&ldquo;TERM&rdquo; heading is used to define the column used for the
+symbol. The &ldquo;DEFINITION&rdquo; heading is used to define the
+applicability/effectivity for the symbol used in the &ldquo;TERM&rdquo;
+column.</para>
+<appltitle>List of Applicability and Effectivity</appltitle>
+<applichd>
+<term>TERM</term><def>DEFINITION</def>
+</applichd>
+<applic id="a">
+<term>a</term><def>This is applicability a. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+<applic id="b">
+<term>b</term><def>This is applicability b. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+<applic id="c">
+<term>c</term><def>This is applicability c. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+<applic id="d">
+<term>d</term><def>This is applicability d. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic></applicdef>
+<abbrsect applicref="b" verstatus="ver"><title> LIST OF Standard ABBREVIATIONS
+AND ACRONYMS</title><para>This publication provides a list of standard
+abbreviations and acronyms used throughout this document.</para>
+<abbrtitle> List of Abbreviations and Acronyms</abbrtitle>
+<acronymlist autobuild="1">
+</abbrsect>
+<abbrsect applicref="c"><title> List of Non Standard Abbreviations
+and Acronyms</title><para>This publication provides a list of non
+standard abbreviations and acronyms used throughout this document.</para>
+<abbrtitle> List of Non Standard Abbreviations and Acronyms</abbrtitle>
+<acronymlist>
+<term>ABC</term><def>Alphabet Soup</def>
+<term>AC</term><def>Alternating Current</def>
+<term>ADF</term><def>Automatic Direction Finder</def>
+<term>AFB</term><def>Air Force Base</def>
+<term>AL</term><def>ALABAMA</def>
+<term>AK</term><def>ALASKA</def>
+<term>AR</term><def>ARKANSAS</def>
+<term>AS</term><def>AMERICAN SAMOA</def>
+<term>AUX</term><def>Auxiliary</def>
+<term>AZ</term><def>ARIZONA </def>
+<term>BIT</term><def>Built In Test</def>
+<term>BITE</term><def>Built In Test Equipment</def>
+<term>CA</term><def>CALIFORNIA </def>
+<term>CCA</term><def>Circuit Card Assembly</def>
+<term>CO</term><def>COLORADO </def>
+<term>CT</term><def>CONNECTICUT</def>
+<term>DC</term><def>DISTRICT OF COLUMBIA</def>
+<term>DC</term><def>Direct Current</def>
+<term>DE</term><def>DELAWARE</def>
+<term>ESDS</term><def>Electrostatic Discharge Sensitive</def>
+<term>ESMS</term><def>Electronics Support Measures System</def>
+<term>ESS</term><def>Environmental Stress Screening</def>
+<term>FL</term><def>FLORIDA</def>
+<term>FM</term><def>FEDERATED STATES OF MICRONESIA</def>
+<term>FM</term><def>Frequency Modulation</def>
+<term>GA</term><def>GEORGIA</def>
+<term>GPS</term><def>Global Position System</def>
+<term>GPSL</term><def>Global Publishing Solutions Ltd</def>
+<term>GU</term><def>GUAM </def>
+<term>HI</term><def>HAWAII</def>
+<term>HMIS</term><def>Hazardous Materials Information System</def>
+<term>IA</term><def>IOWA</def>
+<term>ID</term><def>IDAHO</def>
+<term>IL</term><def>ILLINOIS</def>
+<term>IN</term><def>INDIANA</def>
+<term>JIT</term><def>Just in Time</def>
+<term>KS</term><def>KANSAS</def>
+<term>KY</term><def>KENTUCKY</def>
+<term><applicabil applicref="a"></applicabil> LA</term><def>LOUISIANA</def>
+<term>LOL</term><def>Laugh out loud</def>
+<term>MA</term><def>MASSACHUSETTS</def>
+<term>MD</term><def>MARYLAND</def>
+<term>ME</term><def>MAINE</def>
+<term>MH</term><def>MARSHALL ISLANDS</def>
+<term>MI</term><def>MICHIGAN</def>
+<term>MLG</term><def>Main Landing Gear</def>
+<term>MN</term><def>MINNESOTA</def>
+<term>MO</term><def>MISSOURI</def>
+<term>MP</term><def>NORTHERN MARIANA ISLANDS</def>
+<term>MS</term><def>MISSISSIPPI</def>
+<term>MSDS</term><def>Material Safety Data Sheet</def>
+<term>MT</term><def>MONTANA</def>
+<term>NAV</term><def>Navigation</def>
+<term>NC</term><def>NORTH CAROLINA</def>
+<term>ND</term><def>NORTH DAKOTA</def>
+<term>NE</term><def>NEBRASKA</def>
+<term>NH</term><def>NEW HAMPSHIRE</def>
+<term>NJ</term><def>NEW JERSEY</def>
+<term>NM</term><def>NEW MEXICO</def>
+<term>NP</term><def>No Problem</def>
+<term>NV</term><def>NEVADA</def>
+<term>NY</term><def>NEW YORK</def>
+<term>OH</term><def>OHIO</def>
+<term>OK</term><def>OKLAHOMA</def>
+<term>OR</term><def>OREGON</def>
+<term>OSHA</term><def><applicabil applicref="b"></applicabil> Occupational
+Safety and Health Act</def>
+<term>PA</term><def>PENNSYLVANIA</def>
+<term>PDQ</term><def>Pretty Darn Quick</def>
+<term>PR</term><def>PUERTO RICO</def>
+<term>PSIG</term><def>Pounds per Square Inch, Gage</def>
+<term>PW</term><def>PALAU</def>
+<term>RF</term><def>Radio Frequency</def>
+<term>RI</term><def>RHODE ISLAND</def>
+<term>SC</term><def>SOUTH CAROLINA</def>
+<term>SD</term><def>SOUTH DAKOTA</def>
+<term>SRU</term><def>Shop Replaceable Unit</def>
+<term>STBY</term><def>Standby</def>
+<term>STE</term><def>Suite</def>
+<term>TN</term><def>TENNESSEE</def>
+<term>TX</term><def>TEXAS</def>
+<term>USA</term><def>United States of America</def>
+<term>USAF</term><def>United States Air Force</def>
+<term>UT</term><def>UTAH</def>
+<term>VA</term><def>VIRGINIA </def>
+<term>VI</term><def>VIRGIN ISLANDS</def>
+<term>VT</term><def>VERMONT</def>
+<term>WA</term><def>WASHINGTON</def>
+<term>WI</term><def>WISCONSIN</def>
+<term>WPAFB</term><def>Wright Patterson Air Force Base</def>
+<term>WV</term><def>WEST VIRGINIA</def>
+<term>WY</term><def>WYOMING</def>
+<term>XMTR</term><def>Transmitter</def>
+</acronymlist>
+</abbrsect>
+<lrp verstatus="ver"><title>LIST OF RELATED PUBLICATIONS</title><para><secindex
+pridnbr="3">Secondary entry F</secindex>This publication provides
+a <acronym><def>List of Related Publications</def><term>LRP</term>
+</acronym> referenced within this manual.</para>
+<lrptable>
+<lrpentry><modelno>Model Number 1</modelno><tmidno>1X&ndash;XXXX-2-23-00-1
+</tmidno><title>Communication System</title></lrpentry>
+<lrpentry><modelno>Model Number 1</modelno><tmidno>1X&ndash;XXXX-2-24-00-1
+</tmidno><title>Electrical System</title></lrpentry>
+<lrpentry><typedes>Type Designator 1</typedes><tmidno>1X&ndash;XXXX-2-23-00-1
+</tmidno><title>Communication System</title></lrpentry>
+<lrpentry><typedes>Type Designator 2</typedes><tmidno>1X&ndash;XXXX-2-24-00-1
+</tmidno><title>Electrical System</title></lrpentry>
+<lrpentry id="toref038"><partno>Part Number 1</partno><tmidno>1X&ndash;XXXX-2-23-00-1
+</tmidno><title>Communication System</title></lrpentry>
+<lrpentry id="toref083"><partno>Part Number 2</partno><tmidno>1X&ndash;XXXX-2-24-00-1
+</tmidno><title>Electrical System</title></lrpentry>
+<lrpentry id="toref084"><tmidno>1X&ndash;XXXX-2-26-00-1</tmidno><title>Fire
+Protection System</title></lrpentry>
+<lrpentry id="toref086"><tmidno>1X&ndash;XXXX-2-29-00-1</tmidno><title>Hydraulic
+System</title></lrpentry>
+<lrpentry id="toref001"><tmidno>1X&ndash;XXXX-2-30-00-1</tmidno><title>Ice
+and Rain Protection System</title></lrpentry>
+<lrpentry id="toref085"><tmidno>1X&ndash;XXXX-2-33-00-1</tmidno><title>Lighting
+System</title></lrpentry>
+<lrpentry id="toref037"><tmidno>1X&ndash;XXXX-2-34-00-1</tmidno><title>Navigation
+System</title></lrpentry>
+<lrpentry id="toref062"><tmidno>1X&ndash;XXXX-2-51-00-1</tmidno><title>Standard
+Practices: Structures</title></lrpentry>
+<lrpentry id="toref030"><tmidno>1X&ndash;XXXX-2-61-00-1</tmidno><title>Propellers
+System</title></lrpentry>
+<lrpentry id="toref011"><tmidno>1X&ndash;XXXX-2-71-00-1</tmidno><title>Airframe
+Group</title></lrpentry>
+<lrpentry><tmidno><applicabil applicref="c"></applicabil> 1X&ndash;XXXX-2-23-00-1
+</tmidno><title>Communication System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-24-00-1</tmidno><title>Electrical
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-26-00-1</tmidno><title>Fire Protection
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-29-00-1</tmidno><title>Hydraulic
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-30-00-1</tmidno><title>Ice and Rain
+Protection System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-33-00-1</tmidno><title>Lighting
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-34-00-1</tmidno><title>Navigation
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-51-00-1</tmidno><title>Standard
+Practices: Structures</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-61-00-1</tmidno><title>Propellers
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-71-00-1</tmidno><title>Airframe
+Group</title></lrpentry>
+<lrpentry><tmidno><applicabil applicref="d"></applicabil> 1X&ndash;XXXX-2-23-00-1
+</tmidno><title>Communication System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-24-00-1</tmidno><title>Electrical
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-26-00-1</tmidno><title>Fire Protection
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-29-00-1</tmidno><title>Hydraulic
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-30-00-1</tmidno><title>Ice and Rain
+Protection System</title></lrpentry>
+</lrptable>
+</lrp>
+<tctolist verstatus="ver"><title>LIST OF TIME COMPLIANCE TECHNICAL
+ORDERS</title><para>This publication provides a list of <acronym><def>Time
+Compliance Technical Order</def><term>TCTO</term></acronym> referenced
+within this manual. The list of applicable Time Compliance Technical
+Orders is a list of all TCTOs which affect the technical content (text
+or illustration) of this manual.</para>
+<tctotbl>
+<tctorow><tctono>TA</tctono><title><applicabil applicref="a"></applicabil> TCTO
+Row Title #4</title><date>13 April 2004</date></tctorow>
+<tctorow><tctono>TB</tctono><title>TCTO Row Title #5</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TC</tctono><title>TCTO Row Title #6</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TD</tctono><title>TCTO Row Title #7</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TE</tctono><title>TCTO Row Title #8</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TF</tctono><title>TCTO Row Title #9</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TG</tctono><title>TCTO Row Title #10</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TH</tctono><title>TCTO Row Title #11</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TJ</tctono><title>TCTO Row Title #12</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TK</tctono><title>TCTO Row Title #13</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TL</tctono><title><applicabil applicref="b"></applicabil> TCTO
+Row Title #14</title><date>13 April 2004</date></tctorow>
+<tctorow><tctono>TM</tctono><title>TCTO Row Title #15</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TN</tctono><title>TCTO Row Title #16</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TO</tctono><title>TCTO Row Title #17</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TP</tctono><title>TCTO Row Title #18</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TQ</tctono><title>TCTO Row Title #19</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TR</tctono><title>TCTO Row Title #20</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TS</tctono><title>TCTO Row Title #21</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TT</tctono><title>TCTO Row Title #22</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TU</tctono><title>TCTO Row Title #23</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TV</tctono><title>TCTO Row Title #24</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TW</tctono><title>TCTO Row Title #25</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TX</tctono><title>TCTO Row Title #26</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TY</tctono><title>TCTO Row Title #27</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TZ</tctono><title>TCTO Row Title #28</title><date>13
+April 2004</date></tctorow>
+</tctotbl>
+</tctolist>
+<ratddesc verstatus="ver"><title><acronym><def>Record Of Applicable
+Technical Directives Description</def><term>RATD</term></acronym></title>
+<para>This element contains a list of applicable technical directives.
+This is where an<acronym><def>Engineering Change Proposal</def><term>ECP</term>
+</acronym> or an <acronym><def>Engineering Change Notice</def><term>ECN</term>
+</acronym>would be listed. An ECP or ECN is generated by the engineering
+staff of a aircraft or system manufacture for the purpose of modifying
+an existing aircraft or system.</para>
+<ratd>
+<ratdentry><typeno>TYPENO Element</typeno><date>DATE</date><title>TITLE</title>
+<ecpno> ECPNO</ecpno><dateinc>DATEINC</dateinc><remarks>REMARKS</remarks>
+</ratdentry>
+<ratdentry><typeno>TYPENO Content</typeno><date>DATE Content</date>
+<title>TITLE Content</title><ecpno>ECPNO Content</ecpno><dateinc>DATEINC
+Content</dateinc><remarks>REMARKS</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content A</typeno><date>20 October 2004</date>
+<title><applicabil applicref="a"></applicabil> TITLE Content A</title>
+<ecpno>ECPNO Content A</ecpno><dateinc>DATEINC Content A</dateinc>
+<remarks>REMARKS A</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content B</typeno><date>DATE Content B</date>
+<title>TITLE Content B</title><ecpno>ECPNO Content B</ecpno><dateinc>DATEINC
+Content B</dateinc><remarks>REMARKS B</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C</typeno><date>DATE Content C</date>
+<title>TITLE Content C</title><ecpno>ECPNO Content C</ecpno><dateinc>DATEINC
+Content C</dateinc><remarks>REMARKS C</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C1</typeno><date>DATE Content C1</date>
+<title>TITLE Content C1</title><ecpno>ECPNO Content C1</ecpno><dateinc>DATEINC
+Content C1</dateinc><remarks>REMARKS C1</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C2</typeno><date>DATE Content C2</date>
+<title>TITLE Content C2</title><ecpno>ECPNO Content C2</ecpno><dateinc>DATEINC
+Content C2</dateinc><remarks>REMARKS C2</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C3</typeno><date>DATE Content C3</date>
+<title>TITLE Content C3</title><ecpno>ECPNO Content C3</ecpno><dateinc>DATEINC
+Content C3</dateinc><remarks>REMARKS C3</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C4</typeno><date>DATE Content C4</date>
+<title>TITLE Content C4</title><ecpno>ECPNO Content C4</ecpno><dateinc>DATEINC
+Content C4</dateinc><remarks>REMARKS C4</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content D</typeno><date>DATE Content D</date>
+<title>TITLE Content D</title><ecpno>ECPNO Content D</ecpno><dateinc>DATEINC
+Content D</dateinc><remarks>REMARKS D</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content E</typeno><date>DATE Content D</date>
+<title>TITLE Content D</title><ecpno>ECPNO Content D</ecpno><dateinc>DATEINC
+Content D</dateinc><remarks>REMARKS D</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content F</typeno><date>DATE Content D</date>
+<title><applicabil applicref="b"></applicabil> TITLE Content D</title>
+<ecpno>ECPNO Content D</ecpno><dateinc>DATEINC Content D</dateinc>
+<remarks>REMARKS D</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content G</typeno><date>DATE Content D</date>
+<title>TITLE Content D</title><ecpno>ECPNO Content D</ecpno><dateinc>DATEINC
+Content D</dateinc><remarks>REMARKS D</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content H</typeno><date>DATE Content D</date>
+<title>TITLE Content D</title><ecpno>ECPNO Content D</ecpno><dateinc>DATEINC
+Content D</dateinc><remarks>REMARKS D</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content J</typeno><date>DATE Content D</date>
+<title>TITLE Content D</title><ecpno>ECPNO Content D</ecpno><dateinc>DATEINC
+Content D</dateinc><remarks>REMARKS D</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content K</typeno><date>DATE Content D</date>
+<title>TITLE Content D</title><ecpno>ECPNO Content D</ecpno><dateinc>DATEINC
+Content D</dateinc><remarks>REMARKS D</remarks></ratdentry>
+</ratd>
+</ratddesc>
+<internatlstd verstatus="ver">International standardization agreement
+is entered in the internatlstd element. The contents of the agreement
+is done in the form of a NOTE per MIL-STD-38784.</internatlstd>
+<symsect rtermwidth="6.5in" ltermwidth="1.0in" verstatus="ver"><title>Symbol
+Definition</title><para>The following list of symbols are used in
+this manual and adhere to requirements of DoD specification MIL-STD-38784.
+</para>
+<symtitle>List of Symbols</symtitle>
+<term security="u"><graphic boardno="ESD1"></term><def><applicabil
+applicref="c"></applicabil> cThis is the symbol used to indicate Electrostatic
+Discharge Sensitive parts. ESDS parts require to be handled in accordance
+with the ESDS device handling procedures in TO 00-25-234.  This explanation
+shall be preceded by a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+<term security="u"><graphic boardno="ESD1"></term><def>This is the
+symbol used to indicate Electrostatic Discharge Sensitive parts. ESDS
+parts require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+<term security="u"><graphic boardno="ESD1"></term><def>This is the
+symbol used to indicate Electrostatic Discharge Sensitive parts. ESDS
+parts require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+<term security="u"><graphic boardno="ESD1"></term><def>This is the
+symbol used to indicate Electrostatic Discharge Sensitive parts. ESDS
+parts require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+<term security="u"><graphic boardno="ESD1"></term><def>This is the
+symbol used to indicate Electrostatic Discharge Sensitive parts. ESDS
+parts require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+<term security="u"><graphic boardno="ESD1"></term><def>This is the
+symbol used to indicate Electrostatic Discharge Sensitive parts. ESDS
+parts require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+<term security="u"><graphic boardno="ESD1"></term><def>This is the
+symbol used to indicate Electrostatic Discharge Sensitive parts. ESDS
+parts require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def><applicabil applicref="d"></applicabil> This
+is the symbol used for a Harness Critical Item. This shall include
+an explanation that the HCI symbol establishes special requirements
+limiting changes and substitutions, and that the specific parts listed
+must be used to ensure hardness is not degraded.  This statement shall
+be preceded by a CAUTION heading.</def>
+</symsect>
+<tmimprep><title>Technical Manual Improvement Report Preparation</title>
+<subpara1><title>IMPROVEMENT REPORTS</title><para>Recommendations
+for improvements to this technical order shall be submitted on AFTO
+Form 22, Technical Manual (TM) Change Recommendation and Reply. Complete
+AFTO Form 22 in accordance with TO 00-5-1.<seqlist>
+<title>Seqlist Title</title>
+<item><applicabil applicref="c"></applicabil> First item in a seqlist</item>
+<item>Second item in a seqlist</item><item><applicabil applicref="d"></applicabil> Third
+item in a seqlist</item><item>Fourth item in a seqlist</item></seqlist></para>
+<subpara2 verstatus="ver"><title><applicabil applicref="c"></applicabil> Subpara2
+Title</title><para>Sample data for testing purposes. Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes.</para>
+<subpara3 verstatus="ver"><title>Subpara3 Title</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document.</para>
+<subpara4 verstatus="ver"><title><applicabil applicref="d"></applicabil> Subpara4
+Title</title><para>This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document.</para>
+<subpara5 applicref="b" verstatus="ver"><title>Subpara5 Title</title>
+<para>This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document.<randlist>
+<title>Randlist Title</title>
+<item><applicabil applicref="a"></applicabil> First item in a randlist</item>
+<item>Second item in a randlist</item>
+<item>Third item in a randlist</item>
+<item><applicabil applicref="b"></applicabil> Fourth item in a randlist</item>
+</randlist></para>
+<subpara6 applicref="c"><title> Subpara6 Title</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+<subpara7 applicref="a"><title> Subpara7 Title</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+<subpara8 applicref="d"><title> Subpara8 Title</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</tmimprep>
+<figure applicref="a" legend="1">
+<title> Figure Title in a Foreword</title>
+<graphic boardno="styler" reprodep="7.5in" scalefit="1">
+<legend>
+<tabmat><tgroup cols="2"><tbody>
+<row>
+<entry>This is a legend in a figure in the body.</entry>
+<entry>Legend entry</entry>
+</row>
+<row>
+<entry>Legend entry</entry>
+<entry>Legend entry</entry>
+</row>
+</tbody></tgroup></tabmat>
+</legend>
+</figure>
+</foreword>
+<safesum>
+<para0><title>WARNINGS, CAUTIONS AND NOTES</title>
+<para>WARNINGs and CAUTIONs are used in this manual to highlight operating
+or maintenance procedures, practices, conditions or statements which
+are considered essential to protection of personnel (WARNING) or equipment
+(CAUTION). WARNINGs and CAUTIONs immediately precede the step or procedure
+to which they apply. WARNINGs and CAUTIONs consist of four parts:
+heading (WARNING, CAUTION or Icon (see HAZARDOUS MATERIALS WARNINGS)),
+a statement of the hazard, minimum precautions, and possible result
+if disregarded. NOTEs are used in this manual to highlight operating
+or maintenance procedures, practices, conditions or statements which
+are not essential to protection of personnel or equipment. NOTEs may
+precede or follow the step or procedure, depending upon the information
+to be highlighted. The headings used and their definitions are as
+follows:</para>
+<warning>
+<para>Highlights an essential operating or maintenance procedure,
+practice, condition, statement, etc, which if not strictly observed,
+could result in injury to, or death of, personnel or long term health
+hazards.</para>
+</warning>
+<caution>
+<para>Highlights an essential operating or maintenance procedure,
+practice, condition, statement, etc, which, if not strictly observed,
+could result in damage to, or destruction of, equipment or loss of
+mission effectiveness.</para>
+</caution>
+<note>
+<para>Highlights an essential operating or maintenance procedure,
+condition, or statement.</para>
+</note>
+</para0>
+<para0><title>HAZARDOUS MATERIALS WARNINGS</title>
+<para>Hazardous Materials Warnings in this manual are provided through
+use of the Hazardous Materials Icons listed below. Consult the Hazardous
+Materials Description paragraph below or MSDS (OSHA Form 20 or equivalent)
+for specific information on hazards, effects, and protective equipment
+requirements. If you do not have an MSDS for the material involved,
+contact your supervisor, or the base Safety or Bioenvironmental Engineering
+Offices.<ftnote id="ftnote-20"> This is a footnote in the Safety Summary.
+</ftnote></para>
+<subpara1 applicref="a"><title><esds><fcp><hci><hcp><nsp><oci><ocp> Subpara1
+</title><para>Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara2><title>Subpara2</title><para>This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document.</para>
+</subpara2>
+<subpara2 applicref="b"><title><esds><fcp><hci><hcp><nsp><oci><ocp> Subpara2
+</title><para>This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document.</para>
+<subpara3><title><esds><fcp><hci><hcp><nsp><oci><ocp> Subpara3</title>
+<para>This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document.</para>
+</subpara3>
+<subpara3 applicref="c"><title><ocp> Subpara3</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document.</para>
+<subpara4><title>Subpara4</title><para>This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document.</para>
+</subpara4>
+<subpara4 applicref="d"><title><esds><fcp><hci><hcp><nsp><oci><ocp> Subpara4
+</title><para>This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the doocument.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document.</para>
+<step1 applicref="a"><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+<step2><para><applicabil applicref="b"></applicabil>This is a STEP2
+element.</para>
+</step2>
+<step2><para>This is a STEP2 element.</para>
+<step3 applicref="c"><para>This is a STEP3 element.</para>
+</step3>
+<step3><para>This is a STEP3 element.</para>
+<step4><para><applicabil applicref="d"></applicabil>This is a STEP4
+element.</para>
+</step4>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+</step3>
+<step3><para>This is a STEP3 continuation element.</para>
+</step3>
+</step2>
+<step2><para>This is a STEP2 continuation element.</para>
+</step2>
+</step1>
+<step1 applicref="a"><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP12 continuation element.</para>
+<step2><para><applicabil applicref="b"></applicabil>This is a STEP2
+element.</para>
+</step2>
+<step2><para>This is a STEP2 element.</para>
+<step3 applicref="c"><para>This is a STEP3 element.</para>
+</step3>
+<step3><para>This is a STEP3 element.</para>
+<step4><para><applicabil applicref="d"></applicabil>This is a STEP4
+element.</para>
+</step4>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+</step3>
+<step3><para>This is a STEP3 continuation element.</para>
+</step3>
+</step2>
+<step2><para>This is a STEP2 continuation element.</para>
+</step2>
+</step1>
+<step1 applicref="a"><para>This is a STEP1 element.</para>
+</step1>
+<subpara5><title><esds><fcp><hci><nsp><oci><ocp> Subpara5</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+<table frame="none" colsep="0" pgwide="1" applicref="a" verstatus="ver">
+<title> This is a Table Title in the Safety Summary</title><tgroup
+cols="3"><colspec colname="col1" colwidth="1.0*"><colspec colname="col2"
+colwidth="1*"><colspec colname="col3" colwidth="1*"><thead>
+<row rowsep="1">
+<entry valign="top">Header Column 1</entry>
+<entry valign="top">Header Column 2</entry>
+<entry valign="top">Header Column 3</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>ENTRY<tfoot><tfnid id="ftblnote1">First footnote in a table</tfnid>
+</tfoot></entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry><applicabil applicref="a"></applicabil> ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY<tfoot><tfnref xrefid="ftblnote3"></tfoot></entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry><applicabil applicref="b"></applicabil> ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY<tfoot><tfnid id="ftblnote2">Second footnote in a table</tfnid>
+</tfoot></entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY<tfoot><tfnref xrefid="ftblnote1"></tfoot></entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY<tfoot><tfnref xrefid="ftblnote2"></tfoot></entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY<tfoot><tfnid id="ftblnote3">Third footnote in a table</tfnid>
+</tfoot></entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+</tbody><tfndisplay></tgroup></table>
+<subpara1><title>Hazardous Materials Icons</title><para>Icons are
+used in this manual to identify dangers associated with hazardous
+materials. The icons used and their definitions are as follows:<tabmat
+frame="none" colsep="0"><tgroup cols="2"><colspec colname="col1"
+colwidth="1.5in"><colspec colname="col2" colwidth="3.5in"><tbody>
+<row>
+<entry><graphic boardno="bio" reprowid="0.4in" scalefit="1" icon="yes"></entry>
+<entry>BIOLOGICAL: The abstract symbol bug shows that a material may
+contain bacteria or viruses that present a danger to life or health.</entry>
+</row>
+<row>
+<entry><graphic boardno="chemical" reprowid="0.4in" scalefit="1"
+icon="yes"></entry>
+<entry>CHEMICAL: The symbol of drops of liquid onto a hand shows that
+the material will cause burns or irritation of skin and tissues.</entry>
+</row>
+<row>
+<entry><graphic boardno="explode" reprowid="0.4in" scalefit="1"
+icon="yes"></entry>
+<entry>EXPLOSION: The rapidly expanding symbol shows that the material
+may explode if subjected to high temperatures, sources of ignition
+or high pressure.</entry>
+</row>
+<row>
+<entry><graphic boardno="goggles" reprowid="0.4in" scalefit="1"
+icon="yes"></entry>
+<entry>EYE PROTECTION: The symbol of a person wearing goggles shows
+that the material will injure eyes.</entry>
+</row>
+<row>
+<entry><graphic boardno="fire" reprowid="0.4in" scalefit="1" icon="yes"></entry>
+<entry>FIRE: The symbol of a flame shows that the material can ignite
+and burn.</entry>
+</row>
+<row>
+<entry><graphic boardno="poison" reprowid="0.4in" scalefit="1"
+icon="yes"></entry>
+<entry>POISON: The symbol of a skull and crossbones shows that the
+material is poisonous or a danger to life.</entry>
+</row>
+<row>
+<entry><graphic boardno="radioacti" reprowid="0.4in" scalefit="1"
+icon="yes"></entry>
+<entry>RADIATION: The symbol of three circular wedges shows that radioactive
+energy is emitted which can injure tissue and organs.</entry>
+</row>
+<row>
+<entry><graphic boardno="vapor" reprowid="0.4in" scalefit="1" icon="yes"></entry>
+<entry>VAPOR: The symbol of a human figure in a cloud shows that the
+material gives off vapors that are a danger to life or health.</entry>
+</row>
+</tbody></tgroup></tabmat></para>
+</subpara1>
+</para0>
+</safesum>
+</front><body numcols="2"><chapter security="u" sssn="23-10-00">
+<title security="u">CHAPTER HAS SSSN ATTRIBUTE 23-10-00</title>
+<para0 applicref="a" verstatus="ver" sssn="23-11-00"><title> Para0
+HAS SSSN ATTRIBUTE 23-11-00</title>
+<para>This section of the document covers<secindex pridnbr="4">D System
+Subsystem SUB SUB System</secindex> SSSN 23-11-00.<ftnote id="ftnote-18">
+ This is a footnote in Chapter 1.</ftnote></para>
+<table frame="none" colsep="0" pgwide="0" id="t1-1" applicref="b"
+verstatus="ver">
+<title> This is a Table Title</title><tgroup cols="3" align="justify">
+<colspec colname="col1" colwidth="1.0*"><colspec colname="col2"
+colwidth="1*"><colspec colname="col3" colwidth="1*"><spanspec
+namest="col1" nameend="col3" spanname="spanall" align="left"><thead>
+<row rowsep="1">
+<entry valign="top">Column 1 Header</entry>
+<entry valign="top">Column 2 Header</entry>
+<entry valign="top">Column 3 Header</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>ENTRY <tfoot><tfnid id="ftblnote4"
+tfnval="First footnote in a table."></tfnid></tfoot></entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY <tfoot><tfnid id="ftblnote5"
+tfnval="Second footnote in a table."></tfnid></tfoot></entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY<tfoot><tfnref xrefid="ftblnote5"></tfoot></entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry><applicabil applicref="b"></applicabil> ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY <tfoot><tfnid id="ftblnote6"
+tfnval="Third footnote in a table."></tfnid></tfoot></entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry spanname="spanall" align="left">An entry in a span covering
+all three entry tags in the row.</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY <tfoot><tfnref xrefid="ftblnote4"></tfoot></entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY<tfoot><tfnref xrefid="ftblnote6"></tfoot></entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY <tfoot><tfnid id="tblftnote7"
+tfnval="This is the fourth footnote in a table."></tfnid></tfoot></entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY<tfoot><tfnref xrefid="tblftnote7"></tfoot></entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry><applicabil applicref="a"></applicabil> ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry spanname="spanall" align="justify"><tfndisplay></entry>
+</row>
+</tbody></tgroup></table>
+<subpara1 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+applicref="c" verstatus="ver" sssn="23-11-01"><title> Subpara1 Has <prindex
+pridnbr="4">SSSN</prindex>SSSN Attribute 23-11-01</title><para>This
+section of the document covers SSSN 23-11-01.<secindex pridnbr="2">Secondary
+entry A</secindex><tabmat frame="none" colsep="0" pgwide="0"><tgroup
+cols="2"><colspec colname="col1"><colspec colname="col2"><tbody>
+<row>
+<entry><applicabil applicref="a"></applicabil> Tabmat entry </entry>
+<entry>Tabmat entry</entry>
+</row>
+<row>
+<entry>Tabmat entry</entry>
+<entry>Tabmat entry</entry>
+</row>
+<row>
+<entry>Tabmat entry</entry>
+<entry>Tabmat entry</entry>
+</row>
+<row>
+<entry>Tabmat entry</entry>
+<entry>Tabmat entry</entry>
+</row>
+</tbody></tgroup></tabmat></para>
+</subpara1>
+<subpara1 verstatus="ver" security="u" sssn="23-11-02"><title><ocp> Subpara1
+Has SSSN Attribute 23-11-02</title><para>This section of the document
+covers SSSN 23-11-02 See <xref xrefid="toref011">.<seqlist
+numstyle="arabic">
+<title>This is a Sequential List</title>
+<item><applicabil applicref="a"></applicabil> First item in a sequential
+list</item><item>Second item in a sequential list</item><item>Third
+item in a sequential list</item><item><applicabil applicref="b"></applicabil> Fourth
+item in a sequential list</item><item>Fifth item in a sequential list</item>
+</seqlist></para>
+</subpara1>
+</para0>
+<para0 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+verstatus="ver"><title><prindex pridnbr="6">Random explanation</prindex>Random
+List Test</title>
+<para>A Random List and markup follow:<randlist>
+<title>This is a Random List.</title>
+<item>First Item in a random<secindex pridnbr="6">Another use of random</secindex> list
+</item>
+<item><applicabil applicref="c"></applicabil> Second Item in a random
+list</item>
+<item>Third Item in a random list</item>
+<item><applicabil applicref="d"></applicabil> Fourth Item in a random
+list</item>
+</randlist></para>
+<subpara1 verstatus="ver"><title>Hazmat</title>
+<warning>
+<icon><graphic boardno="fire" reprowid="0.5in" reprodep="0.5in"
+scalefit="1" icon="yes" security="u">
+<hazmat>Alcohol</hazmat><seqno>3</seqno>
+</icon>
+<para>Alcohol is flammable and toxic to eyes, skin, and respiratory
+tract. Skin/eye protection required. Avoid repeated/prolonged contact.
+Use only in well ventilated areas. Keep away from open flames or other
+sources of ignition.</para>
+</warning>
+<para>This is PARA content.</para>
+<step1><para><applicabil applicref="c"></applicabil> This is a STEP1
+element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element. See <xref xrefid="toref001"></para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+</subpara1>
+<subpara1 verstatus="ver"><title><applicabil applicref="c"></applicabil>Subpara1
+</title><para><emphasis type="bi">Sample data for testing purposes.</emphasis> Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.</para>
+<subpara2 applicref="a" verstatus="ver"><title>Subpara2</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara2>
+<subpara2 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+verstatus="ver"><title>Subpara2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<step1><para>This is a first STEP1 element.</para>
+</step1>
+<step1><para>This is a second STEP1 element.</para>
+</step1>
+<step1><para>This is a third STEP1 element.</para>
+</step1>
+<step1><para>This is a fourth STEP1 element.</para>
+</step1>
+<step1><para><applicabil applicref="b"></applicabil> This is a fifth
+STEP1 element.</para>
+</step1>
+<step1><para>This is a sixth STEP1 element.</para>
+</step1>
+<step1><para>This is a tseventh STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element<prindex pridnbr="7">Element use</prindex>.
+</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 <secindex pridnbr="7">Another use of
+element</secindex>element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.<secindex pridnbr="4">D System
+Subsystem SUB SUB System</secindex></para>
+</step1>
+<step1><para>This is a STEP1 element.<prindex pridnbr="4">SSSN</prindex></para>
+</step1>
+</subpara2>
+</subpara1>
+<subpara1 verstatus="ver"><title><oci>Subpara1</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. See <xref xrefid="f1-2"></para>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.</para>
+<subpara3 applicref="c" verstatus="ver"><title><nsp>Subpara3</title>
+<para>This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document.</para>
+</subpara3>
+</subpara2>
+<subpara2 verstatus="ver"><title>Subpara2</title><para><emphasis
+type="b">Sample data for testing purposes.</emphasis>Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+</subpara1>
+<subpara1 verstatus="ver"><title><hcp>Subpara1</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+</subpara1>
+<figure pgwide="0" id="f1-1" applicref="a" verstatus="ver">
+<title> Quarter Page Column Wide Graphic Test</title>
+<graphic boardno="styler" reprowid="2.0in" reprodep="3.0in" scalefit="1">
+</figure>
+<subpara1 verstatus="ver"><title>Subpara1</title><para><applicabil
+applicref="c"></applicabil> This is PARA<prindex pridnbr="5">Para
+definition</prindex> content.</para>
+<step1><para>This is a one STEP1 element.</para>
+</step1>
+<step1><para>This is a two STEP1 element. See <xref xrefid="f1-3"></para>
+</step1>
+<step1><para>This is a three STEP1 element.</para>
+</step1>
+<step1><para>This is a four STEP1 element.</para>
+</step1>
+<step1><para>This is a five STEP1 element.</para>
+</step1>
+<step1><para>This is a six STEP1 element.</para>
+</step1>
+<step1><para>This is a seven STEP1 element.</para>
+</step1>
+<step1><para>This is a eight STEP1 element.</para>
+</step1>
+<step1><para>This is a nine STEP1 element.</para>
+</step1>
+<step1><para>This is a ten STEP1 element.</para>
+</step1>
+<step1><para>This is a eleven STEP1 element.</para>
+</step1>
+<step1><para>This is a twelve STEP1 element.</para>
+</step1>
+<step1><para>This is a thirteen STEP1 element.</para>
+</step1>
+<step1><para>This is a fourteen STEP1 element.</para>
+</step1>
+<step1><para>This is a fifteen STEP1 element.</para>
+</step1>
+<step1><para>This is a sixteen STEP1 element.</para>
+</step1>
+<step1><para>This is a seventeen STEP1 element. See <xref xrefid="f1-4"></para>
+</step1>
+<step1><para>This is a eighteen STEP1 element. See <xref xrefid="f1-5"></para>
+</step1>
+<step1><para>This is a nineteen STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty one STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty two STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty three STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty four STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty five STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty six STEP1 element.</para>
+</step1>
+<step1>
+<warning>
+<para>Warning to test style and format of a warning at the step level.
+Warning to test style and format of a warning at the step level. Warning
+to test style and format of a warning at the step level. Warning to
+test style and format of a warning at the step level.</para>
+</warning>
+<para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1>
+<caution>
+<para><applicabil applicref="a"></applicabil> <secindex pridnbr="5">Another
+use of a para</secindex>Caution to test style and format of a caution
+at the step level. Caution to test style and format of a caution at
+the step level. Caution to test style and format of a caution at the
+step level. Caution to test style and format of a caution at the step
+level. Caution to test style and format of a caution at the step level.</para>
+<para><applicabil applicref="b"></applicabil> Caution to test style
+and format of a multiple caution at the step level. Caution to test
+style and format of a multiple caution at the step level. Caution
+to test style and format of a multiple caution at the step level. </para>
+</caution>
+<para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.<randlist>
+<title>This is a Random List.</title>
+<item>First Item in a random list</item>
+<item>Second Item in a random list</item>
+<item>Third Item in a random list</item>
+<item>Fourth Item in a random list</item>
+</randlist></para>
+</step1>
+<step1><para>This is a STEP1 element.<seqlist numstyle="alphalc">
+<title>This is a Sequential List</title>
+<item>First item in a sequential list</item><item>Second item in a
+sequential list</item><item>Third item in a sequential list</item><item>Fourth
+item in a sequential list</item></seqlist></para>
+</step1>
+</subpara1>
+<figure id="f1-2" legend="1" verstatus="ver">
+<title><applicabil applicref="a"></applicabil> Half Page Deep Full
+Page Graphic Test</title>
+<graphic boardno="vapor" reprowid="6.5in" reprodep="4.5in" scalefit="1"
+icon="yes">
+<legend>
+<tabmat><tgroup cols="2"><tbody>
+<row>
+<entry>This is a legend in a figure in the body.</entry>
+<entry>Legend entry</entry>
+</row>
+<row>
+<entry>Legend entry</entry>
+<entry>Legend entry</entry>
+</row>
+<row>
+<entry>Legend entry</entry>
+<entry>Legend entry</entry>
+</row>
+</tbody></tgroup></tabmat>
+</legend>
+</figure>
+<subpara1 verstatus="ver"><title><esds><nsp><hci><hcp><fcp><oci><hcp> Subpara1
+</title><para>Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara2 verstatus="ver"><title><esds><fcp><hci><hcp><nsp><oci><ocp> Subpara2
+</title><para>Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara3 verstatus="ver"><title><esds><fcp><hci><hcp><nsp><ocp><oci> Subpara3
+</title><para>This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document.</para>
+</subpara3>
+<subpara3 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+applicref="b" verstatus="ver"><?Pub _bookmark Command="[Quickmark]">
+<title><applicabil applicref="c"></applicabil> Subpara3</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. </para>
+<subpara4 applicref="c" verstatus="ver"><title><esds><fcp><hci><hcp><nsp><oci><ocp> Subpara4
+</title>
+<note>
+<para>This is a para in a note in a subpara4.</para>
+<para>This is a para in a note in a subpara4.</para>
+<para>This is a para in a note in a subpara4.</para>
+</note>
+<para>This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document.</para>
+</subpara4>
+<subpara4 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+verstatus="ver"><title><applicabil applicref="d"></applicabil> Subpara4</title>
+<para>This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document.</para>
+</subpara4>
+</subpara3>
+</subpara2>
+<subpara2 verstatus="ver"><title><oci> Subpara2</title>
+<warning>
+<para>This is a para in a warning in a subpara2.</para>
+<para>This is a para in a warning in a subpara2.</para>
+<para>This is a para in a warning in a subpara2.</para>
+</warning>
+<para>Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+</subpara2>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.</para>
+</subpara2>
+<subpara2 verstatus="ver"><title><fcp> Subpara2</title>
+<caution>
+<para>This is a para in a caution in a subpara2.</para>
+<para>This is a para in a caution in a subpara2.</para>
+<para>This is a para in a caution in a subpara2.</para>
+</caution>
+<para>Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+</subpara2>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.</para>
+</subpara2>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.</para>
+</subpara2>
+</subpara1>
+<subpara1 verstatus="ver"><title>Subpara1</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.<randlist>
+<title>This is a Random List.</title>
+<item>First Item in a random list</item>
+<item>Second Item in a random list</item>
+<item>Third Item in a random list</item>
+<item>Fourth Item in a random list</item>
+</randlist></para>
+</subpara1>
+</para0>
+<para0><title><hci><fcp><hcp><nsp><oci><ocp><esds>LOCATION REFERENCE
+ELEMENT</title>
+<para>This para contains the LOCATION element referenced to the next
+CHAPTER element (<location xrefid="locref1">).<secindex pridnbr="2">Additional
+secondary entry</secindex><seqlist numstyle="romanlc">
+<title>This is a Sequential List</title>
+<item>First item in a sequential list</item><item>Second item in a
+sequential list</item><item>Third item in a sequential list</item><item>Fourth
+item in a sequential list</item></seqlist></para>
+</para0>
+<figure id="f1-3" verstatus="ver">
+<title>Full Page Graphic</title>
+<subfig>
+<graphic boardno="styler" reprowid="6.5in" reprodep="9.0in" scalefit="1">
+</subfig><subfig>
+<graphic boardno="styler" reprowid="6.5in" reprodep="9.0in" scalefit="1">
+</subfig></figure>
+<figure id="f1-4" verstatus="ver">
+<title>Full Page Graphic</title>
+<graphic boardno="styler" reprowid="6.5in" reprodep="9.0in" scalefit="1">
+</figure>
+<foldout pgstyle="11x17" blankapron="0" id="f1-5" applicref="d"
+verstatus="ver" security="u">
+<title> Foldout Page Vapor Does Not Contains a Blank Apron</title>
+<graphic boardno="vapor1" reprowid="15.25in" reprodep="7.5in"
+scalefit="1" security="u"></foldout><foldout pgstyle="11x17"
+blankapron="1" applicref="d" verstatus="ver" security="u">
+<title> <esds><fcp><hci><hcp><nsp><oci><ocp>Foldout Page Vapor Does
+Not Contains a Blank Apron</title>
+<subfig><graphic boardno="vapor1" reprowid="8.25in" reprodep="7.5in"
+scalefit="1" security="u"></subfig><subfig><graphic boardno="styler"
+reprowid="6in" reprodep="8.0in" scalefit="1"></subfig></foldout>
+</chapter><chapter id="locref1" security="u" sssn="23-20-00">
+<title>CHAPTER HAS SSSN ATTRIBUTE 23-20-00</title>
+<section security="u" sssn="23-21-00">
+<title>SECTION HAS SSSN ATTRIBUTE 23-21-00</title>
+<para0 verstatus="ver" security="u" sssn="23-21-01"><title>PARA0 HAS
+SSSN ATTRIBUTE 23-21-01</title>
+<para security="u">This section of the document covers SSSN 23-21-01.<prindex
+pridnbr="1">Index entry</prindex> See <xref xrefid="f2-1"></para>
+<subpara1 verstatus="ver" sssn="23-21-01-101"><title>Subpara1 Has
+SSSN Attribute 23-21-01-101</title><para>This section of the document
+covers SSSN 23-21-01-101.</para>
+<step1 applicref="a"><para> This step has an APPREF attribute of "a"</para>
+</step1>
+<step1 applicref="b"><para> This step has an APPREF attribute of "b"</para>
+</step1>
+<step1><para><applicabil applicref="a"></applicabil> This is a STEP1
+element.</para>
+</step1>
+<step1><para><applicabil applicref="c"></applicabil> This is a STEP1
+element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+<step2><para>This is a STEP2 element.</para>
+</step2>
+<step2 applicref="c"><para> This is a STEP2 element.</para>
+<step3><para>This is a STEP3 element.</para>
+</step3>
+<step3><para><applicabil applicref="b"></applicabil> This is a STEP3
+element.</para>
+<step4><para><applicabil applicref="c"></applicabil> This is a STEP4
+element.</para>
+</step4>
+<step4 applicref="d"><para> This is a STEP4 element.</para>
+</step4>
+</step3>
+</step2>
+</step1>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.<ftnote id="ftnote-11"> This is a footnote in
+Chapter 2 Section I.</ftnote></para>
+</subpara2>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.</para>
+</subpara2>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.<ftnref xrefid="ftnote-11"></para>
+</subpara2>
+</subpara1>
+<subpara1 verstatus="ver" sssn="23-21-01-102"><title>Subpara1 Has
+SSSN Attribute 23-21-01-102</title><para>This section of the document
+covers SSSN 23-21-01-102.</para>
+<step1 applicref="a"><para>This step has an APPREF attribute of "a"</para>
+</step1>
+<step1 applicref="b"><para>This step has an APPREF attribute of "b"</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+<step2><para>This is a STEP2 element.</para>
+</step2>
+<step2><para>This is a STEP2 element.</para>
+<step3><para>This is a STEP3 element.</para>
+</step3>
+<step3><para>This is a STEP3 element.</para>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+</step3>
+</step2>
+<table pgwide="1" id="t2-1" verstatus="ver">
+<title><applicabil applicref="a"></applicabil><esds><fcp><hci><hcp><nsp><oci><ocp> Title
+in a Table</title><tgroup cols="4"><colspec colname="col1"><colspec
+colname="col2"><colspec colname="col3"><colspec colname="col4"><thead>
+<row rowsep="1">
+<entry valign="top">Header Row, column 1</entry>
+<entry valign="top">Header Row, column 2</entry>
+<entry valign="top">Header Row, column 3</entry>
+<entry valign="top">Header Row, column 4</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>Row 1, column 1</entry>
+<entry>Row 1, column 2</entry>
+<entry>Row 1, column 3</entry>
+<entry>Row 1, column 4</entry>
+</row>
+<row>
+<entry>Row 2, column 1</entry>
+<entry>Row 2, column 2</entry>
+<entry>Row 2, column 3</entry>
+<entry>Row 2, column 4</entry>
+</row>
+<row>
+<entry>Row 3, column 1</entry>
+<entry>Row 3, column 2</entry>
+<entry>Row 3, column 3</entry>
+<entry>Row 3, column 4</entry>
+</row>
+<row>
+<entry>Row 4, column 1</entry>
+<entry>Row 4, column 2</entry>
+<entry>Row 4, column 3</entry>
+<entry>Row 4, column 4</entry>
+</row>
+<row>
+<entry>Row 5, column 1</entry>
+<entry>Row 5, column 2</entry>
+<entry>Row 5, column 3</entry>
+<entry>Row 5, column 4</entry>
+</row>
+<row>
+<entry>Row 6, column 1<warning>
+<para>Warning in a table.</para>
+</warning></entry>
+<entry>Row 6, column 2<caution>
+<para>Caution in a table.</para>
+</caution></entry>
+<entry>Row 6, column 3<note>
+<para>Note in a table.</para>
+</note></entry>
+<entry>Row 6, column 4</entry>
+</row>
+</tbody></tgroup></table>
+<figure id="f2-1" verstatus="ver">
+<title><oci> Quarter Page Deep Full Page Graphic Test</title>
+<graphic boardno="vapor" reprowid="3.5in" reprodep="2.0in" scalefit="1"
+hplace="center" security="u"></figure>
+</step1>
+<subpara2 fcp="1" verstatus="ver"><title>Subpara2</title>
+<warning>
+<para>Paragraph in a Warning in a subpara2. Paragraph in a Warning
+in a subpara2. Paragraph in a Warning in a subpara2.</para>
+</warning>
+<para>Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+</subpara2>
+<subpara2 verstatus="ver"><title><fcp> Subpara2</title>
+<caution>
+<para>This is a paragraph in a Caution in a subpara2. This is a paragraph
+in a Caution in a subpara2. This is a paragraph in a Caution in a
+subpara2.</para>
+</caution>
+<para>Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+</subpara2>
+<subpara2 hcp="1" verstatus="ver"><title>Subpara2</title>
+<note>
+<para>This is a paragraph in a Note in a subpara2. This is a paragraph
+in a Note in a subpara2. This is a paragraph in a Note in a subpara2. </para>
+</note>
+<para>Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+</subpara2>
+<subpara2 verstatus="ver"><title><hcp> Subpara2</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara2>
+</subpara1>
+</para0>
+</section>
+<section security="u" sssn="23-22-00">
+<title>SECTION HAS SSSN ATTRIBUTE 23-22-00</title>
+<para0 verstatus="ver" security="u" sssn="23-22-01"><title>PARA0 HAS
+SSSN ATTRIBUTE 23-22-01</title>
+<para>This section of the document covers SSSN 23-22-01<ftnote
+id="ftnote-16"> This is the first footnote in Chapter 2 Section II</ftnote>.
+</para>
+<subpara1 verstatus="ver" sssn="23-22-01-101"><title>Subpara1 Has
+SSSN Attribute 23-22-01-101</title><para>This section of the document
+covers SSSN 23-22-01-101.<ftnote id="ftnote-17"> This is a second
+footnote in Chapter 2 Section II</ftnote></para>
+<step1 applicref="a"><para>This step has an APPREF attribute of "a"</para>
+</step1>
+<step1 applicref="b"><para>This step has an APPREF attribute of "b"</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+<step2><para>This is a STEP2 element.</para>
+</step2>
+<step2><para>This is a STEP2 element.</para>
+<step3><para>This is a STEP3 element.</para>
+</step3>
+<step3><para>This is a STEP3 element.</para>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+</step3>
+</step2>
+</step1>
+<subpara2 nsp="1" verstatus="ver"><title>Subpara2</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara2>
+<subpara2 verstatus="ver"><title><nsp> Subpara2</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara2>
+<subpara2 ocp="1" verstatus="ver"><title>Subpara2</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara2>
+<subpara2 verstatus="ver"><title><ocp> Subpara2</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara2>
+</subpara1>
+<subpara1 oci="1" verstatus="ver" sssn="23-22-01-102"><title>Subpara1
+Has SSSN Attribute 23-22-01-102</title><para>This section of the document
+covers SSSN 23-22-01-102.</para>
+<step1 applicref="a"><para>This step has an APPREF attribute of "a"</para>
+</step1>
+<step1 applicref="b"><para>This step has an APPREF attribute of "b"</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+<step2><para>This is a STEP2 element.</para>
+</step2>
+<step2><para>This is a STEP2 element.</para>
+<step3><para>This is a STEP3 element.</para>
+</step3>
+<step3><para>This is a STEP3 element.</para>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+</step3>
+</step2>
+</step1>
+<subpara2 verstatus="ver"><title><esds> Subpara2</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.</para>
+</subpara2>
+<subpara2 esds="1" verstatus="ver"><title>Subpara2</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes.<tabmat frame="none" colsep="0" pgwide="1">
+<tgroup cols="4"><colspec colname="col1"><colspec colname="col2">
+<colspec colname="col3"><colspec colname="col4"><thead>
+<row>
+<entry>Ist Column Tabmat header</entry>
+<entry>2nd Column Tabmat header</entry>
+<entry>3rd Column Tabmat header</entry>
+<entry>4th Column Tabmat header</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>First Column first row</entry>
+<entry>Second Column first row</entry>
+<entry>Third Column first row</entry>
+<entry>Fourth Column first row</entry>
+</row>
+<row>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+</row>
+<row>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+</row>
+<row>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+</row>
+<row>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+</row>
+<row>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+</row>
+<row>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+</row>
+</tbody></tgroup></tabmat><figure>
+<title>Figtable in a Figure</title>
+<figtable><tgroup cols="3"><colspec colname="col1"><colspec
+colname="col2"><colspec colname="col3"><thead>
+<row>
+<entry>Column 1 Header</entry>
+<entry>Column 2 Header</entry>
+<entry>Column 3 Header</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+</row>
+<row>
+<entry>Entry</entry>
+<entry>Entry</entry>
+<entry>Entry</entry>
+</row>
+</tbody></tgroup></figtable>
+</figure></para>
+</subpara2>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.</para>
+</subpara2>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.</para>
+</subpara2>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.</para>
+<subpara3><title><esds><hcp> Subpara3</title><para>Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes.</para>
+<subpara4><title>Subpara4</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara5 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+applicref="c"><title> Subpara5</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara6 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+applicref="d"><title> Subpara6</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara7 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+applicref="a"><title> Subpara7</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara8 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+applicref="b"><title> Subpara8</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+</section>
+</chapter><ipbchap security="u" sssn="23-00-00">
+<ipbfwordchap security="u" sssn="23-00-00">
+<para0 verstatus="ver"><title>This is The First Paragraph in the IPB</title>
+<para>Some Organization use this first paragraph to explain what this <acronym>
+<def>Illustrated Parts Breakdown</def><term>IPB</term></acronym> contains.
+An example would be, &ldquo;This Illustrated Parts Breakdown contains
+a list of all the parts necessary for the XXXX system.<prindex
+pridnbr="2">Alpha primary entry</prindex></para>
+</para0>
+<ipbmodelcover applicref="a" verstatus="ver"><title> This Paragraph
+Explains Which Models are Covered in the parts Breakdown</title><para>This
+paragraph explains which models are covered in the parts breakdown.
+A listing of the models, types, configurations, modifications, task
+numbers, and series or blocks of the end item covered by the manual.<ftnote
+id="ftnote-15"> This is a footnote in the IPB Chapter.</ftnote></para>
+</ipbmodelcover>
+<ipbfinding applicref="b"><title> Optional HOW to find Part Numbers,
+Illustration, and Description</title><para>This is the place where
+the usual two &ldquo;How to find&rdquo; graphics are inserted. Some
+Organizations use a Para0 at the end of the IPB Foreword to insert
+the &ldquo;How to&rdquo; graphics.</para>
+</ipbfinding>
+<ipbsimassem applicref="c"><title> Optional Listing of Similar Assemblies
+</title><para>There are no similar assemblies in this <secindex
+pridnbr="1">Illustrated Parts Breakdown</secindex>.</para>
+</ipbsimassem>
+<ipbquickchgexpl applicref="d"><title> Optional Quick Change Information</title>
+<para>A table can be added to list the parts in a kit or quick change
+unit.</para>
+</ipbquickchgexpl>
+<ipbshtnoexpl><title>Optional Explanation of the sheet number</title>
+<para>This paragraph is used to explain the use of sheet numbers in
+an Illustrated Parts Breakdown. If multiple sheet illustrations are
+used, an explanation shall be included that the sheet number follows
+the index number and is separated with a slash (/). The explanation
+shall also state that, if an indexed item is on more than one sheet
+of an illustration, the first and last sheet numbers on which the
+item appears are given.</para>
+</ipbshtnoexpl>
+<ipbuseonexpl verstatus="ver"><title>This Paragraph Explains the Usable
+on Codes</title><para>This paragraph explains the usable on Codes.
+When breakdown of similar models are combined in the same IPB, part
+variations within the models are indicated by a letter symbol in the
+USABLE ON CODE column. Where the USABLE ON CODE column has been left
+blank part listed applies to all models covered by this breakdown.</para>
+</ipbuseonexpl>
+<ipbsmrexpl verstatus="ver"><title>Source Maintenance and Recoverability
+Code Explanation</title><para>This paragraph explains the <acronym><def>Source
+Maintenance and Recoverability Code</def><term>SMR</term></acronym>.
+This Manual contains Joint Military Services Uniform SMR codes. Source
+and Repair Codes assigned by the Government and furnished by the procuring
+activity. Definitions of these codes are available in TO 00-25-195.</para>
+</ipbsmrexpl>
+<ipbhcidesc><title>Optional Description for <acronym><def>Harness
+Critical Item</def><term>HCI</term></acronym></title><para>This paragraph
+would be use to explain the means of identifying Nuclear Harness Critical
+Items. If HCI parts are listed in the Illustrated Parts Breakdown
+the explanation would address the special requirements limiting changes
+and substitutions, and that the specific part must be use to ensure
+hardness is not degraded. </para>
+</ipbhcidesc>
+<ipbesdsdesc><title>Optional Explanation of<acronym><def>Electrostatic
+Discharge Sensitive</def><term>ESDS</term></acronym></title><para>This
+paragraph would be use to explain the identification of ESDS components
+in the equipment covered by this Illustrated Parts Breakdown. There
+will also be an explanation of the uniqueness and how to handle per
+TO 00&ndash;25&ndash;234.</para>
+</ipbesdsdesc>
+<ipbpartstd verstatus="ver"><title>Part Standardization</title><para>This
+paragraph explains Part Standardization. Authority for use of a part
+number different than the part number  listed in this IPB is established
+by the Department of Defense (DoD) Interchangeability and Substitution
+Program. Refer to the DO43B Master Item Identification Base for Air
+Force information. The maintenance technician has final responsibility
+and authority for determining acceptability of substitute parts.</para>
+</ipbpartstd>
+<ipbmfrlist><title>Optional List of Manufactures</title><para>When
+require by the acquiring activity a list of manufactures shall be
+provided. The list shall contain the <acronym><def>Commercial and
+Government Entity</def><term>CAGE</term></acronym> code and the name
+and address of all manufactures whose CAGE codes are referenced in
+the Parts List.</para>
+</ipbmfrlist>
+<table frame="none" colsep="0" rowsep="0" pgwide="0">
+<title>Manufacture Cage Codes</title><tgroup cols="2"><colspec
+colname="col1" colwidth="1in"><colspec colname="col2" colwidth="2.5in">
+<thead>
+<row>
+<entry>Code</entry>
+<entry>Manufacturer</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>59501</entry>
+<entry>Unison Industries Inc.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>7575 Baymeadows Way</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Jacksonville, FL 32256-7525</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>59885</entry>
+<entry>Rosemount Aerospace, Inc.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>14300 Judicial Road</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Burnsville, MN 55306-4898</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>60119</entry>
+<entry>The Monadnock Co.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>18301 E. Arenth Ave.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Rowland Heights, CA 91748</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>60399</entry>
+<entry>Fasco Industries, Inc.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Sale Barn Rd.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>P.O. Box 548</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Cassville, MO 65625</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>60583</entry>
+<entry>L-3 Communications Corp.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Narda Microwave</entry>
+</row>
+<row>
+<entry></entry>
+<entry>107 Woodmere Rd.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Folsom, CA 95630-4706</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>60674</entry>
+<entry>Microwave Devices, Inc.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>399 State St.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>P.O. Box 552</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Franklin, IN 46131-2556</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>61440</entry>
+<entry>Replaced by 96682</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>61501</entry>
+<entry>Norton Co.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Chemical Process Products and</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Specialty Plastics Div.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>3840 Fishcreek Road</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Cuyahoga Falls, OH 44224-4306</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>61864</entry>
+<entry>TRW Assemblies and Fasteners Group</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Cleveland, OH 44100</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>62482</entry>
+<entry>Advanced Control Components, Inc.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>20 Meridian Rd.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Eatontown, NJ 07724</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>59501</entry>
+<entry>Unison Industries Inc.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>7575 Baymeadows Way</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Jacksonville, FL 32256-7525</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>59885</entry>
+<entry>Rosemount Aerospace, Inc.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>14300 Judicial Road</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Burnsville, MN 55306-4898</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>60119</entry>
+<entry>The Monadnock Co.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>18301 E. Arenth Ave.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Rowland Heights, CA 91748</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>60399</entry>
+<entry>Fasco Industries, Inc.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Sale Barn Rd.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>P.O. Box 548</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Cassville, MO 65625</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>60583</entry>
+<entry>L-3 Communications Corp.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Narda Microwave</entry>
+</row>
+<row>
+<entry></entry>
+<entry>107 Woodmere Rd.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Folsom, CA 95630-4706</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>60674</entry>
+<entry>Microwave Devices, Inc.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>399 State St.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>P.O. Box 552</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Franklin, IN 46131-2556</entry>
+</row>
+<row>
+<entry> </entry>
+<entry></entry>
+</row>
+<row>
+<entry>61501</entry>
+<entry>Norton Co.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Chemical Process Products and</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Specialty Plastics Div.</entry>
+</row>
+<row>
+<entry></entry>
+<entry>3840 Fishcreek Road</entry>
+</row>
+<row>
+<entry></entry>
+<entry>Cuyahoga Falls, OH 44224-4306</entry>
+</row>
+</tbody></tgroup></table>
+</ipbfwordchap>
+<ipbpl sssn="23-00-00"><ipbplgrp>
+<figure applicref="a" verstatus="ver">
+<title> Parts List - First Figure</title>
+<graphic boardno="bio" reprowid="6.5in" reprodep="7.0in" scalefit="1"
+security="u"></figure>
+<ipbpl0tbl>
+<ipbpl0 verstatus="ver"><ipbfigureno>1</ipbfigureno><ipbfigindex>1/1</ipbfigindex>
+<partno>71001</partno><ipbcage>xx701</ipbcage>
+<ipbdesc><nomen>KIT BB, THIS TESTS AN <ipbplbrk>EXTREMELY LONG NOMENCLATURE
+DESCRIPTION</nomen><ipbrefdes>refdes1</ipbrefdes><ipbrefdes>refdes2</ipbrefdes>
+<ipbrefdes>refdes3</ipbrefdes><ipbrefdes>refdes4</ipbrefdes><ipbrefdes>refdes5
+</ipbrefdes></ipbdesc>
+<ipbunits>REF</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+</ipbpl0>
+<ipbpl0 verstatus="ver" shown="0"><ipbfigindex>2</ipbfigindex><partno>02345678901234567892
+</partno><ipbcage>76543</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, XYZ <ipbplbrk></nomen><ipbrefdes>refdes
+</ipbrefdes><ipbsssn>123&ndash;45&ndash;67&ndash;890</ipbsssn>
+<remarks>REMARKS (NOMEN)</remarks>
+</ipbdesc>
+<ipbunits>1</ipbunits>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+</ipbpl0>
+<ipbpl0 verstatus="ver"><ipbfigindex>3</ipbfigindex><partno>234567789</partno>
+<ipbcage>65432</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-0<ipbplbrk></nomen></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+</ipbpl0>
+<ipbpl0 verstatus="ver"><ipbfigindex>4</ipbfigindex><partno>3023456789<brk>01234567892
+</partno><ipbcage>22234<brk>65432</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-1<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn>
+<remarks>REMARKS ELEMENT</remarks>
+</ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+<ipbpl1><ipbfigindex>5</ipbfigindex><partno>(PL1) 4-023456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+</ipbpl1>
+<ipbpl1><ipbfigindex>6</ipbfigindex><partno>(PL1) 5-23456789<brk>01234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+<ipbpl2><ipbfigindex>7</ipbfigindex><partno>(PL2) 6-023456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen><hci> KIT, Containerized, BB-13<ipbplbrk></nomen>
+<ipbsssn>42-152-1253</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+</ipbpl2>
+<ipbpl2><ipbfigindex>8</ipbfigindex><partno>(PL2) 7-023456789<brk>01234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+<ipbpl3><ipbfigindex>9</ipbfigindex><partno>(PL3) 81023456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen><esds> KIT, Containerized, BB-13<ipbplbrk></nomen>
+<ipbsssn>42-152-1253</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+</ipbpl3>
+<ipbpl3><ipbfigindex>10</ipbfigindex><partno>(PL3) 92023456789<brk>01234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+<ipbpl4><ipbfigindex>11</ipbfigindex><partno>(PL4) 49023456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+</ipbpl4>
+<ipbpl4 shown="0"><ipbfigindex>12</ipbfigindex><partno>58023456789<brk>01234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+</ipbpl4>
+</ipbpl3>
+</ipbpl2>
+</ipbpl1>
+<ipbpl1><ipbfigindex>13</ipbfigindex><partno>(PL1) 67023456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+</ipbpl1>
+<ipbpl1><ipbfigindex>14</ipbfigindex><partno>(PL1) 39023456789-01234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+<ipbpl2><ipbfigindex>15</ipbfigindex><partno>(PL2) 48023456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+</ipbpl2>
+<ipbpl2><ipbfigindex>16</ipbfigindex><partno>(PL2) 57023456789<brk>01234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+<ipbpl3><ipbfigindex>17</ipbfigindex><partno>(PL3)68-0231456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+</ipbpl3>
+<ipbpl3><ipbfigindex>18</ipbfigindex><partno>(PL3) 770232456789<brk>01234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+<ipbpl4><ipbfigindex>19</ipbfigindex><partno>(PL4)88-02335456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+</ipbpl4>
+<ipbpl4><ipbfigindex>20</ipbfigindex><partno>440234456789<brk>3301234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>PAOOO</ipbsmrcode></ipbsmrcodes>
+<ipbpl5><ipbfigindex>21</ipbfigindex><partno>4407865-2344</partno>
+<ipbcage>55889</ipbcage>
+<ipbdesc><nomen>pl5 KIT, Containerized, <ipbplbrk>BB-ind5</nomen>
+</ipbdesc>
+<ipbunits>25</ipbunits>
+<ipbsmrcodes><ipbsmrcode>PAOZZ</ipbsmrcode></ipbsmrcodes>
+<ipbpl6><ipbfigindex>22</ipbfigindex><partno>67843402344-2</partno>
+<ipbcage>66889</ipbcage>
+<ipbdesc><nomen>pl6 LOCK WASHERS<ipbplbrk>BB-ind6</nomen></ipbdesc>
+<ipbunits>52</ipbunits>
+<ipbsmrcodes><ipbsmrcode>PAOZZ</ipbsmrcode></ipbsmrcodes>
+<ipbpl7><ipbfigindex>23</ipbfigindex><partno>9858743</partno><ipbcage>77889
+</ipbcage>
+<ipbdesc><nomen>Pl7 Machined Inserts<ipbplbrk></nomen></ipbdesc>
+<ipbunits>12</ipbunits>
+<ipbsmrcodes><ipbsmrcode>PAOZZ</ipbsmrcode></ipbsmrcodes>
+</ipbpl7>
+</ipbpl6>
+</ipbpl5>
+</ipbpl4>
+</ipbpl3>
+</ipbpl2>
+</ipbpl1>
+</ipbpl0>
+</ipbpl0tbl>
+<ipbuseoncodelist>
+<term>A</term><def>69-0967</def>
+<term>B</term><def>69-0967 thru 69-6231</def>
+</ipbuseoncodelist>
+</ipbplgrp></ipbpl><ipbnumindx autobuild="1" sssn="23-00-00"
+security="u"><ipbrfdsindx autobuild="1" security="u" sssn="23-00-00">
+</ipbchap><ddchapter>
+<dddesc id="dddesc"><title>SF dddesc title</title><para>para text.</para>
+<subpara1 applicref="a" verstatus="ver"><title> Subpara1</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.</para>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes.</para>
+<subpara3 applicref="b" verstatus="ver"><title> Subpara3</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document.</para>
+<subpara4 verstatus="ver"><title>Subpara4</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+<subpara5 applicref="c" verstatus="ver"><title> SUBPARA5</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document.</para>
+<subpara6><title>Subpara6</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara7 applicref="d"><title> Subpara7</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.</para>
+<subpara8><title>Subpara8</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</dddesc>
+<ddindex id="ddindex"><title>SF ddindex title</title><para>The ddindex
+is a listing of the different part numbers listed in the Difference
+Data Index.</para>
+<ddlist></ddindex>
+<ddsheet><nomen>nomen in ddsheet</nomen><partno>partno</partno>
+<para0 applicref="a" verstatus="ver"><title> First PARA0 TITLE</title>
+<para>The content of this PARA0 has samples for testing within the
+Difference Data Sheet element.</para>
+<subpara1 verstatus="ver"><title>Subpara1</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes.</para>
+<subpara2 applicref="b" verstatus="ver"><title> Subpara2</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.</para>
+<subpara3 verstatus="ver"><title>Subpara3</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+<subpara4 applicref="c" verstatus="ver"><title> Subpara4</title><para>This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document.</para>
+<subpara5 verstatus="ver"><title>Subpara5</title><para>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document.</para>
+<subpara6 applicref="d"><title>Subpara6</title><para>Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes. Sample data for testing purposes. Sample data for
+testing purposes.</para>
+<subpara7><title>Subpara7</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara8 applicref="a"><title> Subpara8</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.</para>
+<step1 applicref="a"><para> This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+<step2 applicref="b"><para> This is a STEP2 element.</para>
+</step2>
+<step2><para>This is a STEP2 element.</para>
+<step3 applicref="c"><para> This is a STEP3 element.</para>
+</step3>
+<step3><para>This is a STEP3 element.</para>
+<step4 applicref="d"><para> This is a STEP4 element.</para>
+</step4>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+</step3>
+</step2>
+</step1>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+</ddsheet>
+</ddchapter></body><rear numcols="2"><appendix>
+<title>TITLE FOR APPENDIX A</title>
+<para0 applicref="a"><title> Para0 Title in Appendix A</title>
+<para>This is a para in a para0 in Appendix A.</para>
+<subpara1 applicref="b" verstatus="ver"><title> Subpara1 Title</title>
+<para><applicabil applicref="a"></applicabil> Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara2 applicref="c"><title> Subpara 2 Title</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.</para>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+<step2><para>This is a step2.</para>
+</step2>
+<step2><para>This is the second step 2.</para>
+<step3><para>First step 3.</para>
+</step3>
+<step3><para>Second step 3</para>
+<step4><para>First step 4.</para>
+</step4>
+<step4><para>Second step 4.</para>
+</step4>
+</step3>
+</step2>
+</step1>
+<subpara3><title>Subpara3 Title</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara4 applicref="d"><title>Subpara4 Title</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.<seqlist
+numstyle="arabic">
+<title>This is a Sequential List</title>
+<item>First item in a sequential list</item><item>Second item in a
+sequential list</item><item>Third item in a sequential list</item><item>Fourth
+item in a sequential list</item></seqlist></para>
+<subpara5 applicref="c"><title> Subpara5 Title</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.<tabmat
+frame="none" colsep="0" pgwide="0"><tgroup cols="2"><colspec
+colname="col1"><colspec colname="col2"><thead>
+<row>
+<entry>Column 1 header</entry>
+<entry>Column 2 header</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>Column1, row 1</entry>
+<entry>Column2, row 1</entry>
+</row>
+<row>
+<entry>Column1, row 2</entry>
+<entry>Column2, row 2</entry>
+</row>
+<row>
+<entry>Column1, row 3</entry>
+<entry>Column2, row 3</entry>
+</row>
+<row>
+<entry>Column1, row 4</entry>
+<entry>Column2, row 4</entry>
+</row>
+</tbody></tgroup></tabmat></para>
+<subpara6 applicref="a"><title> Subpara6 Title</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.</para>
+<table frame="none" colsep="0" pgwide="0" applicref="b">
+<title> Table Title in an Appendix</title><tgroup cols="2"><colspec
+colname="col1"><colspec colname="col2"><thead>
+<row>
+<entry>Column 1 header</entry>
+<entry>Column 2 header</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>Column1, row 1</entry>
+<entry>Column2, row 1</entry>
+</row>
+<row>
+<entry>Column1, row 2</entry>
+<entry>Column2, row 2</entry>
+</row>
+<row>
+<entry>Column1, row 3</entry>
+<entry>Column2, row 3</entry>
+</row>
+<row>
+<entry>Column1, row 4</entry>
+<entry>Column2, row 4</entry>
+</row>
+</tbody></tgroup></table>
+<subpara7 applicref="d"><title> Subpara7 Title</title><para><applicabil
+applicref="d"></applicabil> Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.<randlist>
+<title>This is a Random List.</title>
+<item>First Item in a random<secindex pridnbr="6">Another use of random</secindex> list
+</item>
+<item>Second Item in a random list</item>
+<item>Third Item in a random list</item>
+<item>Fourth Item in a random list</item>
+</randlist></para>
+<subpara8 applicref="a"><title> Subpara8 Title </title><para><ftnote
+id="ftnote-10">This is a footnote in the Appendix.</ftnote>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. </para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+</appendix><appendix>
+<title>TITLE FOR APPENDIX B</title>
+<para0 applicref="a"><title> Para0 Title in Appendix B</title>
+<para>This is a para in a para0 in Appendix B.</para>
+<subpara1 applicref="b" verstatus="ver"><title> Subpara1 Title</title>
+<para><applicabil applicref="a"></applicabil> Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara2 applicref="c"><title> Subpara 2 Title</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.</para>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+<step2><para>This is a step2.</para>
+</step2>
+<step2><para>This is the second step 2.</para>
+<step3><para>First step 3.</para>
+</step3>
+<step3><para>Second step 3</para>
+<step4><para>First step 4.</para>
+</step4>
+<step4><para>Second step 4.</para>
+</step4>
+</step3>
+</step2>
+</step1>
+<subpara3><title>Subpara3 Title</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes.</para>
+<subpara4 applicref="d"><title>Subpara4 Title</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.<seqlist
+numstyle="alphalc">
+<title>This is a Sequential List</title>
+<item>First item in a sequential list</item><item>Second item in a
+sequential list</item><item>Third item in a sequential list</item><item>Fourth
+item in a sequential list</item></seqlist></para>
+<subpara5 applicref="c"><title> Subpara5 Title</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.<tabmat
+frame="none" colsep="0" pgwide="0"><tgroup cols="2"><colspec
+colname="col1"><colspec colname="col2"><thead>
+<row>
+<entry>Column 1 header</entry>
+<entry>Column 2 header</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>Column1, row 1</entry>
+<entry>Column2, row 1</entry>
+</row>
+<row>
+<entry>Column1, row 2</entry>
+<entry>Column2, row 2</entry>
+</row>
+<row>
+<entry>Column1, row 3</entry>
+<entry>Column2, row 3</entry>
+</row>
+<row>
+<entry>Column1, row 4</entry>
+<entry>Column2, row 4</entry>
+</row>
+</tbody></tgroup></tabmat></para>
+<subpara6 applicref="a"><title> Subpara6 Title</title><para>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.</para>
+<table frame="none" colsep="0" pgwide="0" applicref="b">
+<title> Table Title in an Appendix</title><tgroup cols="2"><colspec
+colname="col1"><colspec colname="col2"><thead>
+<row>
+<entry>Column 1 header</entry>
+<entry>Column 2 header</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>Column1, row 1</entry>
+<entry>Column2, row 1</entry>
+</row>
+<row>
+<entry>Column1, row 2</entry>
+<entry>Column2, row 2</entry>
+</row>
+<row>
+<entry>Column1, row 3</entry>
+<entry>Column2, row 3</entry>
+</row>
+<row>
+<entry>Column1, row 4</entry>
+<entry>Column2, row 4</entry>
+</row>
+</tbody></tgroup></table>
+<subpara7 applicref="d"><title> Subpara7 Title</title><para><applicabil
+applicref="d"></applicabil> Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes.<randlist>
+<title>This is a Random List.</title>
+<item>First Item in a random<secindex pridnbr="6">Another use of random</secindex> list
+</item>
+<item>Second Item in a random list</item>
+<item>Third Item in a random list</item>
+<item>Fourth Item in a random list</item>
+</randlist></para>
+<subpara8 applicref="a"><title> Subpara8 Title </title><para><ftnote
+id="ftnote-10">This is a footnote in the Appendix.</ftnote>Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. Sample
+data for testing purposes. Sample data for testing purposes. </para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+</appendix><glossary><glosslist>
+<term>one</term><def>item in the Glossary</def>
+<term>two</term><def>item in the Glossary</def>
+<term>three</term><def>item in the Glossary</def>
+<term>four</term><def>item in the Glossary</def>
+<term>five</term><def>item in the Glossary</def>
+<term>six</term><def>item in the Glossary</def>
+<term>seven</term><def>item in the Glossary</def>
+<term>eight</term><def>item in the Glossary</def>
+<term>nine</term><def>item in the Glossary</def>
+<term>ten</term><def>item in the Glossary</def>
+<term>elevan</term><def>item in the Glossary</def>
+<term>twelve</term><def>item in the Glossary</def>
+<term>thirteen</term><def>item in the Glossary</def>
+<term>fourteen</term><def>item in the Glossary</def>
+<term>fifteen</term><def>item in the Glossary</def>
+<term>sixteen</term><def>item in the Glossary</def>
+<term>seventeen</term><def>item in the Glossary</def>
+<term>eighteen</term><def>item in the Glossary</def>
+<term>nineteen</term><def>item in the Glossary</def>
+<term>twenty</term><def>item in the Glossary</def>
+</glosslist></glossary>
+<index autobuild="1">
+<foldsect><foldout pgstyle="11x17" blankapron="0" applicref="a"
+verstatus="ver" security="u">
+<title> Foldout Page Vapor Does Not Contain a Blank Apron</title>
+<graphic boardno="vapor1" reprowid="15.25in" reprodep="7.5in"
+scalefit="1" security="u"></foldout><foldout pgstyle="11x17"
+verstatus="ver" security="u">
+<title>d<applicabil applicref="d"></applicabil></title>
+<subfig><graphic boardno="vapor1" reprowid="7.5in" scalefit="1"
+security="u"></subfig><subfig><graphic boardno="vapor1" reprowid="7.5in"
+scalefit="1" security="u"></subfig></foldout></foldsect></rear></doc>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. New public identifier: Defines element seqnum for comments.     *
+    *====================================================================*
+    * Typical invocation:-                                               *
+    * <!ENTITY % SEQNUMCOM PUBLIC                                        *
+    *  "-//S1000D//ELEMENTS Sequential Number for Comments 20030531//EN">*
+    * SEQNUMCOM;                                                         *
+    ********************************************************************** -->
+
+
+	<xs:element name="seqnum">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element seqnum (Sequence Number of Comment for current year)*
+    * containing:-                                                       *
+    *  Non-negative 5-digit number.                                      *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:nonNegativeInteger">
+				<xs:pattern value="[0-9]{5}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+
+</xs:schema>

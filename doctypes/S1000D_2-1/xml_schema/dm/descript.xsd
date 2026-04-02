@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2002-38SE: Replace call of entity %EXTSPEC; by call of      *
+    *                   %WCNP; due to deletion of element specpara.      *
+    *                   Amend content model in entity %HEADING; by call  *
+    *                   of entity %HEADING1; instead of defining elements*
+    *                   applic and title directly.                       *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % DESCRPT                                                 *
+    *   PUBLIC "-//S1000D//ELEMENTS Description Breakdown 20030531//EN" >*
+    * %DESCRPT;                                                          *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Call the paracon group definition.                                 *
+    ********************************************************************** -->
+	<xs:include schemaLocation="paracon.xsd"/>
+
+<!--**********************************************************************
+    * Call the Figure And Table Public Text.                             *
+    * The formal public identifier is stored in the entity %EXTFTAB;     *
+    ********************************************************************** -->
+<!-- %EXTFTAB; -->
+	<xs:include schemaLocation="fig_tab.xsd"/>
+
+<!--**********************************************************************
+    * Call the Warning, Caution, Note, Para Public Text.                 *
+    * The formal public identifier is stored in the entity %WCNP;        *
+    ********************************************************************** -->
+<!-- %WCNP; -->
+	<xs:include schemaLocation="wcnp.xsd"/>
+
+	<xs:group name="CONTENT">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing:- descript. *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="descript"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="HEADING">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %HEADING; (Numbered Paragraphs Heading) containing:- *
+    *  Definition stored in entity %HEADING1;.                           *
+    *  capgrp   - Optional   Single    contains colspec,spanspec,capbody.*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>	
+		<xs:sequence>
+			<xs:group ref="HEADING1"/>
+			<xs:element ref="capgrp" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:element name="descript">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element descript (Descriptive Content) containing:-         *
+    *  para     - Optional  Repeatable  contains Definition stored in    *
+    *                                   entity %paracon;                 *
+    *  Definition stored in entity %spcpara;.                            *
+    *  para0    - Optional  Repeatable  contains Definition stored in    *
+    *                                   entity %nparcon; and %SUBPAR1;.  *
+    **********************************************************************
+    * INCLUSION: figure, foldout, table, caption.                        *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="gen_inc" minOccurs="0" maxOccurs="unbounded"/>	
+				<xs:sequence>
+					<xs:element ref="para" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:group ref="spcpara"/>
+					<xs:element ref="para0" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+
+</xs:schema>

@@ -1,0 +1,59 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. CPF 2004-32US: Expand Process DM to include <step1> content:    *
+    *                   Create STEPX content groups that can be          *
+    *                   customized for static and interactive use.       *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % STEPSTATIC PUBLIC                                       *
+    *   "-//S1000D//ENTITIES Steps Static Breakdown 20050102//EN" >      *
+    * %STEPSTATIC;                                                       *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %STEP1; (Step1 Content) containing:-                 *
+    *  step1   - Mandatory   Single    contains %stepcon; and %STEP2;    *
+    ********************************************************************** -->
+
+<!ENTITY % STEP1  "step1" >
+
+
+<!--**********************************************************************
+    * Define Entity %STEP2; (Step2 Content) containing:-                 *
+    *  step2   - Mandatory   Single    contains %stepcon; and %STEP3;    *
+    ********************************************************************** -->
+
+<!ENTITY % STEP2  "step2" >
+
+
+<!--**********************************************************************
+    * Define Entity %STEP3; (Step3 Content) containing:-                 *
+    *  step3   - Mandatory   Single    contains %stepcon; and %STEP4;    *
+    ********************************************************************** -->
+
+<!ENTITY % STEP3  "step3" >
+
+
+<!--**********************************************************************
+    * Define Entity %STEP4; (Step4 Content) containing:-                 *
+    *  step4   - Mandatory   Single    contains %stepcon; and %STEP5;    *
+    ********************************************************************** -->
+
+<!ENTITY % STEP4  "step4" >
+
+
+<!--**********************************************************************
+    * Define Entity %STEP5; (Step5 Content) containing:-                 *
+    *  step5   - Mandatory   Single    contains %stepcon;                *
+    ********************************************************************** -->
+
+<!ENTITY % STEP5  "step5" >

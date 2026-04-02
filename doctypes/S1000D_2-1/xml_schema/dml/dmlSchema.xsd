@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. Reflect the changes done for the DM DTD.                        *
+    *====================================================================*
+    * The following DOCTYPE statement may be used to call this set of    *
+    * declarations :-                                                    *
+    *                                                                    *
+    * <!DOCTYPE dml PUBLIC                                               *
+    * "-//S1000D//DTD Data Module List 20030531//EN" []>                 *
+    ********************************************************************** -->
+
+	
+<!--**********************************************************************
+    * Call the Project Configuration Text.                               *
+    * Project Configuration may alter delaration of selected objects.    *
+    * For information on which objects are available for tailoring,      *
+    * refer to S1000D!                                                   *
+    ********************************************************************** -->
+	<xs:include schemaLocation="project.cfg"/>
+
+<!--**********************************************************************
+    * Call the DM Address Details 1st Part                               *
+    ********************************************************************** -->
+<!-- %DMADDR1; -->
+	<xs:include schemaLocation="dmaddr1.xsd"/>
+
+<!--**********************************************************************
+    * Call the DM Address Details 2nd Part                               *
+    ********************************************************************** -->
+<!-- %DMADDR2; -->
+<!-- Already invoked by PROJECT.CFG -->
+
+<!--**********************************************************************
+    * Call the DM Address Details 3rd Part                               *
+    ********************************************************************** -->
+<!-- %DMADDR3; -->
+	<xs:include schemaLocation="dmaddr3.xsd"/>
+
+<!--**********************************************************************
+    * Call the List Code Definitions                                     *
+    ********************************************************************** -->
+<!-- %LISTCODE; -->
+	<xs:include schemaLocation="listcode.xsd"/>
+
+<!--**********************************************************************
+    * Call the Sequential Number Definitions                             *
+    ********************************************************************** -->
+<!-- %SEQNUMDML; -->
+	<xs:include schemaLocation="seqnum_dml.xsd"/>
+
+<!--**********************************************************************
+    * Call the Data Restriction Definitions (see DATAREST.ENT).          *
+    ********************************************************************** -->
+<!-- %EXTRESTR; -->
+	<xs:include schemaLocation="datarest.xsd"/>
+
+<!--**********************************************************************
+    * Call the DML Definitions                                           *
+    ********************************************************************** -->
+	<xs:include schemaLocation="dml.xsd"/>
+
+</xs:schema>

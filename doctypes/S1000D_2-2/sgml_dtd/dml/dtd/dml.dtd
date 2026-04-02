@@ -1,0 +1,223 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                SGML Document Type Definition                       *
+    *                    Data Module List (DML)                          *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update DML DTD public identifier date.                          *
+    * 2. CPF 2004-06SE: Update public identifier date of entity %DMADDR1;*
+    * 3. CPF 2004-22GB, CPF 2004-24GB:                                   *
+    *                   Update public identifier date of entity %DMADDR2;*
+    * 4. CPF 2004-30DE: Introduce public identifier date on entity       *
+    *                   %PROJECT;.                                       *
+    * 5. TPSMG request: Update public identifier date of entity          *
+    *                   %LISTCODE;.                                      *
+    *====================================================================*
+    * The following DOCTYPE statement may be used to call this set of    *
+    * declarations:-                                                     *
+    *                                                                    *
+    * <!DOCTYPE dml PUBLIC                                               *
+    * "-//S1000D//DTD Data Module List 20050501//EN" []>                 *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %PROJECT; (PROJECT Configuration) containing:- the   *
+    * formal public identifier for the Project Configuration public text.*
+    ********************************************************************** -->
+<!ENTITY % PROJECT
+  PUBLIC "-//S1000D//ENTITIES S1000D Project Configuration 20050501//EN" >
+<!-- Public identifier date introduced -->  
+
+
+<!--**********************************************************************
+    * Define Entity %ISOENTS; (ISO Entity Definitions)                   *
+    ********************************************************************** -->
+<!ENTITY % ISOENTS PUBLIC
+  "-//S1000D//ENTITIES ISO Entity Definitions 20030531//EN" >
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR1; (DM Address Details 1st Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR1 PUBLIC
+  "-//S1000D//ENTITIES DM Address Details 1st Part 20050501//EN" >
+<!-- Public identifer date updated -->
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR2; (DM Address Details 2nd Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR2 PUBLIC
+  "-//S1000D//ELEMENTS DM Address Details 2nd Part 20050501//EN" >
+<!-- Public identifer date updated -->
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR3; (DM Address Details 3rd Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR3 PUBLIC
+  "-//S1000D//ELEMENTS DM Address Details 3rd Part 20050501//EN" >
+
+
+<!--**********************************************************************
+    * Define Entity %LISTCODE; (List Code Definitions)                   *
+    ********************************************************************** -->
+<!ENTITY % LISTCODE PUBLIC
+  "-//S1000D//ELEMENTS List Code Definitions 20050501//EN" >
+<!-- Public identifier date updated -->  
+
+
+<!--**********************************************************************
+    * Call the ISO Entity Definitions                                    *
+    ********************************************************************** -->
+%ISOENTS;
+
+
+<!--**********************************************************************
+    * Call the DM Address Details 1st Part                               *
+    ********************************************************************** -->
+%DMADDR1;
+
+
+<!--**********************************************************************
+    * Call the DM Address Details 2nd Part                               *
+    ********************************************************************** -->
+%DMADDR2;
+
+
+<!--**********************************************************************
+    * Call the DM Address Details 3rd Part                               *
+    ********************************************************************** -->
+%DMADDR3;
+
+
+<!--**********************************************************************
+    * Call the List Code Definitions                                     *
+    ********************************************************************** -->
+%LISTCODE;
+
+
+
+<!--**********************************************************************
+    * Define Element dml (Data Module List) containing:-                 *
+    *  dmlc      - Mandatory Single      contains modelic, sendid, type, *
+    *                                             diyear, seqnum.        *
+    *  issno     - Mandatory Single      contains No Other Tags.         *
+    *  issdate   - Mandatory Single      contains No Other Tags.         *
+    *  security  - Mandatory Single      contains No Other Tags.         *
+    *  datarest  - Optional  Single      contains instruct, inform.      *
+    *  dmlref    - Optional  Repeatable  contains dmlc, issno.           *
+    *  dmentry   - Mandatory Repeatable  contains addresdm, security,    *
+    *                                             rpc, answer, remarks.  *
+    *  remarks   - Optional  Single      contains Definition stored in   *
+    *                                             entity %SPAR;.         *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id          - ID       - IMPLIED   - Unique identifier of element.*
+    *  direction   - Declared - IMPLIED   - Direction:                   *
+    *              - "send"                 - original dispatched DML    *
+    *              - "reply"                - answer to same DML         *
+    *                                         returned with remarks      *
+    ********************************************************************** -->
+<!ELEMENT dml - - (dmlc,issno,issdate,security,datarest?,dmlref*,dmentry+,
+                   remarks?)>
+<!ATTLIST dml
+	  id        ID              #IMPLIED
+          direction (send | reply)  #IMPLIED >
+
+
+<!--**********************************************************************
+    * Define Element dmlc (Data Module List Code) containing:-           *
+    *  modelic   - Mandatory   Single     contains Parsed Character Data.*
+    *  sendid    - Mandatory   Single     contains Parsed Character Data.*
+    *  dmltype   - Mandatory   Single     contains No Other Tags.        *
+    *  diyear    - Mandatory   Single     contains Parsed Character Data.*
+    *  seqnum    - Mandatory   Single     contains Parsed Character Data.*
+    ********************************************************************** -->
+<!ELEMENT dmlc   - - (modelic,sendid,dmltype,diyear,seqnum) >
+
+
+<!--**********************************************************************
+    * Define Element dmltype (Type of Data Module List) containing:-     *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  dmltype   - Declared - REQUIRED   - Identifies Type of DML:       *
+    *            - "c"  - Complete Data Module Requirement List (DMRL-C) *
+    *            - "p"  - Partial Data Module Requirement List (DMRL-P)  *
+    *            - "s"  - CSDB Status List (CSL)                         *
+    ********************************************************************** -->
+<!ELEMENT dmltype  - O EMPTY >
+<!ATTLIST dmltype
+                type  (c | p | s )  #REQUIRED >
+
+
+<!--**********************************************************************
+    * Define Element dmlref (Data Module List Reference) containing:-    *
+    *  dmlc      - Mandatory   Single      contains modelic, sendid,     *
+    *                                               type, diyear, seqnum.*
+    *  issno     - Optional    Single      contains No Other Tags.       *
+    ********************************************************************** -->
+<!ELEMENT dmlref - O (dmlc,issno?) >
+
+
+<!--**********************************************************************
+    * Define Element dmentry (Data Module Entry) containing:-            *
+    *  addresdm    - Mandatory   Single   contains dmc, dmtitle, issno,  *
+    *                                              issdate, language.    *
+    *  security    - Optional    Single   contains No Other Tags.        *
+    *  rpc         - Mandatory   Single   contains Parsed Character Data.*
+    *  answer      - Optional    Single   contains remarks.              *
+    *  remarks     - Optional    Single   contains Definition stored in  *
+    *                                              entity %SPAR;.        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type   - Declared - IMPLIED  - Change Type of DM Entry compared   *
+    *                                 to last DML issue                  *
+    *            - "c"  - Changed DM entry (eg. rpc or dmtitle changed)  *
+    *            - "d"  - Deleted DM entry                               *
+    *            - "n"  - New DM entry                                   *
+    *         If attribute is not used: no changes in DM entry.          *
+    ********************************************************************** -->
+<!ELEMENT dmentry - - (addresdm,security?,rpc,answer?,remarks?) >
+<!ATTLIST dmentry
+              type  (c | d | n)  #IMPLIED >
+
+
+<!--**********************************************************************
+    * Define Element addresdm (Data Module Entry Address) containing:-   *
+    *  dmc      - Mandatory  Single      contains Definition stored in   *
+    *                                    entity %EXTDMC;                 *
+    *  dmtitle  - Optional  Single       contains techname, infoname.    *
+    *  issno    - Optional  Single       contains No Other Tags.         *
+    *  issdate  - Optional  Single       contains No Other Tags.         *
+    *  language - Optional  Single       contains No Other Tags.         *
+    ********************************************************************** -->
+<!ELEMENT addresdm - O (dmc,dmtitle?,issno?,issdate?,language?) >
+
+
+<!--**********************************************************************
+    * Define Element answer (Reservation query Answer) containing:-      *
+    *  remarks  - Optional  Single       contains Definition stored in   *
+    *                                             entity %SPAR;.         *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  answer  - Declared - "y"         - answer is either               *
+    *                                     "y" for accepted DM entry or   *
+    *                                     "n" for not accepted DM entry  *
+    *                                     in case of a DML reply         *
+    ********************************************************************** -->
+<!ELEMENT answer - - (remarks?) >
+<!ATTLIST answer
+             answer   (y | n)  "y"  >
+
+
+
+<!--** End of DML DTD **-->

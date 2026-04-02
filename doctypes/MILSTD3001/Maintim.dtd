@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- <!DOCTYPE maintim [
+-->
+<!--
+PUBLIC "-//USA-DOD//DTD maintim 3001 Part 4 Draft XML V307 08242016//EN"
+-->
+
+<!-- 			DTD for Maintenance Information 
+		With Illustrated Parts Breakdown 
+-->
+
+<!-- 
+Define parameter entities containing content models for the Information Modules and Common Elements
+-->
+<!ENTITY % pointpage "| start_ripple_page | end_ripple_pages | pgbrk">
+
+<!ENTITY % common.ent
+    PUBLIC "-//USA-DOD//ENTITIES 3001 Common Draft XML V307 08242016//EN" "Common.ent">
+
+<!ENTITY % ipbdata.ent
+    PUBLIC "-//USA-DOD//ENTITIES 3001 IPB DATA Draft XML V307 08242016//EN" "Ipbdata.ent">
+
+<!ENTITY % MIL-STD-3001-4
+    PUBLIC "-//USA-DOD//ELEMENTS 3001 Part 4 Draft XML V307 08242016//EN" "Milstd4.ent">
+
+%common.ent;
+
+%ipbdata.ent;
+
+%MIL-STD-3001-4;
+
+<!--
+]>
+-->

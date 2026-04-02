@@ -1,0 +1,743 @@
+<!--Arbortext, Inc., 1988-2016, v.4002-->
+<!DOCTYPE DOC PUBLIC "-//USA-DOD//DTD 38807C-AV6D0P0//EN" [
+<!ENTITY face SYSTEM "face.eps" NDATA eps>
+<!ENTITY styler SYSTEM "styler.gif" NDATA gif>
+<!NOTATION gif SYSTEM "gif">
+<!ENTITY computer SYSTEM "computer.eps" NDATA eps>
+<!ENTITY lt SDATA "[lt    ]">
+<!ENTITY amp SDATA "[amp   ]">
+<!ENTITY poison1 SYSTEM "poison.eps" NDATA eps>
+<!ENTITY rada1 SYSTEM "rada.eps" NDATA eps>
+<!ENTITY vapor1 SYSTEM "vapor.eps" NDATA eps>
+<!ENTITY goggles1 SYSTEM "goggles.eps" NDATA eps>
+<!ENTITY test.bmp SYSTEM "test.bmp" NDATA bmp>
+<!NOTATION bmp SYSTEM "bmp">
+<!ENTITY ESD1 SYSTEM "ESD.eps" NDATA eps>
+]>
+<?Pub UDT _bookmark _target>
+<?Pub Inc>
+<doc service="af" docid="TO 1-TST-4" docstat="prelim" security="u"
+cycle="0"><docipb sssn="22-00-00"><front numcols="1"><idinfo><?Pub Lcl
+_divid="100" _parentid="0"><tmidno>38807C-AV6D0P0-DEMO</tmidno>
+<doctype></doctype>
+<maintlvl>ORGANIZATIONAL Maintenance</maintlvl>
+<prtitle><nomen>Nomen - Illustrated Parts Breakdown</nomen>
+<modelno>Model NUMBER</modelno>
+<partno>PARTNO</partno>
+<nsn>2840-00-345-6789</nsn>
+<typedes>TYPE DESIGNATOR</typedes>
+<pslist>
+<partno>PSLIST PARTNO</partno>
+<serno>PSLIST SerialnO</serno>
+</pslist><serno>Serialno</serno>
+</prtitle>
+<subtitle>Subtitle Entered Here</subtitle>
+<mfr>The Airplane Company</mfr>
+<mfr>Second Manufacture</mfr>
+<contractno>1234567890</contractno>
+<contractno>Second Contract Number here.</contractno>
+<supersed>THIS PUBLICATION SUPERSEDES TO XXXXXXXX DATED 27 November
+2004.</supersed>
+<suppl>THIS PUBLICATION SUPPLIMENTS TO XXXXXXXX DATED 27 November
+2004.</suppl>
+<effdatenot>EFFECTIVE DATE NOTICE</effdatenot>
+<discl>This document was prepared by GPSL for demonstration purposes
+only. It is intended to be representative of the types of elements
+appearing in a typical DoD Technical Manual. It is not intended to
+be a faithful reproduction of an actual Technical Manual and it should
+in no way be treated as if the information contained within is accurate
+or complete.</discl>
+<distrib> Distribution authorized to the Department of Defense and
+US DoD contractors only (Administrative or Operational Use) (7 March
+2003).  Questions concerning technical content or any other requests
+for this document shall be referred to ABC/ABC, XXX Some Street, Bldg
+123, AN AIRBASE AFB, XX  XXXXX-XXXX (Attention: TO Manager).</distrib>
+<expcont>This document contains technical data whose export is restricted
+by the Arms Export Control Act (Title 22, U.S.C., Sec 2751 <emphasis
+type="i">et seq.</emphasis>) or the Export Administration Act of 1979,
+as amended (Title 50, U.S.C., App. 2401 <emphasis type="i">et seq.</emphasis>).
+Violators of these export laws are subject to severe criminal penalties.</expcont>
+<destr>Comply with distribution statement and destroy by any method
+that will prevent disclosure of the contents or reconstruction of
+the document. See TO 00-5-1 for specific destruction procedures and
+disposition instructions.</destr>
+<copyright>Copyright</copyright>
+<cogact>Cognizant Activity Statement.</cogact>
+<moveddata>Move data statement.</moveddata>
+<authnot>Authority Notice</authnot>
+<downgrd><oadr>Downgrade Instructions</oadr></downgrd><pubdate>14
+September 2007</pubdate></idinfo><lep><?Pub Lcl _divid="200"
+_parentid="0"><lepcontents autobuild="1"></lep><contents autobuild="1"
+security="u"><?Pub Lcl _divid="300" _parentid="0"></front><body
+numcols="2"><single><ipbforeword security="u" sssn="22-00-00"><?Pub Lcl
+_divid="400" _parentid="0"><para0><title>General</title>
+<para>This partial illustrated parts breakdown is divided into four
+chapters:<tabmat frame="none" colsep="0" pgwide="0"><tgroup cols="2">
+<colspec colname="col1" colwidth="1.16in"><colspec colname="col2"
+colwidth="1.99in"><tbody><row><entry></entry><entry></entry></row><row>
+<entry>Chapter 1</entry><entry>Foreword</entry></row><row><entry>Chapter
+2</entry><entry>Maintenance Parts List</entry></row><row><entry>Chapter
+3</entry><entry>Numerical Index</entry></row><row><entry>Chapter 4</entry>
+<entry>Reference Designator Index</entry></row><row><entry></entry>
+<entry></entry></row></tbody></tgroup></tabmat></para>
+<step1><para>IPB Foreword contains information about this manual</para>
+</step1>
+<step1><para>The <acronym><def>Maintenance Parts List</def><term>MPL</term>
+</acronym> contains all the parts for this system.</para>
+</step1>
+<step1><para>The <acronym><def>Numerical Index</def><term>NI</term>
+</acronym> list each part in this manual and reference to find the
+part.</para>
+</step1>
+<step1><para>The <acronym><def>Reference Designator Index</def><term>RDI</term>
+</acronym> list each RDI in this manual and the reference to find
+the RDI,</para>
+</step1>
+</para0>
+<para0><title>Organizational</title>
+<subpara1><title>Maintenance Parts List</title><para>The maintenance
+parts list (MPL) is a series of listings of components of the assemblies
+and subassemblies of the aircraft. Each listing is supported by an
+illustration. An explanation of the content of each of the MPL columns
+is provided in the following paragraphs.</para>
+<subpara2><title>Figure and Index Number</title><para>The figure and
+index number column provides a key whereby a component within a particular
+figure may be related to the accompanying illustration.</para>
+<subpara3><title>Part Number</title><para>The part numbers contained
+in this book are those established by the design activity.</para>
+<subpara4><title>Commercial and Government Entity (CAGE) Codes for
+Manufactures or Contractors</title><para>This column identifies the
+manufacturer or Government agency having cognizance of the part. All <emphasis
+type="i">CAGE</emphasis>codes are taken from Cataloging Handbook H4/H8.
+When no CAGE has been assigned, the word <emphasis type="b">"NONE"</emphasis>shall
+appear in this column and the manufacturer's complete name and address
+shall appear following the description of the part.</para>
+<subpara5><title>Description</title><para>This column contains the
+description of the part established by the design activity. Part descriptions
+are indented to show relationship to their next higher assembly (NHA).
+Parts used to attach components are identified with the symbol (AP)
+immediately following the part description.<randlist>
+<item>First item in a random list</item>
+<item>Second item in a random list</item>
+<item>Third item in a random list</item>
+<item>Fourth item in a random list</item>
+</randlist></para>
+<subpara6><title>Units Per Assembly</title><para>The quantity shown
+in this column represents the quantity required for a single assembly
+or subassembly. The abbreviation "AR" (as required) is used when the
+quantity must be determined at installation.</para>
+<subpara7><title>Numerical Index</title><para>The numerical index
+(in alphanumeric order) contains a list of all part numbers appearing
+in the MPL cross-reference to the applicable figure and index number.</para>
+<subpara8><title>Reference Designator Index</title><para>The reference
+designation index is a listing of all parts having reference designations.<seqlist>
+<item>First item in a sequential list</item><item>Second item in a
+sequential list</item><item>Third item in a sequential list</item><item>Fourth
+item in a sequential list</item></seqlist></para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+<modelcover><title>Models Covered</title><?Pub _bookmark
+Command="[Quickmark]"><para>Some Organization use this first paragraph
+to explain what this <acronym><def>Illustrated Parts Breakdown</def>
+<term>IPB</term></acronym> contains. An example would be, &ldquo;This
+Illustrated Parts Breakdown contains a list of all the parts necessary
+for the XXXX system.</para>
+<subpara1><title>Models Covered Subparagraph</title><para>This is
+a models covered first subparagraph. This is a models covered first
+subparagraph. This is a models covered first subparagraph. This is
+a models covered first subparagraph. This is a models covered first
+subparagraph.</para>
+</subpara1>
+<subpara1><title>This is a Models Covered Second Subparagraph One</title>
+<para>This is a models covered first subparagraph. This is a models
+covered second subparagraph one. This is a models covered second subparagraph
+one. This is a models covered second subparagraph one.</para>
+</subpara1>
+</modelcover>
+<serialization><title>This Paragraph Explains the Usable On Codes</title>
+<para>This paragraph explains the usable on Codes. When breakdown
+of similar models are combined in the same IPB, part variations within
+the models are indicated by a letter symbol in the USABLE ON CODE
+column. Where the USABLE ON CODE column has been left blank part listed
+applies to all models covered by this breakdown.</para>
+<sertable frame="none" colsep="1" rowsep="1" pgwide="0">
+<serrow><nomen>AN/ARN-186(1) VHF Radio</nomen><modelno>XXX-XX</modelno>
+<serno>12345</serno></serrow>
+<serrow><nomen>AN/ARN-186(1) VHF Radio</nomen><modelno>ZZZ-ZZ</modelno>
+<serno>12346</serno></serrow>
+</sertable>
+</serialization>
+<finding><title>Optional How to Find Part Numbers, Illustration, and
+Description</title><para>This is the place where the usual two &ldquo;How
+to find&rdquo; graphics are inserted. Some Organizations use a Para0
+at the end of the IPB Foreword to insert the &ldquo;How to&rdquo;
+graphics.</para>
+</finding>
+<simassem><title>Optional Listing of Similar Assemblies</title><para>There
+are no similar assemblies in this Illustrated Parts Breakdown.</para>
+</simassem>
+<quickchgexpl><title>Optional Quick Change Information</title><para>A
+table can be added to list the parts in a kit or quick change unit.</para>
+</quickchgexpl>
+<symsect rtermwidth="2.5in" ltermwidth="1.10in"><title>Symbol Definition</title>
+<para>The following list of symbols are used in this manual and adhere
+to requirements of DoD specification MIL-STD-38784.</para>
+<symtitle>List of Symbols</symtitle>
+<term security="u"><graphic boardno="ESD1"></term><def>This is the
+symbol used to indicate Electrostatic Discharge Sensitive parts. ESDS
+parts require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+</symsect>
+<abbrsect><title>List of Standard Abbreviations and Acronyms</title>
+<para>This publication provides a list of standard abbreviations and
+acronyms used throughout this document.</para>
+<abbrtitle>List of Abbreviations and Acronyms</abbrtitle>
+<acronymlist autobuild="1">
+</abbrsect>
+<shtnoexpl><title>Optional Explanation of the Sheet Number</title><para>This
+paragraph is used to explain the use of sheet numbers in an Illustrated
+Parts Breakdown. If multiple sheet illustrations are used, an explanation
+shall be included that the sheet number follows the index number and
+is separated with a slash (/). The explanation shall also state that,
+if an indexed item is on more than one sheet of an illustration, the
+first and last sheet numbers on which the item appears are given.</para>
+</shtnoexpl>
+<useonexpl><title>This Paragraph Explains the Usable on Codes</title>
+<para>This paragraph explains the usable on Codes. When breakdown
+of similar models are combined in the same IPB, part variations within
+the models are indicated by a letter symbol in the USABLE ON CODE
+column. Where the USABLE ON CODE column has been left blank part listed
+applies to all models covered by this breakdown.</para>
+</useonexpl>
+<smrexpl><title>Source Maintenance and Recoverability Code Explanation</title>
+<para>This paragraph explains the <acronym><def>Source Maintenance
+and Recoverability Code</def><term>SMR</term></acronym>. This Manual
+contains Joint Military Services Uniform SMR codes. Source and Repair
+Codes assigned by the Government and furnished by the procuring activity.
+Definitions of these codes are available in TO 00-25-195.</para>
+</smrexpl>
+<ipbhci><title><hci> Nuclear Hardness</title><para>If equipment covered
+has nuclear survivability requirements (for example, Over Pressure
+and Burst, Thermal Radiation, Electromagnetic Pulse, or Transient
+Radiation Effects on Electronics), all Hardness Critical Items (HCI)
+shall be marked. Unless otherwise specified by the acquiring activity,
+all HCIs shall be marked with the symbol  HCI immediately preceding
+the description of the item. When approved by the acquiring activity,
+the symbol **HCI** may be used in lieu of the boxed HCI symbol. </para>
+<subpara1><title>Nuclear Hardness Symbol Explanation</title>
+<caution>
+<para>All changes to, or proposed substitutions of, HCIs must be approved
+by the acquiring activity.</para>
+</caution>
+<para>Chapter 1 shall include a listing and explanation of the HCI
+symbol and other pertinent information, as necessary, to emphasize
+the uniqueness of hardness features.  This shall include an explanation
+that the HCI symbol establishes special requirements limiting changes
+and substitutions, and that the specific parts listed must be used
+to ensure hardness is not degraded. This statement shall be preceded
+by a CAUTION heading. All changes to, or proposed substitutions of,
+HCIs must be approved by the acquiring activity.</para>
+</subpara1>
+</ipbhci>
+<ipbesds><title><esds> Electrostatic Discharge Sensitive (ESDS) Parts</title>
+<caution>
+<para>The present of an ESDS symbol requires that all ESDS parts be
+handled in accordance with the ESDS device handling procedures in
+TO 00-25</para>
+</caution>
+<para>If equipment covered contains ESDS parts, they shall be marked.
+ Unless otherwise specified by the acquiring activity, all ESDS parts
+shall be marked with the ESDS symbol <esds> immediately preceding
+the description of the item .When approved by the acquiring activity,
+the symbol **ESD** may be used in lieu of the ESDS symbol. </para>
+</ipbesds>
+<partstd><title>Part Standardization</title><para>This paragraph explains
+Part Standardization. Authority for use of a part number different
+than the part number  listed in this IPB is established by the Department
+of Defense (DoD) Interchangeability and Substitution Program. Refer
+to the DO43B Master Item Identification Base for Air Force information.
+The maintenance technician has final responsibility and authority
+for determining acceptability of substitute parts.</para>
+</partstd>
+<mfrlist><title>Manufacturers List</title><para>When required by the
+acquiring activity, a manufacturers list shall be provided. The list
+shall contain the <acronym><def>Commercial and Government Entity </def>
+<term>CAGE</term></acronym> code and the name and address of all manufacturers
+whose CAGE codes are referenced in the MPL.</para>
+</mfrlist>
+<table frame="none" colsep="0" rowsep="0" pgwide="0">
+<title>Manufacture Cage Codes</title><tgroup cols="2"><colspec
+colname="col1" colwidth="1in"><colspec colname="col2" colwidth="2.5in">
+<thead><row><entry>Code</entry><entry>Manufacturer</entry></row></thead>
+<tbody><row><entry>59501</entry><entry>Unison Industries Inc.</entry>
+</row><row><entry></entry><entry>7575 Baymeadows Way</entry></row><row>
+<entry></entry><entry>Jacksonville, FL 32256-7525</entry></row><row>
+<entry> </entry><entry></entry></row><row><entry>59885</entry><entry>Rosemount
+Aerospace, Inc.</entry></row><row><entry></entry><entry>14300 Judicial
+Road</entry></row><row><entry></entry><entry>Burnsville, MN 55306-4898</entry>
+</row><row><entry> </entry><entry></entry></row><row><entry>60119</entry>
+<entry>The Monadnock Co.</entry></row><row><entry></entry><entry>18301
+E. Arenth Ave.</entry></row><row><entry></entry><entry>Rowland Heights,
+CA 91748</entry></row><row><entry> </entry><entry></entry></row><row>
+<entry>60399</entry><entry>Fasco Industries, Inc.</entry></row><row>
+<entry></entry><entry>Sale Barn Rd.</entry></row><row><entry></entry>
+<entry>P.O. Box 548</entry></row><row><entry></entry><entry>Cassville,
+MO 65625</entry></row><row><entry> </entry><entry></entry></row><row>
+<entry>60583</entry><entry>L-3 Communications Corp.</entry></row><row>
+<entry></entry><entry>Narda Microwave</entry></row><row><entry></entry>
+<entry>107 Woodmere Rd.</entry></row><row><entry></entry><entry>Folsom,
+CA 95630-4706</entry></row></tbody></tgroup></table>
+<internatlstd>International standardization agreement is entered in
+the internatlstd element. The contents of the agreement is done in
+the form of a NOTE per MIL-STD-38784.</internatlstd>
+<lrp><title>List of Related Publications</title>
+<warning>
+<para>This List refers to two different models of aircraft. Ensure
+you are using the correct technical data from a manual or serious
+injury or loss of aircraft could result.</para>
+</warning>
+<para>This publication provides a <acronym><def>List of Related Publications
+</def><term>LRP</term></acronym> referenced within this manual.</para>
+<step1><para>Part Number column</para>
+</step1>
+<step1><para>Model Number column</para>
+</step1>
+<step1><para>Type Description column</para>
+</step1>
+<subpara1><title>Optional Iinformation</title><para>The List of Related
+Publications has the option in the LRP table to enter a Model Number
+or Part Number or Type Description in the first column.</para>
+</subpara1>
+<ipblrptable>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-23-00-1</tmidno>
+<title>Communication System</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-24-00-1</tmidno>
+<title>Electrical System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-26-00-1</tmidno>
+<title>Fire Protection System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-29-00-1</tmidno>
+<title>Hydraulic System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-30-00-1</tmidno>
+<title>Ice and Rain Protection System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-33-00-1</tmidno>
+<title>Lighting System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-34-00-1</tmidno>
+<title>Navigation System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-51-00-1</tmidno>
+<title>Standard Practices: Structures</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-61-00-1</tmidno>
+<title>Propellers System</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-71-00-1</tmidno>
+<title>Airframe Group</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-23-00-1</tmidno>
+<title>Communication System</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-24-00-1</tmidno>
+<title>Electrical System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-26-00-1</tmidno>
+<title>Fire Protection System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-29-00-1</tmidno>
+<title>Hydraulic System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-30-00-1</tmidno>
+<title>Ice and Rain Protection System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-33-00-1</tmidno>
+<title>Lighting System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-34-00-1</tmidno>
+<title>Navigation System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-51-00-1</tmidno>
+<title>Standard Practices: Structures</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-61-00-1</tmidno>
+<title>Propellers System</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-71-00-1</tmidno>
+<title>Airframe Group</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-23-00-1</tmidno>
+<title>Communication System</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-24-00-1</tmidno>
+<title>Electrical System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-26-00-1</tmidno>
+<title>Fire Protection System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-29-00-1</tmidno>
+<title>Hydraulic System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-30-00-1</tmidno>
+<title>Ice and Rain Protection System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-33-00-1</tmidno>
+<title>Lighting System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-34-00-1</tmidno>
+<title>Navigation System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-51-00-1</tmidno>
+<title>Standard Practices: Structures</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-61-00-1</tmidno>
+<title>Propellers System</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-71-00-1</tmidno>
+<title>Airframe Group</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-23-00-1</tmidno>
+<title>Communication System</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-24-00-1</tmidno>
+<title>Electrical System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-26-00-1</tmidno>
+<title>Fire Protection System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-29-00-1</tmidno>
+<title>Hydraulic System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-30-00-1</tmidno>
+<title>Ice and Rain Protection System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-33-00-1</tmidno>
+<title>Lighting System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-34-00-1</tmidno>
+<title>Navigation System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-51-00-1</tmidno>
+<title>Standard Practices: Structures</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-61-00-1</tmidno>
+<title>Propellers System</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-71-00-1</tmidno>
+<title>Airframe Group</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-23-00-1</tmidno>
+<title>Communication System</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-24-00-1</tmidno>
+<title>Electrical System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-26-00-1</tmidno>
+<title>Fire Protection System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-29-00-1</tmidno>
+<title>Hydraulic System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-30-00-1</tmidno>
+<title>Ice and Rain Protection System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-33-00-1</tmidno>
+<title>Lighting System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-34-00-1</tmidno>
+<title>Navigation System</title></ipblrpentry>
+<ipblrpentry><modelno>1ZX-XXXH</modelno><tmidno>1X&ndash;XXXX-2-51-00-1</tmidno>
+<title>Standard Practices: Structures</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-61-00-1</tmidno>
+<title>Propellers System</title></ipblrpentry>
+<ipblrpentry><modelno>1X-XXXH</modelno><tmidno>1X&ndash;XXXX-2-71-00-1</tmidno>
+<title>Airframe Group</title></ipblrpentry>
+</ipblrptable>
+</lrp>
+<tctolist><title>List of Time Compliance Technical Orders</title><para>This
+publication provides a list of <acronym><def>Time Compliance Technical
+Order</def><term>TCTO</term></acronym> referenced within this manual.
+The list of applicable Time Compliance Technical Orders is a list
+of all TCTOs which affect the technical content (text or illustration)
+of this manual.</para>
+<tctotbl>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #4</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #5</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #6</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #7</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #8</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #9</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #10</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #11</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #12</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #13</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #14</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #15</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #16</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #17</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #18</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #19</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #20</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #21</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #22</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #23</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #24</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #25</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #26</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #27</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #28</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #19</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #20</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #21</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #22</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #23</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #24</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #25</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #26</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #27</title>
+<date>13 April 2004</date></tctorow>
+<tctorow><tctono>1X-XXXX-XXX</tctono><title>TCTO Row Title #28</title>
+<date>13 April 2004</date></tctorow>
+</tctotbl>
+</tctolist>
+<tmimprep><title>Technical Manual Improvement Report Preparation</title>
+<subpara1><title>Improvement Reports</title><para>Recommendations
+for improvements to this technical order shall be submitted on AFTO
+Form 22, Technical Manual (TM) Change Recommendation and Reply. Complete
+AFTO Form 22 in accordance with TO 00-5-1.</para>
+</subpara1>
+</tmimprep>
+<para0><title>How to use the IPB</title>
+<para>Some Organizations insert two graphics here that pictorially
+explain hoe to find part numbers. This paragraph explains how to use
+the IPB. This paragraph explains how to use the IPB. This paragraph
+explains how to use the IPB. This paragraph explains how to use the
+IPB. This paragraph explains how to use the IPB. This paragraph explains
+how to use the IPB. This paragraph explains how to use the IPB. See <xref
+xrefid="f1-1"></para>
+<subpara1><title>Subparagraph On How to Use the IPB</title><para>Some
+Organizations insert two graphics here that pictorially explain hoe
+to find part numbers. This subparagraph explains how to use the IPB.
+This subparagraph explains how to use the IPB. This subparagraph explains
+how to use the IPB. This subparagraph explains how to use the IPB.
+See <xref xrefid="f1-2"></para>
+</subpara1>
+</para0>
+<figure id="f1-1">
+<title>How to Use the IPB</title>
+<graphic boardno="styler" reprodep="8.5in" scalefit="1"></figure>
+<figure id="f1-2">
+<title>How to Use the IPB</title>
+<graphic boardno="styler" reprodep="8.5in" scalefit="1"></figure>
+</ipbforeword><pl security="u" sssn="22-00-00"><?Pub Lcl _divid="500"
+_parentid="0"><plgrp>
+<figure id="f2-1" sssn="22-10-00" security="u">
+<title>First Parts List Figure in the IPB.</title>
+<graphic boardno="styler" reprodep="4.0in" scalefit="1"></figure>
+<pl0tbl>
+<pl0 sssn="22-10-00"><figureno>1</figureno>
+<figindex>1</figindex><partno>partnoABC</partno><cagecodes><cage>23456</cage>
+</cagecodes><desc><nomen>description and nomen<plbrk></nomen><refdes>rd1</refdes>
+<sssn>SS-SS-N1</sssn><remarks>Remarks</remarks></desc><units>0</units>
+<smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+<pl1>
+<figindex>2</figindex><partno>pl1 partnoA</partno><partnosym>#</partnosym>
+<cagecodes><cage>56RT9</cage></cagecodes><desc><nomen>This is a pl1
+nomen<plbrk></nomen></desc><units>1</units><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes>
+<pl2>
+<figindex>3</figindex><partno>pl2 partnoB</partno><cagecodes><cage>789T6</cage>
+</cagecodes><desc><nomen>pl2 nomen<plbrk></nomen><sssn>22-80-00</sssn>
+</desc><units>2</units><smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+<pl3>
+<figindex>4</figindex><partno>pl3ASC</partno><cagecodes><cage>45FG6</cage>
+</cagecodes><desc><nomen>pl3 nomen<plbrk></nomen></desc><units>3</units>
+<smrcodes><smrcode>PAOOO</smrcode></smrcodes></pl3>
+<pl3>
+<figindex>5</figindex><partno>pl3AB</partno><cagecodes><cage>345DF</cage>
+<cage>12345</cage><cage>67891</cage></cagecodes><desc><nomen>pl3a
+nomen<plbrk></nomen></desc><units>3</units><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes></pl3>
+<pl3>
+<figindex>6</figindex><partno>pl3b partnoC</partno><partnosym>#</partnosym>
+<cagecodes><cage>DFG56</cage></cagecodes><desc><nomen>pl3 partnob <plbrk></nomen>
+<refdes>rd2</refdes><sssn>SS-SS-N2</sssn><sssn>2nd SSSN</sssn><sssn>3rd
+SSSN</sssn></desc><units>3</units><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes>
+<pl4>
+<figindex>7</figindex><partno>pl4 partnoD</partno><cagecodes><cage>89HJ4</cage>
+</cagecodes><desc><nomen>pl4 partno <plbrk></nomen><refdes>pl4</refdes>
+</desc><units>4</units><smrcodes><smrcode>PAOOO</smrcode><smrcode>PADOO</smrcode>
+<smrcode>PADDD</smrcode></smrcodes>
+<pl5>
+<figindex>8</figindex><partno>pl5 partnoE</partno><cagecodes><cage>34ER6</cage>
+</cagecodes><desc><nomen>pl5 partno<plbrk></nomen><refdes>pl5</refdes>
+</desc><units>5</units><smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+<pl6>
+<figindex>9</figindex><partno>pl6 partnoF</partno><cagecodes><cage>23SD6</cage>
+</cagecodes><desc><nomen>pl6 partno<plbrk></nomen><remarks>Remarks</remarks>
+</desc><units>6</units><smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+<pl7>
+<figindex>10</figindex><partno>pl7 partnoG</partno><cagecodes><cage>78HJ5
+</cage></cagecodes><desc><nomen>pl7 partno<plbrk></nomen></desc><units>7</units>
+<smrcodes><smrcode>PAOZZ</smrcode></smrcodes></pl7>
+</pl6>
+</pl5>
+</pl4>
+</pl3>
+</pl2>
+</pl1>
+</pl0>
+</pl0tbl>
+</plgrp><plgrp>
+<figure id="f2-2" sssn="22-20-00" security="u">
+<title>Sample IPB Figure Two</title>
+<subfig>
+<graphic boardno="styler" reprodep="8.5in" scalefit="1"></subfig>
+<subfig>
+<graphic boardno="styler" reprodep="4.0in" scalefit="1"></subfig>
+</figure>
+<pl0tbl>
+<pl0 sssn="22-20-00"><figureno>2</figureno>
+<figindex>1/1</figindex><partno>partno2</partno><cagecodes><cage>90OR5</cage>
+</cagecodes><desc><nomen>description and nomen2<plbrk></nomen></desc>
+<units>0</units><smrcodes><smrcode>PAOOO</smrcode><smrcode>PADOO</smrcode>
+<smrcode>PADDD</smrcode></smrcodes>
+<pl1>
+<figindex>2/1</figindex><partno>pl1 partno2</partno><cagecodes><cage>RT45G
+</cage></cagecodes><desc><nomen>This is a pl1 nomen2<plbrk></nomen>
+<sssn>22-30-00</sssn></desc><units>1</units><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes>
+<pl2>
+<figindex>3/1</figindex><partno>pl2 partno2</partno><cagecodes><cage>789TG
+</cage></cagecodes><desc><nomen> pl2 nomen2<plbrk></nomen><remarks>Remarks
+</remarks></desc><units>2</units><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes>
+<pl3>
+<figindex>4/2</figindex><partno>pl3 partno2</partno><cagecodes><cage>564F5
+</cage></cagecodes><desc><nomen><esds> pl3 partno 2<plbrk></nomen>
+</desc><units>3</units><smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+<pl4>
+<figindex shown="0">5</figindex><partno>pl4 partno2</partno><cagecodes>
+<cage>45FE3</cage><cage>68D7G</cage><cage>FG569</cage></cagecodes><desc>
+<nomen>pl4 partno 2<plbrk></nomen><refdes>pl4</refdes></desc><units>4</units>
+<smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+<pl5>
+<figindex>6/2</figindex><partno>pl5 partno2</partno><cagecodes><cage>34AD6
+</cage></cagecodes><desc><nomen><hci> pl5 partno2<plbrk></nomen><refdes>pl5
+</refdes></desc><units>5</units><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes>
+<pl6>
+<figindex>7/2</figindex><partno>pl6 partno2</partno><cagecodes><cage>56GH7
+</cage></cagecodes><desc><nomen>pl6 partno2<plbrk></nomen><sssn>34-20-00</sssn>
+<remarks>Rmarks</remarks></desc><units>6</units><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes>
+<pl7>
+<figindex shown="0">8</figindex><partno>pl7 partno2</partno><cagecodes>
+<cage>78NM0</cage></cagecodes><desc><nomen>pl7 partno2<plbrk></nomen>
+</desc><units>7</units><smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+</pl7>
+</pl6>
+</pl5>
+</pl4>
+</pl3>
+</pl2>
+</pl1>
+</pl0>
+</pl0tbl>
+</plgrp><plgrp>
+<figure id="f2-3" sssn="22-30-00" security="u">
+<title>Parts List Sample Figure Number Three</title>
+<graphic boardno="styler" reprodep="5.5in" scalefit="1"></figure>
+<pl0tbl>
+<pl0 sssn="22-30-00"><figureno>3</figureno>
+<figindex>1</figindex><partno>partno3</partno><cagecodes><cage>34RT0</cage>
+</cagecodes><desc><nomen>description and nomen3<plbrk></nomen></desc>
+<units>0</units><smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+<pl1>
+<figindex>2</figindex><partno>pl1 partno3</partno><cagecodes><cage>23DF6</cage>
+</cagecodes><desc><nomen>This is a pl1 nomen3<plbrk></nomen></desc>
+<units>1</units><smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+<pl2>
+<figindex>3</figindex><partno>1234567A</partno><cagecodes><cage>692K0</cage>
+</cagecodes><desc><nomen>Miscellaneous Part<plbrk></nomen></desc><units>1
+</units><useoncode>A</useoncode><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes></pl2>
+<pl2>
+<figindex>4</figindex><partno>1234567B</partno><cagecodes><cage>692K0</cage>
+</cagecodes><desc><nomen>Miscellaneous Part<plbrk></nomen></desc><units>1
+</units><useoncode>B</useoncode><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes></pl2>
+<pl2>
+<figindex>5</figindex><partno>1234567C</partno><cagecodes><cage>692K0</cage>
+</cagecodes><desc attachpart="1"><nomen>Miscellaneous Part<plbrk></nomen>
+</desc><units>1</units><useoncode>C</useoncode><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes></pl2>
+<pl2>
+<figindex>6</figindex><partno>1234567D</partno><cagecodes><cage>692K0</cage>
+</cagecodes><desc><nomen>Miscellaneous Part<plbrk></nomen></desc><units>1
+</units><useoncode>A</useoncode><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes></pl2>
+<pl2>
+<figindex>7</figindex><partno>1234567E</partno><cagecodes><cage>692K0</cage>
+</cagecodes><desc kit="1"><nomen>Miscellaneous Part<plbrk></nomen>
+</desc><units>1</units><useoncode>B</useoncode><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes></pl2>
+<pl2>
+<figindex>8</figindex><partno>1234567F</partno><cagecodes><cage>692K0</cage>
+</cagecodes><desc quickchgexpl="1"><nomen>Miscellaneous Part<plbrk></nomen>
+</desc><units>1</units><useoncode>C</useoncode><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes></pl2>
+<pl2>
+<figindex>9</figindex><partno>1234567G</partno><cagecodes><cage>692K0</cage>
+</cagecodes><desc><nomen>Miscellaneous Part<plbrk></nomen></desc><units>1
+</units><useoncode>A</useoncode><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes></pl2>
+<pl2>
+<figindex>10</figindex><partno>1234567H</partno><cagecodes><cage>692K0</cage>
+</cagecodes><desc attachpart="1"><nomen>Miscellaneous Part<plbrk></nomen>
+</desc><units>1</units><useoncode>B</useoncode><smrcodes><smrcode>PAOOO</smrcode>
+</smrcodes></pl2>
+<pl2>
+<figindex>11</figindex><partno>pl2 partno3</partno><cagecodes><cage>25468
+</cage></cagecodes><desc><nomen>pl2 nomen3<plbrk></nomen></desc><units>2</units>
+<useoncode>C</useoncode><smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+<pl3>
+<figindex>12</figindex><partno>pl3 partno3</partno><cagecodes><cage>98765
+</cage></cagecodes><desc><nomen>pl3 partno 3<plbrk></nomen></desc>
+<units>3</units><smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+<pl4>
+<figindex>13</figindex><partno>pl4 partno3</partno><cagecodes><cage>23456
+</cage></cagecodes><desc><nomen>pl4 partno3 <plbrk></nomen><refdes>pl4</refdes>
+</desc><units>4</units><smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+<pl5>
+<figindex>14</figindex><partno>pl5 partno3</partno><cagecodes><cage>2K456
+</cage></cagecodes><desc><nomen>pl5 partno<plbrk></nomen><refdes>pl5</refdes>
+</desc><units>5</units><smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+<pl6>
+<figindex>15</figindex><partno>pl6 partno3</partno><cagecodes><cage>6KE09
+</cage></cagecodes><desc><nomen>pl6 partno3<plbrk></nomen></desc><units>6
+</units><smrcodes><smrcode>PAOOO</smrcode></smrcodes>
+<pl7>
+<figindex>16</figindex><partno>pl7 partno3</partno><cagecodes><cage>34TJ6
+</cage></cagecodes><desc><nomen>pl7 partno3<plbrk></nomen></desc><units>7
+</units><smrcodes><smrcode>PAOZZ</smrcode></smrcodes></pl7>
+</pl6>
+</pl5>
+</pl4>
+</pl3>
+</pl2>
+</pl1>
+</pl0>
+<useoncodelist>
+<term>A</term><def>xxxxx</def>
+<term>B</term><def>yyyyy</def>
+<term>C</term><def>zzzzz</def></useoncodelist>
+</pl0tbl>
+</plgrp></pl><numindx autobuild="1" security="u" sssn="22-00-00"><?Pub Lcl
+_divid="600" _parentid="0"><rfdsindx autobuild="1" security="u"
+sssn="22-00-00"><?Pub Lcl _divid="700" _parentid="0"></single></body>
+</docipb></doc>

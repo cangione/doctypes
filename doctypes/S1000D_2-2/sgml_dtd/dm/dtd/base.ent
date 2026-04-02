@@ -1,0 +1,185 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 1999-43UK: Add optional attribute inwork to element issno.  *
+    * 3. CPF 2002-12FR: Call new entity %EXTPMC; to allow for references *
+    *                   to publication modules (see PMC.ENT).            *
+    * 4. Consistency:   Change declared values of attribute type on      *
+    *                   element issno from upper case to lower case.     *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % BASE                                                    *
+    *   PUBLIC "-//S1000D//ELEMENTS S1000D Base DTD 20030531//EN" >      *
+    * %BASE;                                                             *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element dmodule (Data Module) containing:-                  *
+    *  idstatus - Mandatory  Single      contains dmaddres, status.      *
+    *  content  - Mandatory  Single      contains refs, and Definition   *
+    *                                    stored in entity %CONTENT;      *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED  - Unique identifier of Data Module *
+    ********************************************************************** -->
+
+<!ELEMENT dmodule - - (idstatus,content) >
+<!ATTLIST dmodule
+            id  ID #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element idstatus (Identification and Status Information)    *
+    * containing:-                                                       *
+    *  dmaddres - Mandatory  Single      contains dmc, dmtitle, issno,   *
+    *                                    issdate, language.              *
+    *  status   - Mandatory  Single      contains definition stored in   *
+    *                                    entity %STATUS;                 *
+    ********************************************************************** -->
+
+<!ELEMENT idstatus - O (dmaddres,status) >
+
+
+
+<!--**********************************************************************
+    * Define Element dmaddres (Data Module Address) containing:-         *
+    *  dmc      - Mandatory  Single      contains definition stored in   *
+    *                                    entity %ALLDMC;                 *
+    *  dmtitle  - Mandatory  Single      contains techname, infoname.    *
+    *  issno    - Mandatory  Single      contains No Other Tags.         *
+    *  issdate  - Mandatory  Single      contains No Other Tags.         *
+    *  language - Optional   Single      contains No Other Tags.         *
+    ********************************************************************** -->
+
+<!ELEMENT dmaddres - O (dmc,dmtitle,issno,issdate,language?) >
+
+
+
+<!--**********************************************************************
+    * Call the Data Module Code Breakdown Public Text. The formal public *
+    * identifier is stored in the entity %EXTDMC;                        *
+    ********************************************************************** -->
+
+%EXTDMC;
+
+
+
+<!--**********************************************************************
+    * Call the Publication Module Code Breakdown Public Text. The formal *
+    * public identifier is stored in the entity %EXTPMC;                 *
+    ********************************************************************** -->
+
+%EXTPMC;
+<!-- Call new entity to allow for references to publication modules -->
+
+
+<!--**********************************************************************
+    * Define Element dmtitle (Data Module Title) containing:-            *
+    *  techname - Mandatory  Single      contains Parsed Character Data. *
+    *  infoname - Optional   Single      contains Parsed Character Data. *
+    ********************************************************************** -->
+
+<!ELEMENT dmtitle - O (techname, infoname?) >
+
+
+
+<!--**********************************************************************
+    * Define Element techname (Technical Name) containing:-              *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT techname - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element infoname (Information Name) containing:-            *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT infoname - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element issno (Issue Number) containing:-                   *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  issno    - NUMBER    - REQUIRED - Issue Number (XXX).             *
+    *  inwork   - NUMBER    - IMPLIED  - Sub-Issue Number (XX).          *
+    *  type     - Declared  - "new"    - Status of this issue of the     *
+    *                                    data module.                    *
+    *           - "new"      - New Data Module.                          *
+    *           - "changed"  - Changed. Changes marked by change markers.*
+    *           - "deleted"  - Deleted.                                  *
+    *           - "revised"  - Completely Revised. Changes not marked by *
+    *                           change markers.                          *
+    *           - "status"   - Only Status information changed.          *
+    *           - "rinstate-changed" - Data Module has been reinstated   *
+    *                                   and changed. Changes marked by   *
+    *                                   change markers.                  *
+    *           - "rinstate-revised" - Data Module has been reinstated   *
+    *                                   and is completely Revised.       *
+    *                                   Changes not marked by change     *
+    *                                   markers.                         *
+    *           - "rinstate-status"  - Data Module has been reinstated   *
+    *                                  and status has been changed.      *
+    ********************************************************************** -->
+
+<!ELEMENT issno - O  EMPTY >
+<!ATTLIST issno
+            issno   NUMBER      #REQUIRED
+            inwork  NUMBER      #IMPLIED
+            type    (new | changed | deleted | revised | status |
+                     rinstate-changed | rinstate-revised | rinstate-status)
+                      "new"  >
+<!-- Added optional attribute inwork and changed declared values of 
+     attribute type from uppercase to lowercase.  -->
+
+
+<!--**********************************************************************
+    * Define Element issdate (Issue Date) containing:-                   *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Definition stored in entity %DATE;.                               *
+    ********************************************************************** -->
+
+<!ELEMENT issdate  - O  EMPTY >
+<!ATTLIST issdate  %DATE; >
+
+
+
+<!--**********************************************************************
+    * Define Element language (Language of Data Module) containing:-     *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  language - CDATA     - REQUIRED - Language Code (lowercase).      *
+    *  country  - CDATA     - IMPLIED  - Country Code (uppercase).       *
+    ********************************************************************** -->
+
+<!ELEMENT language - O EMPTY>
+<!ATTLIST language
+             language   CDATA #REQUIRED
+             country    CDATA #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Call the Status Breakdown Public Text. The formal public identifier*
+    * is stored in the entity %EXTSTAT;                                  *
+    ********************************************************************** -->
+
+%EXTSTAT;

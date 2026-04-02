@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.1                            *
+    *                       Date: 2004-02-29                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2004-12DE: Change declaration of attribute prefix on        *
+    *                   element randlist to be required.                 *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTLIST                                                 *
+    *   PUBLIC "-//S1000D//ELEMENTS Lists Breakdown 20040229//EN" >      *
+    * %EXTLIST;                                                          *
+    ********************************************************************** -->
+
+
+	<xs:element name="randlist">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element randlist (Random List) containing:-                 *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  title    - Optional   Single      contains Definition stored in   *
+    *                                    entity %text;                   *
+    *  item     - Mandatory  Repeatable  contains applic, note, para,    *
+    *                                    Definition stored in entity     *
+    *                                    %paracon;.                      * 
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  prefix  - Declared  - REQUIRED  - %PREFIXES;   Prefix of randlist *
+    *                                    items, declared in S1000D.CFG.  *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %secur;                *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>	
+		<xs:complexType>	
+			<xs:sequence>
+				<xs:element ref="applic" minOccurs="0"/>
+				<xs:element ref="title" minOccurs="0"/>
+				<xs:element ref="item" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute ref="prefix" use="required"/>
+<!-- Occurrence of attribute prefix changed from optional to mandatory -->
+			<xs:attributeGroup ref="bodyatt"/>
+			<xs:attributeGroup ref="secur"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="seqlist">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element seqlist (Sequential List) containing:-              *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  title    - Optional   Single      contains Definition stored in   *
+    *                                    entity %text;                   *
+    *  item     - Mandatory  Repeatable  contains applic, note, para,    *
+    *                                    Definition stored in entity     *
+    *                                    %paracon;.                      * 
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %secur;                *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="applic" minOccurs="0"/>
+				<xs:element ref="title" minOccurs="0"/>
+				<xs:element ref="item" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="bodyatt"/>
+			<xs:attributeGroup ref="secur"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="item">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element item (List Item) containing:-                       *
+    *  applic    - Optional  Single     contains type, model.            *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *   note     - Mandatory  Single      contains applic, symbol, para, *
+    *                                              Definition stored in  *
+    *                                              entity %list;.        *
+    *  or                                                                *
+    *   para     - Mandatory  Single      contains Definition stored in  *
+    *                                              entity %paracon;.     *
+    *  or                                                                *
+    *   Definition stored in entity %paracon;                            *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>	
+		<xs:complexType mixed="true">		
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="gen_inc"/>	
+				<xs:sequence>
+					<xs:element ref="applic" minOccurs="0"/>
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="note"/>
+						<xs:element ref="para"/>
+						<xs:group ref="paracon"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="deflist">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element deflist (Definition List) containing:-              *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  title    - optional   single      contains definition stored in   *
+    *                                    entity %text;                   *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *  term     - Mandatory  Single      contains applic, Definition     *
+    *                                    stored in entity %text;         *
+    *  def      - Mandatory  Single      contains applic, para,          *
+    *                                    Definition stored in entity     *
+    *                                    %paracon;.                      *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %secur;                *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>		
+			<xs:sequence>
+				<xs:element ref="applic" minOccurs="0"/>
+				<xs:element ref="title" minOccurs="0"/>
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element ref="term"/>
+					<xs:element ref="def"/>
+				</xs:sequence>
+			</xs:sequence>
+			<xs:attributeGroup ref="bodyatt"/>
+			<xs:attributeGroup ref="secur"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="term">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element term (Term) containing:-                            *
+    *  applic   - Optional   Single      contains type, model.           *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  Definition stored in entity %text;                                *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>	
+		<xs:complexType mixed="true">	
+			<xs:sequence minOccurs="0">				
+				<xs:element ref="applic" minOccurs="0"/>
+				<xs:group ref="text" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="def">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element def (Definition) containing:-                       *
+    *  applic   - Optional   Single      contains type, model.           *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *   para     - Mandatory  Single      contains Definition stored in  *
+    *                                     entity %paracon;               *
+    *  or                                                                *
+    *   Definition stored in entity %paracon;                            *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="gen_inc"/>	
+				<xs:sequence>
+					<xs:element ref="applic" minOccurs="0"/>
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="para"/>
+						<xs:group ref="paracon"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attributeGroup ref="bodyatt"/>
+		</xs:complexType>
+	</xs:element>
+
+
+</xs:schema>

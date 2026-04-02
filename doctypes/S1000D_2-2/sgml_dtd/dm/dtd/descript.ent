@@ -1,0 +1,63 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2002-11FR: Add new entity %FFT; to <descript>.              *
+    *                   Remove inclusion of <figure>, <foldout>, <table> *
+    *                   and <caption> from <descript>.                   *
+    *                   Move call of entities %CAPGRP;, %EXTPARA;,       *
+    *                   %PARACONSTATIC;, %EXTLIST;, %EXTFTAB; and %WCNP; *
+    *                   to file DESCRIPT.DTD.                            *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % DESCRPT                                                 *
+    *   PUBLIC "-//S1000D//ELEMENTS Description Breakdown 20050501//EN" >*
+    * %DESCRPT;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing:- descript. *
+    ********************************************************************** -->
+
+<!ENTITY % CONTENT "descript" >
+
+
+<!--**********************************************************************
+    * Define Element descript (Descriptive Content) containing:-         *
+    *====================================================================*
+    *  Optional Repeatable Group                                         *
+    *====================================================================*
+    *====================================================================*
+    *   Mandatory Single  Group                                          *
+    *====================================================================*
+    *    para     - Optional  Repeatable  contains applic, Definition    *
+    *                                     stored in entity %paracon;.    *
+    *    Definition stored in entity %spcpara;    - Mandatory Single.    *
+    *    para0    - Optional  Repeatable  contains Definition stored in  *
+    *                                     entity %nparcon; and %SUBPAR1;.*
+    *====================================================================*
+    *   or                                                               *
+    *    Definition stored in entity %FFT;     - Mandatory Single.       *
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ELEMENT descript - O (((para*,%spcpara;,para0*) | %FFT;)*) >
+<!-- Call of entity %FFT; added to content model -->
+<!-- Inclusion of <figure>, <foldout>, <table> and <caption> removed -->
+
+
+<!--**********************************************************************
+    * Define Entity %HEADING; (Numbered Paragraphs Heading) containing:- *
+    *  Definition stored in entity %HEADING1;.                           *
+    *  capgrp   - Optional   Single    contains colspec,spanspec,capbody.*
+    ********************************************************************** -->
+
+<!ENTITY % HEADING "%HEADING1;, capgrp?" >

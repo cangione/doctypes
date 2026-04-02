@@ -1,0 +1,171 @@
+<!-- Fragment document type declaration subset:
+Arbortext, Inc., 1988-2009, v.4002
+<!DOCTYPE OUTSPEC PUBLIC "-//ArborText//DTD OUTPUT SPEC MIL-PRF-28001 REV B AMEND 1 19961231//EN">
+-->
+<?Pub UDT _bookmark _target>
+<!-- ---------------------------------------------------------------------------
+  (c) 2019  -  Global Publishing Solutions Ltd (GPSL)
+ -------------------------------------------------------------------------------
+  Identifier:  PUBLIC "-//GPSL//MILSPEC//ENTITIES VERSTAT-INFORMATION//EN"
+  File name:   GPSL_MILSPEC_VERSTAT_INFORMATION.ent
+  Date:        9th May 2019
+  Version:     2.0
+ --------------------------------------------------------------------------- -->
+<!-- Start...|GPSL:RK|Entity "verstat-information" -->
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="verstatus" attval="unver">
+<charsubset>
+<savetext textid="vsmatter1.tdv" conrule='!<entry colname="fpf">!,<label-brk.psu>,prefix.tdv,label.txt,</label-brk.psu>,!</entry>!' placemnt="before" append="0">
+<savetext textid="vsmatter2.tdv" conrule='!<entry colname="vstat">!,\Unverified\,!</entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="verstatus" attval="unver">
+<specval attname="verdate" attval="#ANY">
+<charsubset>
+<savetext textid="vsmatter3.tdv" conrule='!<entry colname="datever">!,#CONTENT(verdate),!</entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="verstatus" attval="unver">
+<specval attname="verdate" attval="#NONE">
+<charsubset>
+<savetext textid="vsmatter3.tdv" conrule='!<entry colname="datever"></entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="verstatus" attval="unver">
+<specval attname="verrem" attval="#ANY">
+<charsubset>
+<savetext textid="vsmatter4.tdv" conrule='!<entry colname="rem">!,#CONTENT(verrem),!</entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="verstatus" attval="unver">
+<specval attname="verrem" attval="#NONE">
+<charsubset>
+<savetext textid="vsmatter4.tdv" conrule='!<entry colname="rem"></entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="verstatus" attval="unver">
+<charsubset>
+<savetext textid="vsmatter.tiv" conrule="!<row>!,vsmatter1.tdv,vsmatter2.tdv,vsmatter3.tdv,vsmatter4.tdv,!</row>!" placemnt="before" append="1">
+<savetext textid="vsmatter-vol.tiv" conrule="!<row>!,vsmatter1.tdv,vsmatter2.tdv,vsmatter3.tdv,vsmatter4.tdv,!</row>!" placemnt="before" append="1">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="docstat" attloc="doc" attval="prelim">
+<specval attname="verstatus" attval="ver">
+<charsubset>
+<savetext textid="vsmatter1.tdv" conrule='!<entry colname="fpf">!,<label-brk.psu>,prefix.tdv,label.txt,</label-brk.psu>,!</entry>!' placemnt="before" append="0">
+<savetext textid="vsmatter2.tdv" conrule='!<entry colname="vstat">!,\Verified\,!</entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="docstat" attloc="doc" attval="prelim">
+<specval attname="verstatus" attval="ver">
+<specval attname="verdate" attval="#ANY">
+<charsubset>
+<savetext textid="vsmatter3.tdv" conrule='!<entry colname="datever">!,#CONTENT(verdate),!</entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="docstat" attloc="doc" attval="prelim">
+<specval attname="verstatus" attval="ver">
+<specval attname="verdate" attval="#NONE">
+<charsubset>
+<savetext textid="vsmatter3.tdv" conrule='!<entry colname="datever"></entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="docstat" attloc="doc" attval="prelim">
+<specval attname="verstatus" attval="ver">
+<specval attname="verrem" attval="#ANY">
+<charsubset>
+<savetext textid="vsmatter4.tdv" conrule='!<entry colname="rem">!,#CONTENT(verrem),!</entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="docstat" attloc="doc" attval="prelim">
+<specval attname="verstatus" attval="ver">
+<specval attname="verrem" attval="#NONE">
+<charsubset>
+<savetext textid="vsmatter4.tdv" conrule='!<entry colname="rem"></entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="docstat" attloc="doc" attval="prelim">
+<specval attname="verstatus" attval="ver">
+<charsubset>
+<savetext textid="vsmatter.tiv" conrule="!<row>!,vsmatter1.tdv,vsmatter2.tdv,vsmatter3.tdv,vsmatter4.tdv,!</row>!" placemnt="before" append="1">
+<savetext textid="vsmatter-vol.tiv" conrule="!<row>!,vsmatter1.tdv,vsmatter2.tdv,vsmatter3.tdv,vsmatter4.tdv,!</row>!" placemnt="before" append="1">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="docstat" attloc="doc" attval="draft">
+<specval attname="verstatus" attval="ver">
+<charsubset>
+<savetext textid="vsmatter1.tdv" conrule='!<entry colname="fpf">!,<label-brk.psu>,prefix.tdv,label.txt,</label-brk.psu>,!</entry>!' placemnt="before" append="0">
+<savetext textid="vsmatter2.tdv" conrule='!<entry colname="vstat">!,\Verified\,!</entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="docstat" attloc="doc" attval="draft">
+<specval attname="verstatus" attval="ver">
+<specval attname="verdate" attval="#ANY">
+<charsubset>
+<savetext textid="vsmatter3.tdv" conrule='!<entry colname="datever">!,#CONTENT(verdate),!</entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="docstat" attloc="doc" attval="draft">
+<specval attname="verstatus" attval="ver">
+<specval attname="verdate" attval="#NONE">
+<charsubset>
+<savetext textid="vsmatter3.tdv" conrule='!<entry colname="datever"></entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="docstat" attloc="doc" attval="draft">
+<specval attname="verstatus" attval="ver">
+<specval attname="verrem" attval="#ANY">
+<charsubset>
+<savetext textid="vsmatter4.tdv" conrule='!<entry colname="rem">!,#CONTENT(verrem),!</entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="docstat" attloc="doc" attval="draft">
+<specval attname="verstatus" attval="ver">
+<specval attname="verrem" attval="#NONE">
+<charsubset>
+<savetext textid="vsmatter4.tdv" conrule='!<entry colname="rem"></entry>!' placemnt="before" append="0">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="docstat" attloc="doc" attval="draft">
+<specval attname="verstatus" attval="ver">
+<charsubset>
+<savetext textid="vsmatter.tiv" conrule="!<row>!,vsmatter1.tdv,vsmatter2.tdv,vsmatter3.tdv,vsmatter4.tdv,!</row>!" placemnt="before" append="1">
+<savetext textid="vsmatter-vol.tiv" conrule="!<row>!,vsmatter1.tdv,vsmatter2.tdv,vsmatter3.tdv,vsmatter4.tdv,!</row>!" placemnt="before" append="1">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "verstat-information" -->

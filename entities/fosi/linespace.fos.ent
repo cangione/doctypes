@@ -1,0 +1,6 @@
+<att>
+<specval attname="_linespace" attval="#EQ#\1\">
+<charsubset>
+<presp minimum="4mm" nominal="4mm" maximum="4mm" condit="discard" priority="high">
+</charsubset>
+</att>

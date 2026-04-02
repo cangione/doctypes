@@ -1,0 +1,28 @@
+<!--Arbortext, Inc., 1988-2009, v.4002-->
+<!DOCTYPE DOC PUBLIC "-//USA-DOD//DTD 38807C-AV6D0P0//EN">
+<doc service="af"><?Pub Caret><docipb><front numcols="1"><idinfo><tmidno></tmidno>
+<doctype></doctype>
+<prtitle><subject></subject>
+</prtitle>
+<distrib></distrib>
+<authnot></authnot>
+<pubdate></pubdate></idinfo><lep><lepcontents autobuild="1"></lep></front>
+<body numcols="1"><single><ipbforeword>
+<modelcover><title></title></modelcover>
+<symsect><title></title></symsect>
+<useonexpl><title></title></useonexpl>
+<smrexpl><title></title></smrexpl>
+<partstd><title></title></partstd>
+<tctolist><title></title></tctolist>
+</ipbforeword><pl><plgrp>
+<figure>
+<title></title>
+<graphic boardno="fire"></figure>
+<pl0tbl>
+<pl0>
+<figindex></figindex><partno></partno><cagecodes><cage></cage></cagecodes>
+<desc><nomen></nomen></desc><units></units><smrcodes><smrcode></smrcode></smrcodes>
+</pl0>
+</pl0tbl>
+</plgrp></pl></single></body></docipb></doc>
+<?Pub *0000000963 0>

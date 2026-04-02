@@ -1,0 +1,184 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                SGML Document Type Definition                       *
+    *                       Data Module (DM)                             *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. All CPFs:      Update public identifier date of entity %COMPS;. *
+    * 3. CPF 2002-11FR: Move call of entities %INTERACT;, %EXTLIST;,     *
+    *                   %CAPGRP;, %PRELREQ;, %CLOSEREQ; and %WCNP; from  *
+    *                   file PROCESS.ENT to here.                        *
+    *                   Replace call of entity %EXTFTAB; by calls to     *
+    *                   %EXTFIG; and %EXTTAB;.                           * 
+    *                   Replace call of entity %WCNP; by calls to        *
+    *                   %EXTWC; and %PARAGRAPHS;.                        * 
+    * 4. CPF 2004-32US: Expand Process DM to include <step1> content:    *
+    *                   Include the schema for the interactive APPLIC    *
+    *                   entity.                                          *
+    *                                                                    *
+    * The following DOCTYPE statement may be used to call this set of    *
+    * declarations:-                                                     *
+    *                                                                    *
+    * <!DOCTYPE dmodule PUBLIC                                           *
+    *  "-//S1000D//DTD S1000D Process Module 20050501//EN" [             *
+    *  ]>                                                                *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %COMPS; (Components) containing:- the formal public  *
+    * identifier for the component definitions.                          *
+    ********************************************************************** -->
+
+<!ENTITY % COMPS
+ PUBLIC "-//S1000D//ENTITIES Component Definitions 20050501//EN" >
+<!-- Public identifier date updated -->
+
+
+<!--**********************************************************************
+    * Call the Components Definition Public Text. The formal public      *
+    * identifier is stored in the entity %COMPS;                         *
+    ********************************************************************** -->
+
+%COMPS;
+
+
+
+<!--**********************************************************************
+    * Call the APPLIC Entity for interactive data modules.               *
+    * The formal public identifier is stored in entity %APPLINTERACT;.   *
+    ********************************************************************** -->
+
+%APPLINTERACT;
+<!-- Call of this new entity introduced -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %CAPPCON; (Caption Paragraph Continuation)           *
+    * containing:-                                                       *
+    * or                                                                 *
+    *  capgrp   - Mandatory Single     contains caprow.                  *
+    ********************************************************************** -->
+
+<!ENTITY % CAPPCON "| capgrp" >
+
+
+
+<!--**********************************************************************
+    * Call the S1000D Configuration Public Text.                         *
+    * The formal public identifier is stored in the entity %S1000D;      *
+    ********************************************************************** -->
+
+%S1000D;
+
+
+
+<!--**********************************************************************
+    * Call the S1000D Base DTD Public Text. The formal public identifier *
+    * is stored in the entity %BASE;                                     *
+    ********************************************************************** -->
+
+%BASE;
+
+
+
+<!--**********************************************************************
+    * Call the Interactive Common Data Public Text.                      *
+    * The formal publicidentifier is stored in the entity %INTERACT;     *
+    ********************************************************************** -->
+
+%INTERACT;
+
+
+
+<!--**********************************************************************
+    * Call the Process Module Breakdown Public Text.                     *
+    * The formal publicidentifier is stored in the entity %PROCESS;      *
+    ********************************************************************** -->
+
+%PROCESS;
+
+
+<!--**********************************************************************
+    * Call the Content Breakdown Public Text. The formal public          *
+    * identifier is stored in the entity %EXTCONT;                       *
+    ********************************************************************** -->
+
+%EXTCONT;
+
+
+<!--**********************************************************************
+    * Call the Figure Public Text.                                       *
+    * The formal public identifier is stored in the entity %EXTFIG;      *
+    ********************************************************************** -->
+
+%EXTFIG;
+<!-- Call of new public identifier -->
+
+
+<!--**********************************************************************
+    * Call the Table Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTTAB;      *
+    ********************************************************************** -->
+
+%EXTTAB;
+<!-- Call of new public identifier -->
+
+
+<!--**********************************************************************
+    * Call the Lists Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTLIST;     *
+    ********************************************************************** -->
+
+%EXTLIST;
+
+
+<!--**********************************************************************
+    * Call the Caption Group Public Text.                                *
+    * The formal public identifier is stored in the entity %CAPGRP;      *
+    ********************************************************************** -->
+
+%CAPGRP;
+
+
+<!--**********************************************************************
+    * Call the Preliminary Requirements Public Text.                     *
+    * The formal public identifier is stored in the entity %PRELREQ;     *
+    ********************************************************************** -->
+
+%PRELREQ;
+
+
+<!--**********************************************************************
+    * Call the Closeup Requirements Public Text.                         *
+    * The formal public identifier is stored in the entity %CLOSEREQ;    *
+    ********************************************************************** -->
+
+%CLOSEREQ;
+<!-- Call of this new entity included -->
+
+
+<!--**********************************************************************
+    * Call the Warning And Caution Breakdown Public Text.                *
+    * The formal public identifier is stored in the entity %EXTWC;       *
+    ********************************************************************** -->
+ 
+%EXTWC;
+<!-- Call of new public identifier -->
+
+
+<!--**********************************************************************
+    * Call the Notes And Paragraphs Breakdown Public Text.               *
+    * The formal public identifier is stored in the entity %PARAGRAPHS;  *
+    ********************************************************************** -->
+ 
+%PARAGRAPHS;
+<!-- Call of new public identifier -->

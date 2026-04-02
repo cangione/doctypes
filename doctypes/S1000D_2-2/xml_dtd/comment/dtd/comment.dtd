@@ -1,0 +1,520 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                 XML Document Type Definition                       *
+    *                          Commenting                                *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update Comment DTD public identifier date.                      *
+    * 2. CPF 2004-06SE: Update public identifier date of entity %DMADDR1;*
+    * 3. CPF 2004-22GB, CPF 2004-24GB:                                   *
+    *                   Update public identifier date of entity %DMADDR2;*
+    * 4. CPF 2004-30DE: Introduce public identifier date on entity       *
+    *                   %PROJECT;.                                       *
+    * 5. CPF 2004-63DE: Introduce optional sub element <language> in the *
+    *                   content model of element <cstatus>.              *
+    * 6. CPF 2005-06SE: Update public identifier date of entity %EXTPMC;.*
+    * 7. TPSMG request: Update public identifier date of entity          *
+    *                   %LISTCODE;.                                      *
+    *====================================================================*
+    * The following DOCTYPE statement may be used to call this set of    *
+    * declarations:-                                                     *
+    *                                                                    *
+    * <!DOCTYPE comment PUBLIC	                                         *
+    *   "-//S1000D//DTD S1000D Commenting 20050501//EN//XML" []>         *
+    *  "../dtd/comment.dtd []>                                           *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %PROJECT; (PROJECT Configuration) containing:- the   *
+    * formal public identifier for the Project Configuration public text.*
+    ********************************************************************** -->
+<!ENTITY % PROJECT PUBLIC 
+  "-//S1000D//ENTITIES S1000D Project Configuration 20050501//EN//XML"
+  "project.cfg" >
+<!-- Public identifier date introduced -->  
+
+
+<!--**********************************************************************
+    * Define Entity %ISOENTS; (ISO Entity Definitions)                   *
+    ********************************************************************** -->
+<!ENTITY % ISOENTS PUBLIC 
+  "-//S1000D//ENTITIES ISO Entity Definitions 20030531//EN//XML" 
+  "isoents.ent" >
+
+<!--**********************************************************************
+    * Call the ISO Entity Definitions                                    *
+    ********************************************************************** -->
+%ISOENTS;
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR1; (DM Address Details 1st Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR1 PUBLIC 
+  "-//S1000D//ENTITIES DM Address Details 1st Part 20050501//EN//XML" 
+  "dmaddr1.ent" >
+<!-- Public identifier date updated -->  
+
+<!--**********************************************************************
+    * Call the DM Address Details 1st Part                               *
+    ********************************************************************** -->
+%DMADDR1;
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR2; (DM Address Details 2nd Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR2 PUBLIC 
+  "-//S1000D//ELEMENTS DM Address Details 2nd Part 20050501//EN//XML" 
+  "dmaddr2.ent" >
+<!-- Public identifer date updated -->
+
+<!--**********************************************************************
+    * Call the DM Address Details 2nd Part                               *
+    ********************************************************************** -->
+%DMADDR2;
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR3R; (DM Address Details 3rd Part Reduced)     *
+    ********************************************************************** -->
+<!ENTITY % DMADDR3R PUBLIC
+  "-//S1000D//ELEMENTS DM Address Details 3rd Part Reduced 20030531//EN//XML"
+  "dmaddr3r.ent" >
+
+<!--**********************************************************************
+    * Call the DM Address Details 3rd Part Reduced                       *
+    ********************************************************************** -->
+%DMADDR3R;
+
+
+<!--**********************************************************************
+    * Define Entity %LISTCODE; (List Code Definitions)                   *
+    ********************************************************************** -->
+<!ENTITY % LISTCODE PUBLIC
+  "-//S1000D//ELEMENTS List Code Definitions 20050501//EN//XML"
+  "listcode.ent" >
+<!-- Public identifier date updated -->  
+
+<!--**********************************************************************
+    * Call the List Code Definitions                                     *
+    ********************************************************************** -->
+%LISTCODE;
+
+
+<!--**********************************************************************
+    * Define Entity %EXTPMC; (Publication Module Code Breakdown)         *
+    * containing:-                                                       *
+    * the formal public identifier for the Publication Module Code       *
+    * Breakdown public text.                                             *
+    ********************************************************************** -->
+<!ENTITY % EXTPMC PUBLIC
+  "-//S1000D//ELEMENTS Publication Module Code Breakdown 20050501//EN//XML"
+  "pmc.ent" >
+<!-- Public identifer date updated -->
+
+<!--**********************************************************************
+    * Call the Publication Module Code Breakdown Public Text. The formal *
+    * public identifier is stored in the entity %EXTPMC;                 *
+    ********************************************************************** -->
+%EXTPMC;
+
+
+<!--**********************************************************************
+    * Define Entity %DISPADDR; (Dispatch Address Details)                *
+    ********************************************************************** -->
+<!ENTITY % DISPADDR PUBLIC
+  "-//S1000D//ELEMENTS Dispatch Address Details 20030531//EN//XML"
+  "dispaddr.ent" >
+
+<!--**********************************************************************
+    * Call the Dispatch Address Details                                  *
+    ********************************************************************** -->
+%DISPADDR;
+
+
+<!--**********************************************************************
+    * Define Entity %EXTRDFDC; (RDF and DC Definitions) containing:-     *
+    * the formal public identifier for the RDF and DC Definitions        *
+    * public text.                                                       *
+    ********************************************************************** -->
+<!ENTITY % EXTRDFDC PUBLIC 
+  "-//S1000D//ELEMENTS RDF and DC Definitions 20030531//EN//XML" 
+  "rdfdc.ent" >
+
+<!--**********************************************************************
+    * Call the RDF and DC Definitions Public Text                        *        
+    ********************************************************************** -->
+%EXTRDFDC;
+
+
+<!--**********************************************************************
+    * Define Entity %EXTXLINK; (XLINK Definitions) containing:-          *
+    * the formal public identifier for the XLINK Definitions public text.*
+    ********************************************************************** -->
+<!ENTITY % EXTXLINK PUBLIC 
+  "-//S1000D//ELEMENTS XLINK Definitions 20030531//EN//XML" 
+  "xlink.ent" >
+
+<!--**********************************************************************
+    * Call the XLINK Definitions Public Text.                            *        
+    ********************************************************************** -->
+%EXTXLINK;
+
+
+
+<!--**********************************************************************
+    * Define Element comment (Comment) containing:-                      *
+    *  rdf:Description - Optional  Single  contains Defintion stored in  *
+    *                                               entity %DCMES;       *
+    *  cstatus         - Mandatory Single  contains ccode, ctitle,       *
+    *                                               issdate, language,   *
+    *                                               corig, security,     *
+    *                                               datarest, priority,  *
+    *                                               response, crefs,     *
+    *                                               remarks.             *
+    *  ccontent        - Mandatory Single   contains p, refcattach.      *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED  - Unique identifier of element.    *
+    *  xmlns    - CDATA    - FIXED    - COMMENT default namespace def.   *
+    *  Attribute Definition List stored in entity %RDFDCATT;.            *
+    ********************************************************************** -->
+<!ELEMENT comment  (rdf:Description?, cstatus, ccontent) >
+<!ATTLIST comment
+	  id            ID      #IMPLIED
+	  xmlns         CDATA	#FIXED	"http://www.s1000d.org/commment"
+          %RDFDCATT; >
+
+
+<!--**********************************************************************
+    * Define Element cstatus (Comment Status)   containing:-             *
+    *   ccode    - Mandatory Single     contains modelic, sendid, diyear,*
+    *                                            seqnum, ctype.          *
+    *   ctitle   - Optional  Single     contains Parsed Character Data.  *
+    *   issdate  - Mandatory Single     contains No Other Tags.          *
+    *   language - Optional  Single     contains No Other Tags.          *
+    *   corig    - Mandatory Single     contains dispaddr.               *
+    *   security - Mandatory Single     contains No Other Tags.          *
+    *   datarest - Optional  Single     contains instruct, inform.       *
+    *   priority - Mandatory Single     contains No Other Tags.          *
+    *   response - Optional  Single     contains No Other Tags.          *
+    *   crefs    - Mandatory Single     contains No Other Tags.          *
+    *   remarks  - Optional  Single     contains Parsed Character Data   *
+    *                                            or p.                   *
+    ********************************************************************** -->
+<!ELEMENT cstatus  (ccode, ctitle?, issdate, language?, corig, security, 
+                    datarest?, priority, response?, crefs, remarks?) >
+<!-- Element <language> introduced in content model -->
+
+
+<!--**********************************************************************
+    * Define Element ccode (Comment Code generated by the Originator of  *
+    *                       the Comment)                                 *
+    * containing:-                                                       *
+    *  modelic   - Mandatory   Single    contains Parsed Character Data. *
+    *  sendid    - Mandatory   Single    contains Parsed Character Data. *
+    *  diyear    - Mandatory   Single    contains Parsed Character Data. *
+    *  seqnum    - Mandatory   Single    contains Parsed Character Data. *
+    *  ctype     - Mandatory   Single    contains No Other Tags.         *
+    ********************************************************************** -->
+<!ELEMENT ccode  (modelic, sendid, diyear, seqnum, ctype) >
+
+
+<!--**********************************************************************
+    * Define Element ctype (Type of Comment) containing:-                *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  ctype   - Declared - REQUIRED   - Identifies Type of Comment:     *
+    *           - "q"        - Query (raised comment)                    *
+    *           - "i"        - Interim response                          *
+    *           - "r"        - Final response                            *
+    ********************************************************************** -->
+<!ELEMENT ctype  EMPTY >
+<!ATTLIST ctype
+                type  (q | i | r )  #REQUIRED >
+
+
+<!--**********************************************************************
+    * Define Element ctitle (Comment Title) containing:-                 *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT ctitle (#PCDATA)  >
+
+
+<!--**********************************************************************
+    * Define Element corig (Comment Originator) containing:-             *
+    *  dispaddr - Mandatory Single    contains enterprise,person,address.*
+    ********************************************************************** -->
+<!ELEMENT  corig  (dispaddr) >
+
+
+<!--**********************************************************************
+    * Define Element priority (Priority of the Comment) containing:-     *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  cprio    - %CPRIOS;        - Level of comment priority.           *
+    *                               %CPRIOS; is declared in dmaddr2.ent. *
+    *    Examples:                                                       *
+    *             - "cp01"        - Routine                              *
+    *             - "cp02"        - Emergency                            *
+    *             - "cp03"        - Safety critical                      *
+    *             - . . . . .                                            *
+    ********************************************************************** -->
+<!ELEMENT priority EMPTY >
+<!ATTLIST priority
+            cprio  %CPRIOS; >
+
+
+<!--**********************************************************************
+    * Define Element response (Type of Response to the Comment)          * 
+    *   containing:-        No Other Tags.                               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  rsptype  - %RSPTYPES   - REQUIRED  - Identifying the type of      *
+    *                                       response to a comment.       *
+    *                           %RSPTYPES; is declared in dmaddr2.ent.   *
+    *    Examples:                                                       *
+    *              - "rt01"     - Accepted                               *
+    *              - "rt02"     - Pending                                *
+    *              - "rt03"     - Partly Accepted                        *
+    *              - "rt04"     - Rejected                               *
+    *              - . . . . .                                           *
+    ********************************************************************** -->
+<!ELEMENT response EMPTY  >
+<!ATTLIST response
+             rsptype %RSPTYPES;  #REQUIRED >
+
+
+<!--**********************************************************************
+    * Define Element crefs (References) containing:-                     *
+    *  cnorefs  - Mandatory  Single      contains No Other Tags.         *
+    * or                                                                 *
+    *  crefdms  - Mandatory  Single      contains crefdm.                *
+    * or                                                                 *
+    *  crefdmls - Mandatory  Single      contains dmlref.                *
+    * or                                                                 *
+    *  crefpms  - Mandatory  Single      contains crefpm.                *
+    * or                                                                 *
+    *  crefddns - Mandatory  Single      contains crefddn.               *
+    ********************************************************************** -->
+<!ELEMENT crefs (cnorefs | crefdms  | crefdmls | crefpms | crefddns) >
+
+
+<!--**********************************************************************
+    * Define Element cnorefs (No References) containing:-                *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+<!ELEMENT cnorefs EMPTY >
+
+
+<!--**********************************************************************
+    * Define Element crefdms (Reference Data Modules) containing:-       *
+    *  crefdm    - mandatory  repeatable  contains dmc, issno, dmtitle,  *
+    *                                              issdate, language or  *
+    *                                              Definition stored in  *
+    *                                              entity %XLINKEXT;.    *
+    ********************************************************************** -->
+<!ELEMENT crefdms (crefdm+) >
+
+
+<!--**********************************************************************
+    * Define Element crefdm (Reference Data Module) containing:-         *
+    *====================================================================*
+    * Mandatory Single Group.                                            *
+    *====================================================================*
+    *  dmc      - Mandatory  Single      contains age, avee.             *
+    *  dmtitle  - Optional   Single      contains techname, infoname.    *
+    *  issno    - Optional   Single      contains No Other Tags.         *
+    *  issdate  - Optional   Single      contains No Other Tags.         *
+    *  language - Optional   Single      contains No Other Tags.         *
+    *====================================================================*
+    * or                                                                 *
+    *  Definition stored in entity %XLINKEXT;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %XLINKATT4;            *
+    ********************************************************************** -->
+<!ELEMENT crefdm ((dmc,dmtitle?,issno?,issdate?,language?) | %XLINKEXT;) >
+<!ATTLIST crefdm %XLINKATT4; >
+
+
+<!--**********************************************************************
+    * Define Element crefdmls (Reference Data Module Lists)              *
+    * containing:-                                                       *
+    *  dmlref    - Mandatory  Repeatable  contains dmlc, issno or        *
+    *                                              Definition stored in  *
+    *                                              entity %XLINKEXT;.    *
+    ********************************************************************** -->
+<!ELEMENT crefdmls (dmlref+) >
+
+
+<!--**********************************************************************
+    * Define Element dmlref (Data Module List Reference) containing:-    *
+    *====================================================================*
+    * Mandatory Single Group.                                            *
+    *====================================================================*
+    *  dmlc      - Mandatory   Single      contains modelic, sendid,     *
+    *                                               type, diyear, seqnum.*
+    *  issno     - Optional    Single      contains No Other Tags.       *
+    *====================================================================*
+    * or                                                                 *
+    *  Definition stored in entity %XLINKEXT;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %XLINKATT4;            *
+    ********************************************************************** -->
+<!ELEMENT dmlref ((dmlc,issno?) | %XLINKEXT;) >
+<!ATTLIST dmlref %XLINKATT4; >
+
+
+<!--**********************************************************************
+    * Define Element dmlc (Data Module List Code) containing:-           *
+    *  modelic   - Mandatory   Single     contains Parsed Character Data.*
+    *  sendid    - Mandatory   Single     contains Parsed Character Data.*
+    *  dmltype   - Mandatory   Single     contains No Other Tags.        *
+    *  diyear    - Mandatory   Single     contains Parsed Character Data.*
+    *  seqnum    - Mandatory   Single     contains Parsed Character Data.*
+    ********************************************************************** -->
+<!ELEMENT dmlc  (modelic,sendid,dmltype,diyear,seqnum) >
+
+
+<!--**********************************************************************
+    * Define Element dmltype (Type of Data Module List) containing:-     *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  dmltype   - Declared - REQUIRED   - Identifies Type of DML:       *
+    *            - "c"  - Complete Data Module Requirement List (DMRL-C) *
+    *            - "p"  - Partial Data Module Requirement List (DMRL-P)  *
+    *            - "s"  - CSDB Status List (CSL)                         *
+    ********************************************************************** -->
+<!ELEMENT dmltype  EMPTY >
+<!ATTLIST dmltype
+                type  (c | p | s )  #REQUIRED >
+
+
+<!--**********************************************************************
+    * Define Element crefpms (Reference Publication Modules)             *
+    * containing:-                                                       *
+    *  crefpm  - Mandatory  Repeatable    contains pmc, pmtitle, issno,  *
+    *                                              issdate, language or  *
+    *                                              Definition stored in  *
+    *                                              entity %XLINKEXT;.    *
+    ********************************************************************** -->
+<!ELEMENT crefpms (crefpm+) >
+
+
+<!--**********************************************************************
+    * Define Element crefpm (Reference Publication Module) containing:-  *
+    *====================================================================*
+    * Mandatory Single Group.                                            *
+    *====================================================================*
+    *  pmc      - Mandatory Single      contains modelic, pmissuer,      *
+    *                                            pmnumber, pmvolume.     *
+    *  pmtitle  - Optional  Single      contains Parsed Character Data.  *
+    *  issno    - Optional  Single      contains No Other Tags.          *
+    *  issdate  - Optional  Single      contains No Other Tags.          *
+    *  language - Optional  Single      contains No Other Tags.          *
+    *====================================================================*
+    * or                                                                 *
+    *  Definition stored in entity %XLINKEXT;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %XLINKATT4;            *
+    ********************************************************************** -->
+<!ELEMENT crefpm ((pmc,pmtitle?,issno?,issdate?,language?) | %XLINKEXT;) >
+<!ATTLIST crefpm %XLINKATT4; >
+
+
+<!--**********************************************************************
+    * Define Element pmtitle (Publication Module Title) containing:-     *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT pmtitle  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element crefddns (Reference Data Dispatch Notes)            *
+    * containing:-                                                       *
+    *  crefddn  - Mandatory  Repeatable   contains ddnc, issdate         *
+    *                                              or Definition stored  *
+    *                                              in entity %XLINKEXT;. *
+    ********************************************************************** -->
+<!ELEMENT crefddns (crefddn+) >
+
+
+<!--**********************************************************************
+    * Define Element crefddn (Reference Data Dispatch Note)              *
+    * containing:-                                                       *
+    *====================================================================*
+    * Mandatory Single Group.                                            *
+    *====================================================================*
+    *  ddnc     - Mandatory Single      contains modelic, sendid, recvid,*
+    *                                            diyear, seqnum.         *
+    *  issdate  - Optional  Single      contains No Other Tags.          *
+    *====================================================================*
+    * or                                                                 *
+    *  Definition stored in entity %XLINKEXT;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %XLINKATT4;            *
+    ********************************************************************** -->
+<!ELEMENT crefddn ((ddnc,issdate?) | %XLINKEXT;) >
+<!ATTLIST crefddn %XLINKATT4; >
+
+
+<!--**********************************************************************
+    * Define Element ddnc (Data Dispatch Note Identification Code)       *
+    * containing:-                                                       *
+    *  modelic   - Mandatory   Single     contains Parsed Character Data.*
+    *  sendid    - Mandatory   Single     contains Parsed Character Data.*
+    *  recvid    - Mandatory   Single     contains Parsed Character Data.*
+    *  diyear    - Mandatory   Single     contains Parsed Character Data.*
+    *  seqnum    - Mandatory   Single     contains Parsed Character Data.*
+    ********************************************************************** -->
+<!ELEMENT ddnc   (modelic,sendid,recvid,diyear,seqnum) >
+
+
+<!--**********************************************************************
+    * Define Element recvid (Receiver Identification) containing:-       *
+    *  Parsed Character Data                                             *
+    * must contain the NCAGE code.                                       *
+    ********************************************************************** -->
+<!ELEMENT recvid  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element ccontent (Comment Content) containing:-             *
+    *  p           - Mandatory Repeatable   contains Parsed Character    *
+    *                                       Data or subscrpt or supscrpt.*
+    *  refcattach  - Optional  Repeatable   contains Definition stored   *
+    *                                       in entity %XLINKEXT;.        *
+    ********************************************************************** -->
+<!ELEMENT ccontent  (p+, refcattach*) >
+
+
+<!--**********************************************************************
+    * Define Element refcattach (Reference To Attached File)             *
+    * containing:-                                                       *   
+    *  Definition stored in entity %XLINKEXT;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  seqatt   - NMTOKEN - REQUIRED - 2-digit Number of Attachment(XX). *
+    *  extend   - CDATA   - REQUIRED - File extension of Attachment.     *
+    *  Attribute Definition List stored in entity %XLINKATT4;            *
+    ********************************************************************** -->
+<!ELEMENT refcattach  (%XLINKEXT;) >
+<!ATTLIST refcattach
+            seqatt    NMTOKEN  #REQUIRED 
+            extend    CDATA    #REQUIRED
+            %XLINKATT4; >

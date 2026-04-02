@@ -1,0 +1,235 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                   Data Dispatch Note (DDN)                         *
+    *                 XML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.1                            *
+    *                       Date: 2004-02-29                             *
+    *                                                                    *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2003-13DE: Remove element issno from content model of       *
+    *                   element ddn.                                     *
+    *====================================================================*
+    * The following DOCTYPE statement may be used to call this set of    *
+    * declarations:-                                                     *
+    *                                                                    *
+    * <!DOCTYPE ddn PUBLIC                                               *
+    *   "-//S1000D//DTD Data Dispatch Note 20040229//EN//XML"            *
+    *   "../dtd/ddn.dtd" []>                                             *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %PROJECT; (PROJECT Configuration) containing:- the   *
+    * formal public identifier for the Project Configuration public text.*
+    ********************************************************************** -->
+<!ENTITY % PROJECT PUBLIC 
+  "-//S1000D//ENTITIES S1000D Project Configuration//EN//XML"
+  "project.cfg" >
+
+
+<!--**********************************************************************
+    * Define Entity %ISOENTS; (ISO Entity Definitions)                   *
+    ********************************************************************** -->
+<!ENTITY % ISOENTS PUBLIC 
+  "-//S1000D//ENTITIES ISO Entity Definitions 20030531//EN//XML" 
+  "isoents.ent" >
+
+<!--**********************************************************************
+    * Call the ISO Entity Definitions                                    *
+    ********************************************************************** -->
+%ISOENTS;
+
+
+<!--**********************************************************************
+    * Define Entity %LISTCODE; (List Code Definitions)                   *
+    ********************************************************************** -->
+<!ENTITY % LISTCODE PUBLIC
+  "-//S1000D//ELEMENTS List Code Definitions 20030531//EN//XML"
+  "listcode.ent" >
+
+<!--**********************************************************************
+    * Call the List Code Definitions                                     *
+    ********************************************************************** -->
+%LISTCODE;
+
+
+<!--**********************************************************************
+    * Define Entity %DISPADDR; (Dispatch Address Details)                *
+    ********************************************************************** -->
+<!ENTITY % DISPADDR PUBLIC
+  "-//S1000D//ELEMENTS Dispatch Address Details 20030531//EN//XML"
+  "dispaddr.ent" >
+
+<!--**********************************************************************
+    * Call the Dispatch Address Details                                  *
+    ********************************************************************** -->
+%DISPADDR;
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR2; (DM Address Details 2nd Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR2 PUBLIC 
+  "-//S1000D//ELEMENTS DM Address Details 2nd Part 20030531//EN//XML" 
+  "dmaddr2.ent" >
+
+<!--**********************************************************************
+    * Call the DM Address Details 2nd Part                               *
+    ********************************************************************** -->
+%DMADDR2;
+
+
+<!--**********************************************************************
+    * Define Entity %EXTRDFDC; (RDF and DC Definitions) containing:-     *
+    * the formal public identifier for the RDF and DC Definitions        *
+    * public text.                                                       *
+    ********************************************************************** -->
+<!ENTITY % EXTRDFDC PUBLIC 
+  "-//S1000D//ELEMENTS RDF and DC Definitions 20030531//EN//XML" 
+  "rdfdc.ent" >
+
+<!--**********************************************************************
+    * Call the RDF and DC Definitions Public Text                        *        
+    ********************************************************************** -->
+%EXTRDFDC;
+
+
+
+<!--**********************************************************************
+    * Define Element ddn (Data Dispatch Note) containing:-               *
+    *  rdf:Description  - Optional  Single contains Definition stored    *
+    *                                               in entity %DCMES;    *
+    *  ddnc             - Mandatory Single contains modelic, sendid,     *
+    *                                            recvid, diyear, seqnum. *
+    *  issdate          - Mandatory Single contains no other elements.   *
+    *  security         - Mandatory Single contains no other elements.   *
+    *  datarest         - Optional  Single contains instruct, inform.    *
+    *  dispto           - Mandatory Single contains dispaddr.            *
+    *  dispfrom         - Mandatory Single contains dispaddr.            *
+    *  authrtn          - Mandatory Single contains Parsed Character Data*
+    *  mediaid          - Optional  Single contains no other elements.   *
+    *  remarks          - Optional  Single contains Parsed Character Data*
+    *                                               or p.                *
+    *  delivlst         - Optional  Single contains ddnfilen, dmcoricn,  *
+    *                                               issno                *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id          - ID       - IMPLIED  - Unique identifier of element. *
+    *  xmlns       - CDATA    - FIXED    - DDN default namespace definit.*
+    *  Attribute Definition List stored in entity %RDFDCATT;.            *
+    ********************************************************************** -->
+<!ELEMENT ddn  (rdf:Description?,ddnc,issdate,security,datarest?,
+                dispto,dispfrom,authrtn,mediaid?,remarks?,delivlst?) >
+<!-- Element issno removed from content model -->
+<!ATTLIST ddn
+	  id            ID      #IMPLIED
+	  xmlns         CDATA	#FIXED	"http://www.s1000d.org/ddn"
+          %RDFDCATT; >
+
+
+<!--**********************************************************************
+    * Define Element ddnc (Data Dispatch Note Identification Code)       *
+    * containing:-                                                       *
+    *  modelic   - Mandatory   Single     contains Parsed Character Data.*
+    *  sendid    - Mandatory   Single     contains Parsed Character Data.*
+    *  recvid    - Mandatory   Single     contains Parsed Character Data.*
+    *  diyear    - Mandatory   Single     contains Parsed Character Data.*
+    *  seqnum    - Mandatory   Single     contains Parsed Character Data.*
+    ********************************************************************** -->
+<!ELEMENT ddnc  (modelic,sendid,recvid,diyear,seqnum) >
+
+
+<!--**********************************************************************
+    * Define Element modelic (Model Identification) containing:-         *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT modelic  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element recvid (Receiver Identification) containing:-       *
+    *  Parsed Character Data.                                            *
+    * must contain the NCAGE code                                        *
+    ********************************************************************** -->
+<!ELEMENT recvid  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element dispto (Receiving Company/Authority Details, eg     *
+    *                        full address of receiving person including  *
+    *                        organization/department)                    *         
+    * containing:-                                                       *
+    *   dispaddr - Mandatory   Single      contains enterprise, person,  *
+    *                                               address.             *
+    ********************************************************************** -->
+<!ELEMENT dispto  (dispaddr) >
+
+
+<!--**********************************************************************
+    * Define Element dispfrom (Sending CompanyAuthority Details, eg      *
+    *                          full address of sending person including  *
+    *                          organization/department)                  *
+    * containing:-                                                       *
+    *   dispaddr - Mandatory   Single      contains enterprise, person,  *
+    *                                               address.             *
+    ********************************************************************** -->
+<!ELEMENT dispfrom  (dispaddr) >
+
+
+<!--**********************************************************************
+    * Define Element authrtn (Authorisation Identification, eg name of   *
+    *                         the person initiating/authorising the      *
+    *                         data exchange)                             *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT authrtn   (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element mediaid (Media Identification) containing:-         *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * label   - NMTOKEN - REQUIRED - Starting Media Label in Volume Set  *
+    ********************************************************************** -->
+<!ELEMENT mediaid  EMPTY >
+<!ATTLIST mediaid
+          label   NMTOKEN #REQUIRED >
+          
+
+<!--**********************************************************************
+    * Define Element delivlst (Data Delivery List Entry) containing:-    *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *  ddnfilen  - Mandatory   Single    contains Parsed Character Data. *
+    *  dmcoricn  - Optional    Single    contains Parsed Character Data. *
+    *  issno     - Optional    Single    contains No Other Tags.         *
+    *====================================================================*
+    ********************************************************************** -->
+<!ELEMENT delivlst  (ddnfilen,dmcoricn?,issno?)+ >
+
+
+<!--**********************************************************************
+    * Define Element ddnfilen (Dispatched File Name) containing:-        *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT ddnfilen  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element dmcoricn (DMC or ICN or PMC of dispatched file)     *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT dmcoricn  (#PCDATA) >
+
+
+
+<!--** End of XML DDN DTD **-->

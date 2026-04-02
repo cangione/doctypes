@@ -1,0 +1,256 @@
+<!-- *****  START OF FILE ***** -->
+
+<!--  **************************************************************************
+      SPECIAL NOTE: 
+	This DTD was modified for the Arbortext implementation.
+      Changes:
+      20030116 verstatpg attribute in entity docatt changed 
+               from verified | unverified to ver | unver to match 38784BV6
+      20030116 created three row wrappers for semantic tables:
+                 cpinrow in cpintbl
+                 consumrow in consumtbl
+                 sptteqptrow in sptteqpttbl
+               changed the contents of the related table to be the row wrapper, 
+               and moved the contents into the new row wrapper element
+      20040220 -Added %chgatt; to content models:
+                  cpintbl
+               - removed 38784 from this file and use entity reference
+               - removed 38784 subset in favor of an entity to 38784 directory
+
+      ********************************************************************** -->
+
+<!-- 
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  DTD TITLE:	General Systems
+	+
+	+  SPECIFICATION NUMBER:	MIL-PRF-83495B Amendment 1
+	+
+	+  SPECIFICATION POC:	Bill Bates
+	+
+	+  DOCUMENT TYPE DEFINITION (DTD):	83495B1BV6D0P0
+	+
+	+  MIL-STANDARD VERSION:	38784STD-BV6
+	+
+	+  LAST MODIFICATION:	
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+  This file is made available to provide the user with a digital 
+	+  representation of the DTD found in:  Appendix B of MIL-PRF-83495B
+	+  This file is incomplete without MIL-PRF-83495B.
+	+
+	+  The following set of declarations may be referred to by using a
+	+  public entity as follows:
+	+
+	+  <!ENTITY % m83495gs PUBLIC "-//USA-DOD//DTD 83495B1BV6D0P0//EN" >
+	+  %m83495gs;
+	+
+	+  NOTE: In order to parse the following DTD subset alone, append
+	+  the following statement to the beginning of the file:
+	+
+	+		<!DOCTYPE doc [
+	+
+	+		and the associated  ]>  to the end of the file.
+	+
+	+  NOTE: The start and end of this file are marked with notations.
+	+  If these notations are not present, the file may not be complete!
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+	AUTHORED BY: Barbara Jones, AF IDE PO
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  OTHER DTDS NEEDED:		
+	+  
+	+	MIL-STD-38784	38784STD-BV6.dtd
+	+	
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  MODIFICATIONS SINCE PREVIOUS RELEASE:  
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  -->
+<!-- ENTITY DECLARATIONS -->
+
+<!ENTITY % verified
+"verdate CDATA #IMPLIED
+verrem CDATA #IMPLIED
+verstatus (unver | ver) 'unver'" >
+
+<!ENTITY % yesorno "NUMBER" >
+
+<!-- Arbortext 20030116: SFORT 
+     verstatpg attributes changed from verified | unverified to ver | unver to match 38784 -->
+<!ENTITY % docatt
+"docid CDATA #IMPLIED
+docstat (revision | change | prelim | draft | formal) 'prelim'
+verstatpg (ver | unver) 'ver' 
+index %yesorno; '0'">
+
+<!ENTITY % frnt "(idinfo, lep, verstat?, contents, illuslist?, 
+                 tablelist?, foreword, safesum?)" >
+
+<!ENTITY % titles "title" >
+
+<!ENTITY % doc  "(docgs)">
+
+<!ENTITY % geno "INCLUDE" >
+
+<!ENTITY % gssd "IGNORE" >
+
+<![ %gssd; [
+
+<!ENTITY % bodyele "(theorychap, spectools, syspecchap, sddiagram?) | 
+                    (chapter, chapter+)" >
+
+<!--ENTITY % chap "(%titles;, theorysect, spectools, syspecsect, sddiagram?)" -->
+<!--this entity is not in use at this time - jls - 08/02/99 -->
+
+<!ENTITY % fig "((subfig, subfig+) | ((graphic, legend?) | figtable)+)" >
+]]>
+
+<!ENTITY % bodyele "(theorychap, spectools, syspecchap) | 
+                    (chapter, chapter+)" >
+                            
+<!--ENTITY % chap "(%titles;, theorysect, spectools, syspecsect)" -->
+<!--this entity is not in use at this time - jls - 08/02/99 -->
+
+<!ENTITY % fpi "(para0, (para0 | symsect | abbrsect | internatlstd | applicdef | lrp | tctolist | cpinlist)*, tmimprep?)" >
+
+<![ %geno; [
+<!-- ATI added entity to 38784 -->
+<!ENTITY % m38784       PUBLIC "-//USA-DOD//DTD 38784STD-BV7//EN" >
+%m38784;
+
+]]>
+
+<!-- ELEMENT and ATTRIBUTE LIST DECLARATIONS -->
+
+<!ELEMENT cage		- o  (%text;) >
+<!ATTLIST cage		%secur; >
+
+<!ELEMENT consum      - o  (%parazero;, subpara1*, consumtbl) >
+<!ATTLIST consum      %para0att; >
+
+<!-- Arbortext 20030116: SFORT 
+     moved the table contents into a row wrapper -->
+<!ELEMENT consumrow     - -  ((item, nomen, (partno | spec), cage, use+, 
+                             reference+))    -(table) >
+<!ATTLIST consumrow     %chgatt;
+                        %secur; >                                     
+	
+<!-- Arbortext 20030116: SFORT 
+     created a row wrapper for consumtbl content -->
+<!ELEMENT consumtbl     - -  ((consumrow)+)    -(table) >
+<!ATTLIST consumtbl     %verified;
+                        frame (top | bottom | topbot | all | sides | none) "all"   
+                        colsep %yesorno; "1"
+                        rowsep %yesorno; "0" 
+                        cellcont (Continued | Cont) "Continued" 
+                        id ID #IMPLIED 
+                        %bodyatt; 
+                        %secur; >                                     
+
+<!ELEMENT cpin     - o  (%text;) >
+<!ATTLIST cpin     %secur; >
+
+<!-- Arbortext 20030116: SFORT 
+     moved the table contents into a row wrapper -->
+<!ELEMENT cpinrow     - o  (cpin, title) >
+<!ATTLIST cpinrow     %chgatt;
+                      %secur; >
+
+<!-- Arbortext 20030116: SFORT 
+     created a row wrapper for cpintbl content 
+     Arbortext 20040220: SFORT
+     added bodyatt to allow a cpintbl to be added during change -->
+<!ELEMENT cpintbl     - -  ((cpinrow)+) >
+<!ATTLIST cpintbl     %secur;
+                      id ID #IMPLIED
+                      cpinwidth NUTOKEN "2.25in"  
+                      titlewidth NUTOKEN "2.50in"  
+                      frame (top | bottom | topbot | all | sides | none) "all"   
+                      colsep %yesorno; "1"
+                      rowsep %yesorno; "0" 
+                      cellcont (Continued | Cont) "Continued" 
+                      %bodyatt;>
+ 
+<!ELEMENT cpinlist     - -  (%parazero;, subpara1*, cpintbl) >
+<!ATTLIST cpinlist     %para0att; >
+
+<!ELEMENT docgs     - -  (front, body, rear?)   +(pgbrk | brk | subjinfo |
+			line | modreq | location) >
+<!--ATTLIST docgs      service %service; #REQUIRED
+                    %docatt; 
+                    %secur;-->
+ 
+<!--[ %geno; [                    
+<!ELEMENT figno	        - o (%text;)>
+]]-->
+
+<!ELEMENT reference     - o  (%text;) >
+<!ATTLIST reference     %secur; >
+
+<!ELEMENT schdiag     - o   (figure) > 
+<!ATTLIST schdiag     type (elec | mech | elecmech) #REQUIRED
+                      level (1 | 2 | 3) #REQUIRED
+                      %figatts;>
+
+<![ %gssd; [
+<!-- ATI:  remove the %secur attribute since already declared in chapatt -->
+<!ELEMENT sddiagram     - -  (((section, section+) | para0+), schdiag+ )   
+                             +( table ) >
+<!ATTLIST sddiagram     %chapatt;  >
+]]>
+
+<!ELEMENT spec     - o  (%text;) >
+
+<!ELEMENT spectools     - -  (para0+, (sptteqpt, para0*)?, (consum, para0*)?)   
+                             +(figure | table | foldout ) >
+<!ATTLIST spectools     %chapatt; >
+
+<![ %geno; [ 
+<!ELEMENT sptteqpt       - o  (%parazero, subpara1*, sptteqpttbl)  >
+<!ATTLIST sptteqpt      %para0att; >
+
+<!-- Arbortext 20030116: SFORT 
+     moved the table contents into a row wrapper -->
+<!ELEMENT sptteqptrow     - -  ((item, nomen, (partno | typedes), cage, figno)) >
+<!ATTLIST sptteqptrow      %chgatt;
+                           %secur; >
+
+<!-- Arbortext 20030116: SFORT 
+     created a row wrapper for sptteqpttbl content -->
+<!ELEMENT sptteqpttbl     - -  ((sptteqptrow)+)  
+                                -(table)  >
+<!ATTLIST sptteqpttbl      %verified;
+                           frame (top | bottom | topbot | all | sides | none) "all" 
+                           colsep %yesorno; "1"
+                           rowsep %yesorno; "0" 
+                           cellcont (Continued | Cont) "Continued" 
+                           id ID #IMPLIED 
+                           %bodyatt; 
+                           %secur; >                                     
+]]>
+
+<!ELEMENT syspecchap     - -  ((section, section+) | para0+)  
+                              +( figure | table | schdiag | foldout ) >
+<!ATTLIST syspecchap     %chapatt;>
+
+<!--ELEMENT syspecsect     - -  (para0+)   +( figure | table | schdiag | 
+                              foldout ) >
+<!ATTLIST syspecsect     %sectatt; -->
+<!--this element is not in use at this time - jls - 08/02/99 -->
+
+<!ELEMENT theorychap     - -  ((section, section+) | para0+)   
+                              +( figure | table | schdiag | foldout ) >
+<!ATTLIST theorychap     %chapatt;>
+
+<!--ELEMENT theorysect     - -  (para0+)   +( figure | table | schdiag | 
+                              foldout ) >
+<!ATTLIST theorysect     %sectatt;  -->
+<!--this element is not in use at this time - jls - 08/02/99 -->
+
+<!ELEMENT use     - o  (%text;) >
+<!ATTLIST use     %secur; >
+
+<!-- *************************** END OF FILE *************************** -->

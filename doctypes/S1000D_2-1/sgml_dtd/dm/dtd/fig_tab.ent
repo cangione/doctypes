@@ -1,0 +1,491 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2000-04D: Amend element legend by attribute list defined    *
+    *                  in entity %bodyatt;.                              *
+    * 3. Bug fix:      Redefine attributes charoff and char on element   *
+    *                  tgroup consistently with other occurrences of     *
+    *                  these attributes, ie they are now optional        *
+    *                  without a default value.                          *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTFTAB PUBLIC                                          *
+    *   "-//S1000D//ELEMENTS Figure And Table Breakdown 20030531//EN" >  *
+    * %EXTFTAB;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element foldout (A3 Foldout) containing:-                   *
+    *  figure   - Mandatory  Single     contains Definition stored in    *
+    *                                   entity %titles;, applic, graphic,*
+    *                                   sheet, rfa, legend.              *
+    * or                                                                 *
+    *  table    - Mandatory  Single     contains Definition stored in    *
+    *                                   entity %titles;, tgroup, graphic.*
+    **********************************************************************
+    * EXCLUSION: foldout.                                                *
+    ********************************************************************** -->
+
+<!ELEMENT foldout - - (figure | table) -(foldout) >
+
+
+
+<!--**********************************************************************
+    * Define Element figure (Figure) containing:-                        *
+    *====================================================================*
+    * Mandatory Single Group.                                            *
+    *====================================================================*
+    *  Definition stored in entity %titles;                              *
+    *++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+    *  graphic  - Mandatory  Single      contains No Other Tags.         *
+    *  rfa      - Optional   Repeatable  contains APPLIC, Definition     *
+    *                                    stored in entity %text;         *
+    * or                                                                 *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  applic   - Optional   Single      contains type, model.           *
+    *  sheet    - Mandatory  Single      contains No Other Tags.         *
+    *  graphic  - Mandatory  Single      contains No Other Tags.         *
+    *  rfa      - Optional   Repeatable  contains applic, Definition     *
+    *                                    stored in entity %text;         *
+    *====================================================================*
+    *++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+    *  legend   - Optional   Single      contains deflist.               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    * Attribute Definition List stored in entity %secur;                 *
+    **********************************************************************
+    * EXCLUSION: figure, foldout, table.                                 *
+    ********************************************************************** -->
+
+<!ELEMENT figure - - (((%titles;), ((graphic,rfa*) | 
+                                    (applic?, sheet, graphic, rfa*)+),
+                       legend?))          -(figure | foldout | table) >
+<!ATTLIST figure
+            %bodyatt;
+            %secur; >
+
+
+
+<!--**********************************************************************
+    * Define Element sheet (Figure Sheet) containing:-                   *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  sheetno  - NUMBER   - REQUIRED - Sheet number.                    *
+    *  total    - NUMBER   - REQUIRED - Total number of sheets.          *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT sheet - O EMPTY >
+<!ATTLIST sheet
+             sheetno NUMBER #REQUIRED
+             total   NUMBER #REQUIRED
+             %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element rfa (Reason For Amendment) containing:-             *
+    *  applic   - Optional   Single      contains type, model.           *
+    *====================================================================*
+    *  Mandatory Repeatable Group.                                       *
+    *====================================================================*
+    *   Definition stored in entity %text;                               *
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ELEMENT rfa - O (applic?, (%text;)+) >
+
+
+
+<!--**********************************************************************
+    * Define Element legend (Legend) containing:-                        *
+    *  deflist  - Mandatory  Single      contains Definition stored in   *
+    *                                    entity %titles;, term, def.     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;.             *
+    ********************************************************************** -->
+
+<!ELEMENT legend - O (deflist) >
+<!ATTLIST legend
+             %bodyatt; >
+<!-- Attribute list defined in entity %bodyatt; added to element -->
+
+
+
+<!--**********************************************************************
+    * Define Element table (Table) containing:-                          *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  title    - Optional   Single      contains Definition stored in   *
+    *                                    entity %text;                   *
+    *====================================================================*
+    *  tgroup   - Mandatory  Repeatable  contains colspec, spanspec,     *
+    *                                    thead, tfoot, tbody.            *
+    * or                                                                 *
+    *  graphic  - Mandatory  Repeatable  contains No Other Tags.         *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  tabstyle - NMTOKEN  - IMPLIED  - A unique table style.            *
+    *  tocentry - NUMBER   - "1"      - Included in list of tables.      *
+    *  frame    - Declared - IMPLIED  - Position of border siderules, as *
+    *                      - well as the required top and bottom rules.  *
+    *           - "top"    -                                             *
+    *           - "bottom" -                                             *
+    *           - "topbot" -                                             *
+    *           - "all"    -                                             *
+    *           - "sides"  -                                             *
+    *           - "none"   -                                             *
+    *  colsep   - NUMBER   - IMPLIED  - Internal Column rulings.         *
+    *           - "0"      - Do Not display internal column rulings.     *
+    *           - "1"      - Display internal column rulings.            *
+    *  rowsep   - NUMBER   - IMPLIED  - Internal Row rulings.            *
+    *           - "0"      - Do Not display internal row rulings.        *
+    *           - "1"      - Display internal row rulings.               *
+    *  orient   - Declared - "port"   - Writing direction of table.      *
+    *           - "port"   - Table writing direction (along rows) is the *
+    *                      - same as marginal text.                      *
+    *           - "land"   - Table writing direction is 90 degrees       *
+    *                      - counterclockwise to marginal text and title.*
+    *  pgwide   - NUMBER   - "1"      - Width of table.                  *
+    *           - "0"      - The table runs just across the (galley)     *
+    *                      - width of the current column of the page.    *
+    *           - "1"      - The table runs across the page.             *
+    *  Attribute Definition List stored in entity %bodyatt;.             *
+    *  Attribute Definition List stored in entity %secur;.               *
+    **********************************************************************
+    * EXCLUSION: figure, foldout, table.                                 *
+    ********************************************************************** -->
+
+<!ELEMENT table     - -       (applic?, title?, (tgroup+ | graphic+))
+                               -(figure | foldout | table) >
+<!ATTLIST table
+              tabstyle     NMTOKEN        #IMPLIED
+              tocentry     %yesorno;      "1"
+              frame        (top | bottom | topbot | all | sides | none)
+                                          #IMPLIED
+              colsep       %yesorno;      #IMPLIED
+              rowsep       %yesorno;      #IMPLIED
+              orient       (port | land)  #IMPLIED
+              pgwide       %yesorno;      #IMPLIED
+              %bodyatt;
+              %secur; >
+
+
+
+<!--**********************************************************************
+    * Define Element tgroup (Table Group) containing:-                   *
+    *  colspec  - Optional   Repeatable  contains No Other Tags.         *
+    *  spanspec - Optional   Repeatable  contains No Other Tags.         *
+    *  thead    - Optional   Single      contains colspec, row.          *
+    *  tfoot    - Optional   Single      contains colspec, row.          *
+    *  tbody    - Mandatory  Single      contains row.                   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  cols     - NUMBER   - REQUIRED - The number of distinct columns.  *
+    *  tgstyle  - NMTOKEN  - IMPLIED  - A unique table group style.      *
+    *  colsep   - NUMBER   - IMPLIED  - Internal Column rulings.         *
+    *           - "0"      - Do Not display internal column rulings.     *
+    *           - "1"      - Display internal column rulings.            *
+    *  rowsep   - NUMBER   - IMPLIED  - Internal Row rulings.            *
+    *           - "0"      - Do Not display internal row rulings.        *
+    *           - "1"      - Display internal row rulings.               *
+    *  align    - Declared - "left"   - Text horizontal position within  *
+    *                        the column (or portion controlled by this   *
+    *                        tgroup.                                     *
+    *           - "left"   - Quad (flush) left.                          *
+    *           - "center" - Centered.                                   *
+    *           - "right"  - Quad (flush) right.                         *
+    *           - "justify"- Both quad left and quad right.              *
+    *           - "char"   - Align on leftmost of char, position be      *
+    *                        charoff.                                    *
+    *  charoff  - NUTOKEN  - IMPLIED  - The percent of the current width *
+    *                        to the left of the (left edge of) the       *
+    *                        alignment character, eg "50".               *
+    *  char     - CDATA    - IMPLIED  - The value is the alignment       *
+    *                        character on which entries controlled by    *
+    *                        this tgroup are aligned.                    *
+    ********************************************************************** -->
+
+<!ELEMENT tgroup - O (colspec*,spanspec*,thead?,tfoot?,tbody) >
+<!ATTLIST tgroup
+              cols         NUMBER         #REQUIRED
+              tgstyle      NMTOKEN        #IMPLIED
+              colsep       %yesorno;      #IMPLIED
+              rowsep       %yesorno;      #IMPLIED
+              align        (left | right | center | justify | char )
+                                         "left"
+              charoff      NUTOKEN        #IMPLIED
+              char         CDATA          #IMPLIED >
+<!-- Redefinition of attributes charoff and char from DEFAULT to IMPLIED -->
+
+
+
+<!--**********************************************************************
+    * Define Element colspec (Column Specification) containing:-         *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute List:-                                                   *
+    *  colnum   - NUMBER   - IMPLIED  - This identifies the number of    *
+    *                        the column counting from 1 at left of table.*
+    *  colname  - NMTOKEN  - IMPLIED  - Name of the column.              *
+    *  align    - Declared - "left"   - Text horizontal position within  *
+    *                        the column (or portion controlled by this   *
+    *                        tgroup.                                     *
+    *           - "left"   - Quad (flush) left.                          *
+    *           - "center" - Centered.                                   *
+    *           - "right"  - Quad (flush) right.                         *
+    *           - "justify"- Both quad left and quad right.              *
+    *           - "char"   - Align on leftmost of char, position be      *
+    *                        charoff.                                    *
+    *  charoff  - NUTOKEN  - IMPLIED  - The percent of the current width *
+    *                        to the left of the (left edge of) the       *
+    *                        alignment character, eg "50".               *
+    *  char     - CDATA    - IMPLIED  - The value is the alignment       *
+    *                        character on which entries are aligned.     *
+    *  colwidth - CDATA    - IMPLIED  - Width of the column.             *
+    *  colsep   - NUMBER   - IMPLIED  - Internal Column rulings.         *
+    *           - "0"      - Do Not display internal column rulings.     *
+    *           - "1"      - Display internal column rulings.            *
+    *  rowsep   - NUMBER   - IMPLIED  - Internal Row rulings.            *
+    *           - "0"      - Do Not display internal row rulings.        *
+    *           - "1"      - Display internal row rulings.               *
+    ********************************************************************** -->
+
+<!ELEMENT colspec   - O       EMPTY >
+<!ATTLIST colspec
+              colnum       NUMBER         #IMPLIED
+              colname      NMTOKEN        #IMPLIED
+              align        (left | right | center | justify | char)
+                                          #IMPLIED
+              charoff      NUTOKEN        #IMPLIED
+              char         CDATA          #IMPLIED
+              colwidth     CDATA          #IMPLIED
+              colsep       %yesorno;      #IMPLIED
+              rowsep       %yesorno;      #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element spanspec (Span Column Specification) containing:-   *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  namest   - NMTOKEN  - REQUIRED - Name of the left most column of  *
+    *                        the span.                                   *
+    *  nameend  - NMTOKEN  - REQUIRED - Name of the right most column of *
+    *                        the span.                                   *
+    *  spanname - NMOTKEN  - REQUIRED - Name of the horizontal span.     *
+    *  align    - Declared - "left"   - Text horizontal position within  *
+    *                        the column.                                 *
+    *           - "left"   - Quad (flush) left.                          *
+    *           - "center" - Centered.                                   *
+    *           - "right"  - Quad (flush) right.                         *
+    *           - "justify"- Both quad left and quad right.              *
+    *           - "char"   - Align on leftmost of char, position be      *
+    *                        charoff.                                    *
+    *  charoff  - NUTOKEN  - IMPLIED  - The percent of the current width *
+    *                        to the left of the (left edge of) the       *
+    *                        alignment character, eg "50".               *
+    *  char     - CDATA    - IMPLIED  - The value is the alignment       *
+    *                        character on which entries are aligned.     *
+    *  colsep   - NUMBER   - IMPLIED  - Internal Column rulings.         *
+    *           - "0"      - Do Not display internal column rulings.     *
+    *           - "1"      - Display internal column rulings.            *
+    *  rowsep   - NUMBER   - IMPLIED  - Internal Row rulings.            *
+    *           - "0"      - Do Not display internal row rulings.        *
+    *           - "1"      - Display internal row rulings.               *
+    ********************************************************************** -->
+
+<!ELEMENT spanspec  - O       EMPTY >
+<!ATTLIST spanspec
+              namest       NMTOKEN        #REQUIRED
+              nameend      NMTOKEN        #REQUIRED
+              spanname     NMTOKEN        #REQUIRED
+              align        (left | right | center | justify |char)
+                                          "center"
+              charoff      NUTOKEN        #IMPLIED
+              char         CDATA          #IMPLIED
+              colsep       %yesorno;      #IMPLIED
+              rowsep       %yesorno;      #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element thead (Table Header) containing:-                   *
+    *  colspec  - Optional   Repeatable  contains No Other Tags.         *
+    *  row      - Mandatory  Repeatable  contains entry.                 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  valign   - Declared - "bottom" - Text vertical positioning within *
+    *                                   the entries.                     *
+    *           - "top"    - Align text vertically to top of entries.    *
+    *           - "middle" - Approximately vertically centered.          *
+    *           - "bottom" - Align text vertically to bottom of entries. *
+    ********************************************************************** -->
+
+<!ELEMENT thead - O       (colspec*,row+) >
+<!ATTLIST thead
+              valign       (top | middle | bottom)  "bottom" >
+
+
+
+<!--**********************************************************************
+    * Define Element tfoot (Table Footer) containing:-                   *
+    *  colspec  - Optional   Repeatable  contains No Other Tags.         *
+    *  row      - Mandatory  Repeatable  contains entry.                 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  valign   - Declared - "top"    - Text vertical positioning within *
+    *                                   the entries.                     *
+    *           - "top"    - Align text vertically to top of entries.    *
+    *           - "middle" - Approximately vertically centered.          *
+    *           - "bottom" - Align text vertically to bottom of entries. *
+    ********************************************************************** -->
+
+<!ELEMENT tfoot - O       (colspec*,row+) >
+<!ATTLIST tfoot
+              valign       (top | middle | bottom)  "top" >
+
+
+
+<!--**********************************************************************
+    * Define Element tbody (Table Body) containing:-                     *
+    *   row      - Mandatory  Repeatable  contains entry.                *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  valign   - Declared - "top"    - Text vertical positioning within *
+    *                                   the entries.                     *
+    *           - "top"    - Align text vertically to top of entries.    *
+    *           - "middle" - Approximately vertically centered.          *
+    *           - "bottom" - Align text vertically to bottom of entries. *
+    ********************************************************************** -->
+
+<!ELEMENT tbody     - O       (row+) >
+<!ATTLIST tbody
+              valign       (top | middle | bottom)  "top"  >
+
+
+
+<!--**********************************************************************
+    * Define Element row (Row Of Table) containing:-                     *
+    *   entry    - Mandatory  Repeatable  contains para, warning, caution*
+    *                                     note, legend, Defintion stored *
+    *                                     in entity %paracon;            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  rowsep   - NUMBER   - IMPLIED  - Internal Row rulings.            *
+    *           - "0"      - Do Not display internal row rulings.        *
+    *           - "1"      - Display internal row rulings.               *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT row       - O       (entry)+ >
+<!ATTLIST row
+              rowsep       %yesorno;      #IMPLIED
+              %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element entry (Table Entry) containing:-                    *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *   para     - Mandatory  Single      contains Definition stored in  *
+    *                                     entity %paracon;               *
+    *  or                                                                *
+    *   warning  - Mandatory  Single      contains applic, para,         *
+    *                                     Definition stored in entity    *
+    *                                     %list;                         *
+    *  or                                                                *
+    *   caution  - Mandatory  Single      contains applic, para,         *
+    *                                     Definition stored in entity    *
+    *                                     %list;                         *
+    *  or                                                                *
+    *   note     - Mandatory  Single      contains applic, para,         *
+    *                                     Definition stored in entity    *
+    *                                     %list;                         *
+    *  or                                                                *
+    *   legend   - Mandatory  Single      contains deflist.              *
+    *  or                                                                *
+    *   Definition stored in entity %paracon;.                           *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  colname  - NMTOKEN  - IMPLIED  - Column name of entry.            *
+    *                                                                    *
+    * Note.                                                              *
+    *  The following attributes namest and nameend are included for      *
+    * compatibility with MIL-M-28001A. They are not currently applicable *
+    * to S1000D Data Module use.                                         *
+    *                                                                    *
+    *  namest   - NMTOKEN  - IMPLIED  - Name of the left most column of  *
+    *                                   the span.                        *
+    *  nameend  - NMTOKEN  - IMPLIED  - Name of the right most column of *
+    *                                   the span.                        *
+    *  spanname - NMTOKEN  - IMPLIED  - Name of horizontal span.         *
+    *  morerows - NUMBER   - "0"      - Number of additional rows in a   *
+    *                        vertical straddle.                          *
+    *  colsep   - NUMBER   - IMPLIED  - Internal Column rulings.         *
+    *           - "0"      - Do Not display internal column rulings.     *
+    *           - "1"      - Display internal column rulings.            *
+    *  rowsep   - NUMBER   - IMPLIED  - Internal Row rulings.            *
+    *           - "0"      - Do Not display internal row rulings.        *
+    *           - "1"      - Display internal row rulings.               *
+    *  rotate   - NUMBER   - "0"      - Rotation of entry content.       *
+    *           - "0"      - Content is in the orientation of the table. *
+    *           - "1"      - Content is 90 degrees counterclockwise to   *
+    *                        table orientation.                          *
+    *  valign   - Declared - "top"    - Text vertical positioning within *
+    *                                   the entries.                     *
+    *           - "top"    - Align text vertically to top of entries.    *
+    *           - "middle" - Approximately vertically centered.          *
+    *           - "bottom" - Align text vertically to bottom of entries. *
+    *  align    - Declared - IMPLIED  - Text horizontal position within  *
+    *                                   the column.                      *
+    *           - "left"   - Quad (flush) left.                          *
+    *           - "center" - Centered.                                   *
+    *           - "right"  - Quad (flush) right.                         *
+    *           - "justify"- Both quad left and quad right.              *
+    *           - "char"   - Align on leftmost of char, position be      *
+    *                        charoff.                                    *
+    *  charoff  - NUTOKEN  - IMPLIED  - The percent of the current width *
+    *                        to the left of the (left edge of) the       *
+    *                        alignment character, eg "50".               *
+    *  char     - CDATA    - IMPLIED  - The value is the alignment       *
+    *                        character on which entries are aligned.     *
+    *  id       - ID       - IMPLIED  - The unique identifier of this    *
+    *                                   table entry.                     *
+    ********************************************************************** -->
+
+<!ELEMENT entry     - O       (para | warning | caution | note | legend |
+                               %paracon;)+  >
+<!ATTLIST entry
+              colname      NMTOKEN        #IMPLIED
+              namest       NMTOKEN        #IMPLIED
+              nameend      NMTOKEN        #IMPLIED
+              spanname     NMTOKEN        #IMPLIED
+              morerows     NUMBER         "0"
+              colsep       %yesorno;      #IMPLIED
+              rowsep       %yesorno;      #IMPLIED
+              rotate       %yesorno;      "0"
+              valign       (top | bottom | middle)  "top"
+              align        (left | right | center | justify | char)
+                                          #IMPLIED
+              charoff      NUTOKEN        #IMPLIED
+              char         CDATA          #IMPLIED
+              id           ID             #IMPLIED >

@@ -1,0 +1,158 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 1999-41UK: Change type of attribute uom on thi to CDATA.    *
+    * 3. CPF 2000-11D:  Make subelements avehcfg and opndurn optional    *
+    *                   within content model of element pmd.             *
+    * 4. Consistency:   Change declared values of attributes status and  *
+    *                   power from uppercase to lowercase.               *
+    * 5. CPF 2001-74SE: Change declaration of values for attribute uom   *
+    *                   of element thi to %THIUOMS; (decl in S1000D.CFG).*
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % PMDATA PUBLIC                                           *
+    *   "-//S1000D//ELEMENTS Product Management Data 20030531//EN" >     *
+    * %PMDATA;                                                           *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element pmd (Production Management Data) containing:-       *
+    *  thi      - Optional  Repeatable  contains Parsed Character Data.  *
+    *  zone     - Optional  Repeatable  contains Parsed Character Data.  *
+    *  accpnl   - Optional  Repeatable  contains Parsed Character Data.  *
+    *  avehcfg  - Optional  Single      contains jacked, safedev,        *
+    *                                    elecpwr, hydpwr, airpwr, fuel,  *
+    *                                    water, fcposn.                  *
+    *  opndurn  - Optional  Single      contains No Other Tags.          *
+    ********************************************************************** -->
+
+<!ELEMENT pmd - O (thi*, zone*, accpnl*, avehcfg?, opndurn?) >
+<!-- Content model amended by making avehcfg and opndurn optional -->
+
+
+
+<!--**********************************************************************
+    * Define Element thi (Threshold Interval) containing:-               *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom       - %THIUOMS;   - REQUIRED - Unit of Measurement          *
+    *                                       %THIUOMS; decl in S1000D.CFG *
+    ********************************************************************** -->
+
+<!ELEMENT thi - O (#PCDATA) >
+<!ATTLIST thi
+          uom   %THIUOMS; #REQUIRED >
+<!-- Changed declaration of attribute uom -->
+
+
+<!--**********************************************************************
+    * Define Element zone (Zone) containing:-                            *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID     - IMPLIED - Unique identifier of zone           *
+    ********************************************************************** -->
+
+<!ELEMENT zone - O (#PCDATA) >
+<!ATTLIST zone
+            id  ID  #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element accpnl (Access Panel) containing:-                  *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT accpnl - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element avehcfg (All Vehicle Required Conditions)           *
+    * containing:-                                                       *
+    *  jacked   - Mandatory Single  contains No Other Tags.              *
+    *  safedev  - Mandatory Single  contains No Other Tags.              *
+    *  elecpwr  - Mandatory Single  contains No Other Tags.              *
+    *  hydpwr   - Mandatory Single  contains No Other Tags.              *
+    *  airpwr   - Mandatory Single  contains No Other Tags.              *
+    *  fuel     - Mandatory Single  contains No Other Tags.              *
+    *  water    - Mandatory Single  contains No Other Tags.              *
+    *  fcposn   - Mandatory Single  contains No Other Tags.              *
+    ********************************************************************** -->
+
+<!ELEMENT avehcfg - O
+           (jacked, safedev, elecpwr, hydpwr, airpwr, fuel, water, fcposn) >
+
+
+
+<!--**********************************************************************
+    * Define Elements                                                    *
+    * jacked   - Jacked                                                  *
+    * safedev  - Safety devices                                          *
+    * elecpwr  - Electrical power                                        *
+    * hydpwr   - Hydraulic power                                         *
+    * airpwr   - Air power                                               *
+    * fuel     - Fuel                                                    *
+    * water    - Water                                                   *
+    * fcposn   - Flight control position                                 *
+    *  containing:-                                                      *
+    * No Other Tags.                                                     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  status    - Declared      - REQUIRED - Status of vehicle          *
+    *                                         configuration criteria     *
+    *              - "yes"         - Obligation                          *
+    *              - "no"          - Prohibited                          *
+    *              - "indiffer"    - Indifferent                         *
+    *              - "na"          - Not Applicable                      *
+    *  power     - Declared      - REQUIRED - Power source               *
+    *              - "engine"      - Engine                              *
+    *              - "apu"         - APU                                 *
+    *              - "external"    - External                            *
+    *              - "internal"    - Internal                            *
+    *              - "indifferent" - Indifferent                         *
+    *              - "notapplic"   - Not Applicable                      *
+    ********************************************************************** -->
+
+<!ELEMENT (jacked | safedev | elecpwr | hydpwr | airpwr | fuel | water |
+           fcposn) - O EMPTY >
+<!ATTLIST (jacked | safedev | elecpwr | hydpwr | airpwr | fuel | water |
+           fcposn)
+          status (yes | no | indiffer | na) #REQUIRED
+          power  (engine | apu | external | internal | indifferent | 
+                  notapplic)                #REQUIRED >
+<!-- Changed declared values of attributes status and power from 
+     uppercase to lowercase.  -->
+
+
+<!--**********************************************************************
+    * Define Element opndurn (Operation Duration) containing:-           *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  prelreqs - CDATA  - REQUIRED  - Duration of preliminary           *
+    *                                  requirements (manhours)           *
+    *  proced   - CDATA  - REQUIRED  - Duration of procedure (manhours)  *
+    *  closeup  - CDATA  - REQUIRED  - Duration of close-up requirements *
+    *                                  (manhours)                        *
+    *  id       - ID     - IMPLIED   - Unique identifier of Operation    *
+    *                                  Duration                          *
+    ********************************************************************** -->
+
+<!ELEMENT opndurn - O EMPTY >
+<!ATTLIST opndurn
+          prelreqs CDATA  #REQUIRED
+          proced   CDATA  #REQUIRED
+          closeup  CDATA  #REQUIRED
+          id       ID     #IMPLIED >

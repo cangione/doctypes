@@ -1,0 +1,1247 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. New public identifier.                                          *
+    * 2. Attribute uom removed from various elements for consistency     *
+    *    reasons.                                                        *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % WRNGFLDS PUBLIC                                         *
+    *   "-//S1000D//ELEMENTS WRNGFLDS Breakdown 20030531//EN" >          *
+    * %WRNGFLDS;                                                         *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing:- wrngflds. *
+    ********************************************************************** -->
+
+<!ENTITY % CONTENT "wrngflds">
+
+
+<!--**********************************************************************
+    * Define Entity %DSCDECL; (Description and Declaration) containing:- *
+    *  fldname    - Mandatory Single   contains   Parsed Character Data. *
+    *  dscr       - Optional  Single   contains   Parsed Character Data. *
+    *  refs       - Optional  Single   contains   norefs, rdandrt,       *
+    *                                             refdms, reftp.         *
+    ********************************************************************** -->
+
+<!ENTITY % DSCDECL "fldname, dscr?, refs?">
+
+
+<!--**********************************************************************
+    * Define Element wrngflds (Wiring Data Description/Fields Container) *
+    * containing:-                                                       *
+    *  dsc.wires      - Optional  Single   contains dsc.circode,         *
+    *                                       dsc.wireno, dsc.secid,       *
+    *                                       dsc.wiretype, dsc.wiregauge, *
+    *                                       dsc.harnid, dsc.emc-code,    *
+    *                                       dsc.length, dsc.colour,      *
+    *                                       dsc.twist, dsc.coax,         *
+    *                                       dsc.triax, dsc.signal,       *
+    *                                       dsc.rfd, dsc.contact,        *
+    *                                       dsc.wireconcode,             *
+    *                                       dsc.netanacode, dsc.screen,  *
+    *                                       dsc.pre, dsc.fin, dsc.rpc,   *
+    *                                       dsc.routing, dsc.wireroute,  *
+    *                                       dsc.restriction,             *
+    *                                       dsc.fdescref, dsc.illref.    *
+    *  dsc.harness    - Optional  Single   contains dsc.harnid, dsc.pnr, *
+    *                                       dsc.altpnr, dsc.mfc,         *
+    *                                       dsc.harnvar, dsc.harnissue,  *
+    *                                       dsc.illref, dsc.routing,     *
+    *                                       dsc.rpc, dsc.fdescref.       *
+    *  dsc.elecequip  - Optional  Single   contains dsc.rfd, dsc.pnr,    *
+    *                                       dsc.instloc, dsc.accdopl,    *
+    *                                       dsc.assy, dsc.nhassy,        *
+    *                                       dsc.illref, dsc.fdescref,    *
+    *                                       dsc.sbc, dsc.equdescref,     *
+    *                                       dsc.sibplugid, dsc.trl,      *
+    *                                       dsc.clc, dsc.rpc.            *
+    *  dsc.stdparts   - Optional  Single   contains dsc.connector,       *
+    *                                       dsc.vpart, dsc.accessory,    *
+    *                                       dsc.solder-sleeve,           *
+    *                                       dsc.shrink-sleeve,           *
+    *                                       dsc.ident-sleeve,            *
+    *                                       dsc.conduit, dsc.wire-mat.   *
+    ********************************************************************** -->
+
+<!ELEMENT wrngflds - - (dsc.wires?, dsc.harness?, dsc.elecequip?, 
+                        dsc.stdparts?)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.wires (Wire Data/Field Descriptions)            *
+    * containing:-                                                       *
+    *  dsc.circode     - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.wireno      - Mandatory Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.secid       - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.wiretype    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.wiregauge   - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.harnid      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.emc-code    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.length      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.colour      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.twist       - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.coax        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.triax       - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.signal      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.rfd         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.contact     - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.wireconcode - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.netanacode  - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.screen      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.pre         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.fin         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.rpc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.routing     - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.wireroute   - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.restriction - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.fdescref    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.illref      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    ********************************************************************** -->
+
+<!ELEMENT dsc.wires - - (dsc.circode?, dsc.wireno, dsc.secid?, 
+                         dsc.wiretype?, dsc.wiregauge?, dsc.harnid?, 
+                         dsc.emc-code?, dsc.length?, dsc.colour?, 
+                         dsc.twist?, dsc.coax?, dsc.triax?, dsc.signal?, 
+                         dsc.rfd?, dsc.contact?, dsc.wireconcode?, 
+                         dsc.netanacode?, dsc.screen?, dsc.pre?, dsc.fin?,
+                         dsc.rpc?, dsc.routing?, dsc.wireroute?, 
+                         dsc.restriction?, dsc.fdescref?, dsc.illref?)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.routing (Routing Description) containing:-      *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.routing - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.wireroute (Wire Route Lane Code Description)    *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.wireroute - - (%DSCDECL;)>
+
+<!--**********************************************************************
+    * Define Element dsc.restriction (Wire Restriction Description)      *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.restriction - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.screen (Screening Description) containing:-     *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.screen - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.fin (Finish Description) containing:-           *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.fin - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.pre (Preparation Description) containing:-      *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.pre - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.contact (Contact Description) containing:-      *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.contact - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.wireconcode (Wire Connection Code Description)  *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.wireconcode - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.netanacode (Network Analysis Code Description)  *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.netanacode - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.rfd (Reference Designator Description)          *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.rfd - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.length (Length Description) containing:-        *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.length - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.harnid (Harness Identification Description)     *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.harnid - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.colour (Colour Description) containing:-        *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.colour - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.emc-code (EMC-Code Description) containing:-    *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.emc-code - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.wiretype (Wire Type Description) containing:-   *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.wiretype - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.secid (Section Identification Description)      *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.secid - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.wireno (Wire Number Description)                *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.wireno - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.circode (Circuit Code Description)              *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.circode - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.wiregauge (Wire Gauge Description)              *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.wiregauge - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.twist (Twist Description) containing:-          *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.twist - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.coax (Coax Description) containing:-            *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.coax - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.triax (Triax Description) containing:-          *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.triax - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.signal (Signal Description) containing:-        *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.signal - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.illref (Illustration Reference Description)     *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.illref - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.harness (Harness Data/Field Descriptions)       *
+    * containing:-                                                       *
+    *  dsc.harnid      - Mandatory Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.pnr         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.altpnr      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mfc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.harnvar     - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.harnissue   - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.routing     - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.rpc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.fdescref    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.illref      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    ********************************************************************** -->
+
+<!ELEMENT dsc.harness - - (dsc.harnid, dsc.pnr?, dsc.altpnr?, dsc.mfc?, 
+                           dsc.harnvar?, dsc.harnissue?, dsc.routing?, 
+                           dsc.rpc?, dsc.fdescref?, dsc.illref?)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.pnr (Part Number Description) containing:-      *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.pnr - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.harnvar (Harness Variant Description)           *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.harnvar - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.harnissue (Harness Issue Description)           *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.harnissue - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.rpc (Responsible Partner Company Description)   *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.rpc - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.elecequip (Equipment Data/Field Descriptions)   *
+    * containing:-                                                       *
+    *  dsc.rfd         - Mandatory Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.pnr         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.altpnr      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mfc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.instloc     - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.accdopl     - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.assy        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.nhassy      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.sbc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.equdescref  - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.sibplugid   - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.trl         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.clc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.rpc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.fdescref    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.illref      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    ********************************************************************** -->
+
+<!ELEMENT dsc.elecequip - - (dsc.rfd, dsc.pnr?, dsc.altpnr?, dsc.mfc?, 
+                             dsc.instloc?, dsc.accdopl?, dsc.assy?, 
+                             dsc.nhassy?, dsc.sbc?, dsc.equdescref?, 
+                             dsc.sibplugid?, dsc.trl?, dsc.clc?, dsc.rpc?, 
+                             dsc.fdescref?, dsc.illref?)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.instloc (Install Location Description)          *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.instloc - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.accdopl (Access Door and Panel Description)     *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.accdopl - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.assy (Assembly Description) containing:-        *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.assy - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.nhassy (Next Higher Assembly Description)       *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.nhassy - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.fdescref (Functional Description Reference      *
+    *                              Description) containing:-             *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.fdescref - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.sbc (System Breakdown Code Description)         *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.sbc - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.equdescref (Equipment Description Reference     *
+    *                                Description) containing:-           *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.equdescref - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.sibplugid (Sibling Plug Identification          *
+    *                               Description) containing:-            *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.sibplugid - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.trl (Transverse Link Description) containing:-  *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.trl - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.clc (Connection List Code Description)          *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.clc - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.stdparts (Standard Parts Data/Field             *
+    *                              Descriptions)                         *
+    * containing:-                                                       *
+    *  dsc.connector     - Optional  Single   contains dsc.pnr,          *
+    *                                          dsc.altpnr, dsc.mfc,      *
+    *                                          dsc.mass, dsc.orientation,*
+    *                                          dsc.assy, dsc.rack,       *
+    *                                          dsc.ccount, dsc.accpnr,   *
+    *                                          dsc.contact, dsc.cdia,    *
+    *                                          dsc.fin, dsc.tplus,       *
+    *                                          dsc.tminus, dsc.sterm,    *
+    *                                          dsc.coax, dsc.triax,      *
+    *                                          dsc.module, dsc.block,    *
+    *                                          dsc.shunt, dsc.fdescref,  *
+    *                                          dsc.illref.               *
+    *  dsc.vpart         - Optional  Single   contains dsc.pnr,          *
+    *                                          dsc.altpnr, dsc.mfc,      *
+    *                                          dsc.csize, dsc.mat,       *
+    *                                          dsc.mass, dsc.colour,     *
+    *                                          dsc.protect, dsc.cdia,    *
+    *                                          dsc.mint, dsc.maxt,       *
+    *                                          dsc.fdescref, dsc.illref. *
+    *  dsc.accessory     - Optional  Single   contains dsc.pnr,          *
+    *                                          dsc.altpnr, dsc.mfc,      *
+    *                                          dsc.mass, dsc.orientation,*
+    *                                          dsc.assy, dsc.fdescref,   *
+    *                                          dsc.illref.               *
+    *  dsc.solder-sleeve - Optional  Single   contains dsc.pnr,          *
+    *                                          dsc.altpnr, dsc.mfc,      *
+    *                                          dsc.length, dsc.mat,      *
+    *                                          dsc.mass, dsc.mind,       *
+    *                                          dsc.maxd, dsc.fdescref,   *
+    *                                          dsc.illref.               *
+    *  dsc.shrink-sleeve - Optional  Single   contains dsc.pnr,          *
+    *                                          dsc.altpnr, dsc.mfc,      *
+    *                                          dsc.size, dsc.mass,       *
+    *                                          dsc.colour, dsc.mind,     *
+    *                                          dsc.maxd, dsc.mint,       *
+    *                                          dsc.maxt, dsc.minh,       *
+    *                                          dsc.maxh, dsc.fdescref,   *
+    *                                          dsc.illref.               *
+    *  dsc.ident-sleeve  - Optional  Single   contains dsc.pnr,          *
+    *                                          dsc.altpnr, dsc.mfc,      *
+    *                                          dsc.length, dsc.mat,      *
+    *                                          dsc.mass, dsc.fdescref,   *
+    *                                          dsc.illref.               *
+    *  dsc.conduit       - Optional  Single   contains dsc.pnr,          *
+    *                                          dsc.altpnr, dsc.mfc,      *
+    *                                          dsc.size, dsc.mass,       *
+    *                                          dsc.colour, dsc.wallthk,  *
+    *                                          dsc.mint, dsc.maxt,       *
+    *                                          dsc.fdescref, dsc.illref. *
+    *  dsc.wire-mat      - Optional  Single   contains dsc.pnr,          *
+    *                                          dsc.altpnr, dsc.mfc,      *
+    *                                          dsc.wiretype,             *
+    *                                          dsc.wiregauge, dsc.core,  *
+    *                                          dsc.size, dsc.mass,       *
+    *                                          dsc.colour,               *
+    *                                          dsc.outjackcol,           *
+    *                                          dsc.outdia, dsc.res,      *
+    *                                          dsc.voltage, dsc.amperage,*
+    *                                          dsc.mint, dsc.maxt,       *
+    *                                          dsc.screencount, dsc.coax,*
+    *                                          dsc.triax, dsc.impedance, *
+    *                                          dsc.freq, dsc.attenuation,*
+    *                                          dsc.fdescref, dsc.illref. *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.stdparts - - (dsc.connector?, dsc.vpart?, dsc.accessory?, 
+                            dsc.solder-sleeve?, dsc.shrink-sleeve?, 
+                            dsc.ident-sleeve?, dsc.conduit?, 
+                            dsc.wire-mat?)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.connector (Connector Data/Field Descriptions)   *
+    * containing:-                                                       *
+    *  dsc.pnr         - Mandatory Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.altpnr      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mfc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mass        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.orientation - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.assy        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.rack        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.ccount      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.accpnr      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.contact     - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.cdia        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.fin         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.tplus       - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.tminus      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.sterm       - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.coax        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.triax       - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.module      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.block       - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.shunt       - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.fdescref    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.illref      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    ********************************************************************** -->
+
+<!ELEMENT dsc.connector - - (dsc.pnr, dsc.altpnr?, dsc.mfc?, dsc.mass?, 
+                             dsc.orientation?, dsc.assy?, dsc.rack?, 
+                             dsc.ccount?, dsc.accpnr?, dsc.contact?, 
+                             dsc.cdia?, dsc.fin?, dsc.tplus?, dsc.tminus?, 
+                             dsc.sterm?, dsc.coax?, dsc.triax?, 
+                             dsc.module?, dsc.block?, dsc.shunt?, 
+                             dsc.fdescref?, dsc.illref?)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.accpnr (Accessory Part Number Description)      *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.accpnr - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.altpnr (Alternative Part Number Description)    *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.altpnr - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.mfc (Manufacturer Code Description)             *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.mfc - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.mass (Mass Description) containing:-            *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.mass - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.orientation (Orientation Description)           *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.orientation - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.rack (Rack Description) containing:-            *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.rack - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.ccount (Contact Count Description)              *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.ccount - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.cdia (Contact Diameter Description)             *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.cdia - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.tplus (Termo Couple Plus Description)           *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.tplus - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.tminus (Termo Couple Minus Description)         *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.tminus - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.sterm (Special Terminals Description)           *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.sterm - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.module (Module Description) containing:-        *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.module - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.block (Block Description) containing:-          *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.block - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.shunt (Shunt Description) containing:-          *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.shunt - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.vpart (Vpart Data/Field Descriptions)           *
+    * containing:-                                                       *
+    *  dsc.pnr         - Mandatory Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.altpnr      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mfc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.csize       - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mat         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mass        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.colour      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.protect     - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.cdia        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mint        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.maxt        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.fdescref    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.illref      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    ********************************************************************** -->
+
+<!ELEMENT dsc.vpart - - (dsc.pnr, dsc.altpnr?, dsc.mfc?, dsc.csize?, 
+                         dsc.mat?, dsc.mass?, dsc.colour?, dsc.protect?, 
+                         dsc.cdia?, dsc.mint?, dsc.maxt?, dsc.fdescref?, 
+                         dsc.illref?)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.csize (Contact Size Description) containing:-   *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.csize - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.protect (Protect Description) containing:-      *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.protect - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.mat (Material Description) containing:-         *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.mat - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.mint (Minimum Temperature Description)          *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.mint - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.maxt (Maximum Temperature Description)          *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.maxt - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.accessory (Accessory Data/Field Descriptions)   *
+    * containing:-                                                       *
+    *  dsc.pnr         - Mandatory Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.altpnr      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mfc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mass        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.orientation - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.assy        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.fdescref    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.illref      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    ********************************************************************** -->
+
+<!ELEMENT dsc.accessory - - (dsc.pnr, dsc.altpnr?, dsc.mfc?, dsc.mass?, 
+                             dsc.orientation?, dsc.assy?, dsc.fdescref?, 
+                             dsc.illref?)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.solder-sleeve (Solder-Sleeve Data/Field         *
+    *                                   Descriptions) containing:-       *
+    *  dsc.pnr         - Mandatory Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.altpnr      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mfc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.length      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mat         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mass        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mind        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.maxd        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.fdescref    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.illref      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    ********************************************************************** -->
+
+<!ELEMENT dsc.solder-sleeve - - (dsc.pnr, dsc.altpnr?, dsc.mfc?, 
+                                 dsc.length?, dsc.mat?, dsc.mass?, 
+                                 dsc.mind?, dsc.maxd?, dsc.fdescref?, 
+                                 dsc.illref?)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.mind (Minimum Diameter Description)             *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.mind - - (%DSCDECL;)>
+
+<!--**********************************************************************
+    * Define Element dsc.maxd (Maximum Diameter Description)             *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.maxd - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.shrink-sleeve (Shrink-Sleeve Data/Field         *
+    *                                   Descriptions) containing:-       *
+    *  dsc.pnr         - Mandatory Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.altpnr      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mfc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.size        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mass        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.colour      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mind        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.maxd        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mint        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.maxt        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.minh        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.maxh        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.fdescref    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.illref      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    ********************************************************************** -->
+
+<!ELEMENT dsc.shrink-sleeve - - (dsc.pnr, dsc.altpnr?, dsc.mfc?, 
+                                 dsc.size?, dsc.mass?,  dsc.colour?, 
+                                 dsc.mind?, dsc.maxd?, dsc.mint?, 
+                                 dsc.maxt?, dsc.minh?, dsc.maxh?, 
+                                 dsc.fdescref?, dsc.illref?)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.size (Size Description) containing:-            *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.size - - (%DSCDECL;)>
+          
+
+<!--**********************************************************************
+    * Define Element dsc.minh (Minimum Harness Size Description)         *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.minh - - (%DSCDECL;)>
+          
+
+<!--**********************************************************************
+    * Define Element dsc.maxh (Maximum Harness Size Description)         *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.maxh - - (%DSCDECL;)>
+          
+
+<!--**********************************************************************
+    * Define Element dsc.ident-sleeve (Ident-Sleeve Data/Field           *
+    *                                  Descriptions) containing:-        *
+    *  dsc.pnr         - Mandatory Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.altpnr      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mfc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.length      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mat         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mass        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.fdescref    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.illref      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    ********************************************************************** -->
+
+<!ELEMENT dsc.ident-sleeve - - (dsc.pnr, dsc.altpnr?, dsc.mfc?, 
+                                dsc.length?, dsc.mat?, dsc.mass?, 
+                                dsc.fdescref?, dsc.illref?)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.conduit (Conduit Data/Field Descriptions)       *
+    * containing:-                                                       *
+    *  dsc.pnr         - Mandatory Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.altpnr      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mfc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.size        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mass        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.colour      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.wallthk     - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mint        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.maxt        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.fdescref    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.illref      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    ********************************************************************** -->
+
+<!ELEMENT dsc.conduit - - (dsc.pnr, dsc.altpnr?, dsc.mfc?, dsc.size?, 
+                           dsc.mass?, dsc.colour?, dsc.wallthk?, 
+                           dsc.mint?, dsc.maxt?, dsc.fdescref?, 
+                           dsc.illref?)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.wallthk (Wall Thickness Description)            *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.wallthk - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.wire-mat (Wire Material Data/Field Descriptions *
+    * containing:-                                                       *
+    *  dsc.pnr         - Mandatory Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.altpnr      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mfc         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.wiretype    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.wiregauge   - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.core        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.size        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mass        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.colour      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.outjackcol  - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.outdia      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.res         - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.voltage     - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.amperage    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.mint        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.maxt        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.screencount - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.coax        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.triax       - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.impedance   - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.freq        - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.attenuation - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.fdescref    - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    *  dsc.illref      - Optional  Single   contains Definition stored   *
+    *                                                in entity %DSCDECL;.*
+    ********************************************************************** -->
+
+<!ELEMENT dsc.wire-mat - - (dsc.pnr, dsc.altpnr?, dsc.mfc?, dsc.wiretype?, 
+                            dsc.wiregauge?, dsc.core?, dsc.size?, 
+                            dsc.mass?, dsc.colour?, dsc.outjackcol?, 
+                            dsc.outdia?, dsc.res?, dsc.voltage?, 
+                            dsc.amperage?, dsc.mint?, dsc.maxt?, 
+                            dsc.screencount?, dsc.coax?, dsc.triax?, 
+                            dsc.impedance?, dsc.freq?, dsc.attenuation?, 
+                            dsc.fdescref?, dsc.illref?)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.core (Core Description) containing:-            *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.core - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.outjackcol (Outer Jacket Colour Description)    *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.outjackcol - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.res (Resistance Description) containing:-       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.res - - (%DSCDECL;)>
+          
+
+<!--**********************************************************************
+    * Define Element dsc.outdia (Outer Diameter Description)             *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.outdia - - (%DSCDECL;)>
+          
+
+<!--**********************************************************************
+    * Define Element dsc.voltage (Voltage Description) containing:-      *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.voltage - - (%DSCDECL;)>
+          
+
+<!--**********************************************************************
+    * Define Element dsc.amperage (Amperage Description) containing:-    *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.amperage - - (%DSCDECL;)>
+          
+
+<!--**********************************************************************
+    * Define Element dsc.screencount (Screen Count Description)          *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.screencount - - (%DSCDECL;)>
+
+
+<!--**********************************************************************
+    * Define Element dsc.impedance (Impedance Description) containing:-  *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.impedance - - (%DSCDECL;)>
+          
+
+<!--**********************************************************************
+    * Define Element dsc.freq (Frequency Description) containing:-       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.freq - - (%DSCDECL;)>
+          
+
+<!--**********************************************************************
+    * Define Element dsc.attenuation (Attenuation Description)           *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DSCDECL;.                            *
+    ********************************************************************** -->
+
+<!ELEMENT dsc.attenuation - - (%DSCDECL;)>
+          
+
+<!--**********************************************************************
+    * Define Element fldname (Data/Field Name) containing:-              *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT fldname - - (#PCDATA)>
+
+
+<!--**********************************************************************
+    * Define Element dscr (Data/Field Description) containing:-          *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT dscr - - (#PCDATA)>

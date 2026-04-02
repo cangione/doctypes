@@ -1,0 +1,16 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                    Publication Module (PM)                         *
+    *                 XML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    *                                                                    *
+    ********************************************************************** -->
+<!DOCTYPE pm PUBLIC "-//S1000D//DTD Publication Module 20030531//EN//XML" 
+  "../dtd/pm.dtd" [
+]>

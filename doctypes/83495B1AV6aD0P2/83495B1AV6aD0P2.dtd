@@ -1,0 +1,1811 @@
+<!-- *****  START OF FILE ***** -->
+<!-- 83495B1AV6aD0P2.dtd
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  DTD TITLE:	General Equipment
+	+
+	+  SPECIFICATION NUMBER:	MIL-PRF-83495B
+	+
+	+  SPECIFICATION POC:	Bill Bates
+	+
+	+  DOCUMENT TYPE DEFINITION (DTD):	83495B1AV6aD0P2.dtd
+	+
+	+  MIL-STANDARD VERSION:	38784STD-BV6a
+	+
+	+  LAST MODIFICATION:	26 May 2004
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+  This file is made available to provide the user with a digital 
+	+  representation of the DTD found in:  Appendix A of MIL-PRF-83495B
+	+  This file is incomplete without MIL-PRF-83495B.
+	+
+	+  The following set of declarations may be referred to by using a
+	+  public entity<!DOCTYPE doc [ as follows:
+	+
+	+  <!ENTITY % m83495ge PUBLIC "-//USA-DOD//DTD 83495B1AV6aD0P2//EN" >
+	+  %m83495ge;
+	+
+	+  NOTE: In order to parse the following DTD subset alone, append
+	+  the following statement to the beginning of the file:
+	+
+	+		<!DOCTYPE doc [
+	+
+	+		and the associated  ]>  to the end of the file.
+	+
+	+  NOTE: The start and end of this file are marked with notations.
+	+  If these notations are not present, the file may not be complete!
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+	AUTHORED BY: Tina Ruble, TMSS, AF TDD SPO
+	+	MODIFIED BY: Tom Patterson, TMSS, AF TDD SPO
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  MODIFICATIONS SINCE PREVIOUS RELEASE:  
+	+                   (previous release:  83495B1AV6aD0P1)
+	+
+	+		None
+	+	
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  -->
+<!-- ENTITY DECLARATIONS -->
+
+<!ENTITY % m38784 PUBLIC "-//USA-DOD//DTD 38784STD-BV6a//EN"> 
+
+<!--CCB #:	83495ge-02352-01-->
+
+<!--CCB #:  83495ge-01276-03-->
+
+<!ENTITY % titles  "title" >
+
+<!--CCB #:  83495ge-01276-03-->
+
+<!--CCB #:  83495ge-01276-02-->
+<!--CCB #:  83495ge-03064-01-->
+<!ENTITY % bodyele "(gendesc?, resvchap*, tlmc?, dimarea?, lsrt?, levweigh?, towtaxi?,
+parkmoor?, placmark?, servicing?, equipstor?, corrctrl?, nondestinsp?, sitinst?,
+useship?, weapinst?, trainequip?, chapter*) " >
+
+<!--ENTITY % frnt "(idinfo, lep, verstat?, contents, illuslist?, 
+tablelist?, foreword, safesum?)" -->
+
+<!ENTITY % chap "(%titles;, (notapplic |  (section, section+) | para0+))" >
+
+<!ENTITY % doc "docge">
+
+<!ENTITY % yesorno "NUMBER" >
+
+<!ENTITY % delstat    "delete  | real | reserve | NA" >
+
+<!ENTITY % status     "empty | deleted | reserved | notapp" >
+
+<!ENTITY % chgatt
+"deltype (%delstat;) #IMPLIED
+inschlvl NMTOKEN #IMPLIED
+delchlvl NMTOKEN #IMPLIED
+status  (%status;) #IMPLIED
+revchg %yesorno; '0'" > 
+
+<!ENTITY % bodyatt
+"label CDATA #IMPLIED
+sssn CDATA #IMPLIED
+indexid  CDATA  #IMPLIED 
+%chgatt;" >
+
+<!ENTITY % verified
+"verdate CDATA #IMPLIED
+verrem CDATA #IMPLIED
+verstatus (unver | ver) 'unver'" >
+
+<!ENTITY % secur "security (u | c | s | n) 'n'" >
+
+<!--CCB# 83495ge-03064-02-->
+<!ENTITY % para0att
+"emergency %yesorno; '0'
+id ID #IMPLIED
+esds %yesorno; '0'
+nsp %yesorno; '0'
+fcp %yesorno; '0'
+hcp %yesorno; '0'
+hci %yesorno; '0'
+ocp %yesorno; '0'
+oci %yesorno; '0'
+applicref IDREFS #IMPLIED
+%verified;
+%secur;
+%bodyatt;
+parastart  NUMBER  #IMPLIED" >
+
+<!ENTITY % chapatt
+"id ID #IMPLIED
+%secur;
+%bodyatt;
+" >
+
+<!--CCB# 83495ge-03064-02-->
+<!ENTITY % sectatt "%chapatt;
+sectstart NUMBER #IMPLIED" >
+
+<!ENTITY % gechapatt 
+	"use %yesorno; '0' 
+	 %chapatt;">
+
+<!-- 
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  DTD TITLE:	General Style and Format
+	+
+	+  SPECIFICATION NUMBER:	MIL-STD-38784
+	+
+	+  SPECIFICATION POC:	Bill Bates
+	+
+	+  DOCUMENT TYPE DEFINITION (DTD):	38784STD-BV6a.dtd
+	+	
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+  This file is made available to provide the user with a digital 
+	+  representation of the DTD found in MIL-STD-38784.
+	+  This file is incomplete without MIL-STD-38784.
+	+
+	+  The following set of declarations may be referred to by using a
+	+  public entity as follows:
+	+
+	+  <!ENTITY % m38784 PUBLIC "-//USA-DOD//DTD 38784STD-BV6a//EN" >
+	+  %m38784;
+	+
+	+  NOTE: In order to parse the following DTD subset alone, append
+	+  the following statement to the beginning of the file:
+	+
+	+		<!DOCTYPE doc [
+	+
+	+		and the associated  ]>  to the end of the file.
+	+
+	+  NOTE: The start and end of this file are marked with notations.
+	+  If these notations are not present, the file may not be complete!
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+	AUTHORED BY: Barbara Jones, TMSS, AF PDSM PO
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  OTHER DTDS NEEDED:		
+	+  	
+	+	NONE	
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  MODIFICATIONS SINCE PREVIOUS RELEASE:  (previous release: 38784STD-BV6.dtd)
+	+	
+     	+	CCB #:	38784std-02268-10
+	+	Description:	Modified the extref element to accomodate
+	+			SGML solution for referencing external
+	+			documents.  Added attributes targetdoc,
+	+			targetid, and displayvalue.
+	+	blj, 02/25/03
+	+ 
+     	+	CCB #:	38784std-03057-19
+	+	Description:	Corrected some syntax errors pertaining
+	+			to missing semi-colons.
+	+	blj, 04/23/03
+	+ 
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  -->
+
+<!-- CCB# 38784std-01276-01 -->
+<!ENTITY % pubatts 	"controlno	CDATA	'00000000'
+			cycle	        CDATA   'new'	
+			chglevel	NUMBER	#IMPLIED
+			initlabel	NUMBER	#IMPLIED
+			initpage	NUMBER	'1'
+			docno		CDATA	#IMPLIED
+			highguid	NUMBER	'0'
+			labelstyle      CDATA   'FAN'" >
+			
+<!ENTITY % yesorno "NUMBER" >
+
+<!-- CCB# 8139-001-03 -->
+<!ENTITY % secur "security (u | c | s | n) 'n'" >
+
+<!ENTITY % verified
+"verdate CDATA #IMPLIED
+verrem CDATA #IMPLIED
+verstatus (unver | ver) 'unver'" >
+
+<!-- CCB# 0292-05 -->
+<!--ENTITY % itemid
+"unit CDATA #IMPLIED
+module CDATA #IMPLIED
+lru CDATA #IMPLIED
+compon CDATA #IMPLIED
+partno CDATA #IMPLIED
+refdes CDATA #IMPLIED" >
+
+<!ENTITY % content
+"skilltrk NMTOKENS #IMPLIED
+contype (desc | proc) #IMPLIED
+assocfig IDREFS #IMPLIED
+assoctab IDREFS #IMPLIED" >
+
+<!ENTITY % db "%itemid; %content;" -->
+
+<!-- CCB# 38784-01165-04 -->
+<!-- CCB# 38784-01080-09 -->
+<!-- CCB# 38784-01122-05 -->
+<!-- CCB# 9141-001-03 -->
+<!ENTITY % docatt
+"docid CDATA #IMPLIED
+docstat (revision | change | prelim | draft | formal) 'prelim'
+verstatpg (ver | unver) 'ver'
+index %yesorno; '0'">
+
+<!ENTITY % delstat    "delete  | real | reserve | NA" >
+
+<!ENTITY % status     "empty | deleted | reserved | notapp" >
+
+<!-- CCB# 98-006-08 -->
+<!ENTITY % chgatt
+"deltype (%delstat;) #IMPLIED
+inschlvl NMTOKEN #IMPLIED
+delchlvl NMTOKEN #IMPLIED
+status  (%status;) #IMPLIED
+revchg %yesorno; '0'" > 
+
+<!-- CCB# 0292-05 -->
+<!ENTITY % bodyatt
+"label CDATA #IMPLIED
+sssn CDATA #IMPLIED
+indexid  CDATA  #IMPLIED 
+%chgatt;" >
+
+<!-- CCB# 1024-03 -->
+<!ENTITY % chapatt
+"id ID #IMPLIED
+%secur;
+%bodyatt;" >
+
+<!ENTITY % sectatt "%chapatt;" >
+
+<!-- * 8139-001-04 * -->
+<!ENTITY % para0att
+"emergency %yesorno; '0'
+id ID #IMPLIED
+esds %yesorno; '0'
+nsp %yesorno; '0'
+fcp %yesorno; '0'
+hcp %yesorno; '0'
+hci %yesorno; '0'
+ocp %yesorno; '0'
+oci %yesorno; '0'
+applicref IDREFS #IMPLIED
+%verified;
+%secur;
+%bodyatt;" >
+
+<!ENTITY % sub1att "%para0att;" >
+
+<!ENTITY % sub2att "%para0att;" >
+
+<!ENTITY % sub3att "%para0att;" >
+
+<!-- CCB# 9141-001-02 -->
+<!-- CCB# 0070-001-01 -->
+<!ENTITY % subatts "%para0att;" >
+
+<!-- CCB# 0342-03 -->
+<!-- CCB# 8364-001-01-->
+<!-- CCB# 0039-001-17 -->
+<!-- CCB# 9141-001-06 -->
+<!ENTITY % graphatt
+"boardno ENTITY #REQUIRED
+graphsty NMTOKEN #IMPLIED
+llcordra CDATA #IMPLIED
+rucordra CDATA #IMPLIED
+reprowid NUTOKEN #IMPLIED
+reprodep NUTOKEN #IMPLIED
+hscale NUMBER #IMPLIED
+vscale NUMBER #IMPLIED 
+scalefit %yesorno; #IMPLIED
+hplace (left | right | center) #IMPLIED
+vplace (top | middle | bottom) #IMPLIED
+coordst CDATA #IMPLIED
+coordend CDATA #IMPLIED
+color %yesorno; '0'
+icon (yes|no) 'no'">
+ 
+<!-- CCB# 0292-05 -->
+<!-- CCB# 1024-03 -->
+<!-- CCB# 8139-001-04 -->
+<!ENTITY % stepatt
+"label CDATA #IMPLIED
+sssn CDATA #IMPLIED
+id ID #IMPLIED
+esds %yesorno; '0'
+nsp %yesorno; '0'
+fcp %yesorno; '0'
+hcp %yesorno; '0'
+hci %yesorno; '0'
+ocp %yesorno; '0'
+oci %yesorno; '0'
+applicref IDREFS #IMPLIED
+%chgatt;">
+
+<!ENTITY % entryatt
+"colname NMTOKEN #IMPLIED
+spanname NMTOKEN #IMPLIED
+id ID #IMPLIED
+morerows NUMBER '0'
+colsep %yesorno; #IMPLIED
+rowsep %yesorno; #IMPLIED
+rotate %yesorno; '0'
+valign (top | middle | bottom ) #IMPLIED
+align (left | right | center | justify | char) #IMPLIED
+charoff NUTOKEN #IMPLIED
+char CDATA #IMPLIED" >
+
+<!ENTITY % tabatts
+"tabstyle NMTOKEN #IMPLIED
+frame (top | bottom | topbot | all | sides | none ) 'all'
+colsep %yesorno; '1'
+rowsep %yesorno; '0'
+orient (port | land1 | land2) 'port'
+pgwide %yesorno; '1'
+cellcont (Continued | Cont) 'Continued'
+id ID #IMPLIED
+footnotes (page | end) #IMPLIED
+leftind  CDATA  #IMPLIED  
+rightind CDATA  #IMPLIED
+leftmar  NUTOKEN  #IMPLIED
+rightmar NUTOKEN  #IMPLIED
+topmar   NUTOKEN  #IMPLIED
+botmar   NUTOKEN  #IMPLIED
+mindepth NUTOKEN  #IMPLIED 
+pgdeep  %yesorno;  '0'
+applicref IDREFS #IMPLIED 
+%verified;
+%bodyatt;
+%secur;" >
+
+<!-- CCB# 0292-04 -->
+<!ENTITY % xtabatts
+"tabstyle NMTOKEN #IMPLIED
+cellcont (Continued | Cont) 'Continued'
+id ID #IMPLIED
+footnotes (page | end) #IMPLIED
+applicref IDREFS #IMPLIED 
+%verified;
+%bodyatt;
+%secur;" >
+
+<!-- CCB# 38784-01165-01 -->
+<!-- CCB# 8215-001-04 -->
+<!ENTITY % figatts
+"pgwide %yesorno; '1'
+orient (port | land) 'port'
+id ID #IMPLIED
+applicref IDREFS #IMPLIED
+legend %yesorno; '0'
+%verified;
+%bodyatt;
+%secur;" >
+
+<!-- CCB# 0039-001-12 -->
+<!-- CCB# 0039-001-13 -->
+<!ENTITY % mpl "(ipbfigureno?, ipbfigindex, (partno, ipbpartnosym?, ipbcage, 
+		ipbdesc, ipbunits, ipbuseoncode?, ipbsmrcodes, remarks?)+)+" >
+
+<!ENTITY % mplatts 
+"sepmanual %yesorno; '0'    
+shown %yesorno; '1'     
+attachpart %yesorno; '0'  
+marking %yesorno; '0'    
+kit %yesorno; '0' 
+quickchgexpl %yesorno; '0' " >
+
+<!ENTITY % lineatt 
+"quad (left | center | right | justify) left
+indent CDATA  #IMPLIED " -- specified in ens -- >
+
+<!ENTITY % icon "graphic+, hazmat, seqno" >
+
+<!ENTITY % list "randlist | deflist | seqlist" >
+
+<!-- CCB# 38784-01165-07 -->
+<!-- CCB# 38784-01165-08 -->
+<!-- CCB# 8139-001-04 -->
+<!-- CCB# 9092-001-12 -->
+<!ENTITY % text "(#PCDATA | change | tabmat | ftnref | xref | verbatim | 
+emphasis | applicabil | graphic | extref | dataiden | hcp | hci | esds | 
+nsp | oci | ocp | fcp | acronym | prindex | secindex | nameloc | clink | 
+ilink | object)+" >
+
+<!-- CCB# 9141-001-01 --> 
+<!ENTITY % frnt "idinfo, warnpage?, chginssht?, (lep | vollep), verstat?,
+tpdr?, chgrec?, (contents | volcontents), (illuslist| volilluslist)?, (tablelist
+| voltablelist)?, (foreword | preface | intro), safesum?" > 
+
+<!-- CCB# 38784std-01276-06 --> 
+<!ENTITY % auxfrnt "idinfo, warnpage?, chginssht?, (lep | vollep), verstat?,
+tpdr?, chgrec?, (contents | volcontents), (illuslist| volilluslist)?, (tablelist
+| voltablelist)?, (foreword | preface | intro)?, safesum?" >
+
+<!-- CCB# 38784std-01276-02 -->
+<!-- CCB# 0180-01-17 -->
+<!-- CCB# 9092-001-02 -->
+<!-- CCB# 9141-001-01 -->
+<!ENTITY % idinf "tmidno+,  (chgnum, chgdate, chghistory)?, pretmidno*, volnum?,
+revnum?, doctype, maintlvl?, prtitle, subtitle?, (mfr+,
+contractno+)?, seal?, supersed?, suppl*, effdatenot?, volnot?,
+discl?, distrib, expcont?, destr?, copyright*, cogact?, moveddata?, authnot, downgrd?,
+pubdate" >
+
+<!-- CCB# 9092-001-05 -->
+<!ENTITY % fpi "para0, (para0 | applicdef | symsect | abbrsect |
+internatlstd | lrp | tctolist | ratddesc)*, tmimprep?" >
+
+<!ENTITY % ddchap "dddesc, (ddindex, ddsheet+)?" >
+
+<!ENTITY % rr "appendix*, glossary?, index?, foldsect?" >
+
+<!ENTITY % wcn "warning*, caution?, note?" >
+
+<!ENTITY % titles "title" >
+
+<!ENTITY % cntnt "#PCDATA" >
+
+<!ENTITY % lepcontents "lepentry+">
+
+<!ENTITY % safesum "para0+" >
+
+<!ENTITY % append "%titles;, para0+" >
+
+<!-- CCB# 0135-01-06 -->
+<!ENTITY % glossry "(letter?, glosslist)+" >
+
+<!-- CCB# 38784-01165-01 -->
+<!ENTITY % fig "title, ((subfig, subfig+) | ((graphic, legend?) | figtable)+)" >
+
+<!-- CCB# 0292-11 -->
+<!-- CCB# 9092-001-07 -->
+<!ENTITY % tabl "%titles;, tgroup+" >
+
+<!ENTITY % stepcon "%wcn;, para, note?" >
+
+<!-- CCB# 8139-001-11 -->
+<!ENTITY % bodyele "chapter, chapter+, ipbchap?, ddchapter?" >
+
+<!ENTITY % service "(AF | NAVAIR | NAVSEA | SPAWARS | ARMY | MC | DLA | CG | DOD)" >
+
+<!ENTITY % paracon "(%text; | %list;)+" >
+
+<!-- CCB# 0292-12 -->
+<!ENTITY % nparcon "%titles;, %wcn;, para, note?, (step1, step1+)?" >
+
+<!-- CCB# 38784std-03057-19 -->
+<!-- CCB# 38784std-01276-08 -->
+<!-- CCB# 0292-12 -->
+<!ENTITY % nparcon1 "(%titles;)?, %wcn;, para, note?, (step1, step1+)?" >
+
+<!ENTITY % parazero "%titles;, %wcn;, (para, note?)?, (step1, step1+)?" >
+
+<!ENTITY % chap "%titles;, ((section, section+) | para0+)" >
+
+<!ENTITY % sect "%titles;, para0+" >
+
+<!ENTITY % chgsht "chgnum, address, date, prtitle, effdatenot?, discl?, 
+distrib, expcont?, destr?, chgpara+, chglist, sigblock?" >
+
+<!ENTITY % entry "(%text; | %list; | warning | caution | note )+" >
+
+<!ENTITY % symsect "(%parazero;, subpara1*), (symtitle?, (term, def)+)" >
+
+<!-- CCB# 38784-01165-08 -->
+<!ENTITY % exclus "figure | table | foldout | objmedia" >
+
+<!-- CCB# 38784-01165-08 -->
+<!ENTITY % inclus "figure | table | foldout | objmedia" >
+
+<!-- CCB# 0070-001-06 -->
+<!ENTITY % lrp "%parazero;, subpara1*, lrptable?" >
+
+<!-- CCB# 8139-001-11 -->
+<!ENTITY % ipbforwd "(para0+, ipbmodelcover, ipbserialization?, ipbfinding?, 
+ipbsimassem?, ipbquickchgexpl?, ipbshtnoexpl?, ipbuseonexpl, ipbsmrexpl, 
+ipbhcidesc?, ipbesdsdesc?, ipbpartstd, ipbmfrlist?, para0*)" >
+
+<!-- CCB# 38784std-01276-05 -->
+<!ENTITY % doc "(volume, volume+) | (front, body, rear?)">
+
+<!-- CCB# 99112-00-07 -->
+<!ENTITY expcontnot "This document contains
+technical data whose export is restricted by the Arms Export
+Control Act (Title 22, U.S.C. SEC 2751, <emphasis type='u'>et
+</emphasis> <emphasis type='u'>seq</emphasis>.) or the Export
+Administration Act of 1979, as amended, Title 50, U.S.C., App
+2401 <emphasis type='u'>et</emphasis> <emphasis type='u'>
+seq</emphasis>. Violations of these export laws are subject to
+severe criminal penalties. Disseminate in accordance with 
+provisions of DoD Directive 5230.25." >
+
+<!ENTITY suppnotice "A suitable reference to this supplement will
+be made on the title page of the basic publication." >
+
+<!-- NOTATION DECLARATIONS -->
+<!NOTATION cgm PUBLIC
+ "-//USA-DOD//NOTATION Computer Graphics Metafile//EN" >
+ 
+<!NOTATION cgmbin PUBLIC
+ "ISO 8632/3//NOTATION CGM Binary text encoding//EN" >
+
+<!NOTATION fax PUBLIC
+ "-//USA-DOD//NOTATION CCITT Group 4 Facsimile//EN" >
+
+<!NOTATION faxtile PUBLIC
+ "-//USA-DOD//NOTATION CCITT Group 4 Facsimile Type 2 Tiled Raster//EN" >
+
+<!NOTATION iges PUBLIC
+ "-//USA-DOD//NOTATION Initial Graphics Exchange Specification//EN" >
+
+<!NOTATION epsi	SYSTEM "Encapsulated PostScript Interchange" >
+
+<!NOTATION eps	SYSTEM "Encapsulated PostScript" >
+
+<!NOTATION id	SYSTEM "IslandDraw" >
+
+<!NOTATION tif	SYSTEM "TIFF 5.x" >
+
+<!NOTATION tiff	SYSTEM "TIFF 5.x" >
+
+<!ENTITY % charent PUBLIC "-//JCALS//ENTITIES supported ISO entities v1//EN">
+%charent;
+
+<!-- CCB# 8215-001-02 -->
+<!ENTITY % local-big-symbols "INCLUDE" >
+<!ENTITY % eps-big PUBLIC "-//JCALS//ENTITIES big EPS symbols v1//EN">
+%eps-big;
+
+<!ENTITY % local-small-symbols "INCLUDE" >
+<!ENTITY % eps-sml PUBLIC "-//JCALS//ENTITIES small EPS symbols v1//EN">
+%eps-sml;
+
+<!-- *
+     **************************************************************************
+     *
+     *              ELEMENT and ATTRIBUTE LIST DECLARATIONS
+  -->
+
+<!ELEMENT abbrsect	- o  ((%parazero;, subpara1*), (abbrtitle?, acronymlist)) >
+<!ATTLIST abbrsect	%para0att; >
+
+<!ELEMENT abbrtitle	- o  (%text;)   -(%exclus;) >
+<!ATTLIST abbrtitle	%secur; >
+
+<!ELEMENT acronym	- -  (def, term)   -(acronym | %exclus;) >
+
+<!-- CCB# 0070-001-02 -->
+<!ELEMENT acronymlist	- o  ((term, def)*)   -(acronym | %exclus;) >
+<!ATTLIST acronymlist	rtermwidth NUTOKEN "2.5in" 
+			ltermwidth NUTOKEN "1in"
+			autobuild CDATA #CONREF >
+
+<!ELEMENT activity	- o  (#PCDATA) >
+
+<!ELEMENT address	- o  (%text;) >
+
+<!ELEMENT appendix	- -  (%append;)   +(ftnote | %inclus;) >
+<!ATTLIST appendix	%chapatt; >
+
+<!ELEMENT applic	- o  (term, def) >
+<!ATTLIST applic	id ID #REQUIRED >
+
+<!ELEMENT applicabil	- -  (%text;)   -(applicabil | %exclus;) >
+<!ATTLIST applicabil	applicref IDREFS #REQUIRED
+			%secur; >
+
+<!-- CCB# 38784-01165-04 -->
+<!ELEMENT applicdef	- -  ((%parazero;, subpara1*), (appltitle?, applichd?, applic+)) >
+<!ATTLIST applicdef	rtermwidth NUTOKEN "2.5in"
+			ltermwidth NUTOKEN "1in"
+			%para0att; >
+
+<!ELEMENT applichd	- o  (term, def) >
+
+<!ELEMENT appltitle	- o  (%text;)   -(%exclus;) >
+<!ATTLIST appltitle	%secur; >
+
+<!ELEMENT authnot	- o  (#PCDATA) >
+
+<!ELEMENT auxfront	- -  (%auxfrnt;)   +(ftnote) >
+
+<!-- CCB# 9092-001-14 -->
+<!-- CCB# 8139-001-11 -->
+<!ELEMENT body		- -  (%bodyele;)   +(ftnote) >
+<!ATTLIST body		numcols (1| 2)  #REQUIRED >
+
+<!ELEMENT brk		- o  EMPTY >
+<!ATTLIST brk		type (col | line | npg ) "line" >
+
+<!-- CCB# 0180-01-14 -->
+
+<!ELEMENT caution	- -  (para*)
+			  -(%list; | %exclus; | warning | caution | precaut) >
+<!ATTLIST caution	%chgatt; >
+
+<!ELEMENT change	- -  (%text;)  -(change | %exclus;) >
+<!ATTLIST change	level NMTOKEN #REQUIRED
+			change (add | delete) "add"
+			mark %yesorno; "1"
+			revchg %yesorno; '0'
+			%secur; >
+
+<!ELEMENT chapter	- -  (%chap;)  +(%inclus;) >
+<!ATTLIST chapter	%chapatt; >
+
+<!ELEMENT chgdate	- o  (#PCDATA) >
+
+<!-- CCB# 38784std-01276-04 -->
+<!--ELEMENT chghist	- o  (date+) -->
+
+<!-- CCB# 38784std-01276-03 -->
+<!ELEMENT chghistory	- o  (chginfo*) >
+
+<!-- CCB# 38784std-01276-03 -->
+<!ELEMENT chginfo	- o  (chgtxt?, date) >
+
+<!-- CCB# 38784std-01276-03 -->
+<!ELEMENT chgtxt	- o  (#PCDATA) >
+
+<!ELEMENT chginssht	- o  (%chgsht;) >
+
+<!ELEMENT chglist	- o  (tabmat | (removepg, insertpg)+) >
+
+<!ELEMENT chgpara	- o  (%text;) >
+
+<!ELEMENT chgnum	- o  (#PCDATA) >
+
+<!ELEMENT chgrec	- o  EMPTY >
+
+<!-- CCB# 38784-01165-07 -->
+<!element clink 	- O (#PCDATA) >
+<!attlist clink		HyBase   NAME     #FIXED hylink
+   			HyBnames CDATA    #FIXED "refsub linkend"
+   			anchrole CDATA    #FIXED "refmark refsub #LIST"
+   			anchcstr NAMES    "self required"
+   			linkend  CDATA #IMPLIED >
+   			
+<!-- 9092-001-02 -->
+<!ELEMENT cogact	- o  (#PCDATA) >
+
+<!ELEMENT colspec	- o  EMPTY >
+<!ATTLIST colspec	colname NMTOKEN #IMPLIED
+			colnum  NUMBER  #IMPLIED
+			align (left | right | center | justify | char) #IMPLIED
+			charoff NUTOKEN #IMPLIED
+			char CDATA #IMPLIED
+			leftmar  NUTOKEN  #IMPLIED
+			rightmar NUTOKEN  #IMPLIED
+			topmar   NUTOKEN  #IMPLIED
+			botmar   NUTOKEN  #IMPLIED
+			mindepth NUTOKEN  #IMPLIED
+			colwidth CDATA #IMPLIED
+			colsep %yesorno; #IMPLIED
+			rowsep %yesorno; #IMPLIED >
+
+<!-- CCB# 38784-01165-04 -->
+<!-- CCB# 0292-08 -->
+<!ELEMENT contents	- o  (%cntnt;)>
+<!ATTLIST contents 	autobuild CDATA #CONREF
+			%secur; >
+
+
+<!ELEMENT contractno	- o  (#PCDATA) >
+<!ATTLIST contractno	%secur; >
+
+<!ELEMENT copyright	- o  (#PCDATA) >
+
+<!ELEMENT dataiden	- -  (%text;)   -(dataiden | %exclus;) >
+<!ATTLIST dataiden	type CDATA #REQUIRED
+			%secur; >
+
+<!ELEMENT date		- o  (%text;)   -(%exclus;) >
+
+<!ELEMENT dateinc	- o  (%text;)   -(%exclus;) >
+
+<!ELEMENT ddchapter	- -  (%ddchap;)   +(%inclus;) >
+<!ATTLIST ddchapter	%chapatt; >
+
+<!ELEMENT dddesc	- o  (%parazero;, subpara1*) >
+<!ATTLIST dddesc	%para0att; >
+
+<!ELEMENT ddindex	- o  (%parazero;, subpara1*, ddlist) >
+<!ATTLIST ddindex	%para0att; >
+
+<!ELEMENT ddlist	- o  EMPTY >
+
+<!-- CCB# 38784std-01276-07 -->
+<!ELEMENT ddsheet	- -  ((nomen, (partno+ | modelno+ | typedes+)), para0+) >
+
+<!ELEMENT def		- o  (%text;)   -(%exclus;) >
+<!ATTLIST def		%secur; >
+
+
+<!ELEMENT defhd		- o  (term, def) >
+
+<!ELEMENT deflist	- -  (title?, defhd?, (term, def)+) >
+<!ATTLIST deflist	rtermwidth NUTOKEN "1.9in" 
+			ltermwidth NUTOKEN "0.7in" 
+			%chgatt;
+			%secur; >
+
+
+<!ELEMENT destr		- o  (%text;) >
+
+<!ELEMENT discl		- o  (#PCDATA) >
+<!ATTLIST discl		disclos1 CDATA #IMPLIED >
+
+<!-- CCB# 38784-01066-05 -->
+<!ELEMENT distrib	- o  (#PCDATA) >
+<!ATTLIST distrib	type (A | other) #IMPLIED >
+
+<!-- CCB# 38784std-01276-05 -->
+<!-- CCB# 38784std-01276-01 -->
+<!-- CCB# 38784-01165-07 -->
+<!-- CCB# 9141-001-01 --> 
+<!ELEMENT doc		- -  (%doc;)
+			+(pgbrk | brk | subjinfo | line | modreq | location) >
+<!ATTLIST doc		service %service; #REQUIRED
+			%docatt; 
+			%secur;
+			%pubatts;
+			HyTime NAME #FIXED "HyDoc">
+
+
+<!ELEMENT docpart	- -  ((front | auxfront), body, rear?) >
+<!ATTLIST docpart	%bodyatt; 
+			%secur; > 
+
+<!ELEMENT docpartn	- o  (#PCDATA) >
+
+<!ELEMENT doctype 	- o  (#PCDATA) >
+
+<!ELEMENT downgrd	- o  (phrase | oadr) >
+                                           
+<!ELEMENT ecpno		- o  (%text;)   -(%exclus;) >
+
+<!ELEMENT effdatenot	- o  (#PCDATA) >
+
+<!ELEMENT emphasis	- -  (%text;)   -(emphasis | %exclus;) >
+<!ATTLIST emphasis	type (u|b|bu|i|bi|q|x|o|sup|sub|ui) #REQUIRED
+			fontsize NUTOKEN #IMPLIED 
+			color  (black | white | red | orange | yellow | green |
+				blue | violet | brown | gray) #IMPLIED  >
+
+
+<!ELEMENT entry		- o  (%entry;) >
+<!ATTLIST entry		%entryatt;
+			%secur; >
+
+
+<!-- CCB# 38784-01165-04 --> 
+<!ELEMENT entrytbl	- -  (colspec*, spanspec*, thead?, tbody)  -(entrytbl) >
+<!ATTLIST entrytbl	cols NUMBER #REQUIRED
+			colname NMTOKEN #IMPLIED
+			spanname NMTOKEN #IMPLIED
+			colsep %yesorno; #IMPLIED
+			rowsep %yesorno; #IMPLIED
+			align (left | right | center | justify | char) #IMPLIED
+			charoff NUTOKEN #IMPLIED
+			char CDATA #IMPLIED
+			%secur; >
+
+
+<!ELEMENT esds		- o  EMPTY >
+
+<!ELEMENT expcont	- o  (#PCDATA)   +(emphasis) >
+
+<!-- CCB# 38784std-02268-10 -->
+<!-- CCB# 38784-01165-07 -->
+<!ELEMENT extref	- o  EMPTY >
+<!ATTLIST extref	targetdoc CDATA #REQUIRED
+			targetid CDATA #IMPLIED 
+			displayvalue CDATA #IMPLIED
+			HyTime NAME #FIXED "clink"
+			HyNames NAMES #FIXED "linkend xrefid" >
+
+<!-- CCB# 8139-001-04 -->
+<!ELEMENT fcp		- o EMPTY >
+
+<!-- CCB# 38784-01122-03 -->
+<!ELEMENT figno		- o (#PCDATA) >
+
+<!-- CCB# 0292-11 -->
+<!-- CCB# 9092-001-07 -->
+<!-- CCB# 9092-001-08 -->
+<!-- CCB# 8215-001-04 -->
+<!ELEMENT figtable	- -  (tgroup+)   -(%exclus;) +(tfoot | tfnref | tfndisplay)>
+<!ATTLIST figtable	label CDATA #IMPLIED
+			frame (top | bottom | topbot | all | sides | none) "all"
+			colsep %yesorno; "1"
+			rowsep %yesorno; "0"
+			tbwidth NUTOKEN #IMPLIED
+			tbdepth NUTOKEN #IMPLIED
+			horrefpt (left | right) "left"
+			verrefpt (vtop | vbottom) "vtop"
+			coordst CDATA "0,10000"
+			assocfig IDREF #IMPLIED
+			%chgatt;
+			%secur; >
+
+<!ELEMENT figure	- -  (%fig;)   -(%exclus;) >
+<!ATTLIST figure	%figatts; >
+
+<!-- CCB# 8231-001-01 -->
+<!ELEMENT foldout	- -  (%fig;)   -(%exclus;) >
+<!ATTLIST foldout	pgstyle (11x17 | 11x20.5 | 11x24 | 11x27.5 | 
+				11x31 | 11x34.5 | 11x38 | 11x41.5 | 11x45) #IMPLIED
+			blankapron %yesorno; '1'
+			%figatts; >
+
+<!ELEMENT foldsect	- -  (foldout+) >
+
+<!-- CCB# 0292-08 -->
+<!ELEMENT foreword	- -  (%fpi;)   +(figure | table) >
+
+<!-- CCB# 9092-001-14 -->
+<!ELEMENT front		- -  (%frnt;)   +(ftnote) >
+<!ATTLIST front		t2page %yesorno; "0" 
+			numcols ( 1 | 2 ) #REQUIRED >
+			
+			
+<!ELEMENT ftnote	- -  (%text; | %list;)+  -(ftnote | ftnref | %exclus;) >
+<!ATTLIST ftnote	id ID #REQUIRED
+			%secur; >
+
+<!ELEMENT ftnref	- o  EMPTY >
+<!ATTLIST ftnref	xrefid IDREF #REQUIRED
+			mark (num | sym | alpha) "num" >
+
+<!-- CCB# 0292-08 -->
+<!ELEMENT glossary	- -  (%glossry;) >
+<!ATTLIST glossary	%chgatt; >
+
+<!-- CCB# 0135-01-06 -->
+<!ELEMENT glosslist	- o (letter?, (term, def))+ >
+
+<!ELEMENT graphic	- o  EMPTY >
+<!ATTLIST graphic	%graphatt;
+			%secur; >
+
+<!ELEMENT hazmat	- o  (#PCDATA) >
+<!ATTLIST hazmat	%secur; >
+
+<!-- CCB# 8139-001-04 -->
+<!ELEMENT hci		- o  EMPTY >
+
+<!ELEMENT hcp		- o  EMPTY >
+
+<!ELEMENT icon		- o  (%icon;) >
+<!ATTLIST icon		id ID #IMPLIED >
+
+<!-- CCB# 0292-08 -->
+<!ELEMENT idinfo	- -  (%idinf;) >
+<!ATTLIST idinfo	tmidnolen NUTOKEN "10em">
+
+<!-- CCB# 38784-01165-07 -->
+<!element ilink 	- O (#PCDATA) >
+<!attlist ilink		anchrole CDATA #REQUIRED 
+			linkends IDREFS #REQUIRED >
+
+<!-- CCB# 38784-01122-03 -->
+<!-- CCB# 0292-08 -->
+<!ELEMENT illuslist	- o  (figno, title, pageno)*>
+<!ATTLIST illuslist	autobuild CDATA #CONREF
+			%secur; >
+
+<!-- CCB# 0292-09 -->
+<!-- CCB# 1005-01 -->
+<!-- CCB# 98-007-25 -->
+<!ELEMENT index		- o  (letter?, (prentry, secentry*))+ >
+<!ATTLIST index		autobuild CDATA #CONREF
+			id ID #IMPLIED
+			%secur; >
+
+<!ELEMENT insertpg	- o  (#PCDATA) >
+
+<!-- CCB# 8139-001-01 -->
+<!ELEMENT internatlstd	- o  (%text;) >
+<!ATTLIST internatlstd	%verified;
+			%chgatt; >
+
+<!-- CCB# 0292-08 -->
+<!ELEMENT intro		- -  (%fpi;)   +(figure | table) >
+
+<!ELEMENT ipbchap	- -  (ipbfwordchap, ipbpl, ipbnumindx?, ipbrfdsindx?) >
+<!ATTLIST ipbchap	%chapatt; >
+
+<!-- CCB# 0039-001-06 -->
+<!ELEMENT ipbassy     - o  EMPTY >
+
+<!ELEMENT ipbcage     - o  (%text;) >
+
+
+<!-- CCB# 0039-001-10 -->
+<!-- CCB# 0039-001-13-->
+<!ELEMENT ipbdesc     - o  (nomen, ipbrefdes*, ipbsssn*) >
+
+<!ELEMENT ipbfigindex     - o  (%text;) >
+
+<!-- CCB# 0039-001-12 -->
+<!ELEMENT ipbfigureno     - o  (%text;) >
+
+<!ELEMENT ipbfinding     - o  (%parazero;, subpara1*) >
+<!ATTLIST ipbfinding     %para0att; >
+
+<!ELEMENT ipbgroup10   - o  EMPTY >
+
+<!ELEMENT ipbesdsdesc     - o  (%parazero;, subpara1*) >
+<!ATTLIST ipbesdsdesc     %para0att; >
+
+
+<!ELEMENT ipbhcidesc     - o  (%parazero;, subpara1*) >
+<!ATTLIST ipbhcidesc     %para0att; >
+
+<!ELEMENT ipbfwordchap     - -  (%ipbforwd;)   +(figure | table) >
+<!ATTLIST ipbfwordchap     %chapatt; >
+
+
+<!ELEMENT ipbmfrlist     - o  (%parazero;, subpara1*) >
+<!ATTLIST ipbmfrlist     %para0att; >
+
+
+<!ELEMENT ipbmodelcover     - o  (%parazero;, subpara1*) >
+<!ATTLIST ipbmodelcover     %para0att; >
+
+<!-- CCB# 1024-03 -->
+<!-- CCB# 0292-05 -->
+<!ELEMENT ipbnumindx    - o  (ipbnumgrp)  +(ipbgroup10) >
+<!ATTLIST ipbnumindx    cols (2 | 3) "3"
+                     autobuild NUMBER #CONREF
+                     id ID #IMPLIED
+		     label CDATA #IMPLIED
+		     sssn CDATA #IMPLIED
+		     indexid  CDATA  #IMPLIED
+		     %secur; > 
+
+
+<!ELEMENT ipbnumgrp    - o  ((partno, ipbfigindex)+) >
+
+<!ELEMENT ipbpartname     - o  (%text;) >
+<!ATTLIST ipbpartname     %secur; >
+
+<!-- CCB# 0039-001-08 -->
+<!ELEMENT ipbpartnosym	- o	(#PCDATA) > 
+
+
+<!ELEMENT ipbpartstd     - o  (%parazero;, subpara1*) >
+<!ATTLIST ipbpartstd     %para0att; >
+
+
+<!ELEMENT ipbpl     - -  (ipbplgrp+) +(ipbplbrk)>
+<!ATTLIST ipbpl     %chapatt; >
+
+<!ELEMENT ipbplbrk  - o  EMPTY >
+
+<!-- CCB# 0070-001-04 -->
+<!ELEMENT ipbplgrp    - -  (figure, ipbpl0tbl, ipbuseoncodelist?) >
+
+<!-- CCB# 0070-001-04 -->
+<!ELEMENT ipbpl0tbl   - o  (ipbpl0+) >
+
+<!ELEMENT ipbpl0      - -  (%mpl;, ipbpl1*) >
+<!ATTLIST ipbpl0      %verified;
+                   %bodyatt;
+                   %mplatts; >
+
+
+<!ELEMENT ipbpl1      - o  (%mpl;, ipbpl2*) >
+<!ATTLIST ipbpl1      %mplatts;
+                   %bodyatt; >
+
+
+<!ELEMENT ipbpl2      - o  (%mpl;, ipbpl3*) >
+<!ATTLIST ipbpl2      %mplatts;
+                   %bodyatt; >
+                    
+
+<!ELEMENT ipbpl3     - o  (%mpl;, ipbpl4*) >
+<!ATTLIST ipbpl3     %mplatts;
+                  %bodyatt; >
+
+
+<!ELEMENT ipbpl4      - o  (%mpl;, ipbpl5*) >
+<!ATTLIST ipbpl4      %mplatts;
+                   %bodyatt; >
+
+
+<!ELEMENT ipbpl5      - o  (%mpl;, ipbpl6*) >
+<!ATTLIST ipbpl5      %mplatts;
+                   %bodyatt; >
+
+
+<!ELEMENT ipbpl6      - o  (%mpl;, ipbpl7*) >
+<!ATTLIST ipbpl6      %mplatts;
+                   %bodyatt; >
+
+
+<!ELEMENT ipbpl7      - o  (%mpl;) >
+<!ATTLIST ipbpl7      %mplatts;
+                   %bodyatt; >
+
+
+<!ELEMENT ipbquickchgexpl     - o  (%parazero;, subpara1*) >
+<!ATTLIST ipbquickchgexpl     %para0att; >
+
+
+<!ELEMENT ipbrefdes     - o  (%text;) >
+<!ATTLIST ipbrefdes     %secur; >
+
+
+<!ELEMENT ipbrfdsindx     - o  (ipbrfdsgrp)  +(ipbgroup10) >
+<!ATTLIST ipbrfdsindx     autobuild NUMBER #CONREF 
+                       type (refdes | sssn | both) "refdes"
+                       cols (2 | 3) "3"
+                       %chapatt; >
+
+<!ELEMENT ipbrfdsgrp    -  o  ((ipbrefdes?, ipbsssn?, ipbfigindex)+) >
+
+<!ELEMENT ipbserialization     - o  (%parazero;, subpara1*, ipbsertable) >
+<!ATTLIST ipbserialization     %para0att; >
+
+<!ELEMENT ipbsertable     - -  (title?, (nomen, modelno, serno)+) >
+<!ATTLIST ipbsertable     col1width CDATA "1.75in"
+                       	  col2width CDATA "1.25in" 
+                       	  %xtabatts; >
+
+<!ELEMENT ipbshtnoexpl     - o  (%parazero;, subpara1*) >
+<!ATTLIST ipbshtnoexpl     %para0att; >
+
+
+<!ELEMENT ipbsimassem     - o  (%parazero;, subpara1*) >
+<!ATTLIST ipbsimassem     %para0att; >
+
+
+<!-- CCB# 38784-01129-02 -->
+<!ELEMENT ipbsmrcode     - o  (%text;) >
+
+<!ELEMENT ipbsmrcodes    - o  (ipbsmrcode)+ >
+
+
+<!ELEMENT ipbsmrexpl     - o  (%parazero;, subpara1*) >
+<!ATTLIST ipbsmrexpl     %para0att; >
+
+
+<!ELEMENT ipbsssn     - o  (%text;) >
+<!ATTLIST ipbsssn     %secur; >
+
+<!ELEMENT ipbunits     - o  (%text;) >
+<!ATTLIST ipbunits     %secur; >
+
+<!ELEMENT ipbuseoncode     - o  (%text;) >
+<!ATTLIST ipbuseoncode     %secur; >
+
+
+<!ELEMENT ipbuseoncodelist     - -  (term, def)+   +(note) >
+<!ATTLIST ipbuseoncodelist     %bodyatt; >
+
+
+<!ELEMENT ipbuseonexpl     - o  (%parazero;, subpara1*) >
+<!ATTLIST ipbuseonexpl     %para0att; >
+
+<!ELEMENT item		- o  (%text;)  -(%exclus;) >
+<!ATTLIST item		label CDATA #IMPLIED
+			%secur; >
+			
+<!-- CCB # 0039-001-05 -->
+<!ELEMENT legend	- o (tabmat) >
+		
+<!-- CCB# 98-007-25 -->			
+<!ELEMENT letter	- o (#PCDATA) >
+
+<!-- CCB# 38784std-01276-04 -->
+<!-- CCB# 0292-08 -->
+<!ELEMENT lep		- -  (lepcontents) >  
+ 
+<!ELEMENT lepcontents	- o (%lepcontents;)+ >
+<!ATTLIST lepcontents	autobuild CDATA #CONREF >
+
+<!ELEMENT lepentry	- o (leppage, lepchg) >
+
+<!ELEMENT leppage	- o  (#PCDATA) >
+
+<!ELEMENT lepchg	- o  (#PCDATA) > 
+
+<!ELEMENT line		- -  (%text;) > 
+<!ATTLIST line		prespace   CDATA  #IMPLIED
+			postspace  CDATA  #IMPLIED
+			%lineatt;
+			%chgatt; >
+
+<!ELEMENT location	- o  EMPTY >
+<!ATTLIST location	xrefid IDREF #REQUIRED >
+
+<!ELEMENT lrp		- -  (%lrp;) >
+<!ATTLIST lrp		ltermwidth NUTOKEN "1.63in"
+			rtermwidth NUTOKEN "1.9in"
+			%para0att; >
+
+<!-- CCB# 0070-001-06 -->
+<!-- CCB# 0292-08 -->
+<!ELEMENT lrptable	- o (lrpentry+) >
+<!ATTLIST lrptable	id ID #IMPLIED
+			%bodyatt;
+			%secur; >
+
+
+<!ELEMENT lrpentry	- o  ((partno | (modelno | typedes))*, tmidno+, title) >
+<!ATTLIST lrpentry	id ID #IMPLIED >
+
+<!ELEMENT maintlvl	- o  (#PCDATA) >
+
+<!ELEMENT mfr		- o  (#PCDATA) >
+
+<!ELEMENT modelno	- o  (%text;)   -(%exclus;) >
+<!ATTLIST modelno	%secur; >
+
+<!ELEMENT modreq	- -   (mrinfo?, mrmod, mrrespns?) >
+<!ATTLIST modreq	id  ID  #IMPLIED
+			xref  NMTOKEN  #IMPLIED
+			refpos  (prexref | postxref | xref) "xref"
+			by   CDATA  #REQUIRED
+			date  CDATA  #REQUIRED
+			organiz  NMTOKEN  #IMPLIED
+			orgcat  NMTOKEN  #IMPLIED
+			cmntrcat  NMTOKEN  #IMPLIED
+			priority   (1|2|3|4|5) #IMPLIED
+			category  NMTOKEN  #IMPLIED
+			topic  CDATA  #IMPLIED >
+
+<!-- CCB# 0180-01-17 -->
+<!ELEMENT moveddata	- o  (#PCDATA) >
+
+<!ELEMENT mrchgtxt	- o   ANY >
+<!ATTLIST mrchgtxt	chgloc   NUMBER  #IMPLIED
+			chglen   NUMBER  #IMPLIED
+			action   (insert|delete|replace) "replace" >
+
+<!ELEMENT mrgenmod	- o  (mrpara | mrlist)+>
+
+<!ELEMENT mrinfo	- o   ANY >
+
+<!ELEMENT mrinstr	- o  (mrpara | mrlist)+>
+
+<!ELEMENT mritem	- o  (#PCDATA) >
+
+<!ELEMENT mrlist	- o  (mritem+) >
+
+<!ELEMENT mrmod		- o  (mrreason?, (mrgenmod|(mrinstr?, mrchgtxt))) >
+
+<!ELEMENT mrpara	- o  (#PCDATA) >
+
+<!ELEMENT mrreason	- o  (mrpara | mrlist)+ >
+
+<!ELEMENT mrrespns	- o   (mrpara | mrlist)* >
+<!ATTLIST mrrespns	disposn  NMTOKEN  #IMPLIED
+			status  NMTOKEN  #IMPLIED >
+
+<!-- CCB# 38784-01165-07 -->
+<!element nameloc	- O	(nmlist)* >
+<!attlist nameloc	HyBase   NAME     #FIXED nameloc
+   			id  ID  #IMPLIED >
+
+<!-- CCB# 38784-01165-07 -->
+<!element nmlist	- O	(#PCDATA) >
+<!attlist nmlist	HyBase   NAME     #FIXED nmsploc
+   			impsrc   NAME     #FIXED grovert
+   			HyBnames CDATA    #FIXED "locsrc docorsub
+                             namespc nametype
+                                #MAPTOKEN elements element
+                                #MAPTOKEN entities entity"
+			nametype (entity|element) entity
+			docorsub ENTITY	#IMPLIED
+			notspace NAME ERROR
+			notname NAME ERROR 
+			notprop	NAME ERROR
+			direct (direct|indirect) indirect
+			locsrc CDATA  #IMPLIED
+			cantcnst NAME ERROR >
+
+<!ELEMENT nomen		- o  (%text;)   -(%exclus;) >
+<!ATTLIST nomen		%secur; >
+
+<!ELEMENT none		- o EMPTY >
+
+<!ELEMENT note		- - (para*)  -(%list; | %exclus; | precaut | warning | caution) >
+<!ATTLIST note		%chgatt; >
+
+<!ELEMENT nsn		- o (%text;) >
+
+<!ELEMENT nsp		- o EMPTY >
+
+<!ELEMENT oadr		- o (#PCDATA) >
+
+<!-- CCB# 38784-01165-08 -->
+<!ELEMENT object - o (param*) >
+<!ATTLIST object objectno ENTITY #REQUIRED 
+		 reprowid NUTOKEN #IMPLIED
+		 reprodep NUTOKEN #IMPLIED
+		 type CDATA #IMPLIED
+		 %secur; >
+		 
+<!-- CCB# 38784-01165-08 -->
+<!ELEMENT objmedia - - (%titles;, ((subobjmed, subobjmed+) | object)) -(%exclus;) >
+<!ATTLIST objmedia	id ID #IMPLIED
+			esds %yesorno; '0'
+			nsp %yesorno; '0'
+			fcp %yesorno; '0'
+			hcp %yesorno; '0'
+			hci %yesorno; '0'
+			ocp %yesorno; '0'
+			oci %yesorno; '0'
+			%bodyatt;
+			%secur; >
+			
+<!-- CCB# 8139-001-04 -->
+<!ELEMENT oci		- o EMPTY >
+
+<!-- CCB# 8139-001-04 -->
+<!ELEMENT ocp		- o EMPTY >
+
+<!-- CCB# 38784-01122-03 -->
+<!ELEMENT pageno	- o (#PCDATA) >
+
+<!ELEMENT para		- o (%paracon;) >
+<!ATTLIST para		id ID #IMPLIED
+			xrefid IDREF #IMPLIED
+			%chgatt;
+			%secur; >
+		 
+<!-- CCB# 38784-01165-08 -->
+<!ELEMENT param - o (#PCDATA) >
+
+<!ELEMENT paratitle	- o (#PCDATA)>
+
+<!ELEMENT pgnumber	- o (#PCDATA)>
+
+<!ELEMENT para0		- o  (%parazero;, subpara1*) >
+<!ATTLIST para0		%para0att; >
+
+<!ELEMENT partno	- o  (%text;)   -(%exclus;) >
+<!ATTLIST partno	%secur; >
+
+<!-- CCB# 38784std-01241-04 -->
+<!-- CCB# 38784-01122-13 -->
+<!ELEMENT pgbrk		- o  EMPTY >
+<!ATTLIST pgbrk		pgnum		CDATA 		#IMPLIED
+			pgnumber	CDATA 		#IMPLIED
+			pgdesc 		CDATA		#IMPLIED
+			nxtpgnum	CDATA		#IMPLIED
+			nxtpgdesc	CDATA		#IMPLIED
+			seqnum		CDATA		#IMPLIED
+			prefix		CDATA		#IMPLIED
+			paraflag	%yesorno;	"0" 
+			hyphflag	NUMBER		#IMPLIED 
+			shrink		NUMBER		"100"
+			rectover	NUMBER		#IMPLIED
+			chglevel	CDATA		#IMPLIED
+			security	CDATA		#IMPLIED
+			empty		NUMBER		"0"
+			ignore		CDATA		#IMPLIED
+			chgstatus	CDATA		#IMPLIED
+			prevchgstatus	CDATA		#IMPLIED
+			emergency (0 | 1) #IMPLIED
+			status (%status;) #IMPLIED >
+
+
+
+<!ELEMENT phrase	- o  (#PCDATA) >
+
+<!ELEMENT precaut	- o  (%text;)
+				-(%exclus; | warning | caution | precaut) >
+<!ATTLIST precaut	%secur; >
+
+<!-- CCB# 0292-08 -->
+<!ELEMENT preface	- -  (%fpi;)   +(figure | table) >
+
+<!ELEMENT prentry	- o (topic) -(%exclus;) >
+<!ATTLIST prentry	%secur; >
+
+<!ELEMENT pretmidno     - o  (#PCDATA) >
+<!ATTLIST pretmidno     service %service; #IMPLIED
+                        %secur; >
+
+<!-- CCB# 0342-02 -->
+<!-- CCB# 9092-001-12 -->
+<!ELEMENT prindex	- - (%text;) -(prindex) >
+<!ATTLIST prindex	pridnbr CDATA #IMPLIED
+			%secur; >
+
+<!ELEMENT prtitle	- -  ((nomen, (modelno | partno | typedes | pslist |
+				nsn)+, serno*) | subject) >
+
+<!ELEMENT pslist	- o  (partno, serno+)+ >
+
+<!ELEMENT pubdate	- o  (#PCDATA) >
+
+<!ELEMENT randlist	- -  (title?, item+) >
+<!ATTLIST randlist	prefix CDATA #IMPLIED
+			%chgatt;
+			%secur; >
+
+<!-- CCB# 9092-001-05 -->
+<!ELEMENT ratddesc	- -  ((%parazero;, subpara1*), ratd?)  >
+<!ATTLIST ratddesc	%para0att; >
+
+<!-- CCB# 9092-001-05 -->
+<!-- CCB# 0292-08 -->
+<!ELEMENT ratd		- o (ratdentry+) >
+<!ATTLIST ratd		id ID #IMPLIED
+			%bodyatt;
+			%secur; >
+
+
+<!-- CCB# 9092-001-05 -->
+<!ELEMENT ratdentry	- o ((typeno, date?, title, ecpno?, dateinc?, remarks?)*) >
+<!ATTLIST ratdentry	id ID #IMPLIED
+			%chgatt; >
+
+<!-- CCB# 9092-001-14 -->
+<!ELEMENT rear		- -  (%rr;) >
+<!ATTLIST rear		numcols ( 1 | 2 ) #REQUIRED >
+
+<!ELEMENT remarks	- o  (%text;)   -(%exclus;) >
+<!ATTLIST remarks	%secur; >
+
+
+<!ELEMENT removepg	- o  (#PCDATA) >
+
+<!ELEMENT revnum	- o  (#PCDATA) >
+
+<!ELEMENT row		- o  (entry | entrytbl)+ >
+<!ATTLIST row		rowsep %yesorno; #IMPLIED
+ 			valign (top | bottom | middle) #IMPLIED
+			%secur; >
+
+<!ELEMENT safesum	- -  (%safesum;)
+			+(figure | table | warning | caution | precaut) >
+<!ATTLIST safesum	%para0att; >
+
+<!ELEMENT seal		- o  EMPTY >
+
+<!ELEMENT secentry	- o (topic) -(%exclus;) >
+
+<!-- CCB# 0342-02 -->
+<!-- CCB# 9092-001-12 -->
+<!ELEMENT secindex	- - (%text;) -(secindex) >
+<!ATTLIST secindex	pridnbr CDATA #IMPLIED >
+
+<!ELEMENT section	- -  (%sect;) >
+<!ATTLIST section	%sectatt; >
+
+<!ELEMENT seqlist	- -  (title?, item+) >
+<!ATTLIST seqlist	numstyle (alphauc | alphalc | arabic | romanuc | romanlc) #IMPLIED
+			%chgatt;
+			%secur; >
+
+<!ELEMENT seqno		- o  (#PCDATA) >
+
+<!ELEMENT serno		- o  (%text;)   -(%exclus;) >
+<!ATTLIST serno		%chgatt;
+			%secur; >
+
+<!ELEMENT sigblock	- o  (%text;) >
+
+<!ELEMENT spanspec	- o  EMPTY >
+<!ATTLIST spanspec	namest NMTOKEN #REQUIRED
+			nameend NMTOKEN #REQUIRED
+			spanname NMTOKEN #IMPLIED
+			align (left | right | center | justify | char) "center"
+			charoff NUTOKEN #IMPLIED
+			char CDATA #IMPLIED
+			colsep %yesorno; #IMPLIED
+			rowsep %yesorno; #IMPLIED >
+
+<!ELEMENT step1		- o  (%stepcon;, (step2, step2+)?) >
+<!ATTLIST step1		%stepatt; >
+
+<!ELEMENT step2		- o  (%stepcon;, (step3, step3+)?) >
+<!ATTLIST step2		%stepatt; >
+
+<!ELEMENT step3		- o  (%stepcon;, (step4, step4+)?) >
+<!ATTLIST step3		%stepatt; >
+
+<!ELEMENT step4		- o  (%stepcon;) >
+<!ATTLIST step4		%stepatt; >
+
+<!ELEMENT subfig	- -  ((graphic, legend?) | figtable) >
+<!ATTLIST subfig	orient (port | land1 ) 'port'
+			id ID #IMPLIED
+			label CDATA #IMPLIED
+			%chgatt;
+			%secur; >
+
+<!ELEMENT subject	- o  (#PCDATA) >
+<!ATTLIST subject	%secur; >
+
+<!ELEMENT subjinfo	- o  EMPTY >
+<!ATTLIST subjinfo	subjup CDATA #REQUIRED
+			subjlwr CDATA #REQUIRED
+			infoup CDATA #REQUIRED
+			infolwr CDATA #REQUIRED >
+			
+<!-- CCB# 38784-01165-08 -->
+<!ELEMENT subobjmed - - (object) >
+<!ATTLIST subobjmed	id ID #IMPLIED
+			label CDATA #IMPLIED
+			%chgatt;
+			%secur; >
+			
+<!ELEMENT subpara1	- o  (%nparcon;, subpara2*) >
+<!ATTLIST subpara1	%sub1att; >
+
+<!ELEMENT subpara2	- o  (%nparcon1;, subpara3*) >
+<!ATTLIST subpara2	%sub2att; >
+
+<!-- CCB# 9141-001-02 -->
+<!ELEMENT subpara3	- o  (%nparcon1;, subpara4*) >
+<!ATTLIST subpara3	%sub3att; >
+
+<!-- CCB# 9141-001-02 -->
+<!ELEMENT subpara4	- o  (%nparcon1;, subpara5*) >
+<!ATTLIST subpara4	%subatts; >
+
+<!-- CCB# 0070-001-01 -->
+<!ELEMENT subpara5	- o  (%nparcon1;, subpara6*) >
+<!ATTLIST subpara5	%subatts; >
+ 
+<!ELEMENT subpara6	- o  (%nparcon1;, subpara7*) >
+<!ATTLIST subpara6	%subatts; >
+ 
+<!ELEMENT subpara7	- o  (%nparcon1;, subpara8*) >
+<!ATTLIST subpara7	%subatts; >
+
+<!-- CCB# 38784std-03057-19 -->
+<!ELEMENT subpara8	- o  (%nparcon1;) >
+<!ATTLIST subpara8	%subatts; >
+
+<!ELEMENT subtitle	- o  (#PCDATA) >
+<!ATTLIST subtitle	%secur; >
+
+<!ELEMENT supersed	- o  (#PCDATA) >
+
+<!ELEMENT suppl		- o  (#PCDATA) >
+
+<!ELEMENT symsect	- o  (%symsect;) >
+<!ATTLIST symsect	rtermwidth NUTOKEN "2.75in"
+			ltermwidth NUTOKEN "0.75in"
+			%para0att; >
+
+<!ELEMENT symtitle	- o   (%text;)  -(%exclus;) >
+
+<!-- CCB# 0292-11 -->
+<!-- CCB# 9092-001-08 -->
+<!ELEMENT table		- -  (%tabl;)
+			-(%exclus;) +(tfoot | tfnref | tfndisplay) >
+<!ATTLIST table		%tabatts; >
+
+<!-- CCB# 38784-01122-03 -->
+<!-- CCB# 0292-08 -->
+<!ELEMENT tablelist	- o  (tabno, title, pageno)* >
+<!ATTLIST tablelist	autobuild CDATA #CONREF
+			%secur; >
+
+<!ELEMENT tabmat	- -  (tgroup+)  -(%exclus;) >
+<!ATTLIST tabmat	%tabatts; >
+
+<!-- CCB# 38784-01122-03 -->
+<!ELEMENT tabno		- o (#PCDATA) >
+
+<!ELEMENT tbody		- o  (row+) >
+<!ATTLIST tbody		valign (top | middle | bottom) "top" >
+
+<!ELEMENT tctolist     - -  (%parazero;, subpara1*, tctotbl?) >
+<!ATTLIST tctolist     %para0att; >
+
+<!ELEMENT tctono	- o  (#PCDATA)   -(%exclus;) >
+<!ATTLIST tctono	%chgatt; 
+			%secur; >
+
+<!ELEMENT tctorow	- o  (tctono, title, date) >
+<!ATTLIST tctorow	%chgatt; >
+
+<!--#8299-003-02-->
+<!-- CCB# 0292-08 -->
+<!ELEMENT tctotbl	- -  (tctorow+) >
+<!ATTLIST tctotbl	id ID #IMPLIED
+			%bodyatt;
+			%secur; >
+			
+<!ELEMENT term		- o  (%text;)   -(%exclus;) >
+<!ATTLIST term		%secur; >
+
+<!-- CCB# 9092-001-08 -->
+<!ELEMENT tfoot		- o  (tfnid*)>
+			
+<!ELEMENT tfnid		- o  (#PCDATA)>
+<!ATTLIST tfnid		id  ID  #REQUIRED
+			tfntype  (num | alpha | sym) "num"
+			tfnsymbol CDATA #IMPLIED
+			tfnval  CDATA #IMPLIED  >
+
+<!ELEMENT tfnref	- o   EMPTY >
+<!ATTLIST tfnref	xrefid  IDREF  #REQUIRED >
+
+<!ELEMENT tfndisplay	- o   EMPTY >  
+
+<!-- CCB # 38784-01165-04 -->
+<!ELEMENT tgroup	- o  (colspec*, spanspec*, thead?, tbody) >
+<!ATTLIST tgroup	cols NUMBER #REQUIRED
+		colsep %yesorno; #IMPLIED
+		rowsep %yesorno; #IMPLIED
+		align (left | right | center | justify | char) "left"
+		leftind  CDATA  #IMPLIED  
+		rightind CDATA  #IMPLIED
+		leftmar  NUTOKEN  #IMPLIED
+		rightmar NUTOKEN  #IMPLIED
+		topmar   NUTOKEN  #IMPLIED
+		botmar   NUTOKEN  #IMPLIED
+		mindepth NUTOKEN  #IMPLIED 
+		charoff NUTOKEN #IMPLIED
+		char CDATA #IMPLIED >
+
+<!ELEMENT thead		- o  (colspec*, row+)   -(entrytbl) >
+<!ATTLIST thead		valign (top | middle | bottom) "bottom" >
+
+<!ELEMENT title		- -  (%text;)   -(%exclus;) >
+<!ATTLIST title		%secur; >
+
+<!ELEMENT tmidno	- o  (%text;)   -(%exclus;) >
+<!ATTLIST tmidno	service %service; #IMPLIED
+			%chgatt;
+			%secur; >
+
+<!ELEMENT tmimprep	- -  (%parazero;, subpara1*) >
+<!ATTLIST tmimprep	%para0att; >
+
+<!-- CCB# 0292-09 -->
+<!ELEMENT topic		- o  (%text;)   -(%exclus;) >
+<!ATTLIST topic		page CDATA #IMPLIED >
+
+<!-- CCB # 9092-001-03 -->
+<!ELEMENT tpdr		- o (tpdrtbl | none) >	
+
+<!-- CCB# 0292-08 -->
+<!ELEMENT tpdrtbl	- -  (activity, tpdrno, tpdrlocation)+>
+<!ATTLIST tpdrtbl	id ID #IMPLIED
+			%bodyatt;
+			%secur; >
+
+<!ELEMENT tpdrlocation	- o  (#PCDATA) >
+
+<!ELEMENT tpdrno	- o  (#PCDATA) >
+<!ATTLIST tpdrno	%secur; >
+
+<!ELEMENT typedes	- o  (%text;)   -(%exclus;) >
+<!ATTLIST typedes	%secur; >
+
+<!ELEMENT typeno	- o  (%text;)   -(%exclus;) >
+<!ATTLIST typeno	%secur; >
+
+<!ELEMENT verbatim	- -  CDATA >
+<!ATTLIST verbatim	allowbrk %yesorno; "1"
+			%secur; >
+
+
+<!ELEMENT verstat	- o  (tabmat?) >
+
+<!-- CCB# 9141-001-01 --> 
+<!-- CCB# 0292-08 -->
+<!ELEMENT vollep	- -  (vollepcontents) >  
+
+<!-- CCB# 9141-001-01 --> 
+<!ELEMENT vollepcontents	- o (vollepentry+) >
+<!ATTLIST vollepcontents	autobuild CDATA #CONREF
+				lepcount CDATA #IMPLIED   >
+
+<!-- CCB# 38784-01192-05 -->
+<!ELEMENT vollepentry	- o (volleppage, vollepchg) >
+
+<!ELEMENT volleppage	- o  (#PCDATA) >
+
+<!ELEMENT vollepchg	- o  (#PCDATA) > 
+
+<!ELEMENT volnot	- o  (#PCDATA) >
+
+<!ELEMENT volnum	- o  (#PCDATA) >
+
+<!-- CCB# 9141-001-01 --> 
+<!ELEMENT volume 	- -  ((front | auxfront), body, rear?) >
+<!ATTLIST volume	%bodyatt; 
+			%secur;
+			%docatt;
+			service %service; #REQUIRED
+			volpages %yesorno; "0"
+			resetnbrs %yesorno; "1" > 
+
+<!-- CCB# 38784-01192-05 -->
+<!-- CCB# 9141-001-01 --> 
+<!-- CCB# 0292-08 -->
+<!ELEMENT volcontents	- o  (%cntnt;)>
+<!ATTLIST volcontents 	autobuild CDATA #CONREF >
+			
+<!-- CCB# 38784-01122-03 -->			
+<!-- CCB# 9141-001-01 -->
+<!-- CCB# 0292-08 --> 
+<!ELEMENT volilluslist	- o  (figno, title, pageno)* >
+<!ATTLIST volilluslist	autobuild CDATA #CONREF>
+
+<!-- CCB# 38784-01122-03 -->
+<!-- CCB# 9141-001-01 --> 
+<!-- CCB# 0292-08 -->
+<!ELEMENT voltablelist	- o  (tabno, title, pageno)* >
+<!ATTLIST voltablelist	autobuild CDATA #CONREF >
+
+
+<!ELEMENT warning	- -  (icon?, para*)
+			-(%list; | %exclus; | warning | caution | precaut) >
+<!ATTLIST warning	%chgatt; >
+
+<!-- CCB# 0292-08 -->
+<!ELEMENT warnpage	- o  (wpgentry+) >
+<!ATTLIST warnpage	%chgatt; >
+
+
+<!ELEMENT wpgentry	- o  (title, para+) >
+<!ATTLIST wpgentry	warnbox %yesorno; #IMPLIED
+			%chgatt;
+			titlefont (10pt | 14pt) "14pt"
+			line %yesorno; #IMPLIED >
+
+<!-- CCB# 38784-01165-07 -->
+<!ELEMENT xref		- o  EMPTY >
+<!ATTLIST xref		xrefid IDREF #IMPLIED
+			HyTime NAME #FIXED "clink"
+			HyNames NAMES #FIXED "linkend xrefid">
+						
+
+
+
+
+
+<!-- ************************ END OF FILE ************************** -->
+
+
+
+<!-- ELEMENT and ATTRIBUTE LIST DECLARATIONS -->
+
+<!ELEMENT cables     - o  (%parazero;, subpara1*) >
+<!ATTLIST cables     %para0att; >
+
+
+<!ELEMENT corrctrl     - -  (%chap;)   +(figure | table | foldout) >
+<!ATTLIST corrctrl     %gechapatt; >
+                       
+<!ELEMENT dimarea     - -  (%chap;)  +(figure | table | foldout) >
+<!ATTLIST dimarea     %gechapatt; >
+
+<!--CCB# 83495ge-03064-02-->
+<!ELEMENT docge		- -  ((volume, volume+) | (front, body, rear?))
+			+(pgbrk | brk | subjinfo | line | modreq | location) >
+<!ATTLIST docge 	chapstart NUMBER #IMPLIED >
+
+<!ELEMENT equipstor    - -  (%titles;, (notapplic | (esintro, estemp, esextend)))      
+                            +(figure | table | foldout) >
+<!ATTLIST equipstor     %gechapatt;>
+
+<!ELEMENT esextend     - -  (%titles;, (prepsec, insptreat, removal,
+                             moving)) >
+<!ATTLIST esextend     %sectatt; >
+                     
+<!ELEMENT esintro     - -  (%titles;, (purpose, stortype, geninst, sptteqpt)) >
+<!ATTLIST esintro     %sectatt; >
+                      
+<!ELEMENT estemp     - -  (%titles;, (prepsec, insptreat, removal)) >
+<!ATTLIST estemp     %sectatt; >
+                     
+<!ELEMENT gendesc     - -  (%chap;)	+(figure | table | foldout)>
+<!ATTLIST gendesc     %gechapatt; >
+                      
+<!ELEMENT geninst     - o  (%parazero;, subpara1*) >
+<!ATTLIST geninst     %para0att; >
+
+<!ELEMENT insptreat     - o  (%parazero;, subpara1*) >
+<!ATTLIST insptreat     %para0att; >
+
+<!ELEMENT instlog     - -  (%titles;, (unload, reqeqpt, mheqpt, cables)) >
+<!ATTLIST instlog     %sectatt; >
+
+<!ELEMENT instproc     - -  (%titles;, (instreq, instseq)) >
+<!ATTLIST instproc     %sectatt; >
+
+<!ELEMENT instreq     - o  (%parazero;, subpara1*) >
+<!ATTLIST instreq     %para0att; >
+
+<!ELEMENT instseq     - o  (%parazero;, subpara1*) >
+<!ATTLIST instseq     %para0att; >
+
+<!ELEMENT levweigh     - -  (%chap;)   +(figure | table | foldout)>
+<!ATTLIST levweigh     %gechapatt; >
+                       
+<!ELEMENT lsrt   - -  (%chap;)   +(figure | table | foldout)>
+<!ATTLIST lsrt     %gechapatt; >
+
+<!ELEMENT mheqpt     - o  (%parazero;, subpara1*) >
+<!ATTLIST mheqpt     %para0att; >
+                   
+<!ELEMENT moving     - o  (%parazero;, subpara1*) >
+<!ATTLIST moving     %para0att; >
+
+<!ELEMENT nondestinsp     - -  (%chap;)   +(figure | table | foldout) >
+<!ATTLIST nondestinsp     %gechapatt; >
+
+<!ELEMENT  notapplic - o   EMPTY >
+
+<!ELEMENT parkmoor     - -  (%chap;)   +(figure | table | foldout) >
+<!ATTLIST parkmoor     %gechapatt; >
+                       
+<!ELEMENT placmark     - -  (%chap;)   +(figure | table | foldout) >
+<!ATTLIST placmark     %gechapatt; >
+
+<!ELEMENT prepsec     - o  (%parazero;, subpara1*) >
+<!ATTLIST prepsec     %para0att; >
+
+<!ELEMENT prepship     - -  (%sect;) >
+<!ATTLIST prepship     %sectatt; >
+
+<!ELEMENT prepuse     - -  (%sect;) >
+<!ATTLIST prepuse     %sectatt; >
+
+<!ELEMENT purpose     - o  (%parazero;, subpara1*) >
+<!ATTLIST purpose     %para0att; >
+
+<!ELEMENT removal     - o  (%parazero;, subpara1*) >
+<!ATTLIST removal     %para0att; >
+
+<!ELEMENT reqeqpt     - o  (%parazero;, subpara1*) >
+<!ATTLIST reqeqpt     %para0att; >
+
+<!-- CCB# 83495ge-01276-01 -->
+<!ELEMENT resvchap     - - (%chap;) +(%inclus;)>
+<!ATTLIST resvchap    %gechapatt; >
+   
+<!ELEMENT servicing   - -  (%chap;)   +(figure | table | foldout) > 
+<!ATTLIST servicing     %gechapatt; >
+
+<!ELEMENT sitinst     - -  (%titles;, (notapplic | (instlog, instproc)))      
+                          +(figure | table | foldout) >
+<!ATTLIST sitinst     %gechapatt; >
+
+<!ELEMENT sptteqpt    - o (%parazero;, subpara1*) >
+<!ATTLIST sptteqpt    %para0att; >
+
+<!ELEMENT stortype     - o  (%parazero;, subpara1*) >
+<!ATTLIST stortype     %para0att; >
+
+<!ELEMENT tlmc     - -  (%chap;)  +(figure | table | foldout) >
+<!ATTLIST tlmc     %gechapatt; >
+                   
+
+<!ELEMENT towtaxi     - -  (%chap;)   +(figure | table | foldout)>
+<!ATTLIST towtaxi     %gechapatt; >
+
+<!ELEMENT trainequip      - -  (%chap;)   +(figure | table | foldout)>
+<!ATTLIST trainequip      %gechapatt; >
+
+<!ELEMENT unload      - o  (%parazero;, subpara1*) >
+<!ATTLIST unload     %para0att; >
+                       
+<!ELEMENT useship     - -  (%titles;, (notapplic | (prepuse, prepship)))      
+                          +(figure | table | foldout) >
+<!ATTLIST useship     %gechapatt; >
+
+<!ELEMENT weapinst     - -  (%chap;)   +(figure | table | foldout) >
+<!ATTLIST weapinst     %gechapatt; >
+
+<!-- **************** END OF FILE ********************* -->

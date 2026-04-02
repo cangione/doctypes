@@ -1,0 +1,255 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. Reflect the changes done for the DM DTD.                        *
+    * 3. Change Element zip from mandatory to optional (UK request).     *
+    * 4. Add optional Element postcode (UK request).                     *
+    *====================================================================*
+    * Typical invocation:-                                               *
+    * <!ENTITY % DISPADDR PUBLIC                                         *
+    *  "-//S1000D//ELEMENTS Dispatch Address Details 20030531//EN" >     *
+    * %DISPADDR;                                                         *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Element dispaddr (Sending/Receiving Address Details)        *
+    *  containing:-                                                      *
+    *   enterprise - Mandatory   Single  contains ent-name,division,unit *
+    *   person     - Optional    Single  contains lastname, firstname,   *
+    *                                             jobtitle               *
+    *   address    - Mandatory   Single  contains dept,street,pobox,zip, *
+    *                                    city,country,state,province,    *
+    *                                    building,room,phone,fax,email,  *
+    *                                    internet                        *
+    ********************************************************************** -->
+<!ELEMENT dispaddr - - (enterprise, person?, address) >
+
+
+<!--**********************************************************************
+    * Define Element enterprise (Sending/Receiving Company/Authority     *
+    *                            details) containing:-                   *
+    *   ent-name  - Mandatory    Single  contains Parsed Character Data. *
+    *   division  - Optional     Single  contains Parsed Character Data. *
+    *   ent-unit  - Optional     Single  contains Parsed Character Data. *
+    ********************************************************************** -->
+<!ELEMENT enterprise - O (ent-name, division?, ent-unit?) >
+
+
+<!--**********************************************************************
+    * Define Element ent-name (Sending/Receiving Company's/Authority's   *
+    *                          name, eg "EADS Deutschland")              *
+    *  containing:-                               Parsed Character Data. *
+    ********************************************************************** -->
+<!ELEMENT ent-name - O (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element division (Sending/Receiving Company's/Authority's   *
+    *                          division, eg "Military Aircraft")         *
+    *  containing:-                               Parsed Character Data. *
+    ********************************************************************** -->
+<!ELEMENT division - O (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element ent-unit (Sending/Receiving Company/Authority       *
+    *                          business unit, eg "Customer Support       *
+    *                                               Operations")         *
+    *  containing:-                               Parsed Character Data. *
+    ********************************************************************** -->
+<!ELEMENT ent-unit - O (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element person (Details of receiving/sending person)        *
+    *  containing:-                                                      *
+    *   lastname   - Mandatory  Single   contains Parsed Character Data. *
+    *   firstname  - Optional   Single   contains Parsed Character Data. *
+    *   jobtitle   - Optional   Single   contains Parsed Character Data. *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   prefix  - CDATA - IMPLIED  -      contains name prefix (eg Mr.,  *
+    *                                             Mrs., Dr., Sig., Sen.) *
+    ********************************************************************** -->
+<!ELEMENT person - O (lastname, firstname?, jobtitle?) >
+<!ATTLIST person
+          prefix   CDATA    #IMPLIED >
+
+
+<!--**********************************************************************
+    * Define Element lastname (Person's Last Name) containing:-          *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT lastname - O (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element firstname (Person's First Name) containing:-        *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT firstname - O (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element jobtitle (Person's job title, eg "Tech Pubs         *
+    *                                                  Manager")         *
+    * containing:-                                Parsed Character Data. *
+    ********************************************************************** -->
+<!ELEMENT jobtitle - O (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element address (Receiving/Sending postal address details)  *
+    *  containing:-                                                      *
+    *   dept     - Optional   Single      contains Parsed Character Data.*
+    *   street   - Optional   Single      contains Parsed Character Data.*
+    *   pobox    - Optional   Single      contains Parsed Character Data.*
+    *   zip      - Optional   Single      contains Parsed Character Data.*
+    *   city     - Mandatory  Single      contains Parsed Character Data.*
+    *   postcode - Optional   Single      contains Parsed Character Data.*
+    *   country  - Mandatory  Single      contains Parsed Character Data.*
+    *   state    - Optional   Single      contains Parsed Character Data.*
+    *   province - Optional   Single      contains Parsed Character Data.*
+    *   building - Optional   Single      contains Parsed Character Data.*
+    *   room     - Optional   Single      contains Parsed Character Data.*
+    *   phone    - Optional   Repeatable  contains Parsed Character Data.*
+    *   fax      - Optional   Repeatable  contains Parsed Character Data.*
+    *   email    - Optional   Repeatable  contains Parsed Character Data.*
+    *   internet - Optional   Repeatable  contains Parsed Character Data.*
+    ********************************************************************** -->
+<!ELEMENT address - - (dept?, street?, pobox?, zip?, city, postcode?,
+                       country, state?, province?, building?, room?, 
+                       phone*, fax*, email*, internet*) >
+
+
+<!--**********************************************************************
+    * Define Element dept (Departmental Code, eg "W820", "MB42", etc)    *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT dept - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element street (Street Name/Number, eg "65 Brown Street")   *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT street - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element pobox (P.O. Box or Departmental Post Code,          *
+    *                       eg "W17","801160")                           *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT pobox - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element zip (Zip Code incl Country Identifier if applicable,*
+    *                     eg "D-81663", "F-92552")                       *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT zip - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element city (City Name, eg "Warton", "Munich", "St. Cloud",*
+    *                                    "Glasgow")                      *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT city - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element postcode (UK Post Code, eg "G2 8EX", "BA20 2YB")    *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT postcode - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element country (Country Name, eg "United Kingdom",         *
+    *                                          "Germany", "France")      *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT country - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element state (State Name within Country, eg "England",     *
+    *                                                     "Bavaria")     *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT state - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element province (Province Name within State,               *
+    *                          eg "Lancashire", "Provence")              *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT province - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element building (Building Name/Number, eg "6.C")           *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT building - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element room (Room Number, eg "308") containing:-           *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT room - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element phone (Phone Number) containing:-                   *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT phone - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element fax (Fax Number) containing:-                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT fax - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element email (Email Address) containing:-                  *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT email - O  (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element internet (WWW Address) containing:-                 *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT internet - O  (#PCDATA) >
+
+
+<!--** End of DISPADDR Entity **-->

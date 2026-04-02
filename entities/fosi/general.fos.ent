@@ -1,0 +1,511 @@
+<!-- Fragment document type declaration subset:
+Arbortext, Inc., 1988-2004, v.4002
+<!DOCTYPE OUTSPEC PUBLIC "-//ArborText//DTD OUTPUT SPEC MIL-PRF-28001 REV B AMEND 1 19961231//EN" [
+<!ENTITY changeatts PUBLIC "-//USA-DOD//DTD CHANGEATTS 83495B1BV6aD0P0//EN">
+]>
+-->
+<!--A-->
+<?Pub Caret>
+<e-i-c gi="abbrsect"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist charsubsetref="own-line">
+<usetext source="\Abbreviations\">
+<subchars charsubsetref="own-line prespace.4 postspace.4 quad.left bold">
+</subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="acronymlist"><?Pub Dtl>
+<charlist charsubsetref="own-line"></charlist>
+</e-i-c>
+<!--B-->
+<!--C-->
+<e-i-c gi="change"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist inherit="1"></charlist>
+<att>
+<specval attname="change" attloc="change" attval="delete">
+<charsubset>
+<suppress sup="1"></charsubset>
+</att>
+<att>
+<specval attname="is_later_element_change" attloc="system-func" attval="#EQ#\1\">
+<charsubset>
+<chgmark barthick="2mm" join="1" type="content"></chgmark>
+</charsubset>
+</att>
+</e-i-c>
+<!--D-->
+<!--E-->
+<e-i-c gi="emphasis"><?Pub Lcl _id="f82"><?Pub Dtl>
+<charlist inherit="1"></charlist>
+<att>
+<specval attname="type" attval="u">
+<charsubset><?Pub Dtl>
+<highlt scoring="1" scorespc="1"></charsubset>
+</att>
+<att>
+<specval attname="type" attval="b">
+<charsubset><?Pub Dtl>
+<font weight="bold"></charsubset>
+</att>
+<att>
+<specval attname="type" attval="i">
+<charsubset><?Pub Dtl>
+<font posture="italic"></charsubset>
+</att>
+<att>
+<specval attname="type" attval="bi">
+<charsubset><?Pub Dtl>
+<font posture="italic" weight="bold"></charsubset>
+</att>
+<att>
+<specval attname="type" attval="ui">
+<charsubset><?Pub Dtl>
+<font posture="italic">
+<highlt scoring="1" scorespc="1"></charsubset>
+</att>
+<att>
+<specval attname="type" attval="bu">
+<charsubset><?Pub Dtl>
+<font weight="bold">
+<highlt scoring="1" scorespc="1"></charsubset>
+</att>
+<att>
+<specval attname="type" attval="q">
+<charsubset><?Pub Dtl>
+<usetext source='\"\' placemnt="before"></usetext>
+<usetext source='\"\' placemnt="after"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attval="sub">
+<charsubset><?Pub Dtl>
+<font inherit="1" size="7pt" offset="-1mm"></charsubset>
+</att>
+<att>
+<specval attname="type" attval="sup">
+<charsubset><?Pub Dtl>
+<font inherit="1" size="7pt" offset="1mm"></charsubset>
+</att>
+<att>
+<specval attname="type" attval="x">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset><?Pub Dtl>
+<highlt fontclr="white">
+<boxing toffset=".3mm" boffset=".3mm" loffset=".3mm" roffset=".3mm" inclr="#000000">
+</charsubset>
+</att>
+<att>
+<specval attname="type" attval="x">
+<specval attname="color" attval="black">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset><?Pub Dtl>
+<highlt fontclr="white">
+<boxing toffset=".3mm" boffset=".3mm" loffset=".3mm" roffset=".3mm" inclr="#000000">
+</charsubset>
+</att>
+<att>
+<specval attname="type" attval="x">
+<specval attname="color" attval="blue">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset><?Pub Dtl>
+<highlt fontclr="white">
+<boxing toffset=".3mm" boffset=".3mm" loffset=".3mm" roffset=".3mm" inclr="blue">
+</charsubset>
+</att>
+<att>
+<specval attname="type" attval="x">
+<specval attname="color" attval="brown">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset><?Pub Dtl>
+<highlt fontclr="white">
+<boxing toffset=".3mm" boffset=".3mm" loffset=".3mm" roffset=".3mm" inclr="brown">
+</charsubset>
+</att>
+<att>
+<specval attname="type" attval="x">
+<specval attname="color" attval="gray">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset><?Pub Dtl>
+<highlt fontclr="white">
+<boxing toffset=".3mm" boffset=".3mm" loffset=".3mm" roffset=".3mm" inclr="gray">
+</charsubset>
+</att>
+<att>
+<specval attname="type" attval="x">
+<specval attname="color" attval="green">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset><?Pub Dtl>
+<highlt fontclr="white">
+<boxing toffset=".3mm" boffset=".3mm" loffset=".3mm" roffset=".3mm" inclr="green">
+</charsubset>
+</att>
+<att>
+<specval attname="type" attval="x">
+<specval attname="color" attval="orange">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset><?Pub Dtl>
+<highlt fontclr="white">
+<boxing toffset=".3mm" boffset=".3mm" loffset=".3mm" roffset=".3mm" inclr="orange">
+</charsubset>
+</att>
+<att>
+<specval attname="type" attval="x">
+<specval attname="color" attval="red">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset><?Pub Dtl>
+<highlt fontclr="white">
+<boxing toffset=".3mm" boffset=".3mm" loffset=".3mm" roffset=".3mm" inclr="red">
+</charsubset>
+</att>
+<att>
+<specval attname="type" attval="x">
+<specval attname="color" attval="violet">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset><?Pub Dtl>
+<highlt fontclr="white">
+<boxing toffset=".3mm" boffset=".3mm" loffset=".3mm" roffset=".3mm" inclr="violet">
+</charsubset>
+</att>
+<att>
+<specval attname="type" attval="x">
+<specval attname="color" attval="white">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset><?Pub Dtl>
+<highlt fontclr="black">
+<boxing toffset=".3mm" boffset=".3mm" loffset=".3mm" roffset=".3mm" inclr="white">
+</charsubset>
+</att>
+<att>
+<specval attname="type" attval="x">
+<specval attname="color" attval="yellow">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset><?Pub Dtl>
+<highlt fontclr="black">
+<boxing toffset=".3mm" boffset=".3mm" loffset=".3mm" roffset=".3mm" inclr="yellow">
+</charsubset>
+</att>
+<att>
+<specval attname="type" attval="o">
+<charsubset><?Pub Dtl>
+<boxing toffset=".3mm" btype="bblank" ltype="lblank" rtype="rblank"></charsubset>
+</att>
+</e-i-c>
+<!--F-->
+<e-i-c gi="figure"><?Pub Lcl _id="f197"><?Pub Dtl>
+<charlist charsubsetref="own-line prespace.4 postspace.4">
+<enumerat increm="1" enumid="fignum.cnt">
+<usetext source="\FIGURE \,chapnum.txt,\-\,fignum.cnt,5mm,figtitle.txt" placemnt="after">
+<subchars charsubsetref="own-line quad.centre postspace.7">
+<font weight="bold">
+<keeps prev="7"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="id" attloc="figure" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\(figure \,chapnum.txt,\-\,fignum.cnt,\)\"></charsubset>
+</att>
+</e-i-c>
+<!--G-->
+<!--H-->
+<!--I-->
+<e-i-c gi="item" context="randlist"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist charsubsetref="own-line prespace.4">
+<indent inherit="1" leftind="@5mm" firstln="@">
+<usetext source="\&ndash;\,@5mm"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="item" context="seqlist"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist charsubsetref="own-line prespace.4">
+<indent inherit="1" leftind="@5mm" firstln="@"></charlist>
+<att>
+<specval attname="numstyle" attloc="seqlist" attval="alphalc">
+<charsubset>
+<enumerat increm="1" enumid="seqlistalphalc.cnt">
+<usetext source="seqlistalphalc.cnt,\.\,@5mm"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="numstyle" attloc="seqlist" attval="alphauc">
+<charsubset>
+<enumerat increm="1" enumid="seqlistalphauc.cnt">
+<usetext source="seqlistalphauc.cnt,\.\,@5mm"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="numstyle" attloc="seqlist" attval="arabic">
+<charsubset>
+<enumerat increm="1" enumid="seqlistarabic.cnt">
+<usetext source="seqlistarabic.cnt,\.\,@5mm"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="numstyle" attloc="seqlist" attval="romanlc">
+<charsubset>
+<enumerat increm="1" enumid="seqlistromanlc.cnt">
+<usetext source="seqlistromanlc.cnt,\.\,@5mm"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="numstyle" attloc="seqlist" attval="romanuc">
+<charsubset>
+<enumerat increm="1" enumid="seqlistromanuc.cnt">
+<usetext source="seqlistromanuc.cnt,\.\,@5mm"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="numstyle" attloc="seqlist" attval="#NONE">
+<charsubset>
+<enumerat increm="1" enumid="seqlistalphalc.cnt">
+<usetext source="seqlistalphalc.cnt,\.\,@5mm"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<!--J-->
+<!--K-->
+<!--L-->
+<e-i-c gi="line" context="note"><?Pub Lcl _id="f1">
+<charlist inherit="1" charsubsetref="own-line prespace.2">
+<indent inherit="1" leftind="@8mm" rightind="@10mm" firstln="@8mm">
+<keeps keep="1" prev="1"></charlist>&changeatts;
+</e-i-c>
+<!--M-->
+<!--N-->
+<!--O-->
+<e-i-c gi="own-line.fmt"><?Pub Lcl _id="f131"><?Pub Dtl>
+<charlist>
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="own-line1.fmt"><?Pub Lcl _id="f131"><?Pub Dtl>
+<charlist charsubsetref="prespace.4">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<!--P-->
+<e-i-c gi="para0" context="chapter"><?Pub Lcl _id="f105"><?Pub Dtl>
+<charlist charsubsetref="own-line prespace.4">
+<enumerat increm="1" enumid="para0.cnt"></charlist>
+</e-i-c>
+<e-i-c gi="para"><?Pub Lcl _id="f101"><?Pub Dtl>
+<charlist charsubsetref="postspace.4"></charlist>
+</e-i-c>
+<!--Q-->
+<!--R-->
+<e-i-c gi="randlist"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist inherit="1" charsubsetref="own-line postspace.4">
+<indent inherit="1" leftind="@10mm" rightind="0" firstln="*"></charlist>
+</e-i-c>
+<!--S-->
+<e-i-c gi="seqlist"><?Pub Dtl>
+<charlist inherit="1" charsubsetref="own-line postspace.4">
+<indent inherit="1" leftind="@10mm" rightind="0" firstln="*">
+<reset resetlist="seqlistalphalc.cnt">
+<reset resetlist="seqlistalphauc.cnt">
+<reset resetlist="seqlistarabic.cnt">
+<reset resetlist="seqlistromanlc.cnt">
+<reset resetlist="seqlistromanuc.cnt"></charlist>
+</e-i-c>
+<e-i-c gi="subpara1" context="chapter"><?Pub Lcl _id="f216"><?Pub Dtl>
+<charlist charsubsetref="own-line">
+<enumerat increm="1" enumid="subpara1.cnt">
+<reset resetlist="subpara2.cnt"></charlist>
+</e-i-c>
+<e-i-c gi="subpara2" context="chapter"><?Pub Lcl _id="f216"><?Pub Dtl>
+<charlist charsubsetref="own-line prespace.4">
+<enumerat increm="1" enumid="subpara2.cnt">
+<reset resetlist="subpara3.cnt"></charlist>
+</e-i-c>
+<e-i-c gi="subpara3" context="chapter"><?Pub Lcl _id="f216"><?Pub Dtl>
+<charlist charsubsetref="own-line">
+<enumerat increm="1" enumid="subpara3.cnt">
+<reset resetlist="subpara4.cnt"></charlist>
+</e-i-c>
+<e-i-c gi="subpara4" context="chapter"><?Pub Lcl _id="f216"><?Pub Dtl>
+<charlist charsubsetref="own-line">
+<enumerat increm="1" enumid="subpara4.cnt">
+<reset resetlist="subpara5.cnt"></charlist>
+</e-i-c>
+<e-i-c gi="subpara5" context="chapter"><?Pub Lcl _id="f216"><?Pub Dtl>
+<charlist charsubsetref="own-line">
+<enumerat increm="1" enumid="subpara5.cnt">
+<reset resetlist="subpara6.cnt"></charlist>
+</e-i-c>
+<e-i-c gi="subpara6" context="chapter"><?Pub Lcl _id="f216"><?Pub Dtl>
+<charlist charsubsetref="own-line">
+<enumerat increm="1" enumid="subpara6.cnt">
+<reset resetlist="subpara7.cnt"></charlist>
+</e-i-c>
+<e-i-c gi="subpara7" context="chapter"><?Pub Lcl _id="f216"><?Pub Dtl>
+<charlist charsubsetref="own-line">
+<enumerat increm="1" enumid="subpara7.cnt">
+<reset resetlist="subpara8.cnt"></charlist>
+</e-i-c>
+<e-i-c gi="subpara8" context="chapter"><?Pub Lcl _id="f216"><?Pub Dtl>
+<charlist charsubsetref="own-line">
+<enumerat increm="1" enumid="subpara8.cnt"></charlist>
+</e-i-c>
+<!--T-->
+<e-i-c gi="table"><?Pub Lcl _id="f220"><?Pub Dtl>
+<charlist charsubsetref="own-line quad.centre prespace.4 postspace.4">
+<enumerat increm="1" enumid="tabnum.cnt"></charlist>
+<att>
+<fillval attname="id" attloc="table" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\(table \,chapnum.txt,\-\,tabnum.cnt,\)\"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="term"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist>
+<usetext source="\ (\" placemnt="before"></usetext>
+<usetext source="\)\" placemnt="after"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="title" context="chapter" occur="first"><?Pub Dtl>
+<charlist charsubsetref="own-line postspace.4 bold allcaps">
+<font size="13">
+<quadding quad="center" lastquad="lcenter">
+<keeps next="1">
+<savetext textid="toc.app" conrule="<own-line1.fmt>,<toccol1.fmt>,sectnum.cnt,</toccol1.fmt>,<toccol2.fmt>,<upcase.fmt>,#CONTENT,</upcase.fmt>,5mm,dotfill,</toccol2.fmt>,<toccol3.fmt>,chapnum.txt,\&ndash;\,bodyfolio.txt[BO],</toccol3.fmt>,</own-line1.fmt>"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="figure"><?Pub Lcl _id="f1"><?Pub Dtl>
+<charlist>
+<suppress sup="1">
+<savetext textid="figtitle.txt" conrule="#CONTENT">
+<savetext textid="loi.app" conrule="<own-line.fmt>,<loicol1.fmt>,chapnum.txt,\-\,fignum.cnt,</loicol1.fmt>,<loicol2.fmt>,figtitle.txt,5mm,dotfill,</loicol2.fmt>,<loicol3.fmt>,chapnum.txt,\&ndash;\,bodyfolio.txt[BO],</loicol3.fmt>,</own-line.fmt>"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="para0 * body"><?Pub Lcl _id="f229"><?Pub Dtl>
+<charlist charsubsetref="own-line postspace.4 bold allcaps">
+<font size="13">
+<quadding quad="left" lastquad="lleft">
+<keeps next="1">
+<usetext source="chapnum.cnt,\-\,para0.cnt,5mm" placemnt="before"></usetext>
+<savetext textid="toc.app" conrule="<own-line.fmt>,<toccol1.fmt>,</toccol1.fmt>,<toccol2.fmt>,chapnum.cnt,\-\,para0.cnt,5mm,<upcase.fmt>,#CONTENT,</upcase.fmt>,5mm,dotfill,</toccol2.fmt>,<toccol3.fmt>,chapnum.txt,\&ndash;\,bodyfolio.txt[BO],</toccol3.fmt>,</own-line.fmt>"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="subpara1 * body"><?Pub Lcl _id="f231"><?Pub Dtl>
+<charlist charsubsetref="end-line prespace-med.4 postspace.4 bold">
+<font size="10pt">
+<quadding quad="left" lastquad="lleft">
+<keeps next="1">
+<usetext source="chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,5mm" placemnt="before">
+</usetext>
+<usetext source="5mm" placemnt="after"></usetext>
+<savetext textid="toc.app" conrule="<own-line.fmt>,<toccol1.fmt>,</toccol1.fmt>,<toccol2.fmt>,chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,5mm,#CONTENT,5mm,dotfill,</toccol2.fmt>,<toccol3.fmt>,chapnum.txt,\&ndash;\,bodyfolio.txt[BO],</toccol3.fmt>,</own-line.fmt>"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="subpara2 * body"><?Pub Lcl _id="f231"><?Pub Dtl>
+<charlist charsubsetref="end-line prespace-med.4 postspace.4 bold">
+<font size="10pt">
+<quadding quad="left" lastquad="lleft">
+<keeps next="1">
+<usetext source="chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,5mm"
+placemnt="before"></usetext>
+<usetext source="5mm" placemnt="after"></usetext>
+<savetext textid="toc.app" conrule="<own-line.fmt>,<toccol1.fmt>,</toccol1.fmt>,<toccol2.fmt>,chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,5mm,#CONTENT,5mm,dotfill,</toccol2.fmt>,<toccol3.fmt>,chapnum.txt,\&ndash;\,bodyfolio.txt[BO],</toccol3.fmt>,</own-line.fmt>"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="subpara3 * body"><?Pub Lcl _id="f231"><?Pub Dtl>
+<charlist charsubsetref="end-line prespace-med.4 postspace.4 bold">
+<font size="10pt">
+<quadding quad="left" lastquad="lleft">
+<keeps next="1">
+<usetext source="chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,\.\,subpara3.cnt,5mm"
+placemnt="before"></usetext>
+<usetext source="5mm" placemnt="after"></usetext>
+<savetext textid="toc.app" conrule="<own-line.fmt>,<toccol1.fmt>,</toccol1.fmt>,<toccol2.fmt>,chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,\.\,subpara3.cnt,5mm,#CONTENT,5mm,dotfill,</toccol2.fmt>,<toccol3.fmt>,chapnum.txt,\&ndash;\,bodyfolio.txt[BO],</toccol3.fmt>,</own-line.fmt>"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="subpara4 * body"><?Pub Lcl _id="f231"><?Pub Dtl>
+<charlist charsubsetref="end-line prespace-med.4 postspace.4 bold">
+<font size="10pt">
+<quadding quad="left" lastquad="lleft">
+<keeps next="1">
+<usetext source="chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,\.\,subpara3.cnt,\.\,subpara4.cnt,5mm"
+placemnt="before"></usetext>
+<usetext source="5mm" placemnt="after"></usetext>
+<savetext textid="toc.app" conrule="<own-line.fmt>,<toccol1.fmt>,</toccol1.fmt>,<toccol2.fmt>,chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,\.\,subpara3.cnt,\.\,subpara4.cnt,5mm,#CONTENT,5mm,dotfill,</toccol2.fmt>,<toccol3.fmt>,chapnum.txt,\&ndash;\,bodyfolio.txt[BO],</toccol3.fmt>,</own-line.fmt>"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="subpara5 * body"><?Pub Lcl _id="f231"><?Pub Dtl>
+<charlist charsubsetref="end-line prespace-med.4 postspace.4 bold">
+<font size="10pt">
+<quadding quad="left" lastquad="lleft">
+<keeps next="1">
+<usetext source="chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,\.\,subpara3.cnt,\.\,subpara4.cnt,\.\,subpara5.cnt,5mm"
+placemnt="before"></usetext>
+<usetext source="5mm" placemnt="after"></usetext>
+<savetext textid="toc.app" conrule="<own-line.fmt>,<toccol1.fmt>,</toccol1.fmt>,<toccol2.fmt>,chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,\.\,subpara3.cnt,\.\,subpara4.cnt,\.\,subpara5.cnt,5mm,#CONTENT,5mm,dotfill,</toccol2.fmt>,<toccol3.fmt>,chapnum.txt,\&ndash;\,bodyfolio.txt[BO],</toccol3.fmt>,</own-line.fmt>"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="subpara6 * body"><?Pub Lcl _id="f231"><?Pub Dtl>
+<charlist charsubsetref="end-line prespace-med.4 postspace.4 bold">
+<font size="10pt">
+<quadding quad="left" lastquad="lleft">
+<keeps next="1">
+<usetext source="chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,\.\,subpara3.cnt,\.\,subpara4.cnt,\.\,subpara5.cnt,\.\,subpara6.cnt,5mm"
+placemnt="before"></usetext>
+<usetext source="5mm" placemnt="after"></usetext>
+<savetext textid="toc.app" conrule="<own-line.fmt>,<toccol1.fmt>,</toccol1.fmt>,<toccol2.fmt>,chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,\.\,subpara3.cnt,\.\,subpara4.cnt,\.\,subpara5.cnt,\.\,subpara6.cnt,5mm,#CONTENT,5mm,dotfill,</toccol2.fmt>,<toccol3.fmt>,chapnum.txt,\&ndash;\,bodyfolio.txt[BO],</toccol3.fmt>,</own-line.fmt>"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="subpara7 * body"><?Pub Lcl _id="f231"><?Pub Dtl>
+<charlist charsubsetref="end-line prespace-med.4 postspace.4 bold">
+<font size="10pt">
+<quadding quad="left" lastquad="lleft">
+<keeps next="1">
+<usetext source="chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,\.\,subpara3.cnt,\.\,subpara4.cnt,\.\,subpara5.cnt,\.\,subpara6.cnt,\.\,subpara7.cnt,5mm"
+placemnt="before"></usetext>
+<usetext source="5mm" placemnt="after"></usetext>
+<savetext textid="toc.app" conrule="<own-line.fmt>,<toccol1.fmt>,</toccol1.fmt>,<toccol2.fmt>,chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,\.\,subpara3.cnt,\.\,subpara4.cnt,\.\,subpara5.cnt,\.\,subpara6.cnt,\.\,subpara7.cnt,5mm,#CONTENT,5mm,dotfill,</toccol2.fmt>,<toccol3.fmt>,chapnum.txt,\&ndash;\,bodyfolio.txt[BO],</toccol3.fmt>,</own-line.fmt>"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="subpara8 * body"><?Pub Lcl _id="f231"><?Pub Dtl>
+<charlist charsubsetref="own-line prespace-med.4 postspace.4 bold">
+<font size="10pt">
+<quadding quad="left" lastquad="lleft">
+<keeps next="1">
+<usetext source="chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,\.\,subpara3.cnt,\.\,subpara4.cnt,\.\,subpara5.cnt,\.\,subpara6.cnt,\.\,subpara7.cnt,\.\,subpara8.cnt,5mm"
+placemnt="before"></usetext>
+<savetext textid="toc.app" conrule="<own-line.fmt>,<toccol1.fmt>,</toccol1.fmt>,<toccol2.fmt>,chapnum.cnt,\-\,para0.cnt,\.\,subpara1.cnt,\.\,subpara2.cnt,\.\,subpara3.cnt,\.\,subpara4.cnt,\.\,subpara5.cnt,\.\,subpara6.cnt,\.\,subpara7.cnt,\.\,subpara8.cnt,5mm,#CONTENT,5mm,dotfill,</toccol2.fmt>,<toccol3.fmt>,chapnum.txt,\&ndash;\,bodyfolio.txt[BO],</toccol3.fmt>,</own-line.fmt>"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="table"><?Pub Dtl>
+<charlist>
+<savetext textid="lot.app" conrule="<own-line.fmt>,<loicol1.fmt>,chapnum.txt,\-\,fignum.cnt,</loicol1.fmt>,<loicol2.fmt>,#CONTENT,5mm,dotfill,</loicol2.fmt>,<loicol3.fmt>,chapnum.txt,\&ndash;\,bodyfolio.txt[BO],</loicol3.fmt>,</own-line.fmt>"
+append="1">
+<usetext source="\TABLE \,chapnum.txt,\-\,tabnum.cnt,5mm" placemnt="before">
+<subchars>
+<font weight="bold">
+<keeps next="7"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset>
+<usetext source="\TABLE \,chapnum.txt,\-\,tabnum.cnt,5mm,#CONTENT,\ - cont\"
+placemnt="after">
+<subchars charsubsetref="own-line quad.centre">
+<font weight="bold">
+<keeps next="7">
+<float flidref="tablecont" width="col" scope="table" pagetype="next"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<!--U-->
+<e-i-c gi="upcase.fmt"><?Pub Dtl>
+<charlist inherit="1">
+<highlt allcap="1"></charlist>
+</e-i-c>
+<!--V-->
+<!--W-->
+<!--X-->
+<e-i-c gi="xref"><?Pub Lcl _id="f436"><?Pub Dtl>
+<charlist></charlist>
+<att>
+<fillval attname="xrefid" fillcat="usetext" fillchar="source"></att>
+</e-i-c>
+<!--Y-->
+<!--Z-->
+<?Pub *0000020466>

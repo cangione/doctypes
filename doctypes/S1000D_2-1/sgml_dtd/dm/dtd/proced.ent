@@ -1,0 +1,148 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2002-38SE: Replace call of entity %EXTSPEC; by call of      *
+    *                   %WCNP; due to deletion of element specpara.      * 
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % PROCED                                                  *
+    *   PUBLIC "-//S1000D//ELEMENTS Procedural Breakdown 20030531//EN" > *
+    * %PROCED;                                                           *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing:- proced.   *
+    ********************************************************************** -->
+
+<!ENTITY % CONTENT "proced" >
+
+
+
+<!--**********************************************************************
+    * Define Element proced (Procedural Information) containing:-        *
+    *   prelreqs - Mandatory  Single     contains pmd, reqcond, reqpers, *
+    *                                     supequip, supplies, spares,    *
+    *                                     safety.                        *
+    *   mainfunc - Mandatory  Single     contains step1.                 *
+    *   closeup  - Mandatory  Single     contains noclose, step1, refs.  *
+    ********************************************************************** -->
+
+<!ELEMENT proced - O (prelreqs,mainfunc,closeup) >
+
+
+
+<!--**********************************************************************
+    * Call the Preliminary Requirements Public Text.                     *
+    * The formal public identifier is stored in the entity %PRELREQ;     *
+    ********************************************************************** -->
+
+%PRELREQ;
+
+
+
+<!--**********************************************************************
+    * Define Element mainfunc (Maintenance Function) containing:-        *
+    *   step1    - Mandatory Repeatable  contains Definition stored in   *
+    *                                    entity %stepcon;, step2.        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    **********************************************************************
+    * INCLUSION:- figure, foldout, table.                                *
+    ********************************************************************** -->
+
+<!ELEMENT mainfunc - O (step1+)   +(figure | foldout | table) >
+<!ATTLIST mainfunc
+            %bodyatt; >
+
+
+
+<!--**********************************************************************
+    *  Define Element closeup (Close up procedures) containing:-         *
+    *   noclose - Mandatory  Single    contains No Other Tags.           *
+    * or                                                                 *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *   step1   - Mandatory Single     contains Definition stored in     *
+    *                                   entity %stepcon;, step2.         *
+    * or                                                                 *
+    *   refs    - Mandatory Single     contains norefs, rdandrt, refdms, *
+    *                                   reftp.                           *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    **********************************************************************
+    * INCLUSION:- figure, foldout, table.                                *
+    ********************************************************************** -->
+
+<!ELEMENT closeup - O (noclose | (step1 | refs)+)
+           +(figure | foldout | table) >
+<!ATTLIST closeup
+            %bodyatt; >
+
+
+
+<!--**********************************************************************
+    *  Define Element noclose (No Close Up procedures) containing:-      *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+
+<!ELEMENT noclose - O EMPTY >
+
+
+
+<!--**********************************************************************
+    * Call the Steps Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTSTEP;     *
+    ********************************************************************** -->
+
+%EXTSTEP;
+
+
+
+<!--**********************************************************************
+    * Call the Lists Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTLIST;     *
+    ********************************************************************** -->
+
+%EXTLIST;
+
+
+
+<!--**********************************************************************
+    * Call the Figure And Table Public Text.                             *
+    * The formal public identifier is stored in the entity %EXTFTAB;     *
+    ********************************************************************** -->
+
+%EXTFTAB;
+
+
+
+<!--**********************************************************************
+    * Call the Warning, Caution, Note, Para Public Text.                 *
+    * The formal public identifier is stored in the entity %WCNP;        *
+    ********************************************************************** -->
+
+%WCNP;
+<!-- Call of entity %EXTSPEC; replaced by call of %WCNP; due to deletion
+     of element specpara.  -->
+
+
+
+<!--**********************************************************************
+    * Call the Caption Group Public Text.                                *
+    * The formal public identifier is stored in the entity %CAPGRP;      *
+    ********************************************************************** -->
+
+%CAPGRP;

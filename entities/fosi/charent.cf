@@ -1,0 +1,1126 @@
+#
+# charent.cf
+#
+# File charent.cf specifies how XML or SGML character entities are to be handled
+# in Epic.  Starting with the Epic 4.3 release, it should only be rarely necessary
+# to make changes to this configuration file. 
+#
+# This file is designed to work for both the Windows and Unix versions of Epic.
+# The primary difference affecting entities between these platforms is with fonts:
+#
+#   - with Windows, all fonts are unicode-based Truetype fonts, which meshes nicely
+#     with Epic's native unicode font model.  charent.cf gets involved in cases
+#     where a character entity (for a special symbol for example) specifies that
+#     a particular type of font be activated in order to allow printing of a
+#     character entity.
+#
+#   - with Unix, the font support is via PostScript fonts which are still primarily
+#     8-bit (256-character) fonts.  Therefore there is a complication where in many
+#     cases characters with unicode indexes greater than 255 must be remapped into
+#     a lower index.  This file specifies those mappings.
+# 
+# Character entities are one of three types:  char, accent, or tieaccent.
+#
+# Initially, type is set to accent.  The type is changed by entering one of the 
+# three type directives, starting in column 1:
+#
+#    accents:
+#    tieaccents:
+# or chars:
+#
+# "accent" means that the entity is only a diacritical mark which must be used in
+#          conjunction with a character.  In some cases, Epic builds certain
+#          accented character combinations for cases in which no normal unicode
+#          character exists.
+#
+# "tieaccent" indicates that the accent is a double-wide character which applies 
+#             to the two preceding characters.
+#
+# "char" means a complete character or symbol, which may or may not itself
+#        have a diacritic.  For example, acute is an accent, but eacute is a char. 
+#
+# Entity names which are entered in XML like "&eacute;" should be entered in the
+# tables below without the & and ; delimiters.
+#
+# Characterset, below, defines the entity's character set and must be one 
+# of the following:
+#
+#               current         - use the current font's character set
+#               unicode         - unicode character set 
+#               ascii           - ascii character set
+#               ps_ascii        - postscript ascii character set (same as ascii)
+#               ps_symbol       - postscript symbol font character (Windows and Unix)
+#               symbol          - same as ps_symbol
+#               zapfdingbats    - ZapfDingbats symbol font (PostScript)
+#               wingdings       - WingDings symbol font (Windows)
+#
+#               iso8859-1       - ISO Latin 1 character set
+#               iso8859-2       - ISO Latin 2 character set
+#               iso8859-3       - ISO Latin 3 character set
+#               iso8859-4       - ISO Latin 4 character set
+#               iso8859-5       - ISO Cyrillic character set
+#               iso8859-7       - ISO Greek character set
+#               iso8859-8       - ISO Hebrew character set
+#               iso8859-9       - ISO Latin 5 character set
+#
+#               psa             - Arbortext's psa character set - a superset of win_1252
+#                                 used for all PostScript fonts with AdobeStandardEncoding
+#
+#               win_1250        - Windows Latin2 code page
+#               win_1251        - Windows Cyrillic code page
+#               win_1252        - Windows ANSI (English, Latin1)
+#               win_1253        - Windows Greek code page
+#               win_1254        - Windows Turkish code page
+#	        win_1257        - Windows Baltic code page
+#
+#               ati_tag         - Arbortext tag font character set
+#               isobox          - iso latin1 + box characters ("fixed" font)
+#
+#         Additionally, the following character set names are predefined but
+#         are not used for screen display in the current version of Epic.
+#	  (They can be used for composed output; the entity will display
+#	  in the edit view as a "tag".)
+#
+#               cm_math         - Computer Modern Math font
+#               cm_math_b       - Computer Modern Math font, bold
+#               cm_symbol       - Computer Modern Math symbol
+#		cm_ext		- Computer Modern Math extension
+#               ams_symbol_a    - AMS Symbol "A"
+#               ams_symbol_b    - AMS Symbol "B"
+#               ucgreek         - Computer Modern upper case greek
+#               ucgreek_b       - Computer Modern upper case greek, bold
+#
+#         character # is the character number to use from that character 
+#               set; a leading 0 (zero) means octal; a leading 0x means
+#               hexadecimal; otherwise decimal is assumed; for example,
+#               64, 0100, 0x40 all have the same meaning
+#       
+# For most character sets, the font used to display the
+# character will depend on the posture (regular | italic) and
+# weight (regular | bold) in effect where the entity is referenced.
+# In most cases, the "unicode" character set should be specified for the
+# Asian version of Epic.
+#
+# Note that "iso8859-1" is a subset of unicode; "ascii" is a subset
+# of "iso8859-x" and "win_xxxx".
+#
+# Character set/character # information may be supplied for 8-bit, 16-bit (Unicode) 
+# and TeX output, in the format indicated by the header below.
+#
+# If no information is supplied for a category, hyphens should be entered for 
+# the two parameters for that category (not necessary for the TeX column).
+#
+# For accents, an accent type code is entered in the sixth column.  The values are:
+#         ^ for accent goes above base character; must be raised
+#         = for accent goes above base character; already raised
+#         _ for accent goes below base character
+#
+# For Unicode characters consisting of a base character and an accent, the decomposition
+# can be shown in the same column, in the form [base char]/[accent char].
+#
+# For a given character entity such as "dagger", the processing is as follows:
+#
+# dagger   ps_ascii 0262  unicode 0x2020    ps_ascii   ":\g134|"
+#
+#    - first, if the current font is unicode, an attempt is made to print 
+#      the desired character.  For example, use character 0x2020 to print
+#      the "dagger" symbol.
+#
+#    - if the current font has no 0x2020 dagger character, then we revert to the
+#      rightmost two columns and instead switch to an ascii font and specify use 
+#      of the TeX formatting instruction \g134 which causes printing of character
+#      134.  Since "ascii" is a subset of many unicode, win 125x, and ISO Latin
+#      fonts, no font switch is required, but if, say, 'symbol' or 'wingdings'
+#      was specified, then we'd switch to a different font first.
+#
+#    - the left most two columns are rarely used and are a remnant of the earlier
+#      8-bit version of epic that was not unicode based.
+#
+#    - there is much more complexity to the processing, but the above explanation
+#      gives the general idea for the common cases.
+#      
+
+#
+# The "version: 2" entry below enables version=2 extensions to this file format
+# for use in Epic 4.3 and beyond.
+#
+version: 2
+
+
+#
+#                       8 - B i t          U N I C O D E                                T e X
+#               ----------------------  ----------------------------------      ------------------------------
+#name           char set        char #  char set        char #  idx/decomp      char set        char #/"macro" 
+#----           ----------------------  ----------------------------------      ------------------------------
+
+accents:  # ENTITIES IN THIS SECTION ARE OF TYPE "accent"
+
+unixonly:
+
+acute           iso8859-1       180     unicode         180     =	psa	180
+barbelow        ascii           0137    unicode         0137    _	psa	95
+breve           iso8859-2       162     unicode         0x02D8  =       psa     6        
+caron           iso8859-2       183     unicode         0x02C7  =       psa      11 
+cedil           iso8859-1       184     unicode         184     _ 	psa	184
+circ            ascii           94      unicode         0x02C6  =       psa      136
+dblac           iso8859-2       189     unicode         0x02DD  =       psa     12
+die             iso8859-1       168     unicode         168     = 	psa	168
+Dot             iso8859-1       168     unicode         168     =  	psa	168
+dot             iso8859-1       183     unicode         0x02D9  =       psa     7 
+dotbelow        ascii           056     unicode         056     _	psa	46
+grave		ascii		 96     unicode         0x02CB  = 	psa	96
+macr            iso8859-1       175     unicode         175     = 	psa	175
+ogon            iso8859-2       178     unicode         0x02DB  _       psa     8
+ring            iso8859-1       176     unicode         0x02DA  =	psa	176
+tilde           ascii           126     unicode         0x02DC  =       psa      152
+uml             iso8859-1       168     unicode         168     =	psa	168
+diagr           iso8859-7       181     unicode         0x0385  =       win_1253     161     # not %ISOgrk2
+
+endunixonly:
+
+windowsonly:
+
+# Arial Unicode MS does not have a breve at 0x02D8, but rather at 0x0306
+# (which is Unicode-correct fwiw, but why not have both?) but probably
+# never needs a combining accent, for any "real" use, though it would be
+# nice to have it as a fallback for those people who want do X&breve;,
+# etc. 
+
+# Very few fonts (Arial Unicode MS and Lucida Sans Unicode are the only
+# exceptions I see) have 02CB;MODIFIER LETTER GRAVE ACCENT, so we use
+# 0060;GRAVE ACCENT for composition, which all fonts have.
+
+# The macron is a tougher choice since a few fonts apparently
+# distributed with Windows 2000 (Goudy_Stout, Harrington, Jokerman) do
+# not have 02C9, but many more (Algerian, Baskerville_Old_Face,
+# Bauhaus_93, Bell_MT, Britannic_Bold, Castellar, Centaur, Elephant,
+# Harlow_Solid_Italic, Lithograph, LithographLight, Lucida_Bright,
+# Lucida_Calligraphy, Lucida_Fax, Lucida_Handwriting, Lucida_Sans,
+# Lucida_Sans_Typewriter, Onyx, Playbill, Stencil, Vivaldi, Wide_Latin)
+# do not have 00AF.  So we go with 02C9.
+
+acute           -		-	unicode         180     =	unicode         0x00B4
+barbelow        -		-	unicode         0137    _	unicode         0x005F
+breve           -		-	unicode         0x02D8  =	unicode         0x02D8
+caron           -		-	unicode         0x02C7  =       unicode         0x02C7
+cedil           -		-	unicode         184     _ 	unicode         0x00B8
+circ            -		-	unicode         0x02C6  =       unicode         0x02C6
+dblac           -		-	unicode         0x02DD  =       unicode         0x02DD
+die             -		-	unicode         168     = 	unicode         0x00A8
+Dot             -		-	unicode         168     =  	unicode         0x00A8
+dot             -		-	unicode         0x02D9  =       unicode         0x02D9
+dotbelow        -		-	unicode         056     _	unicode         0x002E
+grave		-		-	unicode         0x02CB  = 	unicode         0x0060
+macr            -		-	unicode         175     = 	unicode         0x02C9
+ogon            -		-	unicode         0x02DB  _       unicode         0x02DB
+ring            -		-	unicode         0x02DA  =	unicode         0x02DA
+tilde           ascii		126	unicode         0x02DC  =       unicode         0x02DC
+uml             -		-	unicode         168     =	unicode         0x00A8
+diagr           -		-	unicode         0x0385  =	unicode		0x0385
+
+endwindowsonly:
+
+
+chars:    # THE REMAINDER OF THE ENTITIES IN THE FILE ARE OF TYPE "char"
+
+#
+# Unclassified TeX macros:
+block		-	-	unicode	0x2588	current         ":\blk{1.6ex}{0pt}{.5em}"
+bprime		-	-	unicode	0x2035	ams_symbola     ":\Sup{\char'070}"
+brkpt		-	-	unicode	0x200B	current         "\penalty100|"
+conint		-	-	unicode	0x222E	current         ":$\oint$"
+day		-	-	- 	-	current         "\the\day|"
+emsp		-	-	unicode	0x2003	current         "\hmode\kern1em|"
+emsp13		-	-	- 	-	current         "\hmode\kern.333em|"
+emsp14		-	-	- 	-	current         "\hmode\kern.25em|"
+# but in iso-pub.gml they are redefined:
+emsp3		-	-	- 	-	current         "\hmode\kern.333em|"
+emsp4		-	-	- 	-	current         "\hmode\kern.25em|"
+ensp		-	-	unicode 0x2002	current         "\hmode\kern.5em|"
+hairsp		-	-	- 	-	current         "\hmode\kern.1em|"
+hybull		-	-	unicode	0x2043	current         ":\blk{.8ex}{-.4ex}{.4em}"
+incare		-	-	unicode	0x2105	current         ":\solidusfrac co"
+lhblk		-	-	unicode	0x2584	current         ":\blk{.8ex}{0pt}{.5em}"
+marker		-	-	unicode	0x2759	current         ":\blk{1.6ex}{0pt}{.25em}"
+monthname	-	-	- 	-	current         "\monthname|"
+monthnum	-	-	- 	-	current         "\the\month|"
+nldr		-	-	unicode	0x2025	current         ":\hmode\hbox to.5em{.\hfil.\hfil}"
+numsp		-	-	- 	-	current         "\do@numsp|"
+puncsp		-	-	- 	-	current         "\hmode\kern.2em|"
+thinsp		-	-	- 	-	current         "\hmode\kern.1666em|"
+tprime		-	-	unicode	0x2034	ps_symbol       ":\char'242 \char'242 \char'242|"
+uhblk		-	-	unicode	0x2580	current         ":\blk{1.6ex}{-.8ex}{.5em}"
+vellip		-	-	unicode	0x22EE	current         ":\vdots|"
+vprime		-	-	-	-	cm_symbol       "\Sup{\char'060}"
+year		-	-	- 	-	current         "\the\year|"
+#
+# iso-lat1 (Added Latin 1)
+aacute          iso8859-1       225     unicode         225     a/acute
+Aacute          iso8859-1       193     unicode         193     A/acute
+abreve          iso8859-2       227     unicode         0x0103  a/breve
+Abreve          iso8859-2       195     unicode         0x0102  A/breve
+acirc           iso8859-1       226     unicode         226     a/circ
+Acirc           iso8859-1       194     unicode         194     A/circ
+agrave          iso8859-1       224     unicode         224     a/grave
+Agrave          iso8859-1       192     unicode         192     A/grave
+angst           iso8859-1       197     unicode         197     A/ring
+aogon           iso8859-2       177     unicode         0x0105  a/ogon
+Aogon           iso8859-2       161     unicode         0x0104  A/ogon
+aring           iso8859-1       229     unicode         229     a/ring
+Aring           iso8859-1       197     unicode         197     A/ring
+atilde          iso8859-1       227     unicode         227     a/tilde
+Atilde          iso8859-1       195     unicode         195     A/tilde
+auml            iso8859-1       228     unicode         228     a/uml
+Auml            iso8859-1       196     unicode         196     A/uml
+aelig           iso8859-1       230     unicode         230
+AElig           iso8859-1       198     unicode         198
+cacute          iso8859-2       230     unicode         0x0107  c/acute
+Cacute          iso8859-2       198     unicode         0x0106  C/acute
+ccaron          iso8859-2       232     unicode         0x010D  c/caron
+Ccaron          iso8859-2       200     unicode         0x010C  C/caron
+ccedil          iso8859-1       231     unicode         231     c/cedil
+Ccedil          iso8859-1       199     unicode         199     C/cedil
+dcaron          iso8859-2       239     unicode         0x010F  current	":d'"
+Dcaron          iso8859-2       207     unicode         0x010E  D/caron
+
+windowsonly:
+Dstrok          iso8859-2       208     unicode         0x0110	unicode	208
+dstrok          iso8859-2       240     unicode         0x0111	current	":\dstrok|"
+windowsonly:
+unixonly:
+Dstrok          iso8859-2       208     unicode         0x0110	current	":\Dstrokunix|"
+dstrok          iso8859-2       240     unicode         0x0111	current	":\dstrokunix|"
+endunixonly:
+
+ecaron          iso8859-2       236     unicode         0x011B  e/caron
+Ecaron          iso8859-2       204     unicode         0x011A  E/caron
+eogon           iso8859-2       234     unicode         0x0119  e/ogon
+Eogon           iso8859-2       202     unicode         0x0118  E/ogon
+eth             iso8859-1       240     unicode         240
+ETH             iso8859-1       208     unicode         208
+eacute          iso8859-1       233     unicode         233     e/acute
+Eacute          iso8859-1       201     unicode         201     E/acute
+ecirc           iso8859-1       234     unicode         234     e/circ
+Ecirc           iso8859-1       202     unicode         202     E/circ
+egrave          iso8859-1       232     unicode         232     e/grave
+Egrave          iso8859-1       200     unicode         200     E/grave
+euml            iso8859-1       235     unicode         235     e/uml
+Euml            iso8859-1       203     unicode         203     E/uml
+iacute          iso8859-1       237     unicode         237     i/acute
+Iacute          iso8859-1       205     unicode         205     I/acute
+icirc           iso8859-1       238     unicode         238     i/circ
+Icirc           iso8859-1       206     unicode         206     I/circ
+igrave          iso8859-1       236     unicode         236     i/grave
+Igrave          iso8859-1       204     unicode         204     I/grave
+iuml            iso8859-1       239     unicode         239     i/uml
+Iuml            iso8859-1       207     unicode         207     I/uml
+lacute          iso8859-2       229     unicode         0x013A  l/acute
+Lacute          iso8859-2       197     unicode         0x0139  L/acute
+lcaron          iso8859-2       181     unicode         0x013E  l/caron
+Lcaron          iso8859-2       165     unicode         0x013D  L/caron
+nacute          iso8859-2       241     unicode         0x0144  n/acute
+Nacute          iso8859-2       209     unicode         0x0143  N/acute
+ncaron          iso8859-2       242     unicode         0x0148  n/caron
+Ncaron          iso8859-2       210     unicode         0x0147  N/caron
+ntilde          iso8859-1       241     unicode         241     n/tilde
+Ntilde          iso8859-1       209     unicode         209     N/tilde
+oacute          iso8859-1       243     unicode         243     o/acute
+Oacute          iso8859-1       211     unicode         211     O/acute
+ocirc           iso8859-1       244     unicode         244     o/circ
+Ocirc           iso8859-1       212     unicode         212     O/circ
+odblac          iso8859-2       245     unicode         0x0151  o/dblac
+Odblac          iso8859-2       213     unicode         0x0150  O/dblac
+ograve          iso8859-1       242     unicode         242     o/grave
+Ograve          iso8859-1       210     unicode         210     O/grave
+oslash          iso8859-1       248     unicode         248
+Oslash          iso8859-1       216     unicode         216
+otilde          iso8859-1       245     unicode         245     o/tilde
+Otilde          iso8859-1       213     unicode         213     O/tilde
+ouml            iso8859-1       246     unicode         246     o/uml
+Ouml            iso8859-1       214     unicode         214     O/uml
+racute          iso8859-2       224     unicode         0x0155  r/acute
+Racute          iso8859-2       192     unicode         0x0154  R/acute
+rcaron          iso8859-2       248     unicode         0x0159  r/caron
+Rcaron          iso8859-2       216     unicode         0x0158  R/caron
+sacute          iso8859-2       182     unicode         0x015B  s/acute
+Sacute          iso8859-2       166     unicode         0x015A  S/acute
+scaron          iso8859-2       185     unicode         0x0161  s/caron
+Scaron          iso8859-2       169     unicode         0x0160  S/caron
+scedil          iso8859-2       186     unicode         0x015F  s/cedil
+Scedil          iso8859-2       170     unicode         0x015E  S/cedil
+szlig           iso8859-1       223     unicode         223
+tcaron          iso8859-2       187     unicode         0x0165  current	":t'"
+Tcaron          iso8859-2       171     unicode         0x0164  T/caron
+tcedil          iso8859-2       254     unicode         0x0163  t/cedil
+Tcedil          iso8859-2       222     unicode         0x0162  T/cedil
+thorn           iso8859-1       254     unicode         254
+THORN           iso8859-1       222     unicode         222
+uacute          iso8859-1       250     unicode         250     u/acute
+Uacute          iso8859-1       218     unicode         218     U/acute
+ucirc           iso8859-1       251     unicode         251     u/circ
+Ucirc           iso8859-1       219     unicode         219     U/circ
+udblac          iso8859-2       251     unicode         0x0171  u/dblac
+Udblac          iso8859-2       219     unicode         0x0170  U/dblac
+ugrave          iso8859-1       249     unicode         249     u/grave
+Ugrave          iso8859-1       217     unicode         217     U/grave
+uring           iso8859-2       249     unicode         0x016F  u/ring
+Uring           iso8859-2       217     unicode         0x016E  U/ring
+uuml            iso8859-1       252     unicode         252     u/uml
+Uuml            iso8859-1       220     unicode         220     U/uml
+yacute          iso8859-1       253     unicode         253     y/acute
+Yacute          iso8859-1       221     unicode         221     Y/acute
+yuml            iso8859-1       255     unicode         255     y/uml
+# Windows 159
+zacute          iso8859-2       188     unicode         0x017A  z/acute
+Zacute          iso8859-2       172     unicode         0x0179  Z/acute
+zcaron          iso8859-2       190     unicode         0x017E  z/caron psa	":\g19|"
+Zcaron          iso8859-2       174     unicode         0x017D  Z/caron psa	":\g18|"
+zdot            iso8859-2       191     unicode         0x017C  z/dot
+Zdot            iso8859-2       175     unicode         0x017B  Z/dot
+#
+# more iso-lat2 (Added Latin 2)
+Hstrok          iso8859-3       161     unicode         0x0126          current         ":\Hstrok|"
+Hcirc           iso8859-3       166     unicode         0x0124  H/circ
+Idot            iso8859-3       169     unicode         0x0130  I/dot
+Gbreve          iso8859-3       171     unicode         0x011E  G/breve
+Jcirc           iso8859-3       172     unicode         0x0134  J/circ
+hstrok          iso8859-3       177     unicode         0x0127          current         ":\hstrok|"
+hcirc           iso8859-3       182     unicode         0x0125  h/circ
+inodot          iso8859-3       185     unicode         0x0131          psa     ":\g16|"
+gacute          -               -       unicode         0x01F5  g/acute         current  ":\accent180g"
+gbreve          iso8859-3       187     unicode         0x011F  g/breve
+jcirc           iso8859-3       188     unicode         0x0135  j/circ
+Cdot            iso8859-3       197     unicode         0x010A  C/dot
+Ccirc           iso8859-3       198     unicode         0x0108  C/circ
+Gdot            iso8859-3       213     unicode         0x0120  G/dot
+Gcirc           iso8859-3       216     unicode         0x011C  G/circ
+Ubreve          iso8859-3       221     unicode         0x016C  U/breve
+Scirc           iso8859-3       222     unicode         0x015C  S/circ
+cdot            iso8859-3       229     unicode         0x010B  c/dot
+ccirc           iso8859-3       230     unicode         0x0109  c/circ
+gdot            iso8859-3       245     unicode         0x0121  g/dot
+gcirc           iso8859-3       248     unicode         0x011D  g/circ
+ubreve          iso8859-3       253     unicode         0x016D  u/breve
+scirc           iso8859-3       254     unicode         0x015D  s/circ
+#
+# more iso-lat2 (Added Latin 2)
+kgreen          iso8859-4       162     unicode         0x0138  	current         ":\kgreen|"
+Rcedil          iso8859-4       163     unicode         0x0156  R/cedil
+Itilde          iso8859-4       165     unicode         0x0128  I/tilde
+Lcedil          iso8859-4       166     unicode         0x013B  L/cedil
+Emacr           iso8859-4       170     unicode         0x0112  E/macr
+Gcedil          iso8859-4       171     unicode         0x0122  G/cedil
+Tstrok          iso8859-4       172     unicode         0x0166  	current         ":\Tstrok|"
+rcedil          iso8859-4       179     unicode         0x0157  r/cedil
+itilde          iso8859-4       181     unicode         0x0129  i/tilde
+lcedil          iso8859-4       182     unicode         0x013C  l/cedil
+emacr           iso8859-4       186     unicode         0x0113  e/macr
+gcedil          iso8859-4       187     unicode         0x0123  	current         ":\gcedil|"
+tstrok          iso8859-4       188     unicode         0x0167  	current         ":\tstrok|"
+ENG             iso8859-4       189     unicode         0x014A
+eng             cm_math_b       17      unicode         0x014B
+Amacr           iso8859-4       192     unicode         0x0100  A/macr
+Iogon           iso8859-4       199     unicode         0x012E  I/ogon
+Edot            iso8859-4       204     unicode         0x0116  E/dot
+Imacr           iso8859-4       207     unicode         0x012A  I/macr
+Ncedil          iso8859-4       209     unicode         0x0145  N/cedil
+Omacr           iso8859-4       210     unicode         0x014C  O/macr
+Kcedil          iso8859-4       211     unicode         0x0136  K/cedil
+Uogon           iso8859-4       217     unicode         0x0172  U/ogon
+Utilde          iso8859-4       221     unicode         0x0168  U/tilde
+Umacr           iso8859-4       222     unicode         0x016A  U/macr
+amacr           iso8859-4       224     unicode         0x0101  a/macr
+iogon           iso8859-4       231     unicode         0x012F  i/ogon
+edot            iso8859-4       236     unicode         0x0117  e/dot
+imacr           iso8859-4       239     unicode         0x012B  i/macr
+ncedil          iso8859-4       241     unicode         0x0146  n/cedil
+omacr           iso8859-4       242     unicode         0x014D  o/macr
+kcedil          iso8859-4       243     unicode         0x0137  k/cedil
+uogon           iso8859-4       249     unicode         0x0173  u/ogon
+utilde          iso8859-4       253     unicode         0x0169  u/tilde
+umacr           iso8859-4       254     unicode         0x016B  u/macr
+IJlig           -               -       unicode         0x0132  	current         ":IJ"
+ijlig           -               -       unicode         0x0133  	current         ":ij"
+Lmidot          -               -       unicode         0x013F  	current         ":\Lmidot|"
+lmidot          -               -       unicode         0x0140  	current         ":\lmidot|"
+napos           -               -       unicode         0x0149  	current         ":'n"
+
+windowsonly:
+Wcirc           -               -       unicode         0x0174  W/circ
+wcirc           -               -       unicode         0x0175  w/circ
+Ycirc           -               -       unicode         0x0176  Y/circ
+ycirc           -               -       unicode         0x0177  y/circ
+endwindowsonly:
+
+unixonly:
+Wcirc           -               -       unicode         0x0174  W/circ          current         "\^W"
+wcirc           -               -       unicode         0x0175  w/circ          current         "\^w"
+Ycirc           -               -       unicode         0x0176  Y/circ          current         "\^Y"
+ycirc           -               -       unicode         0x0177  y/circ          current         "\^y"
+endunixonly:
+
+#
+# lower case Greek (from is0-grk3.gml)
+alpha           ps_symbol       0141    unicode         0x03B1
+beta            ps_symbol       0142    unicode         0x03B2
+gamma           ps_symbol       0147    unicode         0x03B3
+delta           ps_symbol       0144    unicode         0x03B4
+epsilon         ps_symbol       0145    unicode         0x03B5
+epsiv           ps_symbol       0145    unicode         0x025B
+zeta            ps_symbol       0172    unicode         0x03B6
+eta             ps_symbol       0150    unicode         0x03B7
+theta           ps_symbol       0161    unicode         0x03B8
+thetas          ps_symbol       0161    unicode         0x03B8
+iota            ps_symbol       0151    unicode         0x03B9
+kappa           ps_symbol       0153    unicode         0x03BA
+lambda          ps_symbol       0154    unicode         0x03BB
+mu              ps_symbol       0155    unicode         0x03BC
+nu              ps_symbol       0156    unicode         0x03BD
+xi              ps_symbol       0170    unicode         0x03BE
+omicron         ps_symbol       0157    unicode         0x03BF
+pi              ps_symbol       0160    unicode         0x03C0
+piv             ps_symbol       0166    unicode         0x03D6
+rho             ps_symbol       0162    unicode         0x03C1
+sigma           ps_symbol       0163    unicode         0x03C3
+sigmav          ps_symbol       0126    unicode         0x03C2
+tau             ps_symbol       0164    unicode         0x03C4
+upsilon         ps_symbol       0165    unicode         0x03C5
+upsi            ps_symbol       0165    unicode         0x03C5
+phi             ps_symbol       0146    unicode         0x03C6
+phis            ps_symbol       0146    unicode         0x03C6
+phiv            ps_symbol       0152    unicode         0x03D5
+chi             ps_symbol       0143    unicode         0x03C7
+psi             ps_symbol       0171    unicode         0x03C8
+omega           ps_symbol       0167    unicode         0x03C9
+#
+# upper case Greek (from is0-grk3.gml)
+Alpha           ps_symbol       0101    unicode         0x0391
+Beta            ps_symbol       0102    unicode         0x0392
+Gamma           ps_symbol       0107    unicode         0x0393
+Delta           ps_symbol       0104    unicode         0x0394
+Epsilon         ps_symbol       0105    unicode         0x0395
+Zeta            ps_symbol       0132    unicode         0x0396
+Eta             ps_symbol       0110    unicode         0x0397
+Theta           ps_symbol       0121    unicode         0x0398
+Iota            ps_symbol       0111    unicode         0x0399
+Kappa           ps_symbol       0113    unicode         0x039A
+Lambda          ps_symbol       0114    unicode         0x039B
+Mu              ps_symbol       0115    unicode         0x039C
+Nu              ps_symbol       0116    unicode         0x039D
+Xi              ps_symbol       0130    unicode         0x039E
+Omicron         ps_symbol       0117    unicode         0x039F
+Pi              ps_symbol       0120    unicode         0x03A0
+Rho             ps_symbol       0122    unicode         0x03A1
+Sigma           ps_symbol       0123    unicode         0x03A3
+Tau             ps_symbol       0124    unicode         0x03A4
+Upsilon         ps_symbol       0125    unicode         0x03A5
+Upsi            ps_symbol       0241    unicode         0x03D2
+Phi             ps_symbol       0106    unicode         0x03A6
+Chi             ps_symbol       0103    unicode         0x03A7
+Psi             ps_symbol       0131    unicode         0x03A8
+Omega           ps_symbol       0127    unicode         0x03A9
+#ohm            ps_symbol       0127
+#
+# Greek from is0-grk1.gml
+agr             ps_symbol       0141    unicode         0x03B1
+Agr             ps_symbol       0101    unicode         0x0391
+bgr             ps_symbol       0142    unicode         0x03B2
+Bgr             ps_symbol       0102    unicode         0x0392
+ggr             ps_symbol       0147    unicode         0x03B3
+Ggr             ps_symbol       0107    unicode         0x0393
+dgr             ps_symbol       0144    unicode         0x03B4
+Dgr             ps_symbol       0104    unicode         0x0394
+egr             ps_symbol       0145    unicode         0x03B5
+Egr             ps_symbol       0105    unicode         0x0395
+zgr             ps_symbol       0172    unicode         0x03B6
+Zgr             ps_symbol       0132    unicode         0x0396
+eegr            ps_symbol       0150    unicode         0x03B7
+EEgr            ps_symbol       0110    unicode         0x0397
+thgr            ps_symbol       0161    unicode         0x03B8
+THgr            ps_symbol       0121    unicode         0x0398
+igr             ps_symbol       0151    unicode         0x03B9
+Igr             ps_symbol       0111    unicode         0x0399
+kgr             ps_symbol       0153    unicode         0x03BA
+Kgr             ps_symbol       0113    unicode         0x039A
+lgr             ps_symbol       0154    unicode         0x03BB
+Lgr             ps_symbol       0114    unicode         0x039B
+mgr             ps_symbol       0155    unicode         0x03BC
+Mgr             ps_symbol       0115    unicode         0x039C
+ngr             ps_symbol       0156    unicode         0x03BD
+Ngr             ps_symbol       0116    unicode         0x039D
+xgr             ps_symbol       0170    unicode         0x03BE
+Xgr             ps_symbol       0130    unicode         0x039E
+ogr             ps_symbol       0157    unicode         0x03BF
+Ogr             ps_symbol       0117    unicode         0x039F
+pgr             ps_symbol       0160    unicode         0x03C0
+Pgr             ps_symbol       0120    unicode         0x03A0
+rgr             ps_symbol       0162    unicode         0x03C1
+Rgr             ps_symbol       0122    unicode         0x03A1
+sgr             ps_symbol       0163    unicode         0x03C3
+Sgr             ps_symbol       0123    unicode         0x03A3
+sfgr            ps_symbol       0126    unicode         0x03C2
+tgr             ps_symbol       0164    unicode         0x03C4
+Tgr             ps_symbol       0124    unicode         0x03A4
+ugr             ps_symbol       0165    unicode         0x03C5
+Ugr             ps_symbol       0125    unicode         0x03D2
+phgr            ps_symbol       0146    unicode         0x03C6
+PHgr            ps_symbol       0106    unicode         0x03A6
+khgr            ps_symbol       0143    unicode         0x03C7
+KHgr            ps_symbol       0103    unicode         0x03A7
+psgr            ps_symbol       0171    unicode         0x03C8
+PSgr            ps_symbol       0131    unicode         0x03A8
+ohgr            ps_symbol       0167    unicode         0x03C9
+OHgr            ps_symbol       0127    unicode         0x03A9
+#
+# keyboard characters
+plus            ascii           43      unicode	43	      # +
+equals          ascii           61      unicode	61	      # =
+num             ascii           35      unicode	35	      # #
+percnt          ascii           37      unicode	37	      # %
+amp             ascii           38      unicode	38	      # &
+ast             ascii           42      unicode	42	      # *
+commat          ascii           64      unicode	64	      # @
+lsqb            ascii           91      unicode	91	      # [
+rsqb            ascii           93      unicode	93	      # ]
+bsol            ascii           92      unicode	92	      # \
+lcub            ascii           123     unicode	123	      # {
+rcub            ascii           125     unicode	125	      # }
+verbar          ascii           124     unicode	124	      # |
+excl            ascii           33      unicode	33	      # !
+quot            ascii           34      unicode	34	current ":\g34|"      # "
+lpar            ascii           40      unicode	40	      # (
+rpar            ascii           41      unicode	41	      # )
+comma           ascii           44      unicode	44	      # ,
+lowbar          ascii           95      unicode	95	      # _
+hyphen          ascii           45      unicode	45	      # -
+dash            ascii           45      unicode	45	      # -
+period          ascii           46      unicode	46	      # .
+sol             ascii           47      unicode	47	      # /
+colon           ascii           58      unicode	58	      # :
+semi            ascii           59      unicode	59	      # ;
+quest           ascii           63      unicode	63	      # ?
+gt              ascii           62      unicode	62	      # >
+lt              ascii           60      unicode	60	      # <
+#
+# currency symbols
+euro		-		-	unicode		0x20AC	win_1252	":\g128|"
+dollar          ascii           36      unicode		0x0024	                    #keyboard character
+pound           iso8859-1       163     unicode         163
+cent            iso8859-1       162     unicode         162
+yen             iso8859-1       165     unicode         165
+curren          iso8859-1       164     unicode         164
+#
+# non-English characters
+
+iquest          iso8859-1       191     unicode         191
+iexcl           iso8859-1       161     unicode         161
+laquo           iso8859-1       171     unicode         171
+raquo           iso8859-1       187     unicode         187
+ldquor          ps_ascii        0271    unicode         0x201E          ps_ascii        ":\g132|"
+lsquor          ps_ascii        0270    unicode         0x201A          ps_ascii        ":\g130|"
+rsquor          ps_ascii        0140    unicode         0x201B
+#
+# miscellaneous
+windowsonly:
+lstrok          iso8859-2       179     unicode         0x0142          current	":\lstrok|"
+Lstrok          iso8859-2       163     unicode         0x0141          current	":\Lstrok|"
+rdquo           ps_ascii        0272    unicode         0x201D          current	":\g148|"
+copy            iso8859-1       169     unicode         169
+bull            ps_symbol       0267    unicode         0x2022          ps_ascii	":\g149|"
+ldquo           ps_ascii        0252    unicode         0x201C          current	":\g147|"
+apos            ps_ascii        0251    unicode		39	        current	":\g39|"
+rsquo           ps_ascii	39	unicode         0x2019		current	":\g146|"
+trade           ps_symbol       0324    unicode         0x2122		current	":\g153|"
+mdash           ps_ascii        0320    unicode         0x2014          current	":\g151|"
+horbar          ps_ascii        0320    unicode         0x2015          current	":\g151|"
+rdquor          -        	-	unicode         0x201F          current	":\g147|"
+oelig           ps_ascii        0372    unicode         0x0153          current	":\g156|"
+OElig           ps_ascii        0352    unicode         0x0152          current	":\g140|"
+Yuml            -               -       unicode         0x0178          current	":\g159|"
+lsquo           ps_ascii        96      unicode		0x2018		current	":\g145|"
+endwindowsonly:
+
+unixonly:
+lstrok          iso8859-2       179     unicode         0x0142          psa	":\g21|"
+Lstrok          iso8859-2       163     unicode         0x0141          psa	":\g20|"
+rdquo           ps_ascii        0272    unicode         0x201D          psa	":\g148|"
+copy            iso8859-1       169     unicode         169     	psa	":\g169|"
+bull            ps_symbol       0267    unicode         0x2022          psa	":\g149|"
+ldquo           ps_ascii        0252    unicode         0x201C          psa	":\g147|"
+apos            ps_ascii        0251    unicode         39     	        psa	":\g39|"
+rsquo           ps_ascii	39	unicode         0x2019		psa	":\g146|"
+trade           ps_symbol       0324    unicode         0x2122		psa	":\g153|"
+mdash           ps_ascii        0320    unicode         0x2014          psa	":\g151|"
+horbar          ps_ascii        0320    unicode         0x2015          psa	":\g151|"
+rdquor          -        	-	unicode         0x201F          psa	":\g147|"
+oelig           ps_ascii        0372    unicode         0x0153          psa	":\g156|"
+OElig           ps_ascii        0352    unicode         0x0152          psa	":\g140|"
+Yuml            -               -       unicode         0x0178          psa	":\g159|"
+lsquo           ps_ascii        96      unicode		0x2018  	psa	":\g145|"
+endunixonly:
+
+
+ndash           ps_ascii        0261    unicode         0x2013          ps_ascii        ":\g150|"
+
+hellip          ps_symbol       0274    unicode         0x2026          ps_ascii        ":\g133|"
+mldr            ps_symbol       0274    unicode         0x2026
+
+deg             iso8859-1       176     unicode         176             cm_symbol       ":\degrees|"
+para            iso8859-1       182     unicode         182
+sect            iso8859-1       167     unicode         167
+reg             iso8859-1	174     unicode         174   		current	":\Sup{\char 174}"
+dagger          ps_ascii        0262    unicode         0x2020          ps_ascii        ":\g134|"
+Dagger          ps_ascii        0263    unicode         0x2021          ps_ascii        ":\g135|"
+caret           ps_ascii        94      unicode         0x2038  # caret (insertion mark)
+micro           iso8859-1       181     unicode         181
+ohm             ps_symbol       0127    unicode         0x03A9
+ordf            iso8859-1       170     unicode         170
+ordm            iso8859-1       186     unicode         186
+not             iso8859-1       172     unicode         172
+brvbar          iso8859-1       166     unicode         166
+feet            ps_symbol       0242    unicode         0x2032
+inches          ps_symbol       0262    unicode         0x2033
+loz             ps_symbol       0340    unicode         0x25CA
+
+unixonly:
+fllig           ps_ascii        0257    unicode         0xFB02          psa     ":\g2|"
+filig           ps_ascii        0256    unicode         0xFB01          psa     ":\g1|"
+endunixonly:
+
+windowsonly:
+fllig           ps_ascii        0257    unicode         0xFB02          current     ":fl"
+filig           ps_ascii        0256    unicode         0xFB01          current     ":fi"
+endwindowsonly:
+
+ffilig		-	-	unicode	0xFB03	current         ":ffi"
+fflig		-	-	unicode	0xFB00	current         ":ff"
+ffllig		-	-	unicode	0xFB04	current         ":ffl"
+fjlig		-	-	-	-	current         "fj"
+
+clubs           ps_symbol       0247    unicode         0x2663
+hearts          ps_symbol       0251    unicode         0x2661
+spades          ps_symbol       0252    unicode         0x2660
+diams           ps_symbol       0250    unicode         0x2662
+
+diam            ps_symbol       0340    unicode         0x22C4
+
+frac12          iso8859-1       189     unicode         189             current         ":\frac 12"
+half            iso8859-1       189     unicode         189             current         ":\frac 12"
+frac13		-	-	unicode	0x2153	current         ":\frac 13"
+frac14          iso8859-1       188     unicode         188             current         ":\frac 14"
+frac15		-	-	unicode	0x2155	current         ":\frac 15"
+frac16		-	-	unicode	0x2159	current         ":\frac 16"
+frac18		-	-	unicode	0x215B	current         ":\frac 18"
+frac23		-	-	unicode	0x2154	current         ":\frac 23"
+frac25		-	-	unicode	0x2156	current         ":\frac 25"
+frac34          iso8859-1       190     unicode         190             current         ":\frac 34"
+frac35		-	-	unicode	0x2157	current         ":\frac 35"
+frac38		-	-	unicode	0x215C	current         ":\frac 38"
+frac45		-	-	unicode	0x2158	current         ":\frac 45"
+frac56		-	-	unicode	0x215A	current         ":\frac 56"
+frac58		-	-	unicode	0x215D	current         ":\frac 58"
+frac78		-	-	unicode	0x215E	current         ":\frac 78"
+
+sup1            iso8859-1       185     unicode         185
+sup2            iso8859-1       178     unicode         178
+sup3            iso8859-1       179     unicode         179
+
+nbsp            iso8859-1       160     unicode         160             current         "~"
+shy             iso8859-1       173     unicode         173             current         "\-"
+
+permil          ps_ascii        0275    unicode         0x2030          ps_ascii        ":\g137|"
+
+phone           zapfdingbats    37      unicode	0x260E
+ballot          zapfdingbats    55      unicode	0x2717	      # ballot cross
+sext            zapfdingbats    86      unicode	0x2736
+
+#
+# math
+minus           ps_symbol       0055    unicode         0x2212	current ":$-$"
+times           iso8859-1       215     unicode         215
+divide          iso8859-1       247     unicode         247
+rarr            ps_symbol       0256    unicode         0x2192
+larr            ps_symbol       0254    unicode         0x2190
+uarr            ps_symbol       0255    unicode         0x2191
+darr            ps_symbol       0257    unicode         0x2193
+harr            ps_symbol       0253    unicode         0x2194
+larrr		-	-	-	-	cm_symbol   "\char32\kern -.1667em \char'0|"
+rarrr		-	-	-	-	cm_symbol   "\char0\kern -.1667em\char33|"
+uarrr		-	-	-	-	cm_ext     "\vbox{\hbox{\char120}\kern -.8em\hbox{\char63}\kern -.8em\hbox{\char63}}"
+darrr		-	-	-	-	cm_ext     "\vbox{\hbox{\char63}\kern -.8em\hbox{\char63}\kern -.8em\hbox{\char121}}"
+varr            cm_symbol       108     unicode	0x2195	      # /updownarrow A: up&down arrow
+mid             cm_symbol       106     -	-	      # /mid R:
+Verbar		-		-	unicode	0x2016	current ":$\mid\nobreak\mkern2mu\nobreak\mid$"
+prime           ps_symbol       0242    unicode         0x2032
+Prime           ps_symbol       0262    unicode         0x2033
+bottom          ps_symbol       0136    -       - 
+perp            ps_symbol       0136    unicode         0x22A5
+cap             ps_symbol       0307    unicode         0x2229
+cup             ps_symbol       0310    unicode         0x222A
+empty           ps_symbol       0306	-       -
+oplus           ps_symbol       0305    unicode         0x2295
+otimes          ps_symbol       0304    unicode         0x2297
+sub             ps_symbol       0314    unicode         0x2282
+sube            ps_symbol       0315    unicode         0x2286
+sup             ps_symbol       0311    unicode         0x2283
+supe            ps_symbol       0312    unicode         0x2287
+plusmn          iso8859-1       177     unicode         177
+cong            ps_symbol       0100    unicode         0x2245          current         ":$\cong$"
+fnof            ps_symbol       0246    unicode         0x0192          ps_ascii        ":\g131|"
+forall          ps_symbol       0042    unicode         0x2200
+exist           ps_symbol       0044    unicode         0x2203
+infin           ps_symbol       0245    unicode         0x221E
+int             ps_symbol       0362    unicode         0x222B          current         ":$\int$"
+prod            ps_symbol       0325    unicode         0x220F
+sum             ps_symbol       0345    unicode         0x2211
+part            ps_symbol       0266    unicode         0x2202
+iff             ps_symbol       0333    unicode         0x21D4
+lArr            ps_symbol       0334    unicode         0x21D0   # was 219E
+rArr            ps_symbol       0336    unicode         0x21D2   # was 21A0
+ge              ps_symbol       0263    unicode         0x2265
+le              ps_symbol       0243    unicode         0x2264
+ne              ps_symbol       0271    unicode         0x2260
+ap              ps_symbol       0273    unicode         0x2248
+sim             ps_symbol       0176    unicode         0x223C
+prop            ps_symbol       0265    unicode         0x221D
+equiv           ps_symbol       0272    unicode         0x2261
+isin            ps_symbol       0316    unicode         0x220A
+notin           ps_symbol       0317    unicode         0x2209
+ni              ps_symbol       0047    unicode         0x220D
+or              ps_symbol       0332    unicode         0x2228
+and             ps_symbol       0331    unicode         0x2227
+middot          iso8859-1       183     unicode         183
+gE              ams_symbola     61      unicode	0x2267	      # /geqq R: greater, double equals
+lE              ams_symbola     53      unicode	0x2266	      # /leqq R: less, double equals
+ngE             ams_symbolb     21      -	-	      # /ngeqq N: not greater, dbl equals
+ngt             ams_symbolb     5       unicode	0x226F	      # /ngtr N: not greater-than
+nlE             ams_symbolb     20      -	-	      # /nleqq N: not less, dbl equals
+nlt             ams_symbolb     4       unicode	0x226E	      # /nless N: not less-than
+npar            ams_symbolb     44      unicode	0x2226	      # /nparallel N: not parallel
+ncong           ams_symbolb     29      unicode	0x2247	      # /ncong N: not congruent with
+there4          ps_symbol       0134    unicode         0x2234
+nabla           ps_symbol       0321    unicode         0x2207
+real            ps_symbol       0302    unicode         0x211C
+image           ps_symbol       0301    unicode         0x2111
+ang             ps_symbol       0320    unicode         0x2220
+lang            ps_symbol       0341    unicode         0x2329
+rang            ps_symbol       0361    unicode         0x232A
+weierp          ps_symbol       0303    unicode         0x2118
+radic           ps_symbol       0326    unicode         0x221A
+esdot		-	-	unicode	0x2250	current         ":$\doteq$"
+vltri		cm_math		47	unicode	0x25C3	
+vrtri		cm_math		46	unicode	0x25B9	
+ape		ams_symbolb	117	unicode	0x224A	
+thkap		ams_symbolb	115	-       -
+hamilt		cm_symbol	72	unicode	0x210B		current		":$\cal H$"
+
+#
+# box characters
+boxh            isobox          18      unicode         0x2500	isobox          18
+boxv            isobox          25      unicode         0x2502	isobox          25
+boxur           isobox          14      unicode         0x2514	isobox          14
+boxul           isobox          11      unicode         0x2518	isobox          11
+boxdl           isobox          12      unicode         0x2510	isobox          12
+boxdr           isobox          13      unicode         0x250c	isobox          13
+boxvr           isobox          21      unicode         0x251c	isobox          21
+boxhu           isobox          23      unicode         0x2534	isobox          23
+boxvl           isobox          22      unicode         0x2524	isobox          22
+boxhd           isobox          24      unicode         0x252c	isobox          24
+boxvh           isobox          15      unicode         0x253c	isobox          15
+
+# Cyrillic, iso-cyr1.gml  (was: iso8859-5)
+acy             iso8859-5       0xd0    unicode         0x0430  win_1251        ":\g224|"
+Acy             iso8859-5       0xb0    unicode         0x0410  win_1251        ":\g192|"
+bcy             iso8859-5       0xd1    unicode         0x0431  win_1251        ":\g225|"
+Bcy             iso8859-5       0xb1    unicode         0x0411  win_1251        ":\g193|"
+vcy             iso8859-5       0xd2    unicode         0x0432  win_1251        ":\g226|"
+Vcy             iso8859-5       0xb2    unicode         0x0412  win_1251        ":\g194|"
+gcy             iso8859-5       0xd3    unicode         0x0433  win_1251        ":\g227|"
+Gcy             iso8859-5       0xb3    unicode         0x0413  win_1251        ":\g195|"
+dcy             iso8859-5       0xd4    unicode         0x0434  win_1251        ":\g228|"
+Dcy             iso8859-5       0xb4    unicode         0x0414  win_1251        ":\g196|"
+iecy            iso8859-5       0xd5    unicode         0x0435  win_1251        ":\g229|"
+IEcy            iso8859-5       0xb5    unicode         0x0415  win_1251        ":\g197|"
+iocy            iso8859-5       0xf1    unicode         0x0451  win_1251        ":\g184|"
+IOcy            iso8859-5       0xa1    unicode         0x0401  win_1251        ":\g168|"
+zhcy            iso8859-5       0xd6    unicode         0x0436  win_1251        ":\g230|"
+ZHcy            iso8859-5       0xb6    unicode         0x0416  win_1251        ":\g198|"
+zcy             iso8859-5       0xd7    unicode         0x0437  win_1251        ":\g231|"
+Zcy             iso8859-5       0xb7    unicode         0x0417  win_1251        ":\g199|"
+icy             iso8859-5       0xd8    unicode         0x0438  win_1251        ":\g232|"
+Icy             iso8859-5       0xb8    unicode         0x0418  win_1251        ":\g200|"
+jcy             iso8859-5       0xd9    unicode         0x0439  win_1251        ":\g233|"     # short i
+Jcy             iso8859-5       0xb9    unicode         0x0419  win_1251        ":\g201|"     # short I
+kcy             iso8859-5       0xda    unicode         0x043A  win_1251        ":\g234|"     # ka
+Kcy             iso8859-5       0xba    unicode         0x041A  win_1251        ":\g202|"     # KA
+lcy             iso8859-5       0xdb    unicode         0x043B  win_1251        ":\g235|"
+Lcy             iso8859-5       0xbb    unicode         0x041B  win_1251        ":\g203|"
+mcy             iso8859-5       0xdc    unicode         0x043C  win_1251        ":\g236|"
+Mcy             iso8859-5       0xbc    unicode         0x041C  win_1251        ":\g204|"
+ncy             iso8859-5       0xdd    unicode         0x043D  win_1251        ":\g237|"
+Ncy             iso8859-5       0xbd    unicode         0x041D  win_1251        ":\g205|"
+ocy             iso8859-5       0xde    unicode         0x043E  win_1251        ":\g238|"
+Ocy             iso8859-5       0xbe    unicode         0x041E  win_1251        ":\g206|"
+pcy             iso8859-5       0xdf    unicode         0x043F  win_1251        ":\g239|"
+Pcy             iso8859-5       0xbf    unicode         0x041F  win_1251        ":\g207|"
+rcy             iso8859-5       0xe0    unicode         0x0440  win_1251        ":\g240|"
+Rcy             iso8859-5       0xc0    unicode         0x0420  win_1251        ":\g208|"
+scy             iso8859-5       0xe1    unicode         0x0441  win_1251        ":\g241|"
+Scy             iso8859-5       0xc1    unicode         0x0421  win_1251        ":\g209|"
+tcy             iso8859-5       0xe2    unicode         0x0442  win_1251        ":\g242|"
+Tcy             iso8859-5       0xc2    unicode         0x0422  win_1251        ":\g210|"
+ucy             iso8859-5       0xe3    unicode         0x0443  win_1251        ":\g243|"
+Ucy             iso8859-5       0xc3    unicode         0x0423  win_1251        ":\g211|"
+fcy             iso8859-5       0xe4    unicode         0x0444  win_1251        ":\g244|"
+Fcy             iso8859-5       0xc4    unicode         0x0424  win_1251        ":\g212|"
+khcy            iso8859-5       0xe5    unicode         0x0445  win_1251        ":\g245|"
+KHcy            iso8859-5       0xc5    unicode         0x0425  win_1251        ":\g213|"
+tscy            iso8859-5       0xe6    unicode         0x0446  win_1251        ":\g246|"     # was 045B
+TScy            iso8859-5       0xc6    unicode         0x0426  win_1251        ":\g214|"     # was 040B
+chcy            iso8859-5       0xe7    unicode         0x0447  win_1251        ":\g247|"
+CHcy            iso8859-5       0xc7    unicode         0x0427  win_1251        ":\g215|"
+shcy            iso8859-5       0xe8    unicode         0x0448  win_1251        ":\g248|"
+SHcy            iso8859-5       0xc8    unicode         0x0428  win_1251        ":\g216|"
+shchcy          iso8859-5       0xe9    unicode         0x0449  win_1251        ":\g249|"
+SHCHcy          iso8859-5       0xc9    unicode         0x0429  win_1251        ":\g217|"
+hardcy          iso8859-5       0xea    unicode         0x044A  win_1251        ":\g250|"
+HARDcy          iso8859-5       0xca    unicode         0x042A  win_1251        ":\g218|"
+ycy             iso8859-5       0xeb    unicode         0x044B  win_1251        ":\g251|"
+Ycy             iso8859-5       0xcb    unicode         0x042B  win_1251        ":\g219|"
+softcy          iso8859-5       0xec    unicode         0x044C  win_1251        ":\g252|"
+SOFTcy          iso8859-5       0xcc    unicode         0x042C  win_1251        ":\g220|"
+ecy             iso8859-5       0xed    unicode         0x044D  win_1251        ":\g253|"
+Ecy             iso8859-5       0xcd    unicode         0x042D  win_1251        ":\g221|"
+yucy            iso8859-5       0xee    unicode         0x044E  win_1251        ":\g254|"
+YUcy            iso8859-5       0xce    unicode         0x042E  win_1251        ":\g222|"
+yacy            iso8859-5       0xef    unicode         0x044F  win_1251        ":\g255|"
+YAcy            iso8859-5       0xcf    unicode         0x042F  win_1251        ":\g223|"
+numero          iso8859-5       0xf0    unicode         0x2116  current             ":N\g'272|"
+#
+# non-Russian Cyrillic, iso-cyr2.gml
+djcy            iso8859-5       0xf2    unicode         0x0452  win_1251        ":\g144|"
+DJcy            iso8859-5       0xa2    unicode         0x0402  win_1251        ":\g128|"
+gjcy            iso8859-5       0xf3    unicode         0x0453  win_1251        ":\g181|"
+GJcy            iso8859-5       0xa3    unicode         0x0403  win_1251        ":\g165|"
+jukcy           iso8859-5       0xf4    unicode         0x0454  win_1251        ":\g186|"
+Jukcy           iso8859-5       0xa4    unicode         0x0404  win_1251        ":\g170|"
+dscy            iso8859-5       0xf5    unicode         0x0455  win_1251        ":\g190|"
+DScy            iso8859-5       0xa5    unicode         0x0405  win_1251        ":\g189|"
+iukcy           iso8859-5       0xf6    unicode         0x0456  win_1251        ":\g179|"
+Iukcy           iso8859-5       0xa6    unicode         0x0406  win_1251        ":\g178|"
+yicy            iso8859-5       0xf7    unicode         0x0457  win_1251        ":\g191|"
+YIcy            iso8859-5       0xa7    unicode         0x0407  win_1251        ":\g175|"
+jsercy          iso8859-5       0xf8    unicode         0x0458  win_1251        ":\g188|"
+Jsercy          iso8859-5       0xa8    unicode         0x0408  win_1251        ":\g163|"
+ljcy            iso8859-5       0xf9    unicode         0x0459  win_1251        ":\g154|"
+LJcy            iso8859-5       0xa9    unicode         0x0409  win_1251        ":\g138|"
+njcy            iso8859-5       0xfa    unicode         0x045A  win_1251        ":\g156|"
+NJcy            iso8859-5       0xaa    unicode         0x040A  win_1251        ":\g140|"
+tshcy           iso8859-5       0xfb    unicode         0x045B  win_1251        ":\g158|"
+TSHcy           iso8859-5       0xab    unicode         0x040B  win_1251        ":\g142|"
+kjcy            iso8859-5       0xfc    unicode         0x045C  win_1251        ":\g157|"
+KJcy            iso8859-5       0xac    unicode         0x040C  win_1251        ":\g141|"
+ubrcy           iso8859-5       0xfe    unicode         0x045E  win_1251        ":\g162|"
+Ubrcy           iso8859-5       0xae    unicode         0x040E  win_1251        ":\g161|"
+dzcy            iso8859-5       0xff    unicode         0x045F  win_1251        ":\g159|"
+DZcy            iso8859-5       0xaf    unicode         0x040F  win_1251        ":\g143|"
+#
+# Greek accented characters from %ISOgrk2 using ISO 8859/7 encoding
+Aacgr           iso8859-7       182     unicode         0x0386  win_1253        ":\g162|"
+Eacgr           iso8859-7       184     unicode         0x0388  win_1253        ":\g184|"
+EEacgr          iso8859-7       185     unicode         0x0389  win_1253        ":\g185|"
+Iacgr           iso8859-7       186     unicode         0x038A  win_1253        ":\g186|"
+Oacgr           iso8859-7       188     unicode         0x038C  win_1253        ":\g188|"
+Uacgr           iso8859-7       190     unicode         0x03D3  win_1253        ":\g190|"
+OHacgr          iso8859-7       191     unicode         0x038F  win_1253        ":\g191|"
+idiagr          iso8859-7       192     unicode         0x0390  win_1253        ":\g192|"
+Idigr           iso8859-7       218     unicode         0x03AA  win_1253        ":\g218|"
+Udigr           iso8859-7       219     unicode         0x03D4  win_1253        ":\g219|"
+aacgr           iso8859-7       220     unicode         0x03AC  win_1253        ":\g220|"
+eacgr           iso8859-7       221     unicode         0x03AD  win_1253        ":\g221|"
+eeacgr          iso8859-7       222     unicode         0x03AE  win_1253        ":\g222|"
+iacgr           iso8859-7       223     unicode         0x03AF  win_1253        ":\g223|"
+udiagr          iso8859-7       224     unicode         0x03B0  win_1253        ":\g224|"
+idigr           iso8859-7       250     unicode         0x03CA  win_1253        ":\g250|"
+udigr           iso8859-7       251     unicode         0x03CB  win_1253        ":\g251|"
+oacgr           iso8859-7       252     unicode         0x03CC  win_1253        ":\g252|"
+uacgr           iso8859-7       253     unicode         0x03CD  win_1253        ":\g253|"
+ohacgr          iso8859-7       254     unicode         0x03CE  win_1253        ":\g254|"
+
+# Hebrew
+aleph           iso8859-8       224     unicode         0x05D0
+beth            ams_symbolb     0x69    unicode         0x05D1
+gimel           ams_symbolb     0x6A    unicode         0x05D2
+daleth          ams_symbolb     0x6B    unicode         0x05D3
+he              iso8859-8       228     unicode         0x05D4
+waw             iso8859-8       229     unicode         0x05D5
+zain            iso8859-8       230     unicode         0x05D6
+chet            iso8859-8       231     unicode         0x05D7
+tet             iso8859-8       232     unicode         0x05D8
+yod             iso8859-8       233     unicode         0x05D9
+endkaph         iso8859-8       234     unicode         0x05DA
+kaph            iso8859-8       235     unicode         0x05DB
+lamed           iso8859-8       236     unicode         0x05DC
+endmem          iso8859-8       237     unicode         0x05DD
+mem             iso8859-8       238     unicode         0x05DE
+endnun          iso8859-8       239     unicode         0x05DF
+nun             iso8859-8       240     unicode         0x05E0
+samech          iso8859-8       241     unicode         0x05E1
+ayin            iso8859-8       242     unicode         0x05E2
+endpe           iso8859-8       243     unicode         0x05E3
+pe              iso8859-8       244     unicode         0x05E4
+endzade         iso8859-8       245     unicode         0x05E5
+zade            iso8859-8       246     unicode         0x05E6
+qoph            iso8859-8       247     unicode         0x05E7
+resh            iso8859-8       248     unicode         0x05E8
+shin            iso8859-8       249     unicode         0x05E9
+taw             iso8859-8       250     unicode         0x05EA
+
+
+#
+# AMS symbol "A"
+squ             ams_symbola     0x03    unicode	0x25A1	      # square, open
+square          ams_symbola     0x03    unicode	0x25A1	      # square square
+squf            ams_symbola     0x04    unicode	0x25A0	      # blacksquare
+rtri            ams_symbola     0x42    unicode	0x25B7	      # triangleright r triangle, open
+ltri            ams_symbola     0x43    unicode	0x25C1	      # triangleleft l triangle, open
+starf           ams_symbola     0x46    unicode	0x2605	      # bigstar - star, filled
+dtrif           ams_symbola     0x48    unicode	0x25BC	      # blacktriangledown dn tri, filled
+rtrif           ams_symbola     0x49    unicode	0x25B6	      # blacktriangleright r tri, filled
+ltrif           ams_symbola     0x4A    unicode	0x25C0	      # blacktriangleleft l tri, filled
+utrif           ams_symbola     0x4E    unicode	0x25B2	      # blacktriangle up tri, filled
+check           ams_symbola     0x58    unicode	0x2713	      # checkmark tick, check mark
+angmsd          ams_symbola     0x5D    unicode	0x2221	      # measuredangle - angle-measured
+angsph          ams_symbola     0x5E    unicode	0x2222	      # sphericalangle angle-spherical
+oS              ams_symbola     0x73    unicode	0x24C8	      # circledS - capital S in circle
+malt            ams_symbola     0x7A    unicode	0x2720	      # maltese maltese cross
+comp            ams_symbola     0x7B    unicode	0x2201	      # complement - complement sign
+#
+# AMS symbol "B"
+nexist          ams_symbolb     0x40    unicode	0x2204	      # nexists - negated exists
+sbsol           ams_symbolb     0x72    -	-	      # sbs - short reverse solidus
+planck          ams_symbolb     0x7E    unicode	0x210E	      # hbar /hslash - Planck's over 2pi
+#
+# CM math italic
+sstarf          cm_math         0x3F    unicode	0x22C6	      # small star, filled
+star            cm_math         0x3F    unicode	0x2606	      # poor substitute; shouldn't be filled
+flat            cm_math         0x5B    unicode	0x266D	      # musical flat
+natur           cm_math         0x5C    unicode	0x266E	      # natural - music natural
+sharp           cm_math         0x5D    unicode	0x266F	      # musical sharp
+ell             cm_math         0x60    unicode	0x2113	      # ell - cursive small l
+jnodot          cm_math         0x7C    -	-	      # jmath - small j, no dot
+epsi            cm_math         017     unicode	0x03B5	      # small epsilon
+epsis           cm_math         017     -	-	      # straightepsilon
+thetav          cm_math         043     unicode	0x03D1	      # vartheta - curly or open theta
+rhov            cm_math         045     unicode	0x03F1	      # varrho
+order           cm_math         0157    unicode	0x2134	      # order of (script small o)
+#
+# CM symbol
+lowast          cm_symbol       0x03    unicode	0x2217	      # low asterisk
+mnplus          cm_symbol       0x07    unicode	0x2213	      # mp minus-or-plus sign
+cir             cm_symbol       0x0D    unicode	0x25EF	      # circ circle, open
+compfn          cm_symbol       0x0E    unicode	0x25CB	      # composite function (small circle)
+sime            cm_symbol       0x27    unicode	0x2243	      # simeq similar, equals
+utri            cm_symbol       0x34    unicode	0x25B3	      # triangle up triangle, open
+dtri            cm_symbol       0x35    unicode	0x25BD	      # triangledown down triangle, open
+par             cm_symbol       0x6B    unicode	0x2225	      # parallel parallel
+#
+# CM bold uppercase Greek
+b.Gamma         ucgreek_b       000     -	-	      # capital Gamma
+b.Delta         ucgreek_b       001     -	-	      # capital Delta
+b.Theta         ucgreek_b       002     -	-	      # capital Theta
+b.Lambda        ucgreek_b       003     -	-	      # capital Lambda
+b.Xi            ucgreek_b       004     -	-	      # capital Xi
+b.Pi            ucgreek_b       005     -	-	      # capital Pi
+b.Sigma         ucgreek_b       006     -	-	      # capital Sigma
+b.Upsi          ucgreek_b       007     -	-	      # capital Upsilon
+b.Phi           ucgreek_b       010     -	-	      # capital Phi
+b.Psi           ucgreek_b       011     -	-	      # capital Psi
+b.Omega         ucgreek_b       012     -	-	      # capital Omega
+#
+# CM bold lowercase Greek
+b.alpha         cm_math_b       013     -	-	      # small alpha
+b.beta          cm_math_b       014     -	-	      # small beta
+b.gamma         cm_math_b       015     -	-	      # small gamma
+b.delta         cm_math_b       016     -	-	      # small delta
+b.epsi          cm_math_b       017     -	-	      # small epsilon
+b.epsis         cm_math_b       017     -	-	      # straightepsilon
+b.zeta          cm_math_b       020     -	-	      # small zeta
+b.eta           cm_math_b       021     -	-	      # small eta
+b.thetas        cm_math_b       022     -	-	      # straight theta
+b.iota          cm_math_b       023     -	-	      # small iota
+b.kappa         cm_math_b       024     -	-	      # small kappa
+b.lambda        cm_math_b       025     -	-	      # small lambda
+b.mu            cm_math_b       026     -	-	      # small mu
+b.nu            cm_math_b       027     -	-	      # small nu
+b.xi            cm_math_b       030     -	-	      # small xi
+b.pi            cm_math_b       031     -	-	      # small pi
+b.rho           cm_math_b       032     -	-	      # small rho
+b.sigma         cm_math_b       033     -	-	      # small sigma
+b.tau           cm_math_b       034     -	-	      # small tau
+b.upsi          cm_math_b       035     -	-	      # small upsilon
+b.phis          cm_math_b       036     -	-	      # straightphi - straight phi
+b.chi           cm_math_b       037     -	-	      # small chi
+b.psi           cm_math_b       040     -	-	      cm_math_b       "\char'040" # small psi
+b.omega         cm_math_b       041     -	-	      # small omega
+b.epsiv         cm_math_b       042     -	-	      # varepsilon
+b.thetav        cm_math_b       043     -	-	      # vartheta - curly or open theta
+b.piv           cm_math_b       044     -	-	      # varpi
+b.rhov          cm_math_b       045     -	-	      # varrho
+b.sigmav        cm_math_b       046     -	-	      # varsigma
+b.phiv          cm_math_b       047     -	-	      # varphi - curly or open phi
+
+#
+# New names declared in HTML 4.0 (see htmlspcl.ent and htmlsymb.ent)
+bdquo		-		-	unicode		0x201E	# double low-9 quotation mark
+crarr		-		-	unicode		0x21B5	# downwards arrow with corner leftwards
+frasl		-		-	unicode		0x2044	current	":/"	# fraction slash
+lrm		-		-	unicode		0x200E	# left-to-right mark
+lsaquo		ps_ascii	139	unicode		0x2039	# single left-pointing angle quotation mark
+oline		-		-	unicode		0x203E	# overline = spacing overscore
+rlm		-		-	unicode		0x200F	# right-to-left mark
+rsaquo		ps_ascii	155	unicode		0x203A	# single right-pointing angle quotation mark
+sbquo		-		-	unicode		0x201A	# single low-9 quotation mark
+sigmaf		ps_symbol       0126	unicode		0x03C2	# greek small letter final sigma
+thetasym	cm_math         043	unicode		0x03D1	# greek small letter theta symbol
+upsih		ps_symbol       0125	unicode		0x03D2	# greek upsilon with hook symbol
+zwj		-		-	unicode		0x200D	# zero width joiner
+zwnj		-		-	unicode		0x200C	# zero width non-joiner
+
+# pinyin accented vowels:
+
+unixonly:
+pyacar		-		-	unicode		0x01CE	psa  "\@{\font}{11}{0}{a}"
+pyicar		-		-	unicode		0x01D0	psa  "\@{\font}{11}{0}{\g16}"
+pyocar		-		-	unicode		0x01D2	psa  "\@{\font}{11}{0}{o}"
+pyucar		-		-	unicode		0x01D4	psa  "\@{\font}{11}{0}{u}"
+pyudiemac	-		-	unicode		0x01D6	psa  "\@{\font}{175}{0}{\g252}"
+pyudieac	-		-	unicode		0x01D8	psa  "\@{\font}{180}{0}{\g252}"
+pyudiecar	-		-	unicode		0x01DA	psa  "\@{\font}{11}{0}{\g252}"
+pyudiegrv	-		-	unicode		0x01DC	psa  "\@{\font}{96}{0}{\g252}"
+endunixonly:
+
+windowsonly:
+pyacar		-		-	unicode		0x01CE	cp936 0x01CE
+pyicar		-		-	unicode		0x01D0	cp936 0x01D0
+pyocar		-		-	unicode		0x01D2	cp936 0x01D2
+pyucar		-		-	unicode		0x01D4	cp936 0x01D4
+pyudiemac	-		-	unicode		0x01D6	cp936 0x01D6
+pyudieac	-		-	unicode		0x01D8	cp936 0x01D8
+pyudiecar	-		-	unicode		0x01DA	cp936 0x01DA
+pyudiegrv	-		-	unicode		0x01DC	cp936 0x01DC
+endwindowsonly:
+
+
+charset: flightman
+bullo		flightman		0x20DD	unicode		0x20DD	
+boxo		flightman		0x20DE	unicode		0x20DE	
+drar		flightman		0x2198	unicode		0x2198
+
+charset: triangles
+uts   	triangles	 0x25B2	unicode		0x25B2
+dts    	triangles     0x25BC    unicode	0x25BC	      
+lts    	triangles     0x25C0    unicode	0x25C0	      
+rts   	triangles     0x25B6    unicode	0x25B6	   
+   
+DIAM	ps_symbol	   0xC6	

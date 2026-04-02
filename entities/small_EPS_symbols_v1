@@ -1,0 +1,306 @@
+<!--  ########  [  EPS small symbols supported by JCALS  ]  ######## -->
+<!--
+    LAST UPDATE:  January 06, 1995
+    BY:           Simon Wickes
+
+    PUBLIC ID:    -//JCALS//ENTITIES small EPS symbols v1//EN
+
+    COMMENTS:
+      This file consists of small symbols in EPS format
+      that are supported by the JCALS publishing system.
+
+-->
+
+<!--
+    $RCSfile$      $Revision$    $Date$
+
+    Revision History:
+
+    $Log$
+# Revision 1.1  1995/01/06  16:46:23  swickes
+# Initial revision
+#
+  Revision 1.1  1994/12/20  15:03:50  swickes
+  Initial revision
+
+-->
+
+<!--
+    CSCI:   Workstation Management
+    CSU:    Authoring Tools,
+             DTDs and FOSIs
+    CSU ID: 01-03-0130
+
+     Project:         JCALS System
+     Contract Number: DAHC94-89-C-008
+-->
+
+<!--
+    EPS small symbol set. Typical invocation:
+
+    <!ENTITY % eps-sml PUBLIC "-//JCALS//ENTITIES small EPS symbols v1//EN">
+    %eps-sml;
+-->
+
+
+<!-- Support for a locally-defined set of small EPS symbols.
+     Set to INCLUDE in DTD to reference -->
+
+<!ENTITY % local-small-symbols "IGNORE" >
+
+<![%local-small-symbols; [
+<!ENTITY % eps-small-local PUBLIC "-//JCALS//ENTITIES local small EPS symbols v1//EN">
+%eps-small-local;
+                       ]]>
+
+
+<!--
+		LAST AUTO-UPDATE:	19970101
+-->
+<!ENTITY ASversion SYSTEM "ASversion.eps" NDATA EPS>
+<!ENTITY S1line    SYSTEM "1line.eps"     NDATA EPS>
+<!ENTITY S2BAR     SYSTEM "2BAR.eps"      NDATA EPS>
+<!ENTITY S4arrows  SYSTEM "4arrows.eps"   NDATA EPS>
+<!ENTITY a         SYSTEM "a.eps"         NDATA EPS>
+<!ENTITY a1dot     SYSTEM "a1dot.eps"     NDATA EPS>
+<!ENTITY a2dots    SYSTEM "a2dots.eps"    NDATA EPS>
+<!ENTITY a3dots    SYSTEM "a3dots.eps"    NDATA EPS>
+<!ENTITY abar      SYSTEM "abar.eps"      NDATA EPS>
+<!ENTITY adots     SYSTEM "adots.eps"     NDATA EPS>
+<!ENTITY adown     SYSTEM "adown.eps"     NDATA EPS>
+<!ENTITY ai        SYSTEM "ai.eps"        NDATA EPS>
+<!ENTITY aleft     SYSTEM "aleft.eps"     NDATA EPS>
+<!ENTITY angbrkt   SYSTEM "angbrkt.eps"   NDATA EPS>
+<!ENTITY area      SYSTEM "area.eps"      NDATA EPS>
+<!ENTITY aright    SYSTEM "aright.eps"    NDATA EPS>
+<!ENTITY arl       SYSTEM "arl.eps"       NDATA EPS>
+<!ENTITY arrs      SYSTEM "arrs.eps"      NDATA EPS>
+<!ENTITY aslant    SYSTEM "aslant.eps"    NDATA EPS>
+<!ENTITY aup       SYSTEM "aup.eps"       NDATA EPS>
+<!ENTITY azim-f    SYSTEM "azim_f.eps"    NDATA EPS>
+<!ENTITY azim-five SYSTEM "azim_five.eps" NDATA EPS>
+<!ENTITY azim-four SYSTEM "azim_four.eps" NDATA EPS>
+<!ENTITY azim-g    SYSTEM "azim_g.eps"    NDATA EPS>
+<!ENTITY azim-l    SYSTEM "azim_l.eps"    NDATA EPS>
+<!ENTITY azim-n    SYSTEM "azim_n.eps"    NDATA EPS>
+<!ENTITY azim-o    SYSTEM "azim_o.eps"    NDATA EPS>
+<!ENTITY azim-one  SYSTEM "azim_one.eps"  NDATA EPS>
+<!ENTITY azim-r    SYSTEM "azim_r.eps"    NDATA EPS>
+<!ENTITY azim-thre SYSTEM "azim_thre.eps" NDATA EPS>
+<!ENTITY azim-two  SYSTEM "azim_two.eps"  NDATA EPS>
+<!ENTITY azim-u    SYSTEM "azim_u.eps"    NDATA EPS>
+<!ENTITY badown    SYSTEM "badown.eps"    NDATA EPS>
+<!ENTITY baleft    SYSTEM "baleft.eps"    NDATA EPS>
+<!ENTITY bar2      SYSTEM "bar2.eps"      NDATA EPS>
+<!ENTITY baright   SYSTEM "baright.eps"   NDATA EPS>
+<!ENTITY barrow    SYSTEM "barrow.eps"    NDATA EPS>
+<!ENTITY barrowl   SYSTEM "barrowl.eps"   NDATA EPS>
+<!ENTITY battery   SYSTEM "battery.eps"   NDATA EPS>
+<!ENTITY baup      SYSTEM "baup.eps"      NDATA EPS>
+<!ENTITY bball     SYSTEM "bball.eps"     NDATA EPS>
+<!ENTITY bflag     SYSTEM "bflag.eps"     NDATA EPS>
+<!ENTITY bigcircle SYSTEM "bigcircle.eps" NDATA EPS>
+<!ENTITY bio       SYSTEM "bio.eps"       NDATA EPS>
+<!ENTITY boat      SYSTEM "boat.eps"      NDATA EPS>
+<!ENTITY boomrang  SYSTEM "boomrang.eps"  NDATA EPS>
+<!ENTITY boxdot    SYSTEM "boxdot.eps"    NDATA EPS>
+<!ENTITY boxstr    SYSTEM "boxstr.eps"    NDATA EPS>
+<!ENTITY brktl     SYSTEM "brktl.eps"     NDATA EPS>
+<!ENTITY brktr     SYSTEM "brktr.eps"     NDATA EPS>
+<!ENTITY bs        SYSTEM "bs.eps"        NDATA EPS>
+<!ENTITY bt        SYSTEM "bt.eps"        NDATA EPS>
+<!ENTITY c1dot     SYSTEM "c1dot.eps"     NDATA EPS>
+<!ENTITY c2        SYSTEM "c2.eps"        NDATA EPS>
+<!ENTITY cang      SYSTEM "cang.eps"      NDATA EPS>
+<!ENTITY carat     SYSTEM "carat.eps"     NDATA EPS>
+<!ENTITY carat2    SYSTEM "carat2.eps"    NDATA EPS>
+<!ENTITY caratf    SYSTEM "caratf.eps"    NDATA EPS>
+<!ENTITY cc        SYSTEM "cc.eps"        NDATA EPS>
+<!ENTITY cdot      SYSTEM "cdot.eps"      NDATA EPS>
+<!ENTITY ce        SYSTEM "ce.eps"        NDATA EPS>
+<!ENTITY chemical  SYSTEM "chemical.eps"  NDATA EPS>
+<!ENTITY circle    SYSTEM "circle.eps"    NDATA EPS>
+<!ENTITY circle1a  SYSTEM "circle1a.eps"  NDATA EPS>
+<!ENTITY circle2   SYSTEM "circle2.eps"   NDATA EPS>
+<!ENTITY circle3   SYSTEM "circle3.eps"   NDATA EPS>
+<!ENTITY circlem   SYSTEM "circlem.eps"   NDATA EPS>
+<!ENTITY circlet   SYSTEM "circlet.eps"   NDATA EPS>
+<!ENTITY circross  SYSTEM "circross.eps"  NDATA EPS>
+<!ENTITY cirint    SYSTEM "cirint.eps"    NDATA EPS>
+<!ENTITY cirmatch  SYSTEM "cirmatch.eps"  NDATA EPS>
+<!ENTITY cirs      SYSTEM "cirs.eps"      NDATA EPS>
+<!ENTITY ck        SYSTEM "ck.eps"        NDATA EPS>
+<!ENTITY comment   SYSTEM "comment.eps"   NDATA EPS>
+<!ENTITY cstaff    SYSTEM "cstaff.eps"    NDATA EPS>
+<!ENTITY cycle     SYSTEM "cycle.eps"     NDATA EPS>
+<!ENTITY dag1      SYSTEM "dag1.eps"      NDATA EPS>
+<!ENTITY dagg1     SYSTEM "dagg1.eps"     NDATA EPS>
+<!ENTITY dagger    SYSTEM "dagger.eps"    NDATA EPS>
+<!ENTITY dblcir    SYSTEM "dblcir.eps"    NDATA EPS>
+<!ENTITY dblcross  SYSTEM "dblcross.eps"  NDATA EPS>
+<!ENTITY dbltri    SYSTEM "dbltri.eps"    NDATA EPS>
+<!ENTITY dia       SYSTEM "dia.eps"       NDATA EPS>
+<!ENTITY dia2      SYSTEM "dia2.eps"      NDATA EPS>
+<!ENTITY dia2bar   SYSTEM "dia2bar.eps"   NDATA EPS>
+<!ENTITY dia4      SYSTEM "dia4.eps"      NDATA EPS>
+<!ENTITY diaboom   SYSTEM "diaboom.eps"   NDATA EPS>
+<!ENTITY diacir    SYSTEM "diacir.eps"    NDATA EPS>
+<!ENTITY diadot    SYSTEM "diadot.eps"    NDATA EPS>
+<!ENTITY diam      SYSTEM "diam.eps"      NDATA EPS>
+<!ENTITY diatwo    SYSTEM "diatwo.eps"    NDATA EPS>
+<!ENTITY diawingfo SYSTEM "diawingfo.eps" NDATA EPS>
+<!ENTITY diawngfm  SYSTEM "diawngfm.eps"  NDATA EPS>
+<!ENTITY dmnd      SYSTEM "dmnd.eps"      NDATA EPS>
+<!ENTITY dntri     SYSTEM "dntri.eps"     NDATA EPS>
+<!ENTITY dot       SYSTEM "dot.eps"       NDATA EPS>
+<!ENTITY doubarr   SYSTEM "doubarr.eps"   NDATA EPS>
+<!ENTITY eight     SYSTEM "eight.eps"     NDATA EPS>
+<!ENTITY eqtri     SYSTEM "eqtri.eps"     NDATA EPS>
+<!ENTITY eqtri2    SYSTEM "eqtri2.eps"    NDATA EPS>
+<!ENTITY esds      SYSTEM "esds.eps"      NDATA EPS>
+<!ENTITY et        SYSTEM "et.eps"        NDATA EPS>
+<!ENTITY explode   SYSTEM "explode.eps"   NDATA EPS>
+<!ENTITY f         SYSTEM "f.eps"         NDATA EPS>
+<!ENTITY ff        SYSTEM "ff.eps"        NDATA EPS>
+<!ENTITY fire      SYSTEM "fire.eps"      NDATA EPS>
+<!ENTITY five      SYSTEM "five.eps"      NDATA EPS>
+<!ENTITY flag1l    SYSTEM "flag1l.eps"    NDATA EPS>
+<!ENTITY flag1r    SYSTEM "flag1r.eps"    NDATA EPS>
+<!ENTITY flag2l    SYSTEM "flag2l.eps"    NDATA EPS>
+<!ENTITY flag2r    SYSTEM "flag2r.eps"    NDATA EPS>
+<!ENTITY flag3l    SYSTEM "flag3l.eps"    NDATA EPS>
+<!ENTITY flag3r    SYSTEM "flag3r.eps"    NDATA EPS>
+<!ENTITY flag4l    SYSTEM "flag4l.eps"    NDATA EPS>
+<!ENTITY flag4r    SYSTEM "flag4r.eps"    NDATA EPS>
+<!ENTITY flag5l    SYSTEM "flag5l.eps"    NDATA EPS>
+<!ENTITY flag5r    SYSTEM "flag5r.eps"    NDATA EPS>
+<!ENTITY flagltl   SYSTEM "flagltl.eps"   NDATA EPS>
+<!ENTITY flagltr   SYSTEM "flagltr.eps"   NDATA EPS>
+<!ENTITY flagwdl   SYSTEM "flagwdl.eps"   NDATA EPS>
+<!ENTITY flagwdr   SYSTEM "flagwdr.eps"   NDATA EPS>
+<!ENTITY flaocta   SYSTEM "flaocta.eps"   NDATA EPS>
+<!ENTITY flaoctbr  SYSTEM "flaoctbr.eps"  NDATA EPS>
+<!ENTITY flash2    SYSTEM "flash2.eps"    NDATA EPS>
+<!ENTITY flashbr2  SYSTEM "flashbr2.eps"  NDATA EPS>
+<!ENTITY flashing  SYSTEM "flashing.eps"  NDATA EPS>
+<!ENTITY four      SYSTEM "four.eps"      NDATA EPS>
+<!ENTITY four2     SYSTEM "four2.eps"     NDATA EPS>
+<!ENTITY ge        SYSTEM "ge.eps"        NDATA EPS>
+<!ENTITY goggles   SYSTEM "goggles.eps"   NDATA EPS>
+<!ENTITY grd1      SYSTEM "grd1.eps"      NDATA EPS>
+<!ENTITY grd2      SYSTEM "grd2.eps"      NDATA EPS>
+<!ENTITY grd3      SYSTEM "grd3.eps"      NDATA EPS>
+<!ENTITY grnd      SYSTEM "grnd.eps"      NDATA EPS>
+<!ENTITY gtrthn    SYSTEM "gtrthn.eps"    NDATA EPS>
+<!ENTITY hand      SYSTEM "hand.eps"      NDATA EPS>
+<!ENTITY handr     SYSTEM "handr.eps"     NDATA EPS>
+<!ENTITY hcp       SYSTEM "hcp.eps"       NDATA EPS>
+<!ENTITY hok2      SYSTEM "hok2.eps"      NDATA EPS>
+<!ENTITY hshape    SYSTEM "hshape.eps"    NDATA EPS>
+<!ENTITY htop      SYSTEM "htop.eps"      NDATA EPS>
+<!ENTITY indic     SYSTEM "indic.eps"     NDATA EPS>
+<!ENTITY indic1    SYSTEM "indic1.eps"    NDATA EPS>
+<!ENTITY inf       SYSTEM "inf.eps"       NDATA EPS>
+<!ENTITY l-inv     SYSTEM "l-inv.eps"     NDATA EPS>
+<!ENTITY le        SYSTEM "le.eps"        NDATA EPS>
+<!ENTITY lgarrowl  SYSTEM "lgarrowl.eps"  NDATA EPS>
+<!ENTITY lgarrowr  SYSTEM "lgarrowr.eps"  NDATA EPS>
+<!ENTITY line2     SYSTEM "line2.eps"     NDATA EPS>
+<!ENTITY lrect     SYSTEM "lrect.eps"     NDATA EPS>
+<!ENTITY lshape    SYSTEM "lshape.eps"    NDATA EPS>
+<!ENTITY mod1      SYSTEM "mod1.eps"      NDATA EPS>
+<!ENTITY mod2      SYSTEM "mod2.eps"      NDATA EPS>
+<!ENTITY mod3      SYSTEM "mod3.eps"      NDATA EPS>
+<!ENTITY mushrm    SYSTEM "mushrm.eps"    NDATA EPS>
+<!ENTITY mv3dot    SYSTEM "mv3dot.eps"    NDATA EPS>
+<!ENTITY mvwave    SYSTEM "mvwave.eps"    NDATA EPS>
+<!ENTITY nine      SYSTEM "nine.eps"      NDATA EPS>
+<!ENTITY one       SYSTEM "one.eps"       NDATA EPS>
+<!ENTITY oshape    SYSTEM "oshape.eps"    NDATA EPS>
+<!ENTITY oval1     SYSTEM "oval1.eps"     NDATA EPS>
+<!ENTITY oval2     SYSTEM "oval2.eps"     NDATA EPS>
+<!ENTITY oval3     SYSTEM "oval3.eps"     NDATA EPS>
+<!ENTITY phnoise   SYSTEM "phnoise.eps"   NDATA EPS>
+<!ENTITY pnntl     SYSTEM "pnntl.eps"     NDATA EPS>
+<!ENTITY pnntr     SYSTEM "pnntr.eps"     NDATA EPS>
+<!ENTITY pnntrd    SYSTEM "pnntrd.eps"    NDATA EPS>
+<!ENTITY poison    SYSTEM "poison.eps"    NDATA EPS>
+<!ENTITY pshape    SYSTEM "pshape.eps"    NDATA EPS>
+<!ENTITY rada      SYSTEM "rada.eps"      NDATA EPS>
+<!ENTITY radc      SYSTEM "radc.eps"      NDATA EPS>
+<!ENTITY radioacti SYSTEM "radioactive.eps" NDATA EPS>
+<!ENTITY recdash   SYSTEM "recdash.eps"   NDATA EPS>
+<!ENTITY rect      SYSTEM "rect.eps"      NDATA EPS>
+<!ENTITY reptest   SYSTEM "reptest.eps"   NDATA EPS>
+<!ENTITY ring      SYSTEM "ring.eps"      NDATA EPS>
+<!ENTITY rkwl      SYSTEM "rkwl.eps"      NDATA EPS>
+<!ENTITY rptnr     SYSTEM "rptnr.eps"     NDATA EPS>
+<!ENTITY s2        SYSTEM "s2.eps"        NDATA EPS>
+<!ENTITY section   SYSTEM "section.eps"   NDATA EPS>
+<!ENTITY seven     SYSTEM "seven.eps"     NDATA EPS>
+<!ENTITY seven17   SYSTEM "seven17.eps"   NDATA EPS>
+<!ENTITY ship      SYSTEM "ship.eps"      NDATA EPS>
+<!ENTITY sinw      SYSTEM "sinw.eps"      NDATA EPS>
+<!ENTITY six       SYSTEM "six.eps"       NDATA EPS>
+<!ENTITY smalltri  SYSTEM "smalltri.eps"  NDATA EPS>
+<!ENTITY smarrowl  SYSTEM "smarrowl.eps"  NDATA EPS>
+<!ENTITY smarrowr  SYSTEM "smarrowr.eps"  NDATA EPS>
+<!ENTITY smrect    SYSTEM "smrect.eps"    NDATA EPS>
+<!ENTITY sq0sel    SYSTEM "sq0sel.eps"    NDATA EPS>
+<!ENTITY sq2up     SYSTEM "sq2up.eps"     NDATA EPS>
+<!ENTITY sq4lt     SYSTEM "sq4lt.eps"     NDATA EPS>
+<!ENTITY sq5fix    SYSTEM "sq5fix.eps"    NDATA EPS>
+<!ENTITY sq6rt     SYSTEM "sq6rt.eps"     NDATA EPS>
+<!ENTITY sq7dim    SYSTEM "sq7dim.eps"    NDATA EPS>
+<!ENTITY sq8dn     SYSTEM "sq8dn.eps"     NDATA EPS>
+<!ENTITY sq9map    SYSTEM "sq9map.eps"    NDATA EPS>
+<!ENTITY sqbrt     SYSTEM "sqbrt.eps"     NDATA EPS>
+<!ENTITY sqclr     SYSTEM "sqclr.eps"     NDATA EPS>
+<!ENTITY sqent     SYSTEM "sqent.eps"     NDATA EPS>
+<!ENTITY sqno3     SYSTEM "sqno3.eps"     NDATA EPS>
+<!ENTITY sqpmap    SYSTEM "sqpmap.eps"    NDATA EPS>
+<!ENTITY sqroot    SYSTEM "sqroot.eps"    NDATA EPS>
+<!ENTITY sqrw      SYSTEM "sqrw.eps"      NDATA EPS>
+<!ENTITY sqtxt     SYSTEM "sqtxt.eps"     NDATA EPS>
+<!ENTITY square    SYSTEM "square.eps"    NDATA EPS>
+<!ENTITY squig     SYSTEM "squig.eps"     NDATA EPS>
+<!ENTITY sqwave    SYSTEM "sqwave.eps"    NDATA EPS>
+<!ENTITY srfc      SYSTEM "srfc.eps"      NDATA EPS>
+<!ENTITY ss        SYSTEM "ss.eps"        NDATA EPS>
+<!ENTITY staff2    SYSTEM "staff2.eps"    NDATA EPS>
+<!ENTITY staff8    SYSTEM "staff8.eps"    NDATA EPS>
+<!ENTITY staffc    SYSTEM "staffc.eps"    NDATA EPS>
+<!ENTITY star      SYSTEM "star.eps"      NDATA EPS>
+<!ENTITY star2     SYSTEM "star2.eps"     NDATA EPS>
+<!ENTITY star3     SYSTEM "star3.eps"     NDATA EPS>
+<!ENTITY stri      SYSTEM "stri.eps"      NDATA EPS>
+<!ENTITY subrouti  SYSTEM "subrouti.eps"  NDATA EPS>
+<!ENTITY subroutin SYSTEM "subroutine.eps" NDATA EPS>
+<!ENTITY t-inv     SYSTEM "t-inv.eps"     NDATA EPS>
+<!ENTITY tbarrow   SYSTEM "tbarrow.eps"   NDATA EPS>
+<!ENTITY tee       SYSTEM "tee.eps"       NDATA EPS>
+<!ENTITY three     SYSTEM "three.eps"     NDATA EPS>
+<!ENTITY three2    SYSTEM "three2.eps"    NDATA EPS>
+<!ENTITY tridwn    SYSTEM "tridwn.eps"    NDATA EPS>
+<!ENTITY triflag   SYSTEM "triflag.eps"   NDATA EPS>
+<!ENTITY triw      SYSTEM "triw.eps"      NDATA EPS>
+<!ENTITY tv        SYSTEM "tv.eps"        NDATA EPS>
+<!ENTITY tv1       SYSTEM "tv1.eps"       NDATA EPS>
+<!ENTITY two       SYSTEM "two.eps"       NDATA EPS>
+<!ENTITY twodag    SYSTEM "twodag.eps"    NDATA EPS>
+<!ENTITY u1dot     SYSTEM "u1dot.eps"     NDATA EPS>
+<!ENTITY u2dots    SYSTEM "u2dots.eps"    NDATA EPS>
+<!ENTITY u3dots    SYSTEM "u3dots.eps"    NDATA EPS>
+<!ENTITY udot      SYSTEM "udot.eps"      NDATA EPS>
+<!ENTITY uparrow   SYSTEM "uparrow.eps"   NDATA EPS>
+<!ENTITY updnarr   SYSTEM "updnarr.eps"   NDATA EPS>
+<!ENTITY upn       SYSTEM "upn.eps"       NDATA EPS>
+<!ENTITY ushape    SYSTEM "ushape.eps"    NDATA EPS>
+<!ENTITY v3dots    SYSTEM "v3dots.eps"    NDATA EPS>
+<!ENTITY vapor     SYSTEM "vapor.eps"     NDATA EPS>
+<!ENTITY vwave     SYSTEM "vwave.eps"     NDATA EPS>
+<!ENTITY warrow    SYSTEM "warrow.eps"    NDATA EPS>
+<!ENTITY wingform  SYSTEM "wingform.eps"  NDATA EPS>
+<!ENTITY wvfrm     SYSTEM "wvfrm.eps"     NDATA EPS>
+<!ENTITY zer       SYSTEM "zer.eps"       NDATA EPS>
+<!ENTITY zero      SYSTEM "zero.eps"      NDATA EPS>

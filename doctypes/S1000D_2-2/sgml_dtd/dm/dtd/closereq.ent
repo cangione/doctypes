@@ -1,0 +1,36 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. CPF 2004-32US: New public identifier.                           *
+    * 2. CPF 2004-03SE: Rename element <closeup> to <closereqs>. Change  *
+    *                   its content model to include element <reqconds>  *
+    *                   only and remove inclusion of <figure>, <foldout> *
+    *                   and <table>.                                     *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % CLOSEREQ                                                *
+    *   PUBLIC "-//S1000D//ELEMENTS Closeup Requirements 20050501//EN" > *
+    * %CLOSEREQ;                                                         *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    *  Define Element closereqs (Close up requirements) containing:-     *
+    *  reqconds   - Mandatory  Single     contains noconds, reqcond,     *
+    *                                              reqcondm, reqcontp.   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT closereqs - O (reqconds) >
+<!ATTLIST closereqs
+            %bodyatt; >
+<!-- Element <closeup> renamed to <closereqs>, content model changed and
+     inclusion of <figure>, <foldout>, <table> removed. -->

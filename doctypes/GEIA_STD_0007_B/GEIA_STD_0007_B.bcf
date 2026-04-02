@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fragment document type declaration subset:
+Arbortext, Inc., 1988-2018, v.4002
+<!DOCTYPE burstspec PUBLIC "-//Arbortext//DTD BurstSpec 1.0//EN"
+ "burstspec/burstspec.dtd">
+-->
+<burstspec>
+	<boundaryspec fileent="on" graphics="on">
+		<!-- Root element -->
+		<element name="GEIA-STD-0007" objecttype="xinclude"/>
+		<!-- Full File -->
+		<element name="full_file" objecttype="xinclude"/>
+		<!-- Change File -->
+		<element name="change_file" objecttype="xinclude"/>
+	</boundaryspec>
+	<createarg>
+		<!-- Object creation parameters specific to gdls_ab. Global defaults
+				are available in 'atidefaults'.  -->
+		<!-- An object's name is assigned according
+				to a prioritized set of rules. Each of the rules below is checked in order, and
+				the first applicable rule determines the object's name.
+				"topmost-is-filename" takes effect only when it's the first
+				rule in the naming criteria. -->
+		<namecriteria>
+			<namerule elementname="GEIA-STD-0007" nameexpression="concat(//full_file/XA_end_item_acronym_code_data/end_item_acronym_code,' (',name(),')')" rule="xpath"/>
+			<namerule elementname="full_file" nameexpression="concat(//XA_end_item_acronym_code_data/end_item_acronym_code,' (',name(),')')" rule="xpath"/>
+			<namerule elementname="change_file" nameexpression="'Change File'" rule="xpath"/>
+		</namecriteria>
+		<!--
+			 Rules for DMS object type and storage location can be
+			 based on either the element name or the source type
+			 ("text" or "graphic"). The user may assign a value
+			 only if the useroverride setting in atidefaults is
+			 set "on", in which case, a user-supplied value takes
+			 precedence. Otherwise, the system checks for a rule
+			 based on the element name, then the source type, and
+			 finally, the administrative default.
+		-->
+		<dmsobjtype>
+			<!-- typerule
+				 The 'targettype' attribute of any 'typerule' elements must
+				 specify a fully-qualified soft type name which derives from
+				 DynamicDocument (which is a built-in type deriving from
+				 EPMDocument).  The format of this attribute is as follows:
+
+				 wt.epm.EPMDocument|<child-name-1>| ... |<child-name-N>
+
+				 Each component must specify the 'Name' of each soft type
+				 (not the 'Display Name') as given in the Type Manager
+				 interface.  An example 'targettype' attribute value follows:
+
+				 wt.epm.EPMDocument|com.acme.DynamicDocument|com.acme.CustomType
+			-->
+			<typerule elementname="GEIA-STD-0007" targettype="wt.epm.EPMDocument|com.caemilusa.DynamicDocument|com.caemilusa.Manual"/>
+			<typerule elementname="full_file" targettype="wt.epm.EPMDocument|com.caemilusa.DynamicDocument|com.caemilusa.Manual"/>
+			<typerule elementname="change_file" targettype="wt.epm.EPMDocument|com.caemilusa.DynamicDocument|com.caemilusa.Manual"/>
+		</dmsobjtype>
+		<dmslocation>
+			<!-- locnrule
+				 The 'location' attribute value is interpreted as follows
+
+				 "" (empty path)
+				 This specifies the home folder of the context selected by the user
+				 during login.
+				 
+				 "relative/path"
+				 This specifies a path relative to the "home folder".  If more than
+				 one context can be chosen then be sure that the specified subdirectory
+				 structure exists in all possible context folders.
+				 
+				 "/Site/Product Name/subfolder"
+				 A leading slash (/) character specifies a full path.
+				 Since this rule will be in effect for all users and all contexts,
+				 you must make sure that all users have read/write access to any
+				 fully-pathed folder specified here.
+			-->
+			<locnrule elementname="GEIA-STD-0007" location="0007 Publications"/>
+			<locnrule elementname="full_file" location="WorkPackages"/>
+			<locnrule elementname="change_file" location="WorkPackages"/>
+		</dmslocation>
+		<dmsmetadata>
+			<!-- Three attributes were added to the DynamicDocument type in the
+			 PTC Server 10.1 M020 release. These attributes are PTC_DD_LANGUAGE,
+			 PTC_DD_TRANSLATE, and InformationType. The first two store the
+			 object's translation data. InformationType contains the 
+			 document's Service Center Information Type. The following
+			 are example metadata rules for these attributes. These object 
+			 properties are not expected to change over an object's 
+			 lifetime. The examples apply to the topic element; similar 
+			 rules must be included for each object boundary of interest. 
+
+			 The following rule states that the PTC Server property 
+			 PTC_DD_TRANSLATE will be assigned the value of the translate
+			 attribute. If the attribute is not present, the default value
+			 of 'yes' is assigned. -->
+	<!--		<metadatarule elementname="manual" expr="@docid"
+				metadata="MANUAL::docNumber" sourcetype="text"/>-->
+		</dmsmetadata>
+	</createarg>
+</burstspec>

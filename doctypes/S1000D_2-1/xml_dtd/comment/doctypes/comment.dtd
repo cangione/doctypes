@@ -1,0 +1,21 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                          Commenting                                *
+    *                 XML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.1                            *
+    *                       Date: 2004-02-29                             *
+    *                                                                    *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update Comment DTD public identifier date.                      *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE comment PUBLIC
+ "-//S1000D//DTD S1000D Commenting 20040229//EN//XML" 
+ "../dtd/comment.dtd"
+ [
+ ]>

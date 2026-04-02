@@ -1,0 +1,459 @@
+<!--PUBLIC "-//USA-DOD//ELEMENTS 3001 Part 3 Draft XML V307 08242016" -->
+
+
+<!-- 			DTD for Testing and Troubleshooting Procedures
+-->
+
+<!-- Operational and Test Procedures -->
+<!ENTITY % op-testproc "(effect?, title, (%proccon;), (step | step-with-indication)+)">
+
+<!--Testing and Troubleshooting Information Module -->
+<!ELEMENT testrblim    (opchkwp | trblshtwp | tst-trblwp | maintcdwp | fltindwp |  fltdescrptwp | symwp | fitrblwp | ffdiagwp | engtestwp)*  >
+<!ATTLIST testrblim 	   %docatt;
+						%secur;>
+
+			<!--WORK PACKAGE ELEMENTS -->
+
+<!-- Operational Checkout Work Package-->
+<!ELEMENT opchkwp      (titleblk,  wpinfo, intro?, genproc*, pretest*, opchk, shutdown*, emergshtdn*, figsect?, foldsect?) >
+<!ATTLIST opchkwp 	 %wpatt;
+				    %secur; >
+
+<!--Combined Operational Checkout and Troubleshooting Work Package-->
+<!ELEMENT tst-trblwp     (titleblk,  wpinfo, intro?, genproc*, pretest*, (opchk-trblproc | opchk | trblsht)*,  shutdown*, emergshtdn*, figsect?, foldsect?) >
+<!ATTLIST tst-trblwp 	 %wpatt;
+				    %secur; >
+
+<!-- Troubleshooting Work Package-->
+<!ELEMENT trblshtwp    (titleblk,  wpinfo, intro?, genproc*, trblsht, shutdown*, emergshtdn*, figsect?, foldsect?) >
+<!ATTLIST trblshtwp 	 %wpatt;
+					    %secur; >
+
+<!--Maintenance Code Listing Work Package-->
+<!ELEMENT maintcdwp    (titleblk,  wpinfo, intro, maintcdtable, figsect?, foldsect?) >
+<!ATTLIST maintcdwp 	 %wpatt;
+					    %secur; >
+
+<!--Fault Indications Work Package-->
+<!ELEMENT fltindwp    (titleblk,  wpinfo, intro, (valrttable | indfltable |  pnlind |  wraflt)*, figsect?, foldsect?) >
+<!ATTLIST fltindwp 	 %wpatt;
+					%secur; >
+
+<!--Panel Indications - A grouping of the Panel Indications Table and associated figure-->
+<!ELEMENT pnlind    (effect?, figure, pnlindtable)>
+<!ATTLIST pnlind 	%bodyatt;
+				%secur; >
+
+<!--Fault Indicators - A grouping of the Fault Indicator Table and associated figure--> 
+<!ELEMENT wraflt    (effect?, (figure | wraflttable)*)>
+<!ATTLIST wraflt 		%bodyatt;
+				  %secur; >
+
+<!--Fault Descriptor Work Package-->
+<!ELEMENT fltdescrptwp    (titleblk,  wpinfo, intro, fltdesctable+, figsect?, foldsect?) >
+<!ATTLIST fltdescrptwp 	 %wpatt;
+					%secur; >
+
+<!--Symbology Work Package-->
+<!ELEMENT symwp    (titleblk,  wpinfo, intro, sym+, figsect?, foldsect?) >
+<!ATTLIST symwp 	 %wpatt;
+				    %secur; >
+
+<!-- Symbology - A grouping of the Symbology Table and associated figure -->
+<!ELEMENT sym   (effect?, (figure | symtable)*)>
+<!ATTLIST sym 	%bodyatt;
+				%secur; >
+
+<!--Fault Isolation Troubleshooting Procedures Work Package-->
+<!ELEMENT fitrblwp    (fititleblk,  wpinfo,  malfunctionlist?, intro?, trblproc-a+, figsect?, foldsect?) > 
+<!ATTLIST fitrblwp 	 %wpatt;
+				    %secur; >
+
+<!-- Fault isolation title block. Fault Isolation Title Block includes a troubleshooting symptom. -->
+<!ELEMENT fititleblk   (fititle, wpnotices?)>  
+<!ATTLIST fititleblk %secur;>
+
+<!-- Fault isolation Work Package Title  -->
+<!ELEMENT fititle   (maintlvl, subject, trblshtsym, sysnomen*)>
+<!ATTLIST fititle %secur;>
+
+<!-- Troubleshooting Symptom. Required on the Title Block of a Fault Isolation Troubleshooting Procedures Work Package-->
+<!ELEMENT trblshtsym    (#PCDATA | %text;)* >
+<!ATTLIST trblshtsym %secur;>
+
+<!--Malfunction List - A list of items that may have caused a malfunction - part of the Fault Isolation Troubleshooting Procedures Work Packge-->
+<!ELEMENT malfunctionlist   (para, malfunction+)>
+<!ATTLIST malfunctionlist %secur;>
+
+<!--Functional Flow Diagram Work Package -->
+<!ELEMENT ffdiagwp     (titleblk,  wpinfo, intro, ffdiagram+, figsect?, foldsect?) >
+<!ATTLIST ffdiagwp 	 %wpatt;
+					    %secur; >
+
+<!--Engine Testing Procedures Work Package-->
+<!ELEMENT engtestwp    (titleblk,  wpinfo, intro?, genproc*, perfevaldata*, specreptst*, testreq*, enginspect*, abnormcond*, unusualcond*, oplimit*, engstart*, testprep*, engtest*, shutdown*, emergshtdn*, postest*, figsect?, foldsect?) >
+<!ATTLIST engtestwp 	 %wpatt;
+						  %secur; >
+
+<!-- General Procedures-->
+<!ELEMENT genproc   (title, (%proccon;), taskintro?, step*, proc*)>
+<!ATTLIST genproc 	 %stepatt;
+					%secur;>
+
+<!-- Pretest Procedures-->
+<!ELEMENT pretest   (title, (%proccon;), taskintro?, step*, proc*)>
+<!ATTLIST pretest 	 %stepatt;
+					%secur;>
+
+<!-- Shutdown Procedures-->
+<!ELEMENT shutdown   (title, (%proccon;), taskintro?, step*, proc*)>
+<!ATTLIST shutdown 	 %stepatt;
+					%secur;>
+
+<!--Operational Checkout Procedures -->
+<!ELEMENT opchk    (optest | opproc)+>
+<!ATTLIST opchk 	 %stepatt;
+					%secur;>
+
+<!--Operational  Procedures -->
+<!ELEMENT opproc   (%op-testproc;)>
+<!ATTLIST opproc 	 %stepatt;
+					%secur;>
+
+<!--Operational  Procedures - Narrative text -->
+<!ELEMENT optest (title, (%proccon;), taskintro?, step*, proc*)>
+<!ATTLIST optest %stepatt;
+		 %secur;>
+				
+<!-- Step With Indication. Groups a steps with an Indication Group. -->	
+<!ELEMENT step-with-indication (step, indicationgrp+)>
+<!ATTLIST step-with-indication
+			%refs;
+			%secur; >
+			
+<!--Indication Group. Groups conditions and corrective actions. -->
+<!ELEMENT indicationgrp   (condition, corr-action+)>
+<!ATTLIST indicationgrp
+			numbered (yes|no) 'no'
+			%refs;
+			%secur; >
+
+<!--Condition-->
+<!ELEMENT condition  (%paracon;)*>
+<!ATTLIST condition  
+		%secur; >
+
+<!--Corrective Action to be performed based on indications or conditions -->
+<!ELEMENT action   (effect?, (%stepcon;), sub-actions?) >
+<!ATTLIST action   	%refs;
+			%secur; >
+
+<!--Corrective Action to be performed based on indications or conditions. All corrective actions are tagged as <action>, regardless of hierarchical level. If an action contains subordinate actions, those subordinate actions are surrounded by this wrapper element <sub-actions> -->
+<!ELEMENT sub-actions   (action+)>
+<!ATTLIST sub-actions	%secur; >
+
+<!-- Troubleshooting Procedures. A collection of Troubleshooting Procedure - Method "A" and/or Method "B"-->
+<!ELEMENT trblsht   (intro?, (trblproc-a | trblproc-b)*)>
+<!ATTLIST trblsht
+			%stepatt;
+			%secur; >
+
+<!-- Troubleshooting Procedure.  Method "A" -->		
+<!ELEMENT trblproc-a   (effect?, symptom, (%proccon;), (condition, decision)?, (condition-group | trbl-step |  finalaction)+)>
+<!ATTLIST trblproc-a
+	%stepatt;
+	%secur; >
+	
+<!-- Condition Decision Grouping -->		
+<!ELEMENT condition-group (condition, decision)>
+<!ATTLIST condition-group  id ID #REQUIRED
+			   %secur; >
+
+<!-- Troubleshooting Steps - groups the troubleshooting steps with the condition and decision.  Part of Troubleshooting Procedures Method "A" -->
+<!ELEMENT trbl-step   ((reference?, action)?, step+, (condition, decision))>
+<!ATTLIST trbl-step
+			id ID #REQUIRED
+			%secur; >
+
+<!--Final Action Group - groups actions or malfunctions, and references.  Part of Troubleshooting Procedures Method "A" -->
+<!ELEMENT finalaction   (reference?, (malfunction | action))>
+<!ATTLIST finalaction
+			id ID #REQUIRED
+			%secur; >
+
+<!-- Corrective Action consisting of a malfunction or actions, followed by an optional reference -->
+<!ELEMENT corr-action   (reference?, (malfunction | action))>
+<!ATTLIST corr-action  
+			%refs;
+			%secur; >
+
+<!--Specific Fault Symptoms for which Troubleshooting Procedures are provided -->
+<!ELEMENT symptom    (#PCDATA | %text;)* >
+<!ATTLIST symptom   	%refs;
+			%secur; >
+
+<!--A "no" or "yes" decision to guide a technician to the next appropriate step or action.-->
+<!ELEMENT decision   (no, yes)  >
+<!ATTLIST decision   	%refs;
+			%secur; >
+
+<!--A "yes" decision references the next appropriate step or action-->
+<!ELEMENT yes   EMPTY>
+<!ATTLIST yes idref IDREF #REQUIRED
+         otherprocedure IDREF #IMPLIED>
+
+<!--A "no" decision references the next appropriate step or action-->
+<!ELEMENT no   EMPTY>
+<!ATTLIST no idref IDREF #REQUIRED
+otherprocedure IDREF #IMPLIED>
+
+<!-- Troubleshooting Procedure.  Method "B" -->
+<!ELEMENT trblproc-b   (effect?, title, (%proccon;), symptomgrp+, noteslist?)>
+<!ATTLIST trblproc-b
+			%stepatt;
+			%secur; >
+
+<!-- Symptom Group - groups a  fault symptom and the probable malfunction or series of malfunctions  that may have caused the fault.  Part of Troubleshooting Procedure,  Method "B" -->
+<!ELEMENT symptomgrp   (symptom,  malfuncgroup+)>
+<!ATTLIST symptomgrp   	%refs;
+			%secur; >
+
+<!-- Malfunction Group - a grouping of a malfunction with the  corrective action -->
+<!ELEMENT malfuncgroup   (malfunction, (reference?, action)+)>
+<!ATTLIST malfuncgroup   	%refs;
+				%secur; >
+
+<!--A malfunction or series of malfunctions-->
+<!ELEMENT malfunction    (para) >
+<!ATTLIST malfunction   	%refs;
+						%secur; >
+
+<!--Combined Operational Checkout and Troubleshooting Procedures-->
+<!ELEMENT opchk-trblproc   (optest | testproc)+>
+<!ATTLIST opchk-trblproc
+			%stepatt;
+			%secur; >
+
+<!--Test Procedures -->
+<!ELEMENT testproc   (%op-testproc;)>
+<!ATTLIST testproc
+			%stepatt;
+			%secur; >
+
+<!--Maintenance Code Listing Table -->
+<!ELEMENT maintcdtable   (title,  (maintcdentry | note)+, noteslist?)>
+<!ATTLIST maintcdtable
+			%bodyatt;
+			%secur; >
+
+<!--An entry in the Maintenance Code Listing Table -->
+<!ELEMENT maintcdentry   (maintcd, malfinfo*, relind*)>
+<!ATTLIST maintcdentry 	%refs;
+			%secur;>
+
+<!--Maintenance Code -->
+<!ELEMENT maintcd   (#PCDATA | %text;)* >
+<!ATTLIST maintcd 	 %secur;>
+
+<!--Malfunction Information. For each maintenance code in the Maintenance Code Listing Table, the malfunction, malfunctioning system, and related maintenance action shall be listed-->
+<!ELEMENT malfinfo   (malfunc+, malfsys, (reference?, maintact)*)>
+<!ATTLIST malfinfo 	 %secur;>
+
+<!--Malfunction as part of the Malfunction Information in the Maintenance Code Listing Table -->
+<!ELEMENT malfunc   (#PCDATA | %text;)* >
+<!ATTLIST malfunc 	 %secur;>
+
+<!--Malfunctioning System as part of the Malfunction Information in the Maintenance Code Listing Table -->
+<!ELEMENT malfsys    (#PCDATA | %text;)* >
+<!ATTLIST malfsys 	 %secur;>
+
+<!--Maintenance Action as part of the Malfunction Information in the Maintenance Code Listing Table -->
+<!ELEMENT maintact    (#PCDATA | %text;)* >
+<!ATTLIST maintact 	 %secur;>
+
+<!--All possible related indications for a maintenance code-->
+<!ELEMENT relind    (title?, indication+)>
+<!ATTLIST relind 	 %secur;>
+
+<!--Individual indication for a maintenance code-->
+<!ELEMENT indication    (#PCDATA | %text;)* >
+<!ATTLIST indication 	 %secur;>
+
+<!--Fault Indications -->
+
+<!-- Voice Alert Messages Listing  -->
+<!ELEMENT valrttable    (effect?, title,  (valtrentry | note | valgroup)+, noteslist?)>
+<!ATTLIST valrttable
+			%bodyatt;
+			%secur; >
+
+<!--An entry in the Voice Alert Messages Listing -->
+<!ELEMENT valtrentry   (valrtmess+, desc) >
+<!ATTLIST valtrentry 	%refs;
+				 	%secur;>
+
+<!--Individual voice alert message found within the  Voice Alert Messages Listing  -->
+<!ELEMENT valrtmess     (#PCDATA | %text;)* >
+<!ATTLIST valrtmess 	 %secur;>
+
+<!-- A grouping of Voice Alert Messages Entries found within the Voice Alert Messages Listing -->
+<!ELEMENT valgroup   (title, (valtrentry | note)+)>
+<!ATTLIST valgroup 	 %refs; 
+			%secur;>
+
+<!--Indications Fault Table -->
+<!ELEMENT indfltable   (title,  indflentry+, noteslist?)>
+<!ATTLIST indfltable
+					%bodyatt;
+				  	 %secur;>
+
+<!--An entry within the Indications Fault Table -->
+<!ELEMENT indflentry   (indexno?, ind-code+, desc)>
+<!ATTLIST indflentry 	%refs;
+ 	 				%secur;>
+
+<!-- Indicator Indication. The column within the Indications Fault Table that groups indications and reference codes. -->
+<!ELEMENT ind-code   (indication+, refcode)>
+<!ATTLIST ind-code 	 %secur;>
+
+<!-- Reference Code as found in the Indicator Indication Column of the Indications Fault Table  -->
+<!ELEMENT refcode   (#PCDATA)>
+<!ATTLIST refcode 	 %secur;>
+
+<!--Listing of all indicator panel indications -->
+<!ELEMENT pnlindtable   (effect?, title,  pnlindentry+, noteslist?)>
+<!ATTLIST pnlindtable
+					%bodyatt;
+					%secur;>
+
+<!--An entry within the indicator panel indications listing -->
+<!ELEMENT pnlindentry   (indexno?, indpnlind+, desc)>
+<!ATTLIST pnlindentry 	%refs;
+ 	 					%secur;>
+
+<!--An individual indicator panel indication found in the indicator panel indications listing -->
+<!ELEMENT indpnlind     (#PCDATA | %text;)* >
+<!ATTLIST indpnlind 	 %secur;>
+
+<!--Listing of all fault indicators -->
+<!ELEMENT wraflttable   (effect?, title,  (wrafltentry | wrafltindentry | note)+, noteslist?)>
+<!ATTLIST wraflttable
+			%bodyatt;
+			%secur; >
+
+<!--An individual entry in the fault indicators listing where the WRA Fault Indicator includes only one description -->
+<!ELEMENT wrafltentry   (indexno, ((wraflind, maintcd?, maintact) | note))>
+<!ATTLIST wrafltentry 	%refs;
+				 		%secur;>
+
+<!-- An entry in the fault indicators listing, grouped by WRA Fault Indicator, that further lists multiple descriptions associated with maintenance codes and actions.  -->
+<!ELEMENT wrafltindentry   (indexno?,((wraflind, maintcd?, maintact) | note))>
+<!ATTLIST wrafltindentry 	%refs;
+				          %secur;>
+
+<!-- A WRA Fault Indicator -->
+<!ELEMENT wraflind   (#PCDATA | %pctext;)*>
+<!ATTLIST wraflind 	%secur;>
+
+<!--Fault Descriptor Table -->
+<!ELEMENT fltdesctable   (effect?, title,  (fltdescentry | sysfltentry | note)+, noteslist?) >
+<!ATTLIST fltdesctable
+			%bodyatt;
+			%secur; >
+
+<!--An entry in the Fault Descriptor Table -->
+<!ELEMENT fltdescentry   ((fltdescript+, (reference?, maintact)+) | note)>
+<!ATTLIST fltdescentry 	%refs;
+				 		%secur;>
+
+<!--An entry, grouped and indicated by system name, in the Fault Descriptor Table -->
+<!ELEMENT  sysfltentry   (title, fltdescentry*, subsysentry*)>
+<!ATTLIST sysfltentry 	%refs;
+				 	%secur;>
+
+<!--A sub entry, indicated by sub-system name, of the Fault Descriptor Table -->
+<!ELEMENT   subsysentry   (title, fltdescentry+)>
+<!ATTLIST subsysentry 	%refs;
+				 		%secur;>
+
+<!--An individual Fault Description found in the Fault Descriptor Table -->
+<!ELEMENT fltdescript    (#PCDATA | %text;)* >
+<!ATTLIST fltdescript 	 %secur;>
+
+<!--Symbology Table -->
+<!ELEMENT symtable   (title,  symentry+, noteslist?)>
+<!ATTLIST symtable
+			%refs;
+			%secur; >
+
+<!--An entry in the Symbology Table -->
+<!ELEMENT symentry   (indexno?, display, desc)>
+<!ATTLIST symentry 	%refs;
+				 	%secur;>
+
+<!--Aircraft display elements found in the Symbology Table -->
+<!ELEMENT display     (#PCDATA | %text;)* >
+<!ATTLIST display 	 %secur;>
+
+<!--Functional Flow Diagrams -->
+<!ELEMENT ffdiagram   (figure)>
+<!ATTLIST ffdiagram 	 %bodyatt;
+					    %secur; >
+
+<!--Performance Evaluation Data depicting engine operating parameters.-->
+ <!ELEMENT  perfevaldata    (title, (%proccon;), sub-paras?)>
+<!ATTLIST perfevaldata 	 %bodyatt;
+					    %secur; >
+
+<!--Testing required after special repairs for engine parts that have been replaced-->
+<!ELEMENT  specreptst    (title, (%proccon;), sub-paras?)>
+<!ATTLIST specreptst 	 %bodyatt;
+					    %secur; >
+
+<!--Test Requirements for engine repairs-->
+<!ELEMENT  testreq     (title, (%proccon;), sub-paras?)>
+<!ATTLIST testreq 	 %bodyatt;
+					    %secur; >
+
+<!--Engine inspection procedures-->
+<!ELEMENT  enginspect     (title, (%proccon;), taskintro?, step*, proc*)>
+<!ATTLIST enginspect 	 %stepatt;
+					    %secur; >
+
+<!--Abnormal conditions during operation-->
+<!ELEMENT abnormcond     (title, (%proccon;), sub-paras?)>
+<!ATTLIST abnormcond 	 %stepatt;
+					    %secur; >
+
+<!--Engine operation under unusual conditions-->
+<!ELEMENT unusualcond     (title, (%proccon;), taskintro?, step*, proc*)>
+<!ATTLIST unusualcond 	 %stepatt;
+					    %secur; >
+
+<!--Engine Operating Limits -->
+<!ELEMENT oplimit     (title, (%proccon;), taskintro?, step*, proc*)>
+<!ATTLIST oplimit 	 %stepatt;
+					    %secur; >
+
+<!--Emergency Shutdown procedures for shutting the engine down in the event of an observed emergency condition-->
+<!ELEMENT emergshtdn     (title, (%proccon;), taskintro?, step*, proc*)>
+<!ATTLIST emergshtdn 	 %stepatt;
+					    %secur; >
+
+<!--Element "engstart"  also used by Maintenance Task; Defined in Common Entity File -->
+
+<!--Engine Test Procedures-->
+<!ELEMENT engtest     (title, (%proccon;), taskintro?, ((step*, proc*) | testproc+))>
+<!ATTLIST engtest 	 %stepatt;
+					    %secur; >
+
+<!--Engine Test Preparation Procedures-->
+<!ELEMENT testprep     (title, (%proccon;), taskintro?, step*, proc*)>
+<!ATTLIST testprep 	 %stepatt;
+					    %secur; >
+
+<!--Engine post-test procedures-->
+<!ELEMENT postest      (title, (%proccon;), taskintro?, step*, proc*)>
+<!ATTLIST postest 	 %stepatt;
+					    %secur; >
+

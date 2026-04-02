@@ -1,0 +1,57 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                 XML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. New public identifier.                                          *
+    * 2. Remove element rpc from DMADDR3.ENT for use by COMMENT DTD.     *
+    *====================================================================*
+    * Typical invocation:-                                               *
+    * <!ENTITY % DMADDR3R PUBLIC                                         *
+    *   "-//S1000D//ELEMENTS DM Address Details 3rd Part Reduced         *
+    *                        20030531//EN//XML"                          *
+    *   "dmaddr3r.ent">                                                  *
+    * %DMADDR3R;                                                         *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Element dmtitle (Data Module Title) containing:-            *
+    *  techname - Mandatory  Single      contains Parsed Character Data. *
+    *  infoname - Optional   Single      contains Parsed Character Data. *
+    ********************************************************************** -->
+<!ELEMENT dmtitle (techname,infoname?) >
+
+
+<!--**********************************************************************
+    * Define Element techname (Technical Name) containing:-              *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT techname (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element infoname (Information Name) containing:-            *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT infoname (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element language (Language of Data Module) containing:-     *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  language - CDATA     - REQUIRED - Language Code (lowercase).      *
+    *  country  - CDATA     - IMPLIED  - Country Code (uppercase).       *
+    ********************************************************************** -->
+<!ELEMENT language EMPTY>
+<!ATTLIST language
+             language CDATA #REQUIRED
+             country  CDATA #IMPLIED >
+
+<!--** End of XML DMADDR3R Entity **-->

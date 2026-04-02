@@ -1,0 +1,1165 @@
+<!-- ============================================================ -->
+<!--  This DTD is for an Aircraft Illustrated Parts Catalog       -->
+<!-- ============================================================ -->
+<!--  DTD reference : -//ATA-TEXT//DTD AIPC-VER20-LEVEL2//EN      -->
+<!--  DTD level     : 2                                           -->
+<!--  Rev Date      : 07 Jul 2023                                 -->
+<!--  Parsed Date   : 07 Jul 2023                                 -->
+<!--                                                              -->
+<!--  Highlights    :                                             -->
+<!--  1) Increased the "VER" number to 20.0.                      -->
+<!--  2) Changed element TR structure: element TRLIST? moved out  -->
+<!--     of the choice (CR-2023-01).                              -->
+<!--  2) Added new MEDIA element as a chice with GRAPHIC in       -->
+<!--     FIGURE element content (CR-2022-27)                      -->
+<!--  3) Added new NOTATION mcp (CR-2022-27)                      -->
+<!--                                                              -->
+<!--  1) Increased the "VER" number to 19.0.                      -->
+<!--  2) Added optional TRLIST element to TR choices              -->
+<!--     (CR-2021-24).                                            -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Increased the "VER" number to 18.0.                      -->
+<!--  2) new REGULATORY element added to FIGURE, ITEM, SPAREITEM  -->
+<!--     and PNRDATA elements (CR 2018-88)                        -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Increased the "VER" number to 17.0.                      -->
+<!--  2) CHGDTYPE optional attribute added to CHGDESC(CR-2016-02) -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Increased the "VER" number to 16.0.                      -->
+<!--  2) RONTYPE optional attribute added to the RON element      -->
+<!--    (CR-2014-03).                                             -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Increased the "VER" number to 15.0.                      -->
+<!--  2) For alignment with the CMM element IPLNOM, added element -->
+<!--     choices FDS (For Details See) and FNHA (For Next Higher  -->
+<!--     Assembly) to ITEM (CR-2010-05).                          -->
+<!--  3) Added optional EFFECT element to CHAPTER, SECTION, UNIT  -->
+<!--     elements. And added optional CHAPPREF attribute to       -->
+<!--     CHAPTER, SECTION, UNIT and FIGURE elements (CR-2010-08). -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Increased the "VER" number to 14.0.                      -->
+<!--  2) Changed SBNRMFR to optional repeating in SBDATA.         -->
+<!--     (CR-2008-06)                                             -->
+<!--  3) Changed SUB in PARA to SUBSCR for subscript data. This   -->
+<!--     change will eliminate further confusion with the element -->
+<!--     SUB which is used for substitute part number data.       -->
+<!--     (CR-2009-01-AIPC_Sub_Element)                            -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Formatting changes made for readability.                 -->
+<!--  2) Increased the "VER" number to 13.0.                      -->
+<!--  3) Added optional EINLST to MFMATR element structure        -->
+<!--     (CR-2007-05-AIPC-FLS).                                   -->
+<!--  4) Added optional LEGALNTC element prior to TRFMATR within  -->
+<!--     the TR element structure (CR-2007-14-legalntc).          -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) TR content revised: allows mixing figure, prndata and    -->
+<!--     vendlist in a given TR (CR-2006-11-AIPC-TR).             -->
+<!--  2) Increased the "VER" number to 12.0.                      -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Added TRLIST to INCREV (AIB.IPC.003.2005).               -->
+<!--  2) Increased the "REV" number to 11.01.                     -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Added SPL element at PNRDATA level (CR AIB.IPC.001.2005).-->
+<!--  2) Added MDTY element at ITEM and SPAREITEM level (CR       -->
+<!--     AIB.IPC.002.2005).                                       -->
+<!--  3) Added optional TRLIST structure to MFMATR                -->
+<!--     (AIB.IPC.003.2005).                                      -->
+<!--  4) Increased the "VER" number to 11.0 (ai021100.dtd)        -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Editorial improvements of notations for readability.     -->
+<!--  2) Increased the "REV" number to 10.1 and 10.2.             -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Added optional elements: ADT, REFINT and REFEXT at       -->
+<!--     FIGURE level (by approved CR AIB.IPC.001.2004).          -->
+<!--  2) Added attribute PID to others elements representing      -->
+<!--     parts: CSW, IMI, LCP, LFG, LSP, OID, OPT, PSP, AFP, APN, -->
+<!--     BNP, BWP, SUB, TPN, OBS, UOA, FMK, CHGBY. (by approved   -->
+<!--     CR AIB.IPC.002.2004).                                    -->
+<!--  3) Added optional EFFECT element at RPLBY, RPLS and INTW    -->
+<!--     level to manage restricted interchangeability.           -->
+<!--     (by approved CR AIB.IPC.003.2004).                       -->
+<!--  4) Added new HAZD element at PNRDATA level to identify      -->
+<!--     hazardous parts (by approved CR AIB.IPC.004.2004).       -->
+<!--  5) Added RIQTY element at ITEM level. CHAPTITLE is changed  -->
+<!--     to optional in GRPREF. (CR AIB.IPC.005.2004).            -->
+<!--  6) Added new VENRPL element at MAD level (by approved CR    -->
+<!--     AIB.TRAN.001.2004)                                       -->
+<!--  7) GLOSDATA changed to optional and repeatable in GLOSSARY  -->
+<!--  8) Added attribute CFNBR to SHEET for companion file        -->
+<!--     referencing. (by approved CR AIB.GRAPHIC.001.2004).      -->
+<!--  9) Added gcf notation definition.                           -->
+<!--  10) Added new REFMEDIA element to reference a media file    -->
+<!--     Added PDF, PNG, JPEG, VRML, MPEG and MP3 notations.      -->
+<!--     (CR 2004-Media-001).                                     -->
+<!--  11) Added EFFLEN and EFFTYPE optional attributes to aipc.   -->
+<!--      element (by approved CR AIB.TRAN.003.2004).             -->
+<!--  12) Added GRSYMBOL element to PARA content to reference     -->
+<!--      inline graphics (CR inline graphics).                   -->
+<!--  13) Increased the "REV" number to 10.0.                     -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Added attributes COCCOND and COCREV to element COCEFF.   -->
+<!--     Aligns the COCEFF with the SBEFF attribute structure     -->
+<!--     and provides a means for reporting COCEFF status. To     -->
+<!--     keep the DTD backwards compatible the attribute is       -->
+<!--     IMPLIED. Added to all ATA DTDs with COCEFF.              -->
+<!--     Change per ATA approved CR BOE.WM.002.2003.              -->
+<!--  2) Increased the "VER-REV" number to 9.2 (ai020902.dtd).    -->
+<!--  3) Made several editorial improvements to previous          -->
+<!--     Revison History remarks for clarification.               -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Added attribute TYPE to EIN element (CR 2002-WM-002).    -->
+<!--  2) Increased the "VER-REV" number to 9.1 (ai020901.dtd).    -->
+<!--  3) Made some editorial improvements for readability.        -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Added element ALADT to FIGURE and ITEM elements          -->
+<!--     (CR AIB.IPC.001.2003)                                    -->
+<!--  2) Added attribute TYPE to FIGURE (CR AIB.IPC.002.2003)     -->
+<!--  3) EFFECT becomes optional in elements FIGURE and ITEM      -->
+<!--     (CR AIB.IPC.002.2003)                                    -->
+<!--  4) Local Manufacturer Pat model enhancement: element LFM    -->
+<!--     structure improvement (CR AIB.IPC.003.2003)              -->
+<!--  5) Added elements SPC and USGCAT to PNRDATA content choices -->
+<!--     (CR AIB.IPC.004.2003)                                    -->
+<!--  6) Added attribute PID to elements representing part: PNR,  -->
+<!--     RPNR and UWP (CR AIB.IPC.005.2003, AIB.IPC.005.2003 and  -->
+<!--     AIB.IPC.007.2003)                                        -->
+<!--  7) Added attribute SYM to FIGURE element                    -->
+<!--     (CR AIB.IPC.006.2003)                                    -->
+<!--  8) Added element SYM to ITEM content                        -->
+<!--     (CR AIB.IPC.006.2003)                                    -->
+<!--  9) Added REFINT element to UWPMFR content                   -->
+<!--     (CR AIB.IPC.007.2003)                                    -->
+<!--  10) Added ZONELST structure to FIGURE content               -->
+<!--      (CR AIB.IPC.008.2003)                                   -->
+<!--  11) Added SPAREITEM structure to ITEM content               -->
+<!--      (CR AIB.IPC.009.2003)                                   -->
+<!--  12) Added attribute PANTYPE to element PAN                  -->
+<!--      (CR AIB.AMM.001.2003)                                   -->
+<!--  13) For compatibility between AMM, AIPC and WM DTD, added   -->
+<!--      new CUS, LINENBR, CAC and OPERATOR elements with a      -->
+<!--      content of #PCDATA to EFFDATA structure. ACN element    -->
+<!--      becomes optional.                                       -->
+<!--      (CR AIB.TRAN.001.2003)                                  -->
+<!--  14) For compatibility between AMM, AIPC and WM DTD, added   -->
+<!--      STATUS attribute to ICS element and added optional      -->
+<!--      elements SBNBR, SBREV, TITLE, SC, EONBR and ACLIST to   -->
+<!--      SBDATA.                                                 -->
+<!--      Added new SBREV, TITLE, SC and EONBR elements with a    -->
+<!--      content of #PCDATA.                                     -->
+<!--      Added new EMPTY ACLIST element with CDATA IMPLIED       -->
+<!--      attributes STATUS and EFFRG.                            -->
+<!--      (CR AIB.TRAN.002.2003)                                  -->
+<!--  15) For compatibility between AMM, AIPC and WM DTD, added   -->
+<!--      new optional ACLIST element to COCDATA.                 -->
+<!--      (CR AIB.TRAN.003.2003)                                  -->
+<!--  16) For compatibility between AMM, AIPC and WM DTD, added   -->
+<!--      new EIN element to differentiate aircraft manufacturer  -->
+<!--      EIN and vendor EIN (EINMFR). Added %ein entity which is -->
+<!--      a choice between EIN and EINMFR. The (%ein;) entity call-->
+<!--      replaces the EINMFR element use in the whole DTD.       -->
+<!--      (CR AIB.TRAN.004.2003)                                  -->
+<!--  17) Added attribute ID to LxITEM for referencing List Items.-->
+<!--      This was added to the LxITEM for AIPC and WM DTDs since -->
+<!--      they do not have the PRCLIST structure per agreement    -->
+<!--      between Boeing and Airbus.                              -->
+<!--      (CR Boe.tran.002.2003)                                  -->
+<!--  18) Increased the "REV" number to 9.0 (ai020900.dtd).       -->
+<!--  19) Made editorial improvements for readability.            -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Added TR (Temporary Revision) element structure to the   -->
+<!--     DTD. This would allow the data producer to provide SGML  -->
+<!--     TRs separate of the regular scheduled revision cycle.    -->
+<!--     And it would align the AIPC DTD with other maintenance   -->
+<!--     DTDs. (Boeing CR 2003-AIPC-003).                         -->
+<!--  2) Added INTRO and other Front Matter structures to TR      -->
+<!--     choices per CR BOE-Tran-001-2003.                        -->
+<!--  3) Increased the "REV" number to 8.2 (ai020802.dtd).        -->
+<!--  4) Made some editorial improvements for readability.        -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Incorporated ISObox, ISOamso & ISOamsc per ATA approved  -->
+<!--     DTD CR 2003-All-001.                                     -->
+<!--  2) Increased the "REV" number to 8.1 (ai020801.dtd).        -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Added element BFE to PNRDATA content choices.            -->
+<!--  2) Added EFFECT element structure to be consistent with the -->
+<!--     AMM DTD.                                                 -->
+<!--  3) Removed the original EMPTY EFFECT element structure.     -->
+<!--  4) Added element RON to PNRDATA content choices.            -->
+<!--  5) Added implied attribute INC to RPLS and RPLBY elements.  -->
+<!--     This attribute is also used by SPEC 2000 for parts       -->
+<!--     interchangeability codes.                                -->
+<!--  4) Increased the "VER" number to 8.0 (ai020800.dtd).        -->
+<!--  5) Made some editorial improvements for readability.        -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  1) Added IMPLIED EFFTEXT to EFFECT. Changed EFFRG to        -->
+<!--     #IMPLIED.                                                -->
+<!--  2) Added CHGBY to PNRDATA choices.                          -->
+<!--  3) Added optional COCLIST to MFMATR.                        -->
+<!--  4) Added COCLIST to INCREV & TR.                            -->
+<!--  5) Increased DTD Revision number to 1 (ai020701.dtd).       -->
+<!--  6) Made some editorial improvements for readability.        -->
+<!--                                                              -->
+<!--  DTD REVISION HISTORY:                                       -->
+<!--  Version 7: Added new elements SUB & SUPER to PARA and       -->
+<!--             TITLE with a content of #PCDATA. Added           -->
+<!--             EFFECT inclusion to NOTE. (ai020700.dtd).        -->
+<!--  Version 6: Incorporated ISOgrk2,3,4 & ISOlat1. Added        -->
+<!--             optional element LEGALNTC (Legal Notice) to      -->
+<!--             document structure. Added attribute IMGAREA      -->
+<!--             to Sheet. Made changes to PNRDATA and ITEM       -->
+<!--             according to CRs submitted by Boeing and         -->
+<!--             approved by the AIPC DTD Registered Users.       -->
+<!--  Version 5.4:Add implied attribute EQTMFR to FIGURE to       -->
+<!--             be used for identifying the manufacturer of      -->
+<!--             a component or piece of equipment.               -->
+<!--  Version 5.3:Improves DTD structures, proposed by            -->
+<!--             Boeing. Affected structures are PNRDATA and      -->
+<!--             IPR elements.                                    -->
+<!--  Version 5.2:Improves DTD structures, proposed by            -->
+<!--             Boeing. Affected structures are Front Matter     -->
+<!--             sections, ITEM and PNRDATA elements.             -->
+<!--  Version 5.1a:Corrects DTD, modifications proposed by        -->
+<!--             Airbus to reflect interchangeability data.       -->
+<!--             Affected structures are RPLS, RPLBY, INTW,       -->
+<!--             CONDINT. Remove INTCOND, CONDLINE.               -->
+<!--  Version 5.1:Incorporates modifications proposed by          -->
+<!--             Airbus. Affected structures are RPLS, RPLBY,     -->
+<!--             INTW, CONDINT, INTCOND, CONDLINE                 -->
+<!--  Version 5:Incorporates modifications proposed by            -->
+<!--             Boeing. Affected structures are MAD, ITEM,       -->
+<!--             RWD, SBCDATA, RWS, PNRDATA                       -->
+<!--  Version 4.1:Incorporates modifications to comply with       -->
+<!--             ATA TEXT.TECHREQ V3.2                            -->
+<!-- ============================================================ -->
+
+<!-- DOCTYPE aipc  [    -->
+
+<!-- The following set of declarations may be referred to 
+     using a public entity as follows: 
+<!DOCTYPE aipc PUBLIC 
+    "-//ATA-TEXT//DTD AIPC-VER20-LEVEL2//EN" [ ]                  -->
+ 
+<!-- ============================================================ -->
+<!--                      NOTATIONS                               -->
+<!-- ============================================================ -->
+ 
+<!NOTATION     cgm       PUBLIC
+    "-//USA-DOD//NOTATION Computer Graphics Metafile//EN"           >
+ 
+<!NOTATION     ccitt4    PUBLIC
+    "-//USA-DOD//NOTATION CCITT Group 4 Facsimile//EN"              >
+
+<!NOTATION     gcf       PUBLIC
+    "-//ATA-TEXT//NOTATION Graphic Companion File//EN"              >
+	
+<!NOTATION  mcp       PUBLIC
+    "-//ATA-TEXT//NOTATION Media Companion File//EN"                >
+
+<!NOTATION pdf PUBLIC
+    "-//Adobe Inc.//NOTATION Portable Document Format//EN"          >
+
+<!NOTATION png PUBLIC
+    "-//W3C//NOTATION Portable Network Graphics//EN"                >
+
+<!NOTATION jpeg PUBLIC
+    "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint
+     Photographic Experts Group Raster//EN"                         >
+
+<!NOTATION vrml PUBLIC 
+    "-//ATA-TEXT//NOTATION Virtual Reality Modeling Language//EN"   >
+
+<!NOTATION mpeg PUBLIC
+    "-//ATA-TEXT//NOTATION Motion Pictures Expert Group//EN"        >
+
+<!NOTATION mp3 PUBLIC
+    "-//ATA-TEXT//NOTATION Motion Pictures Expert Group, Audio
+     Layer 3//EN"                                                   >
+
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!--                      ENTITIES                                -->
+<!-- ============================================================ -->
+<!ENTITY  % text   "(para | graphic | unlist | txtgrphc | note 
+                    | table | numlist)+"                            >
+<!ENTITY  % revatt
+            "chg      (N|R|D|U)                       #REQUIRED
+             key       ID                             #REQUIRED
+             revdate   NUMBER                         #REQUIRED"    >
+ 
+<!ENTITY  % yesorno      "NUMBER"                                   >
+<!ENTITY  % ein    "(ein | einmfr)"                                 >
+ 
+<!ENTITY   % ISOtech      PUBLIC 
+     "ISO 8879-1986//ENTITIES   General Technical//EN"              >
+<!ENTITY   % ISOpub      PUBLIC 
+     "ISO 8879-1986//ENTITIES Publishing//EN"                       >
+<!ENTITY   % ISOnum      PUBLIC 
+   "ISO 8879-1986//ENTITIES   Numeric and Special Graphic//EN"      >
+<!ENTITY   % ISOgrk1     PUBLIC 
+     "ISO 8879-1986//ENTITIES   Greek Letters//EN"                  >
+<!ENTITY   % ISOgrk2     PUBLIC 
+     "ISO 8879-1986//ENTITIES Monotoniko Greek//EN"                 >
+<!ENTITY   % ISOgrk3     PUBLIC 
+     "ISO 8879-1986//ENTITIES Greek Symbols//EN"                    >
+<!ENTITY   % ISOgrk4     PUBLIC 
+     "ISO 8879-1986//ENTITIES Alternative Greek Symbols//EN"        >
+<!ENTITY   % ISOlat1     PUBLIC 
+     "ISO 8879-1986//ENTITIES Added Latin 1//EN"                    >
+<!ENTITY   % ISObox      PUBLIC
+     "ISO 8879-1986//ENTITIES Box and Line Drawing//EN"             >
+<!ENTITY   % ISOamso     PUBLIC
+     "ISO 8879-1986//ENTITIES Added Math Symbols: Ordinary//EN"     >
+<!ENTITY   % ISOamsc     PUBLIC
+     "ISO 8879-1986//ENTITIES Added Math Symbols: Delimiters//EN"   >
+
+%ISOtech; %ISOpub; %ISOnum; %ISOgrk1; %ISOgrk2; %ISOgrk3;
+%ISOgrk4; %ISOlat1; %ISObox; %ISOamso; %ISOamsc;
+
+<!-- ============================================================ -->
+ 
+<!-- ============================================================ -->
+<!--                   AIPC HIGH LEVEL STRUCTURE                  -->
+<!-- ============================================================ -->
+ 
+<!ELEMENT aipc      - -  ((title, legalntc?, mfmatr, dplist, 
+                           pnrfile) | increv | tr+)
+                         +(revst | revend | cocst | cocend 
+                         | hotlink)                                 >
+<!ATTLIST aipc
+          model     CDATA                             #REQUIRED
+          oidate    NUMBER                            #REQUIRED
+          revdate   NUMBER                            #REQUIRED
+          tsn       CDATA                             #REQUIRED
+          docnbr    CDATA                             #IMPLIED
+          cus       CDATA                             #IMPLIED
+          chg       (N|R|U)                           #REQUIRED
+          lang      CDATA                             #REQUIRED
+          cusname   CDATA                             #IMPLIED
+          spl       CDATA                             #REQUIRED
+          efflen    NUMBER                            #IMPLIED
+          efftype   CDATA                             #IMPLIED      >
+
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!--              INCREMENTAL and TEMPORARY REVISION              -->
+<!-- ============================================================ -->
+ 
+<!ELEMENT increv    - -  (transltr?, legalntc?, (intro | illtech
+                         | effxref | stadiag | zoning | fmkitlst 
+                         | vendlist | sblist | majdwg | glossary 
+                         | chapter | section | unit | figure 
+                         | item | sheet | pnrdata | trlist 
+                         | einlst)+)                                >
+
+<!ELEMENT transltr  - -  (title, ((title?, %text;)+ | list1))       >
+<!ATTLIST transltr 
+          oldkey    NAME                              #IMPLIED
+          %revatt;                                                  >
+
+<!ELEMENT tr        - -  (legalntc?, trfmatr, trlist?, (chapter
+                         | section+ | unit+ | (figure+, pnrdata*,
+                         vendlist?) | pnrdata+ | legalntc | intro
+                         | effxref | vendlist | sblist | coclist
+                         | einlst))                                 >
+
+<!ELEMENT trfmatr   - -  (title, trreason?, (%text;)?)              >
+<!ATTLIST trfmatr 
+          trnbr     CDATA                             #REQUIRED
+          trdel     CDATA                             #IMPLIED
+          trrepl    CDATA                             #IMPLIED
+          issdate   CDATA                             #IMPLIED      >
+<!ELEMENT trreason  - -  (#PCDATA)                                  >
+
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!--       Legal Notice Information                               -->
+<!-- ============================================================ -->
+
+<!ELEMENT legalntc  - - (exprtcl | cpyrght | proptary | geninfo)+   >
+<!ATTLIST legalntc
+          %revatt;                                                  >
+
+<!ELEMENT proptary  - - (fullstmt, partstmt?)                       >
+<!ELEMENT fullstmt  - - (title?, cpyrght?, para+)                   >
+<!ELEMENT partstmt  - - (title?, para+)                             >
+<!ELEMENT exprtcl   - - (para | unlist | numlist | note)+           >
+<!ELEMENT cpyrght   - - (year*, holder*, geninfo)                   >
+<!ELEMENT year      - - (#PCDATA)                                   >
+<!ELEMENT holder    - - (#PCDATA)                                   >
+<!ELEMENT geninfo   - - (para | unlist | numlist | note)+           >
+
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!--                    FRONT MATTER                              -->
+<!--  Front Matter consists of a temporary revision list ,        -->
+<!--  an introduction, an airplane cross-reference list, station  -->
+<!--  diagrams, zones, filter maintenance kit list, vendor list,  -->
+<!--  service bulletin list, major drawing list, and glossary.    -->
+<!-- ============================================================ -->
+ 
+<!ELEMENT mfmatr    - -  (transltr?, trlist?, intro, illtech?, 
+                          effxref, stadiag?, zoning?, fmkitlst?, 
+                          vendlist, sblist, coclist?, majdwg?, 
+                          glossary?, einlst?) +(refint | refext)    >
+ 
+<!ELEMENT refint    - -  (#PCDATA)                                  >
+<!ATTLIST refint
+          refid          IDREF                        #IMPLIED
+          reftype        CDATA                        #IMPLIED      >
+ 
+<!ELEMENT refext    - -  (#PCDATA)                                  >
+<!ATTLIST refext
+          refloc         CDATA                        #IMPLIED
+          refmodel       CDATA                        #IMPLIED
+          refspl         CDATA                        #IMPLIED
+          refman         CDATA                        #IMPLIED
+          docnbr         CDATA                        #IMPLIED      >
+
+<!ELEMENT trlist    - - (title, (%text;)*, (trdata+ | isempty))     >
+<!ATTLIST trlist
+          %revatt;                                                  >
+
+<!ELEMENT trdata    - -  (trnbr, trstatus, trloc+)                  >
+<!ELEMENT trnbr     - -  (#PCDATA)                                  >
+<!ELEMENT trstatus  - -  (#PCDATA)                                  >
+<!ELEMENT trloc     - -  (#PCDATA)                                  >
+
+ 
+<!ELEMENT intro     - -  (title, ((title?, %text;)+ | list1))       >
+<!ATTLIST intro
+          oldkey         NAME                         #IMPLIED
+          %revatt;                                                  >
+ 
+<!ELEMENT illtech   - -  ((title, %text;) | deleted)                >
+<!ATTLIST illtech
+          oldkey         NAME                         #IMPLIED
+          %revatt;                                                  >
+ 
+<!ELEMENT effxref   - -  (title, (%text;)?, effdata+)               >
+<!ATTLIST effxref
+          oldkey         NAME                         #IMPLIED
+          %revatt;                                                  >
+<!ELEMENT effdata   - -  (cus?, modtype, cec, linenbr?, ect?,
+                          venbr?, esnbr?, benbr?, msnbr, acn?,
+                          operator?, fslgnbr?, cac?, cusaid?)       >
+<!ELEMENT linenbr   - -  (#PCDATA)                                  >
+<!ELEMENT operator  - -  (#PCDATA)                                  >
+<!ELEMENT cac       - -  (#PCDATA)                                  >
+
+<!ELEMENT modtype   - -  (#PCDATA)                                  >
+
+<!ELEMENT cec       - -  (#PCDATA)                                  >
+<!ELEMENT ect       - -  (#PCDATA)                                  >
+<!ELEMENT venbr     - -  (#PCDATA)                                  >
+<!ELEMENT esnbr     - -  (#PCDATA)                                  >
+<!ELEMENT benbr     - -  (#PCDATA)                                  >
+<!ELEMENT msnbr     - -  (#PCDATA)                                  >
+<!ELEMENT acn       - -  (#PCDATA)                                  >
+<!ELEMENT fslgnbr   - -  (#PCDATA)                                  >
+<!ELEMENT cusaid    - -  (#PCDATA)                                  >
+ 
+<!ELEMENT stadiag   - -  ((title, stadata+) | deleted)              >
+<!ATTLIST stadiag
+          oldkey         NAME                         #IMPLIED
+          %revatt;                                                  >
+ 
+<!ELEMENT stadata   - -  (%text;)                                   >
+ 
+<!ELEMENT zoning    - -  ((title, zondata+) | deleted)              >
+<!ATTLIST zoning
+          oldkey         NAME                         #IMPLIED
+          %revatt;                                                  >
+ 
+<!ELEMENT zondata   - -  (%text;)                                   >
+ 
+<!ELEMENT fmkitlst  - -  ((title, fmktdata+) | deleted)             >
+<!ATTLIST fmkitlst
+          oldkey         NAME                         #IMPLIED
+          %revatt;                                                  >
+ 
+<!ELEMENT fmktdata  - -  (kitnbr, rplktnbr?, fltrdata, ktdata+)     >
+<!ELEMENT kitnbr    - -  (#PCDATA)                                  >
+<!ELEMENT rplktnbr  - -  (#PCDATA)                                  >
+<!ELEMENT fltrdata  - -  (kitdescr, (pnr, csd?)*)                   >
+<!ELEMENT kitdescr  - -  (#PCDATA)                                  >
+<!ELEMENT ktdata    - -  (pnr, opt*, upa)                           >
+ 
+<!ELEMENT vendlist  - -  (title, (%text;)?, vendata+)               >
+<!ATTLIST vendlist
+          oldkey         NAME                         #IMPLIED
+          %revatt;                                                  >
+ 
+<!ELEMENT vendata   - -  (mfr, mad)                                 >
+<!ELEMENT mfr       - -  (#PCDATA)                                  >
+<!ATTLIST mfr
+          amfr           %yesorno;                    #IMPLIED      >
+<!ELEMENT mad       - -  (venname?, venaddr*, veninfo*, venrpl*)    >
+<!ELEMENT venname   - -  (#PCDATA)                                  >
+<!ELEMENT venaddr   - -  (#PCDATA)                                  >
+<!ELEMENT veninfo   - -  (#PCDATA)                                  >
+<!ELEMENT venrpl    - -  (#PCDATA)                                  >
+<!ATTLIST venrpl
+          rplstatus      (rpls | rplby)               #REQUIRED     >
+ 
+<!ELEMENT sblist    - -  (title, (%text;)?, (sbdata+ | isempty))    >
+<!ATTLIST sblist
+          oldkey         NAME                         #IMPLIED
+          %revatt;                                                  >
+<!ELEMENT sbdata    - -  (sbnbr?, sbrev?, title?, sbnrmfr*, eonbr*,
+                          mdnrmfr*, cocnrmfr*, sc?, aclist*, ics,
+                          custeff?)                                 >
+<!ELEMENT sbnrmfr   - -  (sbnbr, mfr?)                              >
+<!ELEMENT mdnrmfr   - -  (mdnbr, mfr?)                              >
+<!ELEMENT cocnrmfr  - -  (cocnbr, mfr?)                             >
+<!ELEMENT sbnbr     - -  (#PCDATA)                                  >
+<!ELEMENT sbrev     - -  (#PCDATA)                                  >
+<!ELEMENT mdnbr     - -  (#PCDATA)                                  >
+<!ELEMENT cocnbr    - -  (#PCDATA)                                  >
+<!ELEMENT ics       - -  (#PCDATA)                                  >
+<!ATTLIST ics
+          status         CDATA                        #IMPLIED      >
+ 
+<!ELEMENT custeff   - -  (cus, effrc)+                              >
+<!ELEMENT cus       - -  (#PCDATA)                                  >
+<!ELEMENT effrc     - -  (#PCDATA)                                  >
+ 
+<!ELEMENT coclist   - -  (chgdesc*, title, %text;, (cocdata+ 
+                         | isempty))                                >
+<!ATTLIST coclist
+          %revatt;                                                  >
+<!ELEMENT cocdata   - -  (cocnbr?, cocrev?, eonbr*, atanbr?, mdnbr*,
+                          custeff?, sc?, aclist*, title?, (icdate 
+                         | ics))                                    >
+<!ELEMENT cocrev    - -  (#PCDATA)                                  >
+<!ELEMENT atanbr    - -  (#PCDATA)                                  >
+<!ELEMENT sc        - -  (#PCDATA)                                  >
+<!ELEMENT aclist    - O  EMPTY                                      >
+<!ATTLIST aclist
+          status         CDATA                        #IMPLIED
+          effrg          CDATA                        #IMPLIED      >
+<!ELEMENT icdate    - -  (#PCDATA)                                  >
+<!ELEMENT eonbr     - -  (#PCDATA)                                  >
+
+<!ELEMENT majdwg    - -  ((title, (%text;)?, dwgdata+) | deleted)   >
+<!ATTLIST majdwg
+          oldkey         NAME                         #IMPLIED
+          %revatt;                                                  >
+ 
+<!ELEMENT dwgdata   - -  (dwg, dwgtitle)                            >
+<!ELEMENT dwg       - -  (#PCDATA)                                  >
+ 
+<!ELEMENT dwgtitle  - -  (#PCDATA)                                  >
+<!ATTLIST dwgtitle
+          indent         NUMBER                       #REQUIRED     >
+ 
+<!ELEMENT glossary  - -  ((title, (%text;)?, glosdata*) | deleted)  >
+<!ATTLIST glossary
+          oldkey         NAME                         #IMPLIED
+          %revatt;                                                  >
+ 
+<!ELEMENT glosdata  - -  (term, def)                                >
+<!ELEMENT term      - -  (#PCDATA)                                  >
+<!ELEMENT def       - -  (#PCDATA)                                  >
+
+<!ELEMENT einlst    - -  (title?, (%text;)*, eindata+)              >
+<!ATTLIST einlst
+          %revatt;                                                  >
+
+<!ELEMENT eindata   - -  (einid, einref+)                           >
+
+<!ELEMENT einid     - -  (%ein;, einname?)                          >
+
+<!ELEMENT einref    - -  (einid)+                                   >
+<!ATTLIST einref   
+          einreftype CDATA                            #IMPLIED      >
+
+<!ELEMENT einname   - -  (#PCDATA)                                  >
+
+<!-- ============================================================ -->
+ 
+<!-- ============================================================ -->
+<!--                DETAIL PARTS LIST                             -->
+<!--  Contains all the information associated with an item        -->
+<!--  in the Detailed Parts List.                                 -->
+<!-- ============================================================ -->
+ 
+<!ELEMENT dplist    - -  (chapter+)                                 >
+ 
+<!ELEMENT chapter   - -  ((effect?, title, section+) | deleted)     >
+<!ATTLIST chapter
+          chappref       CDATA                        #IMPLIED
+          chapnbr        NUMBER                       #REQUIRED
+          %revatt;                                                  >
+ 
+<!ELEMENT section   - -  ((effect?, title, unit+) | deleted)        >
+<!ATTLIST section
+          chappref       CDATA                        #IMPLIED
+          chapnbr        NUMBER                       #REQUIRED
+          sectnbr        NUMBER                       #REQUIRED
+          %revatt;                                                  >
+ 
+<!ELEMENT unit      - -  ((effect?, title?, figure+) | deleted)     >
+<!ATTLIST unit
+          chappref       CDATA                        #IMPLIED
+          chapnbr        NUMBER                       #REQUIRED
+          sectnbr        NUMBER                       #REQUIRED
+          unitnbr        NUMBER                       #REQUIRED
+          %revatt;                                                  >
+ 
+<!ELEMENT figure    - -  ((effect?, title, zonelst?, (graphic|media)+, 
+                          (adt | aladt | refext | refint)*, 
+						  regulatory*, prtlist) | deleted)          >
+<!ATTLIST figure
+          type           (if | mf)                    #IMPLIED
+          sym            %yesorno;                    #IMPLIED
+          chappref       CDATA                        #IMPLIED
+          chapnbr        NUMBER                       #REQUIRED
+          sectnbr        NUMBER                       #REQUIRED
+          unitnbr        NUMBER                       #REQUIRED
+          fignbr         CDATA                        #REQUIRED
+          eqtmfr         CDATA                        #IMPLIED
+          %revatt;                                                  >
+
+<!ELEMENT zonelst   - -  ((lhzone, rhzone) | zone+)                 >
+<!ELEMENT lhzone    - -  (zone+)                                    >
+<!ELEMENT rhzone    - -  (zone+)                                    >
+<!ELEMENT zone      - -  (#PCDATA)                                  >
+ 
+<!ELEMENT prtlist   - -  (item+)                                    >
+ 
+<!ELEMENT item      - -  ((effect?, regulatory*, pnrmfr, upa, tqa,   
+                         riqty?, sym?, (adt | aladt | bde | bfe  
+                         | cswmfr | %ein; | fds | ffrref | fmkmfr 
+                         | fnha | grpref | imimfr | intw | ipr | lbl 
+                         | lcpmfr | lfgmfr | lid | lod | lop | lspmfr 
+                         | mdl | mdty | msc | obsmfr | oidmfr 
+                         | optmfr | ors | ovund | pan | pcd | pfd 
+                         | pld | pnu | pspmfr | qsb | refext | refint 
+                         | ron | rplby | rpls | rpo | rwdmfr | rws 
+                         | sbcdata | sbd | sfn | srd | sti | swr 
+                         | tbd | tbm | uoamfr | uwpmfr)*, spareitem*) 
+                         | deleted)                                 >
+
+<!ATTLIST item
+          chapnbr        NUMBER                       #REQUIRED
+          sectnbr        NUMBER                       #REQUIRED
+          unitnbr        NUMBER                       #REQUIRED
+          fignbr         CDATA                        #REQUIRED
+          itemnbr        CDATA                        #REQUIRED
+          illusind       %yesorno;                    "1"
+          indent         NUMBER                       #REQUIRED
+          attach         %yesorno;                    "0"
+          %revatt;                                                  >
+
+<!ELEMENT spareitem - -  (effect?, regulatory*, pnrmfr, (adt | aladt 
+                         | bde | bfe | cswmfr | %ein; | ffrref 
+                         | fmkmfr | grpref | imimfr | intw | ipr 
+                         | lbl | lcpmfr | lfgmfr | lid | lod | lop 
+                         | lspmfr | mdl | mdty | msc | obsmfr 
+                         | oidmfr | optmfr | ors | ovund | pan | pcd 
+                         | pfd | pld | pnu  | pspmfr | qsb | refext 
+                         | refint | ron | rplby | rpls | rpo | rwdmfr 
+                         | rws | sbcdata | sbd| sfn | srd | sti | swr
+                         | tbd | tbm | uoamfr | uwpmfr)*)           >
+ 
+<!ELEMENT pnrmfr    - -  (pnr, mfr)                                 >
+<!ELEMENT pnr       - -  (#PCDATA)                                  >
+<!ATTLIST pnr
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT pcd       - -  (#PCDATA)                                  >
+<!ELEMENT pld       - -  (#PCDATA)                                  >
+<!ELEMENT sbd       - -  (#PCDATA)                                  >
+<!ELEMENT srd       - -  (#PCDATA)                                  >
+<!ELEMENT upa       - -  (#PCDATA)                                  >
+<!ELEMENT tqa       - -  (#PCDATA)                                  >
+<!ELEMENT riqty     - -  (#PCDATA)                                  >
+<!ELEMENT sym       - O  EMPTY                                      >
+<!ATTLIST sym
+          side           (LH | RH | LO | RO | LR)     #IMPLIED      >
+<!ELEMENT adt       - -  (#PCDATA)                                  >
+<!ELEMENT aladt     - -  (para)+                                    >
+<!ELEMENT bde       - O  EMPTY                                      >
+<!ELEMENT bfe       - O  EMPTY                                      >
+<!ELEMENT einmfr    - -  (ein, mfr?)                                >
+<!ELEMENT ein       - -  (#PCDATA)                                  >
+<!ATTLIST ein
+          type           CDATA                        #IMPLIED      >
+<!ELEMENT fds       - -  (#PCDATA, (refext | refint)?)*             >
+<!ELEMENT ffrref    - -  (ffr, (chaptitl, refint+)+)                >
+<!ELEMENT ffr       - -  (#PCDATA)                                  >
+<!ELEMENT chaptitl  - -  (#PCDATA)                                  >
+<!ELEMENT fmkmfr    - -  (fmk, mfr?)                                >
+<!ELEMENT fmk       - -  (#PCDATA)                                  >
+<!ATTLIST fmk
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT fnha      - -  (#PCDATA, (refext | refint)?)*             >
+<!ELEMENT ipr       - O  EMPTY                                      >
+<!ELEMENT lfgmfr    - -  ((lfg, mfr?)+, lfgtext?)                   >
+<!ELEMENT lfg       - -  (#PCDATA)                                  >
+<!ATTLIST lfg
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT lfgtext   - -  (#PCDATA)                                  >
+<!ELEMENT lod       - -  (#PCDATA)                                  >
+<!ELEMENT lid       - -  (#PCDATA)                                  >
+<!ELEMENT mdl       - -  (#PCDATA)                                  >
+<!ELEMENT mdty      - O  EMPTY                                      >
+<!ATTLIST mdty
+          mdtytype       CDATA                        #IMPLIED      >
+<!ELEMENT msc       - -  (#PCDATA)                                  >
+<!ELEMENT oidmfr    - -  (oid, mfr?)                                >
+<!ELEMENT oid       - -  (#PCDATA)                                  >
+<!ATTLIST oid
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT ovund     - -  (#PCDATA)                                  >
+<!ELEMENT pan       - -  (#PCDATA)                                  >
+<!ATTLIST pan
+          pantype        CDATA                        #IMPLIED      >
+<!ELEMENT ron       - -  (rontext, ronref?)                         >
+<!ATTLIST ron
+          rontype        CDATA                        #IMPLIED      >
+<!ELEMENT rontext   - -  (#PCDATA)                                  >
+<!ELEMENT ronref    - -  (sbnrmfr | slnbrmfr | rondate)             >
+<!ELEMENT slnbrmfr  - -  (slnbr, mfr)                               >
+<!ELEMENT slnbr     - -  (#PCDATA)                                  >
+<!ELEMENT rondate   - -  (#PCDATA)                                  >
+<!ELEMENT rpo       - -  (#PCDATA)                                  >
+<!ELEMENT rwdmfr    - -  (rwd, mfr?)                                >
+<!ELEMENT rwd       - -  (#PCDATA)                                  >
+<!ATTLIST rwd
+          rwdtype        CDATA                        #IMPLIED      >
+ 
+<!ELEMENT sbcdata   - -  (effect?, mfr?, sbc, adn?)                 >
+<!ELEMENT sbc       - -  (#PCDATA)                                  >
+<!ATTLIST sbc
+          chgnbr         CDATA                        #IMPLIED
+          chgtype   (sb | sl | rr | mr | coc | as | cb) #IMPLIED
+          chgcond        CDATA                        #IMPLIED      >
+ 
+<!ELEMENT rws       - -  (pnr, mfr)                                 >
+<!ATTLIST rws
+          chgnbr         CDATA                        #IMPLIED
+          chgtype   (sb | sl | rr | mr | coc | as | cb) #IMPLIED
+          chgcond        CDATA                        #IMPLIED      >
+<!ELEMENT adn       - -  (#PCDATA)                                  >
+<!ELEMENT sfn       - O  EMPTY                                      >
+<!ELEMENT sti       - -  (#PCDATA)                                  >
+<!ELEMENT tbd       - -  (#PCDATA)                                  >
+<!ELEMENT uoamfr    - -  (uoa, mfr?)                                >
+<!ELEMENT uoa       - -  (#PCDATA)                                  >
+<!ATTLIST uoa
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT uwpmfr    - -  (uwp, mfr?, refint*)                       >
+<!ELEMENT uwp       - -  (#PCDATA)                                  >
+<!ATTLIST uwp
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT lop       - -  (#PCDATA)                                  >
+<!ELEMENT pfd       - -  (#PCDATA)                                  >
+<!ELEMENT swr       - -  (#PCDATA)                                  >
+<!ELEMENT cswmfr    - -  (csw, mfr?)                                >
+<!ELEMENT csw       - -  (#PCDATA)                                  >
+<!ATTLIST csw
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT imimfr    - -  (imi, mfr?)                                >
+<!ELEMENT imi       - -  (#PCDATA)                                  >
+<!ATTLIST imi
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT lbl       - -  (#PCDATA)                                  >
+<!ELEMENT lcpmfr    - -  (lcp, mfr?)                                >
+<!ELEMENT lcp       - -  (#PCDATA)                                  >
+<!ATTLIST lcp
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT lspmfr    - -  (lsp, mfr?)                                >
+<!ELEMENT lsp       - -  (#PCDATA)                                  >
+<!ATTLIST lsp
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT obsmfr    - -  (obs, mfr?)                                >
+<!ELEMENT obs       - -  (#PCDATA)                                  >
+<!ATTLIST obs
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT ors       - -  (#PCDATA)                                  >
+<!ELEMENT pnu       - -  (#PCDATA)                                  >
+<!ELEMENT qsb       - -  (#PCDATA)                                  >
+<!ELEMENT tbm       - -  (#PCDATA)                                  >
+<!ELEMENT grpref    - -  ((chaptitl?, refint+)+)                    >
+<!ATTLIST grpref
+          grptype        CDATA                        #IMPLIED      >
+<!ELEMENT rpls      - -  (effect?, pnr, mfr, condint?)              >
+<!ATTLIST rpls
+          inc            CDATA                        #IMPLIED      >
+<!ELEMENT rplby     - -  (effect?, pnr, mfr, condint?)              >
+<!ATTLIST rplby
+          inc            CDATA                        #IMPLIED      >
+<!ELEMENT intw      - -  (effect?, pnr, mfr)                        >
+<!ELEMENT condint   - -  (#PCDATA)                                  >
+<!-- ============================================================ -->
+ 
+<!-- ============================================================ -->
+<!--                PART NUMBER FILE                              -->
+<!--  Contains all the information associated with a              -->
+<!--  part number, such as:                                       -->
+<!--    Altered/Modified From part number                         -->
+<!--    Alternate part number                                     -->
+<!--    Buy Next Higher Assembly part                             -->
+<!--    Buy With part                                             -->
+<!--    Control Specification/Drawing Number                      -->
+<!--    Local Fabrication Material                                -->
+<!--    optional parts                                            -->
+<!--    Preferred Spare part number                               -->
+<!-- ============================================================ -->
+ 
+<!ELEMENT pnrfile   - -  (pnrdata)+                                 >
+ 
+<!ELEMENT pnrdata   - -  ((regulatory*, (pnrmfr, kwd, (afpmfr 
+						 | alprtnbr| apnmfr | bfe | bnpmfr | bwpmfr 
+						 | chgby | csdmfr | hazd | intw | lbl 
+						 | lfmmfr | mnr | opn | optmfr | osc | pspmfr 
+						 | refext | ron | rplby | rpls | spc | spl 
+						 |submfr | tpnmfr | usgcat)*)) | deleted )  > 
+<!ATTLIST pnrdata
+          %revatt;                                                  >
+ 
+<!ELEMENT kwd       - -  (#PCDATA)                                  >
+<!ELEMENT alprtnbr  - -  (#PCDATA)                                  >
+<!ELEMENT opn       - -  (#PCDATA)                                  >
+<!ELEMENT osc       - -  (#PCDATA)                                  >
+<!ELEMENT afpmfr    - -  (afp, mfr, alprtnbr?)                      >
+<!ELEMENT afp       - -  (#PCDATA)                                  >
+<!ATTLIST afp
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT apnmfr    - -  ((apn, mfr, alprtnbr?)+, apntext?)         >
+<!ELEMENT apn       - -  (#PCDATA)                                  >
+<!ATTLIST apn
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT apntext   - -  (#PCDATA)                                  >
+<!ELEMENT bnpmfr    - -  (bnp, mfr, alprtnbr?)                      >
+<!ELEMENT bnp       - -  (#PCDATA)                                  >
+<!ATTLIST bnp
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT bwpmfr    - -  (bwp, mfr, alprtnbr?)                      >
+<!ELEMENT bwp       - -  (#PCDATA)                                  >
+<!ATTLIST bwp
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT chgby     - -  (#PCDATA)                                  >
+<!ATTLIST chgby
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT csdmfr    - -  (csd, mfr, alprtnbr?)                      >
+<!ELEMENT csd       - -  (#PCDATA)                                  >
+<!ELEMENT hazd      - O  EMPTY                                      >
+<!ELEMENT lfmmfr    - -  (lfm, mfr?, alprtnbr?)                     >
+<!ELEMENT lfm       - -  (rpnr?, (%text;)?, (dd | rqty)?)+          >
+<!ELEMENT dd        - -  (#PCDATA)                                  >
+<!ATTLIST dd
+          unit           (mm | in)                    #IMPLIED      >
+<!ELEMENT rqty      - -  (#PCDATA)                                  >
+<!ELEMENT rpnr      - -  (#PCDATA)                                  >
+<!ATTLIST rpnr
+          pid            CDATA                        #IMPLIED      >
+
+<!ELEMENT mnr       - -  (#PCDATA)                                  >
+<!ATTLIST mnr
+          description    CDATA                        #IMPLIED      >
+<!ELEMENT optmfr    - -  (opt, mfr, alprtnbr?)                      >
+<!ELEMENT opt       - -  (#PCDATA)                                  >
+<!ATTLIST opt
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT pspmfr    - -  (psp, mfr, alprtnbr?)                      >
+<!ELEMENT psp       - -  (#PCDATA)                                  >
+<!ATTLIST psp
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT spc       - O  EMPTY                                      >
+<!ATTLIST spc
+          spcnbr         (0 | 1 | 2 | 6)              #IMPLIED      >
+<!ELEMENT spl       - -  (#PCDATA)                                  >
+<!ELEMENT submfr    - -  (sub, mfr, alprtnbr?)                      >
+<!ELEMENT sub       - -  (#PCDATA)                                  >
+<!ATTLIST sub
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT tpnmfr    - -  (tpn, mfr?)                                >
+<!ELEMENT tpn       - -  (#PCDATA)                                  >
+<!ATTLIST tpn
+          pid            CDATA                        #IMPLIED      >
+<!ELEMENT usgcat    - O  EMPTY                                      >
+<!ATTLIST usgcat
+          usgnbr         CDATA                        #IMPLIED      >
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!--     TABLE (CELLULAR, CALS BASED)                             -->
+<!-- ============================================================ -->
+ 
+<!ELEMENT table     - -  ((title?, tgroup, ftnote*) | graphic+)
+                         -(table)                                   >
+
+<!ATTLIST table
+          tabstyle  NMTOKEN                           #IMPLIED
+          frame     (top | bottom | topbot 
+                    | all | sides | none)             #IMPLIED
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED
+          orient    (port | land)                     #IMPLIED
+          pgwide    %yesorno;                         #IMPLIED
+          id        ID                                #IMPLIED      >
+
+<!ELEMENT tgroup    - O  (colspec*, spanspec*, thead?, tfoot?, 
+                          tbody)                                    >
+<!ATTLIST tgroup
+          cols      NUMBER                            #REQUIRED
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED
+          align     (left | right | center 
+                    | justify | char)                 "left"
+          charoff   NUTOKEN                           "50"
+          char      CDATA                             ""            >
+
+<!ELEMENT colspec   - O  EMPTY                                      >
+<!ATTLIST colspec
+          colnum    NUMBER                            #IMPLIED
+          colname   NMTOKEN                           #IMPLIED
+          align     (left | right | center
+                    | justify | char)                 #IMPLIED
+          charoff   NUTOKEN                           #IMPLIED
+          char      CDATA                             #IMPLIED
+          colwidth  CDATA                             #IMPLIED
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED      >
+
+<!ELEMENT spanspec  - O  EMPTY                                      >
+<!ATTLIST spanspec
+          namest    NMTOKEN                           #REQUIRED
+          nameend   NMTOKEN                           #REQUIRED
+          spanname  NMTOKEN                           #IMPLIED
+          align     (left | right | center
+                    | justify | char)                 "center"
+          charoff   NUTOKEN                           #IMPLIED
+          char      CDATA                             #IMPLIED
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED      >
+
+<!ELEMENT thead     - O  (colspec*, row+)                           >
+<!ATTLIST thead
+          valign    (top | middle | bottom)           "bottom"      >
+
+<!ELEMENT tfoot     - O  (colspec*, row+)                           >
+<!ATTLIST tfoot
+          valign    (top | middle | bottom)           "top"         >
+
+<!ELEMENT tbody     - O  (row+)                                     >
+<!ATTLIST tbody
+          valign    (top | middle | bottom)           "top"         >
+
+<!ELEMENT row       - O  (entry+)                                   >
+<!ATTLIST row
+          rowsep    %yesorno;                         #IMPLIED      >
+ 
+<!ELEMENT entry     - O  (%text;)*                                  >
+<!ATTLIST entry
+          colname   NMTOKEN                           #IMPLIED
+          namest    NMTOKEN                           #IMPLIED
+          nameend   NMTOKEN                           #IMPLIED
+          spanname  NMTOKEN                           #IMPLIED
+          morerows  NUMBER                            "0"
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED
+          rotate    %yesorno;                         "0"
+          valign    (top | middle | bottom)           "top"
+          align     (left | right | center
+                    | justify | char)                 #IMPLIED
+          charoff   NUTOKEN                           #IMPLIED
+          char      CDATA                             #IMPLIED      >
+ 
+<!ELEMENT ftnote    - -  (%text;)                                   >
+<!ATTLIST ftnote
+          ftnoteid  ID                                #REQUIRED     >
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!--                GRAPHIC and MEDIA                             -->
+<!-- ============================================================ -->
+
+<!ELEMENT graphic   - -  (sheet+)                                   >
+
+<!ELEMENT sheet     - -  (title? | deleted)                         >
+<!ATTLIST sheet
+          sheetnbr       CDATA                        #REQUIRED
+          gnbr           ENTITY                       #REQUIRED
+          cfnbr          ENTITY                       #IMPLIED
+          imgarea   (AP|BP|CP|DL|EL|FP|GP|HL|IL)      #IMPLIED
+          %revatt;                                                  >
+
+<!ELEMENT grsymbol    - O  EMPTY                                    >
+<!ATTLIST grsymbol
+          gnbr           ENTITY                       #REQUIRED 
+          reprowid       CDATA                        #IMPLIED 
+          reprohgt       CDATA                        #IMPLIED 
+          reproscl       CDATA                        #IMPLIED      >
+		  
+<!ELEMENT media     - -  (title? | deleted)                         >
+<!ATTLIST media
+          mednbr         ENTITY                       #REQUIRED
+		  mcpnbr         ENTITY                       #IMPLIED
+		  medtype        (MP3|MPEG|PDF|VRML)          #IMPLIED
+		  %revatt;                                                  >
+		  
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!--                UNNUMBERED LIST                               -->
+<!-- ============================================================ -->
+
+<!ELEMENT unlist    - -  (unlitem+)                                 >
+<!ATTLIST unlist
+          bulltype  (NONE|BULLET|NDASH|MDASH|DIAMOND
+                     |ASTERISK|DELTA|SQUARE|SYSTEM)   "SYSTEM"      >
+<!ELEMENT unlitem   - -  (para+)                                    >
+
+<!ELEMENT numlist   - -  (numlitem+)                                >
+<!ATTLIST numlist
+          numtype   (NNP|AUP|NNB|ALB|NNS|RUP
+                     |RLP|RUR|RLR|NNR|AUR|ALR)        "NNP"         >
+<!ELEMENT numlitem  - -  (para+)                                    >
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!--                PARAGRAPH & TEXT GRAPHIC                      -->
+<!-- ============================================================ -->
+
+<!ELEMENT para      - -  (#PCDATA | subscr | super | refmedia 
+                         | grsymbol)+                               >
+
+<!ELEMENT subscr    - -  (#PCDATA)                                  >
+<!ELEMENT super     - -  (#PCDATA)                                  >
+<!ELEMENT txtgrphc  - -  (txtline+)                                 >
+<!ELEMENT txtline   - -  (#PCDATA)                                  >
+<!ELEMENT refmedia  - -  (#PCDATA)                                  >
+<!ATTLIST refmedia
+          mednbr         ENTITY                       #REQUIRED     >
+<!-- ============================================================ -->
+ 
+<!-- ============================================================ -->
+<!--                NESTED LISTS                                  -->
+<!-- ============================================================ -->
+ 
+<!ELEMENT list1     - -  (l1item+)                                  >
+<!ELEMENT list2     - -  (l2item+)                                  >
+<!ELEMENT list3     - -  (l3item+)                                  >
+<!ELEMENT list4     - -  (l4item+)                                  >
+<!ELEMENT list5     - -  (l5item+)                                  >
+<!ELEMENT list6     - -  (l6item+)                                  >
+<!ELEMENT list7     - -  (l7item+)                                  >
+ 
+<!--  List Item  -->
+ 
+<!ELEMENT l1item    - -  (title?, (%text;)?, list2?)                >
+<!ATTLIST l1item
+          id             ID                           #IMPLIED      >
+<!ELEMENT l2item    - -  (title?, (%text;)?, list3?)                >
+<!ATTLIST l2item
+          id             ID                           #IMPLIED      >
+<!ELEMENT l3item    - -  (title?, (%text;)?, list4?)                >
+<!ATTLIST l3item
+          id             ID                           #IMPLIED      >
+<!ELEMENT l4item    - -  (title?, (%text;)?, list5?)                >
+<!ATTLIST l4item
+          id             ID                           #IMPLIED      >
+<!ELEMENT l5item    - -  (title?, (%text;)?, list6?)                >
+<!ATTLIST l5item
+          id             ID                           #IMPLIED      >
+<!ELEMENT l6item    - -  (title?, (%text;)?, list7?)                >
+<!ATTLIST l6item
+          id             ID                           #IMPLIED      >
+<!ELEMENT l7item    - -  (%text;)                                   >
+<!ATTLIST l7item
+          id             ID                           #IMPLIED      >
+<!-- ============================================================ -->
+ 
+<!-- ============================================================ -->
+<!--                HOTLINK                                       -->
+<!--  Retrieval Engines Cross Reference Mechanism                 -->
+<!-- ============================================================ -->
+ 
+<!ELEMENT hotlink   - O  EMPTY                                      >
+<!ATTLIST hotlink
+          targetrefid    CDATA                        #IMPLIED
+          targetid       CDATA                        #IMPLIED      >
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!--             NOTE, TITLE, REVISION MARKINGS                   -->
+<!-- ============================================================ -->
+ 
+<!ELEMENT note      - -  %text;             -(note) +(effect)       >
+ 
+<!ELEMENT title     - -  (#PCDATA | sub | super)+                   >
+<!ELEMENT revst     - O  EMPTY                                      >
+<!ELEMENT revend    - O  EMPTY                                      >
+<!ELEMENT cocst     - O  EMPTY                                      >
+<!ELEMENT cocend    - O  EMPTY                                      >
+<!-- ============================================================ -->
+ 
+<!-- ============================================================ -->
+<!--        EFFECT, DELETED, ISEMPTY                              -->
+<!--  Element structure for marking effectivity content           -->
+<!--  Element for marking a deleted anchor                        -->
+<!--  Element for showing an empty element                        -->
+<!-- ============================================================ -->
+ 
+<!ELEMENT effect    - -  ((sbeff | coceff)*)                        >
+<!ATTLIST effect    
+          effrg          CDATA                        #IMPLIED
+          efftext        CDATA                        #IMPLIED      >
+
+<!ELEMENT sbeff     - O  EMPTY                                      >
+<!ATTLIST sbeff     
+          effrg          CDATA                        #IMPLIED
+          efftext        CDATA                        #IMPLIED
+          sbnbr          CDATA                        #REQUIRED
+          sbcond         CDATA                        #REQUIRED
+          sbrev          CDATA                        #IMPLIED      >
+
+<!ELEMENT coceff    - O  EMPTY                                      >
+<!ATTLIST coceff    
+          effrg          CDATA                        #IMPLIED
+          efftext        CDATA                        #IMPLIED
+          cocnbr         CDATA                        #REQUIRED
+          coccond        CDATA                        #IMPLIED
+          cocrev         CDATA                        #IMPLIED      >
+       
+<!ELEMENT deleted   - O  EMPTY                                      >
+<!ELEMENT isempty   - O  EMPTY                                      >
+<!ELEMENT chgdesc   - -  (#PCDATA)                                  >
+<!ATTLIST chgdesc
+          chgdtype        (edit|tech|effect|sgml)      #IMPLIED     >
+		  
+<!-- =========================================================== -->
+<!-- REGULATORY                                                  -->
+<!-- =========================================================== -->
+<!ELEMENT regulatory  - - (effect?, regulation+)                   >
+<!ELEMENT regulation  - - (effect?, grsymbol?, #PCDATA)            >
+<!ATTLIST regulation
+          regtype   CDATA                             #REQUIRED
+          regsource CDATA                             #IMPLIED
+          regvalue  CDATA                             #IMPLIED     >
+
+<!--   ]>   -->

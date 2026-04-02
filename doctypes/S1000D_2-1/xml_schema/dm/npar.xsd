@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. CPF 2002-38SE: Redefine content model in entity %NPAR; due to   *
+    *                   deletion of element specpara.                    *
+    ********************************************************************** -->
+
+
+	<xs:group name="NPAR">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %NPAR; (Numbered Paragraphs) containing:-            *
+    *  Definition stored in entity %WC; (see COMMON.ENT).                *
+    *  Definition stored in entity %NP; (see COMMON.ENT).                *
+    ********************************************************************** 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>		
+			<xs:group ref="WC"/>
+			<xs:group ref="NP" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+
+	
+</xs:schema>

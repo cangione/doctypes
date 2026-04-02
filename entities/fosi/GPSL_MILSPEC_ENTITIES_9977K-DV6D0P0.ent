@@ -1,0 +1,154 @@
+<!-- GPSL MILSPEC 9977K-DV6D0P0 Entity File -->
+<!ENTITY LastSecurityPage '<!-- GPSL:RK Entity "LastSecurityPage" -->
+<att>
+<charsubset>
+<usetext source="\ \" placemnt="after">
+<subchars>
+<textbrk startpg="recto" pageid="dummypg" newpgmdl="local" startln="1" endln="1">
+</subchars>
+</usetext>
+</charsubset>
+</att>
+'>
+<!ENTITY pagespec-flowtext-3col-notbalance '<!-- GPSL:RK Entity "pagespec-flowtext-3col-notbalance" -->
+<flowtext numcols="3" balance="0" chgmkplc="plftrt">
+&pagespec-flowtext-column-3col-lep;
+&pagespec-flowtext-footnote-flowtext;
+</flowtext>
+'>
+<!ENTITY header-lep-verso '<!-- GPSL:RK Entity "header-lep-verso" -->
+<usetext source="<tmidno-algroup-rule>,</tmidno-algroup-rule>">
+<subchars>
+<font size="1pt">
+<leading lead="1pt">
+<indent leftind="@-7pi" rightind="*+1pi" firstln="*">
+<textbrk startln="1" endln="1">
+<algroup refpoint="last">
+</subchars>
+</usetext>
+<usetext source="<tmidnostr-header.psu>,</tmidnostr-header.psu>">
+<subchars>
+<font style="sanserif" size="10pt" weight="bold">
+<indent leftind="@-39pt" firstln="*">
+<quadding quad="left" lastquad="lleft">
+<postsp minimum="4pt" nominal="7pt" maximum="9pt" priority="high">
+<textbrk startln="1" endln="1">
+<algroup refpoint="last">
+</subchars>
+</usetext>
+<usetext source="\List of Effective Pages\">
+<subchars>
+<font style="sanserif" famname="Helvetica" size="14pt" weight="bold">
+<indent leftind="@-.5pi" rightind="*+15.5pi" firstln="*">
+<highlt allcap="1">
+<textbrk startln="1" endln="0">
+<algroup refpoint="top">
+<boxing toffset="4pt" boffset="6pt" loffset="6pt" roffset="6pt"
+siderel="content" tthick="3pt" bthick="3pt" lthick="3pt" rthick="3pt">
+<ruling thick="2pt" lentype="spec" speclen="2pi" placemnt="before"
+ruleclr="white" type="blank">
+<leading lead="0">
+<textbrk startln="1" endln="1">
+</ruling>
+</subchars>
+</usetext>
+<usetext source="\Insert Latest Changed Pages. Destroy Superseded Pages.\">
+<subchars>
+<font style="sanserif" famname="Helvetica" size="8pt" weight="bold">
+<indent leftind="16.5pi" firstln="*">
+<highlt allcap="1">
+<textbrk startln="0" endln="1">
+<algroup refpoint="top">
+</subchars>
+</usetext>
+<ruling thick="1pt" lentype="rel" rellen="text">
+<leading lead="0">
+<indent leftind="@+15.5pi" rightind="*+27.6pi" firstln="*">
+<textbrk startln="1" endln="1">
+</ruling>
+<usetext source="\ \">
+<subchars>
+<leading lead="0pt">
+<indent leftind="0" rightind="-6pi" firstln="*">
+<textbrk startln="1" endln="1">
+<boxing toffset="0pi" boffset="55.25pi" loffset="11pt" roffset="11.25pt" siderel="col" tthick="0pt" bthick="1pt" lthick="1pt" rthick="1pt">
+</subchars>
+</usetext>
+<usetext source="\NOTE\,1em,\The portion of the text affected by the changes is indicated by a vertical line in the outer margins of the page. Changes to illustrations are indicated by shaded or screened areas, or by miniature pointing hands.\">
+<subchars>
+<font style="sanserif" famname="Helvetica" size="6pt">
+<indent leftind="@+18.75pi" firstln="*-2pi">
+<textbrk startln="1" endln="1">
+</subchars>
+</usetext>
+'>
+<!ENTITY header-lep-recto '<!-- GPSL:RK Entity "header-lep-recto" -->
+<usetext source="<tmidno-algroup-rule>,</tmidno-algroup-rule>">
+<subchars>
+<font size="1pt">
+<leading lead="1pt">
+<indent leftind="@-7pi" rightind="*+1pi" firstln="*">
+<textbrk startln="1" endln="1">
+<algroup refpoint="last">
+</subchars>
+</usetext>
+<usetext source="<tmidnostr-header-recto.psu>,</tmidnostr-header-recto.psu>">
+<subchars>
+<font style="sanserif" size="10pt" weight="bold">
+<indent leftind="@-9pt" firstln="*" rightind="0">
+<quadding quad="right" lastquad="lright">
+<postsp minimum="4pt" nominal="7pt" maximum="9pt" priority="high">
+<textbrk startln="1" endln="1">
+<algroup refpoint="last">
+</subchars>
+</usetext>
+<usetext source="\List of Effective Pages\">
+<subchars>
+<font style="sanserif" famname="Helvetica" size="14pt" weight="bold">
+<indent leftind="@-.5pi" rightind="*+15.5pi" firstln="*">
+<highlt allcap="1">
+<textbrk startln="1" endln="0">
+<algroup refpoint="top">
+<boxing toffset="4pt" boffset="6pt" loffset="6pt" roffset="6pt" siderel="content" tthick="3pt" bthick="3pt" lthick="3pt" rthick="3pt">
+<ruling thick="2pt" lentype="spec" speclen="2pi" placemnt="before" ruleclr="white" type="blank">
+<leading lead="0">
+<textbrk startln="1" endln="1">
+</ruling>
+</subchars>
+</usetext>
+<usetext source="\Insert Latest Changed Pages. Destroy Superseded Pages.\">
+<subchars>
+<font style="sanserif" famname="Helvetica" size="8pt" weight="bold">
+<indent leftind="16.5pi" firstln="*">
+<highlt allcap="1">
+<textbrk startln="0" endln="1">
+<algroup refpoint="top">
+</subchars>
+</usetext>
+<ruling thick="1pt" lentype="rel" rellen="text">
+<leading lead="0">
+<indent leftind="@+15.5pi" rightind="*+27.6pi" firstln="*">
+<textbrk startln="1" endln="1">
+</ruling>
+<usetext source="\ \">
+<subchars>
+<leading lead="0pt">
+<indent leftind="0" rightind="-6pi" firstln="*">
+<textbrk startln="1" endln="1">
+<boxing toffset="0pi" boffset="55.25pi" loffset="11pt" roffset="10.75pt"
+siderel="col" tthick="0pt" bthick="1pt" lthick="1pt" rthick="1pt">
+</subchars>
+</usetext>
+<usetext source="\NOTE\,1em,\The portion of the text affected by the changes is indicated by a vertical line in the outer margins of the page. Changes to illustrations are indicated by shaded or screened areas, or by miniature pointing hands.\">
+<subchars>
+<font style="sanserif" famname="Helvetica" size="6pt">
+<indent leftind="@+18.25pi" firstln="*-2pi">
+<textbrk startln="1" endln="1">
+</subchars>
+</usetext>
+'>
+<!ENTITY pagespec-flowtext-column-3col-lep '<!-- GPSL:RK Entity "pagespec-flowtext-column-3col-lep" -->
+<column width="2.2in" topfloat="top-col.flt  topbot-invisible.flt" botfloat="bot-invisible.flt bot-col.flt topbot-invisible.flt">
+<gutter width="0.2in">
+'>
+

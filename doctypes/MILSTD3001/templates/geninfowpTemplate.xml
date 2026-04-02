@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="MilStd1.fos" type="text/x-fosi" media="editor" alternate="yes"?>
+<!--Arbortext, Inc., 1988-2018, v.4002-->
+<!DOCTYPE geninfowp PUBLIC "-//USA-DOD//DTD MIL-STD-3001-1 TM Assembly Draft XML V307 08242016//EN"
+ "Milstd1.dtd" [
+<!NOTATION png SYSTEM "png">
+]>
+<geninfowp><titleblk><wptitle>
+<maintlvl>General Informations Work Package</maintlvl>
+<subject>GENINFOWP SUBJECT</subject><sysnomen>
+<name>GENINFOWP NAME</name></sysnomen></wptitle></titleblk><wpinfo>
+</wpinfo><titledpara>
+<title>Sample Para</title><?Pub Caret -1?>
+<para>Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing. Some additional text from testing.</para>
+<randlist><?Pub Dtl?>
+<item><para>First PARA in a RANDLIST</para>
+</item>
+<item><para>Second PARA in a RANDLIST</para>
+</item>
+<item><para>Third PARA in a RANDLIST</para>
+</item>
+<item><para>Fourth PARA in a RANDLIST</para>
+</item>
+</randlist>
+<para> Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing. Some additional text from testing. Some additional text from
+testing.</para>
+<randlist><?Pub Dtl?>
+<item><para>First PARA in a RANDLIST</para>
+</item>
+<item><para>Second PARA in a RANDLIST</para>
+</item>
+<item><para>Third PARA in a RANDLIST</para>
+</item>
+<item><para>Fourth PARA in a RANDLIST</para>
+</item>
+</randlist></titledpara></geninfowp>

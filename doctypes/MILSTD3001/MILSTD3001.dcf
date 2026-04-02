@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Arbortext, Inc., 1988-2019, v.4002-->
+<!DOCTYPE DocumentTypeConfiguration PUBLIC "-//Arbortext//DTD Document Type Configuration 2.0//EN"
+ "dcfdtd.dtd">
+<!-- MIL-STD-3001 Manual XML V3 DCF File for EPIC -->
+<DocumentTypeConfiguration>
+<Options allowApplicationToolbar="yes" allowComposeStylesheetList="no"
+allowFosiMod="no" allowTouchup="no" protected="no"></Options>
+<NewDialog>
+<New category="CAE MIL-STD Application/MIL-STD 3001" description="CAE MIL-STD Application/MIL-STD 3001 Manual (manual)"
+templateFile="templates/manualTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(acacesswp) Aircraft Access and Inspection Panels and Provisions Work Package"
+templateFile="templates/acacesswpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(accessinfowp) Access Information Work Package"
+templateFile="templates/accessinfowpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(acextpwrwp) Aircraft External Power Source Connections Work Package"
+templateFile="templates/acextpwrwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(acpnlwp) Aircraft Instructment Panel Location Work Package"
+templateFile="templates/acpnlwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(acstawp) Aircraft Stations Work Package"
+templateFile="templates/acstawpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(acsysdescwp) Aircraft Systems Description Work Package"
+templateFile="templates/acsysdescwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(bldupwp) Additional Power Plant Build-Up Work Package"
+templateFile="templates/bldupwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(brktwp) Bracket Installation Work Package"
+templateFile="templates/brktwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(bunidwp) Wiring System Bundle Assembly Identification and Information Work Package"
+templateFile="templates/bunidwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(bunroutewp) Wire Bundle Assembly Routings Work Package"
+templateFile="templates/bunroutewpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(chemtrtwp) Chemical treatment of Metal Surfaces Work Package"
+templateFile="templates/chemtrtwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(compindwp) Numerical Index Work Package"
+templateFile="templates/compindwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(compreplistwp) Wiring System Component Repair Tool List Work Package"
+templateFile="templates/compreplistwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(corclnwp) Corrosion Cleaning Work Package"
+templateFile="templates/corclnwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(corinspwp) Inspection for Corrosion Work Package"
+templateFile="templates/corinspwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(cormatwp) Corrosion Control Materials Requirements Work Package"
+templateFile="templates/cormatwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(corremwp) Corrosion Removal Work Package"
+templateFile="templates/corremwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(corsealwp) Corrosion Control Seals and Sealants Work Package"
+templateFile="templates/corsealwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(critclwp) Critical Clearances Work Package"
+templateFile="templates/critclwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(dangarwp) Danger Areas and precautionary Measures Work Package"
+templateFile="templates/dangarwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(descwp) Aircraft General Description Work Package"
+templateFile="templates/descwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(engtestwp) Engine Testing Procedures Work Package"
+templateFile="templates/engtestwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(extcompwp) External Components Work Package"
+templateFile="templates/extcompwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(extubwp) External Tubing, Cabling, and Clamping Work Package"
+templateFile="templates/extubwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(ffdiagwp) Functional Flow Diagram Work Package"
+templateFile="templates/ffdiagwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(fitrblwp) Fault Isolation Troubleshooting Procedure Work Package"
+templateFile="templates/fitrblwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(fltdescrptwp) Fault Descriptor Work Package"
+templateFile="templates/fltdescrptwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(fltindwp) Fault Indications Work Package"
+templateFile="templates/fltindwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(geninfomaintwp) Maintenance General Information Work Package"
+templateFile="templates/geninfomaintwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(geninfowp) General Informations Work Package"
+templateFile="templates/geninfowpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(genmaintwp) General Maintenance Procedures Work Package"
+templateFile="templates/genmaintwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(genstructwp) General Aircraft Structural Information Work Package"
+templateFile="templates/genstructwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(grndopwp) Ground Operations Work Package"
+templateFile="templates/grndopwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001" description="(ipbwp) IPB Data Work Package"
+templateFile="templates/ipbwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(locmfgwp) Local Manufacturing and Assembly Work Package"
+templateFile="templates/locmfgwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(maintcdwp) Maintenance Code Listing Work Package"
+templateFile="templates/maintcdwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(maintwp) Maintenance Work Package"
+templateFile="templates/maintwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(ndigeninfowp) NDI General Information Work Package"
+templateFile="templates/ndigeninfowpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(ndindxwp) NDI Index Work Package"
+templateFile="templates/ndindxwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(ndispecwp) NDI Specific Procedures Work Package"
+templateFile="templates/ndispecwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(nditypwp) NDI Typical Procedures Work Package"
+templateFile="templates/nditypwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(nonqecawp) Non-Quick Engine Change Assembly Work Package"
+templateFile="templates/nonqecawpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(opchkwp) Operational Checkout Work Package"
+templateFile="templates/opchkwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(operwp) Operating Instruction Work Package"
+templateFile="templates/operwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(paintsyswp) Paint Systems Work Package"
+templateFile="templates/paintsyswpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(partswp) Aircraft Cable Assembly Parts Data Work Package"
+templateFile="templates/partswpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(popwp) Principles of Operations Work Package"
+templateFile="templates/popwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(preindinspwp) Preinduction and Mandatory Inspection Work Package"
+templateFile="templates/preindinspwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(qecawp) Quick Engine Change Assembly Work Package"
+templateFile="templates/qecawpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(qeckdescwp) Quick Engine Change Kit Description Work Package"
+templateFile="templates/qeckdescwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(repindxwp) Aircraft Structure Visual Index Work Package"
+templateFile="templates/repindxwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(reprkitwp) Aircraft Specific Wiring System Repair Kit Work Package"
+templateFile="templates/reprkitwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(reptoolwp) Aircraft Specific Repair Tools Work Package"
+templateFile="templates/reptoolwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(schemwp) Schematic Diagram Work Packages"
+templateFile="templates/schemwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(semaintwp) Support Equipment Maintenance Work Package"
+templateFile="templates/semaintwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(softldwp) Software Loading Work Package"
+templateFile="templates/softldwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(softwp) Programming Software Description Work Package"
+templateFile="templates/softwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(specrepwp) Specific Repair Data Work Package"
+templateFile="templates/specrepwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(stripwp) Stripping Work Package"
+templateFile="templates/stripwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(symwp) Symbology Work Package"
+templateFile="templates/symwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(trblshtwp) Troubleshooting Work Package"
+templateFile="templates/trblshtwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(tst-trblwp) Combined Testing and Troubleshooting Work Package"
+templateFile="templates/tst-trblwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(typcorwp) Typical Corrosion Control Data Work Package"
+templateFile="templates/typcorwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(typrepwp) Typical Repair Data Work Package"
+templateFile="templates/typrepwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(wcomplstwp) Wire &amp; Connector Component Identification and Location List Work Package"
+templateFile="templates/wcomplstwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(wcomprepwp) Wiring System Connector Component Repair Work Package"
+templateFile="templates/wcomprepwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(wdiaidwp) Wiring Diagram Identification and Information Work Package"
+templateFile="templates/wdiaidwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(wdiawp) Wiring Diagram Work Package"
+templateFile="templates/wdiawpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(wirediawp) Wiring / Cabling Diagram Work Package"
+templateFile="templates/wirediawpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(wirelistwp) Wire Run Lists Work Package"
+templateFile="templates/wirelistwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(wrefdeswp) Wiring Reference Designation List Work Package"
+templateFile="templates/wrefdeswpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(wrepidwp) Wiring Systems Repair Identification and Information Work Package"
+templateFile="templates/wrepidwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(wrunlstwp) Wire Run List Work Package"
+templateFile="templates/wrunlstwpTemplate.xml"/>
+<New category="CAE MIL-STD Application/MIL-STD 3001"
+description="(wtypelistwp) Wire Type List Work Package"
+templateFile="templates/wtypelistwpTemplate.xml"/></NewDialog>
+<ElementOptions>
+<ElementOption category="division" element="aalwp"/>
+<ElementOption category="division" element="manual"/>
+<ElementOption category="division" element="acacesswp"/>
+<ElementOption category="division" element="accessinfowp"/>
+<ElementOption category="division" element="acextpwrwp"/>
+<ElementOption category="division" element="acpnlwp"/>
+<ElementOption category="division" element="acstawp"/>
+<ElementOption category="division" element="acsysdescwp"/>
+<ElementOption category="division" element="bldupwp"/>
+<ElementOption category="division" element="brktwp"/>
+<ElementOption category="division" element="bunidwp"/>
+<ElementOption category="division" element="bunroutewp"/>
+<ElementOption category="division" element="chemtrtwp"/>
+<ElementOption category="division" element="compindwp"/>
+<ElementOption category="division" element="compreplistwp"/>
+<ElementOption category="division" element="corclnwp"/>
+<ElementOption category="division" element="corinspwp"/>
+<ElementOption category="division" element="cormatwp"/>
+<ElementOption category="division" element="corremwp"/>
+<ElementOption category="division" element="corsealwp"/>
+<ElementOption category="division" element="critclwp"/>
+<ElementOption category="division" element="dangarwp"/>
+<ElementOption category="division" element="descwp"/>
+<ElementOption category="division" element="engtestwp"/>
+<ElementOption category="division" element="extcompwp"/>
+<ElementOption category="division" element="extubwp"/>
+<ElementOption category="division" element="ffdiagwp"/>
+<ElementOption category="division" element="fitrblwp"/>
+<ElementOption category="division" element="fltdescrptwp"/>
+<ElementOption category="division" element="fltindwp"/>
+<ElementOption category="division" element="geninfomaintwp"/>
+<ElementOption category="division" element="geninfowp"/>
+<ElementOption category="division" element="genmaintwp"/>
+<ElementOption category="division" element="genstructwp"/>
+<ElementOption category="division" element="grndopwp"/>
+<ElementOption category="division" element="ipbwp"/>
+<ElementOption category="division" element="locmfgwp"/>
+<ElementOption category="division" element="maintcdwp"/>
+<ElementOption category="division" element="maintwp"/>
+<ElementOption category="division" element="ndigeninfowp"/>
+<ElementOption category="division" element="ndindxwp"/>
+<ElementOption category="division" element="ndispecwp"/>
+<ElementOption category="division" element="nditypwp"/>
+<ElementOption category="division" element="nonqecawp"/>
+<ElementOption category="division" element="opchkwp"/>
+<ElementOption category="division" element="operwp"/>
+<ElementOption category="division" element="paintsyswp"/>
+<ElementOption category="division" element="partswp"/>
+<ElementOption category="division" element="popwp"/>
+<ElementOption category="division" element="preindinspwp"/>
+<ElementOption category="division" element="qecawp"/>
+<ElementOption category="division" element="qeckdescwp"/>
+<ElementOption category="division" element="repindxwp"/>
+<ElementOption category="division" element="reprkitwp"/>
+<ElementOption category="division" element="reptoolwp"/>
+<ElementOption category="division" element="schemwp"/>
+<ElementOption category="division" element="semaintwp"/>
+<ElementOption category="division" element="softldwp"/>
+<ElementOption category="division" element="softwp"/>
+<ElementOption category="division" element="specrepwp"/>
+<ElementOption category="division" element="stripwp"/>
+<ElementOption category="division" element="symwp"/>
+<ElementOption category="division" element="trblshtwp"/>
+<ElementOption category="division" element="tst-trblwp"/>
+<ElementOption category="division" element="typcorwp"/>
+<ElementOption category="division" element="typrepwp"/>
+<ElementOption category="division" element="wcomplstwp"/>
+<ElementOption category="division" element="wcomprepwp"/>
+<ElementOption category="division" element="wdiaidwp"/>
+<ElementOption category="division" element="wdiawp"/>
+<ElementOption category="division" element="wirediawp"/>
+<ElementOption category="division" element="wirelistwp"/>
+<ElementOption category="division" element="wrefdeswp"/>
+<ElementOption category="division" element="wrepidwp"/>
+<ElementOption category="division" element="wrunlstwp"/>
+<ElementOption category="division" element="wtypelistwp"/>
+</ElementOptions>
+<Specials>
+<Link element="xref" idref="xrefid" primary="yes"/>
+<Paragraph element="para" primary="yes"/><?Pub Caret -2?>
+<Graphic cropHeight="llcordra" cropLowerLeftX="coordst"
+cropLowerLeftY="coordend" cropWidth="rucordra" element="graphic"
+entity="boardno" horizScale="hscale" reproDepth="reprodep"
+reproWidth="reprowid" scaleToFit="scalefit" vertScale="hscale"/>
+<Graphic cropHeight="llcordra" cropLowerLeftX="coordst"
+cropLowerLeftY="coordend" cropWidth="rucordra" element="icon-set"
+entity="boardno" horizScale="hscale" reproDepth="reprodep"
+reproWidth="reprowid" scaleToFit="scalefit" vertScale="hscale"/>
+</Specials>
+<TextStyles>
+<Bold attribute="type" attributeValue="b" element="emphasis"/>
+<Italic attribute="type" attributeValue="i" element="emphasis"/>
+<Underline attribute="type" attributeValue="u" element="emphasis"/>
+</TextStyles>
+<Lists>
+<Bulleted>
+<Block element="randlist"/>
+<Item element="item"/></Bulleted>
+<Numbered>
+<Block element="seqlist"/>
+<Item element="item"/></Numbered>
+</Lists>
+</DocumentTypeConfiguration>

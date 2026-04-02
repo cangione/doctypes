@@ -1,0 +1,561 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.1                            *
+    *                       Date: 2004-02-29                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2003-10US: Introduce new elements set, size, add, remove,   *
+    *                   union, intersect, set-diff, member, subset and   *
+    *                   disjoint. Add "set-string", "set-real" and       *
+    *                   "set-integer" to list of values for attribute    *
+    *                   valuetype of element variable.                   *
+    * 3. CPF 2003-11US: Add "multiple" to list of values for attribute   *
+    *                   select of element menu. Replace call of entity   *
+    *                   %DIALOG; by new element no-assertion within      *
+    *                   content model of element choice.                 *
+    * 4. CPF 2004-11US: Rename elements choice to menuchoice, nil to     *
+    *                   novalue, no-assertion to noassertions and size   *
+    *                   to sizeof due to name clashes with exisiting     *
+    *                   elements.                                        *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % INTERACT PUBLIC                                         *
+    *  "-//S1000D//ELEMENTS Interactive Common Data 20040229//EN" >      *
+    * %INTERACT;                                                         *
+    ********************************************************************** -->
+
+<!--**********************************************************************
+    **********************************************************************
+    **                                                                  **
+    **                MISCELLANEOUS DEFINITIONS                         **
+    **                                                                  **
+    **********************************************************************
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Element text (Text) containing:-                            *
+    **********************************************************************
+    *   Parsed Character Data  -   PCDATA                                *
+    ********************************************************************** -->
+<!ELEMENT text - - (#PCDATA) >
+
+<!--**********************************************************************
+    **********************************************************************
+    **                                                                  **
+    **                EXPRESSION OPERATOR DEFINITIONS                   **
+    **                                                                  **
+    **********************************************************************
+    ********************************************************************** -->
+<!--**********************************************************************
+    * Define Entity %BINOP; (Collection of Binary Operators):            *
+    **********************************************************************
+    * The %BINOP; entity defines the set of acceptable binary operators. *
+    ********************************************************************** -->
+<!ENTITY % BINOP " eq | ne | lt | gt | le | ge | and | or | xor | concat | 
+                   substring | plus | minus | times | divide | idivide | 
+                   exponent | modulus | add | remove | union | intersect | 
+                   set-diff | member | subset | disjoint ">
+<!-- New elements added to entity definition -->
+
+<!ELEMENT eq - O EMPTY>
+<!ELEMENT ne - O EMPTY>
+<!ELEMENT lt - O EMPTY>
+<!ELEMENT gt - O EMPTY>
+<!ELEMENT le - O EMPTY>
+<!ELEMENT ge - O EMPTY>
+<!ELEMENT and - O EMPTY>
+<!ELEMENT or - O EMPTY>
+<!ELEMENT xor - O EMPTY>
+<!ELEMENT concat - O EMPTY>
+<!ELEMENT substring - O EMPTY>
+<!ELEMENT plus - O EMPTY>
+<!ELEMENT minus - O EMPTY>
+<!ELEMENT times - O EMPTY>
+<!ELEMENT divide - O EMPTY>
+<!ELEMENT idivide - O EMPTY>
+<!ELEMENT exponent - O EMPTY>
+<!ELEMENT modulus - O EMPTY>
+
+<!ELEMENT add - O EMPTY>
+<!ELEMENT remove - O EMPTY>
+<!ELEMENT union - O EMPTY>
+<!ELEMENT intersect - O EMPTY>
+<!ELEMENT set-diff - O EMPTY>
+<!ELEMENT member - O EMPTY>
+<!ELEMENT subset - O EMPTY>
+<!ELEMENT disjoint - O EMPTY>
+<!-- Newly introduced elements -->
+
+
+<!--**********************************************************************
+    * Define Entity %UNOP; (Collection of Unary Operators):              *
+    **********************************************************************
+    * The %UNOP; entity defines the set of acceptable unary operators.   *
+    ********************************************************************** -->
+<!ENTITY % UNOP " not | empty | neg | trunc | float | index | defined | 
+                  sizeof ">
+<!-- New element added to entity definition -->
+<!ELEMENT not - O EMPTY>
+<!ELEMENT empty - O EMPTY>
+<!ELEMENT neg - O EMPTY>
+<!ELEMENT trunc - O EMPTY>
+<!ELEMENT float - O EMPTY>
+<!ELEMENT index-value - - (#PCDATA)>
+<!ELEMENT index - - (index-value, index-value?)>
+<!ELEMENT defined - O EMPTY>
+
+<!ELEMENT sizeof - O EMPTY>
+<!-- Newly introduced element -->
+
+
+<!--**********************************************************************
+    * Define Entity %VALUE; (Collection of Explicit Values):             *
+    **********************************************************************
+    * The %VALUE; entity defines the set of acceptable explicit values   *
+    * that may be used in an expression.                                 *
+    ********************************************************************** -->
+<!ENTITY % VALUE " boolean | string | real | integer | set | novalue ">
+<!-- New element <set> added to definition and <nil> renamed to <novalue> -->
+
+<!ELEMENT boolean - - (true | false)>
+<!ELEMENT true - O EMPTY>
+<!ELEMENT false - O EMPTY>
+<!ELEMENT string - - (#PCDATA)>
+<!ELEMENT real - - (#PCDATA)>
+<!ELEMENT integer - - (#PCDATA)>
+
+<!ELEMENT set   - -  ( string+ | real+ | integer+ | novalue )>
+<!-- Newly introduced element -->
+
+<!ELEMENT novalue - O EMPTY>
+<!-- Element renamed -->
+
+<!--**********************************************************************
+    **********************************************************************
+    **                                                                  **
+    **                       DIALOG DEFINITIONS                         **
+    **                                                                  **
+    **********************************************************************
+    ********************************************************************** -->
+
+<!--**********************************************************************
+    * Define Entity %DIALOG; (Dialog/Dialog Alternate Element):          *
+    **********************************************************************
+    * The %DIALOG; entity defines a convenient method to specify either  *
+    * a dialog element or a dialog alternate element.                    *
+    ********************************************************************** -->
+<!ENTITY % DIALOG "dialog | dialog-alt" >
+
+<!--**********************************************************************
+    * Define Element dialog (Dialog Element) containing:-                *
+    **********************************************************************
+    * The dialog element provides a method to display a question to the  *
+    * user for the purpose of updating variable values in the State      *
+    * Information.                                                       *
+    **********************************************************************
+    *   precond      - Optional Repeatable   Precondition Expression     *
+    *====================================================================*
+    *   Mandatory Repeatable Group                                       *
+    *====================================================================*
+    *   fillin       \                       Fill in the blank           *
+    *  or             >Mandatory Single                                  *
+    *   menu         /                       Menu of choices             *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   id       - ID       - IMPLIED       - Node ID                    *
+    *   Definition stored in entity %secur;                              *
+    ********************************************************************** -->
+<!ELEMENT dialog - - (precond*, (fillin | menu)+) >
+<!ATTLIST dialog
+  id       ID        #IMPLIED 
+  %secur; >
+
+<!--**********************************************************************
+    * Define Element dialog-alt (Dialog Alternatives) containing:-       *
+    **********************************************************************
+    * The dialog-alt element is a pointer to multiple Dialog Elements    *
+    * where only one is valid determined by required preconditions on    *
+    * the contained Dialog Elements.                                     *
+    * This element employs the 'Node Alternate' class.                   *
+    **********************************************************************
+    *   dialog       - mandatory repeatable   Dialog Elements            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   id       - ID       - IMPLIED       - Node ID                    *
+    *   name     - CDATA    - IMPLIED       - Name of the node           *
+    *   Definition stored in entity %secur;                              *
+    ********************************************************************** -->
+<!ELEMENT dialog-alt - - ( dialog+ ) >
+<!ATTLIST dialog-alt
+  id        ID         #IMPLIED
+  name      CDATA      #IMPLIED 
+  %secur; >
+
+<!--**********************************************************************
+    * Define Element fillin (Fill-In-The-Blank Dialog) containing:-      *
+    **********************************************************************
+    * The fillin element provides a fill-in-the-blank question to the    *
+    * user. It contains a prompt, the variable to store the user's       *
+    * answer in, and optional default and range constraints.             *
+    **********************************************************************
+    *   prompt       - Mandatory Single   Question to the user           *
+    *   variable-ref - Mandatory Single   Variable to store answer in    *
+    *   text         - Optional  Single   Default answer - prefill       *
+    *   num-range    - Optional  Single   Acceptable number range        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id        - ID       - IMPLIED     - Element ID                   *
+    ********************************************************************** -->
+<!ELEMENT fillin - - (prompt, variable-ref, text?, num-range?) >
+<!ATTLIST fillin
+  id ID #IMPLIED >
+
+<!--**********************************************************************
+    * Define Element num-range (Fillin Dialog Number Range)              *
+    * containing:-                                                       *
+    **********************************************************************
+    * The num-range element defines the acceptable input for fillin      *
+    * dialogs requiring an integer or real number input. The user's      *
+    * response is to be validated to fall within the num-range.          *
+    **********************************************************************
+    *   low-bound    \                     Low number and up             *
+    *  or             \                                                  *
+    *   double-bound   >Mandatory Single   Between two numbers           *
+    *  or             /                                                  *
+    *   high-bound   /                     Up to high number             *
+    ********************************************************************** -->
+<!ELEMENT num-range - - (low-bound | double-bound | high-bound)>
+
+<!--**********************************************************************
+    * Define Elements low-bound/high-bound (Low/High Number Range)       *
+    * containing:-                                                       *
+    **********************************************************************
+    * The low-bound/high-bound elements provide either an integer or     *
+    * a real number used to validate the user's input to a fill-in-the-  *
+    * blank type of dialog.                                              *
+    **********************************************************************
+    *   integer      \                    Integer number                 *
+    *                 >Mandatory Single                                  *
+    *   real         /                    Real number                    *
+    ********************************************************************** -->
+<!ELEMENT low-bound - - (integer | real)>
+<!ELEMENT high-bound - - (integer | real)>
+
+<!--**********************************************************************
+    * Define Element double-bound (Low and High Number Range)            *
+    * containing:-                                                       *
+    **********************************************************************
+    * The double-bound element defines the acceptable input for fillin   *
+    * dialogs requiring an integer or real number input. The user's      *
+    * response is to be validated to fall within the low and high bounds.*
+    **********************************************************************
+    *   low-bound    - Mandatory Single   Low number                     *
+    *   high-bound   - Mandatory Single   High number                    *
+    ********************************************************************** -->
+<!ELEMENT double-bound - - (low-bound, high-bound)>
+
+<!--**********************************************************************
+    * Define Element menu (Menu Choice Dialog) containing:-              *
+    **********************************************************************
+    * The menu element provides a question to the user with a list of    *
+    * choices.  It contains a prompt and choices. Each choice contains   *
+    * the action to perform if that choice is selected.                  *
+    **********************************************************************
+    *   prompt     - Mandatory Single      Question to the user          *
+    *   menuchoice - Mandatory Repeatable  Choices for the user to choose*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id        - ID       - IMPLIED     - Element ID                   *
+    *  select    - Declared - "single"    - Selection type:              *
+    *              - "single"    - only one choice may be selected.      *
+    *              - "multiple"  - multiple choices may be selected.     *
+    ********************************************************************** -->
+<!ELEMENT menu - - (prompt, menuchoice+)>
+<!-- Element choice renamed to menuchoice -->
+<!ATTLIST menu
+  id ID #IMPLIED
+  select (single|multiple) "single" >
+<!-- Attribute value multiple added -->  
+
+<!--**********************************************************************
+    * Define Element prompt (Dialog Prompt) containing:-                 *
+    **********************************************************************
+    * The prompt element provides the question presented to the user     *
+    * for both fillin and menu type of dialogs.                          *
+    **********************************************************************
+    *   text         - Mandatory Single   Text of question to the user   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id        - ID       - IMPLIED     - Element ID                   *
+    ********************************************************************** -->
+<!ELEMENT prompt - - (text)>
+<!ATTLIST prompt
+  id ID #IMPLIED >
+
+<!--**********************************************************************
+    * Define Element menuchoice (Menu Dialog Choice) containing:-        *
+    **********************************************************************
+    * The menuchoice element provides one choice in a menu dialog. Each  *
+    * choice contains a precondition to specify applicability, the text  *
+    * of the choice, and the action to perform if the choice is selected *
+    * as either changes to the State Information (assertion) or no       *
+    * further action to perform (noassertions).                          *
+    **********************************************************************
+    *   precond      - Optional Repeatable   Precondition Expression     *
+    *   text         - Mandatory Single      Text of the choice          *
+    *====================================================================*
+    *   Mandatory Single Group                                           *
+    *====================================================================*
+    *   assertion    - Mandatory Repeatable   Changes to the State Info  *
+    *  or                                                                *
+    *   noassertions - Mandatory Single       No action to perform.      *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id        - ID       - IMPLIED     - Element ID                   *
+    *  default   - NUMBER   - "0"         - Whether the choice should be *
+    *                                       pre-selected as the default. *
+    *              - "1"      - Yes                                      *
+    *              - "0"      - No                                       *
+    ********************************************************************** -->
+<!ELEMENT menuchoice - - (precond*, text, (assertion+ | noassertions)) >
+<!-- Element renamed and content model changed -->
+<!ATTLIST menuchoice
+  id ID #IMPLIED
+  default %yesorno; "0" >
+  
+<!--**********************************************************************
+    * Define Element noassertions (No Assertions) containing:-           *
+    **********************************************************************
+    * The noassertions element provides for a Dialog Menu Choice that    *
+    * performs no action when selected.                                  *
+    **********************************************************************
+    *   No Other Tags.                                                   *
+    ********************************************************************** -->
+<!ELEMENT noassertions - O EMPTY >
+<!-- Newly introduced element -->
+
+
+<!--**********************************************************************
+    **********************************************************************
+    **                                                                  **
+    **           EXPRESSION AND RELATED DEFINITIONS                     **
+    **                                                                  **
+    **********************************************************************
+    ********************************************************************** -->
+
+<!--**********************************************************************
+    * Define Element precond (Precondition) containing:-                 *
+    **********************************************************************
+    * The precond element provides a precondition assignment to an       *
+    * element indicating the expression to evaluate to determine whether *
+    * to display the element. If the expression evaluates to true, the   *
+    * owning element is displayed. If the expression evaluates to false  *
+    * the element is skipped.                                            *
+    **********************************************************************
+    *   expression   - Mandatory Single  Expression to evaluate          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id        - ID       - IMPLIED     - Element ID                   *
+    ********************************************************************** -->
+<!ELEMENT precond - - (expression) >
+<!ATTLIST precond
+  id ID #IMPLIED >
+
+<!--**********************************************************************
+    * Define Element preset (Preset a Variable Value) containing:-       *
+    **********************************************************************
+    * The preset element provides a method to set a variable value       *
+    * in the State Information prior to executing the rest of the        *
+    * content in an element.                                             *
+    **********************************************************************
+    *   assertion    - Mandatory Single  Assertion to execute            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id        - ID       - IMPLIED     - Element ID                   *
+    ********************************************************************** -->
+<!ELEMENT preset - - (assertion)>
+<!ATTLIST preset
+  id ID #IMPLIED >
+
+<!--**********************************************************************
+    * Define Element postset (Postset a Variable Value) containing:-     *
+    **********************************************************************
+    * The postset element provides a method to set a variable value      *
+    * in the State Information after executing the rest of the content   *
+    * in an element.                                                     *
+    **********************************************************************
+    *   assertion    - Mandatory Single  Assertion to execute            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id        - ID       - IMPLIED     - Element ID                   *
+    ********************************************************************** -->
+<!ELEMENT postset - - (assertion)>
+<!ATTLIST postset
+  id ID #IMPLIED >
+
+<!--**********************************************************************
+    * Define Element assertion (Set a Variable Value) containing:-       *
+    **********************************************************************
+    * The assertion element provides the method to set a variable value  *
+    * in the State Information.  The expression is evaluated and the     *
+    * result is assigned to the variable referenced in the State Info.   *
+    **********************************************************************
+    *   variable-ref - Mandatory Single  Reference to the variable to set*
+    *   expression   - Mandatory Single  Results to be stored in variable*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id        - ID       - IMPLIED     - Element ID                   *
+    ********************************************************************** -->
+<!ELEMENT assertion - - (variable-ref, expression)>
+<!ATTLIST assertion
+  id ID #IMPLIED >
+
+<!--**********************************************************************
+    * Define Element expression (Expression Definition) containing:-     *
+    **********************************************************************
+    * The expression element defines an expression to be evaluated when  *
+    * setting a variable value (assertion) or context filtering (precond)*
+    * Four forms of expressions are supported:                           *
+    *     Binary Operations: expression binary-operator expression       *
+    *     Unary Operations:  unary-operator expression                   *
+    *     Variable Value:    variable-ref                                *
+    *     Explicit Value:    value                                       *
+    * Complicated expressions are built using multiple levels of binary  *
+    * and unary expressions.                                             *
+    **********************************************************************
+    *====================================================================*
+    * Mandatory Single Group                                             *
+    *====================================================================*
+    * Binary Form:                                                       *
+    *   expression   - Mandatory Single  First operand of expression     *
+    *   Definition stored in entity %BINOP;                              *
+    *                - Mandatory Single  Operator to apply to operands   *
+    *   expression   - Mandatory Single  Second operand of expression    *
+    *====================================================================*
+    * or                                                                 *
+    *====================================================================*
+    * Mandatory Single Group                                             *
+    *====================================================================*
+    * Unary Form:                                                        *
+    *   Definition stored in entity %UNOP;                               *
+    *                - Mandatory Single  Operator to apply to operand    *
+    *   expression   - Mandatory Single  Operand of expression           *
+    *====================================================================*
+    * or                                                                 *
+    * Variable Form:                                                     *
+    *   variable-ref - Mandatory Single  Variable value to use in the    *
+    *                                    expression evaluation           *
+    * or                                                                 *
+    * Value Form:                                                        *
+    *   Definition stored in entity %VALUE;                              *
+    *                - Mandatory Single  Explicit value to use in the    *
+    *                                    expression evaluation           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id          - ID       - IMPLIED      - Element ID                *
+    *  print-form  - CDATA    - IMPLIED      - Human readable form       *
+    *                                          suitable for printing     *
+    ********************************************************************** -->
+<!ELEMENT expression - - ((expression, (%BINOP;), expression) | 
+                          ((%UNOP;), expression) | variable-ref | 
+                          (%VALUE;)) >
+<!ATTLIST expression
+  id ID #IMPLIED
+  print-form CDATA #IMPLIED >
+
+<!--**********************************************************************
+    **********************************************************************
+    **                                                                  **
+    **                     VARIABLE DEFINITIONS                         **
+    **                                                                  **
+    **********************************************************************
+    ********************************************************************** -->
+
+<!--**********************************************************************
+    * Define Element variable (Variable Declaration) containing:-        *
+    **********************************************************************
+    * The variable element declares a variable to be maintained in the   *
+    * state table.                                                       *
+    **********************************************************************
+    *   dialog     - Optional Single - Dialog to present to the user to  *
+    *                                    obtain a value for the variable *
+    *   initialize - Optional Single - Initial value for the variable    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  name        - CDATA    - REQUIRED    - Name of the variable       *
+    *  description - CDATA    - IMPLIED     - Human readable description *
+    *  config      - NUMBER   - "0"         - Is this a config item?     *
+    *                - "1"      - Yes                                    *
+    *                - "0"      - No                                     *
+    *  value-type  - Declared - "integer"   - Data type the variable     *
+    *                                         represents.                *
+    *                - "boolean"     - Boolean data type.                *
+    *                - "string"      - String data type.                 *
+    *                - "real"        - Real data type.                   *
+    *                - "integer"     - Integer data type.                *
+    *                - "set-string"  - String Set data type.             *
+    *                - "set-real"    - Real Set data type.               *
+    *                - "set-integer" - Integer Set data type.            *
+    *  precision   - CDATA    - IMPLIED    - Precision of real type data.*
+    *  scope       - Declared - "global"   - Scope of the variable       *
+    *                - "global"   - This variable has global scope;      *
+    *                               local scope to be a future addition  *
+    ********************************************************************** -->
+<!ELEMENT variable - - ((%DIALOG;)?, initialize?) >
+<!ATTLIST variable
+  name CDATA #REQUIRED
+  description CDATA #IMPLIED
+  config %yesorno; "0" 
+  valuetype (boolean|string|real|integer|set-string|set-real|set-integer) 
+            "integer"
+  precision CDATA #IMPLIED
+  scope (global) "global" >
+<!-- List of values of attribute valuetype amended -->
+
+<!--**********************************************************************
+    * Define Element variable-declarations (Variable Declarations):-     *
+    **********************************************************************
+    * The variable-declarations element provides a grouping of           *
+    * variables that will be used in this Data Module                    *
+    **********************************************************************
+    *   variable   - Mandatory Repeatable  - Variables used in this DM   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id        - ID       - IMPLIED     - Element ID                   *
+    ********************************************************************** -->
+<!ELEMENT variable-declarations - - (variable+) >
+<!ATTLIST variable-declarations
+  id ID #IMPLIED >
+
+<!--**********************************************************************
+    * Define Element variable-ref (Variable Reference) containing:-      *
+    **********************************************************************
+    * The variable-ref element is used to reference the value of the     *
+    * variable with name from the State Information.                     *
+    **********************************************************************
+    *   No Other Tags.                                                   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  name    - CDATA   - REQUIRED   - Name of the variable to reference*
+    ********************************************************************** -->
+<!ELEMENT variable-ref - O EMPTY >
+<!ATTLIST variable-ref
+  name CDATA #REQUIRED >
+
+<!--**********************************************************************
+    * Define Element initialize (Initialize a Variable Value)            *
+    * containing:-                                                       *
+    **********************************************************************
+    * The initialize element provides a method to set the initial        *
+    * variable value at the time of creation                             *
+    **********************************************************************
+    *   expression   - Mandatory Single  Value to assign to the variable *
+    ********************************************************************** -->
+<!ELEMENT initialize - - (expression) >

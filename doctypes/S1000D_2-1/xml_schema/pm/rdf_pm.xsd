@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	   xmlns:xs= "http://www.w3.org/2001/XMLSchema"
+           xmlns:dc= "http://www.purl.org/dc/elements/1.1/"
+           elementFormDefault="qualified"
+           attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. New public identifier: Resource Description Framework (RDF)     *
+    *                           definitions for optional use on root     *
+    *                           element (XML instances only).            *
+    *                           Content model of element rdf:Description *
+    *                           references the Dublin Core (DC) element  *
+    *                           set relevant for S1000D XML text objects *
+    *                           other than data modules in group DCMES   *
+    *                           (see schema module DC_PM.XSD).           *
+    *====================================================================*
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTRDF PUBLIC                                           *
+    *   "-//S1000D//ELEMENTS Resource Description Framework (RDF)        *
+    *                        Definitions 20030531//EN">                  *
+    * %EXTRDF;                                                           *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Resource Description Framework (RDF) definitions.                  *
+    ********************************************************************** -->
+
+<!--**********************************************************************
+    * Call the DC Metadata Definition Public Text. The formal public     *
+    * identifier is stored in the entity %EXTDC;                         *
+    ********************************************************************** -->
+<!-- %EXTDC; -->
+	<xs:import 	namespace="http://www.purl.org/dc/elements/1.1/"
+			schemaLocation="dc_pm.xsd"/>
+
+
+	<xs:element name="Description">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element rdf:Description (RDF container for DC element set)  *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DCMES;.                              *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="dc:DCMES" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

@@ -1,0 +1,64 @@
+<?Pub CX outspec(rsrcdesc()pagedesc()styldesc(docdesc()e-i-c()e-i-c(charlist()>
+<att><?Pub Caret1>
+<specval attname="is_later_change" attloc="system-func" attval="#EQ#\1\">
+<charsubset>
+<chgmark barthick="2mm" type="content"></chgmark>
+</charsubset>
+</att><att>
+<specval attname="_changenum" attval="#GT#\0\">
+<specval attname="print-only" attloc="system-var" attval="#NONE">
+<charsubset>
+<savetext textid="pgchangenum.txt" conrule="\Change \,#CONTENT(_changenum)">
+<savetext textid="prevfchangenum.txt" conrule="pgchangenum.txt">
+<usetext source="<changest.fmt>,\ ** START OF \,<upcasebld.fmt>,pgchangenum.txt,</upcasebld.fmt>,\ SECTION ** \,</changest.fmt>"
+placemnt="before"></usetext>
+</charsubset>
+</att><att>
+<specval attname="_changenum" attval="#GT#\0\">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset>
+<savetext textid="pgchangenum.txt" conrule="\Change \,#CONTENT(_changenum)">
+</charsubset>
+</att><att>
+<specval attname="_changenum" attval="#EQ#\0\">
+<specval attname="print-only" attloc="system-var" attval="#NONE">
+<charsubset>
+<savetext textid="pgchangenum.txt" conrule="\\">
+<usetext source="<changeend.fmt>,\ ** END OF \,<upcasebld.fmt>,prevfchangenum.txt,</upcasebld.fmt>,\ SECTION ** \,</changeend.fmt>"
+placemnt="before"></usetext>
+</charsubset>
+</att><att>
+<specval attname="_changenum" attval="#EQ#\0\">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset>
+<savetext textid="pgchangenum.txt" conrule="\\"></charsubset>
+</att><att>
+<specval attname="_manchangenum" attval="#GT#\0\">
+<specval attname="print-only" attloc="system-var" attval="#NONE">
+<charsubset>
+<savetext textid="manrevchg.txt" conrule="\Change \,#CONTENT(_manchangenum)">
+<savetext textid="prevmanrevchg.txt" conrule="manrevchg.txt">
+<usetext source="<changest.fmt>,\ ** START OF \,<upcasebld.fmt>,manrevchg.txt,</upcasebld.fmt>,\ SECTION ** \,</changest.fmt>"
+placemnt="before"></usetext>
+</charsubset>
+</att><att>
+<specval attname="_manchangenum" attval="#GT#\0\">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset>
+<savetext textid="manrevchg.txt" conrule="\Change \,#CONTENT(_manchangenum)">
+</charsubset>
+</att><att>
+<specval attname="_manchangenum" attval="#EQ#\0\">
+<specval attname="print-only" attloc="system-var" attval="#NONE">
+<charsubset>
+<savetext textid="manrevchg.txt" conrule="\\">
+<usetext source="<changeend.fmt>,\ ** END OF \,<upcasebld.fmt>,prevmanrevchg.txt,</upcasebld.fmt>,\ SECTION ** \,</changeend.fmt>"
+placemnt="before"></usetext>
+</charsubset>
+</att><att>
+<specval attname="_manchangenum" attval="#EQ#\0\">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset>
+<savetext textid="manrevchg.txt" conrule="\\"></charsubset>
+</att>
+<?Pub *0000000276>

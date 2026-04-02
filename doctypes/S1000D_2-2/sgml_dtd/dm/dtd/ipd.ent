@@ -1,0 +1,608 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2002-11FR: Move call of entity %EXTLIST; to file IPD.DTD.   *
+    *                   Remove call of entity %WCNP;.                    * 
+    * 3. CPF 2004-59FR: Amend content model of element <ipp> by optional *
+    *                   repeatable element <vas> to reflect the S2000M   *
+    *                   definition and use of SID and SNS. The new       *
+    *                   element <vas> contains new element <sid> and     *
+    *                   already existing element <nsn>.                  *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % IPD                                                     *
+    *   "-//S1000D//ELEMENTS Illustrated Parts Data 20050501//EN" >      *
+    * %IPD;                                                              *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing:- ipc.      *
+    ********************************************************************** -->
+ 
+<!ENTITY % CONTENT "ipc" >
+
+
+ 
+<!--**********************************************************************
+    * Define Element ipc (Illustrated Parts Catalog) containing:-        *
+    *  figure   - Optional  Single      contains Definition stored in    *
+    *                                    entity %titles;, applic,        *
+    *                                    graphic, sheet, rfa, legend.    *
+    *  ipp      - Optional  Single      contains vas.                    *
+    *  csn      - Mandatory Repeatable  contains isn.                    *
+    ********************************************************************** -->
+ 
+<!ELEMENT ipc - O (figure?,ipp?,csn+) >
+
+ 
+<!--**********************************************************************
+    * Define Element ipp (Initial Provisioning Project) containing:-     *
+    *  vas      - Optional  Repeatable  contains sid, nsn.               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  ippn  - CDATA     - REQUIRED - Initial Provisioning Project Number*
+    *  ips   - CDATA     - REQUIRED - Initial Provisioning Project Number*
+    *                                  Subject                           *
+    *  fid   - Declared  - IMPLIED  - File Identifier                    *
+    *          - "s"                  = Structure and Engine             *
+    *          - "t"                  = Equipment                        *
+    *  lge   - CDATA     - IMPLIED  - Language Code                      *
+    * Attribute Definition list stored in entity %bodyatt;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT ipp  - -  (vas*) >
+<!ATTLIST ipp
+             ippn  CDATA    #REQUIRED
+             ips   CDATA    #REQUIRED
+             fid   (s,t)    #IMPLIED
+             lge   CDATA    #IMPLIED
+             %bodyatt; >
+<!-- Content model changed -->
+
+
+<!--**********************************************************************
+    * Define Element vas (S2000M VAS SEGMENT) containing:-               *
+    *  sid      - Mandatory Single      contains mfc, pnr.               *
+    *  nsn      - Optional  Single      contains No Other Tags.          *
+    ********************************************************************** -->
+ 
+<!ELEMENT vas  - -  (sid, nsn?) >
+<!-- Newly introduced element -->
+
+
+
+<!--**********************************************************************
+    * Define Element sid (Subject Identification) containing:-           *
+    *  mfc      - Mandatory Single      contains Parsed Character Data.  *
+    *  pnr      - Mandatory Single      contains Parsed Character Data.  *
+    ********************************************************************** -->
+ 
+<!ELEMENT sid  - -  (mfc, pnr) >
+<!-- Newly introduced element -->
+
+
+
+<!--**********************************************************************
+    * Define Element csn (Catalog Sequence Number) containing:-          *
+    *  isn     - Mandatory Repeatable  contains rfs, qna, mfc, pnr, pas, *
+    *                                  nsn, cbs, ccs, ctl, ces, rfd, ils,*
+    *                                  can                               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  csn     - CDATA  - IMPLIED  - Catalog Sequence Number             *
+    *  ind     - NUMBER - REQUIRED - Indenture   (1 - 9)                 *
+    *  item    - CDATA  - IMPLIED  - (Last 4 digits of the CSN)          *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT csn  - - (isn+)>
+<!ATTLIST csn
+             csn   CDATA    #IMPLIED
+             ind   NUMBER   #REQUIRED
+             item  CDATA    #IMPLIED
+             %bodyatt;>
+
+
+ 
+<!--**********************************************************************
+    * Define Element isn (Item Sequence Number) containing:-             *
+    *  rfs      - Optional  Single      contains No Other Tags.          *
+    *  qna      - Mandatory Single      contains Parsed Character Data.  *
+    *  mfr      - Mandatory Single      contains Parsed Character Data.  *
+    *  pnr      - Mandatory Single      contains Parsed Character Data.  *
+    *  pas      - Mandatory Repeatable  contains dfp, uoi, pcs, str, ftc,*
+    *                                            psc, cmk.               *
+    *  nsn      - Optional  Single      contains No Other Tags.          *
+    *  cbs      - Optional  Single      contains asp, nil, rtx, smf, dfl.*
+    *  ccs      - Optional  Single      contains uce, uca, icy.          *
+    *  ctl      - Optional  Single      contains No Other Tags.          *
+    *  ces      - Mandatory Single      contains srv, smr, mov.          *
+    *  rfd      - Optional  Repeatable  contains Parsed Character Data.  *
+    *  ils      - Optional  Repeatable  contains Parsed Character Data.  *
+    *  can      - Optional  Repeatable  contains Parsed Character Data.  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  isn     - CDATA   - REQUIRED - ISN Identifier                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT isn  - O (rfs?, qna, mfc, pnr, pas+, nsn?, cbs?, ccs?,
+                    ctl?, ces+, rfd*, ils*, can*) >
+<!ATTLIST isn
+            isn CDATA #REQUIRED
+            %bodyatt; >
+
+
+ 
+<!--**********************************************************************
+    * Define Element rfs  (Reason for Selection) containing:-            *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  value     - Declared - REQUIRED - Choice value for rfs            *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT rfs  - O EMPTY>
+<!ATTLIST rfs
+             value (0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9)  #REQUIRED
+             %bodyatt; >
+
+ 
+
+<!--**********************************************************************
+    * Define Element qna (Quantity per Next higher Assembly)             *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT qna  - O (#PCDATA)>
+<!ATTLIST qna %INSDEL;>
+
+
+
+
+<!--**********************************************************************
+    * Define Element pas (S2000M PAS SEGMENT) containing:-               *
+    *  dfp      - Mandatory Single     contains Parsed Character Data.   *
+    *  uoi      - Optional  Single     contains Parsed Character Data.   *
+    *  pcs      - Optional  Single     contains qui.                     *
+    *  str      - Optional  Single     contains Parsed Character Data.   *
+    *  ftc      - Optional  Single     contains No Other Tags.           *
+    *  psc      - Optional  Single     contains Parsed Character Data.   *
+    *  cmk      - Optional  Single     contains Parsed Character Data.   *
+    ********************************************************************** -->
+ 
+<!ELEMENT pas  - O (dfp , uoi? , pcs? , str? , ftc? , psc? , cmk?) >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element dfp (Description oF Part) containing:-              *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT dfp  - O (#PCDATA)>
+<!ATTLIST dfp   %INSDEL; >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element uoi (Unit Of Issue) containing:-                    *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT uoi  - O (#PCDATA)>
+<!ATTLIST uoi   %INSDEL; >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element pcs  (S2000M PCS SEGMENT) containing:-              *
+    *  qui      - Optional  Single     contains Parsed Character Data.   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom    - CDATA  - IMPLIED - Unit of measure.                      *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT pcs  - O (qui?) >
+<!ATTLIST pcs
+            uom  CDATA #REQUIRED
+            %INSDEL; >
+ 
+
+<!--**********************************************************************
+    * Define Element qui (Quantity per Unit of Issue) containing:-       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+ 
+<!ELEMENT qui  - O (#PCDATA) >
+
+
+  
+
+<!--**********************************************************************
+    * Define Element str (Special sToRage) containing:-                  *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT str  - O (#PCDATA)>
+<!ATTLIST str  %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element ftc (FiTment Code) containing:-                     *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  value      - Declared  - REQUIRED                                 * 
+    *               - "1"         if piercing needed                     *
+    *               - "m"         if mounting equipment needed           *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT ftc  - O  EMPTY>
+<!ATTLIST ftc
+             value (1 , m)   #REQUIRED
+             %INSDEL; >
+ 
+
+<!--**********************************************************************
+    * Define Element psc (Physical Security / pilferage Code)            *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT psc  - O (#PCDATA)>
+<!ATTLIST psc  %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element cmk (Calibration MarKer) containing:-               *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT cmk  - O (#PCDATA)>
+<!ATTLIST cmk   %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element cbs (S2000M CBS SEGMENT)  containing:-              *
+    *  asp      - Optional  Single     contains No Other Tags.           *
+    *  nil      - Optional  Single     contains Parsed Character Data.   *
+    *  rtx      - Optional  Single     contains ippref, csnref.          *
+    *  smf      - Optional  Single     contains mfm.                     *
+    *  dfl      - Optional  Single     contains Parsed Character Data.   *
+    ********************************************************************** -->
+ 
+<!ELEMENT cbs  - O (asp? , nil? , rtx? , smf? , dfl?) >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element asp (Attaching, Storage or shipping Part)           *
+    * containing:-                                                       *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  asp    - Declared - REQUIRED - Attaching Storage or Shipping Value*
+    *           - "1"      - Attaching Part                              *
+    *           - "2"      - Storage   Part                              *
+    *           - "3"      - Shipping  Part                              *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT asp  - O  EMPTY  >
+<!ATTLIST asp
+             asp (1 , 2 , 3)   #REQUIRED
+             %bodyatt;  >
+ 
+
+<!--**********************************************************************
+    * Define Element nil (Not ILlustrated) containing:-                  *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT nil  - - (#PCDATA)>
+<!ATTLIST nil  %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element rtx (Refer To) containing:-                         *
+    *  ippref   - Mandatory Single     contains No Other Tags.           *
+    * or                                                                 *
+    *  csnref   - Mandatory Single     contains No Other Tags.           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT rtx  - O (ippref | csnref)>
+<!ATTLIST rtx
+             %bodyatt; >
+ 
+
+
+<!--**********************************************************************
+    * Define Element ippref (Reference to IPP) containing:-              *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  refipp   - CDATA  - REQUIRED - IPP code                           *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT ippref  - O  EMPTY >
+<!ATTLIST ippref
+             refipp  CDATA    #REQUIRED
+             %bodyatt; >
+
+
+
+ 
+
+<!--**********************************************************************
+    * Define Element smf (Select or Manufacture From)  containing:-      *
+    *  mfm      - Optional  Single     contains Parsed Character Data.   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  value   - Declared  - REQUIRED                                    *
+    *            - "f"       - select on Fit                             *
+    *            - "t"       - select on Test                            *
+    *            - "m"       - Manufacture from                          *
+    *            - "r"       - Reworked from                             *
+    *            - "p"       - rePaired                                  *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT smf  - - (mfm?)>
+<!ATTLIST smf
+             value (f , t , m , r , p)   #REQUIRED
+             %bodyatt; >
+ 
+
+ 
+<!--**********************************************************************
+    * Define Element mfm (select or Manufacture FroM range)              *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT mfm  - O (#PCDATA)>
+<!ATTLIST mfm  %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element dfl (Description oF Location) containing:-          *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT dfl  - O (#PCDATA)>
+<!ATTLIST dfl  %INSDEL;>
+ 
+
+ 
+<!--**********************************************************************
+    * Define Element ccs  (S2000M CCS SEGMENT) containing:-              *
+    *====================================================================*
+    *  uce      - Optional  Single     contains Parsed Character Data.   *
+    * or                                                                 *
+    *  uca      - Optional  Single     contains Parsed Character Data.   *
+    *====================================================================*
+    *  icy      - Optional  Single     contains Parsed Character Data.   *
+    ********************************************************************** -->
+
+<!ELEMENT ccs  - O ((uce? | uca?) , icy?) >
+
+
+ 
+<!--**********************************************************************
+    * Define Element uce (Usable on Code Equipment) containing:-         *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT uce  - - (#PCDATA)>
+<!ATTLIST uce
+             %bodyatt;>
+ 
+
+ 
+<!--**********************************************************************
+    * Define Element uca (Usable on Code Assembly) containing:-          *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT uca  - - (#PCDATA)>
+<!ATTLIST uca
+             %bodyatt;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element icy (Interchangeability) containing:-               *
+    *  Parsed Character Data.                                            *
+    * Note                                                               *
+    *  icy is only present when rfs is different from 0.                 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT icy  - O (#PCDATA) >
+<!ATTLIST icy
+             %bodyatt;>
+
+ 
+
+<!--**********************************************************************
+    * Define Element ctl (Category 1 conTainer Location) containing:-    *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  refcsn   - CDATA  - REQUIRED - CSN code                           *
+    *  refisn   - CDATA  - IMPLIED  - ISN code                           *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT ctl  - O EMPTY >
+<!ATTLIST ctl
+              refcsn  CDATA    #REQUIRED
+              refisn  CDATA    #IMPLIED
+              %bodyatt; >
+
+ 
+
+<!--**********************************************************************
+    * Define Element ces (S2000M CES SEGMENT) containing:-               *
+    *  srv      - Mandatory Single      contains Parsed Character Data.  *
+    *  smr      - Mandatory Single      contains Parsed Character Data.  *
+    *  mov      - Optional  Repeatable  contains efy.                    *
+    ********************************************************************** -->
+ 
+<!ELEMENT ces  - O (srv , smr , mov*)+ >
+ 
+ 
+<!--**********************************************************************
+    * Define Element srv (Service) containing:-                          *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT srv  - O (#PCDATA) >
+<!ATTLIST srv
+             %bodyatt;>
+
+ 
+ 
+<!--**********************************************************************
+    * Define Element smr (Source Maintenance and Recoverability)         *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT smr  - O (#PCDATA)>
+<!ATTLIST smr
+             %bodyatt; >
+ 
+
+<!--**********************************************************************
+    * Define Element mov (Model Version) containing:-                    *
+    *  efy      - Optional  Repeatable  contains Parsed Character Data.  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  mov   - CDATA  - REQUIRED - MOV code                              *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT mov  - O (efy*) >
+<!ATTLIST mov
+             mov  CDATA #REQUIRED
+             %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element efy (EFfectivitY) containing:-                      *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT efy  - O  (#PCDATA)>
+<!ATTLIST efy  %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element rfd (ReFerence Designator) containing:-             *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT rfd  - O (#PCDATA)>
+<!ATTLIST rfd
+             %bodyatt; >
+
+ 
+ 
+<!--**********************************************************************
+    * Define Element ils (Integrated Logistic Support number)            *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT ils  - O (#PCDATA)  >
+<!ATTLIST ils
+             %bodyatt;>
+ 
+ 
+<!--**********************************************************************
+    * Define Element can (Change Authority Number)containing:-           *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+ 
+<!ELEMENT can  - O (#PCDATA)>
+<!ATTLIST can
+            %bodyatt;>

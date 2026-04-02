@@ -1,0 +1,348 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2004-24GB: Replace element <level> by new element           *
+    *                   <maintlevel> allowing the definition of generic  *
+    *                   maintenance levels.                              *
+    * 3. CPF 2004-32US: Expand Process DM to include <step1> content:    *
+    *                   Create an APPLIC entity that can be              *
+    *                   customized for static and interactive use.       *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTAPPL PUBLIC                                          *
+    *   "-//S1000D//ELEMENTS Applicability Breakdown 20050501//EN" >     *
+    * %EXTAPPL;                                                          *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Element applic (Applicability) containing:-                 *
+    *  Definition stored in entity %APPLIC;                              *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT applic - O (%APPLIC;) >
+<!ATTLIST applic
+            %bodyatt; >
+<!-- Content model changed to contain entity %APPLIC; -->
+
+
+
+<!--**********************************************************************
+    * Define Element type (Type) containing:-                            *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT type - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element model (Model) containing:-                          *
+    *====================================================================*
+    *  Optional Repeatable Group.                                        *
+    *====================================================================*
+    *    csnref   - Mandatory  Single    contains No Other Tags.         *
+    *   or                                                               *
+    *    nsn      - Mandatory  Single    contains No Other Tags.         *
+    *   or                                                               *
+    *====================================================================*
+    *    Mandatory Single Group.                                         *
+    *====================================================================*
+    *      mfc      - Optional   Single    contains PCDATA.              *
+    *====================================================================*
+    *      Optional Repeatable Group.                                    *
+    *====================================================================*
+    *        pnr      - Optional Single     contains PCDATA.             *
+    *        serialno - Optional Repeatable contains single, range.      *
+    *====================================================================*
+    *====================================================================*
+    *====================================================================*
+    *  batchno    - Optional   Single      contains single, range.       *
+    *  moduleno   - Optional   Repeatable  contains PCDATA.              *
+    *  customer   - Optional   Repeatable  contains PCDATA.              *
+    *  softprog   - Optional   Repeatable  contains PCDATA.              *
+    *  maintlevel - Optional   Single      contains mntlvl.              *
+    *  config     - Optional   Single      contains mod, sb.             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  model    - CDATA    - REQUIRED - Model.                           *
+    ********************************************************************** -->
+
+<!ELEMENT model - O (version*, (csnref | nsn | (mfc, (pnr, serialno*)*))*,
+                     batchno?, moduleno*, customer*, softprog*, 
+                     maintlevel?, config?) >
+<!ATTLIST model
+            model CDATA #REQUIRED >
+
+
+
+<!--**********************************************************************
+    * Define Element version (Version) containing:-                      *
+    *  versrank - Optional   Repeatable  contains single, range          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  version  - CDATA    - REQUIRED - Version.                         *
+    *  id       - ID       - IMPLIED  - Unique identifier of version.    *
+    ********************************************************************** -->
+
+<!ELEMENT version - O (versrank*) >
+<!ATTLIST version
+           version CDATA #REQUIRED
+           id      ID    #IMPLIED >
+           
+
+
+<!--**********************************************************************
+    * Define Element versrank (Version Rank) containing:-                *
+    *====================================================================*
+    * Mandatory Repeatable Group                                         *
+    *====================================================================*
+    *  single   - Optional   Single      contains Parsed Character Data. *
+    * or                                                                 *
+    *  range    - Optional   Single      contains No Other Tags.         *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED  - Unique identifier of version rank*
+    ********************************************************************** -->
+
+<!ELEMENT versrank - O (single | range)+ >
+<!ATTLIST versrank
+           id      ID    #IMPLIED >
+
+
+<!--**********************************************************************
+    * Define Element csnref (Reference to CSN) containing:-              *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  refcsn   - CDATA  - REQUIRED - CSN code                           *
+    *  refisn   - CDATA  - IMPLIED  - ISN code                           *
+    *  refipp   - CDATA  - IMPLIED  - IPP number (four digits)           *
+    *  refrpc   - CDATA  - IMPLIED  - RPC code(one char,project-specific)*
+    ********************************************************************** -->
+
+<!ELEMENT csnref  - O  EMPTY >
+<!ATTLIST csnref
+             refcsn  CDATA    #REQUIRED
+             refisn  CDATA    #IMPLIED
+             refipp  CDATA    #IMPLIED
+             refrpc  CDATA    #IMPLIED
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element batchno (Batch Number) containing:-                 *
+    *====================================================================*
+    * Mandatory Repeatable Group                                         *
+    *====================================================================*
+    *  single   - Optional   Single      contains Parsed Character Data. *
+    * or                                                                 *
+    *  range    - Optional   Single      contains No Other Tags.         *
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ELEMENT batchno - O (single | range)+ >
+
+
+
+<!--**********************************************************************
+    * Define Element single (Single Number) containing:-                 *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT single - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element range (Range of Numbers) containing:-               *
+    *   No Other Tags.                                                   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  from     - CDATA    - REQUIRED - Start of Range.                  *
+    *  to       - CDATA    - REQUIRED - End of Range.                    *
+    ********************************************************************** -->
+
+<!ELEMENT range - O EMPTY >
+<!ATTLIST range
+           from CDATA #REQUIRED
+           to   CDATA #REQUIRED >
+
+
+
+<!--**********************************************************************
+    * Define Element moduleno (Engine Module Number) containing:-        *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT moduleno - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element serialno (Serial Number) containing:-               *
+    *====================================================================*
+    * Mandatory Repeatable Group                                         *
+    *====================================================================*
+    *  single   - Optional   Single      contains Parsed Character Data. *
+    * or                                                                 *
+    *  range    - Optional   Single      contains No Other Tags.         *
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ELEMENT serialno - O (single | range)+ >
+
+
+
+<!--**********************************************************************
+    * Define Element pnr (Manufacturer Part Number) containing:-         *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT pnr - O (#PCDATA) >
+<!ATTLIST pnr
+            %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element customer (Customer) containing:-                    *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT customer - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element softprog (Software Program Edition) containing:-    *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT softprog - O (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element maintlevel (Maintenance levels) containing:-        *
+    *  mntlvl     - Mandatory Repeatable    contains No Other Tags.      *
+    ********************************************************************** -->
+
+<!ELEMENT maintlevel - - (mntlvl+) >
+<!-- Element <level> replaced by content model of new element <maintlevel> -->
+
+
+
+<!--**********************************************************************
+    * Define Element mntlvl (Maintenance level) containing:-             *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  mntlvl     - %MNTLVLS;  - REQUIRED   - Generic maintenance level. *
+     ********************************************************************** -->
+
+<!ELEMENT mntlvl - O EMPTY >
+<!ATTLIST mntlvl
+             mntlvl   %MNTLVLS;    #REQUIRED >
+<!-- Newly introduced element -->
+
+
+
+<!--**********************************************************************
+    * Define Element config (Configuration) containing:-                 *
+    *  mod       - Optional  Repeatable  contains modtitle.              *
+    *  sb        - Optional  Repeatable  contains definition stored in   *
+    *                                    entity %ALLDMC;, issno, dmtitle,*
+    *                                    definition stored in entity     *
+    *                                    %PUBREF;.                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT config - O (mod*, sb*) >
+<!ATTLIST config
+           %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element sb (Service Bulletin) containing:-                  *
+    *====================================================================*
+    * Mandatory Single Group.                                            *
+    *====================================================================*
+    *  Definition stored in entity %ALLDMC;                              *
+    *  issno     - Optional   Single     contains No Other Tags.         *
+    *  dmtitle   - Optional   Single     contains Parsed Character Data. *
+    *====================================================================*
+    * or                                                                 *
+    *====================================================================*
+    * Mandatory Single Group.                                            *
+    *====================================================================*
+    *  Definition stored in entity %PUBREF;                              *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  sbcond   - Declared   - REQUIRED - Service bulletin condition.    *
+    *           - "pre"      - Premod condition.                         *
+    *           - "post"     - Postmod condition.                        *
+    *           - "prandpo"  - Both pre and postmod.                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT sb - O (((%ALLDMC;), issno?, dmtitle?) | (%PUBREF;)) >
+<!ATTLIST sb
+           sbcond   (pre | post | prandpo)   #REQUIRED
+           %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element mfc (Manufacturer) containing:-                     *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT mfc - O (#PCDATA) >
+<!ATTLIST mfc
+            %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element nsn (NATO Stock Number) containing:-                *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  nsn     - CDATA    - IMPLIED - NATO Stock Number (one text string)*
+    *  nsc     - NUMBER   - IMPLIED - NATO Supply Class (XXXX).          *
+    *  ncb     - NUMBER   - IMPLIED - NATO Codification Bureau (XX)      *
+    *                                 (= NIN positions 1 & 2).           *
+    *  nin3to9 - NUMBER   - IMPLIED - NATO Item Identification Number    *
+    *                                 (NIN) positions 3 to 9 (XXXXXXX).  *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+<!ELEMENT nsn - O EMPTY >
+<!ATTLIST nsn
+             nsn     CDATA    #IMPLIED
+             nsc     NUMBER   #IMPLIED
+             ncb     NUMBER   #IMPLIED
+             nin3to9 NUMBER   #IMPLIED
+             %bodyatt; >

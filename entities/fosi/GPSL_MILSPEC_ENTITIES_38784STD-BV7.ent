@@ -1,0 +1,46 @@
+<!-- ---------------------------------------------------------------------------
+  (c) 2019  -  Global Publishing Solutions Ltd (GPSL)
+ -------------------------------------------------------------------------------
+  Identifier:  PUBLIC "-//GPSL//MILSPEC//ENTITIES 38784STD-BV7//EN"
+  File name:   GPSL_MILSPEC_ENTITIES_38784STD-BV7.ent
+  Date:        8th May 2019
+  Version:     2.1
+ --------------------------------------------------------------------------- -->
+
+<!ENTITY para0-sub3-change.body '<!-- Start...|GPSL:RK|Entity "para0-sub3-change.body" -->
+&set-deltypstr;
+<att logic="or">
+<specval attname="deltype" attval="real">
+<specval attname="status" attval="empty">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<att logic="and">
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset charsubsetref="delchlvl">
+</charsubset>
+</att>
+<att logic="and">
+<specval attname="status" attval="#ANY">
+<specval attname="status" attval="#NE#\empty\">
+<charsubset charsubsetref="delstatus">
+</charsubset>
+</att>
+<att logic="and">
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset>
+<savetext textid="tocmatter" conrule="<toclinec>,<toctitle.fmt>,1.5em,label.txt,@6.5em,deltypestr,tocfill,</toctitle.fmt>,<tocnumx>,0.25in,folio.txt[BO],</tocnumx>,</toclinec>" append="1">
+</charsubset>
+</att>
+<att logic="and">
+<specval attname="status" attval="#ANY">
+<specval attname="status" attval="#NE#\empty\">
+<charsubset>
+<savetext textid="tocmattertmp" conrule="<toclined>,<toctitle.fmt>,3em,label.txt,@6em,deltypestr,tocfill,</toctitle.fmt>,<tocnum>,0.25in,folio.txt[BO],</tocnum>,</toclined>" append="1">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "para0-sub3-change.body" -->
+'>

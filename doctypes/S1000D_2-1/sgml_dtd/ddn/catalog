@@ -1,0 +1,36 @@
+SGMLDECL "../dcl/s1000d.dcl"
+
+
+-- ISO 8879-1986 Character Entities defined in ISOENTS.ENT --
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Arrow Relations//EN"      "../ent/isoamsa.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Binary Operators//EN"     "../ent/isoamsb.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Delimiters//EN"           "../ent/isoamsc.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Negated Relations//EN"    "../ent/isoamsn.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Ordinary//EN"             "../ent/isoamso.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Relations//EN"            "../ent/isoamsr.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Box and Line Drawing//EN"                     "../ent/isobox.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Russian Cyrillic//EN"                         "../ent/isocyr1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Non-Russian Cyrillic//EN"                     "../ent/isocyr2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Diacritical Marks//EN"                        "../ent/isodia.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Greek Letters//EN"                            "../ent/isogrk1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Monotoniko Greek//EN"                         "../ent/isogrk2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN"                            "../ent/isogrk3.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Alternative Greek Symbols//EN"                "../ent/isogrk4.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN"                            "../ent/isolat1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Latin 2//EN"                            "../ent/isolat2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN"              "../ent/isonum.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN"                               "../ent/isopub.ent"
+PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN"                        "../ent/isotech.ent"
+
+
+-- S1000D 2.1 DDN DTDs and Entities --
+PUBLIC "-//S1000D//DTD Data Dispatch Note 20040229//EN"				"dtd/ddn.dtd"
+
+PUBLIC "-//S1000D//ELEMENTS Data Restrictions 20030531//EN"			"dtd/datarest.ent"
+PUBLIC "-//S1000D//ELEMENTS Dispatch Address Details 20030531//EN"		"dtd/dispaddr.ent"
+PUBLIC "-//S1000D//ELEMENTS DM Address Details 2nd Part 20030531//EN" 		"dtd/dmaddr2.ent"
+PUBLIC "-//S1000D//ENTITIES ISO Entity Definitions 20030531//EN"		"dtd/isoents.ent"
+PUBLIC "-//S1000D//ELEMENTS List Code Definitions 20030531//EN" 	  	"dtd/listcode.ent"
+PUBLIC "-//S1000D//ENTITIES S1000D Project Configuration//EN"                   "dtd/project.cfg"
+
+-- End of S1000D 2.1 DDN DTDs and Entities --

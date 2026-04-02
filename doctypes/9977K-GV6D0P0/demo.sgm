@@ -1,0 +1,639 @@
+<!--Arbortext, Inc., 1988-2009, v.4002-->
+<!DOCTYPE DOC PUBLIC "-//USA-DOD//DTD 9977K-GV6D0P0//EN">
+<doc service="af" docid="9977K-G-V6D0P0"><?Pub Caret><docldpcl><front
+t2page="1" numcols="2"><idinfo><?Pub Lcl _divid="100" _parentid="0">
+<tmidno>9977K-GV6D0P0</tmidno><revnum>REVNUM</revnum>
+<doctype>Organizational and depot Maintenance</doctype>
+<maintlvl>MAINTLVL element</maintlvl>
+<prtitle>
+<nomen>NOMEN</nomen>
+<modelno>MODELNO</modelno>
+<nsn>NSN</nsn>
+<partno>PARTNO</partno>
+<pslist>
+<partno>PARTNO in PSLIST</partno>
+<serno>SERNO in PSLIST</serno>
+</pslist>
+<typedes>TYPEDES</typedes>
+<serno>SERNO</serno>
+</prtitle>
+<subtitle>SUBTITLE</subtitle>
+<mfr>Aircraft Manufacturer Company</mfr>
+<contractno>CONTRACTNO</contractno>
+<supersed>SUPERSED notice</supersed>
+<suppl>SUPPL notice</suppl>
+<effdatenot>Not effective before 1 July 2004</effdatenot>
+<discl>This manual contains no real technical data and is created
+for testing purposes only. This manual contains no real technical
+data and is created for testing purposes only. This manual contains
+no real technical data and is created for testing purposes only. This
+manual contains no real technical data and is created for testing
+purposes only. This manual contains no real technical data and is
+created for testing purposes only. </discl>
+<distrib type="a"></distrib>
+<expcont>This manual contains no real technical data and is created
+for testing purposes only. This manual contains no real technical
+data and is created for testing purposes only. This manual contains
+no real technical data and is created for testing purposes only. This
+manual contains no real technical data and is created for testing
+purposes only. This manual contains no real technical data and is
+created for testing purposes only. </expcont>
+<destr>This manual is for test purposes only. No real technical information
+is contained within. This manual is for test purposes only. No real
+technical information is contained within. This manual is for test
+purposes only. No real technical information is contained within.
+This manual is for test purposes only. No real technical information
+is contained within. This manual is for test purposes only. No real
+technical information is contained within. This manual is for test
+purposes only. No real technical information is contained within.</destr>
+<copyright>Non-copyright material</copyright>
+<authnot>Published Under Authority of the Secretary of the Air Force.</authnot>
+<downgrd><oadr>OADR context of DOWNGRD</oadr></downgrd><pubdate>15
+February 2004</pubdate></idinfo><lep><?Pub Lcl _divid="200" _parentid="0">
+<lepcontents autobuild="1"></lep>
+<contents><?Pub Lcl _divid="300" _parentid="0"></contents>
+<foreword><?Pub Lcl _divid="300" _parentid="0">
+<para0 id="para0ref1"><title>Para0Nesting test</title><para>PARA in
+a PARA0. This is a PARA in a PARA0. PARA in a PARA0. This is a PARA
+in a PARA0. PARA in a PARA0. This is a PARA in a PARA0. PARA in a
+PARA0. This is a PARA in a PARA0. </para>
+<step1><clitem>CLITEM in a STEP1 CLITEM in a STEP1 CLITEM in a STEP1
+CLITEM in a STEP1</clitem><action>ACTION in a STEP1 following a CLITEM</action>
+</step1>
+<step1><clitem>CLITEM in a STEP1</clitem><action>ACTION in a STEP1
+following a CLITEM</action>
+<step2><clitem>CLITEM in a STEP2</clitem><action>ACTION in a STEP2
+following a CLITEM</action></step2>
+<step2><clitem>CLITEM in a STEP2</clitem><action>ACTION in a STEP2
+following a CLITEM</action>
+<step3><clitem>CLITEM in a STEP3</clitem><action>ACTION in a STEP3
+following a CLITEM</action></step3>
+<step3><clitem>CLITEM in a STEP3</clitem><action>ACTION in a STEP3
+following a CLITEM</action>
+<step4><clitem>CLITEM in a STEP4</clitem><action>ACTION in a STEP4
+following a CLITEM</action></step4>
+<step4><clitem>CLITEM in a STEP4</clitem><action>ACTION in a STEP4
+following a CLITEM</action></step4></step3></step2></step1>
+<subpara1 id="sub1ref1"><title>Subpara 1 Title Description</title><para>PARA
+in a SUBPARA1. This is a PARA in a SUBPARA1. PARA in a SUBPARA1. This
+is a PARA in a SUBPARA1. PARA in a SUBPARA1. This is a PARA in a SUBPARA1. 
+</para>
+<subpara2><para>PARA in a SUBPARA2. This is a PARA in a SUBPARA2.
+PARA in a SUBPARA2. This is a PARA in a SUBPARA2. PARA in a SUBPARA2.
+This is a PARA in a SUBPARA2. </para>
+<subpara3><para>PARA in a SUBPARA3. This is a PARA in a SUBPARA3.
+PARA in a SUBPARA3. This is a PARA in a SUBPARA3. PARA in a SUBPARA3.
+This is a PARA in a SUBPARA3. PARA in a SUBPARA3. This is a PARA in
+a SUBPARA3. </para>
+<subpara4><para>PARA in a SUBPARA4. This is a PARA in a SUBPARA4.
+PARA in a SUBPARA4. This is a PARA in a SUBPARA4. PARA in a SUBPARA4.
+This is a PARA in a SUBPARA4. PARA in a SUBPARA4. This is a PARA in
+a SUBPARA4. </para>
+</subpara4>
+<subpara4><para>PARA in a SUBPARA4. This is a PARA in a SUBPARA4.
+PARA in a SUBPARA4. This is a PARA in a SUBPARA4. PARA in a SUBPARA4.
+This is a PARA in a SUBPARA4. PARA in a SUBPARA4. This is a PARA in
+a SUBPARA4. </para>
+<subpara5><para>PARA in a SUBPARA5. This is a PARA in a SUBPARA5.
+PARA in a SUBPARA5. This is a PARA in a SUBPARA5. PARA in a SUBPARA5.
+This is a PARA in a SUBPARA5. PARA in a SUBPARA5. This is a PARA in
+a SUBPARA5. PARA in a SUBPARA5. This is a PARA in a SUBPARA5. </para>
+</subpara5>
+<subpara5><para>PARA in a SUBPARA5. This is a PARA in a SUBPARA5.
+PARA in a SUBPARA5. This is a PARA in a SUBPARA5. PARA in a SUBPARA5.
+This is a PARA in a SUBPARA5. PARA in a SUBPARA5. This is a PARA in
+a SUBPARA5. PARA in a SUBPARA5. This is a PARA in a SUBPARA5. </para>
+<subpara6><para>PARA in a SUBPARA6. This is a PARA in a SUBPARA6.
+PARA in a SUBPARA6. This is a PARA in a SUBPARA6. PARA in a SUBPARA6.
+This is a PARA in a SUBPARA6. PARA in a SUBPARA6. This is a PARA in
+a SUBPARA6. PARA in a SUBPARA6. This is a PARA in a SUBPARA6. PARA
+in a SUBPARA6. This is a PARA in a SUBPARA6. </para>
+<subpara7><para>PARA in a SUBPARA7. This is a PARA in a SUBPARA7.
+PARA in a SUBPARA7. This is a PARA in a SUBPARA7. PARA in a SUBPARA7.
+This is a PARA in a SUBPARA7. PARA in a SUBPARA7. This is a PARA in
+a SUBPARA7. PARA in a SUBPARA7. This is a PARA in a SUBPARA7. PARA
+in a SUBPARA7. This is a PARA in a SUBPARA7. PARA in a SUBPARA7. This
+is a PARA in a SUBPARA7. </para>
+<subpara8><para>PARA in a SUBPARA8. This is a PARA in a SUBPARA8.
+PARA in a SUBPARA8. This is a PARA in a SUBPARA8. PARA in a SUBPARA8.
+This is a PARA in a SUBPARA8. PARA in a SUBPARA8. This is a PARA in
+a SUBPARA8. PARA in a SUBPARA8. This is a PARA in a SUBPARA8. PARA
+in a SUBPARA8. This is a PARA in a SUBPARA8. PARA in a SUBPARA8. This
+is a PARA in a SUBPARA8. PARA in a SUBPARA8. This is a PARA in a SUBPARA8. 
+</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+<subpara3><title>Subpara3 Title</title><para>PARA in a SUBPARA3. This
+is a PARA in a SUBPARA3. PARA in a SUBPARA3. This is a PARA in a SUBPARA3.
+PARA in a SUBPARA3. This is a PARA in a SUBPARA3. PARA in a SUBPARA3.
+This is a PARA in a SUBPARA3. </para>
+<subpara4><title>Supbara4 Title</title><para>PARA in a SUBPARA4. This
+is a PARA in a SUBPARA4. PARA in a SUBPARA4. This is a PARA in a SUBPARA4.
+PARA in a SUBPARA4. This is a PARA in a SUBPARA4. PARA in a SUBPARA4.
+This is a PARA in a SUBPARA4. </para>
+</subpara4>
+<subpara4><title>Supbara4 Title</title><para>PARA in a SUBPARA4. This
+is a PARA in a SUBPARA4. PARA in a SUBPARA4. This is a PARA in a SUBPARA4.
+PARA in a SUBPARA4. This is a PARA in a SUBPARA4. PARA in a SUBPARA4.
+This is a PARA in a SUBPARA4. </para>
+</subpara4>
+</subpara3>
+</subpara2>
+<subpara2 id="sub2ref1"><title>Subpara2 title</title><para>PARA in
+a SUBPARA2. This is a PARA in a SUBPARA2. PARA in a SUBPARA2. This
+is a PARA in a SUBPARA2. PARA in a SUBPARA2. This is a PARA in a SUBPARA2. 
+</para>
+<subpara3 id="sub3ref1"><title>Subpara3 title</title><para>PARA in
+a SUBPARA3. This is a PARA in a SUBPARA3. PARA in a SUBPARA3. This
+is a PARA in a SUBPARA3. PARA in a SUBPARA3. This is a PARA in a SUBPARA3.
+PARA in a SUBPARA3. This is a PARA in a SUBPARA3. </para>
+<subpara4><title>Supbara4 Title</title><para>PARA in a SUBPARA4. This
+is a PARA in a SUBPARA4. PARA in a SUBPARA4. This is a PARA in a SUBPARA4.
+PARA in a SUBPARA4. This is a PARA in a SUBPARA4. PARA in a SUBPARA4.
+This is a PARA in a SUBPARA4. </para>
+</subpara4>
+<subpara4><title>Subpara4 Title</title><para>PARA in a SUBPARA4. This
+is a PARA in a SUBPARA4. PARA in a SUBPARA4. This is a PARA in a SUBPARA4.
+PARA in a SUBPARA4. This is a PARA in a SUBPARA4. PARA in a SUBPARA4.
+This is a PARA in a SUBPARA4. </para>
+<subpara5><title>Subpara5 Title</title><para>PARA in a SUBPARA5. This
+is a PARA in a SUBPARA5. PARA in a SUBPARA5. This is a PARA in a SUBPARA5.
+PARA in a SUBPARA5. This is a PARA in a SUBPARA5. PARA in a SUBPARA5.
+This is a PARA in a SUBPARA5. PARA in a SUBPARA5. This is a PARA in
+a SUBPARA5. </para>
+</subpara5>
+<subpara5><title>Next Subpara5 Title</title><para>PARA in a SUBPARA5.
+This is a PARA in a SUBPARA5. PARA in a SUBPARA5. This is a PARA in
+a SUBPARA5. PARA in a SUBPARA5. This is a PARA in a SUBPARA5. PARA
+in a SUBPARA5. This is a PARA in a SUBPARA5. PARA in a SUBPARA5. This
+is a PARA in a SUBPARA5. </para>
+<subpara6><title>Subpara6 Title</title><para>PARA in a SUBPARA6. This
+is a PARA in a SUBPARA6. PARA in a SUBPARA6. This is a PARA in a SUBPARA6.
+PARA in a SUBPARA6. This is a PARA in a SUBPARA6. PARA in a SUBPARA6.
+This is a PARA in a SUBPARA6. PARA in a SUBPARA6. This is a PARA in
+a SUBPARA6. PARA in a SUBPARA6. This is a PARA in a SUBPARA6. </para>
+<subpara7><title>Subpara7 Title</title><para>PARA in a SUBPARA7. This
+is a PARA in a SUBPARA7. PARA in a SUBPARA7. This is a PARA in a SUBPARA7.
+PARA in a SUBPARA7. This is a PARA in a SUBPARA7. PARA in a SUBPARA7.
+This is a PARA in a SUBPARA7. PARA in a SUBPARA7. This is a PARA in
+a SUBPARA7. PARA in a SUBPARA7. This is a PARA in a SUBPARA7. PARA
+in a SUBPARA7. This is a PARA in a SUBPARA7. </para>
+<subpara8><title>Subpara8 Title</title><para>PARA in a SUBPARA8. This
+is a PARA in a SUBPARA8. PARA in a SUBPARA8. This is a PARA in a SUBPARA8.
+PARA in a SUBPARA8. This is a PARA in a SUBPARA8. PARA in a SUBPARA8.
+This is a PARA in a SUBPARA8. PARA in a SUBPARA8. This is a PARA in
+a SUBPARA8. PARA in a SUBPARA8. This is a PARA in a SUBPARA8. PARA
+in a SUBPARA8. This is a PARA in a SUBPARA8. PARA in a SUBPARA8. This
+is a PARA in a SUBPARA8. </para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+<abbrsect><title>NONSTANDARD ABBREVIATIONS withOUT Autobuild</title>
+<acronymlist>
+<term>term 1</term><def>Definition for term. Definition for term. </def>
+<term>term 2</term><def>Definition for term. Definition for term.
+Definition for term. </def>
+<term>term 3</term><def>Definition for term. Definition for term.
+Definition for term. Definition for term. </def>
+<term>term 4</term><def>Definition for term. Definition for term.
+Definition for term. Definition for term. Definition for term. </def>
+<term>term 5</term><def>Definition for term. Definition for term.
+Definition for term. Definition for term. Definition for term. Definition
+for term. </def>
+</acronymlist>
+</abbrsect>
+<abbrsect><?Pub Dtl><title>NONSTANDARD ABBREVIATIONS with Autobuild</title>
+<para>The following non-military standard abbreviations are used in
+this publication:</para>
+<acronymlist autobuild="1">
+</abbrsect>
+<applicdef id="applicdef"><?Pub Dtl><title>Applicability Example</title>
+<para>This is a test applicability table to test the function of these
+tags. </para>
+<appltitle>This is the Applictitle</appltitle>
+<applichd>
+<term>Term applichd</term><def>Def applichd</def>
+</applichd>
+<applic id="a1">
+<term>TERM AA</term><def>Added DEF content here. DEF content here.</def>
+</applic>
+<applic id="b1">
+<term>TERM BB</term><def>Added DEF content here. DEF content here.</def>
+</applic>
+<applic id="c1">
+<term>TERM CC</term><def>Added DEF content here. DEF content here.</def>
+</applic>
+</applicdef>
+<symsect id="symsect"><?Pub Dtl><title>Title of a SYMSECT</title><para>para
+in a symsect.</para>
+<symtitle>symtitle element</symtitle>
+<term>aa TERM in SYMSECT</term><def> This is the DEF in SYMSECT</def>
+<term>bb TERM in SYMSECT</term><def>  This is the DEF in SYMSECT 
+This is the DEF in SYMSECT</def>
+<term>cc TERM in SYMSECT</term><def>  This is the DEF in SYMSECT 
+This is the DEF in SYMSECT This is the DEF in SYMSECT</def>
+</symsect>
+</foreword></front><body numcols="2"><ldcrewbrief><?Pub Lcl _divid="400"
+_parentid="0"><?Pub Dtl>
+<title>TITLE within LDCREWBRIEF</title>
+<specbrfrq><title>TITLE within SPECBRFRQ</title>
+<task>
+<title>TITLE within TASK</title>
+<para>This is a PARA within the TASK element. This is a PARA within
+the TASK element. </para>
+<para>This is a PARA within the TASK element. This is a PARA within
+the TASK element. </para>
+</task></specbrfrq>
+</ldcrewbrief>
+<emergproc><?Pub Lcl _divid="500" _parentid="0">
+<title><?Pub Dtl>TITLE within EMERGPROC</title>
+<para0><?Pub Dtl><title><?Pub Dtl>TITLE within PARA0</title>
+<para><?Pub Dtl>This is a PARA within the PARA0 element. This is a
+PARA within the PARA0 element. This is a PARA within the PARA0 element.
+This is a PARA within the PARA0 element. </para>
+</para0>
+<para0 id="para0ref2"><title><?Pub Dtl>Para0Nesting test</title>
+<warning><?Pub Dtl>
+<para><?Pub Dtl>This is a PARA within a WARNING element. This is a
+PARA within a WARNING element. This is a PARA within a WARNING element. </para>
+</warning>
+<para><?Pub Dtl>PARA in a PARA0. This is a PARA in a PARA0. PARA in
+a PARA0. This is a PARA in a PARA0. PARA in a PARA0. This is a PARA
+in a PARA0. PARA in a PARA0. This is a PARA in a PARA0. </para>
+<step1>
+<caution><?Pub Dtl>
+<para><?Pub Dtl>This is a PARA within a CAUTION element. This is a
+PARA within a CAUTION element. This is a PARA within a CAUTION element.
+This is a PARA within a CAUTION element. </para>
+</caution>
+<clitem><?Pub Dtl>CLITEM in a STEP1 CLITEM in a STEP1 CLITEM in a
+STEP1 CLITEM in a STEP1</clitem><action><?Pub Dtl>ACTION in a STEP1
+following a CLITEM</action></step1>
+<step1>
+<note><?Pub Dtl>
+<para><?Pub Dtl>This is a PARA within a NOTE element. This is a PARA
+within a NOTE element. This is a PARA within a NOTE element. This
+is a PARA within a NOTE element. This is a PARA within a NOTE element. </para>
+</note>
+<clitem><?Pub Dtl>CLITEM in a STEP1</clitem><action><?Pub Dtl>ACTION
+in a STEP1 following a CLITEM</action>
+<step2><?Pub Dtl><clitem><?Pub Dtl>CLITEM in a STEP2</clitem><action><?Pub Dtl>
+ACTION in a STEP2 following a CLITEM</action></step2>
+<step2><?Pub Dtl><clitem><?Pub Dtl>CLITEM in a STEP2</clitem><action><?Pub Dtl>
+ACTION in a STEP2 following a CLITEM</action>
+<step3><?Pub Dtl><clitem><?Pub Dtl>CLITEM in a STEP3</clitem><action><?Pub Dtl>
+ACTION in a STEP3 following a CLITEM</action></step3>
+<step3><?Pub Dtl><clitem><?Pub Dtl>CLITEM in a STEP3</clitem><action><?Pub Dtl>
+ACTION in a STEP3 following a CLITEM</action>
+<step4><?Pub Dtl><clitem><?Pub Dtl>CLITEM in a STEP4</clitem><action><?Pub Dtl>
+ACTION in a STEP4 following a CLITEM</action></step4>
+<step4><?Pub Dtl><clitem><?Pub Dtl>CLITEM in a STEP4</clitem><action><?Pub Dtl>
+ACTION in a STEP4 following a CLITEM</action></step4></step3></step2>
+</step1>
+<subpara1 id="sub1ref2"><title><?Pub Dtl>Subpara 1 Title Description</title>
+<warning>
+<para><?Pub Dtl>This is a PARA within a WARNING element. This is a
+PARA within a WARNING element. This is a PARA within a WARNING element. </para>
+<para>This is a second PARA within a WARNING element. This is a second
+PARA within a WARNING element.</para>
+<para><?Pub Dtl>This is a third PARA within a WARNING element. This
+is a third PARA within a WARNING element. This is a third PARA within
+a WARNING element. element. </para>
+</warning>
+<para>PARA in a SUBPARA1. This is a PARA in a SUBPARA1. PARA in a
+SUBPARA1. This is a PARA in a SUBPARA1. PARA in a SUBPARA1. This is
+a PARA in a SUBPARA1. </para>
+<subpara2>
+<caution>
+<para>This is a PARA within a CAUTION element. This is a PARA within
+a CAUTION element. This is a PARA within a CAUTION element. </para>
+<para>This is a second PARA within a CAUTION element. This is a second
+PARA within a CAUTION element. </para>
+<para>This is a third PARA within a CAUTION element. This is a third
+PARA within a CAUTION element. This is a third PARA within a CAUTION
+element. </para>
+</caution>
+<para>PARA in a SUBPARA2. This is a PARA in a SUBPARA2. PARA in a
+SUBPARA2. This is a PARA in a SUBPARA2. PARA in a SUBPARA2. This is
+a PARA in a SUBPARA2. </para>
+<subpara3><para>PARA in a SUBPARA3. This is a PARA in a SUBPARA3.
+PARA in a SUBPARA3. This is a PARA in a SUBPARA3. PARA in a SUBPARA3.
+This is a PARA in a SUBPARA3. PARA in a SUBPARA3. This is a PARA in
+a SUBPARA3. </para>
+<subpara4><?Pub Dtl><para><?Pub Dtl>PARA in a SUBPARA4. This is a
+PARA in a SUBPARA4. PARA in a SUBPARA4. This is a PARA in a SUBPARA4.
+PARA in a SUBPARA4. This is a PARA in a SUBPARA4. PARA in a SUBPARA4.
+This is a PARA in a SUBPARA4. </para>
+</subpara4>
+<subpara4><?Pub Dtl><para><?Pub Dtl>PARA in a SUBPARA4. This is a
+PARA in a SUBPARA4. PARA in a SUBPARA4. This is a PARA in a SUBPARA4.
+PARA in a SUBPARA4. This is a PARA in a SUBPARA4. PARA in a SUBPARA4.
+This is a PARA in a SUBPARA4. </para>
+<subpara5><?Pub Dtl><para><?Pub Dtl>PARA in a SUBPARA5. This is a
+PARA in a SUBPARA5. PARA in a SUBPARA5. This is a PARA in a SUBPARA5.
+PARA in a SUBPARA5. This is a PARA in a SUBPARA5. PARA in a SUBPARA5.
+This is a PARA in a SUBPARA5. PARA in a SUBPARA5. This is a PARA in
+a SUBPARA5. </para>
+</subpara5>
+<subpara5><?Pub Dtl><para><?Pub Dtl>PARA in a SUBPARA5. This is a
+PARA in a SUBPARA5. PARA in a SUBPARA5. This is a PARA in a SUBPARA5.
+PARA in a SUBPARA5. This is a PARA in a SUBPARA5. PARA in a SUBPARA5.
+This is a PARA in a SUBPARA5. PARA in a SUBPARA5. This is a PARA in
+a SUBPARA5. </para>
+<subpara6><?Pub Dtl><para><?Pub Dtl>PARA in a SUBPARA6. This is a
+PARA in a SUBPARA6. PARA in a SUBPARA6. This is a PARA in a SUBPARA6.
+PARA in a SUBPARA6. This is a PARA in a SUBPARA6. PARA in a SUBPARA6.
+This is a PARA in a SUBPARA6. PARA in a SUBPARA6. This is a PARA in
+a SUBPARA6. PARA in a SUBPARA6. This is a PARA in a SUBPARA6. </para>
+<subpara7><?Pub Dtl><para><?Pub Dtl>PARA in a SUBPARA7. This is a
+PARA in a SUBPARA7. PARA in a SUBPARA7. This is a PARA in a SUBPARA7.
+PARA in a SUBPARA7. This is a PARA in a SUBPARA7. PARA in a SUBPARA7.
+This is a PARA in a SUBPARA7. PARA in a SUBPARA7. This is a PARA in
+a SUBPARA7. PARA in a SUBPARA7. This is a PARA in a SUBPARA7. PARA
+in a SUBPARA7. This is a PARA in a SUBPARA7. </para>
+<subpara8><?Pub Dtl><para><?Pub Dtl>PARA in a SUBPARA8. This is a
+PARA in a SUBPARA8. PARA in a SUBPARA8. This is a PARA in a SUBPARA8.
+PARA in a SUBPARA8. This is a PARA in a SUBPARA8. PARA in a SUBPARA8.
+This is a PARA in a SUBPARA8. PARA in a SUBPARA8. This is a PARA in
+a SUBPARA8. PARA in a SUBPARA8. This is a PARA in a SUBPARA8. PARA
+in a SUBPARA8. This is a PARA in a SUBPARA8. PARA in a SUBPARA8. This
+is a PARA in a SUBPARA8. </para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+<subpara3><?Pub Dtl><title><?Pub Dtl>Subpara3 Title</title><para><?Pub Dtl>
+PARA in a SUBPARA3. This is a PARA in a SUBPARA3. PARA in a SUBPARA3.
+This is a PARA in a SUBPARA3. PARA in a SUBPARA3. This is a PARA in
+a SUBPARA3. PARA in a SUBPARA3. This is a PARA in a SUBPARA3. </para>
+<subpara4><?Pub Dtl><title><?Pub Dtl>Supbara4 Title</title><para><?Pub Dtl>
+PARA in a SUBPARA4. This is a PARA in a SUBPARA4. PARA in a SUBPARA4.
+This is a PARA in a SUBPARA4. PARA in a SUBPARA4. This is a PARA in
+a SUBPARA4. PARA in a SUBPARA4. This is a PARA in a SUBPARA4. </para>
+</subpara4>
+<subpara4><?Pub Dtl><title><?Pub Dtl>Supbara4 Title</title><para><?Pub Dtl>
+PARA in a SUBPARA4. This is a PARA in a SUBPARA4. PARA in a SUBPARA4.
+This is a PARA in a SUBPARA4. PARA in a SUBPARA4. This is a PARA in
+a SUBPARA4. PARA in a SUBPARA4. This is a PARA in a SUBPARA4. </para>
+</subpara4>
+</subpara3>
+</subpara2>
+<subpara2 id="sub2ref2"><title><?Pub Dtl>Subpara2 title</title>
+<note><?Pub Dtl>
+<para><?Pub Dtl>This is a PARA within a NOTE element. This is a PARA
+within a NOTE element. This is a PARA within a NOTE element. This
+is a PARA within a NOTE element. This is a PARA within a NOTE element. </para>
+<para><?Pub Dtl>This is a second PARA within a NOTE element. This
+is a second PARA within a NOTE element. This is a second PARA within
+a NOTE element. This is a second PARA within a NOTE element. This
+is a second PARA within a NOTE element. </para>
+<para><?Pub Dtl>This is a third PARA within a NOTE element. This is
+a third PARA within a NOTE element. This is a third PARA within a
+NOTE element. </para>
+</note>
+<para><?Pub Dtl>PARA in a SUBPARA2. This is a PARA in a SUBPARA2.
+PARA in a SUBPARA2. This is a PARA in a SUBPARA2. PARA in a SUBPARA2.
+This is a PARA in a SUBPARA2. </para>
+<subpara3 id="sub3ref2"><?Pub Dtl><title><?Pub Dtl>Subpara3 title</title>
+<para><?Pub Dtl>PARA in a SUBPARA3. This is a PARA in a SUBPARA3.
+PARA in a SUBPARA3. This is a PARA in a SUBPARA3. PARA in a SUBPARA3.
+This is a PARA in a SUBPARA3. PARA in a SUBPARA3. This is a PARA in
+a SUBPARA3. </para>
+<subpara4><?Pub Dtl><title><?Pub Dtl>Supbara4 Title</title><para><?Pub Dtl>
+PARA in a SUBPARA4. This is a PARA in a SUBPARA4. PARA in a SUBPARA4.
+This is a PARA in a SUBPARA4. PARA in a SUBPARA4. This is a PARA in
+a SUBPARA4. PARA in a SUBPARA4. This is a PARA in a SUBPARA4. </para>
+</subpara4>
+<subpara4><?Pub Dtl><title><?Pub Dtl>Subpara4 Title</title><para><?Pub Dtl>
+PARA in a SUBPARA4. This is a PARA in a SUBPARA4. PARA in a SUBPARA4.
+This is a PARA in a SUBPARA4. PARA in a SUBPARA4. This is a PARA in
+a SUBPARA4. PARA in a SUBPARA4. This is a PARA in a SUBPARA4. </para>
+<subpara5><?Pub Dtl><title><?Pub Dtl>Subpara5 Title</title><para><?Pub Dtl>
+PARA in a SUBPARA5. This is a PARA in a SUBPARA5. PARA in a SUBPARA5.
+This is a PARA in a SUBPARA5. PARA in a SUBPARA5. This is a PARA in
+a SUBPARA5. PARA in a SUBPARA5. This is a PARA in a SUBPARA5. PARA
+in a SUBPARA5. This is a PARA in a SUBPARA5. </para>
+</subpara5>
+<subpara5><?Pub Dtl><title><?Pub Dtl>Next Subpara5 Title</title><para><?Pub Dtl>
+PARA in a SUBPARA5. This is a PARA in a SUBPARA5. PARA in a SUBPARA5.
+This is a PARA in a SUBPARA5. PARA in a SUBPARA5. This is a PARA in
+a SUBPARA5. PARA in a SUBPARA5. This is a PARA in a SUBPARA5. PARA
+in a SUBPARA5. This is a PARA in a SUBPARA5. </para>
+<subpara6><?Pub Dtl><title><?Pub Dtl>Subpara6 Title</title><para><?Pub Dtl>
+PARA in a SUBPARA6. This is a PARA in a SUBPARA6. PARA in a SUBPARA6.
+This is a PARA in a SUBPARA6. PARA in a SUBPARA6. This is a PARA in
+a SUBPARA6. PARA in a SUBPARA6. This is a PARA in a SUBPARA6. PARA
+in a SUBPARA6. This is a PARA in a SUBPARA6. PARA in a SUBPARA6. This
+is a PARA in a SUBPARA6. </para>
+<subpara7><?Pub Dtl><title><?Pub Dtl>Subpara7 Title</title><para><?Pub Dtl>
+PARA in a SUBPARA7. This is a PARA in a SUBPARA7. PARA in a SUBPARA7.
+This is a PARA in a SUBPARA7. PARA in a SUBPARA7. This is a PARA in
+a SUBPARA7. PARA in a SUBPARA7. This is a PARA in a SUBPARA7. PARA
+in a SUBPARA7. This is a PARA in a SUBPARA7. PARA in a SUBPARA7. This
+is a PARA in a SUBPARA7. PARA in a SUBPARA7. This is a PARA in a SUBPARA7. 
+</para>
+<subpara8><?Pub Dtl><title><?Pub Dtl>Subpara8 Title</title><para><?Pub Dtl>
+PARA in a SUBPARA8. This is a PARA in a SUBPARA8. PARA in a SUBPARA8.
+This is a PARA in a SUBPARA8. PARA in a SUBPARA8. This is a PARA in
+a SUBPARA8. PARA in a SUBPARA8. This is a PARA in a SUBPARA8. PARA
+in a SUBPARA8. This is a PARA in a SUBPARA8. PARA in a SUBPARA8. This
+is a PARA in a SUBPARA8. PARA in a SUBPARA8. This is a PARA in a SUBPARA8.
+PARA in a SUBPARA8. This is a PARA in a SUBPARA8. </para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+<ffgtbl><?Pub Dtl>
+<ffgrow><?Pub Dtl><nomencl><?Pub Dtl>a NOMENCL</nomencl><withdrtime><?Pub Dtl>
+a WITHDRTIME</withdrtime><withdrdist><?Pub Dtl>a WITHDRDIST</withdrdist>
+</ffgrow>
+<ffgrow><?Pub Dtl><nomencl><?Pub Dtl>b NOMENCL</nomencl><withdrtime><?Pub Dtl>
+b WITHDRTIME</withdrtime><withdrdist><?Pub Dtl>b WITHDRDIST</withdrdist>
+<firesym><?Pub Dtl>b FIRESYM</firesym></ffgrow>
+<ffgrow><?Pub Dtl><nomencl><?Pub Dtl>c NOMENCL</nomencl><withdrtime><?Pub Dtl>
+c WITHDRTIME</withdrtime><withdrdist><?Pub Dtl>c WITHDRDIST</withdrdist>
+</ffgrow>
+<ffgrow><?Pub Dtl><nomencl><?Pub Dtl>d NOMENCL</nomencl><withdrtime><?Pub Dtl>
+d WITHDRTIME</withdrtime><withdrdist><?Pub Dtl>d WITHDRDIST</withdrdist>
+<firesym><?Pub Dtl>d FIRESYM</firesym></ffgrow>
+</ffgtbl>
+<foottext><?Pub Dtl>This is the FOOTTEXT element.</foottext>
+</emergproc>
+<loadproc><?Pub Lcl _divid="600" _parentid="0">
+<title>TITLE within LOADPROC</title>
+<task>
+<title></title>
+<warning>
+<para>This is a PARA within a WARNING element. This is a PARA within
+a WARNING element. This is a PARA within a WARNING element. </para>
+</warning>
+<caution>
+<para>This is a PARA within a CAUTION element. This is a PARA within
+a CAUTION element. This is a PARA within a CAUTION element. This is
+a PARA within a CAUTION element. </para>
+</caution>
+<note>
+<para>This is a PARA within a NOTE element. This is a PARA within
+a NOTE element. This is a PARA within a NOTE element. This is a PARA
+within a NOTE element. This is a PARA within a NOTE element. </para>
+</note>
+<para>This is a PARA within a TASK element. This is a PARA within
+a TASK element. This is a PARA within a TASK element. </para>
+<step1><clitem>CLITEM in a STEP1 CLITEM in a STEP1 CLITEM in a STEP1
+CLITEM in a STEP1</clitem><action>ACTION in a STEP1 following a CLITEM</action>
+</step1>
+<step1><clitem>CLITEM in a STEP1</clitem><action>ACTION in a STEP1
+following a CLITEM</action>
+<step2><clitem>CLITEM in a STEP2</clitem><action>ACTION in a STEP2
+following a CLITEM</action></step2>
+<step2><clitem>CLITEM in a STEP2</clitem><action>ACTION in a STEP2
+following a CLITEM</action>
+<step3><clitem>CLITEM in a STEP3</clitem><action>ACTION in a STEP3
+following a CLITEM</action></step3>
+<step3><clitem>CLITEM in a STEP3</clitem><action>ACTION in a STEP3
+following a CLITEM</action>
+<step4><clitem>CLITEM in a STEP4</clitem><action>ACTION in a STEP4
+following a CLITEM</action></step4>
+<step4><clitem>CLITEM in a STEP4</clitem><action>ACTION in a STEP4
+following a CLITEM</action></step4></step3></step2></step1>
+</task>
+<airprepld><title>TITLE within AIRPREPLD</title>
+<task><para>This is a PARA within the TASK element. This is a PARA
+within the TASK element. </para>
+<para>This is a PARA within the TASK element. This is a PARA within
+the TASK element. </para>
+</task></airprepld>
+<loadprep><title>TITLE within LOADPREP</title>
+<task>
+<title>TITLE within TASK</title>
+<para>This is a PARA within the TASK element. This is a PARA within
+the TASK element. </para>
+<table>
+<title>TITLE in a TABLE</title><tgroup cols="3"><colspec colname="col1">
+<colspec colname="col2"><colspec colname="col3"><thead>
+<row>
+<entry valign="top">Header Row, column 1</entry>
+<entry valign="top">Header Row,, column 2</entry>
+<entry valign="top">Header Row,, column 3</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>Row 1, column 1</entry>
+<entry>Row 1, column 2</entry>
+<entry>Row 1, column 3</entry>
+</row>
+<row>
+<entry>Row 2, column 1</entry>
+<entry>Row 2, column 2</entry>
+<entry>Row 2, column 3</entry>
+</row>
+<row>
+<entry>Row 3, column 1</entry>
+<entry>Row 3, column 2</entry>
+<entry>Row 3, column 3</entry>
+</row>
+</tbody></tgroup></table>
+</task></loadprep>
+<cartins><title>TITLE within CARTINS</title>
+<task>
+<title>TITLE within TASK</title>
+<para>This is a PARA within the TASK element. This is a PARA within
+the TASK element. </para>
+<para>This is a PARA within the TASK element. This is a PARA within
+the TASK element. This is a PARA within the TASK element. </para>
+<figure>
+<title>TITLE within FIGURE</title>
+<graphic boardno="bio" reprowid="2.5in" scalefit="1"></figure>
+</task></cartins>
+<load><title>TITLE within LOAD</title>
+<task><para>This is a PARA within the TASK element. This is a PARA
+within the TASK element. </para>
+<para>This is a PARA within the TASK element. This is a PARA within
+the TASK element. This is a PARA within the TASK element. </para>
+</task></load>
+<postldinsp>
+<title>TITLE within POSTLDINSP</title>
+<task>
+<title>TITLE within TASK</title>
+<para>This is a PARA within the TASK element. This is a PARA within
+the TASK element. </para>
+</task></postldinsp>
+<dlayflt><title>TITLE within DLAYFLT</title>
+<task>
+<step1><clitem>CLITEM in a STEP1</clitem><action>ACTION in a STEP1
+following a CLITEM</action></step1>
+<step1><clitem>CLITEM in a STEP1</clitem><action>ACTION in a STEP1
+following a CLITEM</action></step1>
+</task></dlayflt>
+<priorlnch><title>TITLE within PRIORLNCH</title>
+<task>
+<title>TITLE within TASK</title>
+<para>This is a PARA within the TASK element. This is a PARA within
+the TASK element. </para>
+<step1><clitem>CLITEM in a STEP1</clitem><action>ACTION in a STEP1
+following a CLITEM</action></step1>
+<step1><clitem>CLITEM in a STEP1</clitem><action>ACTION in a STEP1
+following a CLITEM</action></step1>
+<step1><clitem>CLITEM in a STEP1</clitem><action>ACTION in a STEP1
+following a CLITEM</action></step1>
+</task></priorlnch>
+</loadproc><unloadproc><?Pub Lcl _divid="700" _parentid="0">
+<title>TITLE within UNLOADPROC</title>
+<safing><title>TITLE within SAFING</title>
+<task><para>This is a PARA within the TASK element. This is a PARA
+within the TASK element. </para>
+<step1><clitem>CLITEM in a STEP1</clitem><action>ACTION in a STEP1
+following a CLITEM</action></step1>
+<step1><clitem>CLITEM in a STEP1</clitem><action>ACTION in a STEP1
+following a CLITEM</action></step1>
+<step1><clitem>CLITEM in a STEP1</clitem><action>ACTION in a STEP1
+following a CLITEM</action></step1>
+</task></safing>
+<preunload><title>TITLE within PREUNLOAD</title>
+<task>
+<step1><clitem>CLITEM in a STEP1 CLITEM in a STEP1 CLITEM in a STEP1
+CLITEM in a STEP1</clitem><action>ACTION in a STEP1 following a CLITEM</action>
+</step1>
+<step1><clitem>CLITEM in a STEP1</clitem><action>ACTION in a STEP1
+following a CLITEM</action>
+<step2><clitem>CLITEM in a STEP2</clitem><action>ACTION in a STEP2
+following a CLITEM</action></step2>
+<step2><clitem>CLITEM in a STEP2</clitem><action>ACTION in a STEP2
+following a CLITEM</action>
+<step3><clitem>CLITEM in a STEP3</clitem><action>ACTION in a STEP3
+following a CLITEM</action></step3>
+<step3><clitem>CLITEM in a STEP3</clitem><action>ACTION in a STEP3
+following a CLITEM</action>
+<step4><clitem>CLITEM in a STEP4</clitem><action>ACTION in a STEP4
+following a CLITEM</action></step4>
+<step4><clitem>CLITEM in a STEP4</clitem><action>ACTION in a STEP4
+following a CLITEM</action></step4></step3></step2></step1>
+</task></preunload>
+<unload><title>TITLE within UNLOAD</title>
+<task><para>This is a PARA within the TASK element. This is a PARA
+within the TASK element. </para>
+<para>This is a PARA within the TASK element. This is a PARA within
+the TASK element. This is a PARA within the TASK element. </para>
+<para>This is a PARA within the TASK element. This is a PARA within
+the TASK element. This is a PARA within the TASK element. This is
+a PARA within the TASK element. </para>
+</task></unload>
+</unloadproc></body></docldpcl></doc>
+<?Pub *0000031240 0>

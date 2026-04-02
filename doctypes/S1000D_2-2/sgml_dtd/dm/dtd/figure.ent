@@ -1,0 +1,175 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. New public identifier.                                          *
+    * 2. CPF 2002-11FR: Remove exclusion from <figure>.                  *
+    *                   Elements <graphic> and <hotspot> moved to here   *
+    *                   from COMMON.ENT.                                 *
+    *                   Split FIG_TAB.ENT into FIGURE.ENT and TABLE.ENT. *
+    * 3. CPF 2004-40US: Introduce attribute visibility on element        *
+    *                   <hotspot> to enable the reuse of graphic objects.*
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTFIG PUBLIC                                           *
+    *   "-//S1000D//ELEMENTS Figure Breakdown 20050501//EN" >            *
+    * %EXTFIG;                                                           *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element figure (Figure) containing:-                        *
+    *====================================================================*
+    * Mandatory Single Group.                                            *
+    *====================================================================*
+    *  Definition stored in entity %titles;                              *
+    *++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+    *  graphic  - Mandatory  Single      contains No Other Tags.         *
+    *  rfa      - Optional   Repeatable  contains applic, Definition     *
+    *                                     stored in entity %text;.       *
+    * or                                                                 *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  applic   - Optional   Single      contains type, model.           *
+    *  sheet    - Mandatory  Single      contains No Other Tags.         *
+    *  graphic  - Mandatory  Single      contains No Other Tags.         *
+    *  rfa      - Optional   Repeatable  contains applic, Definition     *
+    *                                     stored in entity %text;.       *
+    *====================================================================*
+    *++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+    *  legend   - Optional   Single      contains deflist.               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    * Attribute Definition List stored in entity %secur;                 *
+    ********************************************************************** -->
+
+<!ELEMENT figure - - (((%titles;), ((graphic,rfa*) | 
+                                    (applic?, sheet, graphic, rfa*)+),
+                       legend?))  >
+<!ATTLIST figure
+            %bodyatt;
+            %secur; >
+<!-- Exclusion removed -->
+
+
+
+<!--**********************************************************************
+    * Define Element graphic (Graphic / Image) containing:-              *
+    *  hotspot - Optional Repeatable   contains applic and optional      *
+    *                                  repeatable group consisting of    *
+    *                                  hotspot or xref.                  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  boardno  - ENTITY   - REQUIRED - Unique graphic identifier.       *
+    *  id       - ID       - IMPLIED  - Unique identifier of graphic     *
+    *  reprowid - CDATA    - IMPLIED  - Reproduction area width in mm.   *
+    *  reprohgt - CDATA    - IMPLIED  - Reproduction area height in mm.  *
+    *  reproscl - CDATA    - IMPLIED  - Reproduction scaling (yes/no)    *
+    ********************************************************************** -->
+
+<!ELEMENT graphic - O (hotspot)* >
+<!ATTLIST graphic
+              boardno     ENTITY       #REQUIRED
+              id          ID           #IMPLIED
+              reprowid    CDATA        #IMPLIED
+              reprohgt    CDATA        #IMPLIED
+              reproscl    CDATA        #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element hotspot (Graphical Hotspot) containing:-            *
+    *   applic   - Optional  Single     contains type, model.            *
+    *====================================================================*
+    *  Optional Repeatable Group.                                        *
+    *====================================================================*
+    *    hotspot - Mandatory Single   contains applic, optional          *
+    *                                 repeatable group consisting of     *
+    *                                 hotspot or xref.                   *
+    *   or                                                               *
+    *    xref    - Mandatory Single   contains applic, Definition stored *
+    *                                          in entity %SPARCON;.      *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id            - ID            - IMPLIED - Unique identifier of    *
+    *                                            hotspot.                *
+    *  apsid         - CDATA         - IMPLIED - Unique identifier of    *
+    *                                            CGM APS.                *
+    *  apsname       - CDATA         - IMPLIED - CGM APS name attribute. *
+    *  type          - CDATA         - IMPLIED - Type of graphical       *
+    *                                            hotspot.                *
+    *  title         - CDATA         - IMPLIED - Label / Screentip of    *
+    *                                            hotspot.                *
+    *  descript      - CDATA         - IMPLIED - Description of          *
+    *                                            graphical hotspot.      *
+    *  coords        - CDATA         - IMPLIED - Closed polygon          *
+    *                                            coordinates of graphical*
+    *                                            hotspot picking region. *
+    *  visibility    - Declared      - "visible" - Object visibility.    *
+    *                  - "visible"     - Display this graphical object.  *
+    *                  - "hidden"      - Hide this graphical object.     *
+    ********************************************************************** -->
+
+<!ELEMENT hotspot - O (applic?, (hotspot | xref)*) >
+<!ATTLIST hotspot
+              id            ID                   #IMPLIED 
+              apsid         CDATA                #IMPLIED
+              apsname       CDATA                #IMPLIED
+              type          CDATA                #IMPLIED
+              title         CDATA                #IMPLIED
+              descript      CDATA                #IMPLIED
+              coords        CDATA                #IMPLIED
+              visibility    (visible | hidden)   "visible" >
+<!-- Attribute visibility introduced -->
+
+
+
+<!--**********************************************************************
+    * Define Element sheet (Figure Sheet) containing:-                   *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  sheetno  - NUMBER   - REQUIRED - Sheet number.                    *
+    *  total    - NUMBER   - REQUIRED - Total number of sheets.          *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT sheet - O EMPTY >
+<!ATTLIST sheet
+             sheetno NUMBER #REQUIRED
+             total   NUMBER #REQUIRED
+             %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element rfa (Reason For Amendment) containing:-             *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  Definition stored in entity %text; - Mandatory Repeatable.        *
+    ********************************************************************** -->
+
+<!ELEMENT rfa - O (applic?, (%text;)+) >
+
+
+
+<!--**********************************************************************
+    * Define Element legend (Legend) containing:-                        *
+    *  deflist  - Mandatory  Single      contains Definition stored in   *
+    *                                    entity %titles;, term, def.     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;.             *
+    ********************************************************************** -->
+
+<!ELEMENT legend - O (deflist) >
+<!ATTLIST legend
+             %bodyatt; >

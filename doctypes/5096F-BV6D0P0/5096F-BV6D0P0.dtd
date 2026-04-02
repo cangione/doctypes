@@ -1,0 +1,180 @@
+<!-- *****  START OF FILE ***** -->
+
+<!--  **************************************************************************
+      SPECIAL NOTE: 
+	This DTD was modified for the Arbortext implementation.
+      Changes:
+      20030120 modified to reference the latest version of 38784 (Draft V7 to 
+               include updated support for the change application)
+      20040220 - removed 38784 subset in favor of an entity to 38784 directory
+
+      ********************************************************************** -->
+
+<!-- 
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  DTD TITLE:	Acceptance and Functional Check Flight Manual
+	+
+	+  SPECIFICATION NUMBER:	MIL-PRF-5096F
+	+
+	+  SPECIFICATION POC:	Bill Garrity
+	+
+	+  DOCUMENT TYPE DEFINITION (DTD):	5096F-BV6D0P0
+	+
+	+  MIL-STANDARD VERSION:	38784STD-BV6
+	+
+	+  LAST MODIFICATION:	28 February 2002
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+  This file is made available to provide the user with a digital 
+	+  representation of the DTD found in:  Appendix B of MIL-PRF-5096F
+	+  This file is incomplete without MIL-PRF-5096F.
+	+
+	+  The following set of declarations may be referred to by using a
+	+  public entity as follows:
+	+
+	+  <!ENTITY % m5096fcf PUBLIC "-//USA-DOD//DTD 5096F-BV6D0P0//EN" >
+	+  %m5096fcf;
+	+
+	+  NOTE: In order to parse the following DTD subset alone, append
+	+  the following statement to the beginning of the file:
+	+
+	+		<!DOCTYPE doc [
+	+
+	+		and the associated  ]>  to the end of the file.
+	+
+	+  NOTE: The start and end of this file are marked with notations.
+	+  If these notations are not present, the file may not be complete!
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+	AUTHORED BY: Barbara Jones, AF IDE PO
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  OTHER DTDS NEEDED:		
+	+  			38784STD-BV6.dtd
+	+	
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+	MODIFICATIONS:
+	+
+	+	CCB #:	5096-B-02044-01
+	+	Description:	Modified content model of %idinfo so title
+	+			page graphic immediately follows the subtitle.
+	+	blj, 02/20/02
+	+
+	+	CCB #:	5096-B-02044-02
+	+	Description:	Removed ratddesc and tmimprep from %fpi.  Not
+	+			applicable to this manual.
+	+	blj, 02/20/02
+	+
+	+	CCB #:	5096-B-02044-03
+	+	Description:	Removed assocl element from DTD.  No longer
+	+			applicable.
+	+	blj, 02/20/02
+	+
+	+	CCB #:	5096-B-02044-04
+	+	Description:	Added attribute crewposition to chapter.  
+	+			Users select which crew position
+	+			each chapter pertains to.
+	+	blj, 02/22/02
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-->
+<!--
+                      ENTITY DECLARATIONS
+-->
+
+<!ENTITY % doc "(docfcf)" >
+
+<!ENTITY % bodyele "(chapter+)" >
+
+<!-- CCB #: 00137-00-14 -->
+<!ENTITY % sect "(title, ((phase*) | para0+))" >
+
+<!-- CCB# 5096-B-02044-01 -->
+<!-- CCB #: 00137-00-13 -->
+<!-- CCB #: 00137-00-06 -->
+<!-- CCB #: 00137-00-02 -->
+<!ENTITY % idinf    "(tmidno+,  (chgnum, chgdate, chghistory)?, pretmidno*, doctype?, prtitle, subtitle?,
+	graphic?, (mfr, contractno+)?, supersed?, suppl*, discl?, distrib, 
+	expcont?, destr?, copyright*, note?, moveddata?, authnot, downgrd?, pubdate )" >
+
+<!ENTITY % frnt " (idinfo, lep, verstat?, contents, illuslist?, tablelist?, 
+		foreword)" >	
+
+<!-- CCB# 5096-B-02044-02 -->
+<!-- CCB #: 00137-00-07 -->		
+<!ENTITY % fpi "para0, (para0 | applicdef | symsect | abbrsect |
+internatlstd | lrp | tctolist | warning | caution | note)*" >
+
+<!-- ATI:  added change to mixture - DTD oversight, USAF added it to the V8 version -->
+<!ENTITY % text "(#PCDATA | tabmat | ftnref | xref | graphic | extref |
+		emphasis | change)+" >		
+
+<!ENTITY % secur "security (u | c | s | n) 'n'" >
+
+<!ENTITY % chgatt
+"deltype (delete  | real | reserve | NA) #IMPLIED
+inschlvl NMTOKEN #IMPLIED
+delchlvl NMTOKEN #IMPLIED
+status  (empty | deleted | reserved | notapp) #IMPLIED
+revchg NUMBER '0'" > 
+
+<!ENTITY % bodyatt
+"label CDATA #IMPLIED
+sssn CDATA #IMPLIED
+indexid  CDATA  #IMPLIED 
+%chgatt;" >
+
+<!-- CCB# 5096-B-02044-04 -->
+<!ENTITY % chapatt
+"id ID #IMPLIED
+crewposition (P | CP | NAV | E | FE | LM | BO | GC | OSO | DSO | EW | G | O | RN | CSO | SCN | WSO) #REQUIRED
+%secur;
+%bodyatt;" >
+
+<!ENTITY % sectatt 
+"id ID #IMPLIED
+%secur;
+%bodyatt;" >
+
+<!-- using 7700F front matter - jls -->
+<!-- CCB #: 00137-00-14 -->
+<!ENTITY % chap "(title, ((section, section+) | (phase*) | para0+))" >
+
+<!-- CCB#: 00137-00-09  -->
+<!ENTITY % stepcon    "(note?, (clitem, action?, amplify?), para?, warning?, 
+caution?, note?)" >
+
+<!-- CCB #: 00137-00-01 -->
+<!-- ATI added entity to 38784 -->
+<!ENTITY % m38784       PUBLIC "-//USA-DOD//DTD 38784STD-BV7//EN" >
+%m38784;
+
+<!-- ELEMENT and ATTRIBUTE LIST DECLARATIONS -->
+
+<!-- CCB# 5096-B-02044-03 -->
+
+<!ELEMENT action     - o  (%text;) >
+<!ATTLIST action     %secur; >
+
+<!ELEMENT amplify     - o  (%text;) >
+<!ATTLIST amplify     %secur; 
+                      %chgatt; >
+
+<!ELEMENT clitem     - o  (%text;) >
+<!ATTLIST clitem     %secur; >
+
+<!ELEMENT docfcf     - -  (front, body)  +(pgbrk | brk | subjinfo |
+			  line | modreq | location | ftnote) >
+<!ATTLIST docfcf     service %service; 'AF'
+                     %docatt;
+                     %secur; >
+
+<!-- CCB #: 00137-00-13 -->
+
+<!ELEMENT phase     - o  (title?, para0+) >
+<!ATTLIST phase     %sectatt; >
+
+<!-- **************************** END OF FILE **************************** -->
+

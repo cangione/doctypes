@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.ataebiz.org/XMLSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.ataebiz.org/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<!-- ================================================================
+
+Limitations of Liability: 
+
+1.  This material is provided "As Is" and neither Air Transport Association of America, Inc. (ATA) 
+    nor any person who has contributed to the creation, revision or maintenance of the material 
+    makes any representations or warranties, express or implied, including but not limited to, 
+    warranties of merchantability or fitness for any particular purpose. 
+
+2.  Neither ATA nor any person who has contributed to the creation, revision or maintenance of 
+    this material shall be liable for any direct, indirect, special or consequential damages or 
+    any other liability arising from any use of this material. 
+
+3.  Revisions to this document may occur after its issuance. The user is responsible for determining 
+    if revisions to the material contained in this document have occurred and are applicable. 
+
+Copyright 2017, Air Transport Association of America, Inc., d/b/a Airlines for America. All rights reserved.
+
+================================================================= -->
+	<xs:annotation>
+		    <xs:documentation>Version Number: 2017.1</xs:documentation>
+		    <xs:documentation>Revision Date: 2017-10-31</xs:documentation>
+		    <xs:documentation>Revision Comments: Spec 2300 revision 2017.1</xs:documentation>
+	  </xs:annotation>
+	  <xs:redefine schemaLocation="../common/dataManagement/dmodule.xsd">
+		    <xs:complexType name="contentElemType">
+			      <xs:complexContent>
+				        <xs:extension base="contentElemType">
+					          <xs:sequence>
+						            <xs:element name="projectRules" type="projectRulesElemType">
+							              <xs:annotation>
+								                <xs:documentation>wrapper containing all projects rules from any type.</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:redefine>
+	  <!--=============================================-->
+	<!-- dmodule Element Declaration (DM  root) -->
+	<!--=============================================-->
+	<xs:element name="dmodule" type="dmoduleElemType"/>
+	  <!--=============================================-->
+	<!-- projectRules element -->
+	<!--=============================================-->
+	<xs:complexType name="commonInfoElemType">
+		    <xs:sequence>
+			      <xs:element ref="simplePara" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>contains a minimum set of text elements.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:element name="commonInfo" type="commonInfoElemType"/>
+	  <xs:complexType name="projectRulesElemType">
+		    <xs:sequence>
+			      <xs:element ref="commonInfo" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>Common project rules information</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element ref="snsRules" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>Contains descriptions of one or several SNS systems that apply to the project concerned.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element ref="contextRules" minOccurs="0" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>contains the set of project rules which can be related to a particular schema/context or a particular elements and attributes in the schema structures.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element ref="nonContextRules" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>contains the set of project rules which cannot be related to any particular schema/context or any particular elements and attributes in the schema structures.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="projectId" type="xs:NCName">
+			      <xs:annotation>
+				        <xs:documentation>Id for the project to witch the projects rules apply</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <!--=============================================-->
+	<!-- snsRules element -->
+	<!--=============================================-->
+	<xs:element name="snsRules" type="snsRulesElemType"/>
+	  <xs:complexType name="snsRulesElemType">
+		    <xs:sequence>
+			      <xs:element ref="snsDescr" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>Provides a description of each specific SNS system.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:element name="snsDescr" type="snsDescrElemType"/>
+	  <xs:complexType name="snsDescrElemType">
+		    <xs:sequence>
+			      <xs:element ref="snsSystem" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>Contains the specification of each system defined for the SNS.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:element name="snsSystem" type="snsSystemElemType"/>
+	  <xs:complexType name="snsSystemElemType">
+		    <xs:sequence>
+			      <xs:element ref="snsCode"/>
+			      <xs:element ref="snsTitle"/>
+			      <xs:element ref="snsSubSystem" minOccurs="0" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>Contains the specification of each subsystem defined for the SNS system.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:element name="snsCode" type="xs:string">
+		    <xs:annotation>
+			      <xs:documentation>Contains a code used to define a component in an SNS structure. The code concerned is represented as text content. Depending on the context it can be either the code of a system, a subsystem, a sub-subsystem or an assembly.</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <xs:element name="snsTitle" type="xs:string">
+		    <xs:annotation>
+			      <xs:documentation>Contains a title corresponding to a code used to define a component in an SNS structure. The title is represented as text content. Depending on the context it can be either the title of a system, a subsystem, a sub-subsystem or an assembly.</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <xs:element name="snsSubSystem" type="snsSubSystemElemType"/>
+	  <xs:complexType name="snsSubSystemElemType">
+		    <xs:sequence>
+			      <xs:element ref="snsCode"/>
+			      <xs:element ref="snsTitle"/>
+			      <xs:element ref="snsSubSubSystem" minOccurs="0" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>Contains the specification of each subsubsystem defined for the SNS subsystem concerned.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:element name="snsSubSubSystem" type="snsSubSubSystemElemType"/>
+	  <xs:complexType name="snsSubSubSystemElemType">
+		    <xs:sequence>
+			      <xs:element ref="snsCode"/>
+			      <xs:element ref="snsTitle"/>
+			      <xs:element ref="snsAssy" minOccurs="0" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>Contains the specification of each assembly defined for the SNS sub-subsystem concerned.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:element name="snsAssy" type="snsAssyElemType"/>
+	  <xs:complexType name="snsAssyElemType">
+		    <xs:sequence>
+			      <xs:element ref="snsCode"/>
+			      <xs:element ref="snsTitle"/>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <!--=============================================-->
+	<!-- contextRules element -->
+	<!--=============================================-->
+	<xs:element name="contextRules" type="contextRulesElemType"/>
+	  <xs:complexType name="contextRulesElemType">
+		    <xs:sequence>
+			      <xs:element ref="structureObjectRuleGroup" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>specifies all rules about the project-specific use of elements and attributes for all the various document types (Schema) used within the project</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="rulesContext" type="xs:string">
+			      <xs:annotation>
+				        <xs:documentation>context of the block of rules. It can be schema names or infocode values. Empty or not provided means applicable to all.</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:element name="structureObjectRuleGroup" type="structureObjectRuleGroupElemType"/>
+	  <xs:complexType name="structureObjectRuleGroupElemType">
+		    <xs:sequence>
+			      <xs:element ref="structureObjectRule" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>contains rules that apply to an element or an attribute, which must be given when the intended use of that object does not fully coincide with the specification, for instance by being more restrictive</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:element name="structureObjectRule" type="structureObjectRuleElemType"/>
+	  <xs:complexType name="structureObjectRuleElemType">
+		    <xs:sequence>
+			      <xs:element ref="objectPath">
+				        <xs:annotation>
+					          <xs:documentation>contains an XPath address defining where the element or attribute occurs in the Schema structure. This must be identified for an element or attribute for which rules are given.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element ref="objectUse" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>contains a specific description and intended use for each element, attribute, or notation that is recorded in the projectRules data module. The description should be a short narrative explanation of the use to the extent that interpretation of the object is perfectly clear.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element ref="objectValue" minOccurs="0" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>contains the description of the intended meaning. When relevant, each specific single value, range of values, or pattern value that is applicable to an element or attribute within a project or organization must be given. In addition, there should be a short description of each single value, value range, or pattern value to explain the intended meaning of the value. Since this element is repeatable, it is possible to specify multiple and/or single values, ranges of values, or pattern values for a specific element or attribute.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:element name="objectPath" type="objectPathElemType"/>
+	  <xs:complexType name="objectPathElemType" mixed="true">
+		    <xs:attribute name="allowedObjectFlag" type="allowedObjectFlagAttType" default="2">
+			      <xs:annotation>
+				        <xs:documentation>defines if and how the object is applied within the organization or the project. The attribute must always be included. Allowable values are: • "0" - No, the object must not be used in the context concerned • "1" - Yes, the object must be included in the context concerned • "2" (default value) - the object can optionally be used in the context concerned, however, fully in accordance with the specification text and the Schemas</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:simpleType name="allowedObjectFlagAttType">
+		    <xs:restriction base="xs:NMTOKEN">
+			      <xs:enumeration value="0"/>
+			      <xs:enumeration value="1"/>
+			      <xs:enumeration value="2"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:element name="objectUse" type="objectUseElemType"/>
+	  <xs:complexType name="objectUseElemType" mixed="true">
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:element name="objectValue" type="objectValueElemType"/>
+	  <xs:complexType name="objectValueElemType" mixed="true">
+		    <xs:attribute name="valueTailoring" type="valueTailoringAttType" default="closed">
+			      <xs:annotation>
+				        <xs:documentation>specifies if and how the given values can be tailored by a lower level projectRules data module and can have the following values: • "restrictable", a projectRules at a lower level may impose further restrictions to the given value by changing the textual interpretation to reflect that restriction • "lexical", a projectRules at a lower level may adjust the text string constituting the interpretation, however, only in respects that do not in any way change the conceptual and semantic meaning of the interpretation • "closed" (default value), a projectRules at a lower level must not in any way restrict or alter the interpretation of a value declared at this level</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="valueForm" type="valueFormAttType">
+			      <xs:annotation>
+				        <xs:documentation>specifies the type of content contained in the attribute valueAllowed and can have the following values: • "single", a single value applies to the object • "range", a range of values applies to the object • "pattern", a pattern value applies to the object</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="valueAllowed" type="xs:string">
+			      <xs:annotation>
+				        <xs:documentation>contains the specification for the single value, range of values or pattern value applicable to the object</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:simpleType name="valueTailoringAttType">
+		    <xs:restriction base="xs:NMTOKEN">
+			      <xs:enumeration value="restrictable"/>
+			      <xs:enumeration value="lexical"/>
+			      <xs:enumeration value="closed"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="valueFormAttType">
+		    <xs:restriction base="xs:NMTOKEN">
+			      <xs:enumeration value="single"/>
+			      <xs:enumeration value="range"/>
+			      <xs:enumeration value="pattern"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <!--=============================================-->
+	<!-- nonContextRules element -->
+	<!--=============================================-->
+	<xs:element name="nonContextRules" type="nonContextRulesElemType"/>
+	  <xs:complexType name="nonContextRulesElemType">
+		    <xs:sequence>
+			      <xs:element ref="nonContextRule" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>contains a rule not related to any particular schema, schema element or attribute.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:element name="nonContextRule" type="nonContextRuleElemType"/>
+	  <xs:complexType name="nonContextRuleElemType">
+		    <xs:sequence>
+			      <xs:element ref="simplePara" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>contains a minimum set of text elements.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:element name="simplePara" type="simpleParaElemType"/>
+	  <xs:complexType name="simpleParaElemType" mixed="true">
+		    <xs:attribute name="id" type="idType">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+</xs:schema>

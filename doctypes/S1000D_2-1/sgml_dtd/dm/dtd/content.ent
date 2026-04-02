@@ -1,0 +1,143 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2002-12FR and 2002-26UK: Amend content model of techpub by  *
+    *                   subelements pubcode, pubtitle and pubdate        *
+    *                   defined in new entity %PUBREF; (see COMMON.ENT). *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTCONT                                                 *
+    *   PUBLIC "-//S1000D//ELEMENTS Content Breakdown 20030531//EN" >    *
+    * %EXTCONT;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element content (Content Structure) containing:-            *
+    *  refs     - Mandatory  Single      contains norefs, rdandrt,       *
+    *                                    refdms, reftp.                  *
+    *  Definition stored in entity %CONTENT;                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED  - Unique identifier of content     *
+    ********************************************************************** -->
+
+<!ELEMENT content - O (refs,%CONTENT;) >
+<!ATTLIST content
+            id   ID  #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element refs (References) containing:-                      *
+    *  norefs   - Mandatory  Single      contains No Other Tags.         *
+    * or                                                                 *
+    *  rdandrt  - Mandatory  Single      contains refdms, reftp.         *
+    * or                                                                 *
+    *  refdms   - Mandatory  Single      contains refdm.                 *
+    * or                                                                 *
+    *  reftp    - Mandatory  Single      contains techpub.               *
+    ********************************************************************** -->
+
+<!ELEMENT refs - O (norefs | rdandrt | refdms  | reftp) >
+
+
+
+<!--**********************************************************************
+    * Define Element norefs (No References) containing:-                 *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+
+<!ELEMENT norefs - O EMPTY >
+
+
+
+<!--**********************************************************************
+    * Define Element rdandrt (Reference Data Modules And Technical       *
+    * Publications) containing:-                                         *
+    *  refdms   - Mandatory  Single      contains refdm                  *
+    *  reftp    - Mandatory  Single      contains techpub                *
+    ********************************************************************** -->
+
+<!ELEMENT rdandrt - O (refdms ,reftp) >
+
+
+
+<!--**********************************************************************
+    * Define Element refdms (Reference Data Modules) containing:-        *
+    *  refdm    - Mandatory  Repeatable  contains age, avee, issno,      *
+    *                                     dmtitle                        *
+    ********************************************************************** -->
+
+<!ELEMENT refdms - O (refdm+) >
+
+
+
+<!--**********************************************************************
+    * Define Element refdm (Reference Data Module) containing:-          *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  Definition stored in entity %ALLDMC;                              *
+    *  issno    - Optional   Single      contains No other tags          *
+    *  dmtitle  - Optional   Single      contains techname, infoname.    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  target  - CDATA   - IMPLIED - Cross reference ID within target DM *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    **********************************************************************
+    * EXCLUSION: figure, foldout, table.                                 *
+    ********************************************************************** -->
+
+<!ELEMENT refdm - - (applic?, (%ALLDMC;), issno?, dmtitle?) 
+                                             -(figure | foldout | table) >
+<!ATTLIST refdm
+            target CDATA  #IMPLIED
+            %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element reftp (Reference Technical Publication)             *
+    * containing:-                                                       *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  applic   - Optional   Single      contains type, model.           *
+    *  techpub  - Mandatory  Single      contains definition stored in   *
+    *                                    entity %text;                   *
+    *====================================================================*
+    **********************************************************************
+    * EXCLUSION: figure, foldout, table.                                 *
+    ********************************************************************** -->
+
+<!ELEMENT reftp - - ((applic?, techpub)+) -(figure | foldout | table) >
+
+
+
+<!--**********************************************************************
+    * Define Element techpub (Technical Publication) containing:-        *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *   Definition stored in entity %text;                               *
+    *  or                                                                *
+    *   Definition stored in entity %PUBREF;                             *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    **********************************************************************
+    * EXCLUSION: refdm, reftp.                                           *
+    ********************************************************************** -->
+
+<!ELEMENT techpub - O (%text; | %PUBREF;)+  -(refdm | reftp) >
+<!-- Content model amended by call of entity %PUBREF; -->
+<!ATTLIST techpub
+            %bodyatt; >

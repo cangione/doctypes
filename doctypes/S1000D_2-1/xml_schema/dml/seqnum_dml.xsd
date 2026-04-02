@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. New public identifier: Defines element seqnum for data module   *
+    *                           lists.                                   *
+    *====================================================================*
+    * Typical invocation:-                                               *
+    * <!ENTITY % SEQNUMDML PUBLIC                                        *
+    *   "-//S1000D//ELEMENTS Sequential Number for DMLs 20030531//EN">   *
+    * SEQNUMDML;                                                         *
+    ********************************************************************** -->
+
+
+
+	<xs:element name="seqnum">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element seqnum (Sequence Number of DML within current year) *
+    * containing:-                                                       *
+    *  Positive 3-digit number starting at 001.                          *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+		<xs:restriction base="xs:positiveInteger">
+			 <xs:pattern value="[0-9]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	</xs:element>
+
+
+</xs:schema>

@@ -1,0 +1,70 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. Reflect the changes done for the DM DTD concerning RPC comments.*
+    *====================================================================*
+    * Typical invocation:                                                *
+    * <!ENTITY % DMADDR3 PUBLIC                                          *
+    * "-//S1000D//ELEMENTS DM Address Details 3rd Part 20050501//EN">    *
+    * %DMADDR3;                                                          *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Element dmtitle (Data Module Title) containing:-            *
+    *  techname - Mandatory  Single      contains Parsed Character Data. *
+    *  infoname - Optional   Single      contains Parsed Character Data. *
+    ********************************************************************** -->
+<!ELEMENT dmtitle - O (techname,infoname?) >
+
+
+<!--**********************************************************************
+    * Define Element techname (Technical Name) containing:-              *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT techname - O (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element infoname (Information Name) containing:-            *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT infoname - O (#PCDATA) >
+
+
+<!--**********************************************************************
+    * Define Element language (Language of Data Module) containing:-     *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  language - CDATA     - REQUIRED - Language Code (lowercase).      *
+    *  country  - CDATA     - IMPLIED  - Country Code (uppercase).       *
+    ********************************************************************** -->
+<!ELEMENT language - O EMPTY>
+<!ATTLIST language
+             language CDATA #REQUIRED
+             country  CDATA #IMPLIED >
+
+
+<!--**********************************************************************
+    * Define Element rpc (Responsible Partner Company) of data module    *
+    * containing:-                                                       *
+    *  Parsed Character Data            - The NCAGE code of the RPC.     *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  rpcname  - %RPCNAME - IMPLIED   - The name of the RPC responsible *
+    *                                    for the DM in the list entry.   *
+    ********************************************************************** -->
+<!ELEMENT rpc      - O (#PCDATA) >
+<!ATTLIST rpc
+            rpcname  %RPCNAME;  #IMPLIED >
+
+
+<!--** End of DMADDR3 Entity **-->

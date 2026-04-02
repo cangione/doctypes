@@ -1,0 +1,174 @@
+--=============================================================================--
+--            MILSPEC DOCTYPE DECLARATIONS                                     --
+--=============================================================================--
+-- MIL-PRF-5096F --
+
+-- Inspection and Maintenance --
+PUBLIC "-//USA-DOD//DTD 5096F-AV6D0P0//EN"                           "5096F-AV6D0P0/5096F-AV6D0P0.dtd"
+
+-- Acceptance and Functional Check --
+PUBLIC "-//USA-DOD//DTD 5096F-BV6D0P0//EN"                           "5096F-BV6D0P0/5096F-BV6D0P0.dtd"
+
+-- Functional Check Flight Procedures --
+PUBLIC "-//USA-DOD//DTD 5096F-BV8D0P0//EN"                           "5096F-BV8D0P0/5096F-BV8D0P0.dtd"
+
+-- Work Cards --
+PUBLIC "-//USA-DOD//DTD 5096F-DV6aD1P0//EN"                          "5096F-DV6aD1P0/5096F-DV6aD1P0.dtd"
+
+-- Workcards --
+PUBLIC "-//USA-DOD//DTD 5096F-DV8D0P0//EN"                           "5096F-DV8D0P0/5096F-DV8D0P0.dtd"
+
+-- Checklist [DTD for validation only - NO FOSI] --
+PUBLIC "-//USA-DOD//DTD 5096F-FV6D0P0//EN"                           "5096F-FV6D0P0/5096F-FV6D0P0.dtd"
+
+--=============================================================================--
+-- LM2 MIL-PRF-5096J --
+
+-- Workcards --
+PUBLIC "-//USA-DOD//DTD 5096J-DV9bD2P0//EN"                           "5096J-DV9bD2P0/5096J-DV9bD2P0.dtd"
+
+--=============================================================================--
+-- LM2 MIL-PRF-38769G --
+
+-- Work Unit Codes --
+PUBLIC "-//USA-DOD//DTD 38769G1BV9bD0P0//EN"                         "38769G1BV9bD0P0/38769G1BV9bD0P0.dtd"
+
+--=============================================================================--
+-- LM2 MIL-STD-38784STD-BV9b --
+
+-- General Style and Format --
+PUBLIC "-//USA-DOD//DTD 38784STD-BV9b//EN"                            "38784STD-BV9b/38784STD-BV9b.dtd"
+
+--=============================================================================--
+-- LM2 MIL-PRF-38807D --
+
+-- Illustrated Parts Breakdown --
+PUBLIC "-//USA-DOD//DTD 38807D2AV9bD0P0//EN"                          "38807D2AV9bD0P0/38807D2AV9bD0P0.dtd"
+
+--=============================================================================--
+-- MIL-PRF-9977K --
+
+-- Nonnuclear Munitions Basic Information Manual --
+PUBLIC "-//USA-DOD//DTD 9977K1CV6aD0P0//EN"                          "9977K1CV6aD0P0/9977K1CV6aD0P0.dtd"
+
+-- Nonnuclear Munitions Loading Procedures Manual --
+PUBLIC "-//USA-DOD//DTD 9977K-DV6D0P0//EN"                           "9977K-DV6D0P0/9977K-DV6D0P0.dtd"
+
+-- Nonnuclear Munitions Loading Procedures Manual --
+PUBLIC "-//USA-DOD//DTD 9977K-GV6D0P0//EN"                           "9977K-GV6D0P0/9977K-GV6D0P0.dtd"
+
+--=============================================================================--
+-- MIL-PRF-38314 --
+
+-- Operation and Associated Checklist (Space Systems) --
+PUBLIC "-//LMCO//DTD MIL-PRF-38314-BV8D0P0//EN"                      "38314-BV8D0P0/38314-BV8D0P0.dtd"
+
+--=============================================================================--
+-- MIL-PRF-38769D --
+
+-- Work Unit Codes --
+PUBLIC "-//USA-DOD//DTD 38769D-BV6aD1P0//EN"                         "38769D-BV6aD1P0/38769D-BV6aD1P0.dtd"
+
+--=============================================================================--
+-- MIL-STD-38784 --
+
+-- General Style and Format --
+PUBLIC "-//USA-DOD//DTD 38784STD-BV7//EN"                            "38784STD-BV7/38784STD-BV7.dtd"
+PUBLIC "-//USA-DOD//DTD 38784STD-BV9//EN"                            "38784STD-BV9/38784STD-BV9.dtd"
+PUBLIC "-//USA-DOD//DTD 38784STD-BV9a//EN"                            "38784STD-BV9a/38784STD-BV9a.dtd"
+
+--=============================================================================--
+-- MIL-PRF-38807C --
+
+-- Illustrated Parts Breakdown --
+PUBLIC "-//USA-DOD//DTD 38807C-AV6D0P0//EN"                          "38807C-AV6D0P0/38807C-AV6D0P0.dtd"
+
+--=============================================================================--
+-- MIL-PRF-83495B --
+
+-- General Equipment --
+PUBLIC "-//USA-DOD//DTD 83495B1AV6aD0P2//EN"                         "83495b1av6ad0p2/83495b1av6ad0p2.dtd"
+
+-- General Systems --
+PUBLIC "-//USA-DOD//DTD 83495B1BV6D0P0//EN"                          "83495B1BV6D0P0/83495B1BV6D0P0.dtd"
+
+-- General Systems --
+PUBLIC "-//USA-DOD//DTD 83495B1BV6aD0P1//EN"                         "83495b1bv6ad0p1/83495b1bv6ad0p1.dtd"
+
+-- Job Guide --
+PUBLIC "-//USA-DOD//DTD 83495B1CV6D1P0//EN"                          "83495B1CV6D1P0/83495B1CV6D1P0.dtd"
+
+-- Job Guide --
+PUBLIC "-//USA-DOD//DTD 83495B1CV6aD3P0//EN"                         "83495B1CV6aD3P0/83495B1CV6aD3P0.dtd"
+
+--=============================================================================--
+-- 87929 --
+
+-- General Work Package --
+PUBLIC "-//USA-DOD//DTD 87929C-AV6aD1P0//EN"                         "87929C-AV6aD1P0/87929C-AV6aD1P0.dtd"
+PUBLIC "-//USA-DOD//DTD 87929D-AV9D0P0//EN"                          "87929D-AV9D0P0/87929D-AV9D0P0.dtd"
+
+--=============================================================================--
+-- 3001 --
+PUBLIC "-//USA-DOD//DTD pmrim 3001 Part 7 Draft XML V307 08242016//EN"                   "pmrim.dtd"
+PUBLIC "-//USA-DOD//DTD MIL-STD-3001-1 TM Assembly Draft XML V307 08242016//EN"          "Milstd1.dtd"
+PUBLIC "-//USA-DOD//DTD MIL-STD-3001-1 TM Assembly Draft XML V306 09152013//EN"			 "Milstd1.dtd"
+PUBLIC "-//USA-DOD//DTD MIL-STD-3001-1 TM Assembly Draft XML V305 10192012//EN"			 "Milstd1.dtd"
+
+--=============================================================================--
+--            GPSL - FOSI ENTITIES                                             --
+--=============================================================================--
+
+PUBLIC "-//GPSL//MILSPEC//ENTITIES COMMON//EN"                       "../entities/fosi/GPSL_MILSPEC_ENTITIES_COMMON.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES VERSTAT-INFORMATION//EN"          "../entities/fosi/GPSL_MILSPEC_ENTITIES_VERSTAT_INFORMATION.ent"
+
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 5096F-AV6D0P0//EN"                "../entities/fosi/GPSL_MILSPEC_ENTITIES_5096F-AV6D0P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 5096F-BV6D0P0//EN"                "../entities/fosi/GPSL_MILSPEC_ENTITIES_5096F-BV6D0P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 5096F-BV8D0P0//EN"                "../entities/fosi/GPSL_MILSPEC_ENTITIES_5096F-BV8D0P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 5096F-DV6aD1P0//EN"               "../entities/fosi/GPSL_MILSPEC_ENTITIES_5096F-DV6aD1P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 5096F-DV8D0P0//EN"                "../entities/fosi/GPSL_MILSPEC_ENTITIES_5096F-DV8D0P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 9977K1CV6aD0P0//EN"               "../entities/fosi/GPSL_MILSPEC_ENTITIES_9977K1CV6aD0P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 9977K-DV6D0P0//EN"                "../entities/fosi/GPSL_MILSPEC_ENTITIES_9977K-DV6D0P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 9977K-GV6D0P0//EN"                "../entities/fosi/GPSL_MILSPEC_ENTITIES_9977K-GV6D0P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 38314-BV8D0P0//EN"                "../entities/fosi/GPSL_MILSPEC_ENTITIES_38314-BV8D0P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 38769D-BV6aD1P0//EN"              "../entities/fosi/GPSL_MILSPEC_ENTITIES_38769D-BV6aD1P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 38784STD-BV7//EN"                 "../entities/fosi/GPSL_MILSPEC_ENTITIES_38784STD-BV7.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 38807C-AV6D0P0//EN"               "../entities/fosi/GPSL_MILSPEC_ENTITIES_38807C-AV6D0P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 83495B1AV6aD0P2//EN"              "../entities/fosi/GPSL_MILSPEC_ENTITIES_83495B1AV6aD0P2.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 83495B1BV6D0P0//EN"               "../entities/fosi/GPSL_MILSPEC_ENTITIES_83495B1BV6D0P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 83495B1BV6aD0P1//EN"              "../entities/fosi/GPSL_MILSPEC_ENTITIES_83495B1BV6aD0P1.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 83495B1CV6D1P0//EN"               "../entities/fosi/GPSL_MILSPEC_ENTITIES_83495B1CV6D1P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 83495B1CV6aD3P0//EN"              "../entities/fosi/GPSL_MILSPEC_ENTITIES_83495B1CV6aD3P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 87929C-AV6aD1P0//EN"              "../entities/fosi/GPSL_MILSPEC_ENTITIES_87929C-AV6aD1P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 38784STD-BV9b//EN"                 "../entities/fosi/GPSL_MILSPEC_ENTITIES_38784STD-BV9b.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 38807D2AV9bD0P0//EN"               "../entities/fosi/GPSL_MILSPEC_ENTITIES_38807D2AV9bD0P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 5096J-DV9bD2P0//EN"                "../entities/fosi/GPSL_MILSPEC_ENTITIES_5096J-DV9bD2P0.ent"
+PUBLIC "-//GPSL//MILSPEC//ENTITIES 38769G1BV9bD0P0//EN"              "../entities/fosi/GPSL_MILSPEC_ENTITIES_38769G1BV9bD0P0.ent"
+
+--=============================================================================--
+--            JCALS ENTITIES                                                   --
+--=============================================================================--
+
+PUBLIC "-//JCALS//ENTITIES big EPS symbols v1//EN"                   "../entities/big_EPS_symbols_v1"
+PUBLIC "-//JCALS//ENTITIES local big EPS symbols v1//EN"             "../entities/local_big_EPS_symbols_v1" 
+PUBLIC "-//JCALS//ENTITIES local small EPS symbols v1//EN"           "../entities/local_small_EPS_symbols_v1"
+PUBLIC "-//JCALS//ENTITIES small EPS symbols v1//EN"                 "../entities/small_EPS_symbols_v1"
+PUBLIC "-//JCALS//ENTITIES supported ISO entities v1//EN"            "../entities/supported_ISO_entities_v1"
+
+PUBLIC "-//USA-DOD//NAVY SEAL//EN"                                   "../graphics/navy.seal"
+PUBLIC "-//USA-DOD//ESDS//EN"                                        "../graphics/esds.eps"
+PUBLIC "-//USA-DOD//ER//EN"                                          "../graphics/er.eps"
+PUBLIC "-//USA-DOD//EL//EN"                                          "../graphics/el.eps"
+
+--=============================================================================--
+--            FOSI ENTITY DECLARATIONS                                       --
+--=============================================================================--
+
+PUBLIC "-//USA-DOD//DTD CHANGEATTS 5096f-DV8D0P0//EN"                "../entities/fosi/wcardchangeatts.fos.ent"
+PUBLIC "-//AVP70//FOSI ELEMENTS LOEP ATTS 20080301//EN"              "../entities/fosi/loep.fos.ent"
+PUBLIC "-//AVP70//FOSI ELEMENTS CHANGE ATTS 20031011//EN"            "../entities/fosi/changeatts.fos.ent"
+PUBLIC "-//AVP70//FOSI ELEMENTS WATERMARK 20031011//EN"              "../entities/fosi/watermark.fos.ent"
+PUBLIC "-//USA-DOD//DTD FRONTMATTER 83495B1BV6aD0P1//EN"             "../entities/fosi/frontmatter.fos.ent"
+PUBLIC "-//USA-DOD//DTD GENERAL 83495B1BV6aD0P0//EN"                 "../entities/fosi/general.fos.ent"
+
+

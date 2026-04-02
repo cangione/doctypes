@@ -1,0 +1,134 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2001-42D:  Allow elements step2, step3, step4 and step5 to  *
+    *                   be used "zero or multiple" within the context of *
+    *                   element step1.                                   *
+    * 3. CPF 2002-38SE: Redefine content model in entity %stepcon; due to*
+    *                   - deletion of element specpara                   *
+    *                   - introduction of optional subelement title on   *
+    *                     elements step1, step2, step3, step4 and step5. *
+    *                   Introduce optional attributes check and skill on *
+    *                   all step levels, defined in entity %CHECKSTP;.   *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTSTEP                                                 *
+    *   PUBLIC "-//S1000D//ELEMENTS Steps Breakdown 20030531//EN" >      *
+    * %EXTSTEP;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %stepcon; (Step Content) containing:-                *
+    *  Definition stored in entity %HEADING1;                            *
+    *  Definition stored in entity %WC;                                  *
+    *  Definition stored in entity %NP;                                  *
+    ********************************************************************** -->
+
+<!ENTITY % stepcon  "%HEADING1;, %WC;, %NP;" >
+<!-- Changed due to deletion of specpara and permission of step titles -->
+
+
+
+<!--**********************************************************************
+    * Define Element step1 (Procedural Step Level 1) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *  step2    - Optional  Repeatable   contains Definition stored in   *
+    *                                    entity %stepcon;, step3.        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT step1 - O (%stepcon;, step2*) >
+<!-- Changed to allow step2 usage "zero or multiple" within step1 -->
+<!ATTLIST step1
+              %CHECKSTP;
+              %bodyatt; >
+<!-- Amended by permission of optional attributes ckeck and skill -->
+
+
+
+<!--**********************************************************************
+    * Define Element step2 (Procedural Step Level 2) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *  step3    - Optional  Repeatable   contains Definition stored in   *
+    *                                    entity %stepcon;, step4.        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT step2 - O (%stepcon;, step3*) >
+<!-- Changed to allow step3 usage "zero or multiple" within step2 -->
+<!ATTLIST step2
+              %CHECKSTP;
+              %bodyatt; >
+<!-- Amended by permission of optional attributes ckeck and skill -->
+
+
+
+<!--**********************************************************************
+    * Define Element step3 (Procedural Step Level 3) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *  step4    - Optional  Repeatable   contains Definition stored in   *
+    *                                    entity %stepcon;, step5.        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT step3 - O (%stepcon;, step4*) >
+<!-- Changed to allow step4 usage "zero or multiple" within step3 -->
+<!ATTLIST step3
+              %CHECKSTP;
+              %bodyatt; >
+<!-- Amended by permission of optional attributes ckeck and skill -->
+
+
+
+<!--**********************************************************************
+    * Define Element step4 (Procedural Step Level 4) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *  step5    - Optional  Repeatable   contains Definition stored in   *
+    *                                    entity %stepcon;                *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT step4 - O (%stepcon;, step5*) >
+<!-- Changed to allow step5 usage "zero or multiple" within step4 -->
+<!ATTLIST step4
+              %CHECKSTP;
+              %bodyatt; >
+<!-- Amended by permission of optional attributes ckeck and skill -->
+
+
+
+<!--**********************************************************************
+    * Define Element step5 (Procedural Step Level 5) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT step5 - O (%stepcon;) >
+<!ATTLIST step5
+              %CHECKSTP;
+              %bodyatt; >
+<!-- Amended by permission of optional attributes ckeck and skill -->

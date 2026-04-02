@@ -1,0 +1,38 @@
+<!--Arbortext, Inc., 1988-2009, v.4002-->
+<!DOCTYPE DOC PUBLIC "-//USA-DOD//DTD 83495B1CV6D1P0//EN">
+<doc service="af"><?Pub Caret><docjg><front numcols="1"><idinfo><tmidno></tmidno>
+<doctype></doctype>
+<prtitle><subject></subject>
+</prtitle>
+<distrib></distrib>
+<authnot></authnot>
+<pubdate></pubdate></idinfo>
+<lep><lepcontents>
+<lepentry><leppage></leppage><lepchg></lepchg></lepentry>
+</lepcontents></lep>
+</front><body numcols="1">
+<gchapter><?Pub Dtl>
+<title></title>
+<para0></para0>
+</gchapter>
+<chapter>
+<title></title>
+<function>
+<title>Function title</title>
+<incond>
+<appl><para></para>
+</appl>
+<reqcond><none></reqcond>
+<persreq></persreq>
+<supeqp><none></supeqp>
+<consum><none></consum>
+<safecond></safecond>
+<addata><none></addata></incond>
+<task>
+<title></title>
+<step><para></para>
+</step>
+</task></function>
+</chapter>
+</body></docjg></doc>
+<?Pub *0000000879 0>

@@ -1,0 +1,130 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % PMCOMPS                                                 *
+    *   PUBLIC "-//S1000D//ENTITIES Publication Module Component         *
+    *                     Definitions 20030531//EN" >                    *
+    * %PMCOMPS;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %PROJECT; (PROJECT Configuration) containing:- the   *
+    * formal public identifier for the Project Configuration public text.*
+    ********************************************************************** -->
+<!ENTITY % PROJECT PUBLIC 
+  "-//S1000D//ENTITIES S1000D Project Configuration//EN" >
+         
+
+<!--**********************************************************************
+    * Define Entity %ISOENTS; (ISO Entity Definitions)                   *
+    ********************************************************************** -->
+<!ENTITY % ISOENTS PUBLIC 
+  "-//S1000D//ENTITIES ISO Entity Definitions 20030531//EN" >
+
+<!--**********************************************************************
+    * Call the ISO Entity Definitions                                    *
+    ********************************************************************** -->
+%ISOENTS;
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR1; (DM Address Details 1st Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR1 PUBLIC 
+  "-//S1000D//ENTITIES DM Address Details 1st Part 20030531//EN" >
+
+<!--**********************************************************************
+    * Call the DM Address Details 1st Part                               *
+    ********************************************************************** -->
+%DMADDR1;
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR2; (DM Address Details 2nd Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR2 PUBLIC 
+  "-//S1000D//ELEMENTS DM Address Details 2nd Part 20030531//EN" >
+
+<!--**********************************************************************
+    * Call the DM Address Details 2nd Part                               *
+    ********************************************************************** -->
+%DMADDR2;
+
+
+<!--**********************************************************************
+    * Define Entity %DMADDR3; (DM Address Details 3rd Part)              *
+    ********************************************************************** -->
+<!ENTITY % DMADDR3 PUBLIC 
+  "-//S1000D//ELEMENTS DM Address Details 3rd Part 20030531//EN" >
+
+<!--**********************************************************************
+    * Call the DM Address Details 3rd Part                               *
+    ********************************************************************** -->
+%DMADDR3;
+
+
+<!--**********************************************************************
+    * Define Entity %PMLISTCODE; (Publication Module List Code           *
+    * Definitions)                                                       *
+    ********************************************************************** -->
+<!ENTITY % PMLISTCODE PUBLIC 
+ "-//S1000D//ELEMENTS Publication Module List Code Definitions 20030531//EN" >
+
+<!--**********************************************************************
+    * Call the Publication Module List Code Definitions                  *
+    ********************************************************************** -->
+%PMLISTCODE;
+
+
+<!--**********************************************************************
+    * Define Entity %EXTPMC; (Publication Module Code Breakdown)         *
+    * containing:-                                                       *
+    * the formal public identifier for the Publication Module Code       *
+    * Breakdown public text.                                             *
+    ********************************************************************** -->
+<!ENTITY % EXTPMC PUBLIC 
+  "-//S1000D//ELEMENTS Publication Module Code Breakdown 20030531//EN" >
+
+
+<!--**********************************************************************
+    * Call the Publication Module Code Breakdown Public Text             *        
+    ********************************************************************** -->
+%EXTPMC;
+
+
+
+
+<!--**********************************************************************
+    * Define Entity %ORGNAME; (Originator Names) containing:-            *
+    * ORIG identification or NCAGE code as required.                     *
+    ********************************************************************** -->
+<!ENTITY % ORGNAME  "CDATA" >
+
+
+<!--**********************************************************************
+    * Define Entity %FIC; (Functional Item Code) containing:-            *
+    *  Parsed Character Data.                                            *
+    *====================================================================*
+    * To tailor the <fic> element for project specific use               *
+    **********************************************************************-->
+<!ENTITY % FIC "#PCDATA" >
+
+
+<!--**********************************************************************
+    * Define Entity %SBC; (System Breakdown Code) containing:-           *
+    *  Parsed Character Data.                                            *
+    *====================================================================*
+    * To tailor the <sbc> element for project specific use               *
+    ********************************************************************** -->
+<!ENTITY % SBC "#PCDATA" >

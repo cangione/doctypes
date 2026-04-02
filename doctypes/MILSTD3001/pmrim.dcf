@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Arbortext, Inc., 1988-2004, v.4002-->
+<!DOCTYPE DocumentTypeConfiguration PUBLIC "-//Arbortext//DTD Document Type Configuration 2.0//EN"
+ "dcfdtd.dtd">
+<!-- 3001 PMRIM V3.03 DCF File for EPIC -->
+<DocumentTypeConfiguration>
+ <Options allowApplicationToolbar="no" allowComposeStylesheetList="no" allowFosiMod="yes"
+  allowTouchup="yes" protected="no"/>
+ <!-- The following 'newdialog' controls the creation of any 'new' manuals created for a document type. Without it, the XML file created will not have a formal public identifier. Users can edit the "new description' for each installed 3001 document type. -->
+ <NewDialog>
+  <New category="PMRIM V3.03" description="PMRIM MANUAL" templateFile="pmrimtemplate.xml"/>
+ </NewDialog>
+ <Specials>
+  <?Pub Caret?>
+  <Graphic cropHeight="llcordra" cropLowerLeftX="coordst" cropLowerLeftY="coordend"
+   cropWidth="rucordra" element="graphic" entity="boardno" horizScale="hscale" reproDepth="reprodep"
+   reproWidth="reprowid" scaleToFit="scalefit" vertScale="hscale"/>
+  <Graphic element="icon-set" entity="boardno" cropHeight="llcordra" cropLowerLeftX="coordst" cropLowerLeftY="coordend"
+   cropWidth="rucordra"  horizScale="hscale" reproDepth="reprodep"
+   reproWidth="reprowid" scaleToFit="scalefit" vertScale="hscale"/>
+ </Specials>
+</DocumentTypeConfiguration>

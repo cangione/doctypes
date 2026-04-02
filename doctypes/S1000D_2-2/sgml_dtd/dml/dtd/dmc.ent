@@ -1,0 +1,232 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2004-06SE: Replace element <reqdm> by <refdm>.              *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTDMC PUBLIC                                           *
+    *   "-//S1000D//ELEMENTS Data Module Code Breakdown 20050501//EN" >  *
+    * %EXTDMC;                                                           *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %ALLDMC; (All Data Module Codes) containing:-        *
+    **********************************************************************
+    * The entity %ALLDMC; is used to allow refdm to access               *
+    * Data Modules Codes of different types (AGE or AVEE).               *
+    **********************************************************************
+    *   age      - Mandatory Single     contains modelic, supeqvc,       *
+    *                                   ecscs, eidc, cidc,               *
+    *                                   discode , discodev, incode,      *
+    *                                   incodev, itemloc.                *
+    *  or                                                                *
+    *   avee     - Mandatory Single     contains modelic, sdc, chapnum,  *
+    *                                   section, subsect, discode,       *
+    *                                   discodev, incode, incodev,       *
+    *                                   itemloc.                         *
+    ********************************************************************** -->
+
+<!ENTITY % ALLDMC "(age | avee)" >
+
+
+
+<!--**********************************************************************
+    * Define Element dmc (Data Module Code) containing:-                 *
+    *  Definition stored in entity %ALLDMC;                              *
+    ********************************************************************** -->
+
+<!ELEMENT dmc - O  (%ALLDMC;) >
+
+
+
+<!--**********************************************************************
+    * Define Element age (All Ground Equipment) containing:-             *
+    *====================================================================*
+    * This defines the structure of the Data Module Code for All         *
+    * Ground Equipment data modules.                                     *
+    *====================================================================*
+    *   modelic  - Mandatory Single     contains Parsed Character Data.  *
+    *   supeqvc  - Mandatory Single     contains Parsed Character Data.  *
+    *   ecscs    - Mandatory Single     contains Parsed Character Data.  *
+    *   eidc     - Mandatory Single     contains Parsed Character Data.  *
+    *   cidc     - Mandatory Single     contains Parsed Character Data.  *
+    *   discode  - Mandatory Single     contains Parsed Character Data.  *
+    *   discodev - Mandatory Single     contains Parsed Character Data.  *
+    *   incode   - Mandatory Single     contains Parsed Character Data.  *
+    *   incodev  - Mandatory Single     contains Parsed Character Data.  *
+    *   itemloc  - Mandatory Single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT age - O (modelic,supeqvc,ecscs,eidc,cidc,discode,
+                  discodev,incode,incodev,itemloc) >
+
+
+
+<!--**********************************************************************
+    * Define Element avee (All Vehicle, Engines, Equipment)              *
+    *  containing:-                                                      *
+    *====================================================================*
+    * This defines the structure of the Data Module Code for All Vehicle,*
+    * Engines, Equipment data modules.                                   *
+    *====================================================================*
+    *   modelic  - Mandatory Single     contains Parsed Character Data.  *
+    *   sdc      - Mandatory Single     contains Parsed Character Data.  *
+    *   chapnum  - Mandatory Single     contains Parsed Character Data.  *
+    *   section  - Mandatory Single     contains Parsed Character Data.  *
+    *   subsect  - Mandatory Single     contains Parsed Character Data.  *
+    *   subject  - Mandatory Single     contains Parsed Character Data.  *
+    *   discode  - Mandatory Single     contains Parsed Character Data.  *
+    *   discodev - Mandatory Single     contains Parsed Character Data.  *
+    *   incode   - Mandatory Single     contains Parsed Character Data.  *
+    *   incodev  - Mandatory Single     contains Parsed Character Data.  *
+    *   itemloc  - Mandatory Single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT avee - O (modelic,sdc,chapnum,section,subsect,subject,discode,
+                   discodev,incode,incodev,itemloc) >
+
+
+
+<!--**********************************************************************
+    * Define Element modelic (Model Identification Code) containing:-    *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT modelic - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element supeqvc (Support Equipment Variant Code)            *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT supeqvc - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element ecscs (Equipment Category & Sub-Category Code)      *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT ecscs - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element eidc (Equipment Identification Code) containing:-   *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT eidc - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element cidc (Component Identification Code) containing:-   *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT cidc - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element discode (Disassembly Code) containing:-             *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT discode - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element discodev (Disassembly Code Variant) containing:-    *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT discodev - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element incode (Information Code) containing:-              *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT incode - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element incodev (Information Code Variant) containing:-     *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT incodev - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element itemloc (Item Location Code) containing:-           *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT itemloc - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element subject (Subject Number or Unit/Assembly)           *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT subject - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element sdc (System Difference Code) containing:-           *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT sdc - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element chapnum (Chapter Number or System) containing:-     *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT chapnum - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element section (Section Number or Subsystem) containing:-  *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT section - O (#PCDATA)>
+
+
+
+<!--**********************************************************************
+    * Define Element subsect (Sub-Section Number or Sub-subsystem)       *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT subsect - O (#PCDATA)>

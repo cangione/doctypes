@@ -1,0 +1,1279 @@
+<!--Arbortext, Inc., 1988-2019, v.4002-->
+<!DOCTYPE DOC PUBLIC "-//USA-DOD//DTD 5096F-AV6D0P0//EN" [
+<!ENTITY ESD1 SYSTEM "esds.eps" NDATA eps>
+]>
+<?Pub Inc>
+<doc service="af" docid="1C-130X-6"><docim docstat="formal"><front
+t2page="0" numcols="1"><idinfo><tmidno>5096F-AV6D0P</tmidno>
+<doctype></doctype>
+<maintlvl>OrGanizational</maintlvl>
+<prtitle><nomen>Aircraft Inspection &amp; Maintenance Requirements</nomen>
+<nsn>National Stock Number</nsn>
+<modelno>Model Number</modelno>
+<partno>Part Number</partno>
+<pslist>
+<partno>PSLIST PARTNO</partno>
+<serno>PSLIST Serial no.</serno>
+</pslist><serno>Serial Number</serno>
+</prtitle>
+<subtitle>(5096F-AV6D0P0)</subtitle>
+<mfr>(MFR) ANY AERONAUTICAL COMPANY</mfr>
+<contractno>(CONTRACTNO) F00000 99 A 999</contractno>
+<discl>This document was prepared by GPSL for demonstration purposes
+only. It is intended to be representative of the types of elements
+appearing in a typical DoD Technical Manual. It is not intended to
+be a faithful reproduction of an actual Technical Manual and it should
+in no way be treated as if the information contained within is accurate
+or complete.</discl>
+<distrib> Distribution authorized to the Department of Defense and
+US DoD contractors only (Administrative or Operational Use) (7 March
+2003).  Questions concerning technical content or any other requests
+for this document shall be referred to ABC/ABC,</distrib>
+<expcont>This document contains technical data whose export is restricted
+by the Arms Export Control Act (Title 22, U.S.C., Sec 2751 <emphasis
+type="i">et seq.</emphasis>) or the Export Administration Act of 1979,
+as amended (Title 50, U.S.C., App. 2401 <emphasis type="i">et seq.</emphasis>).
+Violators of these export laws are subject to severe criminal penalties.</expcont>
+<destr>Comply with distribution statement and destroy by any method
+that will prevent disclosure of the contents or reconstruction of
+the document. See TO 00-5-1 for specific destruction procedures and
+disposition instructions.</destr>
+<copyright>(COPYRIGHT) Copyright 2004 by the owner of the document</copyright>
+<cogact>(COGACT) Some text here for testing.</cogact>
+<authnot>(AUTHNOT) PUBLISHED FOR TESTING PURPOSES ONLY.</authnot>
+<downgrd><phrase>Phase * downgrd</phrase></downgrd><pubdate>26 MARCH
+2007</pubdate></idinfo><warnpage><wpgentry><title></title><para></para>
+</wpgentry></warnpage><chginssht><?Pub Dtl><brk><chgnum></chgnum>
+<address></address><date></date><prtitle></prtitle><distrib></distrib>
+<chgpara></chgpara>
+<chglist></chglist></chginssht><lep><lepcontents autobuild="1"></lep>
+<contents autobuild="1">
+<foreword>
+<para0><title>PURPOSE AND SCOPE</title>
+<para>This manual may pertain to some or all types and series of a
+model of aircraft and may, This manual contains complete requirements
+for therefore, contain requirements applicable to specific accomplishing
+scheduled maintenance on this aircraft equipment that is not installed
+on an individual during its entire service life. It establishes inspection,
+aircraft. When this situation is encountered, those accessory replacement,
+and functional check flight requirements that are not applicable should
+be requirements for the aircraft and airborne equipment. disregarded.</para>
+<note>
+<para>This manual has been developed solely as a demonstration document
+for this document type within Arbortext software. None of the content
+is factual. </para>
+</note>
+<subpara1><title>Limitations</title><para>This manual does not contain
+symbol preceding the requirements. Requirements detailed instructions
+for troubleshooting to find causes in this manual are not in sequence;
+applicable work for malfunctioning, nor does it contain instructions
+for cards will specify the sequence. repair, adjustment, or other
+means of rectifying defective conditions.</para>
+</subpara1>
+<subpara1><title>Applicability</title><para>This manual may pertain
+to some  or all types and series of a model of aircraft and may, This
+manual contains complete requirements for therefore, contain requirements
+applicable to specific accomplishing scheduled maintenance on this
+aircraft equipment that is not installed on an individual during its
+entire service life. It establishes inspection, aircraft. When this
+situation is encountered, those accessory replacement, and functional
+check flight requirements that are not applicable should be requirements
+for the aircraft and airborne equipment. disregarded. </para>
+</subpara1>
+<subpara1><title>Subpara1 Title</title><para>Example of a Subpara1
+in a sptteqpt element.</para>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.</para>
+<subpara3><title>Subpara 3</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes. </para>
+<subpara4><title>Subpara4</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara5><title>Subpara5</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara6><title>Subpara6</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara7><title>Subpara7</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara8><title>Subpara8</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+<abbrsect><title>Standard Abbreviations</title>
+<acronymlist autobuild="1">
+</abbrsect>
+<applicdef rtermwidth="5.5in" ltermwidth="2.0in" verstatus="ver"><title>List
+of Applicability and Effectivity</title>
+<para>In this example the &ldquo;TERM&rdquo; heading is used to define
+the column used for the symbol. The &ldquo;DEFINITION&rdquo; heading
+is used to define the applicability/effectivity for the symbol used
+in the &ldquo;TERM&rdquo; column.</para>
+<appltitle>List of Applicability and Effectivity</appltitle>
+<applichd>
+<term>TERM</term><def>DEFINITION</def>
+</applichd>
+<applic id="a">
+<term>a</term><def>This is applicability a. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+<applic id="b">
+<term>b</term><def>This is applicability b. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+</applicdef>
+<para0><title>INSPECTION REQUIREMENTS</title>
+<para>The replacement equipment or accessory is not necessarily within
+the schedule lists items whose expected service life has scope of
+this manual as adequacy and completeness of been determined. The failure
+of these items would installation will have been determined at the
+time of compromise safety, mission accomplishment, or cause installation.
+</para>
+<subpara1><title>Requirements to be included</title><para>They are
+not intended to provide adjusted accordingly, if necessary, and the
+coverage for routine cleaning, washing, etc, nor are requirements
+and inspection intervals are the they designed to lead to the detection
+of isolated maximum and should never be exceeded.</para>
+</subpara1>
+<subpara1><title>Frequency requirements</title><para>Local discrepancies
+that are the result of carelessness, abuse, conditions (type of missions,
+special utilization, or poor maintenance practices. During geographical
+locations, etc.) may dictate more frequent accomplishment of the specified
+requirements directed inspection or replacement, or more thorough
+by this manual, maintenance personnel should observe inspections.</para>
+</subpara1>
+<subpara1><title>Subpara1 Title</title>
+<caution>
+<para>Added a caution paragraph text.</para>
+</caution>
+<para>Example of a Subpara1 in a para0 element.</para>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.</para>
+<subpara3><title>Subpara 3</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes. </para>
+<subpara4><title>Subpara4</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara5><title>Subpara5</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara6><title>Subpara6</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara7><title>Subpara7</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara8><title>Subpara8</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+<figure id="figfrt">
+<title>Testing of a Graphic</title>
+<graphic boardno="bio" reprowid="3in" scalefit="1"></figure>
+<ratddesc verstatus="ver"><title><acronym><def>Record Of Applicable
+Technical Directives Description</def><term>RATD</term></acronym></title>
+<para>This element contains a list of applicable technical directives.
+This is where an<acronym><def>Engineering Change Proposal</def><term>ECP</term>
+</acronym> or an <acronym><def>Engineering Change Notice</def><term>ECN</term>
+</acronym>would be listed. An ECP or ECN is generated by the engineering
+staff of a aircraft or system manufacture for the purpose of modifying
+an existing aircraft or system.</para>
+</ratddesc>
+<para0><title>DEFINITIONS of terms</title>
+<para>For clarification, the following definitions are given:<deflist
+rtermwidth="6.5in" ltermwidth="1.0in"><title>Deflist Title</title>
+<defhd>
+<term>TERM</term><def>DEFINITION</def>
+</defhd>
+<term>term 1</term><def>Definition for term. Definition for term. </def>
+<term>term 2</term><def>Definition for term. Definition for term.
+Definition for term. </def>
+<term>term 3</term><def>Definition for term. Definition for term.
+Definition for term. Definition for term. </def>
+</deflist></para>
+</para0>
+<abbrsect><title>List of Non Standard Abbreviations and Acronyms</title>
+<para>This publication provides a list of non standard abbreviations
+and acronyms used throughout this document.</para>
+<abbrtitle>List of Abbreviations and Acronyms</abbrtitle>
+<acronymlist>
+<term>ABC</term><def>Alphabet Soup</def>
+<term>AC</term><def>Alternating Current</def>
+<term>ADF</term><def>Automatic Direction Finder</def>
+<term>AFB</term><def>Air Force Base</def>
+<term>AL</term><def>ALABAMA</def>
+<term>AK</term><def>ALASKA</def>
+<term>AR</term><def>ARKANSAS</def>
+<term>AS</term><def>AMERICAN SAMOA</def>
+<term>AUX</term><def>Auxiliary</def>
+<term>AZ</term><def>ARIZONA </def>
+<term>BIT</term><def>Built In Test</def>
+<term>BITE</term><def>Built In Test Equipment</def>
+<term>CA</term><def>CALIFORNIA </def>
+<term>CCA</term><def>Circuit Card Assembly</def>
+<term>CO</term><def>COLORADO </def>
+<term>CT</term><def>CONNECTICUT</def>
+<term>DC</term><def>DISTRICT OF COLUMBIA</def>
+<term>DC</term><def>Direct Current</def>
+<term>DE</term><def>DELAWARE</def>
+<term>ESDS</term><def>Electrostatic Discharge Sensitive</def>
+<term>ESMS</term><def>Electronics Support Measures System</def>
+<term>ESS</term><def>Environmental Stress Screening</def>
+<term>FL</term><def>FLORIDA</def>
+<term>FM</term><def>FEDERATED STATES OF MICRONESIA</def>
+<term>FM</term><def>Frequency Modulation</def>
+<term>GA</term><def>GEORGIA</def>
+<term>GPSL</term><def>Global Publishing Solutions Ltd</def>
+<term>GU</term><def>GUAM </def>
+<term>HI</term><def>HAWAII</def>
+<term>HMIS</term><def>Hazardous Materials Information System</def>
+<term>IA</term><def>IOWA</def>
+<term>ID</term><def>IDAHO</def>
+<term>IL</term><def>ILLINOIS</def>
+<term>IN</term><def>INDIANA</def>
+<term>JIT</term><def>Just in Time</def>
+<term>KS</term><def>KANSAS</def>
+<term>KY</term><def>KENTUCKY</def>
+<term>LA</term><def>LOUISIANA</def>
+<term>LOL</term><def>Laugh out loud</def>
+<term>MA</term><def>MASSACHUSETTS</def>
+<term>MD</term><def>MARYLAND</def>
+<term>ME</term><def>MAINE</def>
+<term>MH</term><def>MARSHALL ISLANDS</def>
+<term>MI</term><def>MICHIGAN</def>
+<term>MLG</term><def>Main Landing Gear</def>
+<term>MN</term><def>MINNESOTA</def>
+<term>MO</term><def>MISSOURI</def>
+<term>MP</term><def>NORTHERN MARIANA ISLANDS</def>
+<term>MS</term><def>MISSISSIPPI</def>
+<term>MSDS</term><def>Material Safety Data Sheet</def>
+<term>MT</term><def>MONTANA</def>
+<term>NAV</term><def>Navigation</def>
+<term>NC</term><def>NORTH CAROLINA</def>
+<term>ND</term><def>NORTH DAKOTA</def>
+<term>NE</term><def>NEBRASKA</def>
+<term>NH</term><def>NEW HAMPSHIRE</def>
+<term>NJ</term><def>NEW JERSEY</def>
+<term>NM</term><def>NEW MEXICO</def>
+<term>NP</term><def>No Problem</def>
+<term>NV</term><def>NEVADA</def>
+<term>NY</term><def>NEW YORK</def>
+<term>OH</term><def>OHIO</def>
+<term>OK</term><def>OKLAHOMA</def>
+<term>OR</term><def>OREGON</def>
+<term>OSHA</term><def>Occupational Safety and Health Act</def>
+<term>PA</term><def>PENNSYLVANIA</def>
+<term>PDQ</term><def>Pretty Darn Quick</def>
+<term>PR</term><def>PUERTO RICO</def>
+<term>PSIG</term><def>Pounds per Square Inch, Gage</def>
+<term>PW</term><def>PALAU</def>
+<term>RF</term><def>Radio Frequency</def>
+<term>RI</term><def>RHODE ISLAND</def>
+<term>SC</term><def>SOUTH CAROLINA</def>
+<term>SD</term><def>SOUTH DAKOTA</def>
+<term>SRU</term><def>Shop Replaceable Unit</def>
+<term>STBY</term><def>Standby</def>
+<term>STE</term><def>Suite</def>
+<term>TN</term><def>TENNESSEE</def>
+<term>TX</term><def>TEXAS</def>
+<term>USA</term><def>United States of America</def>
+<term>USAF</term><def>United States Air Force</def>
+<term>UT</term><def>UTAH</def>
+<term>VA</term><def>VIRGINIA </def>
+<term>VI</term><def>VIRGIN ISLANDS</def>
+<term>VT</term><def>VERMONT</def>
+<term>WA</term><def>WASHINGTON</def>
+<term>WI</term><def>WISCONSIN</def>
+<term>WPAFB</term><def>Wright Patterson Air Force Base</def>
+<term>WV</term><def>WEST VIRGINIA</def>
+<term>WY</term><def>WYOMING</def>
+<term>XMTR</term><def>Transmitter</def>
+</acronymlist>
+</abbrsect>
+<tctolist><title>RECORD OF APPLICABLE TIME COMPLIANCE TECHNICAL ORDEr</title>
+<para>This publication provides a list of <acronym><def>Time Compliance
+Technical Order</def><term>TCTO</term></acronym> referenced within
+this manual. The list of applicable Time Compliance Technical Orders
+is a list of all TCTOs which affect the technical content (text or
+illustration) of this manual.</para>
+<step1>
+<para>Step one of the procedure.</para>
+</step1>
+<step1>
+<para>Step two of the procedures here</para>
+</step1>
+<step1>
+<para>Step three of the procedure.</para>
+</step1>
+<tctotbl>
+<tctorow><tctono>TCTO number 1</tctono><title>This is the title of
+a TCTO</title><date>DATE</date></tctorow>
+<tctorow><tctono>TCTO number 2</tctono><title>This is the title of
+a TCTO</title><date>DATE</date></tctorow>
+<tctorow><tctono>TCTO number 3</tctono><title>This is the title of
+a TCTO</title><date>DATE</date></tctorow>
+<tctorow><tctono>TCTO number 4</tctono><title>This is the title of
+a TCTO</title><date>DATE</date></tctorow>
+</tctotbl>
+</tctolist>
+<internatlstd verstatus="ver">International standardization agreement
+is entered in the internatlstd element. The contents of the agreement
+is done in the form of a NOTE per MIL-STD-38784.</internatlstd>
+<symsect rtermwidth="6.5in" ltermwidth="1.0in" verstatus="ver"><title>Symbol
+Definition</title>
+<para>The following list of symbols are used in this manual and adhere
+to requirements of DoD specification MIL-STD-38784.</para>
+<symtitle>List of Symbols</symtitle>
+<term><graphic boardno="ESD1" icon="yes"></term><def>This is the symbol
+used to indicate Electrostatic Discharge Sensitive parts. ESDS parts
+require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+<term><graphic boardno="ESD1" icon="yes"></term><def>This is the symbol
+used to indicate Electrostatic Discharge Sensitive parts. ESDS parts
+require to be handled in accordance with the ESDS device handling
+procedures in TO 00-25-234.  This explanation shall be preceded by
+a CAUTION heading.</def>
+<term>**HCI**</term><def>This is the symbol used for a Harness Critical
+Item. This shall include an explanation that the HCI symbol establishes
+special requirements limiting changes and substitutions, and that
+the specific parts listed must be used to ensure hardness is not degraded.
+ This statement shall be preceded by a CAUTION heading.</def>
+</symsect>
+<lrp verstatus="ver"><title>LIST OF RELATED PUBLICATIONS</title>
+<para><secindex pridnbr="3">Secondary entry F</secindex>This publication
+provides a <acronym><def>List of Related Publications</def><term>LRP</term>
+</acronym> referenced within this manual.</para>
+<lrptable>
+<lrpentry><tmidno>1X&ndash;XXXX-2-23-00-1</tmidno><title>Communication
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-24-00-1</tmidno><title>Electrical
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-26-00-1</tmidno><title>Fire Protection
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-29-00-1</tmidno><title>Hydraulic
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-30-00-1</tmidno><title>Ice and Rain
+Protection System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-33-00-1</tmidno><title>Lighting
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-34-00-1</tmidno><title>Navigation
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-51-00-1</tmidno><title>Standard
+Practices: Structures</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-61-00-1</tmidno><title>Propellers
+System</title></lrpentry>
+<lrpentry><tmidno>1X&ndash;XXXX-2-71-00-1</tmidno><title>Airframe
+Group</title></lrpentry>
+</lrptable>
+</lrp>
+<tmimprep id="tmimprep"><title>Title of a TMImPREP</title>
+<para>This is a para in a tmimprep. This is a para in a tmimprep.
+This is a para in a tmimprep. This is a para in a tmimprep. This is
+a para in a tmimprep. This is a para in a tmimprep. This is a para
+in a tmimprep. </para>
+<subpara1><title>Subpara1 Title</title><para>Example of a Subpara1
+in a tmimprep element.</para>
+<subpara2 verstatus="ver"><title>Subpara2</title><para>Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes.</para>
+<subpara3><title>Subpara 3</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes. </para>
+<subpara4><title>Subpara4</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara5><title>Subpara5</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara6><title>Subpara6</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara7><title>Subpara7</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara8><title>Subpara8</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</tmimprep>
+</foreword>
+<safesum><?Pub Dtl>
+<para0><title>This is the safety summary</title></para0>
+</safesum>
+</front><body numcols="1"><schedreq>
+<title>Scheduled Inspection and Maintenance Requirements</title>
+<preflt>
+<title>PREFLIGHT</title>
+<sectnote><title>Preflight/Preoperation</title>
+<para>Items that, due to environment, are subject to damage by outside
+forces, such as ground equipment, maintenance crews, elements of nature,
+etc. </para>
+<para>Items that, due to design characteristics, normally require
+service or verification of service prior to the first flight/operation
+of the day. </para>
+</sectnote>
+<actiontbl>
+<actionblk>
+<action id="srwc1" label="x" cardno="cardno att" wucsys="73"
+wucsub="XXX" area="area att" minute="minute att"><?Pub Dtl><task><para>XXXThis
+is the FIRST Scheduled Requirement included here. This is the <emphasis
+type="b">PRIMARY</emphasis> action element</para></task>
+<subaction1 cardno="cardno" wucsys="23" wucsub="zzz" area="AFT"
+minute="minute"><task><para>This is a secondary or <emphasis type="b">SUBACTION
+#1</emphasis> for PreFlight</para></task>
+<subaction2 cardno="cardno" wucsys="23" wucsub="zzz" area="area"
+minute="minute"><task><para>This is <emphasis type="b">SUBACTION 2</emphasis>.
+There can be one or more subaction 2s.</para></task></subaction2>
+<subaction2 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task. This
+is a para within a task. This is a para within a task. </para></task>
+</subaction2>
+</subaction1>
+</action>
+<action id="srwc2" label="y" cardno="cardno att" wucsys="73"
+wucsub="XXX" area="area att" minute="minute att"><?Pub Dtl><task><para>This
+is the Second <emphasis type="b">ACTION</emphasis> element, which
+can also contain multiple SUBACTION 1 and 2s.</para></task></action>
+<action label="z" cardno="cardno att" wucsys="73" wucsub="XXX"
+area="area att" minute="minute att"><?Pub Dtl><task><para>This is
+a para within a task within an action. This is a para within a task
+within an action. This is a para within a task within an action. </para>
+</task></action>
+</actionblk>
+</actiontbl></preflt>
+<endrunway>
+<title>end of runway</title>
+<sectnote><title>End of Runway</title>
+<para>Items that are subject to damage during ground operations or
+are not readily apparent until after operation begins. </para>
+<para>Items, such as panels and doors, that must be secure prior to
+flight/operation</para>
+<para>Items, such as down locks, safety pins, and protective covers,
+that must be removed prior to flight/operation. </para>
+</sectnote>
+<actiontbl>
+<actionblk>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an action. This is a para within a task within an action. This is
+a para within a task within an action. </para></task>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an action. </para></task></subaction1>
+<subaction1 cardno="cardno" wucsys="23" wucsub="zzz" area="Bow"
+minute="minute"><task><para>This is a secondary or <emphasis type="b">SUBACTION
+#1</emphasis> for PreFlight</para></task>
+<subaction2 cardno="cardno" wucsys="23" wucsub="zzz" area="area"
+minute="minute"><task><para>This is <emphasis type="b">SUBACTION 2</emphasis>.
+There can be one or more subaction 2s.</para></task></subaction2>
+<subaction2 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task. This
+is a para within a task. This is a para within a task. </para></task>
+</subaction2>
+</subaction1>
+</action>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an action. This is a para within a task within an action. This is
+a para within a task within an action. </para></task>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an action. </para></task></subaction1>
+</action>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an action. This is a para within a task within an action. This is
+a para within a task within an action. </para></task>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an subaction1. </para></task>
+<subaction2 cardno="cardno" wucsys="23" wucsub="zzz" area="area"
+minute="minute"><task><para>This is <emphasis type="b">SUBACTION 2</emphasis>.
+There can be one or more subaction 2s.</para></task></subaction2>
+</subaction1>
+</action>
+</actionblk>
+</actiontbl></endrunway>
+<thruflt>
+<title>thruflight</title>
+<sectnote><title>thruflight</title>
+<para>This inspection shall consist of the same type items as the
+basic postflight/postoperation (see below) but is not as searching
+in scope.</para>
+</sectnote>
+<actiontbl>
+<actionblk>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an action. This is a para within a task within an action. This is
+a para within a task within an action. This is a para within a task
+within an action. </para></task>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an action. </para></task></subaction1>
+<subaction1 cardno="cardno" wucsys="23" wucsub="zzz" area="starboard"
+minute="minute"><task><para>This is a secondary or <emphasis type="b">SUBACTION
+#1</emphasis> for PreFlight</para></task>
+<subaction2 cardno="cardno" wucsys="23" wucsub="zzz" area="area"
+minute="minute"><task><para>This is <emphasis type="b">SUBACTION 2</emphasis>.
+There can be one or more subaction 2s.</para></task></subaction2>
+<subaction2 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task>
+<warning>
+<para>This is a para within a warning. This is a para within a warning.
+This is a para within a warning. This is a para within a warning. </para>
+</warning>
+<caution>
+<para>This is a para within a caution. This is a para within a caution.
+This is a para within a caution. </para>
+</caution>
+<note>
+<para>This is a para within a note. This is a para within a note.
+This is a para within a note. This is a para within a note. This is
+a para within a note.  </para>
+</note>
+<para>This is a para within a task. This is a para within a task.
+This is a para within a task. </para></task></subaction2>
+</subaction1>
+</action>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><?Pub Dtl><task symbol="#"><para>This is a para
+within a task within an action. This is a para within a task within
+an action. </para></task></action>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><?Pub Dtl><task><para>This is a para within a
+task within an action. This is a para within a task within an action.
+This is a para within a task within an action. </para></task></action>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><?Pub Dtl><task symbol="#"><para>This is a para
+within a task within an action. This is a para within a task within
+an action. This is a para within a task within an action. </para></task>
+</action>
+</actionblk>
+</actiontbl></thruflt>
+<bpostflt><title>basic postflight</title>
+<sectnote><title>Basic Postflight/Postoperation</title>
+<para>Items that due to their operational characteristics are subject
+to loss of lubricant, fluids, air, etc., during flight/operation. </para>
+<para>Items that due to flight/operation are subject to damage such
+as impact, foreign objects, etc., during operation. </para>
+<para>Items of critical nature that are subject to developing defects
+which are not readily apparent to the users during operation. </para>
+<para>Items, such as down locks, safety pins, and protective covers,
+that must be installed prior to maintenance. </para>
+</sectnote>
+<actiontbl>
+<actionblk>
+<action cardno="cardno" wucsys="73" wucsub="XXX" area="area att"
+minute="78"><task><para>This is a para within a task within an action.
+This is a para within a task within an action. This is a para within
+a task within an action.</para></task>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an subaction1. </para></task></subaction1>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task symbol="#"><para>This is a para within a
+task within an subaction1. </para></task></subaction1>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task symbol="#"><para>This is a para within a
+task within an subaction1. </para></task></subaction1>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an subaction1. </para></task></subaction1>
+</action>
+</actionblk>
+</actiontbl></bpostflt>
+<hpostflt><?Pub Dtl>
+<title>hourly postflight</title>
+<sectnote><title>Hourly postflight/postoperation</title>
+<para>Items that due to their installation characteristics are subject
+to excessive chafing and insecure mounting. </para>
+<para>Items that are subject to extreme heat conditions. </para>
+<para>Items that due to their design characteristics are subject to
+developing leaks or unusual cracks. </para>
+<para>Items that require more frequent verification of serviceability
+or operation than the periodic/phased/isochronal inspection interval. </para>
+<para>Items that require more frequent verification of service than
+the periodic/phased/isochronal inspection interval. </para>
+</sectnote>
+<actiontbl>
+<actionblk>
+<action cardno="cardno" wucsys="73" wucsub="XXX" area="area att"
+minute="56"><task><para>This is a para within a task within an action.
+This is a para within a task within an action. This is a para within
+a task within an action.</para></task></action>
+<action cardno="cardno att" wucsys="73" wucsub="CBV" area="area att"
+minute="45"><task symbol="#"><para>This is a para within a task within
+an action. This is a para within a task within an action.</para></task>
+</action>
+<action cardno="cardno att" wucsys="73" wucsub="ASD" area="area att"
+minute="minute att"><task symbol="#"><para>This is a para within a
+task within an action. This is a para within a task within an action.
+This is a para within a task within an action.</para></task></action>
+<action cardno="cardno att" wucsys="73" wucsub="DDD" area="area att"
+minute="minute att"><task symbol="$"><para>This is a para within a
+task within an action. This is a para within a task within an action.</para>
+</task>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="DEF" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+a subaction1. This is a para within a task within a subaction1.</para>
+</task></subaction1>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="DFR" area="area att"
+minute="minute att"><task symbol="#"><para>This is a para within a
+task within a subaction1.This is a para within a task within a subaction1.
+</para></task></subaction1>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an subaction1. </para></task></subaction1>
+<subaction1 cardno="cardno" wucsys="23" wucsub="zzz" area="stern"
+minute="minute"><task><para>This is a secondary or <emphasis type="b">SUBACTION
+#1</emphasis> for PreFlight</para></task>
+<subaction2 cardno="cardno" wucsys="23" wucsub="zzz" area="area"
+minute="minute"><task><para>This is <emphasis type="b">SUBACTION 2</emphasis>.
+There can be one or more subaction 2s.</para></task></subaction2>
+<subaction2 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task. This
+is a para within a task. This is a para within a task. </para></task>
+</subaction2>
+</subaction1>
+</action>
+</actionblk>
+</actiontbl></hpostflt>
+<pe><?Pub Dtl>
+<title>periodic</title>
+<sectnote><title>Periodic, Phased or Isochronal.</title>
+<para>Items that are subject to developing defects after periods of
+operation in excess of the hourly postflight/postoperation inspection
+interval and may require disassembly to ascertain wear or deterioration
+that may cause failure of the unit. </para>
+<para>Items that due to their function within a system require a periodic
+examination or servicing less frequent than the hourly postflight/postoperation
+interval or in some instances, less frequent than the basic periodic/phased/isochronal
+inspection interval to detect impending failure or a servicing requirement. 
+</para>
+<para>Items that require periodic removal for bench check to determine
+functional reliability, extent of physical wear, and evidence of incipient
+failure. </para>
+<para>Items that require less frequent verification of service than
+the hourly postflight/postoperation interval. </para>
+</sectnote>
+<actiontbl>
+<actionblk>
+<action cardno="cardno" wucsys="13" wucsub="DDD" area="2D" minute="35">
+<task><para>This is a para within a task within an action.This is
+a para within a task within an action.</para></task></action>
+<action cardno="cardno" wucsys="13" wucsub="SSS" area="4B" minute="25">
+<task><para>This is a para within a task within an action.This is
+a para within a task within an action.This is a para within a task
+within an action.This is a para within a task within an action.This
+is a para within a task within an action.This is a para within a task
+within an action.This is a para within a task within an action.This
+is a para within a task within an action.</para></task></action>
+<action cardno="cardno" wucsys="13" wucsub="HHH" area="2F" minute="70">
+<task><para>This is a para within a task within an action. This is
+a para within a task within an action. This is a para within a task
+within an action. This is a para within a task within an action. This
+is a para within a task within an action.</para></task></action>
+<action cardno="cardno" wucsys="45" wucsub="LLL" area="2S" minute="23">
+<task><para> This is a para within a task within an action. This is
+a para within a task within an action. This is a para within a task
+within an action. This is a para within a task within an action. This
+is a para within a task within an action.</para></task></action>
+<action cardno="cardno" wucsys="45" wucsub="PPP" area="4F" minute="23">
+<task><para> This is a para within a task within an action. This is
+a para within a task within an action. This is a para within a task
+within an action. This is a para within a task within an action.</para>
+</task>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an subaction1. </para></task></subaction1>
+<subaction1 cardno="cardno" wucsys="23" wucsub="ZZZ" area="bow"
+minute="minute"><task><para>This is a secondary or <emphasis type="b">SUBACTION
+#1</emphasis> for PreFlight</para></task>
+<subaction2 cardno="cardno" wucsys="23" wucsub="zzz" area="area"
+minute="minute"><task><para>This is <emphasis type="b">SUBACTION 2</emphasis>.
+There can be one or more subaction 2s.</para></task></subaction2>
+<subaction2 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task. This
+is a para within a task. This is a para within a task. </para></task>
+</subaction2>
+</subaction1>
+</action>
+</actionblk>
+</actiontbl></pe>
+<section><?Pub Dtl>
+<title>section title</title>
+<actiontbl><actionblk>
+<action id="srwc3" cardno="cardno att" wucsys="73" wucsub="XXX"
+area="area att" minute="minute att"><task><para>This is the first
+use of a <emphasis type="b">SECTION</emphasis> element, which apparently
+contains the ACTION/TASK content Model and related subelement structures
+that are already populated in the previous <emphasis type="b">actionTABLE
+</emphasis>. </para></task></action>
+<action id="srwc4" cardno="cardno att" wucsys="73" wucsub="XXX"
+area="area att" minute="minute att"><task><para>This is the first
+use of a <emphasis type="b">SECTION</emphasis> element, which apparently
+contains the ACTION/TASK content Model and related subelement structures
+that are already populated in the previous <emphasis type="b">actionTABLE. 
+</emphasis></para></task>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an action. </para></task></subaction1>
+<subaction1 cardno="cardno" wucsys="23" wucsub="zzz" area="stern"
+minute="minute"><task><para>This is a secondary or <emphasis type="b">SUBACTION
+#1</emphasis> for PreFlight</para></task>
+<subaction2 cardno="cardno" wucsys="23" wucsub="zzz" area="area"
+minute="minute"><task><para>This is <emphasis type="b">SUBACTION 2</emphasis>.
+There can be one or more subaction 2s.</para></task></subaction2>
+<subaction2 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task>
+<warning>
+<para>This is a para within a warning. This is a para within a warning.
+This is a para within a warning. This is a para within a warning. </para>
+</warning>
+<caution>
+<para>This is a para within a caution. This is a para within a caution.
+This is a para within a caution. </para>
+</caution>
+<note>
+<para>This is a para within a note.This is a para within a note. This
+is a para within a note. This is a para within a note. This is a para
+within a note.  </para>
+</note>
+<para>This is a para within a task. This is a para within a task.
+This is a para within a task. </para></task></subaction2>
+</subaction1>
+</action>
+</actionblk></actiontbl></section>
+</schedreq><specreq><?Pub Dtl>
+<title>Special Inspections and Maintenance Requirements (includes
+Depot Level Requirements, Acceptance and Functional Check Flight)
+Special requirements</title>
+<specoccur><title>Special occurrences</title>
+<sectnote><para>Items that due to their physical characteristics are
+subject to deterioration after long periods of service. </para>
+<para>Items that due to their structural characteristics are subject
+to fatigue after long periods of service.</para>
+<para>Items that due to their function within a system are subject
+to damage from specific events, such as hard landings, violent maneuvers,
+hot starts, false starts, etc. </para>
+</sectnote>
+<actiontbl>
+<actionblk>
+<action cardno="1A" wucsys="27" wucsub="SSS" minute="45"><task
+power="on"><para>This is a para within a task within an action. This
+is a para within a task within an action. This is a para within a
+task within an action. This is a para within a task within an action. </para>
+</task>
+<subaction1 wucsys="73" wucsub="XXX" minute="minute att"><task><para>This
+is a para within a task within a subaction. </para></task></subaction1>
+</action>
+<action cardno="2A" wucsys="26" wucsub="TTT" minute="25"><task
+power="on"><para>This is a para within a task within an action. This
+is a para within a task within an action. This is a para within a
+task within an action. This is a para within a task within an action.
+This is a para within a task within an action. </para></task></action>
+<action cardno="3C" wucsys="27" wucsub="BBB" minute="70"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. This is a para within a task within an action.
+This is a para within a task within an action. </para></task></action>
+<action cardno="4D" wucsys="46" wucsub="GGG" minute="67"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. This is a para within a task within an action.
+This is a para within a task within an action. </para></task>
+<subaction1 wucsys="73" wucsub="XXX" area="area att" minute="minute att">
+<task><para>This is a para within a task within a subaction1. This
+is a para within a task within a subaction1. </para></task></subaction1>
+<subaction1 wucsys="73" wucsub="XXX" area="area att" minute="minute att">
+<task><para>This is a para within a task within a subaction1. </para>
+</task></subaction1>
+<subaction1 wucsys="73" wucsub="XXX" area="area att" minute="minute att">
+<task><para>This is a para within a task within a subaction1. This
+is a para within a task within a subaction1. This is a para within
+a task within a subaction1. </para></task>
+<subaction2 wucsys="73" wucsub="XXX" area="area att" minute="minute att">
+<task><para>This is a para within a task within a subaction2. This
+is a para within a task within a subaction2. This is a para within
+a task within a subaction2 </para></task></subaction2>
+<subaction2 wucsys="73" wucsub="XXX" area="area att" minute="minute att">
+<task><para>This is a para within a task within a subaction2. </para>
+</task></subaction2>
+</subaction1>
+</action>
+</actionblk>
+</actiontbl></specoccur>
+<depot><?Pub Dtl><title>Depot</title>
+<sectnote><para>The depot section shall include inspections and maintenance
+to be accomplished on a scheduled calendar time cycle basis. Inspection
+requirements shall insure that all accessible areas and components
+not afforded coverage at other inspection intervals are given thorough
+and adequate attention. Work cards to detail these requirements shall
+be prepared. This chapter and section also includes Programmed Depot
+Maintenance (PDM). </para>
+</sectnote>
+<actiontbl>
+<actionblk>
+<action wucsys="11" wucsub="KKK" minute="45"><task><para>This is a
+para within a task within an action. This is a para within a task
+within an action. </para></task></action>
+<action wucsys="11" wucsub="DDD" minute="79"><task><para>This is a
+para within a task within an action. This is a para within a task
+within an action. </para></task></action>
+<action wucsys="27" wucsub="NNN" minute="70"><task><para>This is a
+para within a task within an action. This is a para within a task
+within an action. </para></task></action>
+<action wucsys="27" wucsub="DDD" minute="15"><task><para>This is a
+para within a task within an action. This is a para within a task
+within an action. </para></task></action>
+<action wucsys="46" wucsub="GGG" minute="25"><task><para>This is a
+para within a task within an action. This is a para within a task
+within an action. </para></task>
+<subaction1 wucsys="73" wucsub="XXX" minute="minute att"><task><para>This
+is a para within a task within a subaction1. This is a para within
+a task within a subaction1. </para></task>
+<subaction2 wucsys="73" wucsub="XXX" minute="minute att" fsc="fsc att">
+<task><para>This is a para within a task within a subaction2. This
+is a para within a task within a subaction2. </para></task></subaction2>
+<subaction2 wucsys="73" wucsub="XXX" area="area att" minute="minute att">
+<task><para>This is a para within a task within a subaction2. This
+is a para within a task within a subaction2. </para></task></subaction2>
+</subaction1>
+<subaction1 wucsys="73" wucsub="XXX" minute="minute att"><task><para>This
+is a para within a task within a subaction1. This is a para within
+a task within a subaction1. </para></task></subaction1>
+</action>
+</actionblk>
+</actiontbl></depot>
+<acceptfcfreq><?Pub Dtl><title>Acceptance and Functional Check Flight
+(FCF) inspection requirements </title>
+<sectnote><para>After a periodic or specific numbered phase, i.e.,
+sixth and twelfth inspection has been completed. If a complete functional
+check flight inspection has been accomplished within 150 hours of
+a sixth or twelfth phased inspection, no functional check flight inspection
+will be required. </para>
+<para>When an aircraft is removed from extended storage. <seqlist><item>Item
+1 in seqlist.</item><item>Item 2 in seqlist.</item><item>Item 3 in
+seqlist.</item></seqlist></para>
+</sectnote>
+<actiontbl>
+<actionblk>
+<action cardno="5F" wucsys="11" wucsub="UUU" minute="45"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. </para></task>
+<subaction1 wucsys="73" wucsub="XXX" minute="minute att"><task><para>This
+is a para within a task within a subaction1. This is a para within
+a task within a subaction1. </para></task></subaction1>
+<subaction1 wucsys="73" wucsub="XXX" minute="minute att" fsc="fsc att">
+<task><para>This is a para within a task within a subaction1. This
+is a para within a task within a subaction1. </para></task></subaction1>
+</action>
+<action cardno="9N" wucsys="11" wucsub="LLL" minute="60"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. </para></task></action>
+<action wucsys="73" wucsub="XXX" minute="minute att" pn="pn att"><task>
+<para>This is a para within a task within an action. </para></task>
+</action>
+<action wucsys="73" wucsub="XXX" minute="minute att"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. This is a para within a task within an action. </para>
+</task></action>
+<action wucsys="" minute="35"><task><para>This is a para within a
+task within an action. This is a para within a task within an action. </para>
+</task>
+<subaction1 wucsys="73" wucsub="XXX" minute="minute att"><task symbol="">
+<para>This is a para within a task within a subaction1. This is a
+para within a task within a subaction1. This is a para within a task
+within a subaction1. This is a para within a task within a subaction1.</para>
+</task></subaction1>
+<subaction1 wucsys="73" wucsub="XXX" minute="minute att"><task symbol="">
+<para>This is a para within a task within a subaction1. This is a
+para within a task within a subaction1.</para></task>
+<subaction2 wucsys="73" wucsub="XXX" minute="minute att"><task
+symbol="#"><para>This is a para within a task within a subaction2.
+This is a para within a task within a subaction2.</para></task>
+</subaction2>
+<subaction2 wucsys="73" wucsub="XXX" minute="minute att"><task><para>This
+is a para within a task within a subaction2. This is a para within
+a task within a subaction2.</para></task></subaction2>
+</subaction1>
+</action>
+</actionblk>
+</actiontbl></acceptfcfreq>
+<histdoc><?Pub Dtl><title>historical title</title>
+<actiontbl>
+<actionblk>
+<action wucsys="11" wucsub="UUU" form="Form Att"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. </para></task>
+<subaction1 wucsys="73" wucsub="XXX" form="form att"><task><para>This
+is a para within a task within a subaction1. This is a para within
+a task within a subaction1. </para></task></subaction1>
+<subaction1 wucsys="73" wucsub="XXX" form="form att"><task><para>This
+is a para within a task within a subaction1. This is a para within
+a task within a subaction1. </para></task></subaction1>
+</action>
+<action cardno="9N" wucsys="11" wucsub="LLL" form="Form Att"><task>
+<para>This is a para within a task within an action. This is a para
+within a task within an action. </para></task></action>
+<action wucsys="73" wucsub="XXX" form="form att"><task><para>This
+is a para within a task within an action. </para></task></action>
+<action wucsys="73" wucsub="XXX" form="form att"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. This is a para within a task within an action. </para>
+</task></action>
+<action wucsys="34" wucsub="ABC" form="Form Att"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. </para></task>
+<subaction1 wucsys="73" wucsub="XXX" form="form att"><task symbol="">
+<para>This is a para within a task within a subaction1. This is a
+para within a task within a subaction.This is a para within a task
+within a subaction1. This is a para within a task within a subaction1.</para>
+</task></subaction1>
+<subaction1 wucsys="73" wucsub="XXX" form="form att"><task><para>This
+is a para within a task within a subaction1. This is a para within
+a task within a subaction1.</para></task>
+<subaction2 wucsys="73" wucsub="XXX" form="form att"><task><para>This
+is a para within a task within a subaction2. This is a para within
+a task within a subaction2.</para></task></subaction2>
+<subaction2 wucsys="73" wucsub="XXX" form="form att"><task><para>This
+is a para within a task within a subaction2. This is a para within
+a task within a subaction2.</para></task></subaction2>
+</subaction1>
+</action>
+</actionblk>
+</actiontbl></histdoc>
+<part><?Pub Dtl><title>part title</title>
+<actiontbl>
+<actionblk>
+<action cardno="5F" wucsys="11" wucsub="UUU" area="port" minute="45">
+<task><para>This is a para within a task within an action. This is
+a para within a task within an action. </para></task>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+a subaction1. This is a para within a task within a subaction1. </para>
+</task></subaction1>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+a subaction1. This is a para within a task within a subaction1. </para>
+</task></subaction1>
+</action>
+<action cardno="9N" wucsys="11" wucsub="LLL" area="stern" minute="60">
+<task><para>This is a para within a task within an action. This is
+a para within a task within an action. </para></task></action>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an action. </para></task></action>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an action. This is a para within a task within an action. This is
+a para within a task within an action. </para></task></action>
+<action wucsys="" minute="35"><task><para>This is a para within a
+task within an action. This is a para within a task within an action. </para>
+</task>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task symbol=""><para>This is a para within a
+task within a subaction1. This is a para within a task within a subaction1.
+This is a para within a task within a subaction1. This is a para within
+a task within a subaction1.</para></task></subaction1>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task symbol=""><para>This is a para within a
+task within a subaction1. This is a para within a task within a subaction1.
+</para></task>
+<subaction2 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task symbol="#"><para>This is a para within a
+task within a subaction2. This is a para within a task within a subaction2.
+</para></task></subaction2>
+<subaction2 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+a subaction2. This is a para within a task within a subaction2.</para>
+</task></subaction2>
+</subaction1>
+</action>
+</actionblk>
+</actiontbl></part>
+</specreq><replacesched>
+<title>replacement schedule</title>
+<replace><title>replace title</title>
+<sectnote><para>Items whose failure due to location or function within
+a system could compromise flight safety beyond reasonable limits and
+acceptable risk. <seqlist><item>Item in a seqlist..</item><item>Item
+in a seqlist.</item></seqlist></para>
+</sectnote>
+<actiontbl>
+<actionblk>
+<action wucsys="34" wucsub="DEF" minute="14" qty="qty"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. </para></task>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX"
+minute="minute att" qty="2"><task><para>This is a para within a task
+within a subaction1. This is a para within a task within a subaction1.
+This is a para within a task within a subaction1. This is a para within
+a task within a subaction1.</para></task></subaction1>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX"
+minute="minute att" qty="qty"><task><para>This is a para within a
+task within a subaction1. This is a para within a task within a subaction1
+.This is a para within a task within a subaction1. This is a para
+within a task within a subaction1.</para></task></subaction1>
+</action>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" minute="minute att"
+qty="1"><task><para>This is a para within a task within an action.
+This is a para within a task within an action. </para></task></action>
+<action cardno="Cardno Att" wucsys="14" wucsub="KKK" minute="10"
+qty="qty att"><task power="on"><para>This is a para within a task
+within an action. This is a para within a task within an action. </para>
+</task>
+<subaction1 cardno="cardno" wucsys="23" wucsub="zzz" minute="minute"
+qty="3"><task><para>This is a secondary or <emphasis type="b">SUBACTION
+#1</emphasis> for PreFlight</para></task>
+<subaction2 cardno="cardno" wucsys="23" wucsub="zzz" minute="minute"
+qty="qty att"><task><para>This is <emphasis type="b">SUBACTION 2</emphasis>.
+There can be one or more subaction 2s.</para></task></subaction2>
+<subaction2 cardno="cardno att" wucsys="73" wucsub="XXX"
+minute="minute att" qty="1"><task><para>This is a para within a task.
+This is a para within a task. This is a para within a task. </para>
+</task></subaction2>
+</subaction1>
+</action>
+</actionblk>
+</actiontbl></replace>
+<section>
+<title>section title</title>
+<actiontbl><actionblk>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is the second use of a <emphasis
+type="b">SECTION</emphasis> element, which apparently contains the
+ACTION/TASK content Model and related subelement structures that are
+already populated in the previous <emphasis type="b">actionTABLE</emphasis>. 
+</para></task></action>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is the second use of a <emphasis
+type="b">SECTION</emphasis> element, which apparently contains the
+ACTION/TASK content Model and related subelement structures that are
+already populated in the previous <emphasis type="b">actionTABLE. </emphasis></para>
+</task>
+<subaction1 cardno="cardno" wucsys="23" wucsub="zzz" area="area att"
+minute="minute"><task><para>This is a secondary or <emphasis type="b">SUBACTION
+#1</emphasis> for PreFlight</para></task>
+<subaction2 cardno="cardno" wucsys="23" wucsub="zzz" area="area"
+minute="minute"><task><para>This is <emphasis type="b">SUBACTION 2</emphasis>.
+There can be one or more subaction 2s.</para></task></subaction2>
+<subaction2 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task. This
+is a para within a task. This is a para within a task. </para></task>
+</subaction2>
+</subaction1>
+</action>
+</actionblk></actiontbl></section>
+</replacesched><restrictions><?Pub Dtl>
+<title>repair restrictions</title>
+<ftnote id="fn1">Note:Footnote number 1.</ftnote>
+<baselvl><?Pub Dtl><title>Base Level Restrictions </title>
+<sectnote><para>This section shall contain a listing of items by work
+unit code, noun, FSC and part number for which base level (organizational
+and intermediate) repair restrictions are established. A description
+of repair restrictions shall be provided. Items listed shall be limited
+to recoverable type items. Items which are Source, Maintenance and
+Recoverability (SMR) coded &ldquo;depot repair only&rdquo; shall not
+be listed.FLIGHT DECK WINDOWS FOR CRACKS, DELAMINATION, SEALANT FOR
+DETERIORATION.WINDSHIELD HEAT CONNECTIONS FOR SECURITY, WINDSHIELD
+HEAT WIRING FOR CUTS,CRACKS, DETERIORATION, AND BARE WIRES</para>
+</sectnote>
+<actiontbl>
+<actionblk>
+<action wucsys="14" wucsub="MMM" fsc="5960" pn="partno"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. </para></task></action>
+<action wucsys="14" wucsub="VVV" fsc="5841" pn="partno"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. </para></task></action>
+<action wucsys="45" wucsub="DDD" fsc="5960" pn="partno"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. This is a para within a task within an action.
+This is a para within a task within an action. </para></task></action>
+<action wucsys="27" wucsub="WWW" fsc="5841" pn="partno"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. This is a para within a task within an action.
+This is a para within a task within an action. </para></task>
+<subaction1 wucsys="73" wucsub="XXX" fsc="5841" pn="pn att"><task><para>This
+is a para within a task within a subaction1. This is a para within
+a task within a subaction1.</para></task></subaction1>
+<subaction1 wucsys="73" wucsub="XXX" fsc="fsc att" pn="pn att"><task>
+<para>This is a para within a task within a subaction1. This is a
+para within a task within a subaction1.</para></task></subaction1>
+<subaction1 wucsys="73" wucsub="XXX" fsc="fsc att" pn="pn att"><task>
+<para>This is a para within a task within a subaction1. This is a
+para within a task within a subaction1. This is a para within a task
+within a subaction1. This is a para within a task within a subaction1.</para>
+</task></subaction1>
+</action>
+<action wucsys="27" wucsub="TTT" fsc="5960" pn="partno"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. This is a para within a task within an action.
+This is a para within a task within an action. </para></task>
+<subaction1 wucsys="73" wucsub="XXX" fsc="fsc att" pn="pn att"><task>
+<para>This is a para within a task within a subaction1. This is a
+para within a task within a subaction1. This is a para within a task
+within a subaction1. This is a para within a task within a subaction1.</para>
+</task></subaction1>
+<subaction1 wucsys="73" wucsub="XXX" fsc="fsc att" pn="pn att"><task>
+<para>This is a para within a task within a subaction1. This is a
+para within a task within a subaction1. This is a para within a task
+within a subaction1. This is a para within a task within a subaction1.</para>
+</task></subaction1>
+<subaction1 wucsys="73" wucsub="XXX" fsc="fsc att" pn="pn att"><task>
+<para>This is a para within a task within a subaction1. This is a
+para within a task within a subaction1. This is a para within a task
+within a subaction1. This is a para within a task within a subaction1.</para>
+</task></subaction1>
+</action>
+<action wucsys="27" wucsub="SSS" fsc="5841" pn="partno"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. This is a para within a task within an action.
+This is a para within a task within an action. </para></task>
+<subaction1 wucsys="73" wucsub="XXX" fsc="fsc att" pn="pn att"><task>
+<para>This is a para within a task within a subaction1. This is a
+para within a task within a subaction1. This is a para within a task
+within a subaction1. This is a para within a task within a subaction1.</para>
+</task></subaction1>
+<subaction1 wucsys="73" wucsub="XXX" fsc="5960" pn="pn att"><task><para>This
+is a para within a task within a subaction1. This is a para within
+a task within a subaction1. This is a para within a task within a
+subaction1. This is a para within a task within a subaction1.</para>
+</task></subaction1>
+</action>
+</actionblk>
+</actiontbl></baselvl>
+<suprepair><?Pub Dtl><title>Supplemental Repair Restrictions for contingency
+operations.</title>
+<sectnote><para>This section supplements Chapter 4, Section I, by
+listing additional items of equipment by work unit code, noun, FSC
+and part number for which repair restrictions are established for
+contingency operations. </para>
+</sectnote>
+<actiontbl>
+<actionblk>
+<action wucsys="49" wucsub="BBB" fsc="5960" pn="partno"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. This is a para within a task within an action.
+This is a para within a task within an action. </para></task></action>
+<action wucsys="49" wucsub="BBB" fsc="5960" pn="partno"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. This is a para within a task within an action.
+This is a para within a task within an action. </para></task></action>
+<action wucsys="49" wucsub="FFF" fsc="5841" pn="partno"><task><para>This
+is a para within a task within an action. </para></task></action>
+<action wucsys="49" wucsub="FFF" fsc="5841" pn="partno"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. </para></task></action>
+<action wucsys="49" wucsub="XXX" fsc="5841" pn="partno"><task><para>This
+is a para within a task within an action. This is a para within a
+task within an action. </para></task>
+<subaction1 wucsys="73" wucsub="XXX" fsc="fsc att" pn="pn att"><task
+symbol=""><para>This is a para within a task within a subaction1.
+This is a para within a task within a subaction1. This is a para within
+a task within a subaction1. This is a para within a task within a
+subaction1.</para></task></subaction1>
+<subaction1 wucsys="73" wucsub="XXX" fsc="fsc att" pn="pn att"><task
+symbol=""><para>This is a para within a task within a subaction1.
+This is a para within a task within a subaction1.</para></task>
+<subaction2 wucsys="73" wucsub="XXX" fsc="fsc att" pn="5960"><task
+symbol="#"><para>This is a para within a task within a subaction2.
+This is a para within a task within a subaction2.</para></task>
+</subaction2>
+<subaction2 wucsys="73" wucsub="XXX" fsc="fsc att" pn="pn att"><task>
+<para>This is a para within a task within a subaction2. This is a
+para within a task within a subaction2.</para></task></subaction2>
+</subaction1>
+</action>
+</actionblk>
+</actiontbl></suprepair>
+<part><title>part title</title>
+<actiontbl>
+<actionblk>
+<action cardno="5F" wucsys="11" wucsub="UUU" area="area att" minute="45">
+<task><para>This is a para within a task within an action. This is
+a para within a task within an action. </para></task>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+a subaction1. This is a para within a task within a subaction1. </para>
+</task></subaction1>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+a subaction1. This is a para within a task within a subaction1. </para>
+</task></subaction1>
+</action>
+<action cardno="9N" wucsys="11" wucsub="LLL" area="area att" minute="60">
+<task><para>This is a para within a task within an action. This is
+a para within a task within an action. </para></task></action>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+an action. </para></task></action>
+<action cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="45"><task><para>This is a para within a task within an action.
+This is a para within a task within an action. This is a para within
+a task within an action. </para></task></action>
+<action cardno="3D" wucsys="34" wucsub="SDF" area="area att" minute="35">
+<task><para>This is a para within a task within an action. This is
+a para within a task within an action. </para></task>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task symbol=""><para>This is a para within a
+task within a subaction1. This is a para within a task within a subaction1.
+This is a para within a task within a subaction1. This is a para within
+a task within a subaction1.</para></task></subaction1>
+<subaction1 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task symbol=""><para>This is a para within a
+task within a subaction1. This is a para within a task within a subaction1.
+</para></task>
+<subaction2 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task symbol="#"><para>This is a para within a
+task within a subaction2. This is a para within a task within a subaction2.
+</para></task></subaction2>
+<subaction2 cardno="cardno att" wucsys="73" wucsub="XXX" area="area att"
+minute="minute att"><task><para>This is a para within a task within
+a subaction2. This is a para within a task within a subaction2.</para>
+</task></subaction2>
+</subaction1>
+</action>
+</actionblk>
+</actiontbl></part>
+</restrictions></body></docim></doc>

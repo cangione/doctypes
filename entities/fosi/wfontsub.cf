@@ -1,0 +1,69 @@
+#
+# wfontsub.cf
+#
+# Defines substitutions for font family names used by Epic Editor for screen
+# display in Windows -- changes must be coordinated with changes to tfontsub.cf
+# controlling use of print fonts.  
+#
+# Parallel files xfontsub.cf and tfontsub.cf control font substituion in the Unix 
+# version of Epic Editor and in print composition.
+#
+# If a family name appears in column 1, and if that font family is unavailable,
+# then the family name in column 2 is tried.
+#
+# This feature is most useful for customers having mixed Windows/Unix systems
+# where font names are different, and where customers do not want to have to
+# set up two sets of stylesheets for Windows and Unix.
+#
+# For example, if a document requests the font family "Courier" then the
+# TrueType font "Courier New" is used instead if "Courier" is not available.
+#
+# This substitution may iterate up to 5 times.  I.e., if the name in
+# column 2 is not found, then it is looked up in column 1.  If all substitutions
+# fail or there is none, the original family name is used. 
+#
+# While family name comparisons are done without regard to case, case is important
+# in some locales and version of Windows.  Care should be taken to use the same 
+# case as is used in "Settings -> Control Panel -> Fonts" for the desired font family.
+#
+# While customers can make changes to this file directly, it is preferable to 
+# make a copy of this file and use environment variable APTFONTSUB to tell 
+# Epic to use it instead.
+#
+# Note also that the $epicdir/lib/locale/* directories can contain locale-specific
+# versions of this file.  For example, in the Japanese locale, the file
+# $epicdir/lib/locale/jpn/wfontsub.cf is used instead of $epicdir/lib/wfontsub.cf
+# if it exists, and if APTFONTSUB is not set.
+#
+# Serif, Sanserif, Monoser, and Monosans are generic font style names for which a
+# substitute "real" font name is required.  Many users choose to set up
+# stylesheets with these, or other, generic names, so that font name changes 
+# can be easily made later here, and in xfontsub.cf and tfontsub.cf, without
+# the need to individually change many stylesheets.
+#
+# Epic comes installed with a complete setup for a serif font (Times New Roman),
+# a sans serif font (Arial), a monospace serif font (Courier New), and a
+# monospace sans serif font (Lucida Console).  On Unix, the corresponding font
+# family names are Times, Helvetica, Courier, and Lucidatypewriter.
+#
+Serif -> Times New Roman
+Sanserif -> Arial
+Monoser -> Courier New
+Monosans -> Lucida Console
+
+# Cross convert from common Unix names to Windows names.
+Times -> Times New Roman
+Helvetica -> Arial Unicode MS
+Courier -> Courier New
+Lucidatypewriter -> Lucida Console
+Palatino -> Palatino Linotype
+Palatino Linotype -> Times New Roman
+New Century Schoolbook -> Century Schoolbook
+ITC Avant Garde Gothic -> ITC Avant Garde
+ITC Avant Garde -> Avant Garde
+Avant Garde -> Avantgarde
+Avantgarde -> Times New Roman
+
+# For the special Arbortext/Epic tag font
+Tag -> Arbortext
+

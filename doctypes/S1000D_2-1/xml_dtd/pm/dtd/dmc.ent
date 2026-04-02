@@ -1,0 +1,127 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                 XML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTDMC PUBLIC                                           *
+    *  "-//S1000D//ELEMENTS Data Module Code Breakdown 20030531//EN//XML"*
+    *  "dmc.ent">                                                        *
+    * %EXTDMC;                                                           *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %ALLDMC; (All Data Module Codes) containing:-        *
+    **********************************************************************
+    * The entity %ALLDMC; is used to allow reqdm & refdm to access Data  *
+    * Modules Codes of different types (age or avee).                    *
+    **********************************************************************
+    *   age      - Mandatory Single     contains modelic, supeqvc,       *
+    *                                   ecscs, eidc, cidc,               *
+    *                                   discode , discodev, incode,      *
+    *                                   incodev, itemloc.                *
+    *  or                                                                *
+    *   avee     - Mandatory Single     contains modelic, sdc, chapnum,  *
+    *                                   section, subsect, discode,       *
+    *                                   discodev, incode, incodev,       *
+    *                                   itemloc.                         *
+    ********************************************************************** -->
+<!ENTITY % ALLDMC "(age | avee)" >
+
+
+<!--**********************************************************************
+    * Define Element dmc (Data Module Code) containing:-                 *
+    *  Definition stored in entity %ALLDMC;                              *
+    ********************************************************************** -->
+<!ELEMENT dmc   (%ALLDMC;) >
+
+
+<!--**********************************************************************
+    * Define Element age (Aircraft Ground Equipment) containing:-        *
+    **********************************************************************
+    * This defines the structure of the data module code for Aircraft    *
+    * Ground Equipment Data Modules.                                     *
+    **********************************************************************
+    *   modelic  - Mandatory Single     contains Parsed Character Data.  *
+    *   supeqvc  - Mandatory Single     contains Parsed Character Data.  *
+    *   ecscs    - Mandatory Single     contains Parsed Character Data.  *
+    *   eidc     - Mandatory Single     contains Parsed Character Data.  *
+    *   cidc     - Mandatory Single     contains Parsed Character Data.  *
+    *   discode  - Mandatory Single     contains Parsed Character Data.  *
+    *   discodev - Mandatory Single     contains Parsed Character Data.  *
+    *   incode   - Mandatory Single     contains Parsed Character Data.  *
+    *   incodev  - Mandatory Single     contains Parsed Character Data.  *
+    *   itemloc  - Mandatory Single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+<!ELEMENT age  (modelic, supeqvc, ecscs, eidc, cidc, discode, discodev, 
+                incode, incodev, itemloc) >
+
+
+<!--**********************************************************************
+    * Define Element avee (Air Vehicle, Engines, Equipment) containing:- *
+    **********************************************************************
+    * This defines the structure of the data module code for Air Vehicle,*
+    * Engines, Equipment Data Modules.                                   *
+    **********************************************************************
+    *   modelic  - Mandatory Single     contains Parsed Character Data.  *
+    *   sdc      - Mandatory Single     contains Parsed Character Data.  *
+    *   chapnum  - Mandatory Single     contains Parsed Character Data.  *
+    *   section  - Mandatory Single     contains Parsed Character Data.  *
+    *   subsect  - Mandatory Single     contains Parsed Character Data.  *
+    *   subject  - Mandatory Single     contains Parsed Character Data.  *
+    *   discode  - Mandatory Single     contains Parsed Character Data.  *
+    *   discodev - Mandatory Single     contains Parsed Character Data.  *
+    *   incode   - Mandatory Single     contains Parsed Character Data.  *
+    *   incodev  - Mandatory Single     contains Parsed Character Data.  *
+    *   itemloc  - Mandatory Single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+<!ELEMENT avee  (modelic, sdc, chapnum, section, subsect, subject, 
+                 discode, discodev, incode, incodev, itemloc) >
+
+
+<!--**********************************************************************
+    * Define the following Elements:-                                    *
+    *  modelic  - Model Identification Code.                             *
+    *  supeqvc  - Support Equipment Variant Code.                        *
+    *  ecscs    - Equipment Category & Sub-Category Code.                *
+    *  eidc     - Equipment Identification Code.                         *
+    *  cidc     - Component Identification Code.                         *
+    *  discode  - Disassembly Code.                                      *
+    *  discodev - Disassembly Code Variant.                              *
+    *  incode   - Information Code.                                      *
+    *  incodev  - Information Code Variant.                              *
+    *  itemloc  - Item Location Code.                                    *
+    *  subject  - Subject Number.                                        *
+    *  sdc      - System Difference Code.                                *
+    *  chapnum  - Chapter Number.                                        *
+    *  section  - Section Number.                                        *
+    *  subsect  - Sub-Section Number.                                    *
+    *           All the above contain Parsed Character Data.             *
+    ********************************************************************** -->
+<!ELEMENT modelic   (#PCDATA)>
+<!ELEMENT supeqvc   (#PCDATA)>
+<!ELEMENT ecscs     (#PCDATA)>
+<!ELEMENT eidc      (#PCDATA)>
+<!ELEMENT cidc      (#PCDATA)>
+<!ELEMENT discode   (#PCDATA)>
+<!ELEMENT discodev  (#PCDATA)>
+<!ELEMENT incode    (#PCDATA)>
+<!ELEMENT incodev   (#PCDATA)>
+<!ELEMENT itemloc   (#PCDATA)>
+<!ELEMENT subject   (#PCDATA)>
+<!ELEMENT sdc       (#PCDATA)>
+<!ELEMENT chapnum   (#PCDATA)>
+<!ELEMENT section   (#PCDATA)>
+<!ELEMENT subsect   (#PCDATA)>
+
+
+
+<!--** End of XML EXTDMC Entity **-->

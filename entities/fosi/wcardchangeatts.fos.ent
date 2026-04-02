@@ -1,0 +1,37 @@
+<?Pub UDT _bookmark _target>
+<?Pub CX outspec(rsrcdesc()secdesc()pagedesc()styldesc(docdesc()e-i-c()e-i-c(charlist()>
+<att><?Pub Caret1>
+<specval attname="is_later_change" attloc="system-func" attval="#EQ#\1\">
+<charsubset>
+<chgmark barthick="1mm" join="0" type="content"></chgmark>
+</charsubset>
+</att><att>
+<specval attname="_changenum" attval="#GT#\0\">
+<specval attname="print-only" attloc="system-var" attval="#NONE">
+<charsubset>
+<savetext textid="fchangenum.txt" conrule="\Change \,#CONTENT(_changenum)">
+<savetext textid="prevfchangenum.txt" conrule="fchangenum.txt">
+<usetext source="<changest.fmt>,\ ** START OF \,<upcasebld.fmt>,fchangenum.txt,</upcasebld.fmt>,\ SECTION ** \,</changest.fmt>"
+placemnt="before"></usetext>
+</charsubset>
+</att><att>
+<specval attname="_changenum" attval="#GT#\0\">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset>
+<savetext textid="fchangenum.txt" conrule="\Change \,#CONTENT(_changenum)">
+</charsubset>
+</att><att>
+<specval attname="_changenum" attval="#EQ#\0\">
+<specval attname="print-only" attloc="system-var" attval="#NONE">
+<charsubset>
+<savetext textid="fchangenum.txt" conrule="\\">
+<usetext source="<changeend.fmt>,\ ** END OF \,<upcasebld.fmt>,prevfchangenum.txt,</upcasebld.fmt>,\ SECTION ** \,</changeend.fmt>"
+placemnt="before"></usetext>
+</charsubset>
+</att><att>
+<specval attname="_changenum" attval="#EQ#\0\">
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<charsubset>
+<savetext textid="fchangenum.txt" conrule="\\"></charsubset>
+</att>
+<?Pub *0000001562>

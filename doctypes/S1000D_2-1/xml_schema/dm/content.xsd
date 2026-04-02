@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		xmlns:xlink="http://www.w3.org/1999/xlink"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2002-12FR and 2002-26UK: Amend content model of techpub by  *
+    *                   subelements pubcode, pubtitle and pubdate        *
+    *                   defined in new entity %PUBREF; (see COMMON.ENT). *
+    * 3. XML Extension: Import XLINK Definitions (see XLINK.XSD).        * 
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTCONT                                                 *
+    *   PUBLIC "-//S1000D//ELEMENTS Content Breakdown 20030531//EN" >    *
+    * %EXTCONT;                                                          *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Call the XLINK Definition Public Text. The formal public           *
+    * identifier is stored in the entity %EXTXLINK;                      *
+    ********************************************************************** -->
+	<!-- %EXTXLINK; -->
+	<xs:import 	namespace="http://www.w3.org/1999/xlink" 
+			schemaLocation="xlink.xsd"/>
+
+
+	<xs:element name="content">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element content (Content Structure) containing:-            *
+    *  refs     - Mandatory  Single      contains norefs, rdandrt,       *
+    *                                    refdms, reftp.                  *
+    *  Definition stored in entity %CONTENT;                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED  - Unique identifier of content     *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="refs"/>
+				<xs:group ref="CONTENT"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="refs">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element refs (References) containing:-                      *
+    *  norefs   - Mandatory  Single      contains No Other Tags.         *
+    * or                                                                 *
+    *  rdandrt  - Mandatory  Single      contains refdms, reftp.         *
+    * or                                                                 *
+    *  refdms   - Mandatory  Single      contains refdm.                 *
+    * or                                                                 *
+    *  reftp    - Mandatory  Single      contains techpub.               *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="norefs"/>
+				<xs:element ref="rdandrt"/>
+				<xs:element ref="refdms"/>
+				<xs:element ref="reftp"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="norefs">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element norefs (No References) containing:-                 *
+    *  No Other Tags.                                                    *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType/>
+	</xs:element>
+
+	<xs:element name="rdandrt">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element rdandrt (Reference Data Modules And Technical       *
+    * Publications) containing:-                                         *
+    *  refdms   - Mandatory  Single      contains refdm                  *
+    *  reftp    - Mandatory  Single      contains techpub                *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="refdms"/>
+				<xs:element ref="reftp"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="refdms">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element refdms (Reference Data Modules) containing:-        *
+    *  refdm    - Mandatory  Repeatable  contains age, avee, issno,      *
+    *                                     dmtitle or Definition stored   *
+    *                                                in entity %XLINKEXT;*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="refdm" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="refdm">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element refdm (Reference Data Module) containing:-          *
+    *====================================================================*
+    * Mandatory Single Group.                                            *
+    *====================================================================*
+    *  applic   - Optional   Single      contains type, model.           *
+    *  Definition stored in entity %ALLDMC;                              *
+    *  issno    - Optional   Single      contains No other tags          *
+    *  dmtitle  - Optional   Single      contains techname, infoname.    *
+    *====================================================================*
+    * or                                                                 *
+    *  Definition stored in entity %XLINKEXT;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  target  - CDATA   - IMPLIED - Cross reference ID within target DM *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %XLINKATT;             *
+    **********************************************************************
+    * EXCLUSION: figure, foldout, table.                                 *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="applic" minOccurs="0"/>
+					<xs:group ref="ALLDMC"/>
+					<xs:element ref="issno" minOccurs="0"/>
+					<xs:element ref="dmtitle" minOccurs="0"/>
+				</xs:sequence>
+				<xs:group ref="xlink:XLINKEXT" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attribute name="target" type="xs:string"/>
+			<xs:attributeGroup ref="bodyatt"/>
+			<xs:attributeGroup ref="xlink:XLINKATT"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="reftp">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element reftp (Reference Technical Publication)             *
+    * containing:-                                                       *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  applic   - Optional   Single      contains type, model.           *
+    *  techpub  - Mandatory  Single      contains Definition stored in   *
+    *                                    entity %text; or %PUBREF; or    *
+    *                                    %XLINKEXT;.                     *
+    *====================================================================*
+    **********************************************************************
+    * EXCLUSION: figure, foldout, table.                                 *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="applic" minOccurs="0"/>
+				<xs:element ref="techpub"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="techpub">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Element techpub (Technical Publication) containing:-        *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *   Definition stored in entity %text;                               *
+    *  or                                                                *
+    *   Definition stored in entity %PUBREF;                             *
+    *====================================================================*
+    * or                                                                 *
+    *  Definition stored in entity %XLINKEXT;.                           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %XLINKATT4;            *
+    **********************************************************************
+    * EXCLUSION: refdm, reftp.                                           *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="text"/>
+				<xs:group ref="PUBREF"/>
+				<xs:group ref="xlink:XLINKEXT" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attributeGroup ref="bodyatt"/>
+			<xs:attributeGroup ref="xlink:XLINKATT4"/>
+		</xs:complexType>
+	</xs:element>
+	
+
+</xs:schema>

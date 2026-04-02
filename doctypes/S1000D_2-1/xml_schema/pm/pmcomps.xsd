@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    *====================================================================*
+    * Typical invocation:-                                               *
+    * <!ENTITY % PMCOMPS                                                 *
+    *   PUBLIC "-//S1000D//ENTITIES Publication Module Component         *
+    *                               Definitions 20030531//EN" >          *
+    * %PMCOMPS;                                                          *
+    ********************************************************************** -->
+    
+    
+<!--**********************************************************************
+    * Call the RDF Metadata Definition Public Text. The formal public    *
+    * identifier is stored in the entity %EXTRDF;                        *
+    ********************************************************************** -->
+<!-- %EXTRDF; -->
+	<xs:import 	namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+			schemaLocation="rdf_pm.xsd"/>
+
+<!--**********************************************************************
+    * Call the XLINK Definition Public Text. The formal public           *
+    * identifier is stored in the entity %EXTXLINK;                      *
+    ********************************************************************** -->
+<!-- %EXTXLINK; -->
+	<xs:import 	namespace="http://www.w3.org/1999/xlink" 
+			schemaLocation="xlink.xsd"/>
+			
+
+<!--**********************************************************************
+    * Call the Project Configuration Text.                               *
+    * Project Configuration may alter delaration of selected objects.    *
+    * For information on which objects are available for tailoring,      *
+    * refer to S1000D!                                                   *
+    ********************************************************************** -->
+	<xs:include schemaLocation="project.cfg"/>
+	
+<!--**********************************************************************
+    * Define Entity %DMADDR1; (DM Address Details 1st Part)              *
+    ********************************************************************** -->
+<!-- %DMADDR1; -->
+	<xs:include schemaLocation="dmaddr1.xsd"/>
+	
+<!--**********************************************************************
+    * Define Entity %DMADDR2; (DM Address Details 2nd Part)              *
+    ********************************************************************** -->
+<!-- %DMADDR2; -->
+	<xs:include schemaLocation="dmaddr2.xsd"/>
+	
+<!--**********************************************************************
+    * Define Entity %DMADDR3; (DM Address Details 3rd Part)              *
+    ********************************************************************** -->
+<!-- %DMADDR3; -->
+	<xs:include schemaLocation="dmaddr3.xsd"/>
+	
+<!--**********************************************************************
+    * Define Entity %PMLISTCODE; (Publication Module List Code           *
+    * Definitions)                                                       *
+    ********************************************************************** -->
+<!-- %PMLISTCODE; -->
+	<xs:include schemaLocation="pmlistcode.xsd"/>
+	
+<!--**********************************************************************
+    * Define Entity %EXTPMC; (Publication Module Code Breakdown)         *
+    * containing:-                                                       *
+    * the formal public identifier for the Publication Module Code       *
+    * Breakdown public text.                                             *
+    ********************************************************************** -->
+<!-- %EXTPMC; -->
+	<xs:include schemaLocation="pmc.xsd"/>
+	
+<!--**********************************************************************
+    * Define Entity %EXTDMC; (Data Module Code Breakdown) containing:-   *
+    * the formal public identifier for the Data Module Code Breakdown    *
+    * public text.                                                       *
+    ********************************************************************** -->
+<!-- %EXTDMC; -->
+	<xs:include schemaLocation="dmc.xsd"/>
+
+<!--**********************************************************************
+    * Define Entity %EXTRESTR; (Data Restriction Definitions).           *
+    ********************************************************************** -->
+<!-- %EXTRESTR; -->
+	<xs:include schemaLocation="datarest.xsd"/>
+	
+	
+	<xs:simpleType name="ORGNAME">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %ORGNAME; (Originator Names) containing:-            *
+    *====================================================================*
+    *  ORIG identification or NCAGE code as required.                    *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="FIC">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %FIC; (Functional Item Code) containing:-            *
+    *  Parsed Character Data.                                            *
+    *====================================================================*
+    * To tailor the fic element for project specific use,                *
+    * replace PCDATA as required.                                        *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="SBC">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %SBC; (System Breakdown Code) containing:-           *
+    *  Parsed Character Data.                                            *
+    *====================================================================*
+    * To tailor the sbc element for project specific use,                *
+    * replace PCDATA as required.                                        *
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+
+</xs:schema>

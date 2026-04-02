@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.ataebiz.org/XMLSchema"
+           targetNamespace="http://www.ataebiz.org/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<!-- ================================================================
+
+Limitations of Liability: 
+
+1.  This material is provided "As Is" and neither Air Transport Association of America, Inc. (ATA) 
+    nor any person who has contributed to the creation, revision or maintenance of the material 
+    makes any representations or warranties, express or implied, including but not limited to, 
+    warranties of merchantability or fitness for any particular purpose. 
+
+2.  Neither ATA nor any person who has contributed to the creation, revision or maintenance of 
+    this material shall be liable for any direct, indirect, special or consequential damages or 
+    any other liability arising from any use of this material. 
+
+3.  Revisions to this document may occur after its issuance. The user is responsible for determining 
+    if revisions to the material contained in this document have occurred and are applicable. 
+
+Copyright 2017, Air Transport Association of America, Inc., d/b/a Airlines for America. All rights reserved.
+
+================================================================= -->
+	<xs:annotation>
+		    <xs:documentation>Version Number: 2017.1</xs:documentation>
+		    <xs:documentation>Revision Date: 2017-10-31</xs:documentation>
+		    <xs:documentation>Revision Comments: Spec 2300 revision 2017.1</xs:documentation>
+	  </xs:annotation>
+	  <xs:include schemaLocation="../basicDataTypes/text.xsd"/>
+	  <xs:include schemaLocation="./approvalDate.xsd"/>
+	  <!--=============================================-->
+	<!--  common approval data provided in dmStatus and pmStatus-->
+	<!--=============================================-->
+	<xs:element name="approvalInfo" type="approvalInfoType">
+		    <xs:annotation>
+			      <xs:documentation>Set of data related to the approval status of the DM or PM</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <xs:complexType name="approvalInfoType">
+		    <xs:sequence>
+			      <xs:element name="authority" type="nameType" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>Agency responsible of the approval in case of approvalRequired set to "yes" or "partial"</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="approvalStatement" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>Used if Approval Required is "yes" or "partial", it contains a statement like “EASA Approved” or “A/R Related"</xs:documentation>
+				        </xs:annotation>
+				        <xs:complexType mixed="true">
+					          <xs:choice minOccurs="0" maxOccurs="unbounded">
+						            <xs:element ref="abbreviation"/>
+					          </xs:choice>
+				        </xs:complexType>
+			      </xs:element>
+			      <xs:element ref="approvalDate" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>Date of approval.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="approvalRequired" use="required">
+			      <xs:annotation>
+				        <xs:documentation>used to identify if a DM contains content that must be approved.</xs:documentation>
+			      </xs:annotation>
+			      <xs:simpleType>
+				        <xs:restriction base="xs:string">
+					          <xs:enumeration value="yes"/>
+					          <xs:enumeration value="no"/>
+					          <xs:enumeration value="partial"/>
+				        </xs:restriction>
+			      </xs:simpleType>
+		    </xs:attribute>
+	  </xs:complexType>
+</xs:schema>

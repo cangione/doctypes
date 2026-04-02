@@ -1,0 +1,139 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 1999-70D: Replace element graphic in content models of      *
+    *                  warning, caution and note by element symbol.      *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % WCNP PUBLIC                                             *
+    *   "-//S1000D//ELEMENTS Warning Caution Note Paragraphs 20030531    *
+    *    //EN" >                                                         *
+    * %WCNP;                                                             *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element warning (Warning) containing:-                      *
+    *   applic  - Optional   Single      contains type, model.           *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *   symbol  - Mandatory  Single      contains No Other Tags.         *
+    *  or                                                                *
+    *   para    - Mandatory  Single      contains applic, Definition     *
+    *                                     stored in entity %paracon;.    *
+    *  or                                                                *
+    *   Definition stored in entity %list;                               *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type     - CDATA    - IMPLIED  - Specifies the type of Warning.   *
+    *  xrefid   - IDREF    - IMPLIED  - Specifies a unique identifier of *
+    *                                   an element.                      *
+    *  vital    - NUMBER   - "0"      - Declares if vital warning.       *
+    *           - "0"      - None Vital Warning.                         *
+    *           - "1"      - Vital Warning.                              *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    **********************************************************************
+    * EXCLUSION:- figure, foldout, table.                                *
+    ********************************************************************** -->
+
+<!ELEMENT warning - - (applic?,(symbol | para | %list;)+)
+                                             -(figure | foldout | table) >
+<!-- Element graphic replaced by element symbol. -->
+<!ATTLIST warning
+            type        CDATA       #IMPLIED
+            xrefid      IDREF       #IMPLIED
+            vital       %yesorno;   "0"
+            %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element caution (Caution) containing:-                      *
+    *   applic  - Optional   Single      contains type, model.           *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *   symbol  - Mandatory  Single      contains No Other Tags.         *
+    *  or                                                                *
+    *   para    - Mandatory  Single      contains applic, Definition     *
+    *                                     stored in entity %paracon;.    *
+    *  or                                                                *
+    *   Definition stored in entity %list;                               *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type     - CDATA    - IMPLIED  - Specifies the type of Caution.   *
+    *  xrefid   - IDREF    - IMPLIED  - Specifies a unique identifier of *
+    *                                   an element.                      *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    **********************************************************************
+    * EXCLUSION:- figure, foldout, table.                                *
+    ********************************************************************** -->
+
+<!ELEMENT caution - - (applic?,(symbol | para | %list;)+) 
+                                             -(figure | foldout | table) >
+<!-- Element graphic replaced by element symbol. -->
+<!ATTLIST caution
+            type        CDATA       #IMPLIED
+            xrefid      IDREF       #IMPLIED
+            %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element note (Note) containing:-                            *
+    *   applic  - Optional   Single      contains type, model.           *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *   symbol  - Mandatory  Single      contains No Other Tags.         *
+    *  or                                                                *
+    *   para    - Mandatory  Single      contains applic, Definition     *
+    *                                     stored in entity %paracon;.    *
+    *  or                                                                *
+    *   Definition stored in entity %list;                               *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type     - CDATA    - IMPLIED  - Specifies the type of Note.      *
+    *  xrefid   - IDREF    - IMPLIED  - Specifies a unique identifier of *
+    *                                   an element.                      *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    **********************************************************************
+    * EXCLUSION:- figure, foldout, table.                                *
+    ********************************************************************** -->
+
+<!ELEMENT note - - (applic?,(symbol | para | %list;)+) 
+                                             -(figure | foldout | table) >
+<!-- Element graphic replaced by element symbol. -->
+<!ATTLIST note
+            type        CDATA       #IMPLIED
+            xrefid      IDREF       #IMPLIED
+            %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element para (Paragraph) containing:-                       *
+    *   applic  - Optional   Single      contains type, model.           *
+    *   Definition stored in entity %paracon;                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute definition list stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %secur;                *
+    ********************************************************************** -->
+
+<!ELEMENT para - O (applic?,(%paracon;)) >
+<!ATTLIST para
+            %bodyatt;
+            %secur; >

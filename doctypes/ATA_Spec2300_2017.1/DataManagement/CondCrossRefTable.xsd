@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.ataebiz.org/XMLSchema"
+           targetNamespace="http://www.ataebiz.org/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<!-- ================================================================
+
+Limitations of Liability: 
+
+1.  This material is provided "As Is" and neither Air Transport Association of America, Inc. (ATA) 
+    nor any person who has contributed to the creation, revision or maintenance of the material 
+    makes any representations or warranties, express or implied, including but not limited to, 
+    warranties of merchantability or fitness for any particular purpose. 
+
+2.  Neither ATA nor any person who has contributed to the creation, revision or maintenance of 
+    this material shall be liable for any direct, indirect, special or consequential damages or 
+    any other liability arising from any use of this material. 
+
+3.  Revisions to this document may occur after its issuance. The user is responsible for determining 
+    if revisions to the material contained in this document have occurred and are applicable. 
+
+Copyright 2017, Air Transport Association of America, Inc., d/b/a Airlines for America. All rights reserved.
+
+================================================================= -->
+	<xs:annotation>
+		    <xs:documentation>Version Number: 2017.1</xs:documentation>
+		    <xs:documentation>Revision Date: 2017-10-31</xs:documentation>
+		    <xs:documentation>Revision Comments: Spec 2300 revision 2017.1</xs:documentation>
+	  </xs:annotation>
+	  <xs:include schemaLocation="../common/basicDataTypes/links.xsd"/>
+	  <xs:include schemaLocation="../common/dataManagement/crossreftables.xsd"/>
+	  <xs:redefine schemaLocation="../common/dataManagement/dmodule.xsd">
+		    <xs:complexType name="contentElemType">
+			      <xs:complexContent>
+				        <xs:extension base="contentElemType">
+					          <xs:sequence>
+						            <xs:element ref="condCrossRefTable"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:redefine>
+	  <!--=============================================-->
+	<!-- dmodule Element Declaration (DM  root) -->
+	<!--=============================================-->
+	<xs:element name="dmodule" type="dmoduleElemType"/>
+	  <!--=============================================-->
+	<!-- condCrossRefTable Element Declaration-->
+	<!--=============================================-->
+	<xs:element name="condCrossRefTable" type="condCrossRefTableElemType">
+		    <xs:annotation>
+			      <xs:documentation>The Conditions Cross-reference Table (CCT) data module is used to declare any condition that can affect applicability of data.</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <xs:complexType name="condCrossRefTableElemType">
+		    <xs:sequence>
+			      <xs:element name="condTypeList" type="condTypeListElemType">
+				        <xs:annotation>
+					          <xs:documentation>contains a list of common types of conditions which will be used as a basis for defining specific conditions</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="condList" type="condListElemType">
+				        <xs:annotation>
+					          <xs:documentation>contains a list of specific conditions which have an effect on the applicability of technical data.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="incorporation" type="incorporationElemType" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>gives the incorporation status of technical conditions in the documentation.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+	  </xs:complexType>
+	  <!--=============================================-->
+	<!-- condTypeList content model-->
+	<!--=============================================-->
+	<xs:complexType name="condTypeListElemType">
+		    <xs:sequence>
+			      <xs:element name="condType" type="condTypeElemType" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>used to define a single condition type of the Product.</xs:documentation>
+					
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+	  </xs:complexType>
+	  <xs:complexType name="condTypeElemType">
+		    <xs:sequence>
+			      <xs:element ref="name">
+				        <xs:annotation>
+					          <xs:documentation>the name of the condition type.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element ref="descr">
+				        <xs:annotation>
+					          <xs:documentation>used to contain further clarification of the meaning of the condition type..</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element ref="enumeration" minOccurs="0" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>provides the allowable values for the condition type.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>element id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attributeGroup ref="valuePatternAttGrp"/>
+	  </xs:complexType>
+	  <!--=============================================-->
+	<!-- condList content model-->
+	<!--=============================================-->
+	<xs:complexType name="condListElemType">
+		    <xs:sequence>
+			      <xs:element name="cond" type="condElemType" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>used to declare a single condition of the Product</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+	  </xs:complexType>
+	  <xs:complexType name="condElemType">
+		    <xs:sequence>
+			      <xs:element ref="name">
+				        <xs:annotation>
+					          <xs:documentation>the name of the condition</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element ref="displayName" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>used to define text which can be used to help automated generation the human readable display text on an applicability annotation</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element ref="descr">
+				        <xs:annotation>
+					          <xs:documentation>used to contain further clarification of the meaning of the condition..</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element ref="refs" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>provides the standard referencing mechanism to associate additional material with the condition.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="condRefGroup" type="condRefGroupElemType" minOccurs="0"
+                     maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>used to refer to other conditions linked to the described conditions.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="condTypeRefId" type="xs:IDREF" use="required">
+			      <xs:annotation>
+				        <xs:documentation>identification of the generic type of condition that this specific condition is based on. This uses the ID/(IDREF) mechanism to reference the id of a condType element.</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="condIssueNumber" type="xs:string" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>condition issue number, as a SB issue number.</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="id" type="idType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>element id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <!--=============================================-->
+	<!-- condRefGroup content model-->
+	<!--=============================================-->
+	<xs:complexType name="condRefGroupElemType">
+		    <xs:choice>
+			      <xs:element name="condRef" type="condRefElemType" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>identifies a single condition that is defined in the CCT condition list</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="condDescr" type="xs:string" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>a condition that is not defined in the CCT.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:choice>
+		    <xs:attribute name="id" type="idType" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="condRefGroupType" type="xs:string" use="required">
+			      <xs:annotation>
+				        <xs:documentation>provides the type of relationship with the other condition.</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:complexType name="condRefElemType">
+		    <xs:attribute name="id" type="idType" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="condRefId" type="xs:IDREF" use="required">
+			      <xs:annotation>
+				        <xs:documentation>identifier of the referenced condition as defined in the condition list.</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="condIssueNumber" type="xs:string" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>condition issue number, as a SB issue number.</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <!--=============================================-->
+	<!-- incorporation content model-->
+	<!--=============================================-->
+	<xs:complexType name="incorporationElemType">
+		    <xs:sequence>
+			      <xs:element name="condIncorporation" type="condIncorporationElemType" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>represents a technical condition that has or is planned to be incorporated into the technical data.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+	  </xs:complexType>
+	  <xs:complexType name="condIncorporationElemType">
+		    <xs:sequence>
+			      <xs:element name="documentIncorporation" type="documentIncorporationElemType"
+                     maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>used to list the data modules and publications that this technical condition affects.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="condRefId" type="xs:IDREF">
+			      <xs:annotation>
+				        <xs:documentation>reference to a declared condition (element cond) which this element represents using the ID/IDREF mechanism.</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:complexType name="documentIncorporationElemType">
+		    <xs:sequence>
+			      <xs:element ref="refs" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>used to reference publications and data modules associated with this technical condition.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="incorporationStatus" type="incorporationStatusElemType"
+                     maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>used to define the status of the incorporation of a technical condition.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:complexType name="incorporationStatusElemType">
+		    <xs:attribute name="incorporationStatus" type="incorporationStatusAttType" use="required">
+			      <xs:annotation>
+				        <xs:documentation>the incorporation status, allowable values are: "noeffect" for a technical condition which has no impact on the data module or publication content, "inprogress" for a technical condition which is partially incorporated into the data module or publication content, "incorporated" for a technical condition which is completely incorporated into the data module or publication content</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attributeGroup ref="dateAttGroup">
+			      <xs:annotation>
+				        <xs:documentation>the date of the incorporation. These attributes are mandatory if the attribute incorporationStatus has the value of "incorporated"</xs:documentation>
+			      </xs:annotation>
+		    </xs:attributeGroup>
+		    <xs:attribute name="id" type="idType" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:simpleType name="incorporationStatusAttType">
+		    <xs:restriction base="xs:NMTOKEN">
+			      <xs:enumeration value="noeffect"/>
+			      <xs:enumeration value="inprogress"/>
+			      <xs:enumeration value="incorporated"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:attributeGroup name="dateAttGroup">
+		    <xs:attribute name="year" type="yearAttType"/>
+		    <xs:attribute name="month" type="monthAttType"/>
+		    <xs:attribute name="day" type="dayAttType"/>
+	  </xs:attributeGroup>
+	  <xs:simpleType name="yearAttType">
+		    <xs:restriction base="xs:gYear">
+			      <xs:pattern value="\d{4}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="monthAttType">
+		    <xs:restriction base="xs:positiveInteger">
+			      <xs:maxInclusive value="12"/>
+			      <xs:pattern value="\d{2}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:simpleType name="dayAttType">
+		    <xs:restriction base="xs:positiveInteger">
+			      <xs:maxInclusive value="31"/>
+			      <xs:pattern value="\d{2}"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+</xs:schema>

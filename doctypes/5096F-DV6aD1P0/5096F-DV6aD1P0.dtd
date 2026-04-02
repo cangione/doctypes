@@ -1,0 +1,224 @@
+<!--  **************************************************************************
+      SPECIAL NOTE: 
+    This DTD was modified for the Arbortext implementation.
+      Changes:
+      20030116 modified to reference the latest version of 38784 (Draft V7 to 
+               include updated support for the change application)
+      20040220 - removed 38784 subset in favor of an entity to 38784 directory
+      ********************************************************************** -->
+
+
+
+<!-- *****  START OF FILE *****
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    +  DTD TITLE:   Technical Manual Work Cards
+    +
+    +  SPECIFICATION NUMBER:    MIL-PRF-5096F
+    +
+    +  SPECIFICATION POC:   Bill Garrity
+    +
+    +  DOCUMENT TYPE DEFINITION (DTD):  5096F-DV6aD1P0
+    +
+    +  MIL-STANDARD VERSION:    38784STD-BV6a
+    +
+    +  RELEASE DATE:    04 May 2004
+    +
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    +
+    +  This file is made available to provide the user with a digital 
+    +  representation of the DTD found in:  Appendix D of MIL-PRF-5096F
+    +  This file is incomplete without MIL-PRF-5096F.
+    +
+    +  The following set of declarations may be referred to by using a
+    +  public entity as follows:
+    +
+    +  <!ENTITY % m5096wc PUBLIC "-//USA-DOD//DTD 5096F-DV6aD1P0//EN" >
+    +  %m5096wc;
+    +
+    +  NOTE: In order to parse the following DTD subset alone, append
+    +  the following statement to the beginning of the file:
+    +
+    +       <!DOCTYPE doc [
+    +
+    +       and the associated  ]>  to the end of the file.
+    +
+    +  NOTE: The start and end of this file are marked with notations.
+    +  If these notations are not present, the file may not be complete!
+    +
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    +
+    +
+    +   AUTHORED BY: Johnny Sullivan, TMSS, AF TDD
+    +
+    +   Modified By: Tom Patterson, TMSS, AF TDD
+    +
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    +   MODIFICATIONS:
+    +
+    +   CCB#: 5096F-03141-03
+    +   Description:    Added the majaction element to prevent headings
+    +           from floating to the back of a card even if the action
+    +           has ended.
+    +   TCP, 30, APR 2004
+    +
+    +   CCB#:   5096F-D-04077-05
+    +   Description:    Added inspreqln2 attribute to card to allow for
+    +           longer titles to display on the card.
+    +   TCP, 28 APR 2004
+    +
+    +   CCB#: 5096F-D-04077-02
+    +   Description:    Added AB and BA cardtypes as attributes
+    +   TCP, 23, APR 2004
+    +
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    
+                      ENTITY DECLARATIONS
+-->
+
+<!ENTITY % bodyele      "inspection, lubricate?" >
+
+<!ENTITY % fig      "(title?, graphic)" >
+
+<!ENTITY % titles       "title">
+
+<!-- CCB#: 38784std-02030-22-->
+<!ENTITY % idinf "tmidno+,  (chgnum, chgdate)?, chghistory, pretmidno*, volnum?,
+revnum?, doctype, maintlvl?, prtitle, subtitle?, (mfr+,
+contractno+)?, seal?, supersed?, suppl*, effdatenot?, volnot?,
+discl?, distrib, expcont?, destr?, copyright*, cogact?, moveddata?, authnot, downgrd?,
+pubdate" >
+
+
+<!-- ENTITY % frnt         "(idinfo|lep|verstat|tpdr|chgrec|intro)" -->
+<!-- CCB#: 02-009-5096F-D-01 -->
+<!ENTITY % frnt         "(idinfo, lep, verstat?, intro)" >
+
+<!ENTITY % fpi          "card*">
+
+<!ENTITY % group        "(INTRO|PREP|PRE|EOR|THRU|BPO|HPO|PE|ISO|OTHER)" >
+
+<!ENTITY % sect         "card*" >
+
+<!ENTITY % secur        "security (u | c | s | n) 'n'">
+
+<!ENTITY % parazero     "warning*, caution?, note?, (para, note?)?, (step1, step1+)?" >
+
+<!ENTITY % nparcon      "warning*, caution?, note?, para, note?, (step1, step1+)?" >
+
+<!ENTITY % doc "docwc">
+
+<!ENTITY % yesorno "NUMBER" >
+
+<!ENTITY % delstat    "delete  | real | reserve | NA" >
+
+<!ENTITY % status     "empty | deleted | reserved | notapp" >
+
+<!-- CCB# 98-006-08 -->
+<!ENTITY % chgatt
+"deltype (%delstat;) #IMPLIED
+inschlvl NMTOKEN #IMPLIED
+delchlvl NMTOKEN #IMPLIED
+status  (%status;) #IMPLIED
+revchg %yesorno; '0'" > 
+
+<!-- CCB#  Needed to solve spacing problem in front matter -->
+<!ENTITY % tabl "title?, tgroup+" >
+
+<!ENTITY % verified
+"verdate CDATA #IMPLIED
+verrem CDATA #IMPLIED
+verstatus (unver | ver) 'unver'" >
+
+<!ENTITY % stepatt
+"label CDATA #IMPLIED
+sssn CDATA #IMPLIED
+id ID #IMPLIED
+esds %yesorno; '0'
+nsp %yesorno; '0'
+fcp %yesorno; '0'
+hcp %yesorno; '0'
+hci %yesorno; '0'
+ocp %yesorno; '0'
+oci %yesorno; '0'
+applicref IDREFS #IMPLIED
+%chgatt;
+%verified;">
+
+<!-- ATI added entity to 38784 -->
+<!ENTITY % m38784       PUBLIC "-//USA-DOD//DTD 38784STD-BV7//EN" >
+%m38784;
+
+<!ENTITY % actatt       "%para0att;
+            cardno CDATA #IMPLIED
+            wucsys CDATA #IMPLIED
+            wucsub CDATA #IMPLIED
+            area   CDATA #IMPLIED
+            minute CDATA #IMPLIED" >
+            
+<!ENTITY % taskatt      "%stepatt;
+            %secur;" >
+
+                        
+
+<!-- *******ELEMENT and ATTRIBUTE LIST DECLARATIONS *************-->
+
+<!-- CCB#: 5096F-03141-03 -->
+<!ELEMENT majaction - o (heading?, action*) >
+
+<!-- CCB #: 5096-01173-01 -->  
+<!ELEMENT action    - o (task, subaction1*) +(note) >
+<!ATTLIST action    %actatt; >
+
+<!-- CCB#: 5096F-D-04077-02 -->
+<!-- CCB#:  5096-D-03211-01 -->
+<!-- CCB #: 5096-1262-03 -->
+<!-- CCB #: 5096D_02337_02 Added figureback attribute to allow figure entry on back
+    side of work card.-->
+<!-- CCB#: 5096F-D-04077-05 -->
+<!ELEMENT card      - - (para0* | action* | majaction*) +(heading | figure | applicdef) >
+<!ATTLIST card      type (A | B | I | AB | BA) 'B'
+            cardno   CDATA   #IMPLIED
+            area     CDATA   #IMPLIED
+            mechtype CDATA   #IMPLIED
+            mechno   CDATA   #IMPLIED
+            cardtime CDATA   #IMPLIED
+            inspreq  CDATA   #REQUIRED
+            inspreqln2 CDATA #IMPLIED
+            grouping %group; #REQUIRED
+            power (on | off | onoff) #IMPLIED           service (in | out | inout) #IMPLIED
+            figure   CDATA   #IMPLIED
+            figureback   CDATA   #IMPLIED
+            reset  (yes | no) "yes"
+            %chgatt; >
+
+<!-- CCB #: 5096-1262-03 -->
+<!--ELEMENT cardbrk - o EMPTY -->
+
+<!ELEMENT docwc     - - (front, body) +(pgbrk | figure | table | note) >
+<!ATTLIST docwc     classification (yes | no) "no">
+
+<!-- Added chgatts per TMSS guidance -->
+<!ELEMENT heading   - o (%text;) >
+<!ATTLIST heading   %secur;
+            %chgatt; >
+
+<!ELEMENT inspection    - - (section+) >
+<!ATTLIST inspection    %secur; >
+
+<!ELEMENT lubricate - - (section+) >
+<!ATTLIST lubricate %secur; >
+
+
+<!ELEMENT subaction1    - o (task, subaction2*) >
+<!ATTLIST subaction1    %actatt; >
+
+<!ELEMENT subaction2    - o (task) >
+<!ATTLIST subaction2    %actatt; >
+
+<!ELEMENT task      - o (warning*, caution?, para) >
+<!ATTLIST task      %taskatt;
+            power  (on | off) 'off'
+            symbol CDATA #IMPLIED >
+
+<!--*******************************END OF FILE ********************-->
+

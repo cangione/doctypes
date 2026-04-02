@@ -1,0 +1,119 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                                                                    *
+    *                SGML Document Type Definition                       *
+    *                       Data Module (DM)                             *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. All CPFs:      Update public identifier date of entity %COMPS;. *
+    * 3. CPF 2002-11FR: Remove call of entity %EXTFTAB;.                 *
+    *                   Replace call of entity %WCNP; by %PARAGRAPHS;.   * 
+    * 4. CPF 2004-32US: Expand Process DM to include <step1> content:    *
+    *                   Include the schema for the static APPLIC entity. *
+    *                   Include the schema for the static PARACON entity.*
+    *                                                                    *
+    * The following DOCTYPE statement may be used to call this set of    *
+    * declarations:-                                                     *
+    *                                                                    *
+    * <!DOCTYPE dmodule PUBLIC                                           *
+    *  "-//S1000D//DTD S1000D WRNGFLDS 20050501//EN" [                   *
+    *  ]>                                                                *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %COMPS; (Components) containing:- the formal public  *
+    * identifier for the component definitions.                          *
+    ********************************************************************** -->
+
+<!ENTITY % COMPS
+ PUBLIC "-//S1000D//ENTITIES Component Definitions 20050501//EN" >
+<!-- Public identifier date updated -->
+
+
+
+<!--**********************************************************************
+    * Call the Components Definition Public Text. The formal public      *
+    * identifier is stored in the entity %COMPS;                         *
+    ********************************************************************** -->
+
+%COMPS;
+
+
+
+<!--**********************************************************************
+    * Call the APPLIC Entity for static data modules.                    *
+    * The formal public identifier is stored in entity %APPLSTATIC;.     *
+    ********************************************************************** -->
+
+%APPLSTATIC;
+<!-- Call of this new entity introduced -->
+
+
+
+<!--**********************************************************************
+    * Call the S1000D Configuration Public Text.                         *
+    * The formal public identifier is stored in the entity %S1000D;      *
+    ********************************************************************** -->
+
+%S1000D;
+
+
+
+<!--**********************************************************************
+    * Call the S1000D Base DTD Public Text. The formal public identifier *
+    * is stored in the entity %BASE;                                     *
+    ********************************************************************** -->
+
+%BASE;
+
+
+
+<!--**********************************************************************
+    * Call the Wiring Data Description Public Text.                      *
+    * The formal public identifier is stored in the entity %WRNGFLDS;    *
+    ********************************************************************** -->
+
+%WRNGFLDS;
+
+
+
+<!--**********************************************************************
+    * Call the Content Breakdown Public Text. The formal public          *
+    * identifier is stored in the entity %EXTCONT;                       *
+    ********************************************************************** -->
+
+%EXTCONT;
+
+
+<!--**********************************************************************
+    * Call the Static Paracon Public Text.                               *
+    * The formal public identifier is stored in entity %PARACONSTATIC;.  *
+    ********************************************************************** -->
+
+%PARACONSTATIC;
+<!-- Call of this new entity introduced -->
+
+
+
+<!--**********************************************************************
+    * Call the Lists Breakdown Public Text. The formal public            *
+    * identifier is stored in the entity %EXTLIST;                       *
+    ********************************************************************** -->
+
+%EXTLIST;
+
+
+<!--**********************************************************************
+    * Call the Notes And Paragraphs Breakdown Public Text.               *
+    * The formal public identifier is stored in the entity %PARAGRAPHS;  *
+    ********************************************************************** -->
+ 
+%PARAGRAPHS;
+<!-- Call of new public identifier -->

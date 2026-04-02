@@ -1,0 +1,117 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2002-11FR: Replace entity %NP; by %NPFFT; which includes    *
+    *                   %FFT; in its content model.                      *
+    * 3. CPF 2004-32US: Expand Process DM to include <step1> content:    *
+    *                   Create STEPX content groups that can be          *
+    *                   customized for static and interactive use.       *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTSTEP                                                 *
+    *   PUBLIC "-//S1000D//ELEMENTS Steps Breakdown 20050501//EN" >      *
+    * %EXTSTEP;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %stepcon; (Step Content) containing:-                *
+    *  Definition stored in entity %HEADING1;.                           *
+    *  Definition stored in entity %WC;.                                 *
+    *  Definition stored in entity %NPFFT;.                              *
+    ********************************************************************** -->
+
+<!ENTITY % stepcon  "%HEADING1;, %WC;, %NPFFT;" >
+<!-- Entity %NP; replaced by %NPFFT; -->
+
+
+
+<!--**********************************************************************
+    * Define Element step1 (Procedural Step Level 1) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *  Definition stored in entity %STEP2;                               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT step1 - O (%stepcon;, (%STEP2;)*) >
+<!ATTLIST step1
+              %CHECKSTP;
+              %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element step2 (Procedural Step Level 2) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *  Definition stored in entity %STEP3;                               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT step2 - O (%stepcon;, (%STEP3;)*) >
+<!ATTLIST step2
+              %CHECKSTP;
+              %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element step3 (Procedural Step Level 3) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *  Definition stored in entity %STEP4;                               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT step3 - O (%stepcon;, (%STEP4;)*) >
+<!ATTLIST step3
+              %CHECKSTP;
+              %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element step4 (Procedural Step Level 4) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *  Definition stored in entity %STEP5;                               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT step4 - O (%stepcon;, (%STEP5;)*) >
+<!ATTLIST step4
+              %CHECKSTP;
+              %bodyatt; >
+
+
+
+<!--**********************************************************************
+    * Define Element step5 (Procedural Step Level 5) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %CHECKSTP;             *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT step5 - O (%stepcon;) >
+<!ATTLIST step5
+              %CHECKSTP;
+              %bodyatt; >

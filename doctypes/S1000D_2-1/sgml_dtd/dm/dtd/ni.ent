@@ -1,0 +1,53 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. CPF 2002-06F: Define new substructure for identno.              *
+    *                  Move definition of csnref to APPLIC.ENT.          *
+    *                  Rename entity from %NIC; to %NI;.                 *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % NI                                                      *
+    *   PUBLIC "-//S1000D//ELEMENTS NOMEN and IDENTNO 20030531//EN">     *
+    * %NI;                                                               *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Element nomen (Nomenclature) containing:-                   *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+
+<!ELEMENT nomen - O (#PCDATA) >
+<!ATTLIST nomen
+            %INSDEL; >
+
+
+
+<!--**********************************************************************
+    * Define Element identno (Identification Number) containing:-        *
+    *  mfc      - Mandatory Single       contains Parsed Character Data. *
+    *====================================================================*
+    *  Optional Repeatable Group.                                        *
+    *====================================================================*
+    *    pnr      - Optional Single      contains Parsed Character Data. *
+    *    serialno - Optional Repeatable  contains single, range.         *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+
+<!ELEMENT identno - O (mfc, (pnr, serialno*)*) >
+<!-- Content model of identno changed  -->
+<!ATTLIST identno
+            %INSDEL; >

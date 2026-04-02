@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           	elementFormDefault="qualified"
+           	attributeFormDefault="qualified">
+
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    ********************************************************************** -->
+
+
+	<xs:group name="paracon">
+		<xs:annotation>
+			<xs:documentation>
+    **********************************************************************
+    * Define Entity %paracon; (Paragraph Continuation) containing:-      *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  Definition stored in entity %text;                                *
+    * or                                                                 *
+    *  Definition stored in entity %list;                                *
+    *====================================================================*
+    **********************************************************************
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:group ref="text"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:group ref="list"  minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:group>
+
+
+</xs:schema>

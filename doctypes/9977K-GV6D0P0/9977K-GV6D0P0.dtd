@@ -1,0 +1,279 @@
+<!-- *****  START OF FILE ***** -->
+
+<!--  **************************************************************************
+      SPECIAL NOTE: 
+	This DTD was modified for the Arbortext implementation.
+      Changes:
+      20030120 modified to reference the latest version of 38784 (Draft V7 to 
+               include updated support for the change application)
+      20030116 verstatpg attribute in entity docatt changed 
+               from verified | unverified to ver | unver to match 38784BV6
+	20030116 removed entity verified from docatt to match 38784
+      20030116 created one row wrapper for semantic tables:
+                 ffgrow in ffgtbl  
+               changed the contents of the related table to be the row wrapper, 
+      20040220 - removed 5096 appendix F subset in favor of an entity to 5096 directory
+
+      ********************************************************************** -->
+
+<!-- 9977K-GV6D0P0.dtd
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  DTD TITLE:	Loading Procedures Checklist
+	+
+	+  SPECIFICATION NUMBER:	MIL-PRF-9977K 
+	+
+	+  SPECIFICATION POC:	Bill Garrity
+	+
+	+  DOCUMENT TYPE DEFINITION (DTD):	9977K-GV6D0P0.dtd
+	+
+	+  MIL-STANDARD VERSION:	38784STD-BV6
+	+
+	+  LAST MODIFICATION:	
+	+
+	+  
+	+ 
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+  This file is made available to provide the user with a digital 
+	+  representation of the DTD found in:  Appendix G of MIL-PRF-9977K
+	+  This file is incomplete without MIL-PRF-9977K.
+	+
+	+  The following set of declarations may be referred to by using a
+	+  public entity as follows:
+	+
+	+  <!ENTITY % mldpcl PUBLIC "-//USA DOD//DTD 9977K-GV6D0P0//EN" >
+	+  %mldproccl;
+	+
+	+  NOTE: In order to parse the following DTD subset alone, append
+	+  the following statement to the beginning of the file:
+	+
+	+		<!DOCTYPE doc [
+	+
+	+		and the associated  ]>  to the end of the file.
+	+
+	+  NOTE: The start and end of this file are marked with notations.
+	+  If these notations are not present, the file may not be complete!
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+
+	+	AUTHORED BY: Stephen Raney, TMSS, AF IDE PO
+	+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  OTHER DTDS NEEDED:		
+	+  
+	+	 	38784STD-BV6.dtd
+	+		5096F-FV6D0P0.dtd
+	+	
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+  MODIFICATIONS SINCE PREVIOUS RELEASE:  
+	+	
+	+
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	    ENTITY DECLARATIONS
+  -->
+
+<!ENTITY  clpurpose  "This checklist is a step-by-step guide in abbreviated
+form for use as a reference to ensure accomplishment of selected tasks by a
+predetermined sequence procedure. The intent of this checklist is to
+eliminate the probability of omission of a step in the accomplishment of the
+intended task. The procedures contained herein are presented in the shortest
+practical form for use by qualified personnel and are not intended to
+provide full technical instructions. This checklist provides, in an abbreviated
+form, procedures for LOADING and UNLOADING. These procedures are derived from, but
+do not replace, the detailed procedures contained in Technical Orders(TO). When
+malfunctions occur reference to the TO shall be made." >
+
+
+<!ENTITY % bnucload "IGNORE" >
+
+<![ %bnucload; [
+
+<!ENTITY % bodyele "(ldcrewbrief, loadproc, unloadproc)" >
+
+]]>
+
+<!ENTITY % secur "security (u | c | s | n) 'n'">
+
+<!ENTITY % verified
+"verdate CDATA #IMPLIED
+verrem CDATA #IMPLIED
+verstatus (unver | ver) 'unver'" >
+
+<!ENTITY % yesorno "NUMBER" >
+
+<!-- Arbortext 20030116: SFORT 
+     1. verstatpg attributes changed from verified | unverified to ver | unver to match 38784 
+     2. removed entity verified from docatt to match 38784 -->
+<!ENTITY % docatt
+"docid CDATA #IMPLIED
+docstat (revision | change | prelim | draft | formal) 'prelim'
+verstatpg (ver | unver) 'unver'
+cover %yesorno; '0' "> 
+
+<!ENTITY % bodyele "(ldcrewbrief, emergproc, loadproc, unloadproc)" >
+
+<!ENTITY % titles "title" >
+
+<!ENTITY % clno "IGNORE" >
+
+<!ENTITY % frnt "(idinfo, lep, verstat?, contents, foreword, safesum?) " >
+ 
+<!ENTITY % delstat    "delete  | real | reserve | NA" >
+
+<!ENTITY % status     "empty | deleted | reserved | notapp" >
+
+<!ENTITY % chgatt
+"deltype (%delstat;) #IMPLIED
+inschlvl NMTOKEN #IMPLIED
+delchlvl NMTOKEN #IMPLIED
+status  (%status;) #IMPLIED
+revchg %yesorno; '0'" >
+
+<!ENTITY % itemid
+"unit CDATA #IMPLIED
+module CDATA #IMPLIED
+lru CDATA #IMPLIED
+compon CDATA #IMPLIED
+partno CDATA #IMPLIED
+refdes CDATA #IMPLIED" >
+
+<!ENTITY % content
+"skilltrk NMTOKENS #IMPLIED
+contype (desc | proc) #IMPLIED
+assocfig IDREFS #IMPLIED
+assoctab IDREFS #IMPLIED" >
+
+<!ENTITY % db "%itemid; %content;" >
+
+<!ENTITY % bodyatt
+"label CDATA #IMPLIED
+sssn CDATA #IMPLIED
+indexid  CDATA  #IMPLIED
+mcarnumatt CDATA #IMPLIED 
+%chgatt;
+%db;" >
+
+<!ENTITY % doc "docldpcl">
+
+<!-- ATI added entity to 38784 -->
+<!ENTITY % m5096cl PUBLIC "-//USA-DOD//DTD 5096F-FV6D0P0//EN" >
+%m5096cl;
+
+
+
+
+<!ENTITY % bodsec    "%secur;
+                      %bodyatt;" >
+
+
+<!-- ELEMENT and ATTRIBUTE LIST DECLARATIONS -->
+
+<!ELEMENT airprepld      - o  (%titles;, task+) >
+<!ATTLIST airprepld     %bodsec; >
+
+<!ELEMENT cartins     - o  (%titles;, task+) > <!--cartridge installation-->
+<!ATTLIST cartins     %bodsec; > 
+
+<!ELEMENT dlayflt      - o  (%titles;, task+) >
+<!ATTLIST dlayflt     %bodsec; >                                             
+
+<!ELEMENT docldpcl      - -  (front, body)   +(pgbrk | brk | subjinfo
+                             | line | modreq | location) >
+<!ATTLIST docldpcl      pagesize (5x8 | 8.5x11) "5x8"
+			service %service; 'AF'
+			%secur;
+                        %docatt; >
+                        
+<!ELEMENT emergproc     - o  (%titles;, (para0+), ffgtbl*, foottext?)  +(figure | table | tabmat | foldout)>
+<!ATTLIST emergproc     %sectatt; >            	
+       
+<!-- Arbortext 20030116: SFORT 
+     moved the table contents into a row wrapper -->
+<!ELEMENT ffgrow  - o  ((nomencl, withdrtime, withdrdist,
+			     firesym?) | tfndisplay ) >
+<!ATTLIST ffgrow  %secur;
+                  %chgatt; > 
+
+<!-- Arbortext 20030116: SFORT 
+     created a row wrapper for sptteqpttbl content -->
+<!ELEMENT ffgtbl  - o  (ffgrow)*  +(tfnid | tfnref | warning 
+			     	| caution | note)>
+<!ATTLIST ffgtbl  special NMTOKENS #IMPLIED
+		  %tabatts; >                                              
+      
+
+<!-- ATI 20040220:  Changed PCDATA to %text; -->
+<!ELEMENT firesym       - o  (%text;) >
+<!ATTLIST firesym       %tabatts; > 
+
+<!-- ATI 20040220:  Added %chgatt; -->
+<!-- ATI 20040220:  Changed PCDATA to %text; -->
+<!ELEMENT foottext	- o (%text;) >
+<!ATTLIST foottext      %chgatt; > 
+
+<!ELEMENT ldcrewbrief   - o  (%titles;, specbrfrq*, ((task | para0)*)) 
+				+(figure | table | foldout) >
+<!ATTLIST ldcrewbrief   %chapatt; >
+
+<!ELEMENT load      - o  (%titles;, task+) >
+<!ATTLIST load     %bodsec; >
+
+<!ELEMENT loadprep     - o  (%titles;, task+) >
+<!ATTLIST loadprep     %bodsec; >
+
+<!ELEMENT loadproc      - o  ((%titles;, task*, airprepld, loadprep, 
+				((cartins, load) | (load, cartins))+,
+				postldinsp, dlayflt, priorlnch) ) 
+					+(deflist | figure | table | foldout |
+					tabmat) >
+				<!--removed "| natitle" from declaration, 
+				found no use,S.M.Raney 3.may.2001 -->	
+					
+<!ATTLIST loadproc     pghead CDATA #IMPLIED
+                       
+                       %para0att; >
+
+<!-- ATI 20040220:  Changed PCDATA to %text; -->
+<!ELEMENT nomencl       - o  (%text;) >
+<!ATTLIST nomencl       %tabatts; >
+
+<!ELEMENT preunload     - o  (%titles;, task+) >
+<!ATTLIST preunload     %bodsec; >
+
+
+<!ELEMENT postldinsp     - o  (%titles;, task+) >
+<!ATTLIST postldinsp    %bodyatt; >
+
+<!ELEMENT priorlnch     - o  (%titles;, task+) >
+<!ATTLIST priorlnch     %bodsec; >
+
+<!ELEMENT safing     - o  (%titles;, task+) >
+<!ATTLIST safing     %bodsec; >	                        	
+
+<!ELEMENT specbrfrq     - o  (%titles;, task+) >
+<!ATTLIST specbrfrq     %para0att; >
+
+
+<!ELEMENT unload     - o  (%titles;, task+) >
+<!ATTLIST unload     %bodsec; >	
+
+<!ELEMENT unloadproc     - o  ((%titles;, task*, safing, preunload, unload))
+					+(deflist | figure | table | foldout) >
+				<!--removed "| natitle" from declaration, 
+				found no purpose,S.M.Raney 3.may.2001 -->
+<!ATTLIST unloadproc     pghead  CDATA  #IMPLIED
+			 %para0att;
+			    >
+
+<!-- ATI 20040220:  Changed PCDATA to %text; -->
+<!ELEMENT withdrdist     - o  (%text;)>
+<!ATTLIST withdrdist     %tabatts; >
+
+<!-- ATI 20040220:  Changed PCDATA to %text; -->
+<!ELEMENT withdrtime     - o  (%text;)>
+<!ATTLIST withdrtime     %tabatts; >
+
+<!--  ***************** END OF FILE  ************************ -->
+
+

@@ -1,0 +1,229 @@
+<!--PUBLIC "-//USA-DOD//ELEMENTS 3001 Part 2 Draft XML V307 08242016//EN" -->
+
+<!-- 			DTD for Description, Principals of Operation, 
+			and Operation Information. 
+-->
+
+<!-- MIL-STD-3001-2 Section 5.1.  Preparation of descriptive information, principles of operation and operation data shall be developed and contained in Description and Operation Information Modules. These information modules shall be logically subdivided into information or task oriented work packages.  -->
+
+<!--
+
+2 ROOT ELEMENTS FOR DESCRIPTION AND OPERATION INFORMATION MODULES: 
+
+	General Aircraft IM: <genacim>
+	Aeronautical, airborne, and support equipment IM: <descopim> 
+
+-->
+
+<!--General Aircraft Information Module-->
+<!ELEMENT genacim   (acdescwp| acarrgwp | acpnlwp | dangarwp |  acstawp |  acdimwp |  acacesswp | acsysdescwp |  acextpwrwp)*   >
+<!ATTLIST genacim 	   %docatt;
+						%secur;>
+
+<!--Description and Operation Information Module-->
+<!ELEMENT descopim    (descwp |  popwp | schemwp | softwp | operwp | softldwp)* >
+<!ATTLIST descopim 	   %docatt;
+						%secur;>
+
+			<!--WORK PACKAGE ELEMENTS -->
+
+<!--Aircraft General Description Work Package  -->
+<!ELEMENT acdescwp    (titleblk, wpinfo, intro?, acdesc, acdim, acmats, figsect?, foldsect?) >
+<!ATTLIST acdescwp 	columns (single | double) "single"
+			%wpatt;
+			%secur; >
+
+<!--Aircraft Description. A brief description of the aircraft and its mission capabilities. Part of the Aircraft General Description Work Package  -->
+<!ELEMENT acdesc   (title, desc)>
+<!ATTLIST acdesc 	%bodyatt;
+				       %secur; >
+
+<!-- Aircraft Dimensions. Provides illustrations showing the external dimensions of the aircraft. Part of the Aircraft General Description Work Package  -->
+<!ELEMENT acdim   (title, (%paracon;)*, figure*)>
+<!ATTLIST acdim 	%bodyatt;
+				       %secur; >
+
+<!-- Aircraft materials distribution. Identifies the types of material that comprise the aircraft airframe skins and doors. Part of the Aircraft General Description Work Package  -->
+<!ELEMENT acmats   (title, (%paracon;)*, figure*)>
+<!ATTLIST acmats 	%bodyatt;
+				       %secur; >
+
+<!--Aircraft Arrangement Work Package  -->
+<!ELEMENT acarrgwp   (%wpinfogeneric;) >
+<!ATTLIST acarrgwp 	%wpatt;
+				   %secur; >
+
+<!--Aircraft instrument panel location work package -->
+<!ELEMENT acpnlwp   (%wpinfogeneric;) >
+<!ATTLIST acpnlwp 	%wpatt;
+					   %secur; >
+
+<!--Danger areas and precautionary measures work packages -->
+<!ELEMENT dangarwp    (%wpinfogeneric;) >
+<!ATTLIST dangarwp 	%wpatt;
+				   %secur; >
+
+<!--Aircraft stations work package -->
+<!ELEMENT acstawp     (%wpinfogeneric;) >
+<!ATTLIST acstawp 	%wpatt;
+					   %secur; >
+
+<!--Aircraft dimensions work package -->
+<!ELEMENT acdimwp   (%wpinfogeneric;) >
+<!ATTLIST acdimwp 	%wpatt;	
+				   %secur; >
+
+<!--Aircraft access and inspection panels and provisions work package -->
+<!ELEMENT acacesswp   (%wpinfogeneric;) >
+<!ATTLIST acacesswp 	%wpatt;
+					   %secur; >
+
+<!--Aircraft System Description work package -->
+<!ELEMENT acsysdescwp   (%wpinfogeneric;) >
+<!ATTLIST acsysdescwp 	%wpatt;
+					   %secur; >
+
+<!--Aircraft external power source connections work package--> 
+<!ELEMENT acextpwrwp   (%wpinfogeneric;) >
+<!ATTLIST acextpwrwp 	%wpatt;
+					   %secur; >
+
+<!--Aircraft system and component description work package; Aeronautical equipment, airborne weapons/equipment, and support equipment Description work package; and Engine and engine system description work package.  MIL-STD-3001-2 defines this WP as being broken down by system, subsystem, and component, if applicable. However, for Legacy Data only, the WP may be identified as Titled paragraphs and sub-paragraphs.  -->
+<!ELEMENT descwp   (titleblk, wpinfo, intro?, sysdesc+, ctrlinddesc?, figsect?, foldsect?) >
+<!ATTLIST descwp 	columns (single | double) "single"
+			%wpatt;
+			%secur; >
+
+<!--System, Sub-System, or Component Description.  Nesting of element <sysdesc> identifies system/sub-system/component relationship. Found in the Description Work Packages and Principles of Operation Work Package-->
+<!ELEMENT sysdesc   (effect?, title, desc, techchars?, sysdesc*, adddesc*) >
+<!ATTLIST sysdesc 	%bodyatt;
+					   %secur; >
+
+<!--Technical Characteristics of a System, Sub-System, or Component - as part of the system/sub-system, or component description.  -->
+<!ELEMENT techchars    (effect?, title,  (%paracon;)*)>
+<!ATTLIST techchars	%bodyatt;  %secur;>
+
+<!--Additional Description of a System, Sub-System, or Component - as part of the system/sub-system, or component description.  -->
+<!ELEMENT adddesc    (effect?, title,  (%paracon;)*, sub-paras?)>
+<!ATTLIST adddesc	%bodyatt;  %secur;>
+
+<!--Control and Indicator Description for equipment, assembly, or control panel having controls and indicators-->
+<!ELEMENT ctrlinddesc   (effect?, title, (%paracon;)*, sub-paras?, ctrlind*)>
+<!ATTLIST ctrlinddesc 	%bodyatt;
+					       %secur; >
+
+<!--Control and Indicator - groups graphic and control and indicator table showing equipment, assembly, or control panel controls and indicators.  For Legacy Data only, the Control and Indicator Table may be tagged as a CALS Table. -->
+<!ELEMENT ctrlind   (graphic*, ctrlindtab)>
+<!ATTLIST ctrlind	%refs;  %secur;>
+
+<!--Control and Indicator Table -->
+<!ELEMENT ctrlindtab   (title,  ctrlindentry+, noteslist?)>
+<!ATTLIST ctrlindtab	%bodyatt;
+					  %secur;>
+
+<!--An Individual entry in the Control and Indicator Table -->
+<!ELEMENT ctrlindentry   (indexno?, nomen, function)>
+<!ATTLIST ctrlindentry 	%refs;
+					 	 %secur;>
+
+<!--Aircraft weapon system principles of operation work package; Aeronautical equipment, airborne weapons/equipment, and support equipment principles of operation work package; Engine system principles of operation work package. MIL-STD-3001-2 defines this WP as being broken down by system, subsystem, and component, if applicable. However, for Legacy Data only, the WP may be identified as Titled paragraphs and sub-paragraphs. -->
+<!ELEMENT popwp    (titleblk, wpinfo, intro?,  ((descgrp, popgrp) | systhry+), figsect?, foldsect?) >
+<!ATTLIST popwp  columns (single | double) "single"
+		%wpatt;
+	 	%secur; >
+
+
+<!-- Description Group as part of the Principles of Operation Work Package. Detailed physical descriptions of the system, subsystem, or component may be included in the Principles of Operation when usability is enhanced.-->
+<!ELEMENT descgrp   (title, (%paracon;)*, sysdesc*)>
+<!ATTLIST descgrp 	%bodyatt;
+					   %secur; >
+
+<!-- Principles of Operation Group as part of the Principles of Operation Work Package, when followed by detailed physical descriptions of the system, subsystem, or component.-->
+<!ELEMENT popgrp   (title, (%paracon;)*, systhry*)>
+<!ATTLIST popgrp 	%bodyatt;
+					   %secur; >
+
+<!--System, Sub-System, or Component Theory or Principles of Operation. Nesting of element <systhry> identifies system/sub-system/component relationship. Found in the Principles of Operation work package-->
+<!ELEMENT systhry   (effect?, title, thry, systhry*)>
+<!ATTLIST systhry 	%bodyatt;
+					   %secur; >
+
+<!--Theory paragraphs  as found in the system, sub-system, and component level theory of operation -->
+<!ELEMENT thry   (%paracon;)*  >
+<!ATTLIST thry %refs;
+			    %secur;>
+
+<!-- Schematic diagram work packages  -->
+<!ELEMENT schemwp   (titleblk, wpinfo, intro, figsect?, foldsect?) >
+<!ATTLIST schemwp 	%wpatt;
+			%secur; >
+
+<!-- Programming Software Descriptive Data Work Package -->
+<!ELEMENT softwp   (titleblk, wpinfo, intro?, (progtestdesc | stim-measdesc | statedesc)*, figsect?, foldsect?) >
+<!ATTLIST softwp 	%wpatt;
+				   %secur; >
+
+<!-- Programming or self tests   -->
+<!ELEMENT progtestdesc    (effect?, title, (%paracon;)*, sub-paras?)>
+<!ATTLIST progtestdesc %bodyatt; 
+				%secur;>
+
+<!-- Description of Stimulus and Measurement Programming -->
+<!ELEMENT stim-measdesc    (effect?, title, (%paracon;)*, sub-paras?)>
+<!ATTLIST stim-measdesc %bodyatt; 
+				%secur;>
+
+<!-- Programming Statement Description -->
+<!ELEMENT statedesc    (effect?, title, (%paracon;)*, sub-paras?)>
+<!ATTLIST statedesc %bodyatt; 
+				%secur;>
+
+<!--Operating instruction work package -->
+<!ELEMENT operwp   (titleblk, wpinfo, intro?, ((prepuse?, preop?, ctrlinddesc?, startup?, bit-st-op?, op-proc+, emerg-proc?, emshut-proc?, post-op-proc?) | op-type+), figsect?, foldsect?) >
+<!ATTLIST operwp 	%wpatt;
+				   %secur; >
+
+<!--Operating "type". Used to group operating procedures by an operating type, such as mode. If necessary, for systems or equipment that have more than one method of operation or several modes of operation,  procedures can be repeated for each type,  method, or mode in the same work package. -->
+<!ELEMENT op-type   (effect?, title, prepuse?, preop?, ctrlinddesc?, startup?, bit-st-op?, op-proc+, emerg-proc?, emshut-proc?, post-op-proc?)>
+<!ATTLIST op-type  %stepatt; 
+				%secur;>
+
+<!--Pre-operational setup procedures as part of the Operating Instructions Work Packages-->
+<!ELEMENT preop   (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST preop  %stepatt; 
+				%secur;>
+
+<!--Start-up information as part of the Operating Instructions Work Packages-->
+<!ELEMENT startup   (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST startup  %stepatt; 
+					%secur;>
+
+<!--Built-in-test or self-test procedures  as part of the Operating Instructions Work Packages-->
+<!ELEMENT bit-st-op   (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST  bit-st-op  %stepatt; 
+					%secur;>
+
+<!--Operating procedures (normal sequence of operation) as part of the Operating Instructions Work Packages-->
+<!ELEMENT op-proc   (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST op-proc  %stepatt; 
+					%secur;>
+
+<!--Emergency operation procedures  as part of the Operating Instructions Work Packages-->
+<!ELEMENT emerg-proc   (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST  emerg-proc   %stepatt; 
+						%secur;>
+
+<!--Emergency shut-down procedures as part of the Operating Instructions Work Packages-->
+<!ELEMENT emshut-proc   (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST  emshut-proc  %stepatt; 
+						%secur;>
+
+<!--Post-operational shut-down procedures as part of the Operating Instructions Work Packages-->
+<!ELEMENT post-op-proc   (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST post-op-proc  %stepatt; 
+						%secur;>
+
+<!--Software loading work packages-->
+<!ELEMENT softldwp   (titleblk, wpinfo, intro?, (titledpara* | softload*), figsect?, foldsect?) >
+<!ATTLIST softldwp 	%wpatt;
+				       %secur; >

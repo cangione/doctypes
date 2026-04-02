@@ -1,0 +1,219 @@
+<!--PUBLIC "-//USA-DOD//ELEMENTS 3001 Part 6 Draft XML V307 08242016"-->
+
+
+
+<!-- 			DTD for Structural Repair Information 
+-->
+
+<!ENTITY % wpstructinfoproc  "(titleblk,  wpinfo,   intro?, structrepair+, figsect?, foldsect?)">
+
+<!-- =========================-->
+
+<!--	1 ROOT ELEMENTS FOR STRUCTURAL REPAIR INFORMATION MODULE
+	 Structural Repair IM: <structim>
+-->
+
+<!-- Structural Repair Information Module-->
+<!ELEMENT structim    (genstructwp | typrepwp | repindxwp | specrepwp |  cormatwp | geninfowp | typcorwp | corinspwp | corclnwp | stripwp | corremwp | chemtrtwp | corsealwp | paintsyswp | ndigeninfowp | nditypwp | ndindxwp | ndispecwp)*
+ >
+<!ATTLIST structim 	 %docatt;
+				%secur;>
+
+<!--Work Package Elements-->
+
+<!--General Aircraft Structural Work Package -->
+<!ELEMENT genstructwp   (%wpstructinfoproc;) >
+<!ATTLIST genstructwp 	   %wpatt;
+					   %secur;>
+
+<!--Typical Common Repair Work Package -->
+<!ELEMENT typrepwp    (titleblk,  wpinfo,  intro?, typrepproc+, figsect?, foldsect?)>
+<!ATTLIST typrepwp 	   %wpatt;
+				%secur;>
+
+<!--Specific Repair Work Package-->
+<!ELEMENT specrepwp    (titleblk,  wpinfo,   intro?, damage*, typrepproc*, specrepproc*, ipb-structdata?, figsect?, foldsect?) >
+<!ATTLIST specrepwp 	%wpatt;
+					%secur;>
+
+<!--Damage identification and evaluation data. Part of the Specific Repair Work Package-->
+<!ELEMENT damage     (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST damage 	%stepatt;
+				%secur;>
+
+<!-- Structural Repair Procedures. -->
+<!ELEMENT structrepair    (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST structrepair 	   %stepatt;
+					    %secur;>
+
+<!--Typical repair procedures. Part of the Specific Repair Work Package-->
+<!ELEMENT typrepproc    (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST typrepproc		%stepatt;
+						%secur;>
+
+<!--Aircraft Specific repair procedures. Part of the Specific Repair Work Package-->
+<!ELEMENT specrepproc    (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST specrepproc 	%stepatt;
+					%secur;>
+
+<!--Structural Group Repair Index Work Package -->
+<!ELEMENT repindxwp    (titleblk,  wpinfo,  intro?, repindx+, figsect?, foldsect?) >
+<!ATTLIST repindxwp 	  	%wpatt;
+					%secur;>
+
+<!--Structural Group Repair Index Illustration -->
+<!ELEMENT repindx   (figure, (repindxlist | repindxtable))>
+<!ATTLIST repindx 	%bodyatt;
+				%secur;>
+
+<!--Structural Group Repair Index  Listing -->
+<!ELEMENT repindxlist   (title?,  repindxentry+, noteslist?)>
+<!ATTLIST repindxlist 	   %refs;
+				   %secur;>
+
+<!--An entry in the Structural Group Repair Index Listing -->
+<!ELEMENT repindxentry   (indexno, nomen, partno, reference)>
+<!ATTLIST repindxentry  	%refs;
+					%secur;>
+
+<!--Structural Group Repair Index Table -->
+<!ELEMENT repindxtable   (title?,  repindxtableentry+, noteslist?)>
+<!ATTLIST repindxtable 	   %refs;
+				   %secur;>
+
+<!--An entry in the Structural Group Repair Index  Table -->
+<!ELEMENT repindxtableentry   (indexno, nomen, reference)>
+<!ATTLIST repindxtableentry  	%refs;
+					%secur;>
+
+<!--Corrosion Control Materials Requirements Work Package -->
+<!ELEMENT cormatwp    (titleblk,  wpinfo,  intro?, cormatlist, figsect?, foldsect?) >
+<!ATTLIST cormatwp 	   %wpatt;
+				   %secur;>
+
+<!--Corrosion Control Materials Requirements List -->
+<!ELEMENT cormatlist    (title,  cormatentry+, noteslist?)>
+<!ATTLIST cormatlist 	   %refs;
+				   %secur;>
+
+<!--An entry in the Corrosion Control Materials Requirements List -->
+<!ELEMENT cormatentry   (nomen, spec, applic)>
+<!ATTLIST cormatentry 	   %refs;
+						%secur;>
+
+<!--Specific application information for a material included in the Corrosion Control Materials Requirements List -->
+<!ELEMENT applic   (para+)>
+<!ATTLIST applic		%secur;>
+
+<!--General Information Work Package-->
+<!ELEMENT geninfowp    (%wpinfogeneric;) >
+<!ATTLIST geninfowp 	   %wpatt;
+						%secur;>
+
+<!--Typical Corrosion Control Data Work Package-->
+<!ELEMENT typcorwp    (%wpinfogeneric;) >
+<!ATTLIST typcorwp 	   %wpatt;
+						%secur;>
+
+<!--Inspection for Corrosion Work Package-->
+<!ELEMENT corinspwp    (%wpinfogeneric;) >
+<!ATTLIST corinspwp 	   %wpatt;
+						%secur;>
+
+<!--Cleaning Work Package-->
+<!ELEMENT corclnwp   (%wpstructinfoproc;) >
+<!ATTLIST corclnwp 	   %wpatt;
+						%secur;>
+
+<!--Stripping Work Package-->
+<!ELEMENT stripwp    (titleblk,  wpinfo,  intro?, (strip | titledpara)+, figsect?, foldsect?) >
+<!ATTLIST stripwp 	   %wpatt;
+						%secur;>
+<!--Stripping Task -->
+<!ELEMENT strip    (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST strip 	   %stepatt;
+					    %secur;>
+					    
+<!--Corrosion Removal Work Package-->
+<!ELEMENT corremwp    (titleblk,  wpinfo,  intro?, correm+, figsect?, foldsect?) >
+<!ATTLIST corremwp 	   %wpatt;
+						%secur;>
+<!--Corrosion Removal Task -->
+<!ELEMENT correm    (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST correm 	   %stepatt;
+					    %secur;>
+					    
+<!--Chemical Treatment of Metal Surfaces Work Package-->
+<!ELEMENT chemtrtwp    (%wpstructinfoproc;) >
+<!ATTLIST chemtrtwp 	   %wpatt;
+						%secur;>
+
+<!--Corrosion Control Seals and Sealant Work Package-->
+<!ELEMENT corsealwp    (%wpstructinfoproc;) >
+<!ATTLIST corsealwp 	   %wpatt;
+						%secur;>
+
+<!--Paint Systems Work Packages-->
+<!ELEMENT paintsyswp   (%wpinfogeneric;) >
+<!ATTLIST paintsyswp 	   %wpatt;
+						%secur;>
+
+<!--Nondestructive Inspection General Information Work Package-->
+<!ELEMENT ndigeninfowp    (%wpinfogeneric;) >
+<!ATTLIST ndigeninfowp 	   %wpatt;
+						%secur;>
+
+<!--Nondestructive Inspection Typical Procedures Work Package-->
+<!ELEMENT nditypwp    (%wpstructinfoproc;) >
+<!ATTLIST nditypwp 	   %wpatt;
+						%secur;>
+
+<!--Nondestructive Inspection Index Work Package-->
+<!ELEMENT ndindxwp    (titleblk,  wpinfo,  intro?, ndindx+, figsect?, foldsect?) >
+<!ATTLIST ndindxwp 	   %wpatt;
+						%secur;>
+
+<!--Nondestructive Inspection Index Illustration-->
+<!ELEMENT ndindx   (figure, ndindxlist)>
+<!ATTLIST ndindx 	   %bodyatt;
+						%secur;>
+
+<!--Nondestructive Inspection Index List-->
+<!ELEMENT ndindxlist   (title, ndindxentry+, noteslist?)>
+<!ATTLIST ndindxlist 	   %refs;
+						%secur;>
+
+<!--An entry in the Nondestructive Inspection Index List-->
+<!ELEMENT ndindxentry   (indexno, nomen, reference)>
+<!ATTLIST ndindxentry 	   %refs;
+						%secur;>
+
+<!--Nondestructive Inspection Specific Procedures Work Packages-->
+<!ELEMENT ndispecwp    (titleblk,  wpinfo,  intro?, itemnom, itemdesc, defdesc, priproc, bkupproc?, figsect?, foldsect?) >
+<!ATTLIST ndispecwp 	   %wpatt;
+						%secur;>
+
+<!--Item Nomenclature-->
+<!ELEMENT itemnom    (title, ((%paracon;) | figure)*, sub-paras?)>
+<!ATTLIST itemnom 	   %bodyatt;
+						%secur;>
+
+<!--Item Description-->
+<!ELEMENT itemdesc    (title, ((%paracon;) | figure)*, sub-paras?)>
+<!ATTLIST itemdesc 	   %bodyatt;
+						%secur;>
+
+<!--Defect Description-->
+<!ELEMENT defdesc    (title, ((%paracon;) | figure)*, sub-paras?)>
+<!ATTLIST defdesc 	   %bodyatt;
+						%secur;>
+
+<!--Primary NDI Procedures -->
+<!ELEMENT priproc     (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST priproc 	   %stepatt;
+						%secur;>
+
+<!--Backup NDI Procedures -->
+<!ELEMENT bkupproc   (title, %proccon;, taskintro?, step*, proc*)>
+<!ATTLIST bkupproc 	   %stepatt;
+						%secur;>

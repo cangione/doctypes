@@ -1,0 +1,25 @@
+--=============================================================================--
+--            GPSL - MIL-STD DOCTYPE DECLARATIONS                              --
+--=============================================================================--
+
+PUBLIC "-//USA-DOD//DTD pmrim 3001 Part 7 Draft XML V307 08242016//EN"                   "pmrim.dtd"
+PUBLIC "-//USA-DOD//DTD MIL-STD-3001-1 TM Assembly Draft XML V307 08242016//EN"          "Milstd1.dtd"
+PUBLIC "-//USA-DOD//DTD MIL-STD-3001-1 TM Assembly Draft XML V306 09152013//EN"			 "Milstd1.dtd"
+PUBLIC "-//USA-DOD//DTD MIL-STD-3001-1 TM Assembly Draft XML V305 10192012//EN"			 "Milstd1.dtd"
+
+--=============================================================================--
+--            ENTITIES                                                   --
+--=============================================================================--
+
+--PUBLIC "-//USA-DOD//ELEMENTS FRONT MATTER 3001 Part 1 Draft XML V307 08242016//EN"       "Front.ent"--
+--PUBLIC "-//USA-DOD//ENTITIES 3001 Common Draft XML V307 08242016//EN"                    "Common.ent"--
+--PUBLIC "-//USA-DOD//ELEMENTS 3001 Part 7 Draft XML V307 08242016//EN"					   "Milstd7.ent"--
+
+--PUBLIC "-//USA-DOD//ELEMENTS ASSEMBLY 3001 Part 1 Draft XML V307 08242016//EN"           "Assembly.ent"--
+--PUBLIC  "-//USA-DOD//ENTITIES 3001 IPB DATA Draft XML V307 08242016//EN"                 "Ipbdata.ent"--
+
+SYSTEM "Milstd1.fos" "Milstd1.fos"
+URI "Milstd1.fos" "Milstd1.fos"
+
+SYSTEM "Milstd1.fos" "pmrim.fos"
+URI "Milstd1.fos" "pmrim.fos"

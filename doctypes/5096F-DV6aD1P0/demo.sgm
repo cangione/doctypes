@@ -1,0 +1,932 @@
+<!--Arbortext, Inc., 1988-2019, v.4002-->
+<!DOCTYPE DOC PUBLIC "-//USA-DOD//DTD 5096F-DV6aD1P0//EN">
+<doc service="af" docid="1F-73(A)B-6WC-2" docstat="prelim"
+verstatpg="unver" security="u"><docwc><front t2page="1" numcols="1">
+<idinfo><?Pub Lcl _divid="100" _parentid="0"><tmidno security="u">5096F-DV6aD1P0
+</tmidno><chghistory></chghistory>
+<doctype>INSPECTION WORK CARDS</doctype>
+<prtitle><nomen security="u">Workcards</nomen>
+<modelno>(5096F-DV6aD1P0) X#X AND X#XB Aircraft</modelno>
+</prtitle>
+<mfr>The Aircraft Company, INC.</mfr>
+<contractno>ABCXY-01-Z-2345&ndash;6789</contractno>
+<supersed>THIS PUBLICATION SUPERSEDES TO XXXXXXXX DATED 1 December
+2004.</supersed>
+<suppl>SUPPLEMENT STATEMENT</suppl>
+<discl>This document was prepared by GPSL for demonstration purposes
+only. It is intended to be representative of the types of elements
+appearing in a typical DoD Technical Manual. It is not intended to
+be a faithful reproduction of an actual Technical Manual and it should
+in no way be treated as if the information contained within is accurate
+or complete.</discl>
+<distrib>Distribution authorized to the Department of Defense and
+US DoD contractors only (Administrative or Operational Use) (7 March
+2003).  Questions concerning technical content or any other requests
+for this document shall be referred to ABC/ABC, XXX Some Street, Bldg
+123, AN AIRBASE AFB, XX  XXXXX-XXXX (Attention: TO Manager).</distrib>
+<expcont>This document contains technical data whose export is restricted
+by the Arms Export Control Act (Title 22, U.S.C., Sec 2751 <emphasis
+type="i">et seq.</emphasis>) or the Export Administration Act of 1979,
+as amended (Title 50, U.S.C., App. 2401 <emphasis type="i">et seq.</emphasis>).
+Violators of these export laws are subject to severe criminal penalties.</expcont>
+<destr>Comply with distribution statement and destroy by any method
+that will prevent disclosure of the contents or reconstruction of
+the document. See TO 00-5-1 for specific destruction procedures and
+disposition instructions.</destr>
+<moveddata>Moveddata Element</moveddata>
+<authnot>Published under authority of the Secretary of the Air Force.</authnot>
+<downgrd><oadr>OADR Statement</oadr></downgrd><pubdate>16 OCTOBER
+2007</pubdate></idinfo><lep><?Pub Lcl _divid="200" _parentid="0">
+<lepcontents autobuild="1"></lep>
+<verstat autobuild="1" toma="TOMA Information">
+<intro><?Pub Lcl _divid="300" _parentid="0"><?Pub Dtl>
+<card type="i" inspreq="INTRODUCTION CARD" grouping="intro"
+figure="None"><?Pub Dtl>
+<heading>Intro card 1</heading>
+<para0 applicref="a" security="u">
+<para security="u">This (workcard/checklist) is a step-by-step guide
+in abbreviated form for use as a reference to ensure accomplishment
+of selected tasks by a predetermined sequence procedure. The intent
+of this (workcard/checklist) is to eliminate the probability of omission
+of a step In the accomplishment of the intended task. The procedures
+contained herein are presented in the shortest practical form for
+use by qualified personnel and are not intended to provide full technical
+instructions. This (workcard/checklist) provides, in an abbreviated
+form, procedures for (appropriate tasks, inspections, etc.). These
+procedures are derived from, but do not replace, the detailed procedures
+contained in Technical Orders (TO). When malfunctions occur reference
+to the TO shall be made.<ftnote id="ftntintro-1"> This is a test of
+a footnote.</ftnote></para>
+</para0>
+<para0 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+applicref="b" security="u">
+<para security="u">THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN
+THE INTRO. THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE
+INTRO. THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO.
+THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS
+IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A
+PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A PARA
+WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A PARA WITHIN
+A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A PARA WITHIN A PARA0
+WITHIN A CARD WITHIN THE INTRO. </para>
+</para0>
+<para0 security="u">
+<para security="u"><esds><fcp><hci><hcp><nsp><oci><ocp>THIS IS A PARA
+WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A PARA WITHIN
+A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A PARA WITHIN A PARA0
+WITHIN A CARD WITHIN THE INTRO. THIS IS A PARA WITHIN A PARA0 WITHIN
+A CARD WITHIN THE INTRO. THIS IS A PARA WITHIN A PARA0 WITHIN A CARD
+WITHIN THE INTRO. THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN
+THE INTRO. THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE
+INTRO. THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO.
+THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. </para>
+</para0>
+<para0 security="u">
+<para security="u">THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN
+THE INTRO. THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE
+INTRO. THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO.
+THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS
+IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A
+PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A PARA
+WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A PARA WITHIN
+A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A PARA WITHIN A PARA0
+WITHIN A CARD WITHIN THE INTRO. </para>
+<subpara1 applicref="a">
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. </para>
+<subpara2 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1">
+<para>This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document.</para>
+</subpara2>
+<subpara2 applicref="b">
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document.</para>
+<subpara3><para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document.</para>
+</subpara3>
+<subpara3 emergency="1" esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1"
+oci="1" applicref="b"><para><ocp>This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document.</para>
+<subpara4 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1">
+<para>This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document. This sentence
+is filler for the purpose of testing the document. This sentence is
+filler for the purpose of testing the document. This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose of
+testing the document.</para>
+</subpara4>
+<subpara4 applicref="b">
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the doocument. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document.</para>
+<step1 applicref="a">
+<para>This is a STEP1 element.</para></step1>
+<step1>
+<para><applicabil applicref="b"></applicabil>This is a STEP1 element.</para>
+<step2>
+<para><applicabil applicref="a"></applicabil>This is a STEP2 element.</para>
+</step2>
+<step2 applicref="a">
+<para>This is a STEP2 element.</para>
+<step3 applicref="b">
+<para>This is a STEP3 element.</para></step3>
+<step3>
+<para><applicabil applicref="b"></applicabil>This is a STEP3 element.</para>
+<step4>
+<para><applicabil applicref="a"></applicabil>This is a STEP4 element.</para>
+</step4>
+<step4 applicref="a">
+<para>This is a STEP4 element.</para></step4>
+</step3>
+</step2>
+</step1>
+<subpara5>
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document.</para>
+<subpara6 applicref="b">
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document.</para>
+</subpara6>
+<subpara6 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+applicref="b">
+<para>Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+<subpara7 applicref="a">
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document.</para>
+</subpara7>
+<subpara7 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+applicref="a">
+<para>Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+<subpara8 applicref="b">
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document.</para>
+</subpara8>
+<subpara8 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+applicref="b">
+<para>Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0>
+<applicdef><para>This paragraph will define blocks of aircraft serial
+numbers using the applicref attribute of an element or inserting the
+abblicabil element in elements not having the applicref attribute.</para>
+<appltitle>Applicability Title</appltitle>
+<applic id="a">
+<term>a</term><def>Serial Number 1 thru 100.</def>
+</applic>
+<applic id="b">
+<term>b</term><def>Serial Number 101 thru 1000.</def>
+</applic></applicdef>
+</card>
+<card type="i" inspreq="SECOND INTRODUCTION CARD" grouping="intro"
+figure="None"><?Pub Dtl>
+<para0 security="u">
+<para security="u">THE FOLLOWING TECHNICIANS ARE TO BE USED DURING
+PERIODIC INSPECTIONS AS INDICATED BY TECHNICIAN CODE LETTERS ON EACH
+WORK CARD. <tabmat frame="none" pgwide="0"><tgroup cols="2" colsep="0">
+<colspec colnum="1" align="center" topmar="2pt" botmar="2pt"
+colwidth="1.50in"><colspec colnum="2" align="left" topmar="2pt"
+botmar="2pt" colwidth="2.78in"><thead valign="top">
+<row>
+<entry security="u">TECHNICIAN CODE</entry>
+<entry align="center">JOB TITLE</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>A</entry>
+<entry>TECHNICIAN CODE A</entry>
+</row>
+<row>
+<entry>B</entry>
+<entry>TECHNICIAN CODE B</entry>
+</row>
+<row>
+<entry>C</entry>
+<entry>TECHNICIAN CODE C</entry>
+</row>
+</tbody></tgroup></tabmat></para>
+</para0>
+</card>
+<card type="i" inspreq="WORK AREA CARD" grouping="intro"
+figure="Figure 1"><?Pub Dtl>
+<heading>safey summary</heading>
+<para0 security="u">
+<para>THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO.
+THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS
+IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A
+PARA WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A PARA
+WITHIN A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A PARA WITHIN
+A PARA0 WITHIN A CARD WITHIN THE INTRO. THIS IS A PARA WITHIN A PARA0
+WITHIN A CARD WITHIN THE INTRO.<table rowsep="1" applicref="b">
+<title>Work Area Table</title>
+<tgroup cols="2"><colspec colname="col1" colwidth=".50in"><colspec
+colname="col2" colwidth="3.0in"><spanspec namest="col1" nameend="col2"
+spanname="spanall"><tbody>
+<row>
+<entry>1A</entry>
+<entry>Work area number 1A<tfoot><tfnid id="tblftnt-1"> This is a
+table footnote.</tfnid></tfoot></entry>
+</row>
+<row>
+<entry>2B</entry>
+<entry>Work area number 2B<tfoot><tfnref xrefid="tblftnt-2"></tfoot></entry>
+</row>
+<row>
+<entry>3C</entry>
+<entry>Work area number 3C<tfoot><tfnid id="tblftnt-2">Second table
+footnote.</tfnid></tfoot></entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>Work area number 4</entry>
+</row>
+<row>
+<entry spanname="spanall" align="center">Span cells text centered.</entry>
+</row>
+<row>
+<entry spanname="spanall" align="justify"><tfndisplay></entry>
+</row>
+</tbody></tgroup></table><figure applicref="a" security="u">
+<title>SAMPLE WORK AREA DIAGRAM</title>
+<graphic boardno="vapor" reprowid="2.0in" scalefit="1" hplace="center"
+icon="yes" security="u"></figure></para>
+</para0>
+</card>
+</intro></front>
+<body numcols="1"><inspection security="u"><section security="u"><?Pub Lcl
+_divid="400" _parentid="0">
+<card type="a" inspreq="FORD" grouping="other"></card><?Pub Caret -1>
+<card type="ba" cardno="1-001" area="1A/2B/3C/4" mechtype="ACFT"
+mechno="1" cardtime="70" inspreq="PREFLIGHT PREPARATION" grouping="prep"
+power="onoff" service="inout" figure="Figure 1">
+<action security="u" cardno="cardnoA" wucsys="23" wucsub="ABC" area="1A"
+minute="35"><task applicref="a"><para>PARA IN A TASK IN AN ACTION. </para>
+</task></action>
+<action applicref="b" security="u" cardno="cardnoA" wucsys="23"
+wucsub="ACB" area="2B/3C" minute="5"><task><para>,<applicabil
+applicref="a"></applicabil> PARA IN A TASK IN AN ACTION. </para></task>
+</action>
+<action verstatus="ver" wucsys="23" wucsub="ADC" area="2B/3C" minute="5">
+<task verstatus="ver"><para>PARA IN A TASK IN AN ACTION. </para></task>
+</action>
+<action wucsys="23" wucsub="AEC" area="3C/4" minute="15"><task><para>PARA
+IN A TASK IN AN ACTION. </para></task></action>
+<action verstatus="ver" cardno="cardnoA" wucsys="23" wucsub="BAA"
+area="4" minute="10"><task verstatus="ver"><para><graphic
+boardno="vapor" reprowid="0.15in" reprodep="0.15in" scalefit="1"
+icon="yes"> PARA IN A TASK IN AN ACTION FOLLOWING A GRAPHIC. A FIGURE
+FOLLOWS THIS ACTION.</para></task></action>
+<figure applicref="a" verstatus="ver">
+<title>FIGURE TITLE (hplace=right)</title>
+<graphic boardno="vapor" reprowid="3.5in" scalefit="1" hplace="right">
+</figure>
+</card><card type="ba" cardno="1-002" area="1/3/5/7" mechtype="ACFT"
+mechno="1" cardtime="20 min" inspreq="PREFLIGHT PREPARATION"
+grouping="prep" power="onoff" service="inout" figure="Figure 2">
+<action verstatus="ver" cardno="cardnoB" wucsys="34" wucsub="ABC"
+area="1/3/7" minute="5"><task><para><graphic boardno="bio"
+reprowid="0.15in" scalefit="1" icon="yes"> PARA IN A TASK IN AN ACTION. </para>
+</task></action>
+<action applicref="d" security="u" cardno="cardnoB" wucsys="34"
+wucsub="CDE" area="5" minute="5"><task><para><graphic boardno="bio"
+reprowid="0.15in" scalefit="1" icon="yes"> PARA IN A TASK IN AN ACTION. </para>
+</task></action>
+<action verstatus="ver" cardno="cardnoB" wucsys="34" wucsub="DRC"
+area="1/7" minute="10"><task applicref="d"><para>PARA IN A TASK IN
+AN ACTION.  A FIGURE FOLLOWS THIS ACTION.</para></task></action>
+<figure applicref="c" verstatus="ver">
+<title><esds><fcp><hci><hcp><nsp><oci><ocp>FIGURE TITLE</title>
+<graphic boardno="vapor" reprowid="2in" scalefit="1"></figure>
+<applicdef verstatus="ver">
+<appltitle>List ofCard Applicability and Effectivity</appltitle>
+<applichd>
+<term>TERM</term><def>DEFINITION</def>
+</applichd>
+<applic id="c">
+<term>c</term><def>This is applicability a. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic>
+<applic id="d">
+<term>d</term><def>This is applicability b. This could also contain
+a listing of serial numbers as for an aircraft or to define applicability
+to a part number.</def>
+</applic></applicdef></card></section><section><?Pub Lcl _divid="500"
+_parentid="0"><?Pub Dtl>
+<card cardno="2-001" area="As Required" mechtype="APG" mechno="4"
+cardtime="380" inspreq="PREFLIGHT" grouping="pre" power="off"
+service="in" figure="None">
+<heading>SECT CARD 1 Heading text card=&rdquo;B&rdquo;</heading>
+<action cardno="cardnoC" wucsys="88" wucsub="ABC" area="1" minute="5">
+<note>
+<para>PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE.
+PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA
+IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. </para>
+<para><applicabil applicref="b"></applicabil> Second para in a note.
+Second para in a note. Second para in a note.</para>
+</note>
+<task verstatus="ver"><para>PARA IN A TASK IN AN ACTION.  PRECEDED
+BY A NOTE.</para></task></action>
+<action verstatus="ver" cardno="cardnoC" wucsys="88" wucsub="ABC"
+area="2C/2D" minute="10"><task><para>PARA IN A TASK IN AN ACTION.
+ </para></task></action>
+<action cardno="cardnoC" wucsys="88" wucsub="ABC" area="1" minute="5">
+<note>
+<para>PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE.
+PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA
+IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. </para>
+<para><applicabil applicref="b"></applicabil> Second para in a note.
+Second para in a note. Second para in a note.</para>
+</note>
+<task verstatus="ver"><para>PARA IN A TASK IN AN ACTION.  PRECEDED
+BY A NOTE.</para></task></action>
+<action verstatus="ver" cardno="cardnoC" wucsys="88" wucsub="ABC"
+area="2C/2D" minute="10"><task><para>PARA IN A TASK IN AN ACTION.
+ </para></task></action>
+<action cardno="cardnoC" wucsys="88" wucsub="ABC" area="1" minute="5">
+<note>
+<para>PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE.
+PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA
+IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. </para>
+<para><applicabil applicref="b"></applicabil> Second para in a note.
+Second para in a note. Second para in a note.</para>
+</note>
+<task verstatus="ver"><para>PARA IN A TASK IN AN ACTION.  PRECEDED
+BY A NOTE.</para></task></action>
+<action verstatus="ver" cardno="cardnoC" wucsys="88" wucsub="ABC"
+area="2C/2D" minute="10"><task><para>PARA IN A TASK IN AN ACTION.
+ </para></task></action>
+<action cardno="cardnoC" wucsys="88" wucsub="ABC" area="1" minute="5">
+<note>
+<para>PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE.
+PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA
+IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. </para>
+<para><applicabil applicref="b"></applicabil> Second para in a note.
+Second para in a note. Second para in a note.</para>
+</note>
+<task verstatus="ver"><para>PARA IN A TASK IN AN ACTION.  PRECEDED
+BY A NOTE.</para></task></action>
+<action verstatus="ver" cardno="cardnoC" wucsys="88" wucsub="ABC"
+area="2C/2D" minute="10"><task><para>PARA IN A TASK IN AN ACTION.
+ </para></task></action>
+<action cardno="cardnoC" wucsys="88" wucsub="ABC" area="1" minute="5">
+<note>
+<para>PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE.
+PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. PARA
+IN A NOTE. PARA IN A NOTE. PARA IN A NOTE. </para>
+<para><applicabil applicref="b"></applicabil> Second para in a note.
+Second para in a note. Second para in a note.</para>
+</note>
+<task verstatus="ver"><para>PARA IN A TASK IN AN ACTION.  PRECEDED
+BY A NOTE.</para></task></action>
+<action verstatus="ver" cardno="cardnoC" wucsys="88" wucsub="ABC"
+area="2C/2D" minute="10"><task><para>PARA IN A TASK IN AN ACTION.
+ </para></task></action>
+<action cardno="cardnoC" wucsys="88" wucsub="ABC" area="1A" minute="15">
+<task verstatus="ver"><para>PARA IN A TASK IN AN ACTION.  PARA IN
+A TASK IN AN ACTION.  PARA IN A TASK IN AN ACTION. </para></task>
+<subaction1 verstatus="ver" cardno="cardnoC" wucsys="88" wucsub="ABC"
+area="1" minute="20"><task applicref="a"><para>PARA IN A TASK IN A
+SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+<subaction2 cardno="cardnoC" wucsys="88" wucsub="ABC" area="1"
+minute="3"><task verstatus="ver"><para>PARA IN A TASK IN A SUBACTION2.
+PARA IN A TASK IN A SUBACTION2. </para></task></subaction2>
+<subaction2 verstatus="ver" cardno="cardnoC" wucsys="88" wucsub="ABC"
+area="1" minute="3"><task applicref="b"><para>PARA IN A TASK IN A
+SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task></subaction2>
+<subaction2 applicref="a" cardno="cardnoC" wucsys="88" wucsub="ABC"
+area="1" minute="3"><task verstatus="ver"><para> PARA IN A TASK IN
+A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task></subaction2>
+<subaction2 verstatus="ver" cardno="cardnoC" wucsys="88" wucsub="ABC"
+area="1" minute="3"><task><para><applicabil applicref="b"></applicabil> PARA
+IN A TASK IN A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction2>
+<subaction2 applicref="a" cardno="cardnoC" wucsys="88" wucsub="ABC"
+area="1" minute="3"><task verstatus="ver"><para>PARA IN A TASK IN
+A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task></subaction2>
+<subaction2 verstatus="ver" cardno="cardnoC" wucsys="88" wucsub="ABC"
+area="1" minute="3"><task><para>PARA IN A TASK IN A SUBACTION. PARA
+IN A TASK IN A SUBACTION. </para></task></subaction2>
+<subaction2 cardno="cardnoC" wucsys="88" wucsub="ABC" area="1"
+minute="2"><task><para>PARA IN A TASK IN A SUBACTION. PARA IN A TASK
+IN A SUBACTION.</para></task></subaction2>
+</subaction1>
+<subaction1 applicref="a" cardno="cardnoC" wucsys="88" wucsub="BCD"
+area="1" minute="25"><task verstatus="ver"><para>PARA IN A TASK IN
+A SUBACTION. PARA IN A TASK IN A SUBACTION. PARA IN A TASK IN A SUBACTION.
+</para></task></subaction1>
+<subaction1 verstatus="ver" cardno="cardnoC" wucsys="88" wucsub="BCD"
+area="1" minute="30"><task applicref="a"><para><applicabil applicref="b"></applicabil> PARA
+IN A TASK IN A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+<subaction1 security="u" cardno="cardnoC" wucsys="88" wucsub="BCD"
+area="1" minute="35"><task verstatus="ver"><para>PARA IN A TASK IN
+A SUBACTION. PARA IN A TASK IN A SUBACTION. PARA IN A TASK IN A SUBACTION.
+</para></task></subaction1>
+<subaction1 security="u" cardno="cardnoC" wucsys="88" wucsub="BCD"
+area="1" minute="40"><task><para>PARA IN A TASK IN A SUBACTION. PARA
+IN A TASK IN A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+</action>
+<action applicref="a" verstatus="ver" security="u" cardno="cardnoC"
+wucsys="88" wucsub="BCD" area="1B" minute="45"><task verstatus="ver">
+<para>PARA IN A TASK IN AN ACTION. </para></task></action>
+<action security="u" cardno="cardnoC" wucsys="88" wucsub="DCB" area="2C"
+minute="60"><task applicref="b"><para><graphic boardno="bio"
+reprodep="0.285in" scalefit="1" icon="yes" security="u"><graphic
+boardno="vapor" reprodep="0.3in" scalefit="1" icon="yes"><graphic
+boardno="fire" reprodep="0.3in" scalefit="1" icon="yes" security="u"> PARA
+IN A TASK IN AN ACTION.  THREE OF THE HAZARD SYMBOLS PRECEDE.</para>
+</task>
+<subaction1 cardno="cardnoC" wucsys="88" wucsub="EDF" area="1B/2D"
+minute="12"><task><para><esds>PARA IN A TASK IN A SUBACTION. PARA
+IN A TASK IN A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+<subaction1 verstatus="ver" cardno="cardnoC" wucsys="88" wucsub="EDF"
+area="1B" minute="24"><task><para>PARA IN A TASK IN A SUBACTION. PARA
+IN A TASK IN A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+<subaction1 cardno="cardnoC" wucsys="88" wucsub="EDF" area="2D/3"
+minute="24"><task><para>PARA IN A TASK IN A SUBACTION. PARA IN A TASK
+IN A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+</action>
+<action verstatus="ver" cardno="cardnoC" wucsys="88" wucsub="EDF"
+area="5" minute="15"><task><para><graphic boardno="bio"
+reprowid="0.15in" reprodep="0.15in" scalefit="1" icon="yes"> PARA
+IN A TASK IN AN ACTION. PARA IN A TASK IN AN ACTION.</para></task>
+</action>
+</card>
+<card cardno="2-002" area="1A/1B" mechtype="ELEC" mechno="2"
+cardtime="800" inspreq="PREFLIGHT" grouping="pre" power="on"
+service="out" figure="None"><?Pub Dtl>
+<action esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+verstatus="ver" security="u" cardno="cardnoD" wucsys="22" wucsub="AAA"
+area="1A" minute="10"><task><para>PARA IN A TASK IN AN ACTION.  </para>
+</task>
+<subaction1 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+cardno="cardnoD" wucsys="22" wucsub="AAB" area="1B" minute="20"><task
+verstatus="ver"><para>PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+<subaction1 verstatus="ver" cardno="cardnoD" wucsys="22" wucsub="AAC"
+area="1A" minute="30"><task><para><esds><fcp><hci><hcp><nsp><oci><ocp>PARA
+IN A TASK IN A SUBACTION. </para></task></subaction1>
+<subaction1 cardno="cardnoD" wucsys="22" wucsub="AAD" area="1B"
+minute="40"><task esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1"
+oci="1" verstatus="ver"><para>PARA IN A TASK IN A SUBACTION. PARA
+IN A TASK IN A SUBACTION. </para></task></subaction1>
+<subaction1 verstatus="ver" cardno="cardnoD" wucsys="22"
+wucsub="AAE/ AAF" area="1A" minute="50"><task>
+<caution>
+<para><applicabil applicref="a"></applicabil> PARA WITHIN A CAUTION.
+PARA WITHIN A CAUTION. PARA WITHIN A CAUTION.</para>
+<para>Second para in a caution. Second para in a caution.</para>
+</caution>
+<para>PARA IN A TASK IN A SUBACTION. PRECEDED BY A CAUTION.</para>
+</task></subaction1>
+<subaction1 security="u" cardno="cardnoD" wucsys="22" wucsub="AAG"
+area="1B" minute="60"><task verstatus="ver"><para>PARA IN A TASK IN
+A SUBACTION. </para></task></subaction1>
+<subaction1 verstatus="ver" cardno="cardnoD" wucsys="22" wucsub="AAH"
+area="1A" minute="70"><task><para>PARA IN A TASK IN A SUBACTION.  </para>
+</task></subaction1>
+<subaction1 cardno="cardnoD" wucsys="22" wucsub="AAI" area="1B"
+minute="80"><task><para>PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+</action>
+<action verstatus="ver" cardno="cardnoD" wucsys="22" wucsub="BBA"
+area="1A/1B" minute="120"><task esds="1" nsp="1" fcp="1" hcp="1" hci="1"
+ocp="1" oci="1" applicref="a"><para>PARA IN A TASK IN AN ACTION. </para>
+</task></action>
+<action cardno="cardnoD" wucsys="22" wucsub="CCA" area="1A" minute="140">
+<task applicref="b" verstatus="ver"><para>PARA IN A TASK IN AN ACTION. </para>
+</task></action>
+<action verstatus="ver" cardno="cardnoD" wucsys="22" wucsub="DDA"
+area="1B" minute="120"><task><para><applicabil applicref="b"></applicabil> PARA
+IN A TASK IN AN ACTION. </para></task>
+<subaction1 cardno="cardnoD" wucsys="22" wucsub="DDB" area="1A"
+minute="40"><task verstatus="ver"><para>PARA IN A TASK IN A SUBACTION. </para>
+</task></subaction1>
+<subaction1 cardno="cardnoD" wucsys="22" wucsub="DDC" area="1B"
+minute="2"><task><para>PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+<subaction1 verstatus="ver" cardno="cardnoD" wucsys="22" wucsub="DDD"
+area="1A" minute="8"><task><para>PARA IN A TASK IN A SUBACTION. </para>
+</task></subaction1>
+<subaction1 cardno="cardnoD" wucsys="22" wucsub="DDE" area="1B"
+minute="20"><task verstatus="ver"><para>PARA IN A TASK IN A SUBACTION. </para>
+</task></subaction1>
+<subaction1 cardno="cardnoD" wucsys="160" wucsub="DDF" area="1A/1B"
+minute="30"><task>
+<warning>
+<para><applicabil applicref="a"></applicabil> This is a Warning paragraph.
+</para>
+<para>Second para in a warning.</para>
+</warning>
+<para>PARA IN A TASK IN A SUBACTION. </para></task></subaction1>
+<subaction1 verstatus="ver" cardno="cardnoD" wucsys="22" wucsub="DDG"
+area="1A/1B" minute="20"><task verstatus="ver"><para>PARA IN A TASK
+IN A SUBACTION. <deflist><title><esds><fcp><hci><hcp><nsp><oci><ocp>Deflist
+Title</title>
+<defhd>
+<term>Header</term><def>Header</def>
+</defhd>
+<term><applicabil applicref="a"></applicabil> Term 1</term><def>Def
+1</def>
+<term>Term 2</term><def>Def 2</def>
+<term>Term 3</term><def>Def 3</def>
+</deflist></para></task></subaction1>
+</action>
+</card>
+<card type="ba" cardno="2-003" area="1/2/3" mechtype="ENG" mechno="2"
+cardtime="340" inspreq="PREFLIGHT" grouping="pre" power="on"
+service="in" figure="Figure 1"><?Pub Dtl>
+<action verstatus="ver" cardno="cardnoE" wucsys="66" wucsub="AOA"
+area="1/2/3"><task><para>PARA IN A TASK IN AN ACTION. </para></task>
+<subaction1 cardno="cardnoE" wucsys="66" wucsub="AOB" area="1A"><task>
+<para><ocp> PARA IN A TASK IN A SUBACTION.</para></task></subaction1>
+<subaction1 verstatus="ver" cardno="cardnoE" wucsys="66" wucsub="AOC"
+area="2A"><task><para> <fcp> PARA IN A TASK IN A SUBACTION. PARA IN
+A TASK IN A SUBACTION.</para></task></subaction1>
+<subaction1 cardno="cardnoE" wucsys="66" wucsub="AOD" area="3A"><task>
+<para> <hci> PARA IN A TASK IN A SUBACTION.PARA IN A TASK IN A SUBACTION.PARA
+IN A TASK IN A SUBACTION.</para></task></subaction1>
+<subaction1 verstatus="ver" cardno="cardnoE" wucsys="66" wucsub="AOE"
+area="1B"><task><para><hcp> PARA IN A TASK IN A SUBACTION.PARA IN
+A TASK IN A SUBACTION.PARA IN A TASK IN A SUBACTION.PARA IN A TASK
+IN A SUBACTION.</para></task></subaction1>
+<subaction1 cardno="cardnoE" wucsys="66" wucsub="AOF" area="2B"><task>
+<para><nsp> PARA IN A TASK IN A SUBACTION.PARA IN A TASK IN A SUBACTION.PARA
+IN A TASK IN A SUBACTION.PARA IN A TASK IN A SUBACTION.PARA IN A TASK
+IN A SUBACTION.</para></task></subaction1>
+<subaction1 verstatus="ver" cardno="cardnoE" wucsys="66" wucsub="AOG"
+area="3B"><task><para> <oci> PARA IN A TASK IN A SUBACTION.PARA IN
+A TASK IN A SUBACTION.PARA IN A TASK IN A SUBACTION.PARA IN A TASK
+IN A SUBACTION.PARA IN A TASK IN A SUBACTION.PARA IN A TASK IN A SUBACTION.
+</para></task></subaction1>
+</action>
+<action cardno="cardnoE" wucsys="66" wucsub="BOA" area="1" minute="55">
+<task><para>PARA IN A TASK IN AN ACTION. </para></task></action>
+<action verstatus="ver" cardno="cardnoE" wucsys="66" wucsub="COA"
+area="2" minute="45"><task><para>PARA IN A TASK IN AN ACTION. </para>
+</task></action>
+<figure verstatus="ver">
+<title>FIGURE TITLE</title>
+<graphic boardno="fire" reprowid="4in" scalefit="1"></figure>
+</card>
+<card cardno="2-004" area="2/3" mechtype="APG" mechno="2" cardtime="180"
+inspreq="PREFLIGHT" grouping="pre" power="on" service="out"
+figure="Figure 2" figureback="1"><?Pub Dtl>
+<heading>Heading text in card=&rdquo;b&rdquo;</heading>
+<majaction>
+<action verstatus="ver" cardno="cardnoF" wucsys="44" wucsub="DDD"
+area="2/3" minute="10"><task><para>PARA IN A TASK IN AN ACTION. </para>
+</task>
+<subaction1 cardno="cardnoF" wucsys="44" wucsub="DD0" area="3"
+minute="15"><task><para>PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+<subaction1 verstatus="ver" cardno="cardnoF" wucsys="44" wucsub="DDO"
+area="2" minute="10"><task><para>PARA IN A TASK IN A SUBACTION. PARA
+IN A TASK IN A SUBACTION. </para></task></subaction1>
+<subaction1 cardno="cardnoF" wucsys="44" wucsub="DDO" area="3"
+minute="15"><task><para>PARA IN A TASK IN A SUBACTION. PARA IN A TASK
+IN A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+</action>
+<action verstatus="ver" cardno="cardnoF" wucsys="44" wucsub="DDP"
+area="3" minute="10"><task><para>PARA IN A TASK IN AN ACTION. </para>
+</task>
+<subaction1 cardno="cardnoF" wucsys="44" wucsub="DDZ" area="3"
+minute="15"><task><para>PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+<subaction1 verstatus="ver" cardno="cardnoF" wucsys="44" wucsub="DDZ"
+area="3" minute="25"><task><para>PARA IN A TASK IN A SUBACTION. </para>
+</task></subaction1>
+<subaction1 cardno="cardnoF" wucsys="44" wucsub="DDZ" area="3"
+minute="35"><task><para>PARA IN A TASK IN A SUBACTION. </para></task>
+<subaction2 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+verstatus="ver" cardno="cardnoC" wucsys="88" wucsub="ABC" area="1"
+minute="3"><task><para>PARA IN A TASK IN A SUBACTION. PARA IN A TASK
+IN A SUBACTION. </para></task></subaction2>
+<subaction2 verstatus="ver" wucsys="88" wucsub="ACD" area="2" minute="5">
+<task esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"><para>PARA
+IN A TASK IN A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction2>
+<subaction2 verstatus="ver" wucsys="88" wucsub="ADE" area="2"
+minute="10"><task><para><esds><fcp>FCP<hci>HCI<hcp>HCP<nsp>NSP<oci>OCI<ocp>OCPPARA
+IN A TASK IN A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction2>
+</subaction1>
+</action>
+<action verstatus="ver" cardno="cardnoF" wucsys="44" wucsub="DDZ"
+area="2" minute="45"><task><para>PARA IN A TASK IN AN ACTION. </para>
+</task></action>
+<figure verstatus="ver">
+<title>FIGURE TITLE</title>
+<graphic boardno="fire" reprowid="3.5in" scalefit="1"></figure>
+</majaction></card>
+<card type="ba" cardno="2-005" area="2B" mechtype="ACFT" mechno="2"
+cardtime="120" inspreq="PREFLIGHT" grouping="pre" power="on"
+service="in" figure="Figure 3"><?Pub Dtl>
+<heading>Heading text card type=&rdquo;ba&rdquo;</heading>
+<action cardno="cardnoG" wucsys="33" wucsub="CAO" area="2B" minute="15">
+<task applicref="c"><para>PARA IN A TASK IN AN ACTION. </para></task>
+<subaction1 verstatus="ver" cardno="cardnoG" wucsys="33" wucsub="CBA"
+area="2B" minute="30"><task verstatus="ver"><para>PARA IN A TASK IN
+A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task></subaction1>
+<subaction1 cardno="cardnoG" wucsys="33" wucsub="CCA" area="2B"
+minute="15"><task applicref="d"><para>PARA IN A TASK IN A SUBACTION.
+PARA IN A TASK IN A SUBACTION. </para></task></subaction1>
+<subaction1 verstatus="ver" cardno="cardnoG" wucsys="33" wucsub="CDA"
+area="2B" minute="10"><task verstatus="ver"><para>PARA IN A TASK IN
+A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task></subaction1>
+<subaction1 cardno="cardnoG" wucsys="33" wucsub="CEA" area="2B"
+minute="5"><task><para><applicabil applicref="c"></applicabil> PARA
+IN A TASK IN A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+<subaction1 verstatus="ver" cardno="cardnoG" wucsys="33" wucsub="CED"
+area="2B" minute="10"><task verstatus="ver"><para>PARA IN A TASK IN
+A SUBACTION. </para></task></subaction1>
+<subaction1 cardno="cardnoG" wucsys="33" wucsub="C06" area="2B"
+minute="5"><task><para>PARA IN A TASK IN A SUBACTION. PARA IN A TASK
+IN A SUBACTION. </para></task></subaction1>
+<subaction1 verstatus="ver" cardno="cardnoG" wucsys="33" wucsub="CFA"
+area="2B" minute="20"><task verstatus="ver"><para>PARA IN A TASK IN
+A SUBACTION. PARA IN A TASK IN A SUBACTION. PARA IN A TASK IN A SUBACTION.
+PARA IN A TASK IN A SUBACTION. </para></task></subaction1>
+<subaction1 cardno="cardnoG" wucsys="33" wucsub="CGA" area="2B"
+minute="10"><task><para>PARA IN A TASK IN A SUBACTION. PARA IN A TASK
+IN A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+</action>
+<figure>
+<title>FIGURE TITLE</title>
+<graphic boardno="fire" reprowid="3.5in" scalefit="1" hplace="center"
+vplace="middle" security="u"></figure>
+</card><card type="ab" cardno="2-006" area="2B" mechtype="ACFT"
+mechno="2" cardtime="120" inspreq="PREFLIGHT" grouping="thru" power="on"
+service="in" figure="Figure 4"><?Pub Dtl>
+<heading>Heading text card type=&rdquo;ab&rdquo;</heading>
+<figure>
+<title>FIGURE TITLE</title>
+<graphic boardno="fire" reprowid="3.75in" scalefit="1" hplace="center"
+vplace="middle" security="u"></figure>
+<action cardno="cardnoG" wucsys="33" wucsub="CAO" area="2B" minute="15">
+<task applicref="c"><para>PARA IN A TASK IN AN ACTION. </para></task>
+<subaction1 verstatus="ver" cardno="cardnoG" wucsys="33" wucsub="CBA"
+area="2B" minute="30"><task verstatus="ver"><para>PARA IN A TASK IN
+A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task></subaction1>
+<subaction1 cardno="cardnoG" wucsys="33" wucsub="CCA" area="2B"
+minute="15"><task applicref="d"><para>PARA IN A TASK IN A SUBACTION.
+PARA IN A TASK IN A SUBACTION. </para></task></subaction1>
+<subaction1 verstatus="ver" cardno="cardnoG" wucsys="33" wucsub="CDA"
+area="2B" minute="10"><task verstatus="ver"><para>PARA IN A TASK IN
+A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task></subaction1>
+<subaction1 cardno="cardnoG" wucsys="33" wucsub="CEA" area="2B"
+minute="5"><task><para><applicabil applicref="c"></applicabil> PARA
+IN A TASK IN A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+<subaction1 verstatus="ver" cardno="cardnoG" wucsys="33" wucsub="CED"
+area="2B" minute="10"><task verstatus="ver"><para>PARA IN A TASK IN
+A SUBACTION. </para></task></subaction1>
+<subaction1 cardno="cardnoG" wucsys="33" wucsub="C06" area="2B"
+minute="5"><task><para>PARA IN A TASK IN A SUBACTION. PARA IN A TASK
+IN A SUBACTION. </para></task></subaction1>
+<subaction1 verstatus="ver" cardno="cardnoG" wucsys="33" wucsub="CFA"
+area="2B" minute="20"><task verstatus="ver"><para>PARA IN A TASK IN
+A SUBACTION. PARA IN A TASK IN A SUBACTION. PARA IN A TASK IN A SUBACTION.
+PARA IN A TASK IN A SUBACTION. </para></task></subaction1>
+<subaction1 cardno="cardnoG" wucsys="33" wucsub="CGA" area="2B"
+minute="10"><task><para>PARA IN A TASK IN A SUBACTION. PARA IN A TASK
+IN A SUBACTION. PARA IN A TASK IN A SUBACTION. </para></task>
+</subaction1>
+</action>
+</card></section></inspection><lubricate><section security="u"><?Pub Lcl
+_divid="600" _parentid="0"><?Pub Dtl>
+<card type="a" inspreq="x" grouping="other">
+<heading>SECTION CARD</heading>
+</card>
+<card type="a" cardno="3-001" inspreq="PREFLIGHT" grouping="thru"
+figure="None">
+<heading>Heading text card type=&rdquo;a&rdquo;</heading>
+<para0 security="u">
+<para security="u">THIS IS A PARA WITHIN A PARA0 WITHIN A CARD WITHIN
+THE INTRO.</para>
+<subpara1 applicref="a">
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>Sample data for testing
+purposes.</para>
+<subpara2 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1">
+<para>This sentence is filler for the purpose of testing the document.</para>
+</subpara2>
+<subpara2 applicref="b">
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence is filler
+for the purpose of testing the document.</para>
+<subpara3><para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence
+is filler for the purpose of testing the document.</para>
+</subpara3>
+<subpara3 emergency="1" esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1"
+oci="1" applicref="b"><para><ocp>This sentence is filler for the purpose
+of testing the document.</para>
+<subpara4 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1">
+<para>This sentence is filler for the purpose of testing the document.</para>
+</subpara4>
+<subpara4 applicref="b">
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence is filler
+for the purpose of testing the document.</para>
+<step1 applicref="a">
+<para>This is a STEP1 element.</para></step1>
+<step1>
+<para><applicabil applicref="b"></applicabil>This is a STEP1 element.</para>
+<step2>
+<para><applicabil applicref="a"></applicabil>This is a STEP2 element.</para>
+</step2>
+<step2 applicref="a">
+<para>This is a STEP2 element.</para>
+<step3 applicref="b">
+<para>This is a STEP3 element.</para></step3>
+<step3>
+<para><applicabil applicref="b"></applicabil>This is a STEP3 element.</para>
+<step4>
+<para><applicabil applicref="a"></applicabil>This is a STEP4 element.</para>
+</step4>
+<step4 applicref="a">
+<para>This is a STEP4 element.</para></step4>
+</step3>
+</step2>
+</step1>
+<subpara5>
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence is filler
+for the purpose of testing the document.</para>
+<subpara6 applicref="b">
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence is filler
+for the purpose of testing the document.</para>
+</subpara6>
+<subpara6 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+applicref="b">
+<para>Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+<subpara7 applicref="a">
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence is filler
+for the purpose of testing the document.</para>
+</subpara7>
+<subpara7 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+applicref="a">
+<para>Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+<subpara8 applicref="b">
+<para><esds><fcp><hci><hcp><nsp><oci><ocp>This sentence is filler
+for the purpose of testing the document.</para>
+</subpara8>
+<subpara8 esds="1" nsp="1" fcp="1" hcp="1" hci="1" ocp="1" oci="1"
+applicref="b">
+<para>Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes.</para>
+</subpara8>
+</subpara7>
+</subpara6>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+</subpara1>
+</para0></card>
+<card type="ba" cardno="3-002" area="1A/2B/3C/4D" mechtype="APG"
+mechno="4" cardtime="60" inspreq="PREFLIGHT LUBRICATION" grouping="pre"
+power="on" service="in" figure="Figure 1">
+<heading>Heading Text card type=&rdquo;ab&rdquo;</heading>
+<action verstatus="ver" security="u" cardno="cardnoH" wucsys="71"
+wucsub="DAA" area="1A" minute="10"><task verstatus="ver"><para>PARA
+IN A TASK IN AN ACTION. </para></task></action>
+<action security="u" cardno="cardnoH" wucsys="71" wucsub="DSC"
+area="2B/3C" minute="15"><task><para>PARA IN A TASK IN AN ACTION. </para>
+</task></action>
+<action verstatus="ver" cardno="cardnoH" wucsys="71" wucsub="DTA"
+area="3C/4D" minute="10"><task verstatus="ver"><para>PARA IN A TASK
+IN AN ACTION. </para></task></action>
+<action applicref="b" cardno="cardnoH" wucsys="71" wucsub="DTD"
+area="1A" minute="5"><task><para>PARA IN A TASK IN AN ACTION. <seqlist>
+<title><esds><fcp><hci><hcp><nsp><oci><ocp>Seqlist Title</title>
+<item><applicabil applicref="b"></applicabil>First item in a Seqlist
+list.</item><item>Second item in a seqlist list.</item><item>Third
+item in a seqlist list.</item></seqlist></para></task></action>
+<action applicref="a" verstatus="ver" cardno="cardnoH" wucsys="71"
+wucsub="DUA" area="4D" minute="20"><task><para><graphic boardno="bio"
+reprowid="0.15in" scalefit="1" icon="yes"> PARA IN A TASK IN AN ACTION. </para>
+</task></action>
+<table frame="all" colsep="1" applicref="a" verstatus="ver">
+<title><applicabil applicref="b"></applicabil> Table Title</title>
+<tgroup cols="2"><colspec colname="col1" colwidth="1.25in"><colspec
+colname="col2" colwidth="1.25in"><tbody>
+<row rowsep="1">
+<entry>entry</entry>
+<entry>entry</entry>
+</row>
+<row rowsep="1">
+<entry>entry</entry>
+<entry>entry</entry>
+</row>
+</tbody></tgroup></table>
+<figure verstatus="ver">
+<title><applicabil applicref="a"></applicabil> FIGURE TITLE (hplace=center)
+</title>
+<graphic boardno="fire" reprowid="2.5in" scalefit="1" hplace="center">
+</figure>
+</card><card type="ba" cardno="3-003" area="1/3/5/7" mechtype="HYD"
+mechno="1" cardtime="30" inspreq="PREFLIGHT LUBRICATION" grouping="pre"
+power="off" service="inout" figure="Figure 2">
+<action verstatus="ver" cardno="cardnoI" wucsys="22" wucsub="ABC"
+area="3/7" minute="10"><task verstatus="ver"><para><graphic
+boardno="bio" reprowid="0.15in" scalefit="1" icon="yes"> PARA IN A
+TASK IN AN ACTION.  ICON PRECEDED THIS PARA.</para></task></action>
+<action security="u" cardno="cardnoI" wucsys="22" wucsub="EFG" area="5"
+minute="10"><task><para><graphic boardno="bio" reprowid="0.15in"
+scalefit="1" icon="yes"> PARA IN A TASK IN AN ACTION.   ICON PRECEDED
+THIS PARA.</para></task></action>
+<action verstatus="ver" cardno="cardnoI" wucsys="22" wucsub="SRT"
+area="1" minute="10"><task verstatus="ver"><para>PARA IN A TASK IN
+AN ACTION. <randlist>
+<title><esds><fcp><hci><hcp><nsp><oci><ocp>Randlist Title</title>
+<item><applicabil applicref="a"></applicabil> First item in a randlist.</item>
+<item>Second item in a randlist.</item>
+<item>Third item in a randlist.</item>
+</randlist></para></task></action>
+<table frame="all">
+<title><esds><hci><fcp><hcp><nsp><oci><ocp>Second Table Title</title>
+<tgroup cols="2"><colspec colname="col1" colwidth="1.0in"><colspec
+colname="col2" colwidth="1.0in"><tbody>
+<row>
+<entry>entry</entry>
+<entry>entry</entry>
+</row>
+<row>
+<entry>entry</entry>
+<entry>entry</entry>
+</row>
+</tbody></tgroup></table>
+<figure>
+<title>FIGURE TITLE</title>
+<graphic boardno="fire" reprowid="4in" scalefit="1"></figure>
+</card></section></lubricate></body>
+</docwc></doc>

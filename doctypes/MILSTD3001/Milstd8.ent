@@ -1,0 +1,24 @@
+<!--  PUBLIC "-//USA-DOD//ELEMENTS 3001 Part 8 Draft XML V307 08242016//EN"-->
+
+<!-- 		DTD for Separate Illustrated Parts Breakdown Work Packages
+-->
+
+<!--	 Root Element for Stand Alone IPB Manual -->
+<!ELEMENT ipbmanual  ((volume-ipbmanual)+ | (ipbmanualfrnt, ipbmanualwp+))>
+<!ATTLIST ipbmanual 	 %docatt;
+			%numberoftmidnos;
+			%secur;>
+
+<!-- Volume of a 3001 IPB Stand Alone Technical Manual. Attribute "volumeno" generates the Volume Number on the title page.  The attribute "dashtmidno" provides the dash numbers of the tmidno that differentiate the volumes.  For example, if the volumes are numbered 01-F14AAA-3.1, 01-F14AAA-3.2,  01-F14AAA-3.3, etc then the dashtmidno should be captured as "-3.1", "-3.2", "-3.3", etc. This number will be part of the Consolidated Alphabetical Index in volume 1. -->
+<!ELEMENT volume-ipbmanual (ipbmanualfrnt, ipbmanualwp+)>
+<!ATTLIST volume-ipbmanual
+volid 		ID 		#IMPLIED
+volumeno         CDATA          #REQUIRED
+dashtmidno        CDATA          #REQUIRED
+%secur;>
+
+<!--IPB Manual Work Package.-->
+<!ELEMENT ipbmanualwp (plgrp+)>
+<!ATTLIST ipbmanualwp 	%wpatt;
+			%secur; >
+

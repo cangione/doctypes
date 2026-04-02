@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.ataebiz.org/XMLSchema"
+           xmlns:m="http://www.w3.org/1998/Math/MathML"
+           targetNamespace="http://www.ataebiz.org/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<!-- ================================================================
+
+Limitations of Liability: 
+
+1.  This material is provided "As Is" and neither Air Transport Association of America, Inc. (ATA) 
+    nor any person who has contributed to the creation, revision or maintenance of the material 
+    makes any representations or warranties, express or implied, including but not limited to, 
+    warranties of merchantability or fitness for any particular purpose. 
+
+2.  Neither ATA nor any person who has contributed to the creation, revision or maintenance of 
+    this material shall be liable for any direct, indirect, special or consequential damages or 
+    any other liability arising from any use of this material. 
+
+3.  Revisions to this document may occur after its issuance. The user is responsible for determining 
+    if revisions to the material contained in this document have occurred and are applicable. 
+
+Copyright 2017, Air Transport Association of America, Inc., d/b/a Airlines for America. All rights reserved.
+
+================================================================= -->
+	<xs:annotation>
+		    <xs:documentation>Version Number: 2017.1</xs:documentation>
+		    <xs:documentation>Revision Date: 2017-10-31</xs:documentation>
+		    <xs:documentation>Revision Comments: Spec 2300 revision 2017.1</xs:documentation>
+	  </xs:annotation>
+	  <xs:redefine schemaLocation="../common/dataManagement/dmodule.xsd">
+		    <xs:complexType name="contentElemType">
+			      <xs:complexContent>
+				        <xs:extension base="contentElemType">
+					          <xs:sequence>
+						            <xs:element ref="normalProcedure"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:redefine>
+	  <xs:include schemaLocation="../common/basicDataTypes/figure.xsd"/>
+	  <xs:include schemaLocation="../common/basicDataTypes/multimedia.xsd"/>
+	  <xs:include schemaLocation="../common/basicDataTypes/extApplication.xsd"/>
+	  <xs:include schemaLocation="../common/basicDataTypes/text.xsd"/>
+	  <xs:include schemaLocation="../common/basicDataTypes/wcn.xsd"/>
+	  <xs:include schemaLocation="../common/basicDataTypes/list.xsd"/>
+	  <xs:include schemaLocation="../common/systems/commonDescriptionTypes.xsd"/>
+	  <xs:include schemaLocation="../common/limit/limit.xsd"/>
+	  <xs:redefine schemaLocation="../common/procedure/action.xsd">
+		    <xs:complexType name="actionType">
+			      <xs:complexContent>
+				        <xs:extension base="actionType">
+					          <xs:sequence>
+						            <xs:element ref="actionInstruction" minOccurs="0"/>
+						            <xs:choice>
+							              <xs:element ref="challengeResponse"/>
+							              <xs:element ref="command"/>
+							              <xs:element ref="response"/>
+						            </xs:choice>
+						            <xs:element name="comment" type="commentActionType" minOccurs="0" maxOccurs="unbounded"/>
+					          </xs:sequence>
+					          <xs:attribute name="crm" type="xs:string" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>crew member responsible for performing the action</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+					          <xs:attributeGroup ref="actionChallengerResponderAttGrp"/>
+					          <xs:attribute name="timing" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>action required for first or last flight of the day or for transit (through flight).</xs:documentation>
+						            </xs:annotation>
+						            <xs:simpleType>
+							              <xs:restriction base="xs:string">
+								                <xs:enumeration value="transit"/>
+								                <xs:enumeration value="firstFlight"/>
+								                <xs:enumeration value="lastFlight"/>
+							              </xs:restriction>
+						            </xs:simpleType>
+					          </xs:attribute>
+					          <xs:attribute name="checkListItemStatus" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>For checkList items. Detected items are detected as already completed by the aircraft. Non-detected items will be completed when manually selected by the crew.</xs:documentation>
+						            </xs:annotation>
+						            <xs:simpleType>
+							              <xs:restriction base="xs:string">
+								                <xs:enumeration value="detected"/>
+								                <xs:enumeration value="nonDetected"/>
+							              </xs:restriction>
+						            </xs:simpleType>
+					          </xs:attribute>
+					          <xs:attribute name="timeActionFlag" type="xs:boolean" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>Flag an action as a time action (e.g. "wait 30 seconds")</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+					          <xs:attributeGroup ref="actionDenpendencyAttGrp"/>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+		    <xs:complexType name="actionBlockType">
+			      <xs:complexContent>
+				        <xs:extension base="actionBlockType">
+					          <xs:sequence>
+						            <xs:element name="title" type="nameType" minOccurs="0"/>
+						            <xs:element ref="actionInstruction" minOccurs="0"/>
+						            <xs:element ref="action" minOccurs="2" maxOccurs="unbounded"/>
+					          </xs:sequence>
+					          <xs:attributeGroup ref="actionDenpendencyAttGrp"/>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:redefine>
+	  <xs:include schemaLocation="../common/procedure/inform.xsd"/>
+	  <xs:include schemaLocation="../common/procedure/nestedProcedure.xsd"/>
+	  <xs:redefine schemaLocation="../common/procedure/condition.xsd">
+		    <xs:complexType name="conditionType">
+			      <xs:complexContent>
+				        <xs:extension base="conditionType">
+					          <xs:sequence>
+						            <xs:group ref="conditionIntroGroup"/>
+						            <xs:group ref="normalProcLevelGroup"/>
+						            <xs:element ref="endOfProc" minOccurs="0"/>
+					          </xs:sequence>
+					          <xs:attribute name="atAnyTime" type="xs:boolean" use="optional">
+						            <xs:annotation>
+							              <xs:documentation>if set to true, the condition is applicable at any time during the course of the procedure</xs:documentation>
+						            </xs:annotation>
+					          </xs:attribute>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+		    <xs:complexType name="exclusiveConditionsType">
+			      <xs:complexContent>
+				        <xs:extension base="exclusiveConditionsType">
+					          <xs:sequence>
+						            <xs:group ref="conditionIntroGroup" minOccurs="0"/>
+						            <xs:element ref="condition" minOccurs="2" maxOccurs="unbounded"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:redefine>
+	  <xs:include schemaLocation="../common/procedure/whatIf.xsd"/>
+	  <xs:include schemaLocation="../common/procedure/procAttrs.xsd"/>
+	  <xs:include schemaLocation="../common/procedure/context.xsd"/>
+	  <xs:redefine schemaLocation="../common/procedure/simultaneousActions.xsd">
+		    <xs:complexType name="simultaneousStepType">
+			      <xs:complexContent>
+				        <xs:extension base="simultaneousStepType">
+					          <xs:choice maxOccurs="unbounded">
+						            <xs:element ref="action"/>
+						            <xs:element ref="actionBlock"/>
+						            <xs:element ref="condition"/>
+					          </xs:choice>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:redefine>
+	  <xs:redefine schemaLocation="../common/procedure/wcnProc.xsd">
+		    <xs:complexType name="wcnProcType">
+			      <xs:complexContent>
+				        <xs:extension base="wcnProcType">
+					          <xs:choice minOccurs="0" maxOccurs="unbounded">
+						            <xs:group ref="actionGroup"/>
+						            <xs:group ref="conditionGroup"/>
+						            <xs:element ref="limit"/>
+						            <xs:element ref="electronicInform"/>
+					          </xs:choice>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:redefine>
+	  <!--=============================================-->
+	<!-- dmodule Element Declaration (DM  root) -->
+	<!--=============================================-->
+	<xs:element name="dmodule" type="dmoduleElemType"/>
+	  <!--=============================================-->
+	<!-- normalProcedure Element Declaration-->
+	<!--=============================================-->
+	<xs:element name="normalProcedure" type="normalProcedureType">
+		    <xs:annotation>
+			      <xs:documentation>contains a standard operating procedure item or a normal checklist or a normal supplementary procedure or a special operation</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <!--=============================================-->
+	<!-- normalProcedure Element Definition -->
+	<!--=============================================-->
+	<xs:complexType name="normalProcedureType">
+		    <xs:sequence>
+			      <xs:element name="title" type="nameType">
+				        <xs:annotation>
+					          <xs:documentation>title</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element ref="context" minOccurs="0"/>
+			      <xs:element ref="whatIf" minOccurs="0"/>
+			      <xs:element ref="procDescription" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>procedure description</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element ref="procContent" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>procedural content..</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="subLevel" type="procSubLevelType" minOccurs="0" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>procedure content in a sub level</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="layer" type="layerType" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>Layer of information</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="silent" type="xs:boolean" use="optional" default="false">
+			      <xs:annotation>
+				        <xs:documentation>if set to true, the checklist is accomplished by one crewmember without response or verification from other crew member</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="omit" type="xs:boolean" use="optional" default="false">
+			      <xs:annotation>
+				        <xs:documentation>if set to true, the associated procedure can be omitted under certain conditions</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attributeGroup ref="crewQualificationAttrGrp"/>
+		    <xs:attributeGroup ref="interactiveTargetsAttrGrp"/>
+	  </xs:complexType>
+	  <!--=============================================-->
+	<!-- procContent Element Definition -->
+	<!--=============================================-->
+	<xs:element name="procDescription" type="descriptionType">
+		    <xs:annotation>
+			      <xs:documentation>procedure description</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <xs:element name="procContent" type="procContentType">
+		    <xs:annotation>
+			      <xs:documentation>procedural content..</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <xs:complexType name="procContentType">
+		    <xs:choice maxOccurs="unbounded">
+			      <xs:group ref="normalProcContentGroup"/>
+		    </xs:choice>
+		    <xs:attribute name="id" type="idType" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:group name="normalProcContentGroup">
+		    <xs:choice>
+			      <xs:group ref="actionGroup"/>
+			      <xs:element ref="simultaneousActions"/>
+			      <xs:group ref="conditionGroup"/>
+			      <xs:element name="interruption">
+				        <xs:annotation>
+					          <xs:documentation>indicates that crew may interrupt the Checklist and perform the rest of the check later on</xs:documentation>
+				        </xs:annotation>
+				        <xs:complexType/>
+			      </xs:element>
+			      <xs:element ref="limit"/>
+			      <xs:element ref="perform"/>
+			      <xs:element ref="inform"/>
+			      <xs:element ref="nestedProcedure"/>
+			      <xs:group ref="wcnProcGroup"/>
+		    </xs:choice>
+	  </xs:group>
+	  <xs:group name="normalProcLevelGroup">
+		    <xs:sequence>
+			      <xs:element ref="procDescription" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>procedure description</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="procContent" type="procContentType">
+				        <xs:annotation>
+					          <xs:documentation>procedural content..</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+	  </xs:group>
+	  <!--=============================================-->
+	<!-- Sublevel Description Type Element Definition -->
+	<!--=============================================-->
+	<xs:complexType name="procSubLevelType">
+		    <xs:sequence>
+			      <xs:element name="title" type="nameType">
+				        <xs:annotation>
+					          <xs:documentation>title of sub level</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="procDescription" type="descriptionType" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>procedure description</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="procContent" type="procContentType" minOccurs="0">
+				        <xs:annotation>
+					          <xs:documentation>procedural content..</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element name="subLevel" type="procSubLevelType" minOccurs="0" maxOccurs="unbounded">
+				        <xs:annotation>
+					          <xs:documentation>procedure content in a sub level</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="id" type="idType" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>Optional id for data management</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+		    <xs:attribute name="layer" type="layerType" use="optional">
+			      <xs:annotation>
+				        <xs:documentation>Layer of information</xs:documentation>
+			      </xs:annotation>
+		    </xs:attribute>
+	  </xs:complexType>
+</xs:schema>

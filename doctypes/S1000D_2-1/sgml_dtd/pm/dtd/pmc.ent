@@ -1,0 +1,65 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. New public identifier.                                          *
+    * 2. CPF 2002-12FR: New element pmc introduced to allow for          *
+    *                   references to publication modules.               *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTPMC PUBLIC                                           *
+    * "-//S1000D//ELEMENTS Publication Module Code Breakdown 20030531    *
+    *  //EN" >                                                           *
+    * %EXTPMC;                                                           *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Element pmc (Publication Module Code) containing:-          *
+    *   modelic  - Mandatory Single     contains Parsed Character Data.  *
+    *   pmissuer - Mandatory Single     contains Parsed Character Data.  *
+    *   pmnumber - Mandatory Single     contains Parsed Character Data.  *
+    *   pmvolume - Mandatory Single     contains Parsed Character Data.  * 
+    ********************************************************************** -->
+
+<!ELEMENT pmc - O  (modelic, pmissuer, pmnumber, pmvolume) >
+<!-- Newly introduced element for references to publication modules -->
+
+
+<!--**********************************************************************
+    * Define Element pmissuer (5-character NCAGE Code of Issuing         *
+    *                          Authority (YYYYY))                        *
+    * containing:-                                                       *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+
+<!ELEMENT pmissuer - O  (#PCDATA) >
+<!-- Newly introduced element -->
+
+
+<!--**********************************************************************
+    * Define Element pmnumber (5-digit Publication Module Number (XXXXX) *
+    *                          starting at 00001)                        *
+    * containing:-                                                       *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+
+<!ELEMENT pmnumber - O  (#PCDATA) >
+<!-- Newly introduced element -->
+
+
+<!--**********************************************************************
+    * Define Element pmvolume (2-digit sequential Publication Volume     *
+    *                          Number (NN), default is 00 for a single   *
+    *                          volume publication)                       *
+    * containing:-                                                       *
+    *   Parsed Character Data.                                           *
+    ********************************************************************** -->
+
+<!ELEMENT pmvolume - O  (#PCDATA) >
+<!-- Newly introduced element -->

@@ -1,0 +1,549 @@
+<!-- PUBLIC "-//USA-DOD//ELEMENTS FRONT MATTER 3001 Part 1 Draft XML V307 08242016//EN"-->
+
+<!--  Front Matter DTD for Assembled NAVAIR Work Package Technical Manuals -->
+
+<!ENTITY % introcon "(para | table | randlist | deflist | seqlist | note | warningsample | cautionsample | notesample | consoleffectlist | useoncodelist | abbrevlist | consoleffectlist)" >
+
+<!ENTITY % safetycon "(para | table | randlist | deflist | seqlist | note | warning | caution | note)" >
+
+<!ENTITY % paranotable  "(para | randlist | deflist | seqlist | note)">
+
+<!--Front Matter of the Assembled Technical Manual -->
+<!ELEMENT frnt (titlepg, niewp?, revision-summary-info?, tpdrpg?, hmwswp?, alphaindxwp, supportinfo) >
+<!ATTLIST frnt     id 		ID 		#IMPLIED
+				%secur;>
+
+<!--Title Page of the Assembled Technical Manual -->
+<!ELEMENT titlepg (tmidno+, pretmidno?, pubdate, (chgnum, chgdate)?, prtitle, notices, nsn?, downgradenot?)>
+<!ATTLIST titlepg id ID #IMPLIED
+				%secur;>
+
+<!--Publication Number (Technical Manual ID Number) of the Assembled Technical Manual.  -->
+<!ELEMENT tmidno (#PCDATA)>
+<!ATTLIST tmidno	%service;
+			%secur;>
+
+<!--Former Publication Number of the Assembled Technical Manual -->
+<!ELEMENT pretmidno  (#PCDATA)>
+<!ATTLIST pretmidno %service; 
+			%secur;>
+
+<!--Publication Date of the Assembled Technical Manual -->
+<!ELEMENT pubdate  (#PCDATA)>
+<!ATTLIST pubdate %secur;>
+
+<!--Change number of the Assembled Technical Manual-->
+<!ELEMENT chgnum  (#PCDATA)>
+<!ATTLIST chgnum %secur;>
+
+<!--Change date of the Assembled Technical Manual-->
+<!ELEMENT chgdate  (#PCDATA)>
+<!ATTLIST chgdate %secur;>
+
+<!--Publication Title. Consists of the level of maintenance, the manual type, and the end item nomenclature. -->
+<!ELEMENT prtitle (maintlvl, manualtype?, sysnomen+)>
+<!ATTLIST prtitle %secur;>
+
+<!-- Manual Type. If applicable, the manual type such as "PRINCIPLES OF OPERATION" that is contained in the manual shall be included on the title page. -->
+<!ELEMENT manualtype  (#PCDATA)>
+<!ATTLIST manualtype %secur;>
+
+<!--The Collection of Notices as part of the Title Page of an Assembled Technical Manual-->
+<!ELEMENT notices (cfa?, super?, suppl*, continue?, irac?, distrib, destr, thirdparty?, export?, secretstatement?, authnote)>
+<!ATTLIST notices %secur;>
+
+<!--Cognizant Facility Activity (CFA) Notice.  A notice, indicating the cognizant facility activity responsible for the TM preparation, shall be included on the title page preceding the supersedure notice, for example, "This manual prepared by NAVSURFWARCENDIV, Crane, IN, Code 8024."-->
+<!ELEMENT cfa  (para)>
+<!ATTLIST  cfa %secur;>
+
+<!--Continuation Notice as part of the Title Page of the Assembled Technical Manual that have been divided into Volumes-->
+<!ELEMENT continue  (para)>
+<!ATTLIST  continue %secur;>
+
+<!--Interim Rapid Action Change (IRAC) Incorporation Notice -->
+<!ELEMENT irac  (para)>
+<!ATTLIST  irac %secur;>
+
+<!--Distribution Notice as part of the Title Page of the Assembled Technical Manual. Distribution Statement number is entered via attribute "type".  -->
+<!ELEMENT distrib  (para)>
+<!ATTLIST distrib type (a | b | c | d | e | f | x) #REQUIRED
+>
+
+<!--Destruction Notice as part of the Title Page of the Assembled Technical Manual -->
+<!ELEMENT destr  (para)>
+<!ATTLIST  destr %secur;>
+
+<!--Third Party Notice -->
+<!ELEMENT thirdparty  (para)>
+<!ATTLIST  thirdparty %secur;>
+
+<!-- Export Control Notice as part of the Title Page of the Assembled Technical Manual -->
+<!ELEMENT export  (para)>
+<!ATTLIST  export %secur;>
+
+<!-- Secret Page and Copy statement as part of the Title Page of the Assembled Technical Manual -->
+<!ELEMENT secretstatement  (para)>
+<!ATTLIST  secretstatement %secur;>
+
+<!--Authority Notice as part of the Title Page of the Assembled Technical Manual -->
+<!ELEMENT authnote  (para)>
+<!ATTLIST  authnote %secur;>
+
+<!--National Stock Number of the Assembled Technical Manual.  -->
+<!ELEMENT nsn (#PCDATA)>
+<!ATTLIST nsn	%service;
+			%secur;>
+			
+<!--The Downgrading and Declassification Notation  -->
+<!ELEMENT  downgradenot (para)+>
+<!ATTLIST downgradenot %secur;>
+
+<!--Numerical Index of Effective Work Packages/pages-->
+<!ELEMENT niewp (title, currentchgs, para*,  pagecount, chghist)>
+<!ATTLIST niewp %wpatt;
+		     %secur;>
+
+<!-- List of Current Changes. Part of the Numerical Index of Effective Work Packages/Pages. -->
+<!ELEMENT currentchgs (rev.date+)>
+ <!ATTLIST  currentchgs  %secur;>
+
+<!--Revision Level and Date of Issue -->
+<!ELEMENT rev.date  (rev.no, date, iracnote*)>
+<!ATTLIST  rev.date %secur;>
+
+<!--IRAC NOTE -->
+<!ELEMENT iracnote (#PCDATA)>
+<!ATTLIST iracnote
+		%secur;>
+		
+<!--Revision Number -->
+<!ELEMENT rev.no  (#PCDATA)>
+<!ATTLIST rev.no
+		%secur;>
+
+<!-- Page Count Statement.  -->
+<!ELEMENT pagecount (#PCDATA)>
+<!ATTLIST pagecount	%secur;>
+
+<!--Change History as part of the Numerical Index of Effective Work Packages/pages.  -->
+<!ELEMENT chghist ( (pagehist | wphist)*, noteslist?)>
+<!ATTLIST chghist 
+		%secur;> 
+
+<!--Work Package Change History.-->
+<!ELEMENT wphist (reference, pageno?, pagehist*)>
+<!ATTLIST wphist		 %secur;>
+
+<!--Page Change History. -->
+<!ELEMENT pagehist (pageno, chgnum)>
+<!ATTLIST pagehist		 %secur;>
+
+<!--Page Number-->
+<!ELEMENT pageno (#PCDATA)>
+<!ATTLIST pageno		 %secur;>
+
+<!-- Revision summary information (ETMs) -->
+<!ELEMENT revision-summary-info (revision-summary+)>
+<!ATTLIST revision-summary-info		 %secur;>
+
+<!--  The Revision summary, for ETMs only, shall contain a list of information by paragraph titles that have been revised.  A brief description of the major revisions shall be provided for each titled paragraph listed. Attribute "xref" provides the ability to link to changed text in the manual.  -->
+<!ELEMENT revision-summary (title, desc)>
+<!ATTLIST revision-summary
+	xref IDREF #REQUIRED
+	%secur; >
+
+<!--Technical publication deficiency reports (TPDR) incorporated pages.-->
+<!ELEMENT  tpdrpg (titleblk, (%paranotable;)*, tpd)>
+<!ATTLIST tpdrpg id ID #IMPLIED
+chgnum CDATA #IMPLIED
+chgdate CDATA #IMPLIED
+				%secur;>
+
+<!--"None". An element to indicate that a particular construct if not applicable. The words "None" would be automatically generated. -->
+<!ELEMENT none  EMPTY>
+<!ATTLIST none		 %secur;>
+
+<!--Technical publication deficiency list-->
+<!ELEMENT  tpd ( tpdentry+, noteslist?)>
+<!ATTLIST tpd 	%secur;>
+
+<!-- An individual entry in the technical publication deficiency list consisting of Identification number/QA sequence number and location. -->
+<!ELEMENT tpdentry  (idno, location)>
+<!ATTLIST tpdentry 	%secur;>
+
+<!--Identification Number/QA Sequence Number - part of the Technical publication deficiency list-->
+<!ELEMENT  idno (#PCDATA)>
+<!ATTLIST idno	%secur;>
+
+<!--Location Information. Element "reference" should be used to provide link to applicable WP. -->
+<!ELEMENT  location  (#PCDATA | reference)*>
+<!ATTLIST location      %secur;>
+
+<!--Hazardous Materials Warning Sheets-->
+<!ELEMENT hmwswp (titleblk, intro?,  hazmatexp, hazmatnote*, hazmatwarns)>
+<!ATTLIST hmwswp id ID #IMPLIED
+chgnum CDATA #IMPLIED
+chgdate CDATA #IMPLIED
+%secur;>
+
+<!-- Hazardous Materials Warning Sheet Notes. If applicable, a note indicating that not all numbered warnings will appear in all volumes; or a note indicating that missing index numbers are not applicable to the manual should be placed at the bottom of the first page of the hazardous materials warnings. -->
+<!ELEMENT hazmatnote (%paracon;)+>
+<!ATTLIST hazmatnote  	%secur;>
+
+<!--Hazardous Materials Icons Explanation List-->
+<!ELEMENT hazmatexp (exp+)>
+<!ATTLIST hazmatexp
+            %secur;>
+
+<!--Hazardous Materials Icons Explanation-->
+<!ELEMENT exp  (graphic, title, hazdesc)>
+<!ATTLIST exp
+            %refs;
+		%secur;>
+
+<!--Hazardous Description Explanation-->
+<!ELEMENT hazdesc  (#PCDATA | %text;)* >
+<!ATTLIST hazdesc
+            %secur;>
+
+<!--Hazardous Materials Warnings. A list of complete warnings for all hazardous materials used in the Assembled Technical Manual.-->
+<!ELEMENT hazmatwarns (hazard)+>
+<!ATTLIST hazmatwarns
+            %secur;>
+
+<!--Hazard. A single warning for hazardous material used in the Assembled Technical Manual. Attribute "id" provides ability to link from a hazardous material warning entered in the manual to this description.-->
+<!ELEMENT hazard (hazmat, hazdesc+)>
+<!ATTLIST hazard id ID #REQUIRED
+            %secur;>
+
+<!--Hazard Material. Identifies specific information for a hazardous material  -->
+<!ELEMENT hazmat (seqno?, (nomen, (spec | partno)?), graphic+)>
+<!ATTLIST hazmat
+            %secur;>
+
+<!--Alphabetic Index Work Package. Provides access to the technical content work packages contained in the manual, and further to the primary technical content information contained within each work package -->
+<!ELEMENT alphaindxwp (titleblk, (auto-alphaindx | alphavolindx))>
+<!ATTLIST alphaindxwp %wpatt;
+			%secur;>
+
+<!--Automatically Generated Alphabetic Index as part of the Alphabetic Index Work Package -->
+<!ELEMENT auto-alphaindx EMPTY>
+<!ATTLIST auto-alphaindx 
+                    WPLevels (1 | 2) "1"
+                    %secur;>
+
+<!--Alphabetic Index as part of the Alphabetic Index Work Package for multivolume TMs. This Alphabetic Index, contained in "Volume 1," is a consolidated index covering the contents of all volumes. It must be 'hand tagged'.  The attribute "basetmidno" provides the heading of the publication number column. For example, if the volumes are numbered 01-F14AAA-3.1, 01-F14AAA-3.2,  01-F14AAA-3.3, etc then the basetmidno should be captured as "01-F14AAA" and the dash numbers that differentiate the volumes are captured as an attribute on the volume element. -->
+<!ELEMENT alphavolindx (aisystementry)*>
+<!ATTLIST alphavolindx 
+basetmidno       CDATA          #REQUIRED
+                    %secur;>
+
+<!-- The first level entry containing the "System", as part of the Alphabetic Index Work Package for multivolume TMs -->
+<!ELEMENT aisystementry (name, aiwpvolentry+)>
+<!ATTLIST aisystementry 
+                    %secur;>
+                    
+<!-- The second level entry containing the "work package subject" in the Alphabetic Index as part of the Alphabetic Index Work Package for multivolume TMs-->
+<!ELEMENT aiwpvolentry (title, tmidno, reference?, aiwpsubentry*)>
+<!ATTLIST    aiwpvolentry 
+             %secur;>
+
+<!--The Third level entry containing the "work package contents" in the Alphabetic Index as part of the Alphabetic Index Work Package-->
+<!ELEMENT aiwpsubentry (title, reference?, aiwpsubsubentry*)>
+<!ATTLIST    aiwpsubentry 
+              %secur;>
+
+<!--The Fourth level entry containing the "Task Level" in the Alphabetic Index as part of the Alphabetic Index Work Package-->
+<!ELEMENT aiwpsubsubentry (title, reference?)>
+<!ATTLIST    aiwpsubsubentry 
+              %secur;>
+
+<!--Technical Manual Support Information. Consists of a Numerical Index of Part Numbers Work Package, Numerical Index of Reference Designations Work Package, Introduction Work Package, Consolidated Lists for Technical Directives, Support Equipment, Material, and References Work Package, and  Maintenance Allocation Work Package. -->
+<!ELEMENT supportinfo  (partnoindxwp?, refdesindxwp?, introwp, consolistwp?, maintalwp?, safewp?)>
+<!ATTLIST supportinfo id ID #IMPLIED
+				%secur;>
+
+<!--Numerical Index of Part Numbers Work Package -->
+<!ELEMENT partnoindxwp (titleblk, (%paranotable;)*, (auto-partnoindx | partnovolindx))>
+<!ATTLIST partnoindxwp %wpatt;
+				%secur;>
+
+<!--Numerical Index of Part Numbers - Automatically Generated -->
+<!ELEMENT auto-partnoindx EMPTY>
+<!ATTLIST auto-partnoindx 
+                    attachingparts (yes | no) #IMPLIED
+                    %secur;>
+
+<!--Numerical index of part numbers as part of the Numerical index of part numbers work package for multivolume TMs --> 
+<!ELEMENT partnovolindx (partnovolentry*)>
+<!ATTLIST partnovolindx 
+                   %secur;>
+ 
+<!--A single entry in the Numerical Index of part numbers work package  for multivolume TMs -->
+<!ELEMENT partnovolentry ((partno | nomen), tmidno, reference?)>
+<!ATTLIST  partnovolentry 
+%secur;>
+
+<!--Numerical Index of Reference Designations Work Package -->
+<!ELEMENT refdesindxwp (titleblk, (%paranotable;)*, (auto-refdesindx | refdesvolindx | auto-wirerefdesindx | wirerefdesvolindx), useoncodelist?)>
+<!ATTLIST refdesindxwp %wpatt;
+				%secur;>
+
+<!--Numerical Index of Reference Designations for multivolume TMs -->
+<!ELEMENT refdesvolindx (refdesvolentry*)>
+<!ATTLIST refdesvolindx 
+                %secur;>
+
+<!--A single entry in the Numerical Index of Reference Designations for multivolume TMs -->
+<!ELEMENT refdesvolentry (refdes, tmidno, reference?)>
+<!ATTLIST  refdesvolentry 
+%secur;>
+
+<!--Numerical Index of Reference Designations - Automatically Generated -->
+<!ELEMENT auto-refdesindx EMPTY>
+<!ATTLIST auto-refdesindx 
+                    %secur;>
+                    
+<!--Numerical Index of Wiring Reference Designations for multivolume TMs -->
+<!ELEMENT wirerefdesvolindx (wirerefdesvolentry*)>
+<!ATTLIST wirerefdesvolindx 
+basetmidno       CDATA          #REQUIRED
+                %secur;>
+
+<!--A single entry in the Wiring Numerical Index of Reference Designations for multivolume TMs -->
+<!ELEMENT wirerefdesvolentry (refdes, tmidno, reference?, assemblyinfo)>
+<!ATTLIST  wirerefdesvolentry 
+%secur;>
+
+<!-- Specification Number-->
+<!ELEMENT assemblyinfo    (#PCDATA |%pctext;)*>
+<!ATTLIST assemblyinfo %secur;
+                                %chgatt;>
+
+<!--Wiring Numerical Index of Reference Designations - Automatically Generated -->
+<!ELEMENT auto-wirerefdesindx EMPTY>
+<!ATTLIST auto-wirerefdesindx 
+                    %secur;>
+
+<!--Introduction Work Package -->
+<!ELEMENT introwp (titleblk, intropara+, how-to-use-etm?, figsect?, foldsect?)>
+<!ATTLIST introwp %wpatt;
+		        %secur;>
+
+<!--Information contained in the Introduction Work Package -->
+<!ELEMENT intropara  (effect?, title, (%introcon;)*, sub-introparas?) >
+<!ATTLIST intropara %bodyatt;  %secur;>
+
+<!-- Subordinate titled paragraphs contained in the Introduction Work Package. All titled paragraphs are tagged as <intropara>, regardless of hierarchical level. If a Titled paragraph contains subordinate paragraphs, those subordinate paragraphs are surrounded by this wrapper element <sub-introparas> -->
+<!ELEMENT sub-introparas (intropara+)>
+<!ATTLIST sub-introparas	  %secur;>
+
+<!--How to Use This ETM. An explanation of how to use the ETM may be provided in the Introduction Work Package. -->
+<!ELEMENT how-to-use-etm  (title, (%introcon;)*, sub-introparas?) >
+<!ATTLIST how-to-use-etm %bodyatt;  %secur;>
+
+<!-- Warning Sample. Used to provide a sample of a Warning in the Introduction Work Packages. -->
+<!ELEMENT warningsample (icon-set | graphic | para | %list;)+>
+<!ATTLIST warningsample	%secur;>
+
+<!-- Caution Sample. Used to provide a sample of a Caution in the Introduction Work Packages. -->
+<!ELEMENT  cautionsample (para | %list; | table)+>
+<!ATTLIST cautionsample  	%secur;>
+
+<!-- Note Sample. Used to provide a sample of a Note in the Introduction Work Packages. -->
+<!ELEMENT  notesample (para | %list; | table)+>
+<!ATTLIST notesample 	%secur;>
+
+<!--Consolidated List of Effectivity Information. Used to identify configuration differences. A standard table in the Introduction Work Packages. -->
+<!ELEMENT  consoleffectlist (consoleffectlistentry )+>
+<!ATTLIST consoleffectlist		%bodyatt;
+	%secur;
+>
+                        
+<!-- Individual entry in the Consolidated List of Effectivity Information.  -->
+<!ELEMENT  consoleffectlistentry ((effectlegend | effectgraphic), config, remarks?)>
+<!ATTLIST consoleffectlistentry 	 id             ID              #REQUIRED
+                        %secur;>
+
+<!-- Effectivity Legend. Used to identify the effectivity codes as part of the Consolidated List of Effectivity. . -->
+<!ELEMENT  effectlegend (effectcode+)>
+<!ATTLIST effectlegend 
+                        %secur;>
+ 
+ <!ELEMENT effectgraphic (graphic+)>
+<!ATTLIST effectgraphic 
+                        %secur;>
+ 
+ <!-- Effectivity Code. Individual code as part of the Effectivity Legend. -->
+<!ELEMENT  effectcode (#PCDATA)>
+<!ATTLIST effectcode 
+                        %secur;>
+                        
+<!-- Configuration Information. Part of the Consolidated List of Effectivity Standard Table. . -->
+<!ELEMENT  config (para)*>
+<!ATTLIST config 
+                        %secur;>
+                        
+<!--Consolidated Lists for Technical Directives, Support Equipment, Material, and References Work Package -->
+<!ELEMENT consolistwp (titleblk, ((para | %list; | note))*, hratd, sereq?, matreq?, refmat?)>
+<!ATTLIST consolistwp   %wpatt;
+				%secur;>
+
+<!--Historical Record of Applicable Technical Directives -->
+<!ELEMENT hratd (title, (%paranotable;)*, (none | ratd))>
+<!ATTLIST hratd  %secur;>
+
+<!-- Support Equipment Required -->
+<!ELEMENT sereq (title, (%paranotable;)*, sel)>
+<!ATTLIST sereq  %secur;>
+
+<!--Consolidated List of Support Equipment Required -->
+<!ELEMENT sel  ( seentry+, noteslist?)>
+<!ATTLIST sel  %secur;>
+
+<!-- Materials Required -->
+<!ELEMENT matreq (title, (%paranotable;)*, matlist)>
+<!ATTLIST matreq  %secur;>
+
+<!--Reference Materials -->
+<!ELEMENT refmat (title, (%paranotable;)*, reflist)>
+<!ATTLIST refmat  %secur;>
+
+<!--Maintenance Allocation Work Package -->
+<!ELEMENT maintalwp (titleblk, wpinfo?, intro?, titledpara+, maintaltable)>
+<!ATTLIST maintalwp %wpatt;
+				%secur;>
+
+<!--Maintenance Allocation Table (standard table) as part of the Maintenance Allocation Work Package -->
+<!ELEMENT maintaltable (title,  maintalsysentry+, noteslist?)>
+<!ATTLIST maintaltable
+			%bodyatt;
+			%secur; >
+
+<!--Maintenance Allocation (System) Entry - Groups, by system, the multiple entries in the Maintenance Allocation Table  -->
+<!ELEMENT maintalsysentry  (nomen, maintalsubsysentry+)>
+<!ATTLIST maintalsysentry 	%refs;
+				 %secur;>
+
+<!--Maintenance Allocation Entry - An individual entry in the Maintenance Allocation Table  -->
+<!ELEMENT maintalsubsysentry (nomen, maintallocation+)>
+<!ATTLIST maintalsubsysentry 	%refs;
+				 %secur;>
+
+<!--Maintenance Allocation - A grouping of maintenance level/degree information in the Maintenance Allocation Table  -->
+<!ELEMENT maintallocation (deg1, deg2, deg3, function, reference+)>
+<!ATTLIST maintallocation 	%refs;
+				 %secur;>
+				 
+<!--Safety Work Package -->
+<!ELEMENT safewp (titleblk,  wpinfo, intro?, precaution*, figsect?, foldsect?)>
+<!ATTLIST safewp 	%wpatt;
+				 %secur;>
+
+<!--Specific Safety Precautions -->
+<!ELEMENT  precaution  (effect?, title, (%safetycon;)*, sub-precaution?) >
+<!ATTLIST precaution %bodyatt;  %secur;>
+
+<!-- Subordinate titled Specific Safety Precautions -->
+<!ELEMENT sub-precaution (precaution+)>
+<!ATTLIST sub-precaution	  %secur;>
+
+<!-- First Degree - in the Maintenance Allocation Table -->
+<!ELEMENT deg1  (#PCDATA)>
+<!ATTLIST deg1 level (on | off) #REQUIRED
+	 	 %secur;>
+
+<!-- Second Degree - in the Maintenance Allocation Table -->
+<!ELEMENT deg2  (#PCDATA)>
+<!ATTLIST deg2 level (on | off) #REQUIRED
+	 	 %secur;>
+
+<!-- Third Degree - in the Maintenance Allocation Table -->
+<!ELEMENT deg3   (#PCDATA)>
+<!ATTLIST deg3 level (on | off) #REQUIRED
+	 	 %secur;>
+
+<!-- Front Matter Cards for Periodic Maintenance Requirements (MIL-STD-3001-7)-->
+<!ELEMENT fmcds    (titlecd, lecds, tpdrcard?, hmwscard?)  >
+<!ATTLIST fmcds id ID #IMPLIED
+				%secur;>
+
+<!-- Checklist Front Matter for Periodic Maintenance Requirements (MIL-STD-3001-7)-->
+<!ELEMENT fmcl    (titlecd)  >
+<!ATTLIST fmcl id ID #IMPLIED
+				%secur;>
+				
+<!--Title Card. Part of the Periodic Maintenance Requirements Card Set Decks Only-->
+<!ELEMENT titlecd (tmidno+, pretmidno*, pubdate, (chgnum, chgdate)?, prtitle, typeeqpcode?, notices, nsn?, (introduction, hazmatstatement?, application)?)>
+<!ATTLIST titlecd id ID #IMPLIED
+			%secur;>
+
+<!--Introduction Paragraphs-->
+<!ELEMENT introduction   (title, (%paracon;)*)>
+<!ATTLIST 	 introduction
+%refs;
+%secur;>
+
+<!--Warnings And Cautions Applicable To Hazardous Materials Statement-->
+<!ELEMENT hazmatstatement   (title, (%paracon;)*)>
+<!ATTLIST  hazmatstatement
+%refs;
+%secur;>
+
+<!--Application Paragraphs-->
+<!ELEMENT application   (title, (%paracon;)*)>
+<!ATTLIST  application 	%refs;
+			%secur;>
+
+<!--Type Equipment Code. Part of the Title Card for Periodic Maintenance Requirements Card Set Decks-->
+<!ELEMENT typeeqpcode (#PCDATA)>
+<!ATTLIST typeeqpcode 	%secur;>
+
+<!--List of Effective Cards - Part of the Periodic Maintenance Requirements Card Set Decks Only-->
+<!ELEMENT  lecds ((%paranotable;)*, irac?, currentchgs, cardcount, cardchghist?)>
+<!ATTLIST lecds 
+%cardatt;>
+
+<!-- Card Count Statement. Placeholder for the generated statement: "The total number of card faces is this manual is XX consisting of the following:" -->
+<!ELEMENT cardcount (#PCDATA)>
+<!ATTLIST cardcount	%secur;>
+
+<!--Card Change History as part of the List of Effective Cards. -->
+<!ELEMENT cardchghist (cardhist+)>
+<!ATTLIST cardchghist 
+		%secur;> 
+
+<!-- Card Change History - grouping of card number and change number-->
+<!ELEMENT cardhist (reference, chgnum)>
+<!ATTLIST cardhist 
+		%secur;> 
+
+<!--Technical Publication Deficiency Reports (TPDR) Incorporated Cards. Part of Periodic Maintenance Requirements Card Set Decks Only -->
+<!ELEMENT  tpdrcard (prefcdinfo, (%paranotable;)*, tpd?)>
+<!ATTLIST tpdrcard 
+%cardatt;>
+
+<!--Warnings applicable to the hazardous materials card (HMWS card). Part of Periodic Maintenance Requirements Card Set Decks Only -->
+<!ELEMENT hmwscard (prefcdinfo, intro?,  hazmatexp, hazmatwarns)>
+<!ATTLIST hmwscard 
+%cardatt;>
+ 
+<!--	 Front Matter for Stand Alone IPB Manual -->
+<!ELEMENT ipbmanualfrnt  (titlepg, niepage, tpdrpg?, introwp, alphaindxwp, partnoindxwp?, refdesindxwp?)>
+<!ATTLIST ipbmanualfrnt  id ID #IMPLIED
+				%secur;>
+ 
+<!--Numerical Index of Effective Figures/Pages-->
+<!ELEMENT niepage  (title, currentchgs, para*,  pagecount, figchist)>
+<!ATTLIST niepage %wpatt;
+		     %secur;>
+
+<!--IPB Figure/Page Change History as part of the Numerical Index of Effective Figures/ Pages.  -->
+<!ELEMENT figchist (pagehist | fighist)*>
+<!ATTLIST figchist  
+		%secur;> 
+
+<!--IPB Manual Figure Change History.-->
+<!ELEMENT fighist (reference, pageno?, chgnum)>
+<!ATTLIST fighist		 %secur;>
+

@@ -1,0 +1,179 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. CPF 2004-32US: Expand Process DM to include <step1> content:    *
+    *                   Create STEPX content groups that can be          *
+    *                   customized for static and interactive use.       *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % STEPINTERACT PUBLIC                                     *
+    *   "-//S1000D//ENTITIES Steps Interact Breakdown 20050501//EN" >    *
+    * %STEPINTERACT;                                                     *
+    ********************************************************************** -->
+
+<!--**********************************************************************
+    * Define Entity %STEP1; (Step1 Content) containing:-                 *
+    *  step1     - Mandatory Single    contains %stepcon; and %STEP2;    *
+    *  step1-alt - Mandatory Single    contains one or more step1        *
+    ********************************************************************** -->
+
+<!ENTITY % STEP1  "step1 | step1-alt" >
+
+
+<!--**********************************************************************
+    * Define Element step1-alt (step1 Alternatives) containing:-         *
+    **********************************************************************
+    * The step1-alt element is a pointer to multiple step1 elements      *
+    * where only one is valid determined by applicability on the         *
+    * contained step1 elements.                                          *
+    * This element employs the 'Node Alternate' class.                   *
+    **********************************************************************
+    *   step1        - Mandatory Repeatable   Data Module Nodes          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %bodyatt;                            *
+    *   name     - CDATA    - IMPLIED       - Name of the node           *
+    *   Definition stored in entity %secur;                              *
+    ********************************************************************** -->
+<!ELEMENT step1-alt - - ( step1+ ) >
+<!ATTLIST step1-alt
+              %bodyatt; 
+              name      CDATA     #IMPLIED
+              %secur; >
+
+
+<!--**********************************************************************
+    * Define Entity %STEP2; (Step2 Content) containing:-                 *
+    *  step2     - Mandatory Single    contains %stepcon; and %STEP3;    *
+    *  step2-alt - Mandatory Single    contains one or more step2        *
+    ********************************************************************** -->
+
+<!ENTITY % STEP2  "step2 | step2-alt" >
+
+
+<!--**********************************************************************
+    * Define Element step2-alt (step2 Alternatives) containing:-         *
+    **********************************************************************
+    * The step2-alt element is a pointer to multiple step2 elements      *
+    * where only one is valid determined by applicability on the         *
+    * contained step2 elements.                                          *
+    * This element employs the 'Node Alternate' class.                   *
+    **********************************************************************
+    *   step2        - Mandatory Repeatable   Data Module Nodes          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %bodyatt;                            *
+    *   name     - CDATA    - IMPLIED       - Name of the node           *
+    *   Definition stored in entity %secur;                              *
+    ********************************************************************** -->
+<!ELEMENT step2-alt - - ( step2+ ) >
+<!ATTLIST step2-alt
+              %bodyatt; 
+              name      CDATA     #IMPLIED
+              %secur; >
+
+
+<!--**********************************************************************
+    * Define Entity %STEP3; (Step3 Content) containing:-                 *
+    *  step3     - Mandatory Single    contains %stepcon; and %STEP4;    *
+    *  step3-alt - Mandatory Single    contains one or more step3        *
+    ********************************************************************** -->
+
+<!ENTITY % STEP3  "step3 | step3-alt" >
+
+
+<!--**********************************************************************
+    * Define Element step3-alt (step3 Alternatives) containing:-         *
+    **********************************************************************
+    * The step3-alt element is a pointer to multiple step3 elements      *
+    * where only one is valid determined by applicability on the         *
+    * contained step2 elements.                                          *
+    * This element employs the 'Node Alternate' class.                   *
+    **********************************************************************
+    *   step3        - Mandatory Repeatable   Data Module Nodes          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %bodyatt;                            *
+    *   name     - CDATA    - IMPLIED       - Name of the node           *
+    *   Definition stored in entity %secur;                              *
+    ********************************************************************** -->
+<!ELEMENT step3-alt - - ( step3+ ) >
+<!ATTLIST step3-alt
+              %bodyatt; 
+              name      CDATA     #IMPLIED
+              %secur; >
+
+
+<!--**********************************************************************
+    * Define Entity %STEP4; (Step4 Content) containing:-                 *
+    *  step4     - Mandatory Single    contains %stepcon; and %STEP5;    *
+    *  step4-alt - Mandatory Single    contains one or more step4        *
+    ********************************************************************** -->
+
+<!ENTITY % STEP4  "step4 | step4-alt" >
+
+
+<!--**********************************************************************
+    * Define Element step4-alt (step4 Alternatives) containing:-         *
+    **********************************************************************
+    * The step4-alt element is a pointer to multiple step4 elements      *
+    * where only one is valid determined by applicability on the         *
+    * contained step4 elements.                                          *
+    * This element employs the 'Node Alternate' class.                   *
+    **********************************************************************
+    *   step4        - Mandatory Repeatable   Data Module Nodes          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %bodyatt;                            *
+    *   name     - CDATA    - IMPLIED       - Name of the node           *
+    *   Definition stored in entity %secur;                              *
+    ********************************************************************** -->
+<!ELEMENT step4-alt - - ( step4+ ) >
+<!ATTLIST step4-alt
+              %bodyatt; 
+              name      CDATA     #IMPLIED
+              %secur; >
+
+
+<!--**********************************************************************
+    * Define Entity %STEP5; (Step5 Content) containing:-                 *
+    *  step5     - Mandatory Single    contains %stepcon;                *
+    *  step5-alt - Mandatory Single    contains one or more step5        *
+    ********************************************************************** -->
+
+<!ENTITY % STEP5  "step5 | step5-alt" >
+
+<!--**********************************************************************
+    * Define Element step5-alt (step5 Alternatives) containing:-         *
+    **********************************************************************
+    * The step5-alt element is a pointer to multiple step5 elements      *
+    * where only one is valid determined by applicability on the         *
+    * contained step5 elements.                                          *
+    * This element employs the 'Node Alternate' class.                   *
+    **********************************************************************
+    *   step5        - Mandatory Repeatable   Data Module Nodes          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *   Definition stored in entity %bodyatt;                            *
+    *   name     - CDATA    - IMPLIED       - Name of the node           *
+    *   Definition stored in entity %secur;                              *
+    ********************************************************************** -->
+<!ELEMENT step5-alt - - ( step5+ ) >
+<!ATTLIST step5-alt
+              %bodyatt; 
+              name      CDATA     #IMPLIED
+              %secur; >
+
+
+<!--**********************************************************************
+    * Call the Steps Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTSTEP;     *
+    ********************************************************************** -->
+
+%EXTSTEP;

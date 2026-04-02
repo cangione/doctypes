@@ -1,0 +1,40 @@
+<!-- Fragment document type declaration subset:
+Arbortext, Inc., 1988-2007, v.4002
+<!DOCTYPE OUTSPEC PUBLIC "-//ArborText//DTD OUTPUT SPEC MIL-PRF-28001 REV B AMEND 1 19961231//EN">
+-->
+<att>
+<specval attname="_changenum" attval="#ANY">
+<charsubset>
+<savetext textid="chgatt.txt" conrule="#CONTENT(_changenum)">
+</charsubset>
+</att>
+<att>
+<specval attname="inschlvl" attval="#ANY">
+<specval attname="chgatt" attloc="#FOSI" attval="#GT#chgn.txt">
+<charsubset>
+<savetext textid="chgn.txt" conrule="chgatt.txt">
+<savetext textid="avj.app"
+conrule="<own-line.fmt>,lep.pagenum2.txt,\........Change \,chgn.txt,</own-line.fmt>"
+append="1"></charsubset>
+</att>
+<att>
+<specval attname="inschlvl" attval="#ANY">
+<specval attname="chgatt" attloc="#FOSI" attval="#LE#chgn.txt">
+<charsubset>
+<savetext textid="chgn.txt" conrule="#CONTENT(inschlvl)">
+<savetext textid="avj.app"
+conrule="<own-line.fmt>,lep.pagenum2.txt,\........Change \,chgn.txt,</own-line.fmt>"
+append="1"></charsubset>
+</att><?Pub Caret>
+<att>
+<specval attname="inschlvl" attval="#NONE">
+<charsubset>
+<savetext textid="chgn.txt" conrule="chgatt.txt">
+<savetext textid="avj.app"
+conrule="<own-line.fmt>,lep.pagenum2.txt,\........Change \,chgn.txt,</own-line.fmt>"
+placemnt="before" append="1">
+<savetext textid="avj.app"
+conrule="<own-line.fmt>,lep.pagenum2.txt,\........Change \,chgn.txt,</own-line.fmt>"
+placemnt="after" append="1"></charsubset>
+</att>
+<?Pub *0000001428>

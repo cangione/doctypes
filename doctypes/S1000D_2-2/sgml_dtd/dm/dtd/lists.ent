@@ -1,0 +1,149 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTLIST                                                 *
+    *   PUBLIC "-//S1000D//ELEMENTS Lists Breakdown 20050501//EN" >      *
+    * %EXTLIST;                                                          *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Element randlist (Random List) containing:-                 *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  title    - Optional   Single      contains Definition stored in   *
+    *                                    entity %text;.                  *
+    *  item     - Mandatory  Repeatable  contains applic, note, para,    *
+    *                                    Definition stored in entity     *
+    *                                    %paracon;.                      * 
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  prefix  - Declared - %PREFIXES;  Prefix of randlist items.        *
+    *                                   %PREFIXES; declared in S1000D.CFG*
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %secur;                *
+    ********************************************************************** -->
+
+<!ELEMENT randlist      - -     (applic?, title?, item+) >
+<!ATTLIST randlist
+             prefix  %PREFIXES;
+             %bodyatt;
+             %secur; >
+
+
+<!--**********************************************************************
+    * Define Element seqlist (Sequential List) containing:-              *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  title    - Optional   Single      contains Definition stored in   *
+    *                                    entity %text;.                  *
+    *  item     - Mandatory  Repeatable  contains applic, note, para,    *
+    *                                    Definition stored in entity     *
+    *                                    %paracon;.                      * 
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %secur;                *
+    ********************************************************************** -->
+
+<!ELEMENT seqlist       - -     (applic?, title?, item+) >
+<!ATTLIST seqlist
+             %bodyatt;
+             %secur; >
+
+
+<!--**********************************************************************
+    * Define Element item (List Item) containing:-                       *
+    *  applic    - Optional  Single     contains type, model.            *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *   note     - Mandatory  Single      contains applic, symbol, para, *
+    *                                     Definition stored in entity    *
+    *                                     %list;.                        *
+    *  or                                                                *
+    *   para     - Mandatory  Single      contains applic, Definition    *
+    *                                     stored in entity %paracon;.    *
+    *  or                                                                *
+    *   Definition stored in entity %paracon;.                           *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT item          - O     (applic?, (note | para | %paracon;)+) >
+<!ATTLIST item
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element deflist (Definition List) containing:-              *
+    *  applic   - Optional   Single      contains type, model.           *
+    *  title    - optional   single      contains Definition stored in   *
+    *                                    entity %text;.                  *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *  term     - Mandatory  Single      contains applic, Definition     *
+    *                                    stored in entity %text;.        *
+    *  def      - Mandatory  Single      contains applic, para,          *
+    *                                    Definition stored in entity     *
+    *                                    %paracon;.                      *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    *  Attribute Definition List stored in entity %secur;                *
+    ********************************************************************** -->
+
+<!ELEMENT deflist       - -     (applic?, title?, (term, def)+) >
+<!ATTLIST deflist
+             %bodyatt;
+             %secur; >
+
+
+<!--**********************************************************************
+    * Define Element term (Term) containing:-                            *
+    *  applic   - Optional   Single      contains type, model.           *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  Definition stored in entity %text;.                               *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+<!ELEMENT term          - O     (applic?, (%text;)+)  >
+<!ATTLIST term
+             %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element def (Definition) containing:-                       *
+    *  applic   - Optional   Single      contains type, model.           *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *   para     - Mandatory  Single      contains Definition stored in  *
+    *                                     entity %paracon;.              *
+    *  or                                                                *
+    *   Definition stored in entity %paracon;.                           *
+    *====================================================================*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+<!ELEMENT def           - O     (applic?, (para | %paracon;)+)  >
+<!ATTLIST def
+             %bodyatt; >

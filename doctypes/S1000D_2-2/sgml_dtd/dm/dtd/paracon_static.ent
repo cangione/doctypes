@@ -1,0 +1,33 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2004-32US: Moved paracon entity out of COMMON.ENT into      *
+    *                   static and interactive declaration files.        *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % PARACONSTATIC PUBLIC                                    *
+    *   "-//S1000D//ENTITIES Paracon Static Breakdown 20050501//EN" >    *
+    * %PARACONSTATIC;                                                    *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %paracon; (Paragraph Continuation) containing:-      *
+    *====================================================================*
+    * Mandatory Repeatable Group.                                        *
+    *====================================================================*
+    *  Definition stored in entity %text;.                               *
+    * or                                                                 *
+    *  Definition stored in entity %list;                                *
+    *  Definition stored in entity %CAPPCON;                             *
+    *====================================================================*
+    ********************************************************************** -->
+
+<!ENTITY % paracon "(%text; | %list; %CAPPCON;)+" >

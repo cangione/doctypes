@@ -1,0 +1,1159 @@
+<!-- ---------------------------------------------------------------------------
+  (c) 2019  -  Global Publishing Solutions Ltd (GPSL)
+ -------------------------------------------------------------------------------
+  Identifier:  PUBLIC "-//GPSL//MILSPEC//ENTITIES 38784STD-BV7//EN"
+  File name:   GPSL_MILSPEC_ENTITIES_COMMON.ent
+  Date:        9th May 2019
+  Version:     2.0
+ --------------------------------------------------------------------------- -->
+
+<!ENTITY el PUBLIC "-//USA-DOD//EL//EN" NDATA epsf>
+<!ENTITY er PUBLIC "-//USA-DOD//ER//EN" NDATA epsf>
+<!ENTITY esds.eps PUBLIC "-//USA-DOD//ESDS//EN" NDATA epsf>
+<!ENTITY navy.seal PUBLIC "-//USA-DOD//NAVY SEAL//EN" NDATA epsf>
+
+<!ENTITY LastSecurityPage '<!-- Start...|GPSL:RK|Entity "LastSecurityPage" -->
+<att>
+<charsubset>
+<usetext source="\ \" placemnt="after">
+<subchars>
+<textbrk startpg="recto" pageid="dummypg" newpgmdl="local" startln="1" endln="1">
+</subchars>
+</usetext>
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "LastSecurityPage" -->
+'>
+
+<!ENTITY pagespec-flowtext-3col-notbalance '<!-- Start...|GPSL:RK|Entity "pagespec-flowtext-3col-notbalance" -->
+<flowtext numcols="3" balance="0" chgmkplc="plftrt"><?Pub Dtl>
+&pagespec-flowtext-column-3col-lep;
+&pagespec-flowtext-footnote-flowtext;
+</flowtext>
+<!-- ...End|GPSL:RK|Entity "pagespec-flowtext-3col-notbalance" -->
+'>
+
+<!ENTITY pagespec-flowtext-column-3col-lep '<!-- Start...|GPSL:RK|Entity "pagespec-flowtext-column-3col-lep" -->
+<column width="2.2in" topfloat="top-col.flt  topbot-invisible.flt" botfloat="bot-invisible.flt bot-col.flt topbot-invisible.flt">
+<gutter width="0.2in">
+<!-- ...End|GPSL:RK|Entity "pagespec-flowtext-column-3col-lep" -->
+'>
+
+<!ENTITY header-lep-recto '<!-- Start...|GPSL:RK|Entity "header-lep-recto" -->
+<usetext source="<tmidno-algroup-rule>,</tmidno-algroup-rule>"><?Pub Dtl>
+<subchars>
+<font size="1pt">
+<leading lead="1pt">
+<indent leftind="@-7pi" rightind="*+1pi" firstln="*">
+<textbrk startln="1" endln="1">
+<algroup refpoint="last">
+</subchars>
+</usetext>
+<usetext source="<tmidnostr-header-recto.psu>,</tmidnostr-header-recto.psu>"><?Pub Dtl>
+<subchars>
+<font style="sanserif" size="10pt" weight="bold">
+<indent leftind="@-9pt" firstln="*" rightind="0">
+<quadding quad="right" lastquad="lright">
+<postsp minimum="4pt" nominal="7pt" maximum="9pt" priority="high">
+<textbrk startln="1" endln="1">
+<algroup refpoint="last">
+</subchars>
+</usetext>
+<usetext source="\List of Effective Pages\"><?Pub Dtl>
+<subchars>
+<font style="sanserif" famname="Helvetica" size="14pt" weight="bold">
+<indent leftind="@-.5pi" rightind="*+15.5pi" firstln="*">
+<highlt allcap="1">
+<textbrk startln="1" endln="0">
+<algroup refpoint="top">
+<boxing toffset="4pt" boffset="6pt" loffset="6pt" roffset="6pt" siderel="content" tthick="3pt" bthick="3pt" lthick="3pt" rthick="3pt">
+<ruling thick="2pt" lentype="spec" speclen="2pi" placemnt="before" ruleclr="white" type="blank">
+<leading lead="0">
+<textbrk startln="1" endln="1">
+</ruling>
+</subchars>
+</usetext>
+<usetext source="\Insert Latest Changed Pages. Destroy Superseded Pages.\"><?Pub Dtl>
+<subchars>
+<font style="sanserif" famname="Helvetica" size="8pt" weight="bold">
+<indent leftind="16.5pi" firstln="*">
+<highlt allcap="1">
+<textbrk startln="0" endln="1">
+<algroup refpoint="top">
+</subchars>
+</usetext>
+<ruling thick="1pt" lentype="rel" rellen="text"><?Pub Dtl>
+<leading lead="0">
+<indent leftind="@+15.5pi" rightind="*+27.5pi" firstln="*">
+<textbrk startln="1" endln="1">
+</ruling>
+<usetext source="\ \"><?Pub Dtl>
+<subchars>
+<leading lead="0pt">
+<indent leftind="0" rightind="-6pi" firstln="*">
+<textbrk startln="1" endln="1">
+<boxing toffset="0pi" boffset="55.25pi" loffset="11pt" roffset="11.25pt" siderel="col" tthick="0pt" bthick="1pt" lthick="1pt" rthick="1pt">
+</subchars>
+</usetext>
+<!-- ...End|GPSL:RK|Entity "header-lep-recto" -->
+'>
+
+<!ENTITY header-lep-verso '<!-- Start...|GPSL:RK|Entity "header-lep-verso" -->
+<usetext source="<tmidno-algroup-rule>,</tmidno-algroup-rule>"><?Pub Dtl>
+<subchars>
+<font size="1pt">
+<leading lead="1pt">
+<indent leftind="@-7pi" rightind="*+1pi" firstln="*">
+<textbrk startln="1" endln="1">
+<algroup refpoint="last">
+</subchars>
+</usetext>
+<usetext source="<tmidnostr-header.psu>,</tmidnostr-header.psu>"><?Pub Dtl>
+<subchars>
+<font style="sanserif" size="10pt" weight="bold">
+<indent leftind="@-39pt" firstln="*">
+<quadding quad="left" lastquad="lleft">
+<postsp minimum="4pt" nominal="7pt" maximum="9pt" priority="high">
+<textbrk startln="1" endln="1">
+<algroup refpoint="last">
+</subchars>
+</usetext>
+<usetext source="\List of Effective Pages\"><?Pub Dtl>
+<subchars>
+<font style="sanserif" famname="Helvetica" size="14pt" weight="bold">
+<indent leftind="@-.5pi" rightind="*+15.5pi" firstln="*">
+<highlt allcap="1">
+<textbrk startln="1" endln="0">
+<algroup refpoint="top">
+<boxing toffset="4pt" boffset="6pt" loffset="6pt" roffset="6pt" siderel="content" tthick="3pt" bthick="3pt" lthick="3pt" rthick="3pt">
+<ruling thick="2pt" lentype="spec" speclen="2pi" placemnt="before" ruleclr="white" type="blank">
+<leading lead="0">
+<textbrk startln="1" endln="1">
+</ruling>
+</subchars>
+</usetext>
+<usetext source="\Insert Latest Changed Pages. Destroy Superseded Pages.\"><?Pub Dtl>
+<subchars>
+<font style="sanserif" famname="Helvetica" size="8pt" weight="bold">
+<indent leftind="16.5pi" firstln="*">
+<highlt allcap="1">
+<textbrk startln="0" endln="1">
+<algroup refpoint="top">
+</subchars>
+</usetext>
+<ruling thick="1pt" lentype="rel" rellen="text"><?Pub Dtl>
+<leading lead="0">
+<indent leftind="@+15.5pi" rightind="*+27.5pi" firstln="*">
+<textbrk startln="1" endln="1">
+</ruling>
+<usetext source="\ \"><?Pub Dtl>
+<subchars>
+<leading lead="0pt">
+<indent leftind="0" rightind="-6pi" firstln="*">
+<textbrk startln="1" endln="1">
+<boxing toffset="0pi" boffset="55.25pi" loffset="11pt" roffset="11.25pt" siderel="col" tthick="0pt" bthick="1pt" lthick="1pt" rthick="1pt">
+</subchars>
+</usetext>
+<!-- ...End|GPSL:RK|Entity "header-lep-verso" -->
+'>
+
+<!ENTITY change-page-handler-header '<!-- Start...|GPSL:RK|Entity "change-page-handler-header" -->
+<usetext source="divinfo.txt[FB]">
+</usetext>
+<usetext source="<setfolio.psu>,</setfolio.psu>">
+</usetext>
+<!-- ...End|GPSL:RK|Entity "change-page-handler-header" -->
+'>
+
+<!ENTITY division-settings '<!-- GPSL:RK|Entity "division-settings" -->'>
+
+<!ENTITY % page-test "IGNORE">
+
+<!ENTITY wcn-id-idref '<!-- Start...|GPSL:RK|Entity "wcn-id-idref" -->
+<att><?Pub Dtl>
+<specval attname="id" attval="#ANY">
+<specval attname="delchlvl" attval="#NONE">
+<charsubset>
+<savetext textid="xrefstr" conrule="<para.ps>,scontent.txt,#CONTENT,econtent.txt,</para.ps>">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="xrefid" attval="#ANY">
+<specval attname="delchlvl" attval="#NONE">
+<charsubset>
+<usetext source="#XREF(xrefid,xrefstr)">
+</usetext>
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="id" attval="#ANY">
+<specval attname="delchlvl" attval="#ANY">
+<charsubset>
+<savetext textid="xrefstr" conrule="<para.ps>,contentcbar.txt,</para.ps>">
+</charsubset>
+</att>
+<att><?Pub Dtl>
+<specval attname="xrefid" attval="#ANY">
+<specval attname="delchlvl" attval="#ANY">
+<charsubset>
+<usetext source="contentcbar.txt">
+</usetext>
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "wcn-id-idref" -->
+'>
+
+<!ENTITY security-mark '<!-- Start...|GPSL:RK|Entity "security-mark" -->
+<att>
+<fillval attname="caveat" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="low-caveat.tmp"></charsubset>
+</att>
+<att logic="or">
+<specval attname="security" attval="#NONE">
+<specval attname="security" attval="n">
+<charsubset>
+<savetext textid="secur.str" conrule="\\">
+</charsubset>
+</att>
+<att logic="and">
+<specval attname="cui" attval="#ANY">
+<fillval attname="cui" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="low-cui.tmp">
+<savetext textid="secur.str" conrule="\(\,low-cui.tmp,\) \,0.25em"></charsubset>
+</att>
+<att logic="and">
+<specval attname="security" attval="u">
+<charsubset>
+<savetext textid="secur.str" conrule="\(U\,low-caveat.tmp,\) \,0.25em">
+</charsubset>
+</att>
+<att logic="and">
+<specval attname="security" attval="s">
+<charsubset>
+<savetext textid="secur.str" conrule="\(S\,low-caveat.tmp,\) \,0.25em">
+</charsubset>
+</att>
+<att logic="and">
+<specval attname="security" attval="c">
+<charsubset>
+<savetext textid="secur.str" conrule="\(C\,low-caveat.tmp,\) \,0.25em">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "security-mark" -->
+'>
+
+<!ENTITY wcn-change '<!-- Start...|GPSL:RK|Entity "wcn-change" -->
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<charsubset>
+<suppress sup="1">
+<usetext source="\ \">
+<subchars>
+<textbrk startln="1" endln="1">
+</subchars>
+</usetext>
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "wcn-change" -->
+'>
+
+<!ENTITY set-deltypstr '<!-- GPSL:RK|Entity "set-deltypstr" -->'>
+
+<!ENTITY para0-sub3-change.front '<!-- Start...|GPSL:RK|Entity "para0-sub3-change.front" -->
+&set-deltypstr;
+<att logic="or"><?Pub Dtl>
+<specval attname="deltype" attval="real">
+<specval attname="status" attval="empty">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset charsubsetref="delchlvl.front">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="status" attval="#ANY">
+<specval attname="status" attval="#NE#\empty\">
+<charsubset charsubsetref="delstatus.front"> 
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "para0-sub3-change.front" -->
+'>
+
+<!ENTITY step-change.body '<!-- Start...|GPSL:RK|Entity "step-change.body" -->
+<att logic="or"><?Pub Dtl>
+<specval attname="deltype" attval="real">
+<specval attname="status" attval="empty">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset charsubsetref="delchlvl.step.body">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="status" attval="#ANY">
+<specval attname="status" attval="#NE#\empty\">
+<charsubset charsubsetref="delstatus.step.body">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "step-change.body" -->
+'>
+
+<!ENTITY step4-change.body '<!-- Start...|GPSL:RK|Entity "step4-change.body" -->
+&set-deltypstr;
+<att logic="or"><?Pub Dtl>
+<specval attname="deltype" attval="real">
+<specval attname="status" attval="empty">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset charsubsetref="delchlvl4.step.body">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="status" attval="#ANY">
+<specval attname="status" attval="#NE#\empty\">
+<charsubset charsubsetref="delstatus4.step.body">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "step4-change.body" -->
+'>
+
+<!ENTITY step3-change.body '<!-- Start...|GPSL:RK|Entity "step3-change.body" -->
+&set-deltypstr;
+<att logic="or"><?Pub Dtl>
+<specval attname="deltype" attval="real">
+<specval attname="status" attval="empty">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset charsubsetref="delchlvl3.step.body">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="status" attval="#ANY">
+<specval attname="status" attval="#NE#\empty\">
+<charsubset charsubsetref="delstatus3.step.body">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "step3-change.body" -->
+'>
+
+<!ENTITY step2-change.body '<!-- Start...|GPSL:RK|Entity "step2-change.body" -->
+&set-deltypstr;
+<att logic="or"><?Pub Dtl>
+<specval attname="deltype" attval="real">
+<specval attname="status" attval="empty">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset charsubsetref="delchlvl2.step.body">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="status" attval="#ANY">
+<specval attname="status" attval="#NE#\empty\">
+<charsubset charsubsetref="delstatus2.step.body">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "step2-change.body" -->
+'>
+
+<!ENTITY nstep-change.body '<!-- Start...|GPSL:RK|Entity "nstep-change.body" -->
+<att logic="or"><?Pub Dtl>
+<specval attname="deltype" attval="real">
+<specval attname="status" attval="empty">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset charsubsetref="ndelchlvl1.step.body">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="status" attval="#ANY">
+<specval attname="status" attval="#NE#\empty\">
+<charsubset charsubsetref="delstatus.step.body">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "nstep-change.body" -->
+'>
+
+<!ENTITY nstep4-change.body '<!-- Start...|GPSL:RK|Entity "nstep4-change.body" -->
+&set-deltypstr;
+<att logic="or"><?Pub Dtl>
+<specval attname="deltype" attval="real">
+<specval attname="status" attval="empty">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset charsubsetref="ndelchlvl4.step.body">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="status" attval="#ANY">
+<specval attname="status" attval="#NE#\empty\">
+<charsubset charsubsetref="delstatus4.step.body">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "nstep4-change.body" -->
+'>
+<!ENTITY nstep3-change.body '<!-- Start...|GPSL:RK|Entity "nstep3-change.body" -->
+&set-deltypstr;
+<att logic="or"><?Pub Dtl>
+<specval attname="deltype" attval="real">
+<specval attname="status" attval="empty">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset charsubsetref="ndelchlvl3.step.body">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="status" attval="#ANY">
+<specval attname="status" attval="#NE#\empty\">
+<charsubset charsubsetref="delstatus3.step.body">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "nstep3-change.body" -->
+'>
+<!ENTITY nstep2-change.body '<!-- Start...|GPSL:RK|Entity "nstep2-change.body" -->
+&set-deltypstr;
+<att logic="or"><?Pub Dtl>
+<specval attname="deltype" attval="real">
+<specval attname="status" attval="empty">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset charsubsetref="ndelchlvl2.step.body">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="status" attval="#ANY">
+<specval attname="status" attval="#NE#\empty\">
+<charsubset charsubsetref="delstatus2.step.body">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "nstep2-change.body" -->
+'>
+
+<!ENTITY wcn-change.front '<!-- Start...|GPSL:RK|Entity "wcn-change.front" -->
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "wcn-change.front" -->
+'>
+
+<!ENTITY sub2-sub3-change-withindex.body '<!-- Start...|GPSL:RK|Entity "sub2-sub3-change-withindex.body" -->
+&set-deltypstr;
+<att logic="or"><?Pub Dtl>
+<specval attname="deltype" attval="real">
+<specval attname="status" attval="empty">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset charsubsetref="delchlvl">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="status" attval="#ANY">
+<specval attname="status" attval="#NE#\empty\">
+<charsubset charsubsetref="delstatus">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "sub2-sub3-change-withindex.body" -->
+'>
+
+<!ENTITY esds-proc '<!-- Start...|GPSL:RK|Entity "esds-proc" -->
+<att><?Pub Dtl>
+<specval attname="esds" attval="#EQ#\1\">
+<charsubset>
+<savetext textid="esds.st" conrule=".05em, <esds.ps>,</esds.ps>,1em">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "esds-proc" -->
+'>
+
+<!ENTITY hcp-proc '<!-- Start...|GPSL:RK|Entity "hcp-proc" -->
+<att><?Pub Dtl>
+<specval attname="hcp" attval="#EQ#\1\">
+<charsubset>
+<savetext textid="hcp.st" conrule=".05em, <hcp.ps>,</hcp.ps>,1em">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "hcp-proc" -->
+'>
+
+<!ENTITY chgpage-showmark '<!-- Start...|GPSL:RK|Entity "chgpage-showmark" -->
+<att><?Pub Dtl>
+<!--this att allows ACL to turn on the rev bar-->
+<specval attname="print-only" attloc="system-var" attval="#ANY">
+<specval attname="chgpage::show_chgmark" attloc="system-func" attval="1">
+<charsubset>
+<chgmark barthick="2pt" type="content">
+</chgmark>
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "chgpage-showmark" -->
+'>
+
+<!ENTITY output-chglvl-footer '<!-- Start...|GPSL:RK|Entity "output-chglvl-footer" -->
+<usetext source="<output-chglvl.psu>,</output-chglvl.psu>">
+</usetext>
+<usetext source="folio.txt">
+</usetext>
+<!-- ...End|GPSL:RK|Entity "output-chglvl-footer" -->
+'>
+
+<!ENTITY mark-ignore.changed '<!-- GPSL:RK|Entity "mark-ignore.changed" -->'>
+
+<!ENTITY deleted-children '<!-- Start...|GPSL:RK|Entity "deleted-children" -->
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="delete">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "deleted-children" -->
+'>
+
+<!ENTITY ati-chgnum-att '<!-- Start...|GPSL:RK|Entity "ati-chgnum-att" -->
+<att><?Pub Dtl>
+<fillval attname="chglevel" attloc="doc" fillcat="chgmark" fillchar="chglvl">
+<charsubset>
+<chgmark barthick="0pt" join="1">
+</chgmark>
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "ati-chgnum-att" -->
+'>
+
+<!ENTITY every-pageres '<!-- Start...|GPSL:RK|Entity "every-pageres" -->
+<enumerat increm="1" enumid="page.ctr">
+<enumerat increm="1" enumid="page.next.ctr">
+<enumerat increm="1" enumid="page.total.ctr">
+<savetext textid="page.total.txt" conrule="page.total.ctr">
+<!-- ...End|GPSL:RK|Entity "every-pageres" -->
+'>
+
+<!ENTITY pageres-withoutdelete '<!-- Start...|GPSL:RK|Entity "pageres-withoutdelete" -->
+<pageres>
+&every-pageres;
+<enumerat increm="1" enumid="t2.page.ctr">
+<savetext textid="t2-folio.txt" conrule="t2.page.ctr">
+<savetext textid="lep-folio.txt" conrule="page.ctr[AU]">
+</pageres>
+<!-- ...End|GPSL:RK|Entity "pageres-withoutdelete" -->
+'>
+
+<!ENTITY pageres-withdelete '<!-- Start...|GPSL:RK|Entity "pageres-withdelete" -->
+<pageres>
+&every-pageres;
+<savetext textid="folio.txt" conrule="chap.txt,\-\,page.ctr[AR]">
+<savetext textid="pagedeltext" conrule="delnotetext[FI]">
+</pageres>
+<!-- ...End|GPSL:RK|Entity "pageres-withdelete" -->
+'>
+
+<!ENTITY pagespec-margin-recto-standard '<!-- Start...|GPSL:RK|Entity "pagespec-margin-recto-standard" -->
+<topmarg nomdepth="0.25in">
+<botmarg nomdepth="0.25in">
+<leftmarg width="1.0in">
+<rtmarg width="0.25in">
+<!-- ...End|GPSL:RK|Entity "pagespec-margin-recto-standard" -->
+'>
+
+<!ENTITY header-recto-standard-sheet '<!-- Start...|GPSL:RK|Entity "header-recto-standard-sheet" -->
+<header nomdepth="0.67in" spaflow="0.166in">
+&change-page-handler-header;
+<sectext scope="sheet">
+<subchars>
+<font style="sanserif" size="14pt" weight="bold">
+<quadding quad="center">
+<textbrk startln="1" endln="1">
+</subchars>
+</sectext>
+<usetext source="<footer-gentext.psu>,tmidnostr[BO],</footer-gentext.psu>">
+<subchars>
+<font style="sanserif" size="10pt" weight="bold">
+<quadding quad="justify" lastquad="lright">
+<textbrk startln="1" endln="1">
+</subchars>
+</usetext>
+<usetext source="\ \">
+<subchars>
+<font size="1pt">
+<leading lead="1pt">
+<postsp minimum="0.1in" nominal="0.1in" maximum="0.1in">
+<textbrk startln="1" endln="1">
+</subchars>
+</usetext>
+</header>
+<!-- ...End|GPSL:RK|Entity "header-recto-standard-sheet" -->
+'>
+
+<!ENTITY pagespec-flowtext-1col-blankpg '<!-- Start...|GPSL:RK|Entity "pagespec-flowtext-1col-blankpg" -->
+<flowtext numcols="1" balance="1">
+<column>
+</flowtext>
+<!-- ...End|GPSL:RK|Entity "pagespec-flowtext-1col-blankpg" -->
+'>
+
+<!ENTITY pagespec-margin-verso-standard '<!-- Start...|GPSL:RK|Entity "pagespec-margin-verso-standard" -->
+<topmarg nomdepth="0.25in">
+<botmarg nomdepth="0.25in">
+<leftmarg width="0.25in">
+<rtmarg width="1.0in">
+<!-- ...End|GPSL:RK|Entity "pagespec-margin-verso-standard" -->
+'>
+
+<!ENTITY header-verso-standard-sheet '<!-- Start...|GPSL:RK|Entity "header-verso-standard-sheet" -->
+<header nomdepth="0.67in" spaflow="0.166in">
+&change-page-handler-header;
+<sectext scope="sheet">
+<subchars>
+<font style="sanserif" size="14pt" weight="bold">
+<quadding quad="center">
+<textbrk startln="1" endln="1">
+</subchars>
+</sectext>
+<usetext source="<footer-gentext.psu>,tmidnostr[BO],</footer-gentext.psu>">
+<subchars>
+<font style="sanserif" size="10pt" weight="bold">
+<quadding quad="justify" lastquad="lleft">
+<textbrk startln="1" endln="1">
+</subchars>
+</usetext>
+<usetext source="\ \">
+<subchars>
+<font size="1pt">
+<leading lead="1pt">
+<postsp minimum="0.1in" nominal="0.1in" maximum="0.1in">
+<textbrk startln="1" endln="1">
+</subchars>
+</usetext>
+</header>
+<!-- ...End|GPSL:RK|Entity "header-verso-standard-sheet" -->
+'>
+
+<!ENTITY header-blankpg-standard-sheet '<!-- Start...|GPSL:RK|Entity "header-blankpg-standard-sheet" -->
+<header nomdepth="0.67in" spaflow="0.166in">
+&change-page-handler-header;
+<sectext scope="sheet">
+<subchars>
+<font style="sanserif" size="14pt" weight="bold">
+<quadding quad="center">
+<textbrk startln="1" endln="1">
+</subchars>
+</sectext>
+</header>
+<!-- ...End|GPSL:RK|Entity "header-blankpg-standard-sheet" -->
+'>
+
+<!ENTITY footer-blankpg-standard-sheet '<!-- Start...|GPSL:RK|Entity "footer-blankpg-standard-sheet" -->
+<footer nomdepth="0.50in" spaflow="0.166in">
+<sectext scope="sheet">
+<subchars>
+<font style="sanserif" size="14pt" weight="bold">
+<quadding quad="center">
+<textbrk startln="1" endln="1">
+</subchars>
+</sectext>
+</footer>
+<!-- ...End|GPSL:RK|Entity "footer-blankpg-standard-sheet" -->
+'>
+
+<!ENTITY pagespec-region-recto-standard '<!-- Start...|GPSL:RK|Entity "pagespec-region-recto-standard" -->
+<region xoff="-0.125in" yoff="-0.125in" layer="-1">
+<usetext source="<emergency-border-recto.psu>,</emergency-border-recto.psu>">
+</usetext>
+</region>
+<!-- ...End|GPSL:RK|Entity "pagespec-region-recto-standard" -->
+'>
+
+<!ENTITY pagespec-region-verso-standard '<!-- Start...|GPSL:RK|Entity "pagespec-region-verso-standard" -->
+<region xoff="-0.125in" yoff="-0.125in" layer="-1">
+<usetext source="<emergency-border-verso.psu>,</emergency-border-verso.psu>">
+</usetext>
+</region>
+<!-- ...End|GPSL:RK|Entity "pagespec-region-verso-standard" -->
+'>
+
+<!ENTITY pagespec-flowtext-1col '<!-- Start...|GPSL:RK|Entity "pagespec-flowtext-1col" -->
+<flowtext numcols="1" balance="1" chgmkplc="plftrt">
+&pagespec-flowtext-column-1col;
+&pagespec-flowtext-footnote-flowtext;
+</flowtext>
+<!-- ...End|GPSL:RK|Entity "pagespec-flowtext-1col" -->
+'>
+
+<!ENTITY pagespec-flowtext-2col '<!-- Start...|GPSL:RK|Entity "pagespec-flowtext-2col" -->
+<flowtext numcols="2" balance="1" chgmkplc="plftrt">
+&pagespec-flowtext-column-2col;
+&pagespec-flowtext-footnote-flowtext;
+</flowtext>
+<!-- ...End|GPSL:RK|Entity "pagespec-flowtext-2col" -->
+'>
+
+<!ENTITY pagespec-flowtext-3col '<!-- Start...|GPSL:RK|Entity "pagespec-flowtext-3col" -->
+<flowtext numcols="3" balance="1" chgmkplc="plftrt">
+&pagespec-flowtext-column-3col;
+&pagespec-flowtext-footnote-flowtext;
+</flowtext>
+<!-- ...End|GPSL:RK|Entity "pagespec-flowtext-3col" -->
+'>
+
+<!ENTITY pagespec-flowtext-footnote-flowtext '<!-- Start...|GPSL:RK|Entity "pagespec-flowtext-footnote-flowtext" -->
+<footnote width="flowtext" maxdepth="1.0in" ftnsepth="0.5pt" ftnsepln="1.5in">
+</footnote>
+<!-- ...End|GPSL:RK|Entity "pagespec-flowtext-footnote-flowtext" -->
+'>
+
+<!ENTITY pagespec-margin-recto-5wide '<!-- Start...|GPSL:RK|Entity "pagespec-margin-recto-5wide" -->
+<topmarg nomdepth="0.25in">
+<botmarg nomdepth="0.25in">
+<leftmarg width="0.625in">
+<rtmarg width="0.25in">
+<!-- ...End|GPSL:RK|Entity "pagespec-margin-recto-5wide" -->
+'>
+
+<!ENTITY pagespec-margin-verso-5wide '<!-- Start...|GPSL:RK|Entity "pagespec-margin-verso-5wide" -->
+<topmarg nomdepth="0.25in">
+<botmarg nomdepth="0.25in">
+<leftmarg width="0.25in">
+<rtmarg width="0.625in">
+<!-- ...End|GPSL:RK|Entity "pagespec-margin-verso-5wide" -->
+'>
+
+<!ENTITY att-content-cbar '<!-- GPSL:RK|Entity "att-content-cbar" -->'>
+
+<!ENTITY att-set-label '<!-- GPSL:RK|Entity "att-set-label" -->'>
+
+<!ENTITY att-stringdecl-reset '<!-- Start...|GPSL:RK|Entity "att-stringdecl-reset" -->
+<att><?Pub Dtl>
+<!-- resets the strings needed for the applic attributes -->
+<charsubset>
+<savetext textid="applicrefid.txt" conrule="\\" placemnt="before">
+<savetext textid="applicrefidtxt.txt" conrule="\\" placemnt="before">
+<savetext textid="symbol.st" conrule="\\" placemnt="before">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "att-stringdecl-reset" -->
+'>
+
+<!ENTITY att-save-symbols '<!-- Start...|GPSL:RK|Entity "att-save-symbols" -->
+<!-- Saves the symbols (esds, nsp, fcp, hcp, hci, ocp, oci) to symbol.st also replaces other text entities such as esds-proc and hcp-proc -->
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="nsp" attval="#GT#0">
+<charsubset>
+<savetext textid="symbol.st" conrule="<nsp.ps>,</nsp.ps>">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="hci" attval="#GT#0">
+<charsubset>
+<savetext textid="symbol.st" conrule="<hci.ps>,</hci.ps>" append="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="hcp" attval="#GT#0">
+<charsubset>
+<savetext textid="symbol.st" conrule="<hcp.ps>,</hcp.ps>" append="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="esds" attval="#GT#0">
+<charsubset>
+<savetext textid="symbol.st" conrule="<esds.ps>,</esds.ps>" append="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="fcp" attval="#GT#0">
+<charsubset>
+<savetext textid="symbol.st" conrule="<fcp.ps>,</fcp.ps>" append="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="oci" attval="#GT#0">
+<charsubset>
+<savetext textid="symbol.st" conrule="<oci.ps>,</oci.ps>" append="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<specval attname="ocp" attval="#GT#0">
+<charsubset>
+<savetext textid="symbol.st" conrule="<ocp.ps>,</ocp.ps>" append="1">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "att-save-symbols" -->
+'>
+
+<!ENTITY use-symbols '<!-- Start...|GPSL:RK|Entity "use-symbols" -->
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#NONE">
+<charsubset>
+<usetext source="symbol.st">
+<subchars>
+<highlt scoring="0">
+</subchars>
+</usetext>
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "use-symbols" -->
+'>
+
+<!ENTITY att-emergency-front '<!-- Start...|GPSL:RK|Entity "att-emergency-front" -->
+<att><?Pub Dtl>
+<specval attname="emergency" attval="1">
+<fillval attname="numcols" attloc="front" fillcat="span" fillchar="span">
+<charsubset>
+<usetext source="\ \" placemnt="before">
+<subchars>
+<leading lead="0pt">
+<chgmark join="1" barthick="0pt" cmclass="cropmarks" ruleclr="white">
+</chgmark>
+</subchars>
+</usetext>
+<usetext source="\ \" placemnt="after">
+<subchars>
+<leading lead="0pt">
+<chgmark join="1" barthick="0pt" cmclass="cropmarks" ruleclr="white">
+</chgmark>
+</subchars>
+</usetext>
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "att-emergency-front" -->
+'>
+
+<!ENTITY att-emergency-body '<!-- Start...|GPSL:RK|Entity "att-emergency-body" -->
+<att>
+<specval attname="emergency" attval="1">
+<charsubset>
+<chgmark join="1" barthick="0pt" cmclass="cropmarks" ruleclr="white">
+</chgmark>
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "att-emergency-body" -->
+'>
+
+<!ENTITY att-delete-label-front '<!-- Start...|GPSL:RK|Entity "att-delete-label-front" -->
+<att><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<charsubset>
+<usetext source="label.txt,\.\,1em">
+<subchars>
+<font inherit="1" style="sanserif">
+<highlt scoring="0">
+<textbrk startln="1">
+</subchars>
+</usetext>
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "att-delete-label-front" -->
+'>
+
+<!ENTITY sssn-proc '<!-- Start...|GPSL:RK|Entity "sssn-proc" -->
+<att>
+<specval attname="SSSN" attval="#ANY">
+<charsubset>
+<savetext textid="sssn.st" conrule=".5em,\ (\,#CONTENT(sssn),\)\">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "sssn-proc" -->
+'>
+
+<!ENTITY att-save-label-xref '<!-- Start...|GPSL:RK|Entity "att-save-label-xref" -->
+<att>
+<!-- Checks for the xref extension of using labels and if true saves the label for the xref -->
+<specval attname="UseLabelForCrossReference.ext" attloc="#FOSI" attval="#EQ#\True\">
+<specval attname="id" attval="#ANY">
+<charsubset>
+<savetext textid="xrefstr" conrule="\Paragraph \,label.txt">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "att-save-label-xref" -->
+'>
+
+<!ENTITY mark.changed '<!-- Start...|GPSL:RK|Entity "mark.changed" -->
+<att>
+<specval attname="revchg" attval="#GT#0">
+<charsubset>
+<chgmark barthick="1mm" type="content">
+</chgmark>
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "mark.changed" -->
+'>
+
+<!ENTITY att-38784-front-para0-atts '<!-- Start...|GPSL:RK|Entity "att-38784-front-para0-atts" -->
+<!-- Typically a para0/semantic para0 in the front matter of a document will have all or most of these -->
+&att-set-label;
+&att-content-cbar;
+&security-mark;
+&att-stringdecl-reset;
+&sssn-proc;
+&att-save-symbols;
+&att-emergency-front;
+&att-use-label-front;
+&att-use-security;
+&att-save-label-xref;
+&deleted-children;
+&mark.changed;
+&para0-sub3-change.front;
+<!-- ...End|GPSL:RK|Entity "att-38784-front-para0-atts" -->
+'>
+
+<!ENTITY att-use-label-front '<!-- Start...|GPSL:RK|Entity "att-use-label-front" -->
+<att><?Pub Dtl>
+<!-- In front labels of para0s/subparas do have a trailing "." and have a trailing 1em (not used for subparas due to optional title and elements that could be before title) -->
+<charsubset>
+<usetext source="label.txt,\.\,1em">
+<subchars>
+<font inherit="1" style="sanserif">
+<highlt scoring="0">
+<textbrk startln="1">
+</subchars>
+</usetext>
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "att-use-label-front" -->
+'>
+
+<!ENTITY att-use-security '<!-- Start...|GPSL:RK|Entity "att-use-security" -->
+<att><?Pub Dtl>
+<!-- Outputs security (not used for subparas due to optional title and elements that could be before title) -->
+<specval attname="delchlvl" attval="#NONE">
+<charsubset>
+<usetext source="secur.str">
+<subchars>
+<font inherit="1" style="sanserif">
+<highlt scoring="0">
+<textbrk startln="0" endln="0">
+</subchars>
+</usetext>
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "att-use-security" -->
+'>
+
+<!ENTITY att-38784-front-subpara-atts '<!-- Start...|GPSL:RK|Entity "att-38784-front-subpara-atts" -->
+<!-- Typical subparaX in the front matter of a document will have all or most of these.  This differs from the para0/semantic para0 entity as this does not have the emergency att test -->
+&att-set-label;
+&att-content-cbar;
+&security-mark;
+&att-stringdecl-reset;
+&sssn-proc;
+&att-save-symbols;
+&att-use-label-front;
+&att-use-security;
+&att-save-label-xref;
+&deleted-children;
+&mark.changed;
+&para0-sub3-change.front;
+<!-- ...End|GPSL:RK|Entity "att-38784-front-subpara-atts" -->
+'>
+
+<!ENTITY usetext-allowbreak '<!-- Start...|GPSL:RK|Entity "usetext-allowbreak" -->
+<usetext source="\ \,0.25em" placemnt="after"><?Pub Dtl>
+<subchars>
+<highlt scoring="0">
+</subchars>
+</usetext>
+<!-- ...End|GPSL:RK|Entity "usetext-allowbreak" -->
+'>
+
+<!ENTITY para0-sub3-change-noindex.body '<!-- Start...|GPSL:RK|Entity "para0-sub3-change-noindex.body" -->
+&set-deltypstr;
+<att logic="or"><?Pub Dtl>
+<specval attname="deltype" attval="real">
+<specval attname="status" attval="empty">
+<charsubset>
+<suppress sup="1">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset charsubsetref="delchlvl">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="status" attval="#ANY">
+<specval attname="status" attval="#NE#\empty\">
+<charsubset charsubsetref="delstatus">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="delchlvl" attval="#ANY">
+<specval attname="deltype" attval="#NE#\real\">
+<charsubset>
+<savetext textid="tocmatter" conrule="<toclinec>,<toctitle.fmt>,1.5em,label.txt,@6.5em,deltypestr,tocfill,</toctitle.fmt>,<tocnumx>,folio.txt[BO],</tocnumx>,</toclinec>" append="1">
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "para0-sub3-change-noindex.body" -->
+'>
+
+<!ENTITY att-graphics '<!-- Start...|GPSL:RK|Entity "att-graphics" -->
+&att-content-cbar;
+&security-mark;
+<att logic="and"><?Pub Dtl>
+<specval attname="hplace" attval="#NONE">
+<charsubset>
+<quadding quad="center" lastquad="lcenter">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="hplace" attval="left">
+<charsubset>
+<quadding quad="left" lastquad="lleft">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="hplace" attval="center">
+<charsubset>
+<quadding quad="center" lastquad="lcenter">
+</charsubset>
+</att>
+<att logic="and"><?Pub Dtl>
+<specval attname="hplace" attval="right">
+<charsubset>
+<quadding quad="right" lastquad="lright">
+</charsubset>
+</att>
+&mark.changed;
+<!-- ...End|GPSL:RK|Entity "att-graphics" -->
+'>
+
+<!ENTITY pagespec-flowtext-column-1col '<!-- Start...|GPSL:RK|Entity "pagespec-flowtext-column-1col" -->
+<column width="7.25in" topfloat="top-col.flt topbot-invisible.flt" botfloat="bot-invisible.flt bot-col.flt topbot-invisible.flt">
+<!-- ...End|GPSL:RK|Entity "pagespec-flowtext-column-1col" -->
+'>
+
+<!ENTITY pagespec-flowtext-column-2col '<!-- Start...|GPSL:RK|Entity "pagespec-flowtext-column-2col" -->
+<column width="3.5in" topfloat="top-col.flt topbot-invisible.flt" botfloat="bot-invisible.flt bot-col.flt topbot-invisible.flt">
+<gutter width="0.25in">
+<!-- ...End|GPSL:RK|Entity "pagespec-flowtext-column-2col" -->
+'>
+
+<!ENTITY pagespec-flowtext-column-3col '<!-- Start...|GPSL:RK|Entity "pagespec-flowtext-column-3col" -->
+<column width="2.306in" topfloat="top-col.flt  topbot-invisible.flt" botfloat="bot-invisible.flt bot-col.flt topbot-invisible.flt">
+<gutter width="0.166in">
+<!-- ...End|GPSL:RK|Entity "pagespec-flowtext-column-3col" -->
+'>
+
+<!ENTITY att-38784-body-subpara-atts '<!-- Start...|GPSL:RK|Entity "att-38784-body-subpara-atts" -->
+<!-- Typical subparaX in the body of a document will have all or most of these.  This differs from the para0/semantic para0 entity as this does not have the emergency att test -->
+&att-set-label;
+&att-content-cbar;
+&security-mark;
+&att-stringdecl-reset;
+&sssn-proc;
+&att-save-symbols;
+&att-use-label-body;
+&att-use-security;
+&att-save-label-xref;
+&deleted-children;
+&mark.changed;
+<!-- saves to the toc, other deletion info, and verstat info is in other entities and added to the eic as necessary -->
+<!-- ...End|GPSL:RK|Entity "att-38784-body-subpara-atts" -->
+'>
+
+<!ENTITY att-use-label-body '<!-- Start...|GPSL:RK|Entity "att-use-label-body" -->
+<att><?Pub Dtl>
+<!-- in the body labels of para0s/subparas do not have a trailing "." But do have a trailing 1em (not used for subparas due to optional title and elements that could be before title) -->
+<charsubset>
+<usetext source="label.txt,1em">
+<subchars>
+<font inherit="1" style="sanserif">
+<highlt scoring="0">
+<textbrk startln="1">
+</subchars>
+</usetext>
+</charsubset>
+</att>
+<!-- ...End|GPSL:RK|Entity "att-use-label-body" -->
+'>
+
+<!ENTITY att-38784-body-para0-atts '<!-- Start...|GPSL:RK|Entity "att-38784-body-para0-atts" -->
+<!-- Typically a para0/semantic para0 in the body of a document will have all or most of these -->
+&att-set-label;
+&att-content-cbar;
+&security-mark;
+&att-stringdecl-reset;
+&sssn-proc;
+&att-save-symbols;
+&att-emergency-body;
+&att-use-label-body;
+&att-use-security;
+&att-save-label-xref;
+&deleted-children;
+&mark.changed;
+<!-- saves to the toc, other deletion info, and verstat info is in other entities and added to the eic as necessary -->
+<!-- ...End|GPSL:RK|Entity "att-38784-body-para0-atts" -->
+'>
+
+<!ENTITY chap-change '<!-- GPSL:RK|Entity "chap-change" -->'>
+
+<!ENTITY section-change '<!-- GPSL:RK|Entity "section-change " -->'>
+
+<!ENTITY label.yes-proc '<!-- GPSL:RK|Entity "label.yes-proc" -->'>
+
+
+
+
+
+
+
+

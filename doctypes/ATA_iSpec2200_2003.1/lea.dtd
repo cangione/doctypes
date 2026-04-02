@@ -1,0 +1,52 @@
+<!-- ========================================================== -->
+<!-- This is the common List of Effective Anchors DTD used by   -->
+<!-- all ATA DTDs.                                              -->
+<!-- ========================================================== -->
+<!-- DTD Reference : "-//ATA-TEXT//DTD LEA-VER1//EN"            -->
+<!-- Revision Date : 04 Dec 2001                                -->
+<!-- Parsed Date   : 04 Dec 2001                                -->
+<!-- 1) Editorial changes for DTD format alignment.             -->
+<!--                                                            -->
+<!-- Revision History                                           -->
+<!-- Revision Date : 01 March 96                                -->
+<!-- Highlights    : Updated LEA per Tech Req 2100 Ver 3.2      -->
+<!--                 dated March 1996:                          -->
+<!--                 -  Changed LEA DTD to make it common for   -->
+<!--                     all DTDs.                              -->
+<!--                 -  Add element "anchor" and the following  -->
+<!--                    attributes:                             -->
+<!--                      chg                                   -->
+<!--                      tagname                               -->
+<!--                      treeloc                               -->
+<!--                 -  Deleted "chg" attribute from LEA element-->
+<!--                                                            -->
+<!-- ========================================================== -->
+
+<!-- DOCTYPE LEA [   -->
+
+<!-- The following set of declarations may be referred to
+     using a public entity as follows:
+<!DOCTYPE  LEA  PUBLIC 
+  "-//ATA-TEXT//DTD LEA-VER1//EN"[ ]>                           -->
+<!-- ========================================================== -->
+
+<!ELEMENT LEA      - -  (anchor+)                                 >
+<!ATTLIST LEA
+          spl      CDATA                              #REQUIRED
+          model    CDATA                              #REQUIRED
+          oidate   NUMBER                             #REQUIRED
+          revdate  NUMBER                             #REQUIRED
+          tsn      CDATA                              #REQUIRED
+          cus      CDATA                              #IMPLIED
+          docnbr   CDATA                              #IMPLIED
+          cusname  CDATA                              #IMPLIED
+          lang     CDATA                              #REQUIRED   >
+ 
+<!ELEMENT anchor   - O  EMPTY                                     >
+<!ATTLIST anchor    
+          key      ID                                 #REQUIRED
+          revdate  NUMBER                             #REQUIRED
+          chg      (N|R|U|D)                          #REQUIRED
+          tagname  NMTOKEN                            #REQUIRED
+          treeloc  NUMBER                             #REQUIRED   >
+<!--   ]>   -->

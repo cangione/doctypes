@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--<!DOCTYPE testrblim [
+-->
+<!--
+PUBLIC "-//USA-DOD//DTD testrblim 3001 Part 3 Draft XML V307 08242016//EN">
+-->
+<!--
+		DTD for Testing and Troubleshooting Procedures
+-->
+<!--
+Define parameter entities containing content models for the Information Modules and Common Elements
+-->
+<!ENTITY % pointpage "| start_ripple_page | end_ripple_pages | pgbrk">
+
+<!ENTITY % common.ent PUBLIC "-//USA-DOD//ENTITIES 3001 Common Draft XML V307 08242016//EN" "Common.ent">
+
+<!ENTITY % MIL-STD-3001-3 PUBLIC "-//USA-DOD//ELEMENTS 3001 Part 3 Draft XML V307 08242016//EN" "milstd3.ent">
+
+%common.ent;
+%MIL-STD-3001-3;
+<!--
+]>
+-->

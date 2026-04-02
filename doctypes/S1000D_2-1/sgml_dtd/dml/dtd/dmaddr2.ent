@@ -1,0 +1,234 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier.                                       *
+    * 2. Reflect the changes done for the DM DTD.                        *
+    * 3. CPF 2003-08SE: Change declaration of entity %PREFIXES; to       *
+    *                   incorporate default value "pf02".                *
+    *====================================================================*
+    * Typical invocation:-                                               *
+    * <!ENTITY % DMADDR2 PUBLIC                                          *
+    * "-//S1000D//ELEMENTS DM Address Details 2nd Part 20030531//EN">    *
+    * %DMADDR2;                                                          *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Call the Project Configuration Text.                               *
+    * Project Configuration may alter delaration of selected objects.    *
+    * For information on which objects are available for tailoring,      *
+    * refer to S1000D!                                                   *
+    ********************************************************************** -->
+%PROJECT; 
+<!-- Newly introduced entity -->
+
+
+<!--**********************************************************************
+    * Define parameter entities for declared values for project          *
+    *  configurable attribute values.                                    *
+    *  See specification text for definition of allowable sets of values.*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Declared param ents:-                                              *
+    *                                                                    *
+    *  %ACROTYPS; - CDATA - Type of acronym or abbreviation              *
+    *  %CAVEATS;  - CDATA - Type of caveats                              *
+    *  %CLASSES;  - CDATA - Security classification                      *
+    *  %COLOURS;  - CDATA - Color of the caption                         *
+    *  %COMMCLSS; - CDATA - Commercial Security classification           *
+    *  %CPRIOS;   - CDATA - Priority level of a comment                  *
+    *  %CREWMEMS; - CDATA - Crew member required for drill or step       *
+    *  %DRILLTPS; - CDATA - Type of aircrew drill (Flight deck present.) *
+    *  %EMPHS;    - CDATA - Type of emphasis                             *
+    *  %PREFIXES; - CDATA - Prefix of random list items                  *
+    *  %RSPTYPES; - CDATA - Type of response to a comment                *
+    *  %SKILLS;   - CDATA - Personnel skill level                        *
+    *  %SUP.LEVS; - CDATA - Supervisor level                             *
+    *  %TYPES;    - CDATA - Limit type                                   *
+    *  %THIUOMS;  - CDATA - Unit of measurement for theshold interval    *
+    ********************************************************************** -->
+<!ENTITY % ACROTYPS " CDATA 'at01' " >
+<!ENTITY % CAVEATS  " CDATA " >
+<!ENTITY % CLASSES  " CDATA " >
+<!ENTITY % COLOURS  " CDATA 'co09' " >
+<!ENTITY % COMMCLSS " CDATA " >
+<!ENTITY % CPRIOS   " CDATA 'cp01' " >
+<!ENTITY % CREWMEMS " CDATA " >
+<!ENTITY % DRILLTPS " CDATA 'dt00' " >
+<!ENTITY % EMPHS    " CDATA 'em01' " >
+<!ENTITY % PREFIXES " CDATA 'pf02' " >
+<!ENTITY % RSPTYPES " CDATA " >
+<!ENTITY % SKILLS   " CDATA " >
+<!ENTITY % SUP.LEVS " CDATA " >
+<!ENTITY % TYPES    " CDATA " >
+<!ENTITY % THIUOMS  " CDATA " >
+
+
+<!--**********************************************************************
+    * Define Entity %COMMSEC; (Commercial Security) containing:-         *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *                                                                    *
+    *  commcls    - Declared - IMPLIED - Identifies Commercial Security. *
+    *  caveat     - Declared - IMPLIED - Identifies Caveats.             *
+    ********************************************************************** -->
+<!ENTITY % COMMSEC "commcls %COMMCLSS; #IMPLIED
+                    caveat  %CAVEATS;  #IMPLIED" >
+<!-- Defined optional attributes for commercial security and caveats -->
+
+
+<!--**********************************************************************
+    * Define Entity %SECURIT; (Status Security) containing:-             *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *                                                                    *
+    *  class    - Declared - REQUIRED - Identifies Security Marking.     *
+    *  Definition stored in entity %COMMSEC;                             *
+    ********************************************************************** -->
+<!ENTITY % SECURIT "class %CLASSES; #REQUIRED 
+                    %COMMSEC;" >
+<!-- Amended by call of entity %COMMSEC; -->
+
+
+<!--**********************************************************************
+    * Define Entity %RPCNAME; (Responsible Partner Company Names)        *
+    *====================================================================*
+    *  RPC identification or NCAGE code as required.                     *
+    **********************************************************************-->
+<!ENTITY % RPCNAME "CDATA" >
+
+
+<!--**********************************************************************
+    * Define Entity %DATE; (Date breakdown) containing:-                 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  year     - NUMBER - REQUIRED - The year. (YYYY)                   *
+    *  month    - NUMBER - REQUIRED - The month of the year. (MM)        *
+    *  day      - NUMBER - REQUIRED - The day of the month. (DD)         *
+    ********************************************************************** -->
+<!ENTITY % DATE "year  NUMBER  #REQUIRED
+                 month NUMBER  #REQUIRED
+                 day   NUMBER  #REQUIRED" >
+<!-- Introduced for general purpose use in various attribute lists -->
+
+
+<!--**********************************************************************
+    * Define Entity %INSDEL; (Change Level Attributes)                   *
+    * containing:-                                                       *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  level     - NUMBER   - IMPLIED  - Identifies the level or Data    *
+    *                        issue (project specific) at which the       *
+    *                        information was revised/updated             *
+    *  mark      - NUMBER   - IMPLIED - Revision Bar. (This can be used  *
+    *                        in conjunction which level to only produce  *
+    *                        revision bar for the current level/issue of *
+    *                        a data module.)                             *
+    *                        - "0" Do not mark change with Revision bars *
+    *                        - "1" Mark this change with Revision Bars   *
+    *  change    - DECLARED - IMPLIED  - Identifies the type of change   *
+    *                        - "add" Information was changed/revised     *
+    *                        - "delete" Information was deleted          *
+    *  rfc       - CDATA    - IMPLIED  - Specifies the reason for change *
+    ********************************************************************** -->
+<!ENTITY % INSDEL
+  "level  NUMBER         #IMPLIED
+   mark   NUMBER         #IMPLIED
+   change (add | delete) #IMPLIED
+   rfc    CDATA          #IMPLIED" >
+
+
+<!--**********************************************************************
+    * Define Entity %bodyatt; (Body Attributes) containing:-             *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id        - ID       - IMPLIED  - An identifier of the element    *
+    *                       which is assigned at origination and which   *
+    *                       remains unchanged as the document is revised *
+    *                       or updated even though the automatically     *
+    *                       assigned enumeration "labels" change. The    *
+    *                       value of "id" is used when making references *
+    *                       to the element from other portions of the    *
+    *                       document.                                    *
+    *  Attribute Definition List stored in entity %INSDEL;               *
+    ********************************************************************** -->
+<!ENTITY % bodyatt
+  "id ID #IMPLIED
+   %INSDEL;" >
+
+
+<!--**********************************************************************
+    * Define Element issno (Issue Number) containing:-                   *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  issno  - NUMBER    - REQUIRED - Issue Number (XXX).               *
+    *  inwork - NUMBER    - IMPLIED  - Sub-Issue Number (XX).            *
+    *  type   - Declared  - "new"    - Status of this issue              *
+    *         - "new"      - New object.                                 *
+    *         - "changed"  - Changed. Changes marked by change markers.  *
+    *         - "deleted"  - Deleted.                                    *
+    *         - "revised"  - Completely Revised. Changes not marked by   *
+    *                        change markers.                             *
+    *         - "status"   - Only Status information changed.            *
+    *         - "rinstate-changed" - Reinstated and content changed.     *
+    *         - "rinstate-revised" - Reinstated and content completely   *
+    *                                revised.                            *
+    *         - "rinstate-status"  - Reinstated and status only changed. *
+    ********************************************************************** -->
+<!ELEMENT issno - O  EMPTY >
+<!ATTLIST issno
+            issno  NUMBER  #REQUIRED
+            inwork NUMBER  #IMPLIED
+            type   (new | changed | deleted | revised | status | 
+                    rinstate-changed | rinstate-revised | rinstate-status)
+                      "new"  >
+<!-- Added optional attribute inwork and changed declared values of 
+     attribute type from uppercase to lowercase.  -->
+
+
+<!--**********************************************************************
+    * Define Element issdate (Issue Date) containing:-                   *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in Entity %DATE;                 *
+    ********************************************************************** -->
+<!ELEMENT issdate  - O  EMPTY >
+<!ATTLIST issdate  %DATE; >
+
+
+<!--**********************************************************************
+    * Define Element security (Security Marking) containing:-            *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in Entity %SECURIT;              *
+    ********************************************************************** -->
+<!ELEMENT security  - O EMPTY >
+<!ATTLIST security %SECURIT; >
+
+
+<!--**********************************************************************
+    * Define Entity %EXTRESTR; (Data Restriction Definitions).           *
+    ********************************************************************** -->
+<!ENTITY % EXTRESTR PUBLIC
+  "-//S1000D//ELEMENTS Data Restrictions 20030531//EN" >
+
+<!--**********************************************************************
+    * Call the Data Restriction Definitions (see DATAREST.ENT).          *
+    ********************************************************************** -->
+%EXTRESTR;
+
+
+
+<!--** End of DMADDR2 Entity **-->

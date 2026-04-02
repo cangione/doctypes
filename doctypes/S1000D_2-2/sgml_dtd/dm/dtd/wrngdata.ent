@@ -1,0 +1,1541 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                SGML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                       Date: 2005-05-01                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    * 1. Update public identifier date.                                  *
+    * 2. CPF 2004-37DE: Introduce optional attribute cconnect on element *
+    *                   <contact> and optional attributes scrlevel,      *
+    *                   scrtype, scrstyle on element <screen>.           *
+    * 3. CPF 2004-46US: Introduce optional subelement <elogic> on        *
+    *                   <elecequip>, <connector> and optional subelement *
+    *                   <nomenc> on <elecequip>.                         *
+    *                                                                    *
+    * Typical invocation:-                                               *
+    * <!ENTITY % WRNGDATA PUBLIC                                         *
+    *  "-//S1000D//ELEMENTS WRNGDATA Breakdown 20050501//EN" >           *
+    * %WRNGDATA;                                                         *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT; (Content Breakdown) containing:- wrngdata. *
+    ********************************************************************** -->
+ 
+<!ENTITY % CONTENT "wrngdata" >
+
+
+<!--**********************************************************************
+    * Define Entity %PCDATA; (Parsed Character Data) containing:- #PCDATA*
+    ********************************************************************** -->
+
+<!ENTITY % PCDATA "#PCDATA">
+
+
+<!--**********************************************************************
+    * Define Entity %CM.EQUIPMENT; (Content Model Electrical Equipment)  *
+    * containing:-                                                       *
+    *  rfd          - Mandatory Single     contains Definition stored in *
+    *                                               entity %PCDATA;.     *
+    *  contactinfo  - Optional  Single     contains contact, wireconcode,*
+    *                                               netanacode.          *
+    *  screens      - Optional  Single     contains screen.              *
+    *  twists       - Optional  Single     contains twist.               *
+    *  wireins      - Optional  Single     contains pre, fin.            *
+    ********************************************************************** -->
+
+<!ENTITY % CM.EQUIPMENT "rfd, contactinfo?, screens?, twists?, wireins?">
+
+
+<!--**********************************************************************
+    * Define Entity %CM.PREFIN; (Content Model pre/fin)  containing:-    *
+    *  val          - Optional  Single     contains Definition stored in *
+    *                                               entity %PCDATA;.     *
+    *  refs         - Optional  Single     contains refdm, reftp.        *
+    ********************************************************************** -->
+
+<!ENTITY % CM.PREFIN "val?, refs?">
+
+
+<!--**********************************************************************
+    * Define Element wrngdata (Wiring Data Container)  containing:-      *
+    *  wires        - Optional  Single     contains wire.                *
+    *  harnesses    - Optional  Single     contains harness.             *
+    *  elecequips   - Optional  Single     contains elecequip.           *
+    *  stdparts     - Optional  Single     contains connectors, vparts,  *
+    *                                      accessories, solder-sleeves,  *
+    *                                      shrink-sleeves, ident-sleeves,*
+    *                                      conduits, wire-mats.          *
+    ********************************************************************** -->
+
+<!ELEMENT wrngdata - - (wires?, harnesses?, elecequips?, stdparts?)>
+
+
+<!--**********************************************************************
+    * Define Element wires (List of Wires) containing:-                  *
+    *  wire   - Mandatory Repeatable       contains wireid,              *
+    *                                       wireconnection,              *
+    *                                       wireinformation, applics.    *
+    ********************************************************************** -->
+
+<!ELEMENT wires - - (wire+)>
+
+
+<!--**********************************************************************
+    * Define Element harnesses (List of Harnesses) containing:-          *
+    *  harness   - Mandatory Repeatable    contains harnid, harninfo,    *
+    *                                       routing, rpc, fdescref,      *
+    *                                       illref, applics.             *
+    ********************************************************************** -->
+
+<!ELEMENT harnesses - - (harness+)>
+
+
+<!--**********************************************************************
+    * Define Element elecequips (List of Electrical Equipment)           *
+    * containing:-                                                       *
+    *  elecequip   - Mandatory Repeatable  contains rfd, pnr, altids,    *
+    *                                       instloc, accdopl, assyinstr, *
+    *                                       nhassy, sbc, sibplugid, trl, *
+    *                                       clc, elogic, rpc, nomenc,    *
+    *                                       equdescref, fdescref, illref,*
+    *                                       applics.                     *
+    ********************************************************************** -->
+
+<!ELEMENT elecequips - - (elecequip+)>
+
+
+<!--**********************************************************************
+    * Define Element stdparts (List of Electrical Standard Parts)        *
+    * containing:-                                                       *
+    *  connectors     - Optional  Single     contains connector.         *
+    *  vparts         - Optional  Single     contains vpart.             *
+    *  accessories    - Optional  Single     contains accessory.         *
+    *  solder-sleeves - Optional  Single     contains solder-sleeve.     *
+    *  shrink-sleeves - Optional  Single     contains shrink-sleeve.     *
+    *  ident-sleeves  - Optional  Single     contains ident-sleeve.      *
+    *  conduits       - Optional  Single     contains conduit.           *
+    *  wire-mats      - Optional  Single     contains wire-mat.          *
+    ********************************************************************** -->
+
+<!ELEMENT stdparts - - (connectors?, vparts?, accessories?, 
+                        solder-sleeves?, shrink-sleeves?, ident-sleeves?, 
+                        conduits?, wire-mats?)>
+
+
+<!--**********************************************************************
+    * Define Element wire (Particular Wire Description)  containing:-    *
+    *  wireid          - Mandatory Single     contains circode, wireno,  *
+    *                                                  secid.            *
+    *  wireconnection  - Mandatory Single     contains fromequip,toequip.*
+    *  wireinformation - Optional  Single     contains Wirecode, harnid, *
+    *                                           screens, twists, coax,   *
+    *                                           triax, emc-code, length, *
+    *                                           colour, signal, rpc,     *
+    *                                           routing, wireroute,      *
+    *                                           restriction, fdescref,   *
+    *                                           illref.                  *
+    *  applics         - Mandatory Single     contains applic.           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  wirestate - Declared  - IMPLIED   - Wire State.                   *
+    *              - "active"    - Active Wire.                          *
+    *              - "stowed"    - Stowed Wire.                          *
+    *              - "pigtail"   - Pigtail Wire.                         *
+    *              - "notactiv"  - Not Active Wire.                      *
+    *              - "logconn"   - Logical/Virtual Connection only.      *
+    *  chginfo   - Declared  - IMPLIED   - Wire Change Information.      *
+    *              - "add"       - Added Wire.                           *
+    *              - "delete"    - Removed Wire.                         *
+    *              - "modify"    - Modified Wire.                        *
+    ********************************************************************** -->
+
+<!ELEMENT wire - - (wireid, wireconnection, wireinformation?, applics)>
+<!ATTLIST wire
+          wirestate     (active | stowed | pigtail | 
+                         notactiv | logconn)            #IMPLIED
+          chginfo	(add | delete | modify) 	#IMPLIED >
+
+
+<!--**********************************************************************
+    * Define Element applics (Applicability Group) containing:-          *
+    *  applic       - Mandatory Repeatable      contains type, model.    *
+    ********************************************************************** -->
+
+<!ELEMENT applics - - (applic+)>
+
+
+<!--**********************************************************************
+    * Define Element wireid (Wire Identification) containing:-           *
+    *  circode      - Optional  Single     contains Definition stored in *
+    *                                               entity %PCDATA;.     *
+    *  wireno       - Mandatory Single     contains Definition stored in *
+    *                                               entity %PCDATA;.     *
+    *  secid        - Optional  Single     contains Definition stored in *
+    *                                               entity %PCDATA;.     *
+    ********************************************************************** -->
+
+<!ELEMENT wireid - - (circode?, wireno, secid?)>
+
+
+<!--**********************************************************************
+    * Define Element circode (Circuit Code) containing:-                 *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT circode - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element wireno (Wire Identification Number) containing:-    *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT wireno - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element secid (Wire Section Identification) containing:-    *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT secid - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element wireconnection (Wire Connection) containing:-       *
+    *  fromequip    - Mandatory Single    contains Definition stored in  *
+    *                                              entity %CM.EQUIPMENT;.*
+    *  toequip      - Optional  Single    contains Definition stored in  *
+    *                                              entity %CM.EQUIPMENT;.*
+    ********************************************************************** -->
+
+<!ELEMENT wireconnection - - (fromequip, toequip?)>
+
+
+<!--**********************************************************************
+    * Define Element elecequip (Electrical Equipment) containing:-       *
+    *  rfd         - Mandatory Single     contains definition stored in  *
+    *                                               entity %PCDATA;.     *
+    *  pnr         - Optional  Single     contains Parsed Character Data.*
+    *  altids      - Optional  Single     contains altid.                *
+    *  instloc     - Optional  Single     contains definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  accdopl     - Optional  Single     contains definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  assyinstr   - Optional  Single     contains assy.                 *
+    *  nhassy      - Optional  Single     contains definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  sbc         - Optional  Single     contains Parsed Character Data.*
+    *  sibplugid   - Optional  Single     contains definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  trl         - Optional  Single     contains definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  clc         - Optional  Single     contains definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  elogic      - Optional  Single     contains ecstate.              *
+    *  rpc         - Optional  Single     contains Parsed Character Data.*
+    *  nomenc      - Optional  Single     contains definition stored in  *
+    *                                               entity %PCDATA;.     *
+    *  equdescref  - Optional  Single     contains refs.                 *
+    *  fdescref    - Optional  Single     contains refs.                 *
+    *  illref      - Optional  Single     contains refs.                 *
+    *  applics     - Mandatory Single     contains applic.               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  chginfo   - Declared  - IMPLIED   - Type of Change.               *
+    *              - "add"       - Added Item.                           *
+    *              - "delete"    - Deleted Item.                         *
+    *              - "modify"    - Modified Item.                        *
+    ********************************************************************** -->
+
+<!ELEMENT elecequip - - (rfd, pnr?, altids?, instloc?, accdopl?, 
+                         assyinstr?, nhassy?, sbc?, sibplugid?, trl?, 
+                         clc?, elogic?, rpc?, nomenc?, equdescref?,
+                         fdescref?, illref?, applics)>
+<!-- Element <nomenc> and element <elogic> added to content model -->
+<!ATTLIST elecequip
+          chginfo   (add | delete | modify)   #IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element nomenc (Electrical Equipment Nomenclature)          *
+    * containing:-                                                       *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+<!ELEMENT nomenc - - (%PCDATA;) >
+
+<!--**********************************************************************
+    * Define Element elogic (Electrical Logic) containing:-              *
+    *  ecstate   - Mandatory Repeatable   contains eeconnection,statedes.*
+    ********************************************************************** -->
+<!ELEMENT elogic - - (ecstate+) >
+
+<!--**********************************************************************
+    * Define Element ecstate (Electrical Equipment State) containing:-   *
+    *  eeconnection   - Mandatory Repeatable  contains contact.          *
+    *  statedes       - Optional  Single      contains Definition stored *
+    *                                          in entity %PCDATA;.       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  initstate   - NUMBER  - IMPLIED     - Initial State Yes or No.    *
+    *                - "1"     - Yes.                                    *
+    *                - "0"     - No.                                     *
+    ********************************************************************** -->
+<!ELEMENT ecstate - - (eeconnection+, statedes?) >
+<!ATTLIST ecstate
+          initstate %yesorno; #IMPLIED >
+
+<!--**********************************************************************
+    * Define Element eeconnection (Electrical Equipment Connection)      *
+    * containing:-                                                       *
+    *  contact      - Mandatory Repeatable    contains No Other Tags.    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  conntype    - CDATA   - IMPLIED    - Connection Type, e.g. "coil".*
+    ********************************************************************** -->
+<!ELEMENT eeconnection - - (contact+) >
+<!ATTLIST eeconnection
+          conntype     CDATA    #IMPLIED >
+
+<!--**********************************************************************
+    * Define Element statedes (Electrical State Description) containing:-*
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+<!ELEMENT statedes - - (%PCDATA;) >
+
+
+<!--**********************************************************************
+    * Define Element fdescref (Functional Description Reference)         *
+    * containing:-                                                       *
+    *  refs  - Mandatory Single  contains refdm, reftp.                  *
+    ********************************************************************** -->
+
+<!ELEMENT fdescref - - (refs)>
+
+
+<!--**********************************************************************
+    * Define Element instloc (Install Location) containing:-             *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT instloc - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element accdopl (Access Door and Panel) containing:-        *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT accdopl - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element rfd (Reference Designator) containing:-             *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT rfd - O (%PCDATA;)>
+<!ATTLIST rfd %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element assyinstr (Assembly Instruction) containing:-       *
+    *  assy     - Optional  Repeatable    contains Definition stored in  *
+    *                                              entity %CM.PREFIN;.   *
+    ********************************************************************** -->
+
+<!ELEMENT assyinstr - - (assy*)>
+
+
+<!--**********************************************************************
+    * Define Element assy (Assembly) containing:-                        *
+    *  Definition stored in Entity %CM.PREFIN;.                          *
+    ********************************************************************** -->
+
+<!ELEMENT assy - - (%CM.PREFIN;)>
+
+
+<!--**********************************************************************
+    * Define Element nhassy (Next Higher Assembly) containing:-          *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT nhassy - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element equdescref (Equipment Description Reference)        *
+    * containing:-                                                       *
+    *  refs  - Mandatory Single  contains refdm, reftp.                  *
+    ********************************************************************** -->
+
+<!ELEMENT equdescref - - (refs)>
+
+
+<!--**********************************************************************
+    * Define Element sibplugid (Ident Twin Connector) containing:-       *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT sibplugid - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element trl (Transverse Link) containing:-                  *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT trl - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element clc (Connection List Code) containing:-             *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT clc - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element wireinformation (Wire Information) containing:-     *
+    *  wirecode    - Optional  Single     contains wiretype, wiregauge.  *
+    *  harnid      - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  screens     - Optional  Single     contains screen.               *
+    *  twists      - Optional  Single     contains twist.                *
+    *  coax        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  triax       - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  emc-code    - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  length      - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  colour      - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  signal      - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  rpc         - Optional  Single     contains Parsed Character Data.*
+    *  routing     - Optional  Single     contains clipid.               *
+    *  wireroute   - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  restriction - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  fdescref    - Optional  Single     contains refs.                 *
+    *  illref      - Optional  Single     contains refs.                 *
+    ********************************************************************** -->
+
+<!ELEMENT wireinformation - - (wirecode?, harnid?, screens?, twists?, 
+                               coax?, triax?, emc-code?, length?, colour?,
+                               signal?, rpc?, routing?, wireroute?, 
+                               restriction?, fdescref?, illref?)>
+
+
+<!--**********************************************************************
+    * Define Element illref (Illustration Reference) containing:-        *
+    *  refs  - Mandatory Single  contains refdm, reftp.                  *
+    ********************************************************************** -->
+
+<!ELEMENT illref - - (refs)>
+
+
+<!--**********************************************************************
+    * Define Element restriction (Wire Restriction Info) containing:-    *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT restriction - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element signal (Signal Information) containing:-            *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT signal - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element coax (Coax Information) containing:-                *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT coax - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element triax (Triax Information) containing:-              *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT triax - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element twists (Twisting of Twisted Wires) containing:-     *
+    *  twist    - Mandatory Repeatable     contains Definition stored in *
+    *                                               entity %PCDATA;.     *
+    ********************************************************************** -->
+
+<!ELEMENT twists - - (twist+)>
+
+
+<!--**********************************************************************
+    * Define Element twist (Twist Information) containing:-              *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  twsttype    - CDATA   - IMPLIED     - Twist Type.                 *
+    ********************************************************************** -->
+
+<!ELEMENT twist - - (%PCDATA;)>
+<!ATTLIST twist
+          twsttype 	CDATA  		#IMPLIED >
+
+
+<!--**********************************************************************
+    * Define Element length (Length Information) containing:-            *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT length - - (%PCDATA;)>
+<!ATTLIST length
+          uom   	CDATA    	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element emc-code (EMC Code) containing:-                    *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT emc-code - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element colour (Colour Information) containing:-            *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT colour - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element wireins (Wire Installation Code) containing:-       *
+    *  pre      - Optional  Repeatable    contains Definition stored in  *
+    *                                              entity %CM.PREFIN;.   *
+    *  fin      - Optional  Repeatable    contains Definition stored in  *
+    *                                              entity %CM.PREFIN;.   *
+    ********************************************************************** -->
+
+<!ELEMENT wireins - - (pre*, fin*)>
+
+
+<!--**********************************************************************
+    * Define Element screens (List of Screens) containing:-              *
+    *  screen   - Mandatory Repeatable    contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    ********************************************************************** -->
+
+<!ELEMENT screens - - (screen+)>
+
+
+<!--**********************************************************************
+    * Define Element routing (Routing Information) containing:-          *
+    *  clipid   - Mandatory Repeatable    contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    ********************************************************************** -->
+
+<!ELEMENT routing - - (clipid+)>
+
+
+<!--**********************************************************************
+    * Define Element clipid (Clipping Point Identification)              *
+    * containing:-                                                       *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT clipid - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element wireroute (Wire Route Lane Code) containing:-       *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT wireroute - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element contactinfo (Contact Information) containing:-      *
+    *  contact     - Optional  Single     contains No Other Tags.        *
+    *  wireconcode - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  netanacode  - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    ********************************************************************** -->
+
+<!ELEMENT contactinfo - - (contact?, wireconcode?, netanacode?)>
+
+
+<!--**********************************************************************
+    * Define Element contact (Contact Identification) containing:-       *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  ident     - CDATA   - REQUIRED    - Contact Designation Ident.    *
+    *  function  - CDATA   - IMPLIED     - Contact Function, describes   *
+    *                                      the functional identification *
+    *                                      of the contact, e.g. ON, OFF, *
+    *                                      BRIGHT, DIM.                  *
+    *  ctype     - CDATA   - IMPLIED     - Contact Type, describes the   *
+    *                                      type of the contact, e.g.     *
+    *                                      PIN, SOCKET, COAX, BUS.       *
+    *  cconnect  - NUMBER   - IMPLIED    - Contact Connection, describes *
+    *                                      the type of connection, e.g.  *
+    *                                      0 = not connected,            *
+    *                                      1 = connected.                *
+    ********************************************************************** -->
+
+<!ELEMENT contact - O EMPTY >
+<!ATTLIST contact
+          	  ident   	CDATA  	#REQUIRED
+		  function	CDATA 	#IMPLIED
+		  ctype		CDATA 	#IMPLIED
+		  cconnect      NUMBER  #IMPLIED >
+<!-- Attribute cconnect added -->
+		  
+
+<!--**********************************************************************
+    * Define Element wireconcode (Wire Connection Code) containing:-     *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT wireconcode - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element netanacode (Network Analysis Code) containing:-     *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT netanacode - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element screen (Screen/Shield Identification) containing:-  *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  scrlevel  - NUMBER  - IMPLIED  - Screen Level, describes the level*
+    *                                   of the screen especially when    *
+    *                                   more than one screen is used.    *
+    *  scrtype   - NUMBER  - IMPLIED  - Screen Type, describes the type  *
+    *                                   of wire in a screen situation.   *
+    *  scrstyle  - NUMBER  - IMPLIED  - Screen Style, describes the style*
+    *	                                of the screen for graphical      *
+    *                                   retrieval purposes, e.g. coax,   *
+    *                                   databus in coded form.           *
+    ********************************************************************** -->
+
+<!ELEMENT screen - - (%PCDATA;)>
+<!ATTLIST screen
+          scrlevel      NUMBER     #IMPLIED
+          scrtype       NUMBER     #IMPLIED
+          scrstyle      NUMBER     #IMPLIED >
+<!-- Attributes scrlevel, scrtype and scrstyle added -->
+
+
+<!--**********************************************************************
+    * Define Element wirecode (Wire Code) containing:-                   *
+    *  wiretype  - Mandatory  Single      contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  wiregauge - Optional   Repeatable  contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    ********************************************************************** -->
+
+<!ELEMENT wirecode - - (wiretype, wiregauge*)>
+
+
+<!--**********************************************************************
+    * Define Element wiregauge (Wire Gauge) containing:-                 *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  gaugetype - Declared  - IMPLIED   - Type of Wire Gauge.           *
+    *              - "proj"    - Project Specific Information.           *
+    *              - "awg"     - American Wire Gauge.                    *
+    *              - "mt"      - Metric Measure.                         *
+    ********************************************************************** -->
+
+<!ELEMENT wiregauge - - (%PCDATA;)>
+<!ATTLIST wiregauge
+          gaugetype     (proj | awg | mt) #REQUIRED >
+
+
+<!--**********************************************************************
+    * Define Element wiretype (Wire Type) containing:-                   *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT wiretype - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element harnid (Harness Identification) containing:-        *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT harnid - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element fromequip (From Equipment) containing:-             *
+    *  Definition stored in Entity %CM.EQUIPMENT;.                       *
+    ********************************************************************** -->
+
+<!ELEMENT fromequip - - (%CM.EQUIPMENT;)>
+
+
+<!--**********************************************************************
+    * Define Element toequip (To Equipment) containing:-                 *
+    *  Definition stored in Entity %CM.EQUIPMENT;.                       *
+    ********************************************************************** -->
+
+<!ELEMENT toequip - - (%CM.EQUIPMENT;)>
+
+
+<!--**********************************************************************
+    * Define Element pre (Installation Preparation) containing:-         *
+    *  Definition stored in Entity %CM.PREFIN;.                          *
+    ********************************************************************** -->
+
+<!ELEMENT pre - - (%CM.PREFIN;)>
+
+
+<!--**********************************************************************
+    * Define Element fin (Finish Installation) containing:-              *
+    *  Definition stored in Entity %CM.PREFIN;.                          *
+    ********************************************************************** -->
+
+<!ELEMENT fin - - (%CM.PREFIN;)>
+
+
+<!--**********************************************************************
+    * Define Element val (Pre/Fin Value) containing:-                    *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT val - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element harness (Harness/Bundle) containing:-               *
+    *  harnid      - Mandatory Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  harninfo    - Optional  Single     contains pnr, altids, harnvar, *
+    *                                              harnissue.            *
+    *  routing     - Optional  Single     contains clipid.               *
+    *  rpc         - Optional  Single     contains Parsed Character Data.*
+    *  fdescref    - Optional  Single     contains refs.                 *
+    *  illref      - Optional  Single     contains refs.                 *
+    *  applics     - Mandatory Single     contains applic.               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  chginfo   - Declared  - IMPLIED   - Type of Change.               *
+    *              - "add"       - Added Item.                           *
+    *              - "delete"    - Deleted Item.                         *
+    *              - "modify"    - Modified Item.                        *
+    ********************************************************************** -->
+
+<!ELEMENT harness - - (harnid, harninfo?, routing?, rpc?, fdescref?, illref?, applics)>
+<!ATTLIST harness
+          chginfo	(add | delete | modify) 	#IMPLIED >
+
+
+<!--**********************************************************************
+    * Define Element harninfo (Harness Information) containing:-         *
+    *  pnr         - Optional  Single     contains Parsed Character Data.*
+    *  altids      - Optional  Single     contains altid.                *
+    *  harnvar     - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  harnissue   - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    ********************************************************************** -->
+
+<!ELEMENT harninfo - - (pnr?, altids?, harnvar?, harnissue?)>
+
+
+<!--**********************************************************************
+    * Define Element harnvar (Harness Variant) containing:-              *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT harnvar - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element harnissue (Harness Issue) containing:-              *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT harnissue - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element connectors (List of Connectors) containing:-        *
+    *  connector  - Mandatory Repeatable   contains pnr, altids, mass,   *
+    *                                       orientation, assyinstr, rack,*
+    *                                       ccount, cdescs, elogic,      *
+    *                                       acclist, fdescref, illref,   *
+    *                                       applics.                     *
+    ********************************************************************** -->
+
+<!ELEMENT connectors - - (connector+)>
+
+
+<!--**********************************************************************
+    * Define Element connector (Connector Information) containing:-      *
+    *  pnr         - Mandatory Single     contains Parsed Character Data.*
+    *  altids      - Optional  Single     contains altid.                *
+    *  mass        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  orientation - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  assyinstr   - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  rack        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  ccount      - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  cdescs      - Optional  Single     contains cdesc.                *
+    *  elogic      - Optional  Single     contains ecstate.              *
+    *  acclist     - Optional  Single     contains pnr.                  *
+    *  fdescref    - Optional  Single     contains refs.                 *
+    *  illref      - Optional  Single     contains refs.                 *
+    *  applics     - Optional  Single     contains applic.               *
+    ********************************************************************** -->
+
+<!ELEMENT connector - - (pnr, altids?, mass?, orientation?, assyinstr?, 
+                         rack?, ccount?, cdescs?, elogic?, acclist?, 
+                         fdescref?, illref?, applics?)>
+<!-- Element <elogic> added to content model -->
+
+
+<!--**********************************************************************
+    * Define Element altids (Alternative Identifications) containing:-   *
+    *  altid       - Mandatory Repeatable   contains pnr, mfc.           *
+    ********************************************************************** -->
+
+<!ELEMENT altids - - (altid+)>
+
+
+<!--**********************************************************************
+    * Define Element altid (Alternative Identification) containing:-     *
+    *  pnr         - Optional  Single     contains Parsed Character Data.*
+    *  mfc         - Optional  Single     contains Parsed Character Data.*
+    ********************************************************************** -->
+
+<!ELEMENT altid - - (pnr?, mfc?)>
+
+
+<!--**********************************************************************
+    * Define Element mass (Mass) containing:-                            *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT mass - - (%PCDATA;)>
+<!ATTLIST mass
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element orientation (Orientation) containing:-              *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT orientation - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element rack (Rack) containing:-                            *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT rack - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element ccount (Contact Count) containing:-                 *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT ccount - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element acclist (List of Accessories) containing:-          *
+    *  pnr        - Mandatory Repeatable  contains Parsed Character Data.*
+    ********************************************************************** -->
+
+<!ELEMENT acclist - - (pnr+)>
+
+
+<!--**********************************************************************
+    * Define Element cdescs (List of Contact Descriptions) containing:-  *
+    *  cdesc    - Mandatory Repeatable   contains contact, cdia, fin,    *
+    *                                     tplus, tminus, sterm, coax,    *
+    *                                     triax, module, block, shunt.   *
+    ********************************************************************** -->
+
+<!ELEMENT cdescs - - (cdesc+)>
+
+
+<!--**********************************************************************
+    * Define Element cdesc (Contact Description) containing:-            *
+    *  contact   - Mandatory Single       contains No Other Tags.        *
+    *  cdia      - Optional  Single       contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  fin       - Optional  Repeatable   contains Definition stored in  *
+    *                                              entity %CM.PREFIN;.   *
+    *  tplus     - Optional  Single       contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  tminus    - Optional  Single       contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  sterm     - Optional  Single       contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  coax      - Optional  Single       contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  triax     - Optional  Single       contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  module    - Optional  Single       contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  block     - Optional  Single       contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  shunt     - Optional  Single       contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    ********************************************************************** -->
+
+<!ELEMENT cdesc - - (contact, cdia?, fin*, tplus?, tminus?, sterm?, coax?, 
+                     triax?, module?, block?, shunt? )>
+
+
+<!--**********************************************************************
+    * Define Element cdia (Contact Diameter) containing:-                *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT cdia - - (%PCDATA;)>
+<!ATTLIST cdia
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element tplus (Termo Couple Plus) containing:-              *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT tplus - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element tminus (Termo Couple Minus) containing:-            *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT tminus - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element sterm (Special Terminal) containing:-               *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT sterm - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element module (Termination Module) containing:-            *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT module - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element block (Block) containing:-                          *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT block - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element shunt (Shunt) containing:-                          *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT shunt - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element vparts (List of Vparts) containing:-                *
+    *  vpart    - Mandatory Repeatable   contains pnr, altids, csize,    *
+    *                                     mat, mass, colour, protect,    *
+    *                                     cdia, temp, fdescref, illref,  *
+    *                                     applics.                       *
+    ********************************************************************** -->
+
+<!ELEMENT vparts - - (vpart+)>
+
+
+<!--**********************************************************************
+    * Define Element vpart (Vpart Information) containing:-              *
+    *  pnr         - Mandatory Single     contains Parsed Character Data.*
+    *  altids      - Optional  Single     contains altid.                *
+    *  csize       - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  mat         - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  mass        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  colour      - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  protect     - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  cdia        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  temp        - Optional  Single     contains mint, maxt.           *
+    *  fdescref    - Optional  Single     contains refs.                 *
+    *  illref      - Optional  Single     contains refs.                 *
+    *  applics     - Optional  Single     contains applic.               *
+    ********************************************************************** -->
+
+<!ELEMENT vpart - - (pnr, altids?, csize?, mat?, mass?, colour?, protect?, 
+                     cdia?, temp?, fdescref?, illref?, applics?)>
+
+
+<!--**********************************************************************
+    * Define Element csize (Contact Size) containing:-                   *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT csize - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element protect (Protect) containing:-                      *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT protect - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element mat (Material) containing:-                         *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT mat - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element temp (Temperature) containing:-                     *
+    *  mint        - Mandatory Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  maxt        - Mandatory Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    ********************************************************************** -->
+
+<!ELEMENT temp - - (mint,maxt)>
+
+
+<!--**********************************************************************
+    * Define Element mint (Minimum Temperature) containing:-             *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT mint - - (%PCDATA;)>
+<!ATTLIST mint
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element maxt (Maximum Temperature) containing:-             *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT maxt - - (%PCDATA;)>
+<!ATTLIST maxt
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element accessories (List of Accessories) containing:-      *
+    *  accessory  - Mandatory Repeatable   contains pnr, altids, mass,   *
+    *                                       orientation, assyinstr,      *
+    *                                       fdescref, illref, applics.   *
+    ********************************************************************** -->
+
+<!ELEMENT accessories - - (accessory+)>
+
+
+<!--**********************************************************************
+    * Define Element accessory (Accessory Information) containing:-      *
+    *  pnr         - Mandatory Single     contains Parsed Character Data.*
+    *  altids      - Optional  Single     contains altid.                *
+    *  mass        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  orientation - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  assyinstr   - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  fdescref    - Optional  Single     contains refs.                 *
+    *  illref      - Optional  Single     contains refs.                 *
+    *  applics     - Optional  Single     contains applic.               *
+    ********************************************************************** -->
+
+<!ELEMENT accessory - - (pnr, altids?, mass?, orientation?, assyinstr?, 
+                         fdescref?, illref?, applics?)>
+
+
+<!--**********************************************************************
+    * Define Element solder-sleeves (List of Solder-Sleeves)             *
+    * containing:-                                                       *
+    *  solder-sleeve - Mandatory Repeatable   contains pnr, altids,      *
+    *                                          length, mat, mass, sdia,  *
+    *                                          fdescref, illref, applics.*
+    ********************************************************************** -->
+
+<!ELEMENT solder-sleeves - - (solder-sleeve+)>
+
+
+<!--**********************************************************************
+    * Define Element solder-sleeve (Solder-Sleeve Info) containing:-     *
+    *  pnr         - Mandatory Single     contains Parsed Character Data.*
+    *  altids      - Optional  Single     contains altid.                *
+    *  length      - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  mat         - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  mass        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  sdia        - Optional  Single     contains mind, maxd.           *
+    *  fdescref    - Optional  Single     contains refs.                 *
+    *  illref      - Optional  Single     contains refs.                 *
+    *  applics     - Optional  Single     contains applic.               *
+    ********************************************************************** -->
+
+<!ELEMENT solder-sleeve - - (pnr, altids?, length?, mat?, mass?, sdia?, 
+                             fdescref?, illref?, applics?)>
+
+
+<!--**********************************************************************
+    * Define Element sdia (Sleeve Diameter) containing:-                 *
+    *  mind        - Mandatory Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  maxd        - Mandatory Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    ********************************************************************** -->
+
+<!ELEMENT sdia - - (mind, maxd)>
+
+
+<!--**********************************************************************
+    * Define Element mind (Minimum Diameter) containing:-                *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT mind - - (%PCDATA;)>
+<!ATTLIST mind
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element maxd (Maximum Diameter) containing:-                *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT maxd - - (%PCDATA;)>
+<!ATTLIST maxd
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element shrink-sleeves (List of Shrink-Sleeves)             *
+    * containing:-                                                       *
+    *  shrink-sleeve - Mandatory Repeatable   contains pnr, altids,      *
+    *                                          size, mass, colour, sdia, *
+    *                                          temp, harnsize, fdescref, *
+    *                                          illref, applics.          *
+    ********************************************************************** -->
+
+<!ELEMENT shrink-sleeves - - (shrink-sleeve+)>
+
+
+<!--**********************************************************************
+    * Define Element shrink-sleeve (Shrink-Sleeve Info) containing:-     *
+    *  pnr         - Mandatory Single     contains Parsed Character Data.*
+    *  altids      - Optional  Single     contains altid.                *
+    *  size        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  mass        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  colour      - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  sdia        - Optional  Single     contains mind, maxd.           *
+    *  temp        - Optional  Single     contains mint, maxt.           *
+    *  harnsize    - Optional  Single     contains minh, maxh.           *
+    *  fdescref    - Optional  Single     contains refs.                 *
+    *  illref      - Optional  Single     contains refs.                 *
+    *  applics     - Optional  Single     contains applic.               *
+    ********************************************************************** -->
+
+<!ELEMENT shrink-sleeve - - (pnr, altids?, size?, mass?, colour?, sdia?, 
+                             temp?, harnsize?, fdescref?, illref?, 
+                             applics?)>
+
+
+<!--**********************************************************************
+    * Define Element size (Size) containing:-                            *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT size - - (%PCDATA;)>
+<!ATTLIST size
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element harnsize (Harness Size) containing:-                *
+    *  minh        - Mandatory Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  maxh        - Mandatory Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    ********************************************************************** -->
+
+<!ELEMENT harnsize - - (minh,maxh)>
+
+
+<!--**********************************************************************
+    * Define Element minh (Minimum Harness Size) containing:-            *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT minh - - (%PCDATA;)>
+<!ATTLIST minh
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element maxh (Maximum Harness Size) containing:-            *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT maxh - - (%PCDATA;)>
+<!ATTLIST maxh
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element ident-sleeves (List of Ident-Sleeves) containing:-  *
+    *  ident-sleeve - Mandatory Repeatable   contains pnr, altids,       *
+    *                                          length, mat, mass,        *
+    *                                          fdescref, illref, applics.*
+    ********************************************************************** -->
+
+<!ELEMENT ident-sleeves - - (ident-sleeve+)>
+
+
+<!--**********************************************************************
+    * Define Element ident-sleeve (Ident-Sleeve Information)             *
+    * containing:-                                                       *
+    *  pnr         - Mandatory Single     contains Parsed Character Data.*
+    *  altids      - Optional  Single     contains altid.                *
+    *  length      - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  mat         - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  mass        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  fdescref    - Optional  Single     contains refs.                 *
+    *  illref      - Optional  Single     contains refs.                 *
+    *  applics     - Optional  Single     contains applic.               *
+    ********************************************************************** -->
+
+<!ELEMENT ident-sleeve - - (pnr, altids?, length?, mat?, mass?, fdescref?, 
+                            illref?, applics?)>
+
+
+<!--**********************************************************************
+    * Define Element conduits (List of Conduits) containing:-            *
+    *  conduit   - Mandatory Repeatable   contains pnr, altids, size,    *
+    *                                       mass, colour, wallthk, temp, *
+    *                                       fdescref, illref, applics.   *
+    ********************************************************************** -->
+
+<!ELEMENT conduits - - (conduit+)>
+
+
+<!--**********************************************************************
+    * Define Element conduit (Conduit Information) containing:-          *
+    *  pnr         - Mandatory Single     contains Parsed Character Data.*
+    *  altids      - Optional  Single     contains altid.                *
+    *  size        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  mass        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  colour      - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  wallthk     - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  temp        - Optional  Single     contains mint, maxt.           *
+    *  fdescref    - Optional  Single     contains refs.                 *
+    *  illref      - Optional  Single     contains refs.                 *
+    *  applics     - Optional  Single     contains applic.               *
+    ********************************************************************** -->
+
+<!ELEMENT conduit - - (pnr, altids?, size?, mass?, colour?, wallthk?, 
+                       temp?, fdescref?, illref?, applics?)>
+
+
+<!--**********************************************************************
+    * Define Element wallthk (Wall Thickness) containing:-               *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT wallthk - - (%PCDATA;)>
+<!ATTLIST wallthk
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element wire-mats (List of Wire Materials) containing:-     *
+    *  wire-mat  - Mandatory Repeatable   contains pnr, altids, wirecode,*
+    *                                       core, size, mass, colour,    *
+    *                                       outjackcol, outdia, res,     *
+    *                                       voltage, amerage, temp,      *
+    *                                       screencount, coax, triax,    *
+    *                                       freqchar, fdescref, illref,  *
+    *                                       applics.                     *
+    ********************************************************************** -->
+
+<!ELEMENT wire-mats - - (wire-mat+)>
+
+
+<!--**********************************************************************
+    * Define Element wire-mat (Wire Material Information) containing:-   *
+    *  pnr         - Mandatory Single     contains Parsed Character Data.*
+    *  altids      - Optional  Single     contains altid.                *
+    *  wirecode    - Optional  Single     contains wiretype, wiregauge.  *
+    *  core        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  size        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  mass        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  colour      - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  outjackcol  - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  outdia      - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  res         - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  voltage     - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  amperage    - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  temp        - Optional  Single     contains mint, maxt.           *
+    *  screencount - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  coax        - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  triax       - Optional  Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  freqchar    - Optional  Single     contains impedance, freqatt.   *
+    *  fdescref    - Optional  Single     contains refs.                 *
+    *  illref      - Optional  Single     contains refs.                 *
+    *  applics     - Optional  Single     contains applic.               *
+    ********************************************************************** -->
+
+<!ELEMENT wire-mat - - (pnr, altids?, wirecode?, core?, size?, mass?, 
+                        colour?, outjackcol?, outdia?, res?, voltage?, 
+                        amperage?, temp?, screencount?, coax?, triax?, 
+                        freqchar?, fdescref?, illref?, applics?)>
+                        
+
+<!--**********************************************************************
+    * Define Element freqchar (Frequency Characteristics) containing:-   *
+    *  impedance - Mandatory Single       contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  freqatt   - Optional  Repeatable   contains freq, attenuation.    *
+    ********************************************************************** -->
+
+<!ELEMENT freqchar - - (impedance, freqatt*)>
+
+
+<!--**********************************************************************
+    * Define Element freqatt (Frequency and Attenuation) containing:-    *
+    *  freq        - Mandatory Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    *  attenuation - Mandatory Single     contains Definition stored in  *
+    *                                              entity %PCDATA;.      *
+    ********************************************************************** -->
+
+<!ELEMENT freqatt - - (freq, attenuation)>
+
+
+<!--**********************************************************************
+    * Define Element impedance (Impedance) containing:-                  *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT impedance - - (%PCDATA)>
+<!ATTLIST impedance
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element core (Core) containing:-                            *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT core - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element outjackcol (Outer Jacket Colour) containing:-       *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT outjackcol - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element outdia (Outer Diameter) containing:-                *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT outdia - - (%PCDATA;)>
+<!ATTLIST outdia
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element res (Resistance) containing:-                       *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT res - - (%PCDATA;)>
+<!ATTLIST res
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element voltage (Voltage) containing:-                      *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT voltage - - (%PCDATA;)>
+<!ATTLIST voltage
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element amperage (Amperage) containing:-                    *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT amperage - - (%PCDATA;)>
+<!ATTLIST amperage
+          uom   	CDATA  	#IMPLIED >
+
+
+<!--**********************************************************************
+    * Define Element screencount (Screen Count) containing:-             *
+    *  Definition stored in Entity %PCDATA;.                             *
+    ********************************************************************** -->
+
+<!ELEMENT screencount - - (%PCDATA;)>
+
+
+<!--**********************************************************************
+    * Define Element freq (Frequency) containing:-                       *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT freq - - (%PCDATA;)>
+<!ATTLIST freq
+          uom   	CDATA  	#IMPLIED >
+          
+
+<!--**********************************************************************
+    * Define Element attenuation (Attenuation) containing:-              *
+    *  Definition stored in Entity %PCDATA;.                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  uom     - CDATA  - IMPLIED   - Unit of Measurement.               *
+    ********************************************************************** -->
+
+<!ELEMENT attenuation - - (%PCDATA;)>
+<!ATTLIST attenuation
+          uom   	CDATA    	#IMPLIED >

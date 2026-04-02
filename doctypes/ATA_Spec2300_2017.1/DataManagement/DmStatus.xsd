@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 sp2 (http://www.altova.com) by Airbus (Airbus Operations GmbH) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.ataebiz.org/XMLSchema" targetNamespace="http://www.ataebiz.org/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- ================================================================
+
+Limitations of Liability: 
+
+1.  This material is provided "As Is" and neither Air Transport Association of America, Inc. (ATA) 
+    nor any person who has contributed to the creation, revision or maintenance of the material 
+    makes any representations or warranties, express or implied, including but not limited to, 
+    warranties of merchantability or fitness for any particular purpose. 
+
+2.  Neither ATA nor any person who has contributed to the creation, revision or maintenance of 
+    this material shall be liable for any direct, indirect, special or consequential damages or 
+    any other liability arising from any use of this material. 
+
+3.  Revisions to this document may occur after its issuance. The user is responsible for determining 
+    if revisions to the material contained in this document have occurred and are applicable. 
+
+Copyright 2017, Air Transport Association of America, Inc., d/b/a Airlines for America. All rights reserved.
+
+================================================================= -->
+	<xs:annotation>
+		<xs:documentation>Version Number: 2017.1</xs:documentation>
+		<xs:documentation>Revision Date: 2017-10-31</xs:documentation>
+		<xs:documentation>Revision Comments: Spec 2300 revision 2017.1</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../common/attrs/commonAttrs.xsd"/>
+	<xs:include schemaLocation="../common/basicDataTypes/text.xsd"/>
+	<xs:include schemaLocation="../common/dataManagement/dmAttrs.xsd"/>
+	<xs:include schemaLocation="../common/dataManagement/dmIssue.xsd"/>
+	<xs:include schemaLocation="../common/dataManagement/dmIdent.xsd"/>
+	<xs:include schemaLocation="../common/dataManagement/applicability.xsd"/>
+	<xs:include schemaLocation="../common/dataManagement/revision.xsd"/>
+	<xs:include schemaLocation="../common/dataManagement/qualification.xsd"/>
+	<xs:include schemaLocation="../common/approbation/approvalStatus.xsd"/>
+	<!--=============================================-->
+	<!--  DM Status fragment root element									-->
+	<!--=============================================-->
+	<xs:element name="dmStatus" type="dmStatusElemType">
+		<xs:annotation>
+			<xs:documentation>Root element of the data module status fragment</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!--=============================================-->
+	<!-- DM Status  content models												-->
+	<!--=============================================-->
+	<xs:complexType name="dmStatusElemType">
+		<xs:sequence>
+			<xs:element ref="dmIdent"/>
+			<xs:element name="issueInfo" type="dmIssueInfoElemType">
+				<xs:annotation>
+					<xs:documentation>issue date of the DM Status fragment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="dmContentIssueInfo" type="dmIssueInfoElemType">
+				<xs:annotation>
+					<xs:documentation>issue info of related dm content fragment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="subSetInfo" type="subSetInfoType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Gives the subsets (such bulletin) where the DM is included or linked</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="approvalInfo" maxOccurs="unbounded"/>
+			<xs:element name="tdmInfo" type="tdmInfoType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>If provided, the current DM is a temporary DM. Provided related data.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="avionicContexts" type="avionicContextsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Link data module or part of content with data coming from the avionics.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="dispatchQualifiers" type="dispatchQualifiersType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Link dispatch conditions or proviso in a dispatch item or a cdl item with qualifiers.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="phaseOfFlightContexts" type="phaseOfFlightContextsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Give the phase of flights where the DM is applicable.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="policyReferences" type="policyReferencesType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Give the regulation or operator policy references .</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="dataOwners" type="dataOwnersType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>owners on part of content</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="softwareParameters" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="applicCrossRefTableRef" minOccurs="0"/>
+			<xs:element name="applic" type="applicElemType">
+				<xs:annotation>
+					<xs:documentation>applicability annotation of the dta module</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="applicFormula" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>optional logical applicability formula</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="applicElemType">
+							<xs:attribute name="definitionMethod" type="xs:string" use="optional">
+								<xs:annotation>
+									<xs:documentation>provides the methods used to compute the fomula</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="inlineApplicGroup" type="inlineApplicGroupElemType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>inline applicability annotations</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reasonForUpdate" type="reasonForUpdateElemType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>contains a reason for update for a data module, a summary of the changes and / or the reasons for the change made within the data module. It can be referenced by one or more change mark.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="applicRevisions" type="revisionsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>revision marks on applicability. included changes reference dm status fragment (applic/applicFormula/inlineApplicGroup elements)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="metadataRevisions" type="revisionsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>revision marks on metadata included in the dm status fragment (except appliccability)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="contentRevisions" type="revisionsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>revision marks on content. included changes reference dm content fragment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="idType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optional id for data management</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="issueType" type="issueTypeType" use="required">
+			<xs:annotation>
+				<xs:documentation>Revision type/status of a data module</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="prevIssueDate" type="prevIssueDateType" use="optional">
+			<xs:annotation>
+				<xs:documentation>date of previous issue (if any)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="majorEvent" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>Indicator whether or not the event is pertaining to an emergency situation or other high priority.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="dataProducer" use="required">
+			<xs:annotation>
+				<xs:documentation>Gives the data producer (OEM or operator)</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="oem"/>
+					<xs:enumeration value="operator"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="nonLinear" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If set to true, non-linear data module concept identifies a data module that should not appear during a linear consultation of the documentation. Default is false</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!--=============================================-->
+	<!-- suSetInfo  			-->
+	<!--=============================================-->
+	<xs:complexType name="subSetInfoType">
+		<xs:sequence>
+			<xs:element name="subSet" type="subSetType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A subset where the DM is related</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="idType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optional id for data management</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="subSetType">
+		<xs:sequence>
+			<xs:element name="associatedSubSet" type="associatedSubSetType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Allows to make a reference between two subsets</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="subSetIdentAttGrp"/>
+		<xs:attribute name="subSetImportance" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Criticality of the subset</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="subSetImpact" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Impact on ECAM/EICAS systems</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="id" type="idType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optional id for data management</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="associatedSubSetType">
+		<xs:attributeGroup ref="subSetIdentAttGrp"/>
+	</xs:complexType>
+	<xs:attributeGroup name="subSetIdentAttGrp">
+		<xs:attribute name="subSetType" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>give the subset type (such OEB, CCB, FCBUL..)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="subSetIdent" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Identifier of the sub set</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="subSetIssueNumber" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The sub set issue number</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="minorIssueNumber" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The sub set minor issue number</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!--=============================================-->
+	<!-- tdmInfo  			-->
+	<!--=============================================-->
+	<xs:complexType name="tdmInfoType">
+		<xs:sequence>
+			<xs:element name="impactedDM" type="impactedDMType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The impacted DM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reason" type="basicTextIdType">
+				<xs:annotation>
+					<xs:documentation>Gives the reason of the TDM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="idType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optional id for data management</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="impactedDMType">
+		<xs:sequence>
+			<xs:element ref="dmRef"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="idType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optional id for data management</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!--=============================================-->
+	<!-- AvionicContexts/dispatchQualifiers  			-->
+	<!--=============================================-->
+	<xs:complexType name="avionicContextsType">
+		<xs:sequence>
+			<xs:element name="qualification" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A data qualification applied to an element in DM content.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="qualificationType">
+							<xs:attribute name="path" type="xs:string" use="optional">
+								<xs:annotation>
+									<xs:documentation>optional XPATH adress to a condition element</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="idType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optional id for data management</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="dispatchQualifiersType">
+		<xs:sequence>
+			<xs:element name="qualification" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A data qualification applied to an element in DM content.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="qualificationType">
+							<xs:attribute name="path" type="xs:string" use="required">
+								<xs:annotation>
+									<xs:documentation>XPATH adress to a dispatchCondition or a proviso element</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="idType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optional id for data management</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!--=============================================-->
+	<!--  		phaseOfFlightContexts	-->
+	<!--=============================================-->
+	<xs:complexType name="phaseOfFlightContextsType">
+		<xs:sequence>
+			<xs:element name="phaseOfFlight" type="phaseOfFlightType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>identification of phase of flight</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="idType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optional id for data management</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="phaseOfFlightType">
+		<xs:attribute name="phaseOfFlightCode" type="xs:NMTOKEN" use="required">
+			<xs:annotation>
+				<xs:documentation>Contains a phase or sub-phase of flight code.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!--=============================================-->
+	<!--  		policyReferences	-->
+	<!--=============================================-->
+	<xs:complexType name="policyReferencesType">
+		<xs:sequence>
+			<xs:element name="policyRef" type="policyRefType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>a regulation reference or an operator policy reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="idType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optional id for data management</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="policyRefType">
+		<xs:sequence>
+			<xs:element name="policyOriginator" type="paraType">
+				<xs:annotation>
+					<xs:documentation>originator: regulation agency or operator</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference" type="paraType">
+				<xs:annotation>
+					<xs:documentation>reference to the policy (regulation ref or operator ref)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="idType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optional id for data management</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!--=============================================-->
+	<!--  		DataOwners	-->
+	<!--=============================================-->
+	<xs:complexType name="dataOwnersType">
+		<xs:sequence>
+			<xs:element name="dataOwner" type="dataOwnerType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>data owner specified for 1 element in content, identified by an XPATH</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="idType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optional id for data management</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="dataOwnerType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attributeGroup ref="xpathAttrGrp"/>
+				<xs:attribute name="id" type="idType" use="optional">
+					<xs:annotation>
+						<xs:documentation>Optional id for data management</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!--=============================================-->
+	<!--  		Software Parameters	 -->
+	<!--=============================================-->
+	<xs:element name="softwareParameters">
+		<xs:annotation>
+			<xs:documentation>A Set of parameters definitions for a software, using values in the DM Content fragment.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="simpleParameter">
+					<xs:annotation>
+						<xs:documentation>Definition of a simple parameter (addressing an element as a measure in the content).</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="tableParameter"/>
+			</xs:choice>
+			<xs:attribute name="softwareName" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Sofware name (using the parameters).</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="simpleParameter">
+		<xs:annotation>
+			<xs:documentation>Definition of a simple parameter (adressing an element as a measure in the content).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="paramContext" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:group ref="paramDefDataGrp"/>
+			</xs:sequence>
+			<xs:attribute name="path" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>XPATH adress to a measure element</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tableParameter">
+		<xs:annotation>
+			<xs:documentation>Definition of parameters using a table (or specific columns in the table).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="paramContext" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="columnParameter"/>
+					<xs:element ref="simpleParameter"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="path" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>XPATH adress to a table element</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="paramContext">
+		<xs:annotation>
+			<xs:documentation>Condition giving the context to affect the parameter.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Parameter context name</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="label" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Parameter context label (for GUI)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="value" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Parameter context value</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="columnParameter">
+		<xs:annotation>
+			<xs:documentation>Specification of a parameter using a column in the table</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:group ref="paramDefDataGrp"/>
+			<xs:attribute name="colname" type="xs:NMTOKEN" use="required">
+				<xs:annotation>
+					<xs:documentation>column name</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="paramDefDataGrp">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Parameter name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="label" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>label of parameter name (for GUI)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<!--=============================================-->
+	<!-- inline applicability elements and content models  			-->
+	<!--=============================================-->
+	<xs:complexType name="inlineApplicGroupElemType">
+		<xs:sequence>
+			<xs:element ref="inlineApplic" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="inlineApplic">
+		<xs:annotation>
+			<xs:documentation>inline applicability annotation. related content element is referenced using XPATH in path attribute.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="applicElemType">
+					<xs:attributeGroup ref="xpathAttrGrp"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

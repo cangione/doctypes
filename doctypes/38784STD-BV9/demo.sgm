@@ -1,0 +1,1309 @@
+<!--Arbortext, Inc., 1988-2016, v.4002-->
+<!DOCTYPE DOC PUBLIC "-//USA-DOD//DTD 38784STD-BV9//EN" [
+<!ENTITY star1 SYSTEM "bio.eps" NDATA eps>
+<!ENTITY radioactive SYSTEM "rada.eps" NDATA eps>
+<!ENTITY vapor1 SYSTEM "vapor.eps" NDATA eps>
+<!ENTITY computer SYSTEM "computer.eps" NDATA eps>
+<!ENTITY ipb SYSTEM "explode.eps" NDATA eps>
+<!ENTITY chem SYSTEM "chemical.eps" NDATA eps>
+<!ENTITY qtrpage SYSTEM "bio.eps" NDATA eps>
+<!ENTITY halfpage SYSTEM "hand.eps" NDATA eps>
+<!ENTITY fullpage SYSTEM "goggles.eps" NDATA eps>
+]>
+<doc service="af" docid="AA" docstat="formal" security="u"
+labelstyle="FAN"><front numcols="1"><idinfo><tmidno service="af"
+security="u">38784STD-BV9</tmidno><chghistory></chghistory>
+<doctype>Illustrated Parts Breakdown</doctype>
+<maintlvl>Depot and Intermediate</maintlvl>
+<prtitle><nomen>MIL-STD-38784 General Style and Format</nomen>
+<partno><emphasis type="bi" fontsize="12" color="black">(MIL-STD-38784)</emphasis></partno>
+<partno>GPSL FIRST STYLE TEST</partno>
+<nsn>2840-00-345-6789</nsn>
+<pslist>
+<partno>PARTNO</partno>
+<serno>Serial no.</serno>
+</pslist></prtitle>
+<subtitle>Subtitle Entered Here</subtitle>
+<mfr>Manufacturer</mfr>
+<contractno>Contract Number here.</contractno>
+<contractno>Second Contract Number here.</contractno>
+<discl>START Test disclosure notice. No actual technical data is contained
+and no disclosure restrictions exist. Test disclosure notice. No actual
+technical data is contained and no disclosure restrictions exist.
+Test disclosure notice. No actual technical data is contained and
+no disclosure restrictions exist. Test disclosure notice. No actual
+technical data is contained and no disclosure restrictions exist.
+Test disclosure notice. No actual technical data is contained and
+no disclosure restrictions exist. END</discl>
+<distrib type="a"> START Sample Distribution Statement. No Distribution
+restrictions exist for this manual. No actual technical data is contained.
+Sample Distribution Statement. No Distribution restrictions exist
+for this manual. No actual technical data is contained. Sample Distribution
+Statement. No Distribution restrictions exist for this manual. No
+actual technical data is contained. END</distrib>
+<expcont>START Test Export Control statement. No actual technical
+data contained, no export restrictions exist. Test Export Control
+statement. No actual technical data contained, no export restrictions
+exist. Test Export Control statement. No actual technical data contained,
+no export restrictions exist. END</expcont>
+<destr>START Handling and Destruction notice is provided as a test.
+No Actual technical data is contained in this manual. Handling and
+Destruction notice is provided as a test. No Actual technical data
+is contained in this manual. Handling and Destruction notice is provided
+as a test. No Actual technical data is contained in this manual. END</destr>
+<copyright>Copyright notice here</copyright>
+<authnot>Published for test purposes only.</authnot>
+<downgrd><oadr>OADR Statement</oadr></downgrd><pubdate>27 NOVEMBER
+2004</pubdate></idinfo><lep><lepcontents autobuild="1"></lep>
+<tpdr><none></tpdr>
+<contents autobuild="1"><tablelist autobuild="1">
+<preface>
+<para0><title>First PARA0 TITLE</title>
+<para>The content of this PARA0 has samples for testing within the
+PREFACE element.</para>
+<subpara1><title>First SUBPARA1</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. <prindex pridnbr="3">F
+prindex entry</prindex>Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes. Sample data
+for testing purposes. Sample data for testing purposes.</para>
+<subpara2><title>First SUBPARA2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara3><title>First SUBPARA3</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document.</para>
+</subpara3>
+<subpara3><title>Second SUBPARA3</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document.</para>
+<subpara4><title>First SUBPARA4</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document.</para>
+</subpara4>
+<subpara4><title>Second SUBPARA4</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document.</para>
+<subpara5><title>First SUBPARA5</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document.</para>
+</subpara5>
+<subpara5><title>Second SUBPARA5</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document.</para>
+</subpara5>
+</subpara4>
+</subpara3>
+</subpara2>
+<subpara2><title>Second SUBPARA2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+</subpara2>
+</subpara1>
+<subpara1><title>Second SUBPARA1</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document.</para>
+</subpara1>
+</para0>
+<abbrsect><title>LIST OF ABBREVIATIONS AND ACRONYMS</title><para>This
+section contains the list of abbreviations and acronyms used throughout
+this document.</para>
+<abbrtitle>Test ABBRTITLE Element</abbrtitle>
+<acronymlist>
+<term>AC</term><def>Alternating Current</def>
+<term>ADF</term><def>Automatic Direction Finder</def>
+<term>AUX</term><def>Auxiliary</def>
+<term>BIT</term><def>Built In Test</def>
+<term>BITE</term><def>Built In Test Equipment</def>
+<term>CCA</term><def>Circuit Card Assembly</def>
+<term>DC</term><def>Direct Current</def>
+<term>ESDS</term><def>Electrostatic Discharge Sensitive</def>
+<term>FM</term><def>Frequency Modulation</def>
+<term>GPS</term><def>Global Position System</def>
+<term>MLG</term><def>Main Landing Gear</def>
+<term>NAV</term><def>Navigation</def>
+<term>PSIG</term><def>Pounds per Square Inch, Gage</def>
+<term>RF</term><def>Radio Frequency</def>
+<term>STBY</term><def>Standby</def>
+<term>XMTR</term><def>Transmitter</def>
+</acronymlist>
+</abbrsect>
+<lrp><title>LIST OF RELATED PUBLICATIONS</title><para><secindex
+pridnbr="3">Secondary entry F</secindex>This publication provides
+a list of related publications referenced within this manual.</para>
+<lrptable>
+<lrpentry id="toref083"><tmidno>A1</tmidno><title security="u">Electrical
+System</title></lrpentry>
+<lrpentry id="toref084"><tmidno>A2</tmidno><title>General Maintenance</title>
+</lrpentry>
+<lrpentry id="toref085"><tmidno>A3</tmidno><title>Lighting System</title>
+</lrpentry>
+<lrpentry id="toref086"><tmidno>A4</tmidno><title>Hydraulic System</title>
+</lrpentry>
+<lrpentry id="toref001"><tmidno>A5</tmidno><title>Environmental Control
+System</title></lrpentry>
+<lrpentry id="toref011"><tmidno>A6</tmidno><title>Airframe Group</title>
+</lrpentry>
+<lrpentry id="toref030"><tmidno>A7</tmidno><title>Landing Gear System</title>
+</lrpentry>
+<lrpentry id="toref037"><tmidno>A8</tmidno><title>Navigation System</title>
+</lrpentry>
+<lrpentry id="toref038"><tmidno>A9</tmidno><title>Communication System</title>
+</lrpentry>
+<lrpentry id="toref062"><tmidno>A10</tmidno><title>Structural Repair</title>
+</lrpentry>
+</lrptable>
+</lrp>
+<tctolist><title>LIST OF TIME COMPLIANCE TECHNICAL ORDERS</title><para>This
+publication provides a list of Time Compliance Technical Orders referenced
+within this manual.</para>
+<tctotbl>
+<tctorow><tctono>TA</tctono><title>TCTO Row Title #4</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TB</tctono><title>TCTO Row Title #5</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TC</tctono><title>TCTO Row Title #6</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TD</tctono><title>TCTO Row Title #7</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TE</tctono><title>TCTO Row Title #8</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TF</tctono><title>TCTO Row Title #9</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TG</tctono><title>TCTO Row Title #10</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TH</tctono><title>TCTO Row Title #11</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TJ</tctono><title>TCTO Row Title #12</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TK</tctono><title>TCTO Row Title #13</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TL</tctono><title>TCTO Row Title #14</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TM</tctono><title>TCTO Row Title #15</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TN</tctono><title>TCTO Row Title #16</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TO</tctono><title>TCTO Row Title #17</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TP</tctono><title>TCTO Row Title #18</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TQ</tctono><title>TCTO Row Title #19</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TR</tctono><title>TCTO Row Title #20</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TS</tctono><title>TCTO Row Title #21</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TT</tctono><title>TCTO Row Title #22</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TU</tctono><title>TCTO Row Title #23</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TV</tctono><title>TCTO Row Title #24</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TW</tctono><title>TCTO Row Title #25</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TX</tctono><title>TCTO Row Title #26</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TY</tctono><title>TCTO Row Title #27</title><date>13
+April 2004</date></tctorow>
+<tctorow><tctono>TZ</tctono><title>TCTO Row Title #28</title><date>13
+April 2004</date></tctorow>
+</tctotbl>
+</tctolist>
+<ratddesc><title>RATDDESC TITLE Element</title>
+<ratd>
+<ratdentry><typeno> RATD RATENTRY TYPENO Element</typeno><date>DATE</date>
+<title>TITLE</title><ecpno> ECPNO</ecpno><dateinc>DATEINC</dateinc>
+<remarks>REMARKS</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content</typeno><date>DATE Content</date>
+<title>TITLE Content</title><ecpno>ECPNO Content</ecpno><dateinc>DATEINC
+Content</dateinc><remarks>REMARKS</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content A</typeno><date>20 October 2004</date>
+<title>TITLE Content A</title><ecpno>ECPNO Content A</ecpno><dateinc>DATEINC
+Content A</dateinc><remarks>REMARKS A</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content B</typeno><date>DATE Content B</date>
+<title>TITLE Content B</title><ecpno>ECPNO Content B</ecpno><dateinc>DATEINC
+Content B</dateinc><remarks>REMARKS B</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C</typeno><date>DATE Content C</date>
+<title>TITLE Content C</title><ecpno>ECPNO Content C</ecpno><dateinc>DATEINC
+Content C</dateinc><remarks>REMARKS C</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C1</typeno><date>DATE Content C1</date>
+<title>TITLE Content C1</title><ecpno>ECPNO Content C1</ecpno><dateinc>DATEINC
+Content C1</dateinc><remarks>REMARKS C1</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C2</typeno><date>DATE Content C2</date>
+<title>TITLE Content C2</title><ecpno>ECPNO Content C2</ecpno><dateinc>DATEINC
+Content C2</dateinc><remarks>REMARKS C2</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C3</typeno><date>DATE Content C3</date>
+<title>TITLE Content C3</title><ecpno>ECPNO Content C3</ecpno><dateinc>DATEINC
+Content C3</dateinc><remarks>REMARKS C3</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content C4</typeno><date>DATE Content C4</date>
+<title>TITLE Content C4</title><ecpno>ECPNO Content C4</ecpno><dateinc>DATEINC
+Content C4</dateinc><remarks>REMARKS C4</remarks></ratdentry>
+<ratdentry><typeno>TYPENO Content D</typeno><date>DATE Content D</date>
+<title>TITLE Content D</title><ecpno>ECPNO Content D</ecpno><dateinc>DATEINC
+Content D</dateinc><remarks>REMARKS D</remarks></ratdentry>
+</ratd>
+</ratddesc>
+<applicdef rtermwidth="4.0in" ltermwidth="3.5in"><title>APPLICDEF
+TITLE Element</title><appltitle> APPLTITLE</appltitle>
+<applichd>
+<line>APPLICHD (LINE)</line>
+<term>TERM</term><def>DEF</def>
+</applichd>
+<applic id="a">
+<term>a</term><def>This is applicability a.</def>
+</applic>
+<applic id="b">
+<term>B</term><def>This is applicability B.</def>
+</applic></applicdef>
+<internatlstd>INTERNATSTD Element</internatlstd>
+<ratddesc><title>RATDDESC Element</title><para>This is a paragraph
+that explains the ratddesc . This is a paragraph that explains the
+ratddesc . This is a paragraph that explains the ratddesc . This is
+a paragraph that explains the ratddesc . This is a paragraph that
+explains the ratddesc . This is a paragraph that explains the ratddesc
+. This is a paragraph that explains the ratddesc . This is a paragraph
+that explains the ratddesc . This is a paragraph that explains the
+ratddesc . </para>
+</ratddesc>
+<symsect><title>SYMSECT TITLE Element</title>
+<symtitle> SYMTITLE</symtitle>
+<term security="u">FIRST</term><def>This is the first SYMSECT TERM
+Definition</def>
+<term>SECOND</term><def>This is the second SYMSECT TERM Definition</def>
+</symsect>
+<tmimprep><title>TMIMPREP Element</title>
+<subpara1><title>SUBPARA1 TITLE</title><para>PARA content.</para>
+</subpara1>
+</tmimprep>
+</preface>
+</front><body numcols="1"><chapter security="u" sssn="23-10-00">
+<title security="u">CHAPTER HAS SSSN ATTRIBUTE 23-10-00</title>
+<para0 sssn="23-11-00"><title>PARA0 HAS SSSN ATTRIBUTE 23-11-00</title>
+<para>This section of the document covers SSSN 23-11-00.</para>
+<subpara1 sssn="23-11-01"><title>SUBPARA1 HAS SSSN ATTRIBUTE 23-11-01</title>
+<para>This section of the document covers SSSN 23-11-01.<secindex
+pridnbr="2">Secondary entry A</secindex></para>
+</subpara1>
+<subpara1 security="u" sssn="23-11-02"><title>SUBPARA1 HAS SSSN ATTRIBUTE
+23-11-02</title><para>This section of the document covers SSSN 23-11-02.</para>
+</subpara1>
+<table>
+<title>THIS IS A TABLE TITILE</title><tgroup cols="3"><colspec
+colname="col1" colwidth="1.62*"><colspec colname="col2" colwidth="0.70*">
+<colspec colname="col3" colwidth="0.69*"><thead>
+<row>
+<entry valign="top">This </entry>
+<entry valign="top">is a header</entry>
+<entry valign="top">row</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry security="u">ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+<row>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+<entry>ENTRY</entry>
+</row>
+</tbody></tgroup></table>
+</para0>
+<para0><title>Graphics Testing</title>
+<para>A variety of graphics and associated markup follow:</para>
+<subpara1><title>HAZMAT</title>
+<warning>
+<icon><graphic boardno="fire" reprowid="0.5in" reprodep="0.5in"
+scalefit="1" icon="yes" security="u"></graphic>
+<hazmat>Alcohol</hazmat><seqno>3</seqno>
+</icon>
+<para>Alcohol is flammable and toxic to eyes, skin, and respiratory
+tract. Skin/eye protection required. Avoid repeated/prolonged contact.
+Use only in well ventilated areas. Keep away from open flames or other
+sources of ignition.</para>
+</warning>
+<para>This is PARA content.</para>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.<figure pgwide="0">
+<title>Quarter Page Chemical Graphic Test</title>
+<graphic boardno="vapor1" reprowid="6.5in" reprodep="2.5in" scalefit="1"
+security="u"></graphic>
+</figure></para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+</subpara1>
+<subpara1><title>SUBPARA1</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<step1><para>This is a first STEP1 element.</para>
+</step1>
+<step1><para>This is a second STEP1 element.</para>
+</step1>
+<step1><para>This is a third STEP1 element.</para>
+</step1>
+<step1><para>This is a fourth STEP1 element.</para>
+</step1>
+<step1><para>This is a fifth STEP1 element.</para>
+</step1>
+<step1><para>This is a sixth STEP1 element.</para>
+</step1>
+<step1><para>This is a seventh STEP1 element.</para>
+</step1>
+<step1><para>This is a eighth STEP1 element.</para>
+</step1>
+<step1><para>This is a ninth STEP1 element.</para>
+</step1>
+<step1><para>This is a tenth STEP1 element.</para>
+</step1>
+<step1><para>This is a eleventh STEP1 element.</para>
+</step1>
+<step1><para>This is a twelfth STEP1 element.</para>
+</step1>
+<step1><para>This is a thirteenth STEP1 element.</para>
+</step1>
+<step1><para>This is a fourteenth STEP1 element.</para>
+</step1>
+<step1><para>This is a fifteenth STEP1 element.</para>
+</step1>
+<step1><para>This is a sixteenth STEP1 element.</para>
+</step1>
+<step1><para>This is a seventeenth STEP1 element.</para>
+</step1>
+<step1><para>This is a eighteenth STEP1 element.</para>
+</step1>
+<step1><para>This is a nineteenth STEP1 element.</para>
+</step1>
+<step1><para>This is a twentieth STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty first STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty second STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty third STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty fourth STEP1 element.</para>
+</step1>
+</subpara2>
+</subpara1>
+<subpara1><title>First SUBPARA1</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara2><title>First SUBPARA2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara3><title>First SUBPARA3</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document.</para>
+</subpara3>
+</subpara2>
+<subpara2><title>Second SUBPARA2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+</subpara2>
+</subpara1>
+<subpara1><title>Second SUBPARA1</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document.</para>
+</subpara1>
+<subpara1><title>SUBPARA1</title><para>This is PARA content.</para>
+<step1><para>This is a one STEP1 element.</para>
+<figure>
+<title>Quarter Page Deep Full Page Vapor Graphic Test</title>
+<graphic boardno="vapor" reprowid="6.5in" reprodep="3.25in" scalefit="1"
+hplace="center" security="u"></graphic>
+</figure>
+</step1>
+<step1><para>This is a two STEP1 element.</para>
+</step1>
+<step1><para>This is a three STEP1 element.</para>
+</step1>
+<step1><para>This is a four STEP1 element.</para>
+</step1>
+<step1><para>This is a five STEP1 element.</para>
+</step1>
+<step1><para>This is a six STEP1 element.</para>
+</step1>
+<step1><para>This is a seven STEP1 element.</para>
+</step1>
+<step1><para>This is a eight STEP1 element.</para>
+</step1>
+<step1><para>This is a nine STEP1 element.</para>
+</step1>
+<step1><para>This is a ten STEP1 element.</para>
+</step1>
+<step1><para>This is a eleven STEP1 element.</para>
+</step1>
+<step1><para>This is a twelve STEP1 element.</para>
+</step1>
+<step1><para>This is a thirteen STEP1 element.</para>
+</step1>
+<step1><para>This is a fourteen STEP1 element.</para>
+</step1>
+<step1><para>This is a fifteen STEP1 element.</para>
+</step1>
+<step1><para>This is a sixteen STEP1 element.</para>
+<figure>
+<title>Chemical Graphic Test</title>
+<graphic boardno="vapor" reprowid="6.5in" reprodep="3.25in" scalefit="1"
+icon="yes"></graphic>
+</figure>
+</step1>
+<step1><para>This is a seventeen STEP1 element.</para>
+</step1>
+<step1><para>This is a eighteen STEP1 element.</para>
+</step1>
+<step1><para>This is a nineteen STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty one STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty two STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty three STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty four STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty five STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty six STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty seven STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty eight STEP1 element.</para>
+</step1>
+<step1><para>This is a twenty nine STEP1 element.</para>
+</step1>
+<step1><para>This is a thirty STEP1 element.</para>
+<figure>
+<title>Vapor Graphic Full Page Test</title>
+<graphic boardno="vapor" reprowid="6.5in" reprodep="7.5in" scalefit="1"
+icon="yes" security="u"></graphic>
+</figure>
+</step1>
+<step1>
+<warning>
+<para>Warning to test style and format of a warning at the step level.
+Warning to test style and format of a warning at the step level. Warning
+to test style and format of a warning at the step level. Warning to
+test style and format of a warning at the step level.</para>
+</warning>
+<para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1>
+<caution>
+<para>Caution to test style and format of a caution at the step level.
+Caution to test style and format of a caution at the step level. Caution
+to test style and format of a caution at the step level. Caution to
+test style and format of a caution at the step level. Caution to test
+style and format of a caution at the step level.</para>
+<para>Caution to test style and format of a multiple caution at the
+step level. Caution to test style and format of a multiple caution
+at the step level. Caution to test style and format of a multiple
+caution at the step level. </para>
+</caution>
+<para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+</subpara1>
+<subpara1><title>First SUBPARA1</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara2><title>First SUBPARA2</title><para>Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes. Sample data for testing purposes. Sample data for testing
+purposes.</para>
+<subpara3><title>First SUBPARA3</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document.</para>
+</subpara3>
+<subpara3><title>Second SUBPARA3</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document.</para>
+<subpara4><title>First SUBPARA4</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document.</para>
+</subpara4>
+<subpara4><title>Second SUBPARA4</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document. This
+sentence is filler for the purpose of testing the document.</para>
+</subpara4>
+<foldout pgstyle="11x17" blankapron="1">
+<title>First Foldout Page Vapor Contains a Blank Apron</title>
+<graphic boardno="vapor1" reprowid="15.25in" reprodep="7.5in"
+scalefit="1" icon="yes" security="u"></graphic></foldout></subpara3>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+</subpara1>
+<subpara1><title>Second SUBPARA1</title><para>This sentence is filler
+for the purpose of testing the document. This sentence is filler for
+the purpose of testing the document. This sentence is filler for the
+purpose of testing the document. This sentence is filler for the purpose
+of testing the document. This sentence is filler for the purpose of
+testing the document. This sentence is filler for the purpose of testing
+the document. This sentence is filler for the purpose of testing the
+document. This sentence is filler for the purpose of testing the document.
+This sentence is filler for the purpose of testing the document.</para>
+</subpara1>
+</para0>
+<para0><title>LOCATION REFERENCE ELEMENT</title>
+<para>This para contains the LOCATION element referenced to the next
+CHAPTER element (<location xrefid="locref1">).<secindex pridnbr="2">Additional
+secondary entry</secindex></para>
+</para0>
+</chapter><chapter id="locref1" security="u" sssn="23-20-00">
+<title>CHAPTER HAS SSSN ATTRIBUTE 23-20-00</title>
+<section sssn="23-21-00">
+<title>SECTION HAS SSSN ATTRIBUTE 23-21-00</title>
+<para0 sssn="23-21-01"><title>PARA0 HAS SSSN ATTRIBUTE 23-21-01</title>
+<para security="u">This section of the document covers SSSN 23-21-01.<prindex
+pridnbr="1">Index entry</prindex></para>
+<subpara1 sssn="23-21-01-101"><title>SUBPARA1 HAS SSSN ATTRIBUTE 23-21-01-101
+</title><para>This section of the document covers SSSN 23-21-01-101.</para>
+<step1 applicref="a"><para>This step has an APPREF attribute of "a"</para>
+</step1>
+<step1 applicref="b"><para>This step has an APPREF attribute of "b"</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+<step2><para>This is a STEP2 element.</para>
+</step2>
+<step2><para>This is a STEP2 element.</para>
+<step3><para>This is a STEP3 element.</para>
+</step3>
+<step3><para>This is a STEP3 element.</para>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+</step3>
+</step2>
+</step1>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+<table>
+<title>TITLE in a TABLE</title><tgroup cols="3"><colspec colname="col1">
+<colspec colname="col2"><colspec colname="col3"><thead>
+<row>
+<entry valign="top">Header Row, column 1</entry>
+<entry valign="top">Header Row,, column 2</entry>
+<entry valign="top">Header Row,, column 3</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>Row 1, column 1</entry>
+<entry>Row 1, column 2</entry>
+<entry>Row 1, column 3</entry>
+</row>
+<row>
+<entry>Row 2, column 1</entry>
+<entry>Row 2, column 2</entry>
+<entry>Row 2, column 3</entry>
+</row>
+<row>
+<entry>Row 3, column 1</entry>
+<entry>Row 3, column 2</entry>
+<entry>Row 3, column 3</entry>
+</row>
+</tbody></tgroup></table>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+</subpara1>
+<subpara1 sssn="23-21-01-102"><title>SUBPARA1 HAS SSSN ATTRIBUTE 23-21-01-102
+</title><para>This section of the document covers SSSN 23-21-01-102.</para>
+<step1 applicref="a"><para>This step has an APPREF attribute of "a"</para>
+</step1>
+<step1 applicref="b"><para>This step has an APPREF attribute of "b"</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+<step2><para>This is a STEP2 element.</para>
+</step2>
+<step2><para>This is a STEP2 element.</para>
+<step3><para>This is a STEP3 element.</para>
+</step3>
+<step3><para>This is a STEP3 element.</para>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+</step3>
+</step2>
+</step1>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+</subpara1>
+</para0>
+</section>
+<section security="u" sssn="23-22-00">
+<title>SECTION HAS SSSN ATTRIBUTE 23-22-00</title>
+<para0 security="u" sssn="23-22-01"><title>PARA0 HAS SSSN ATTRIBUTE
+23-22-01</title>
+<para>This section of the document covers SSSN 23-22-01.</para>
+<subpara1 sssn="23-22-01-101"><title>SUBPARA1 HAS SSSN ATTRIBUTE 23-22-01-101
+</title><para>This section of the document covers SSSN 23-22-01-101.</para>
+<step1 applicref="a"><para>This step has an APPREF attribute of "a"</para>
+</step1>
+<step1 applicref="b"><para>This step has an APPREF attribute of "b"</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+<step2><para>This is a STEP2 element.</para>
+</step2>
+<step2><para>This is a STEP2 element.</para>
+<step3><para>This is a STEP3 element.</para>
+</step3>
+<step3><para>This is a STEP3 element.</para>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+</step3>
+</step2>
+</step1>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+</subpara1>
+<subpara1 sssn="23-22-01-102"><title>SUBPARA1 HAS SSSN ATTRIBUTE 23-22-01-102
+</title><para>This section of the document covers SSSN 23-22-01-102.</para>
+<step1 applicref="a"><para>This step has an APPREF attribute of "a"</para>
+</step1>
+<step1 applicref="b"><para>This step has an APPREF attribute of "b"</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+</step1>
+<step1><para>This is a STEP1 element.</para>
+<step2><para>This is a STEP2 element.</para>
+</step2>
+<step2><para>This is a STEP2 element.</para>
+<step3><para>This is a STEP3 element.</para>
+</step3>
+<step3><para>This is a STEP3 element.</para>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+<step4><para>This is a STEP4 element.</para>
+</step4>
+</step3>
+</step2>
+</step1>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+<subpara2><title>SUBPARA2</title><para>Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.
+Sample data for testing purposes. Sample data for testing purposes.</para>
+</subpara2>
+</subpara1>
+</para0>
+</section>
+</chapter><ipbchap security="u">
+<ipbfwordchap security="u">
+<para0><title>This is The First Paragraph in the IPB</title>
+<para>This is a sample manual and a test paragraph. This is a sample
+manual and a test paragraph. This is a sample manual and a test paragraph.
+This is a sample manual and a test paragraph. This is a sample manual
+and a test paragraph. This is a sample manual and a test paragraph.
+This is a sample manual and a test paragraph. This is a sample manual
+and a test paragraph. <prindex pridnbr="2">Alpha primary entry</prindex></para>
+</para0>
+<ipbmodelcover><title>This Paragraph Explains Which Models are Covered
+in the Pparts Breakdown</title><para>This paragraph explains which
+models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown. This paragraph explains
+which models are covered in the parts breakdown.</para>
+</ipbmodelcover>
+<ipbuseonexpl><title>This Paragraph Explains the Useable on Codes. </title>
+<para>This paragraph explains the useable on Codes. This paragraph
+explains the useable on Codes. This paragraph explains the useable
+on Codes. This paragraph explains the useable on Codes. This paragraph
+explains the useable on Codes. This paragraph explains the useable
+on Codes. This paragraph explains the useable on Codes. This paragraph
+explains the useable on Codes. This paragraph explains the useable
+on Codes. This paragraph explains the useable on Codes. This paragraph
+explains the useable on Codes. This paragraph explains the useable
+on Codes. This paragraph explains the useable on Codes. This paragraph
+explains the useable on Codes. This paragraph explains the useable
+on Codes. This paragraph explains the useable on Codes. This paragraph
+explains the useable on Codes. This paragraph explains the useable
+on Codes. This paragraph explains the useable on Codes. This paragraph
+explains the useable on Codes. This paragraph explains the useable
+on Codes. </para>
+</ipbuseonexpl>
+<ipbsmrexpl><title>SMR Code Explanation</title><para>This paragraph
+explains the SMR Codes. This paragraph explains the SMR Codes. This
+paragraph explains the SMR Codes. This paragraph explains the SMR
+Codes. This paragraph explains the SMR Codes. This paragraph explains
+the SMR Codes. This paragraph explains the SMR Codes. This paragraph
+explains the SMR Codes. This paragraph explains the SMR Codes. This
+paragraph explains the SMR Codes. This paragraph explains the SMR
+Codes. This paragraph explains the SMR Codes. This paragraph explains
+the SMR Codes. This paragraph explains the SMR Codes. This paragraph
+explains the SMR Codes. This paragraph explains the SMR Codes. This
+paragraph explains the SMR Codes.</para>
+</ipbsmrexpl>
+<ipbpartstd><title>Part Standardization</title><para>This paragraph
+explains Part Standardization. This paragraph explains Part Standardization.
+This paragraph explains Part Standardization. This paragraph explains
+Part Standardization. This paragraph explains Part Standardization.
+This paragraph explains Part Standardization. This paragraph explains
+Part Standardization. This paragraph explains Part Standardization.
+This paragraph explains Part Standardization. This paragraph explains
+Part Standardization. This paragraph explains Part Standardization.
+This paragraph explains Part Standardization. This paragraph explains
+Part Standardization.</para>
+</ipbpartstd>
+</ipbfwordchap>
+<ipbpl><ipbplgrp>
+<figure>
+<title>Parts List - First Figure</title>
+<graphic boardno="bio" reprowid="6.5in" reprodep="7.0in" scalefit="1"
+security="u"></graphic>
+</figure>
+<ipbpl0tbl>
+<ipbpl0><ipbfigureno>1</ipbfigureno><ipbfigindex>/1</ipbfigindex>
+<partno>71001</partno><ipbcage>xx701</ipbcage>
+<ipbdesc><nomen>KIT BB, THIS TESTS AN <ipbplbrk>EXTREMELY LONG NOMENCLATURE
+DESCRIPTION</nomen><ipbrefdes>refdes1</ipbrefdes><ipbrefdes>refdes2</ipbrefdes>
+<ipbrefdes>refdes3</ipbrefdes><ipbrefdes>refdes4</ipbrefdes><ipbrefdes>refdes5
+</ipbrefdes></ipbdesc>
+<ipbunits>REF</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>AZZ</ipbsmrcode><ipbsmrcode>AZX</ipbsmrcode>
+</ipbsmrcodes>
+</ipbpl0>
+<ipbpl0><ipbfigindex>2</ipbfigindex><partno>02345678901234567892</partno>
+<ipbcage>76543</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, XYZ <ipbplbrk><line>USING LINE
+ELEMENT FOR REMARKS (NOMEN)</line></nomen><ipbrefdes>refdes</ipbrefdes>
+</ipbdesc>
+<ipbunits>1</ipbunits>
+<ipbsmrcodes><ipbsmrcode>XBA</ipbsmrcode></ipbsmrcodes>
+</ipbpl0>
+<ipbpl0><ipbfigindex>4</ipbfigindex><partno>234567789</partno><ipbcage><line>
+65432</line><line>65432</line></ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-0<ipbplbrk></nomen><ipbsssn>123&ndash;45&ndash;67&ndash;890
+</ipbsssn>
+<remarks>USING REMARKS ELEMENT FOR REMARKS</remarks>
+</ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+</ipbpl0>
+<ipbpl0><ipbfigindex>4</ipbfigindex><partno>3023456789<brk>01234567892</partno>
+<ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-1<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+<ipbpl1><ipbfigindex>5</ipbfigindex><partno>(PL1) 4-023456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+</ipbpl1>
+<ipbpl1><ipbfigindex>5</ipbfigindex><partno>(PL1) 5-23456789<brk>01234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+<ipbpl2><ipbfigindex>6</ipbfigindex><partno>(PL2) 6-023456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+</ipbpl2>
+<ipbpl2><ipbfigindex>6</ipbfigindex><partno>(PL2) 7-023456789<brk>01234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+<ipbpl3><ipbfigindex>7</ipbfigindex><partno>(PL3) 81023456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+</ipbpl3>
+<ipbpl3><ipbfigindex>7</ipbfigindex><partno>(PL3) 92023456789<brk>01234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+<ipbpl4><ipbfigindex>8</ipbfigindex><partno>(PL4) 49023456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+</ipbpl4>
+<ipbpl4><ipbfigindex>8</ipbfigindex><partno>58023456789<brk>01234567892</partno>
+<ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+</ipbpl4>
+</ipbpl3>
+</ipbpl2>
+</ipbpl1>
+<ipbpl1><ipbfigindex>9</ipbfigindex><partno>(PL1) 67023456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+</ipbpl1>
+<ipbpl1><ipbfigindex>10</ipbfigindex><partno>(PL1) 39023456789-01234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+<ipbpl2><ipbfigindex>11</ipbfigindex><partno>(PL2) 48023456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+</ipbpl2>
+<ipbpl2><ipbfigindex>11</ipbfigindex><partno>(PL2) 57023456789<brk>01234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+<ipbpl3><ipbfigindex>12</ipbfigindex><partno>(PL3)68-0231456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+</ipbpl3>
+<ipbpl3><ipbfigindex>12</ipbfigindex><partno>(PL3) 770232456789<brk>01234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD</ipbsmrcode></ipbsmrcodes>
+<ipbpl4><ipbfigindex>13</ipbfigindex><partno>(PL4)88-02335456789</partno>
+<ipbcage>22232</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>42-152-1253
+</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>A</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD2</ipbsmrcode></ipbsmrcodes>
+</ipbpl4>
+<ipbpl4><ipbfigindex>13</ipbfigindex><partno>440234456789<brk>3301234567892
+</partno><ipbcage>22234</ipbcage>
+<ipbdesc><nomen>KIT, Containerized, BB-13<ipbplbrk></nomen><ipbsssn>52-152-1253
+</ipbsssn><ipbsssn>52-152-1254</ipbsssn></ipbdesc>
+<ipbunits>2</ipbunits><ipbuseoncode>B</ipbuseoncode>
+<ipbsmrcodes><ipbsmrcode>XD2</ipbsmrcode></ipbsmrcodes>
+<ipbpl5><ipbfigindex>14</ipbfigindex><partno>4407865-2344</partno>
+<ipbcage>55889</ipbcage>
+<ipbdesc><nomen>pl5 KIT, Containerized, <ipbplbrk>BB-ind5</nomen>
+</ipbdesc>
+<ipbunits>25</ipbunits>
+<ipbsmrcodes><ipbsmrcode>XB3</ipbsmrcode></ipbsmrcodes>
+<ipbpl6><ipbfigindex>15</ipbfigindex><partno>67843402344-2</partno>
+<ipbcage>66889</ipbcage>
+<ipbdesc><nomen>pl6 LOCK WASHERS<ipbplbrk>BB-ind6</nomen></ipbdesc>
+<ipbunits>52</ipbunits>
+<ipbsmrcodes><ipbsmrcode>XB3</ipbsmrcode></ipbsmrcodes>
+<ipbpl7><ipbfigindex>16</ipbfigindex><partno>9858743</partno><ipbcage>77889
+</ipbcage>
+<ipbdesc><nomen>Pl7 Machined Inserts<ipbplbrk></nomen></ipbdesc>
+<ipbunits>12</ipbunits>
+<ipbsmrcodes><ipbsmrcode>XB3</ipbsmrcode></ipbsmrcodes>
+</ipbpl7>
+</ipbpl6>
+</ipbpl5>
+</ipbpl4>
+</ipbpl3>
+</ipbpl2>
+</ipbpl1>
+</ipbpl0>
+</ipbpl0tbl>
+<ipbuseoncodelist>
+<term>A</term><def>XX Model</def>
+<term>B</term><def>BXX Model</def>
+</ipbuseoncodelist>
+</ipbplgrp></ipbpl><ipbnumindx autobuild="1" security="u"><ipbrfdsindx
+autobuild="1" security="u"></ipbchap></body><rear numcols="2">
+<index autobuild="1">
+</rear></doc>

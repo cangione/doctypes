@@ -1,0 +1,292 @@
+<!--  PUBLIC  "-//USA-DOD//ENTITIES 3001 IPB DATA Draft XML V307 08242016//EN"
+-->
+<!--ILLUSTRATED PARTS BREAKDOWN DATA -->
+<!--IPBDATA.ENT. THIS FILE CONTAINS THE ELEMENTS COMMON TO MIL-STD-3001 SERIES FOR PARTS LISTS. 
+ -->
+
+<!ENTITY % partid "(gaplpartno?, partdesc, units?, useoncode*,  smrcode?)">
+
+<!ENTITY % partinfo "(partinfo, (altpart* | eqvpart* | substpart*))">
+
+<!ENTITY % partidstructdata "(gaplpartno?, partdesc, structdata-mat?, structdata-stocksize?, units?, useoncode*,  smrcode?, wuc?)">
+
+<!ENTITY % partinfostructdata "(partinfostructdata, (altpart-structdata* | eqvpart-structdata* | substpart-structdata*))">
+
+<!ENTITY % partchars  
+"qeca (qeca-app | qeca-notapp) #IMPLIED
+magnetic (mag-app | mag-notapp) #IMPLIED
+liquid-oxygen (lox-app | lox-notapp) #IMPLIED
+%itemchars;"
+>
+
+<!ENTITY % enditematts 
+"%partchars;
+leaderdots (0 | 1) '1'
+%refs;
+%chgatt;">
+
+<!ENTITY % platts
+"nha IDREF #IMPLIED
+shown-status (shown | not-shown) #IMPLIED
+%refs;
+%chgatt;">
+
+<!ENTITY % partinfoatts
+"newsheetref IDREF #IMPLIED
+shown-status (shown | not-shown) #IMPLIED
+marking-status (markings | not-markings) #IMPLIED
+kit-status (kit | not-kit) #IMPLIED
+matched-status (matched-part | not-matched-part)  #IMPLIED
+%partchars;">
+
+<!ENTITY % partidatts
+"marking-status (markings | not-markings) #IMPLIED
+kit-status (kit | not-kit) #IMPLIED
+matched-status (matched-part | not-matched-part)  #IMPLIED
+%partchars;
+%platts;">
+
+<!ENTITY % kitatts
+"marking-status (markings | not-markings) #IMPLIED
+kit-status (kit | not-kit) 'kit'
+matched-status (matched-part | not-matched-part)  #IMPLIED
+%partchars;">
+
+<!--Illustrated Parts Breakdown-->
+<!ELEMENT ipb (title, (%paracon;)*, sub-paras?, plgrp+)>
+<!ATTLIST ipb %refs; 
+%chgatt;
+			%secur;>
+
+<!--Illustrated Parts Breakdown for Structural Data -->
+<!ELEMENT ipb-structdata (title, (%paracon;)*, sub-paras?, plgrp-structdata+) >
+<!ATTLIST ipb-structdata %refs; 
+%chgatt;
+			%secur;>
+
+<!--Parts List Group -->
+<!ELEMENT plgrp ((foldout | figure), gapl, useoncodelist?)>
+<!ATTLIST plgrp id  ID   #IMPLIED
+singlesheet (yes | no) "no"
+		%secur;>
+
+<!--Parts List Group for Structural Data -->
+<!ELEMENT  plgrp-structdata ((foldout | figure), gapl-structdata, useoncodelist?)>
+<!ATTLIST plgrp-structdata 
+           id  ID   #IMPLIED
+           singlesheet (yes | no) "no"
+	%secur;>
+
+<!-- IPB GAPL for Structural Data -->
+<!ELEMENT gapl-structdata (enditem-structdata+, (detlparts-structdata | assy-structdata)+, noteslist?) >
+<!ATTLIST gapl-structdata 
+%chgatt;
+				%secur;>
+
+<!-- IPB GAPL -->
+<!ELEMENT gapl ( enditem+, (detlparts | assy)+, partskit*, noteslist?) >
+<!ATTLIST gapl %chgatt;
+				%secur;>
+
+<!--The End Item (main assembly). No index number is assigned to the main assembly when all detail parts are indexed.-->
+<!ELEMENT enditem   (%partid;)>
+<!ATTLIST enditem     %enditematts;
+				   	 %secur;>
+
+<!--The End Item (main assembly) for Structural Data. No index number is assigned to the main assembly when all detail parts are indexed.-->
+<!ELEMENT enditem-structdata   (%partidstructdata;)>
+<!ATTLIST enditem-structdata     %enditematts;
+				   	 %secur;>
+
+<!-- Assembly. First level of assembly in a GAPL.  -->
+<!ELEMENT  assy  (%partinfo;, attachingparts?, (detlparts | subassy)*)>
+<!ATTLIST assy  
+		%platts;
+		%secur;>
+
+<!-- Assembly for Structural Data. First level of assembly in a GAPL.  -->
+<!ELEMENT  assy-structdata  (%partinfostructdata;, attachingparts-structdata?, (detlparts-structdata | subassy-structdata)*)>
+<!ATTLIST assy-structdata 
+		%platts;
+		%secur;>
+
+<!-- Sub-Assembly. Nesting of element <subassy> identifies Sub-Assembly /Sub-subassembly, etc relationship.   -->
+<!ELEMENT  subassy  (%partinfo;, attachingparts?, (detlparts | subassy)*)>
+<!ATTLIST subassy  
+		%platts;
+			%secur;>
+
+<!-- Sub-Assembly for Structural Data. Nesting of element <subassy-structdata> identifies Sub-Assembly /Sub-subassembly, etc relationship.   -->
+<!ELEMENT  subassy-structdata  (%partinfostructdata;, attachingparts-structdata?, (detlparts-structdata | subassy-structdata)*)>
+<!ATTLIST subassy-structdata  
+		%platts;
+			%secur;>
+
+<!--Part Information. Represents an individual row of an assembly <assy>, Sub assembly <subassy>, and Detailed Part <detlpart> in a GAPL -->
+<!ELEMENT partinfo  (indexno?, gaplpartno?, partdesc, units?, useoncode*, smrcode?)>
+<!ATTLIST partinfo 
+%partinfoatts;
+%secur;>
+
+<!--Part Information - Structural Data. Represents an individual row of an assembly <assy-structdata>, Sub assembly <subassy-structdata>, and Detailed Part <detlpart-structdata> in a GAPL -->
+<!ELEMENT partinfostructdata  (indexno?, gaplpartno?, partdesc, structdata-mat?, structdata-stocksize?, units?, useoncode*, smrcode?, wuc?)>
+<!ATTLIST partinfostructdata  
+%partinfoatts;
+%secur;>
+
+<!-- Parts Kit. When repair parts for the end item or for repairable units within the end item are to be supplied in the form of kits, a part number shall be assigned to each kit in accordance with contract drawing specification requirements . -->
+<!ELEMENT partskit (kitinfo, kit-part+)>
+<!ATTLIST partskit   	%platts;
+			%secur;>
+
+<!-- Individual Part as part of a Parts Kit. -->
+<!ELEMENT kit-part (gaplpartno, partdesc, units?, useoncode*, smrcode?)>
+<!ATTLIST kit-part
+%kitatts;
+%secur;>
+
+<!-- Individual Part as part of a Parts Kit. -->
+<!ELEMENT kitinfo (gaplpartno, partdesc, units?, useoncode*, smrcode?)>
+<!ATTLIST kitinfo
+%kitatts;
+%secur;>
+
+
+<!-- Part Number -->
+<!ELEMENT gaplpartno    (#PCDATA | %pctext;)* >
+<!ATTLIST gaplpartno
+		  type  (govt | vendor | none | notassigned | nsn | coml | standard)  "standard"
+		 %secur;>
+
+<!--Part Description -->
+<!ELEMENT partdesc  (nomen, (nhanote | cage | refdes | specdwg | extref | tolerance | size | drilltrim | descnote)*, partdescend) >
+<!ATTLIST partdesc 
+			%secur;>
+
+<!-- Part Description "End". Necessary for FOSI to generate column "Description" which may contain multiple elements.-->
+<!ELEMENT partdescend EMPTY>
+
+<!--"Next Higher Assembly" Note. A note in the "Part Description" column that indicates a part's "next higher assembly".   -->
+<!ELEMENT nhanote  (#PCDATA | ipbref | %pctext;)*>
+<!ATTLIST nhanote %secur;>
+
+<!-- IPB Reference. Used to reference other Figures and GAPLs  -->
+<!ELEMENT ipbref     EMPTY >
+<!ATTLIST ipbref xrefid IDREF #REQUIRED
+                otherwp IDREF #IMPLIED
+                otherprocedure IDREF #IMPLIED
+                pretext  CDATA #IMPLIED 
+                posttext CDATA #IMPLIED 
+                %secur;>
+                
+<!--Description Note -->
+<!ELEMENT descnote  (#PCDATA | ipbref | %pctext;)* >
+<!ATTLIST descnote %secur;>
+
+<!--Contract drawing specification.-->
+<!ELEMENT specdwg  (#PCDATA | %pctext;)* >
+<!ATTLIST specdwg %secur;>
+
+<!--Tolerances for electrical/electronic parts-->
+<!ELEMENT tolerance  (#PCDATA | %pctext;)* >
+<!ATTLIST tolerance %secur;>
+
+<!--Oversize and undersize parts-->
+ <!ELEMENT size  (#PCDATA | %pctext;)*>
+<!ATTLIST size %secur;>
+ 
+<!-- Undrilled or untrimmed parts -->
+ <!ELEMENT drilltrim  (#PCDATA | %pctext;)*>
+<!ATTLIST drilltrim %secur;>
+
+<!--Detailed Part -->
+ <!ELEMENT detlparts  (%partinfo;, attachingparts?)>
+<!ATTLIST detlparts 
+			%platts;
+			%secur;>
+
+<!--Detailed Part for Structural Data -->
+ <!ELEMENT detlparts-structdata  (%partinfostructdata;, attachingparts-structdata?)>
+<!ATTLIST detlparts-structdata 
+			%platts;
+			%secur;>
+
+<!--Alternate Part Information -->
+ <!ELEMENT altpart  (%partid;)>
+<!ATTLIST altpart
+			%partidatts;
+			%secur;>
+
+<!--Alternate Part Information for Structural Data -->
+ <!ELEMENT altpart-structdata  (%partidstructdata;)>
+<!ATTLIST altpart-structdata 
+			%partidatts;
+			%secur;>
+
+<!--Equivalent Part Information -->
+ <!ELEMENT eqvpart  (%partid;)>
+<!ATTLIST eqvpart 
+			%partidatts;
+			%secur;>
+
+<!--Equivalent Part Information for Structural Repair-->
+ <!ELEMENT eqvpart-structdata  (%partidstructdata;)>
+<!ATTLIST eqvpart-structdata 
+			%partidatts;
+			%secur;>
+
+<!--Substitute Part Information -->
+ <!ELEMENT substpart  (%partid;)>
+<!ATTLIST substpart 
+			%partidatts;
+			%secur;>
+
+<!--Substitute Part Information for Structural Repair-->
+ <!ELEMENT substpart-structdata  (%partidstructdata;)>
+<!ATTLIST substpart-structdata 
+			%partidatts;
+			%secur;>
+
+<!--Attaching Parts. Contains listing of all attaching parts of an assembly, sub-assembly, or detailed part. Incudes elements <attachstart> and <attachend> necessary for FOSI to generate rows marking begin and end of attaching parts. -->
+<!ELEMENT attachingparts (attachstart, attachpart+, attachend)>
+<!ATTLIST attachingparts
+			%secur;>
+
+<!--Attaching Part Information -->
+<!ELEMENT attachpart  (%partinfo;) >
+<!ATTLIST attachpart 
+			%platts;
+			%secur;>
+
+<!--Attaching Parts - Structural Data. Contains listing of all attaching parts of an assembly, sub-assembly, or detailed part. Incudes elements <attachstart> and <attachend> necessary for FOSI to generate rows marking begin and end of attaching parts. -->
+<!ELEMENT attachingparts-structdata (attachstart, attachpart-structdata+, attachend)>
+
+<!--Attaching Part Information for Structural Repair-->
+<!ELEMENT attachpart-structdata  (%partinfostructdata;) >
+<!ATTLIST attachpart-structdata 
+			%platts;
+			%secur;>
+
+<!--Attaching Part "Start" Row. Necessary for FOSI to generate row marking the start of attaching parts.-->
+<!ELEMENT attachstart EMPTY>
+
+
+<!--Attaching Part "End" Row. Necessary for FOSI to generate row marking the end of attaching parts.-->
+<!ELEMENT attachend EMPTY>
+
+<!--The source, maintenance and recoverability (SM&R) code for every part for which one has been approved by the government shall be listed as an entry under a heading "SM&R CODE".-->
+<!ELEMENT smrcode  (#PCDATA | %pctext;)*>
+<!ATTLIST smrcode %secur;>
+
+<!--Work unit code (WUC).  When the equipment, assembly, subassembly, or  component part, has been assigned a WUC the WUC shall be listen under this entry.-->
+<!ELEMENT wuc  (#PCDATA | %pctext;)*>
+<!ATTLIST wuc %secur;>
+
+
+<!-- Structural Repair Data - Materials. Used in parts list for Structural Repair Information Only.  -->
+<!ELEMENT structdata-mat    (#PCDATA | %text;)*  >
+<!ATTLIST structdata-mat 	%secur;>
+
+<!-- Structural Repair Data - Stock Size. Used in parts list for Structural Repair Information Only.  -->
+<!ELEMENT  structdata-stocksize  (#PCDATA | %text;)*  >
+<!ATTLIST structdata-stocksize 	%secur;>

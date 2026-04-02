@@ -106,6 +106,45 @@ Variant codes follow the pattern: `[baseline version][amendment version][documen
 
 ---
 
+### DocBook
+
+| Version | Schema Format | Description |
+|---|---|---|
+| **DocBook 4.5** | SGML DTD, XML DTD | Last SGML-capable version of the DocBook standard. Widely used baseline for general-purpose technical documentation. |
+| **DocBook 5.1** | RNG (normative), XSD, Schematron | XML-only rewrite with namespace support. Adds assemblies for modular documentation. |
+
+DocBook is the most widely used general-purpose technical documentation standard in open-source and enterprise documentation. Maintained by OASIS.
+
+---
+
+### JATS (Journal Article Tag Suite)
+
+NISO Z39.96 — markup for journal articles and scientific/technical publications. Three tag sets included, all with MathML 3.0 support:
+
+| Tag Set | DTD | Description |
+|---|---|---|
+| **Archiving & Interchange 1.4** | `JATS-archivearticle1-4-mathml3.dtd` | Permissive model for preserving article content from diverse sources |
+| **Publishing 1.4** | `JATS-journalpublishing1-4-mathml3.dtd` | Prescriptive model for new article authoring and publication |
+| **Article Authoring 1.4** | `JATS-articleauthoring1-4-mathml3.dtd` | Minimal model optimized for author submission |
+
+---
+
+### BITS (Book Interchange Tag Suite)
+
+| Version | Schema Format | Description |
+|---|---|---|
+| **BITS 2.1** | DTD | Book-level companion to JATS. Markup for books, monographs, and book components. Extends JATS with book-specific structures (book parts, TOC, index, dedications). |
+
+---
+
+### NISO STS (Standards Tag Suite)
+
+| Version | Schema Format | Description |
+|---|---|---|
+| **NISO STS 1.2** | DTD (Interchange + Extended, MathML 2 + 3 variants) | ANSI/NISO Z39.102-2022. Markup for standards documents (ISO, ANSI, national and regional standards bodies). Based on JATS with standards-specific metadata, terminology (TBX), and structural elements. |
+
+---
+
 ## Entity Libraries
 
 | Directory | Contents |
@@ -127,4 +166,4 @@ Each standard includes OASIS XML Catalog files (`catalog.xml`) for schema resolu
 
 ## License
 
-DITA document types are copyright OASIS and distributed under the OASIS IPR policy. S1000D schemas are maintained by the ASD S1000D Council. Military specifications are public domain (U.S. Government works). ATA specifications are copyright Air Transport Association.
+DITA document types are copyright OASIS and distributed under the OASIS IPR policy. S1000D schemas are maintained by the ASD S1000D Council. Military specifications are public domain (U.S. Government works). ATA specifications are copyright Air Transport Association. DocBook is copyright OASIS. JATS and BITS are produced by the National Library of Medicine (NLM/NIH) and are in the public domain. NISO STS is copyright NISO and distributed under the NISO IPR policy.

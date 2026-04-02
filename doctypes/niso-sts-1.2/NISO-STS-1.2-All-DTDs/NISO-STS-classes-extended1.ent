@@ -1,0 +1,140 @@
+<!-- ============================================================= -->
+<!--  MODULE:    NISO STS Extended DTD Customize Classes Module    -->
+<!--  VERSION:   ANSI/NISO Z39.102-2022, STS:                      --> 
+<!--             Standards Standards Tag Suite (Version 1.2)       --> 
+<!--  DATE:      October 2022                                       -->
+<!--                                                               -->
+<!-- ============================================================= -->
+<!--                    PUBLIC DOCUMENT TYPE DEFINITION            -->
+<!--                        TYPICAL INVOCATION                     -->
+<!--
+"-//NISO//DTD NISO STS Extended DTD Customize Classes v1.2 20221031//EN"
+     Delivered as file "NISO-STS-classes-extended1.ent"
+                                                                   -->
+<!-- ============================================================= -->
+<!-- SYSTEM:     NISO Standards Tag Suite (NISO STS)                -->
+<!--                                                               -->
+<!--             This new module extends the capabilities of       -->
+<!--             ISO STS V1.1 DTD.                                 -->
+<!--                                                               -->
+<!-- PURPOSE:    To declare the Parameter Entities (PEs) used to   -->
+<!--             over-ride named element classes in the underlying -->
+<!--             JATS (Z39.96) Journal Publishing DTD as well as   -->
+<!--             the NISO STS base classes                         -->
+<!--                                                               -->
+<!--             Note: Since PEs must be declared before they      -->
+<!--             are used, this module must be called before the   -->
+<!--             other class modules.                              -->
+<!--                                                               -->
+<!-- CONTAINS:   PEs for changing the contents of the default      -->
+<!--             element classes (names ending in '.class').       -->
+<!--                                                               -->
+<!-- CREATED BY: Mulberry Technologies, Inc.                       -->
+<!--             Deborah Aleyne Lapeyre and B. Tommie Usdin        -->
+<!--             in support of NISO and the NISO STS Committee.    -->
+<!--             Mulberry Technologies work was supported by the   -->
+<!--             American Society of Mechanical Engineers (ASME)   -->
+<!--             and ASTM International.                           -->
+<!--                                                               -->
+<!-- COPYRIGHT AND LICENSE:                                        -->
+<!--             Copyright © 2017, 2022 by ISO, the American       -->
+<!--             Society of  Mechanical Engineers (ASME),          -->
+<!--             ASTM International, Mulberry Technologies, Inc.,  -->
+<!--             and the National Information Standards            -->
+<!--             Organization (NISO).                              -->
+<!--                                                               -->
+<!--             This work is licensed under a Creative Commons    -->
+<!--             Attribution-ShareAlike 4.0 International License. -->
+<!--             To view a copy of this license, visit             -->
+<!--                http://creativecommons.org/licenses/by-sa/4.0/ -->
+<!--             or send a letter to Creative Commons, PO Box 1866,-->
+<!--             Mountain View, CA 94042, USA                      -->
+<!--                                                               -->
+<!-- ORIGINAL CREATION DATE:                                       -->
+<!--             October 2016                                      -->
+<!--                                                               -->
+<!-- ============================================================= -->
+<!--                    DTD VERSION/CHANGE HISTORY                 -->
+<!-- ============================================================= -->
+<!--
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)  
+     =============================================================
+     NISO STS Version 1.2 (ANSI/NISO Z39.102-2022)
+                                      (DAL/BTU) v1.2 (2022-10-31)
+      
+     ANSI NISO STS is a continuing maintenance NISO Standard, 
+     which requires voting by both the NISO and ANSI memberships 
+     to be changed. This version of the NISO STS was approved 
+     by ANSI vote on October 21, 2022, so it supersedes the 
+     2017 version and all committee drafts, becoming 
+     NISO STS v1.2 20221031 (ANSI/NISO Z39.102-2022).
+
+     The formal public identifiers have been changed in the  
+     modules and the OASIS XML catalogs.
+ 
+  4. Inline Code - Redefined %alternatives-display.class 
+     to add <inline-code>, which is not yet part of JATS.
+
+  3. NISO STS 'v1.1d1 20210831' becomes 'v1.2 20221031'
+     'ANSI/NISO Z39.102-2017' becomes 'ANSI/NISO Z39.102-2022'
+ 
+     =============================================================
+     NISO STS Version 1.1d1 (ANSI/NISO Z39.102-202x)
+                                  (DAL/BTU) v1.1d1 (2021-08-31)
+      
+     ANSI NISO STS is a continuing maintenance NISO Standard, 
+     which requires voting by the NISO and ANSI memberships 
+     to be changed. 
+      
+     This ***DRAFT*** DTD represents an interim version of the
+     non-normative STS DTD Suite, as an indication to STS users
+     of the decisions that have been made by the STS Standing
+     Committee. This DRAFT has not yet been given public review 
+     or voting; it is for Standing Committee review and
+     testing. 
+
+     The formal public identifiers have been changed in the  
+     modules and the OASIS XML catalogs.
+
+  2. <inline-media> added to <alternatives>.
+
+  1. STS 'v1.0 20171031' becomes 'v1.1d1 20210831' 
+                                                                   -->   
+ 
+<!-- ============================================================= -->
+<!--                    OASIS ELEMENTS BROUGHT IN                  -->
+<!-- ============================================================= -->
+
+
+<!--                    ALTERNATIVES DISPLAY CLASS ELEMENTS        -->
+<!--                    Display elements that can be alternatives to
+                        each  other inside an alternatives element.
+                          XHTML Table Model    table
+                          OASIS CALS Table     oasis:table         -->
+<!ENTITY % alternatives-display.class
+                        "array | chem-struct | code | graphic |
+                         inline-code | inline-graphic | inline-media |
+                         inline-supplementary-material |
+                         media | preformat | private-char |
+                         supplementary-material |
+                         table | %otable.qname; |
+                         textual-form"                               >
+
+
+<!--                    TABLE CLASS ELEMENTS                       -->
+<!--                    Elements that will be used to contain the
+                        rows and columns inside the Table Wrapper
+                        element <table-wrap>.  The following 
+                        elements can be set up for inclusion:
+                          XHTML Table Model    table
+                          OASIS CALS Table     oasis:table         -->
+<!ENTITY % table.class  "table | %otable.qname;"                     >
+
+
+<!--                    TABLE BODY CLASS                           -->
+<!--                    To include just a table body <tbody>
+                        element. Both XHTML and OASIS table types. -->
+<!ENTITY % tbody.class  "tbody | %otbody.qname;"                     >
+
+
+<!-- ================== End NISO STS Extended Class Overrides ==== -->

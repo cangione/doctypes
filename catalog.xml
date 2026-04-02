@@ -54,4 +54,32 @@
   <!-- ============================================================ -->
   <nextCatalog catalog="doctypes/S1000D_6.0_Schemas/xml_schema_cat/catalog.xml"/>
 
+  <!-- ============================================================ -->
+  <!-- DocBook 4.5 (SGML DTD, XML DTD)                              -->
+  <!-- ============================================================ -->
+  <nextCatalog catalog="doctypes/docbook-4.5/xml/catalog.xml"/>
+  <nextCatalog catalog="doctypes/docbook-4.5/sgml/catalog.xml"/>
+
+  <!-- ============================================================ -->
+  <!-- DocBook 5.1 (RNG, XSD)                                       -->
+  <!-- ============================================================ -->
+  <nextCatalog catalog="doctypes/docbook-5.1/schemas/catalog.xml"/>
+
+  <!-- ============================================================ -->
+  <!-- JATS 1.4 — Journal Article Tag Suite (DTD)                   -->
+  <!-- ============================================================ -->
+  <nextCatalog catalog="doctypes/jats-1.4/archiving/JATS-Archiving-1-4-MathML3-DTD/catalog-jats-v1-4-no-base.xml"/>
+  <nextCatalog catalog="doctypes/jats-1.4/publishing/JATS-Publishing-1-4-MathML3-DTD/catalog-jats-v1-4-no-base.xml"/>
+  <nextCatalog catalog="doctypes/jats-1.4/articleauthoring/JATS-Authoring-1-4-MathML3-DTD/catalog-jats-v1-4-no-base.xml"/>
+
+  <!-- ============================================================ -->
+  <!-- BITS 2.1 — Book Interchange Tag Suite (DTD)                  -->
+  <!-- ============================================================ -->
+  <nextCatalog catalog="doctypes/bits-2.1/BITS-2-1-DTD/catalog-bits-v2-1-no-base.xml"/>
+
+  <!-- ============================================================ -->
+  <!-- NISO STS 1.2 — Standards Tag Suite (DTD)                     -->
+  <!-- ============================================================ -->
+  <nextCatalog catalog="doctypes/niso-sts-1.2/NISO-STS-1.2-All-DTDs/catalog-niso-sts-v1-2-no-base.xml"/>
+
 </catalog>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DITA 1.2 — Schema Documentation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      color: white;
+      padding: 3em 2em;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.3em;
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: 1.1em;
+      opacity: 0.95;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 3em auto;
+      padding: 0 2em;
+    }
+
+    .intro {
+      background: white;
+      padding: 2em;
+      border-radius: 6px;
+      margin-bottom: 3em;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      line-height: 1.8;
+    }
+
+    .intro h2 {
+      color: #2c3e50;
+      margin-bottom: 1em;
+      font-size: 1.5em;
+    }
+
+    .intro p {
+      margin-bottom: 0.8em;
+    }
+
+    .schemas-section {
+      margin-bottom: 3em;
+    }
+
+    .section-title {
+      font-size: 1.4em;
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 0.5em;
+      margin-bottom: 1.5em;
+      font-weight: 600;
+    }
+
+    .schema-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5em;
+      margin-bottom: 3em;
+    }
+
+    .schema-card {
+      background: white;
+      border-left: 4px solid #3498db;
+      padding: 1.5em;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .schema-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+    }
+
+    .schema-card h3 {
+      color: #2c3e50;
+      font-size: 1.1em;
+      margin-bottom: 0.5em;
+      font-weight: 600;
+    }
+
+    .schema-card p {
+      color: #666;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    .card-link {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 1em;
+      display: inline-block;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      color: #777;
+      border-top: 1px solid #ddd;
+      margin-top: 4em;
+    }
+
+    .category-base {
+      border-left-color: #e74c3c;
+    }
+
+    .category-technical {
+      border-left-color: #3498db;
+    }
+
+    .category-learning {
+      border-left-color: #2ecc71;
+    }
+
+    .category-bookmap {
+      border-left-color: #f39c12;
+    }
+
+    .category-other {
+      border-left-color: #9b59b6;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>DITA 1.2 Schema Documentation</h1>
+  <p>Complete reference documentation for DITA 1.2 top-level schema files</p>
+</header>
+
+<main>
+  <div class="intro">
+    <h2>Overview</h2>
+    <p>This documentation provides detailed schema reference information for DITA (Darwin Information Typing Architecture) version 1.2 top-level shell schemas.</p>
+    <p>Each schema file below has been processed with the xs3p documentation generator to create browsable HTML reference documentation, including:</p>
+    <ul style="margin-left: 2em; margin-top: 1em;">
+      <li>Global elements and types</li>
+      <li>Type hierarchies and inheritance chains</li>
+      <li>Content models and attribute groups</li>
+      <li>Detailed component documentation</li>
+      <li>Cross-referenced links between types</li>
+    </ul>
+  </div>
+
+  <div class="schemas-section">
+    <div class="section-title">Base Schemas</div>
+    <div class="schema-grid">
+      <a href="basetopic.html" class="schema-card category-base">
+        <h3>basetopic.xsd</h3>
+        <p>Base topic schema defining fundamental DITA topic structure and common elements.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="basemap.html" class="schema-card category-base">
+        <h3>basemap.xsd</h3>
+        <p>Base map schema providing the foundation for DITA map types.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="schemas-section">
+    <div class="section-title">Technical Content Schemas</div>
+    <div class="schema-grid">
+      <a href="topic.html" class="schema-card category-technical">
+        <h3>topic.xsd</h3>
+        <p>Generic topic schema for general-purpose documentation topics.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="map.html" class="schema-card category-technical">
+        <h3>map.xsd</h3>
+        <p>Map schema for organizing and cross-referencing topics.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="concept.html" class="schema-card category-technical">
+        <h3>concept.xsd</h3>
+        <p>Concept topic schema for explanatory and background material.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="task.html" class="schema-card category-technical">
+        <h3>task.xsd</h3>
+        <p>Task topic schema for procedural instructions with strict steps.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="generalTask.html" class="schema-card category-technical">
+        <h3>generalTask.xsd</h3>
+        <p>General task schema with flexible procedural structure.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="reference.html" class="schema-card category-technical">
+        <h3>reference.xsd</h3>
+        <p>Reference topic schema for technical reference material.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="ditabase.html" class="schema-card category-technical">
+        <h3>ditabase.xsd</h3>
+        <p>Unified schema combining all technical content types.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="glossentry.html" class="schema-card category-technical">
+        <h3>glossentry.xsd</h3>
+        <p>Glossary entry topic for terminology definitions.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="glossgroup.html" class="schema-card category-technical">
+        <h3>glossgroup.xsd</h3>
+        <p>Glossary group topic for organizing glossary entries.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="glossary.html" class="schema-card category-technical">
+        <h3>glossary.xsd</h3>
+        <p>Map schema specialized for glossary collections.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="schemas-section">
+    <div class="section-title">Learning and Training Schemas</div>
+    <div class="schema-grid">
+      <a href="learningMap.html" class="schema-card category-learning">
+        <h3>learningMap.xsd</h3>
+        <p>Learning map for organizing learning objects and resources.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="learningContent.html" class="schema-card category-learning">
+        <h3>learningContent.xsd</h3>
+        <p>Learning content topic for instructional material.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="learningOverview.html" class="schema-card category-learning">
+        <h3>learningOverview.xsd</h3>
+        <p>Learning overview topic providing course or module introduction.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="learningSummary.html" class="schema-card category-learning">
+        <h3>learningSummary.xsd</h3>
+        <p>Learning summary topic for course or module conclusions.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="learningAssessment.html" class="schema-card category-learning">
+        <h3>learningAssessment.xsd</h3>
+        <p>Learning assessment topic for quizzes and evaluations.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="learningPlan.html" class="schema-card category-learning">
+        <h3>learningPlan.xsd</h3>
+        <p>Learning plan topic for course or curriculum planning.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="learningBookmap.html" class="schema-card category-learning">
+        <h3>learningBookmap.xsd</h3>
+        <p>Learning bookmap for structured learning collections.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="schemas-section">
+    <div class="section-title">Book and Publishing Schemas</div>
+    <div class="schema-grid">
+      <a href="bookmap.html" class="schema-card category-bookmap">
+        <h3>bookmap.xsd</h3>
+        <p>Bookmap schema for structured publishing and print materials.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="schemas-section">
+    <div class="section-title">Domain-Specific Schemas</div>
+    <div class="schema-grid">
+      <a href="machineryTask.html" class="schema-card category-other">
+        <h3>machineryTask.xsd</h3>
+        <p>Machinery task schema for technical procedures in machinery documentation.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="subjectScheme.html" class="schema-card category-other">
+        <h3>subjectScheme.xsd</h3>
+        <p>Subject scheme map for defining taxonomy and controlled vocabularies.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="classifyMap.html" class="schema-card category-other">
+        <h3>classifyMap.xsd</h3>
+        <p>Classification map for metadata-driven content organization.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+      <a href="ditaval.html" class="schema-card category-other">
+        <h3>ditaval.xsd</h3>
+        <p>DITAVAL schema for conditional processing properties and filtering rules.</p>
+        <span class="card-link">View Documentation →</span>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>Generated schema documentation using xs3p XSLT stylesheet</p>
+  <p style="font-size: 0.9em; color: #999; margin-top: 0.5em;">DITA 1.2 Specification</p>
+</footer>
+
+</body>
+</html>

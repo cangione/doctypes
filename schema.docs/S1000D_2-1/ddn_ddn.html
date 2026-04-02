@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:exslt="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>S1000D 2-1 — ddn (ddn)</title><meta charset="UTF-8"></meta><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"></link><style type="text/css">
+
+
+nav, section {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+
+/*dl {
+  display: grid;
+  grid-template-columns: max-content auto; }
+  dl dt p, dl dd p {
+    margin-top: 0; }
+  dl dt {
+    grid-column-start: 1; }
+  dl dd {
+    grid-column-start: 2; }
+*/
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4em;
+  color: -internal-root-color;
+  background-color: #ffffff; }
+  body main {
+    margin: 0 3em 0 6em; }
+  body main {
+    margin: 0; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1.3; }
+
+
+body {
+  margin-left: 270px;
+  margin-right: 2em; }
+
+main {
+  padding-left: 4em;
+  padding-right: 2em; }
+
+.title-section{
+  padding-left: 4em;
+  padding-top: 2em; }
+
+
+
+
+
+h2 p {
+  display: inline; }
+
+
+
+/* Navigation*/
+#toc {
+  font-weight: 400; }
+  #toc a {
+   color: black;
+   text-decoration-color: black; }
+  #toc ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    #toc ul li a {
+      padding: 5px 10px; }
+    #toc ul a {
+      text-decoration: none;
+      display: block; }
+      #toc ul a:hover {
+        box-shadow: none;
+        color: black; }
+  #toc .h2 {
+    padding-left: 30px; }
+  #toc .h3 {
+    padding-left: 50px; }
+  #toc .toc-active, #toc li:hover {
+    background: #f7f7f7;
+    box-shadow: inset -5px 0px 10px -5px #f7f7f7 !important; }
+    #toc .toc-active a, #toc li:hover a {
+      color: black; }
+  @media print {
+    #toc .toc-active, #toc li:hover {
+      background: white;
+      box-shadow: none !important; }
+    #toc li:hover a {
+      color: black; } }
+  @media screen and (max-width: 768px) {
+    #toc {
+      padding: 0 1.5em;
+      overflow: visible; } }
+  #toc .toc-active,
+  #toc li:hover {
+    box-shadow: 0px 1px 0px 0px black !important;
+    background: none; }
+  #toc li:before {
+    content: " ";
+    display: none; }
+
+nav {
+  line-height: 1.2em; }
+  @media screen and (min-width: 768px) {
+    nav {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 270px;
+      font-size: 0.9em;
+      overflow: auto;
+      padding: 0 0 0 0px;
+      background-color: #fefefe; } }
+  @media print {
+    nav {
+      position: relative;
+      width: auto;
+      font-size: 0.9em;
+      overflow: auto;
+      padding: 0;
+      margin-right: 0;
+      background-color: white; } }
+#toggle {
+  margin-left: -4em;
+  margin-top: -2em; }
+  @media screen and (min-width: 768px) {
+    #toggle {
+      position: fixed;
+      height: 100%;
+      width: 20px;
+      font-weight: bold;
+      background-color: #d8e4ff;
+      color: black !important;
+      cursor: pointer;
+      z-index: 100; }
+      #toggle span {
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%); } }
+  @media screen and (max-width: 768px) {
+    #toggle {
+      display: none; } }
+  @media print {
+    #toggle {
+      display: none; } }
+@media screen and (min-width: 768px) {
+  .container {
+    padding-left: 360px; }
+  .rule.toc {
+    display: none; }
+  h1.toc-contents {
+    margin-top: 1em; }
+  ul#toc-list {
+    padding: 0;
+    margin: 0; } }
+
+
+ul, ol {
+  margin-left: 2em; }
+
+#toc-list ul {
+  margin-bottom: 0.25em; }
+
+#toc-list ol li {
+  list-style-type: none; }
+
+
+/* XS3P specific CSS */
+body {
+    background-color: #FFF;
+    
+}
+
+.nav > li.active {
+    background-color: #FFF;
+}
+.nav > li > a:hover {
+   
+    background-color: rgb(0,0,0, 0.05);
+}
+
+.nav-sub-item > a {
+    padding-left: 30px !important;
+}
+
+
+.nav-sub-item strong {
+      font-weight: normal; }
+
+//.nav-list-elements
+.nav {
+   //background-color: #efe;
+   background-color: #e4ecff;
+}
+
+.xs3p-sidenav {
+    //background-color: #efe;
+    background-color: #e4ecff;
+}
+
+code {
+    color: #333;
+}
+
+a.name {
+    padding-top: 65px;
+}
+
+a:not([href]) {
+   color:#1c476c;
+}
+
+a:not([href]):hover {
+  text-decoration: none;
+}
+
+
+h3.xs3p-subsection-heading {
+    margin-bottom: 30px;
+}
+
+section, #top {
+    margin-top: -65px;
+    padding-top: 65px;
+}
+
+pre {
+    padding: 5px;
+}
+
+.xs3p-in-panel-table {
+    margin-bottom: 0px;
+}
+
+.xs3p-collapse-button {
+    font-size: 8pt;
+}
+.panel-heading .xs3p-panel-title:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+    float: left;
+    color: grey;
+    margin-right: 10px;
+}
+.panel-heading .xs3p-panel-title.collapsed:after {
+    content: "\e080";
+}
+.panel-info > .panel-heading .xs3p-panel-title:after {
+    color: white;
+}
+.xs3p-panel-help {
+    color: #888888;
+    cursor: pointer;
+}
+
+.panel-group {
+    margin-bottom: 20px;
+}
+
+.btn-doc {
+    padding: 0px;
+    border: 0px none;
+    background: none repeat scroll 0% 0% transparent;
+    line-height: 1;
+    font-size: 12px;
+}
+
+.unpre {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    white-space: normal;
+    word-break: normal;
+    word-wrap: normal;
+}
+
+.popover {
+    max-width: 400px;
+}
+
+// Syntax highlighting
+.codehilite .err {color: #FFF; background-color: #D2322D; font-weight: bold;} /* Error */
+.codehilite .c   {color: #999;}
+.codehilite .cs  {color: #999; font-style: italic;}
+.codehilite .nt  {color: #2F6F9F;}
+.codehilite .nn  {color: #39B3D7;}
+.codehilite .na  {color: #47A447;}
+.codehilite .s   {color: #D2322D;}
+.codehilite a       {color: inherit !important; text-decoration: underline !important;}
+.codehilite a:hover {opacity: 0.7 !important;}
+
+dl {
+  margin-bottom: 10px;
+}
+
+dt {
+	font-weight: normal;
+
+	margin-bottom: 10px;
+}
+
+dt.header{
+	font-weight: 700;
+}
+
+.dl-horizontal dt {
+	white-space: normal;
+}
+
+dd.header{
+	font-weight: 700;
+}
+
+dd ul {
+	margin-left: 0em;
+}
+
+.bs-callout {
+   padding: 20px;
+   padding-top: 10px;
+   padding-bottom: 5px;
+   margin: 20px 0;
+   border: 1px solid #eee;
+   border-left-width: 5px;
+   border-radius: 3px;
+}
+.bs-callout-danger {
+   border-left-color: #d9534f;
+}
+.bs-callout-warning {
+   border-left-color: #f0ad4e;
+}
+.bs-callout-info {
+   border-left-color: #5bc0de;
+}
+.bs-callout h4 {
+   margin-top: 0;
+   margin-bottom: 5px;
+}
+.bs-callout-danger h4 {
+   color: #d9534f;
+}
+.bs-callout-warning h4 {
+   color: #f0ad4e;
+}
+.bs-callout-info h4 {
+   color: black;
+   font-size: 11pt;
+}
+
+
+      </style><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+               //Import JQuery, required for Bootstrap
+            </script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js">
+               // Import Bootstrap JS code
+            </script><script src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.js">
+              // Import Markdown converter for comments processing
+            </script></head><body lang="en" xml:lang="en"><div class="title-section"><div id="toggle"><span>&lt;</span></div><div class="modal fade ddn" id="idp105548804860872-popup" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="idp105548804860872-label">Element ddn</h4></div><div class="modal-body"><div class="annotation documentation" id="wdoc-idp105548804860872-hidden"><div class="hidden" id="idp105548804860872-hidden-doc-raw">
+    **********************************************************************
+    * Define Element ddn (Data Dispatch Note) containing:-               *
+    *  rdf:Description - Optional  Single  contains Defintion stored in  *
+    *                                               entity %DCMES;       *
+    *  ddnc            - Mandatory Single  contains modelic, sendid,     *
+    *                                               recvid, diyear,      *
+    *                                               seqnum.              *
+    *  issdate         - Mandatory Single  contains No Other Tags.       *
+    *  security        - Mandatory Single  contains No Other Tags.       *
+    *  datarest        - Optional  Single  contains instruct, inform.    *
+    *  dispto          - Mandatory Single  contains dispaddr.            *
+    *  dispfrom        - Mandatory Single  contains dispaddr.            *
+    *  authrtn         - Mandatory Single  contains Parsed Character Data*
+    *  mediaid         - Optional  Single  contains No Other Tags.       *
+    *  remarks         - Optional  Single  contains Definition stored in *
+    *                                               entity %SPAR;.       *
+    *  delivlst        - Optional  Single  contains ddnfilen, dmcoricn,  *
+    *                                               issno.               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED  - Unique identifier of element.    *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804860872-hidden-doc"> </div></div></div></div><div class="modal fade ddnc" id="idp105548804878920-popup" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="idp105548804878920-label">Element ddnc</h4></div><div class="modal-body"><div class="annotation documentation" id="wdoc-idp105548804878920-hidden"><div class="hidden" id="idp105548804878920-hidden-doc-raw">
+    **********************************************************************
+    * Define Element ddnc (Data Dispatch Note Identification Code)       *
+    * containing:-                                                       *
+    *  modelic   - Mandatory   Single    contains Parsed Character Data. *
+    *  sendid    - Mandatory   Single    contains Parsed Character Data. *
+    *  recvid    - Mandatory   Single    contains Parsed Character Data. *
+    *  diyear    - Mandatory   Single    contains Parsed Character Data. *
+    *  seqnum    - Mandatory   Single    contains Parsed Character Data. *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804878920-hidden-doc"> </div></div></div></div><div class="modal fade modelic" id="idp105548804870344-popup" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="idp105548804870344-label">Element modelic</h4></div><div class="modal-body"><div class="annotation documentation" id="wdoc-idp105548804870344-hidden"><div class="hidden" id="idp105548804870344-hidden-doc-raw">
+    **********************************************************************
+    * Define Element modelic (Model Identification) containing:-         *
+    *  Parsed Character Data.                                            *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804870344-hidden-doc"> </div></div></div></div><div class="modal fade recvid" id="idp105548804865224-popup" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="idp105548804865224-label">Element recvid</h4></div><div class="modal-body"><div class="annotation documentation" id="wdoc-idp105548804865224-hidden"><div class="hidden" id="idp105548804865224-hidden-doc-raw">
+    **********************************************************************
+    * Define Element recvid (Receiver Identification) containing:-       *
+    *  Parsed Character Data.                                            *
+    * must contain the NCAGE code                                        *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804865224-hidden-doc"> </div></div></div></div><div class="modal fade dispto" id="idp105548804761160-popup" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="idp105548804761160-label">Element dispto</h4></div><div class="modal-body"><div class="annotation documentation" id="wdoc-idp105548804761160-hidden"><div class="hidden" id="idp105548804761160-hidden-doc-raw">
+    **********************************************************************
+    * Define Element dispto (Receiving Company/Authority Details, eg     *
+    *                        full address of receiving person including  *
+    *                        organization/department)                    *
+    * containing:-                                                       *
+    *   dispaddr - Mandatory   Single      contains enterprise, person,  *
+    *                                               address.             *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804761160-hidden-doc"> </div></div></div></div><div class="modal fade dispfrom" id="idp105548804760648-popup" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="idp105548804760648-label">Element dispfrom</h4></div><div class="modal-body"><div class="annotation documentation" id="wdoc-idp105548804760648-hidden"><div class="hidden" id="idp105548804760648-hidden-doc-raw">
+    **********************************************************************
+    * Define Element dispfrom (Sending CompanyAuthority Details, eg      *
+    *                          full address of sending person including  *
+    *                          organization/department)                  *
+    * containing:-                                                       *
+    *   dispaddr - Mandatory   Single      contains enterprise, person,  *
+    *                                               address.             *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804760648-hidden-doc"> </div></div></div></div><div class="modal fade authrtn" id="idp105548804755144-popup" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="idp105548804755144-label">Element authrtn</h4></div><div class="modal-body"><div class="annotation documentation" id="wdoc-idp105548804755144-hidden"><div class="hidden" id="idp105548804755144-hidden-doc-raw">
+    **********************************************************************
+    * Define Element authrtn (Authorisation Identification, eg name of   *
+    *                         the person initiating/authorising the      *
+    *                         data exchange)                             *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804755144-hidden-doc"> </div></div></div></div><div class="modal fade mediaid" id="idp105548804752968-popup" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="idp105548804752968-label">Element mediaid</h4></div><div class="modal-body"><div class="annotation documentation" id="wdoc-idp105548804752968-hidden"><div class="hidden" id="idp105548804752968-hidden-doc-raw">
+    **********************************************************************
+    * Define Element mediaid (Media Identification) containing:-         *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * label   - NMTOKEN - REQUIRED - Starting Media Label in Volume Set. *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804752968-hidden-doc"> </div></div></div></div><div class="modal fade delivlst" id="idp105548804748744-popup" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="idp105548804748744-label">Element delivlst</h4></div><div class="modal-body"><div class="annotation documentation" id="wdoc-idp105548804748744-hidden"><div class="hidden" id="idp105548804748744-hidden-doc-raw">
+    **********************************************************************
+    * Define Element delivlst (Data Delivery List Entry) containing:-    *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *  ddnfilen  - Mandatory   Single    contains Parsed Character Data. *
+    *  dmcoricn  - Optional    Single    contains Parsed Character Data. *
+    *  issno     - Optional    Single    contains No Other Tags.         *
+    *====================================================================*
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804748744-hidden-doc"> </div></div></div></div><div class="modal fade ddnfilen" id="idp105548804775368-popup" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="idp105548804775368-label">Element ddnfilen</h4></div><div class="modal-body"><div class="annotation documentation" id="wdoc-idp105548804775368-hidden"><div class="hidden" id="idp105548804775368-hidden-doc-raw">
+    **********************************************************************
+    * Define Element ddnfilen (Dispatched File Name) containing:-        *
+    *  Parsed Character Data.                                            *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804775368-hidden-doc"> </div></div></div></div><div class="modal fade dmcoricn" id="idp105548804771656-popup" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="idp105548804771656-label">Element dmcoricn</h4></div><div class="modal-body"><div class="annotation documentation" id="wdoc-idp105548804771656-hidden"><div class="hidden" id="idp105548804771656-hidden-doc-raw">
+    **********************************************************************
+    * Define Element dmcoricn (DMC or ICN or PMC of dispatched file)     *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804771656-hidden-doc"> </div></div></div></div><h1><a id="top">S1000D 2-1 — ddn (ddn)</a></h1><section id="SectionSchemaProperties"><h2><a id="SchemaProperties">Schema Document Properties</a></h2><dl class="dl-horizontal"><dt class="header"><a title="Look up 'Target Namespace' in glossary" href="#term_TargetNS">Target Namespace</a></dt><dd class="">None</dd><dt class="header">Element and Attribute Namespaces</dt><dd class=""><ul><li>Global element and attribute declarations belong to this schema's target namespace.</li><li>By default, local element declarations belong to this schema's target namespace.</li><li>By default, local attribute declarations belong to this schema's target namespace.</li></ul></dd><dt class="header">Schema Composition</dt><dd class=""><ul><li>This schema imports schema(s) from the following namespace(s):<ul><li><em>http://www.w3.org/1999/02/22-rdf-syntax-ns#</em> (at rdf_ddn.xsd)</li></ul></li></ul></dd></dl><h4>Declared Namespaces:</h4><dl class="dl-horizontal"><dt class="header">Prefix</dt><dd class="header">Namespace</dd><dt class=""><a id="ns_xml">xml</a></dt><dd class="">http://www.w3.org/XML/1998/namespace</dd><dt class=""><a id="ns_rdf">rdf</a></dt><dd class="">http://www.w3.org/1999/02/22-rdf-syntax-ns#</dd><dt class=""><a id="ns_xs">xs</a></dt><dd class="">http://www.w3.org/2001/XMLSchema</dd></dl><div class="bs-callout bs-callout-info"><h4>Schema Component Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table below displays the underlying XML representation of the schema component. (Annotations are not shown.)"><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:schema</span> <span class="na">elementFormDefault=</span><span class="s">"qualified"</span> <span class="na">attributeFormDefault=</span><span class="s">"qualified"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:import</span> <span class="na">namespace=</span><span class="s">"http://www.w3.org/1999/02/22-rdf-syntax-ns#"</span> <span class="na">schemaLocation=</span><span class="s">"rdf_ddn.xsd"</span><span class="nt">/&gt;</span>
+<span class="scContent">...</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:schema&gt;</span>
+</pre></div><div style="text-align: right; clear: both;"><a href="#top" title="Go to top of page"><span class="glyphicon glyphicon-chevron-up"> </span></a></div><hr></hr></section><section id="SectionSchemaElements"><h2><a id="SchemaElements">Elements</a></h2><h3 class="xs3p-subsection-heading">Element: <a id="element_authrtn"></a><strong>authrtn</strong></h3><object data="diagrams/authrtn.svg" type="image/svg+xml"></object><dl class="dl-horizontal"><dt class="header">Type</dt><dd class=""><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></dd></dl><dl class="dl-horizontal"><dt>Documentation</dt><dd><div class="annotation documentation" id="wdoc-idp105548804755144"><div class="hidden" id="idp105548804755144-doc-raw">
+    **********************************************************************
+    * Define Element authrtn (Authorisation Identification, eg name of   *
+    *                         the person initiating/authorising the      *
+    *                         data exchange)                             *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804755144-doc"> </div></div></dd></dl><div class="bs-callout bs-callout-info"><h4>XML Instance Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.
+         &lt;ul&gt;
+         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;
+         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;
+         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;
+         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;
+         &lt;li&gt;More stuff&lt;/li&gt;
+         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;
+         &lt;/ul&gt;
+      "><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;authrtn&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> <span class="nt">&lt;/authrtn&gt;</span>
+</pre></div><div class="bs-callout bs-callout-info"><h4>Schema Component Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table below displays the underlying XML representation of the schema component. (Annotations are not shown.)"><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"authrtn"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>"</span><span class="nt">/&gt;</span>
+</pre></div><div style="text-align: right; clear: both;"><a href="#top" title="Go to top of page"><span class="glyphicon glyphicon-chevron-up"> </span></a></div><hr></hr><h3 class="xs3p-subsection-heading">Element: <a id="element_ddn"></a><strong>ddn</strong></h3><object data="diagrams/ddn.svg" type="image/svg+xml"></object><dl class="dl-horizontal"><dt class="header">Type</dt><dd class="">Locally-defined complex type</dd></dl><dl class="dl-horizontal"><dt>Documentation</dt><dd><div class="annotation documentation" id="wdoc-idp105548804860872"><div class="hidden" id="idp105548804860872-doc-raw">
+    **********************************************************************
+    * Define Element ddn (Data Dispatch Note) containing:-               *
+    *  rdf:Description - Optional  Single  contains Defintion stored in  *
+    *                                               entity %DCMES;       *
+    *  ddnc            - Mandatory Single  contains modelic, sendid,     *
+    *                                               recvid, diyear,      *
+    *                                               seqnum.              *
+    *  issdate         - Mandatory Single  contains No Other Tags.       *
+    *  security        - Mandatory Single  contains No Other Tags.       *
+    *  datarest        - Optional  Single  contains instruct, inform.    *
+    *  dispto          - Mandatory Single  contains dispaddr.            *
+    *  dispfrom        - Mandatory Single  contains dispaddr.            *
+    *  authrtn         - Mandatory Single  contains Parsed Character Data*
+    *  mediaid         - Optional  Single  contains No Other Tags.       *
+    *  remarks         - Optional  Single  contains Definition stored in *
+    *                                               entity %SPAR;.       *
+    *  delivlst        - Optional  Single  contains ddnfilen, dmcoricn,  *
+    *                                               issno.               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id       - ID       - IMPLIED  - Unique identifier of element.    *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804860872-doc"> </div></div></dd></dl><div class="bs-callout bs-callout-info"><h4>XML Instance Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.
+         &lt;ul&gt;
+         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;
+         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;
+         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;
+         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;
+         &lt;li&gt;More stuff&lt;/li&gt;
+         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;
+         &lt;/ul&gt;
+      "><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;ddn</span>
+ <span class="na">id=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:ID</span>"</span> <span class="cs">[0..1]</span>
+<span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_rdf" title="Find out namespace of 'rdf' prefix">rdf</a>:<a title='"Description" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;Description&quot; element declaration could not be found.');">Description</a>&gt;</span> ... <span class="nt">&lt;/<a href="#ns_rdf" title="Find out namespace of 'rdf' prefix">rdf</a>:<a title='"Description" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;Description&quot; element declaration could not be found.');">Description</a>&gt;</span> <span class="cs">[0..1]</span>
+   <span class="nt">&lt;<a title='Jump to "ddnc" element declaration.' href="#element_ddnc">ddnc</a>&gt;</span> ... <span class="nt">&lt;/<a title='Jump to "ddnc" element declaration.' href="#element_ddnc">ddnc</a>&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;<a title='"issdate" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;issdate&quot; element declaration could not be found.');">issdate</a>&gt;</span> ... <span class="nt">&lt;/<a title='"issdate" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;issdate&quot; element declaration could not be found.');">issdate</a>&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;<a title='"security" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;security&quot; element declaration could not be found.');">security</a>&gt;</span> ... <span class="nt">&lt;/<a title='"security" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;security&quot; element declaration could not be found.');">security</a>&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;<a title='"datarest" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;datarest&quot; element declaration could not be found.');">datarest</a>&gt;</span> ... <span class="nt">&lt;/<a title='"datarest" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;datarest&quot; element declaration could not be found.');">datarest</a>&gt;</span> <span class="cs">[0..1]</span>
+   <span class="nt">&lt;<a title='Jump to "dispto" element declaration.' href="#element_dispto">dispto</a>&gt;</span> ... <span class="nt">&lt;/<a title='Jump to "dispto" element declaration.' href="#element_dispto">dispto</a>&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;<a title='Jump to "dispfrom" element declaration.' href="#element_dispfrom">dispfrom</a>&gt;</span> ... <span class="nt">&lt;/<a title='Jump to "dispfrom" element declaration.' href="#element_dispfrom">dispfrom</a>&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;<a title='Jump to "authrtn" element declaration.' href="#element_authrtn">authrtn</a>&gt;</span> ... <span class="nt">&lt;/<a title='Jump to "authrtn" element declaration.' href="#element_authrtn">authrtn</a>&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;<a title='Jump to "mediaid" element declaration.' href="#element_mediaid">mediaid</a>&gt;</span> ... <span class="nt">&lt;/<a title='Jump to "mediaid" element declaration.' href="#element_mediaid">mediaid</a>&gt;</span> <span class="cs">[0..1]</span>
+   <span class="nt">&lt;<a title='"remarks" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;remarks&quot; element declaration could not be found.');">remarks</a>&gt;</span> ... <span class="nt">&lt;/<a title='"remarks" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;remarks&quot; element declaration could not be found.');">remarks</a>&gt;</span> <span class="cs">[0..1]</span>
+   <span class="nt">&lt;<a title='Jump to "delivlst" element declaration.' href="#element_delivlst">delivlst</a>&gt;</span> ... <span class="nt">&lt;/<a title='Jump to "delivlst" element declaration.' href="#element_delivlst">delivlst</a>&gt;</span> <span class="cs">[0..1]</span>
+<span class="nt">&lt;/ddn&gt;</span>
+</pre></div><div class="bs-callout bs-callout-info"><h4>Schema Component Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table below displays the underlying XML representation of the schema component. (Annotations are not shown.)"><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ddn"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a href="#ns_rdf" title="Find out namespace of 'rdf' prefix">rdf</a>:<a title='"Description" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;Description&quot; element declaration could not be found.');">Description</a>"</span> <span class="na">minOccurs=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='Jump to "ddnc" element declaration.' href="#element_ddnc">ddnc</a>"</span><span class="nt">/&gt;</span>
+<span class="comment" style="margin-left: 9em">&lt;-- Element issno removed from content model --&gt;</span>         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='"issdate" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;issdate&quot; element declaration could not be found.');">issdate</a>"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='"security" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;security&quot; element declaration could not be found.');">security</a>"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='"datarest" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;datarest&quot; element declaration could not be found.');">datarest</a>"</span> <span class="na">minOccurs=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='Jump to "dispto" element declaration.' href="#element_dispto">dispto</a>"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='Jump to "dispfrom" element declaration.' href="#element_dispfrom">dispfrom</a>"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='Jump to "authrtn" element declaration.' href="#element_authrtn">authrtn</a>"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='Jump to "mediaid" element declaration.' href="#element_mediaid">mediaid</a>"</span> <span class="na">minOccurs=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='"remarks" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;remarks&quot; element declaration could not be found.');">remarks</a>"</span> <span class="na">minOccurs=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='Jump to "delivlst" element declaration.' href="#element_delivlst">delivlst</a>"</span> <span class="na">minOccurs=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:attribute</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:ID</span>"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType&gt;</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element&gt;</span>
+</pre></div><div style="text-align: right; clear: both;"><a href="#top" title="Go to top of page"><span class="glyphicon glyphicon-chevron-up"> </span></a></div><hr></hr><h3 class="xs3p-subsection-heading">Element: <a id="element_ddnc"></a><strong>ddnc</strong></h3><object data="diagrams/ddnc.svg" type="image/svg+xml"></object><dl class="dl-horizontal"><dt class="header">Type</dt><dd class="">Locally-defined complex type</dd></dl><dl class="dl-horizontal"><dt>Documentation</dt><dd><div class="annotation documentation" id="wdoc-idp105548804878920"><div class="hidden" id="idp105548804878920-doc-raw">
+    **********************************************************************
+    * Define Element ddnc (Data Dispatch Note Identification Code)       *
+    * containing:-                                                       *
+    *  modelic   - Mandatory   Single    contains Parsed Character Data. *
+    *  sendid    - Mandatory   Single    contains Parsed Character Data. *
+    *  recvid    - Mandatory   Single    contains Parsed Character Data. *
+    *  diyear    - Mandatory   Single    contains Parsed Character Data. *
+    *  seqnum    - Mandatory   Single    contains Parsed Character Data. *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804878920-doc"> </div></div></dd></dl><div class="bs-callout bs-callout-info"><h4>XML Instance Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.
+         &lt;ul&gt;
+         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;
+         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;
+         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;
+         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;
+         &lt;li&gt;More stuff&lt;/li&gt;
+         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;
+         &lt;/ul&gt;
+      "><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;ddnc</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a title='Jump to "modelic" element declaration.' href="#element_modelic">modelic</a>&gt;</span> ... <span class="nt">&lt;/<a title='Jump to "modelic" element declaration.' href="#element_modelic">modelic</a>&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;<a title='"sendid" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;sendid&quot; element declaration could not be found.');">sendid</a>&gt;</span> ... <span class="nt">&lt;/<a title='"sendid" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;sendid&quot; element declaration could not be found.');">sendid</a>&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;<a title='Jump to "recvid" element declaration.' href="#element_recvid">recvid</a>&gt;</span> ... <span class="nt">&lt;/<a title='Jump to "recvid" element declaration.' href="#element_recvid">recvid</a>&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;<a title='"diyear" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;diyear&quot; element declaration could not be found.');">diyear</a>&gt;</span> ... <span class="nt">&lt;/<a title='"diyear" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;diyear&quot; element declaration could not be found.');">diyear</a>&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;<a title='"seqnum" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;seqnum&quot; element declaration could not be found.');">seqnum</a>&gt;</span> ... <span class="nt">&lt;/<a title='"seqnum" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;seqnum&quot; element declaration could not be found.');">seqnum</a>&gt;</span> <span class="cs">[1]</span>
+<span class="nt">&lt;/ddnc&gt;</span>
+</pre></div><div class="bs-callout bs-callout-info"><h4>Schema Component Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table below displays the underlying XML representation of the schema component. (Annotations are not shown.)"><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ddnc"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='Jump to "modelic" element declaration.' href="#element_modelic">modelic</a>"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='"sendid" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;sendid&quot; element declaration could not be found.');">sendid</a>"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='Jump to "recvid" element declaration.' href="#element_recvid">recvid</a>"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='"diyear" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;diyear&quot; element declaration could not be found.');">diyear</a>"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='"seqnum" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;seqnum&quot; element declaration could not be found.');">seqnum</a>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence&gt;</span>
+   <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType&gt;</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element&gt;</span>
+</pre></div><div style="text-align: right; clear: both;"><a href="#top" title="Go to top of page"><span class="glyphicon glyphicon-chevron-up"> </span></a></div><hr></hr><h3 class="xs3p-subsection-heading">Element: <a id="element_ddnfilen"></a><strong>ddnfilen</strong></h3><object data="diagrams/ddnfilen.svg" type="image/svg+xml"></object><dl class="dl-horizontal"><dt class="header">Type</dt><dd class=""><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></dd></dl><dl class="dl-horizontal"><dt>Documentation</dt><dd><div class="annotation documentation" id="wdoc-idp105548804775368"><div class="hidden" id="idp105548804775368-doc-raw">
+    **********************************************************************
+    * Define Element ddnfilen (Dispatched File Name) containing:-        *
+    *  Parsed Character Data.                                            *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804775368-doc"> </div></div></dd></dl><div class="bs-callout bs-callout-info"><h4>XML Instance Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.
+         &lt;ul&gt;
+         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;
+         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;
+         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;
+         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;
+         &lt;li&gt;More stuff&lt;/li&gt;
+         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;
+         &lt;/ul&gt;
+      "><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;ddnfilen&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> <span class="nt">&lt;/ddnfilen&gt;</span>
+</pre></div><div class="bs-callout bs-callout-info"><h4>Schema Component Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table below displays the underlying XML representation of the schema component. (Annotations are not shown.)"><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ddnfilen"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>"</span><span class="nt">/&gt;</span>
+</pre></div><div style="text-align: right; clear: both;"><a href="#top" title="Go to top of page"><span class="glyphicon glyphicon-chevron-up"> </span></a></div><hr></hr><h3 class="xs3p-subsection-heading">Element: <a id="element_delivlst"></a><strong>delivlst</strong></h3><object data="diagrams/delivlst.svg" type="image/svg+xml"></object><dl class="dl-horizontal"><dt class="header">Type</dt><dd class="">Locally-defined complex type</dd></dl><dl class="dl-horizontal"><dt>Documentation</dt><dd><div class="annotation documentation" id="wdoc-idp105548804748744"><div class="hidden" id="idp105548804748744-doc-raw">
+    **********************************************************************
+    * Define Element delivlst (Data Delivery List Entry) containing:-    *
+    *====================================================================*
+    *  Mandatory Repeatable Group                                        *
+    *====================================================================*
+    *  ddnfilen  - Mandatory   Single    contains Parsed Character Data. *
+    *  dmcoricn  - Optional    Single    contains Parsed Character Data. *
+    *  issno     - Optional    Single    contains No Other Tags.         *
+    *====================================================================*
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804748744-doc"> </div></div></dd></dl><div class="bs-callout bs-callout-info"><h4>XML Instance Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.
+         &lt;ul&gt;
+         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;
+         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;
+         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;
+         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;
+         &lt;li&gt;More stuff&lt;/li&gt;
+         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;
+         &lt;/ul&gt;
+      "><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;delivlst</span><span class="nt">&gt;</span>
+   <span class="group">Start <a title="Look up 'Sequence' in glossary" href="#term_Sequence">Sequence</a> <span class="cs">[1..*]</span></span>
+      <span class="nt">&lt;<a title='Jump to "ddnfilen" element declaration.' href="#element_ddnfilen">ddnfilen</a>&gt;</span> ... <span class="nt">&lt;/<a title='Jump to "ddnfilen" element declaration.' href="#element_ddnfilen">ddnfilen</a>&gt;</span> <span class="cs">[1]</span>
+      <span class="nt">&lt;<a title='Jump to "dmcoricn" element declaration.' href="#element_dmcoricn">dmcoricn</a>&gt;</span> ... <span class="nt">&lt;/<a title='Jump to "dmcoricn" element declaration.' href="#element_dmcoricn">dmcoricn</a>&gt;</span> <span class="cs">[0..1]</span>
+      <span class="nt">&lt;<a title='"issno" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;issno&quot; element declaration could not be found.');">issno</a>&gt;</span> ... <span class="nt">&lt;/<a title='"issno" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;issno&quot; element declaration could not be found.');">issno</a>&gt;</span> <span class="cs">[0..1]</span>
+   <span class="group">End Sequence</span>
+<span class="nt">&lt;/delivlst&gt;</span>
+</pre></div><div class="bs-callout bs-callout-info"><h4>Schema Component Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table below displays the underlying XML representation of the schema component. (Annotations are not shown.)"><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"delivlst"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='Jump to "ddnfilen" element declaration.' href="#element_ddnfilen">ddnfilen</a>"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='Jump to "dmcoricn" element declaration.' href="#element_dmcoricn">dmcoricn</a>"</span> <span class="na">minOccurs=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='"issno" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;issno&quot; element declaration could not be found.');">issno</a>"</span> <span class="na">minOccurs=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence&gt;</span>
+   <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType&gt;</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element&gt;</span>
+</pre></div><div style="text-align: right; clear: both;"><a href="#top" title="Go to top of page"><span class="glyphicon glyphicon-chevron-up"> </span></a></div><hr></hr><h3 class="xs3p-subsection-heading">Element: <a id="element_dispfrom"></a><strong>dispfrom</strong></h3><object data="diagrams/dispfrom.svg" type="image/svg+xml"></object><dl class="dl-horizontal"><dt class="header">Type</dt><dd class="">Locally-defined complex type</dd></dl><dl class="dl-horizontal"><dt>Documentation</dt><dd><div class="annotation documentation" id="wdoc-idp105548804760648"><div class="hidden" id="idp105548804760648-doc-raw">
+    **********************************************************************
+    * Define Element dispfrom (Sending CompanyAuthority Details, eg      *
+    *                          full address of sending person including  *
+    *                          organization/department)                  *
+    * containing:-                                                       *
+    *   dispaddr - Mandatory   Single      contains enterprise, person,  *
+    *                                               address.             *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804760648-doc"> </div></div></dd></dl><div class="bs-callout bs-callout-info"><h4>XML Instance Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.
+         &lt;ul&gt;
+         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;
+         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;
+         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;
+         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;
+         &lt;li&gt;More stuff&lt;/li&gt;
+         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;
+         &lt;/ul&gt;
+      "><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;dispfrom</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a title='"dispaddr" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;dispaddr&quot; element declaration could not be found.');">dispaddr</a>&gt;</span> ... <span class="nt">&lt;/<a title='"dispaddr" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;dispaddr&quot; element declaration could not be found.');">dispaddr</a>&gt;</span> <span class="cs">[1]</span>
+<span class="nt">&lt;/dispfrom&gt;</span>
+</pre></div><div class="bs-callout bs-callout-info"><h4>Schema Component Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table below displays the underlying XML representation of the schema component. (Annotations are not shown.)"><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"dispfrom"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='"dispaddr" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;dispaddr&quot; element declaration could not be found.');">dispaddr</a>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence&gt;</span>
+   <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType&gt;</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element&gt;</span>
+</pre></div><div style="text-align: right; clear: both;"><a href="#top" title="Go to top of page"><span class="glyphicon glyphicon-chevron-up"> </span></a></div><hr></hr><h3 class="xs3p-subsection-heading">Element: <a id="element_dispto"></a><strong>dispto</strong></h3><object data="diagrams/dispto.svg" type="image/svg+xml"></object><dl class="dl-horizontal"><dt class="header">Type</dt><dd class="">Locally-defined complex type</dd></dl><dl class="dl-horizontal"><dt>Documentation</dt><dd><div class="annotation documentation" id="wdoc-idp105548804761160"><div class="hidden" id="idp105548804761160-doc-raw">
+    **********************************************************************
+    * Define Element dispto (Receiving Company/Authority Details, eg     *
+    *                        full address of receiving person including  *
+    *                        organization/department)                    *
+    * containing:-                                                       *
+    *   dispaddr - Mandatory   Single      contains enterprise, person,  *
+    *                                               address.             *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804761160-doc"> </div></div></dd></dl><div class="bs-callout bs-callout-info"><h4>XML Instance Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.
+         &lt;ul&gt;
+         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;
+         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;
+         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;
+         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;
+         &lt;li&gt;More stuff&lt;/li&gt;
+         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;
+         &lt;/ul&gt;
+      "><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;dispto</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a title='"dispaddr" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;dispaddr&quot; element declaration could not be found.');">dispaddr</a>&gt;</span> ... <span class="nt">&lt;/<a title='"dispaddr" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;dispaddr&quot; element declaration could not be found.');">dispaddr</a>&gt;</span> <span class="cs">[1]</span>
+<span class="nt">&lt;/dispto&gt;</span>
+</pre></div><div class="bs-callout bs-callout-info"><h4>Schema Component Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table below displays the underlying XML representation of the schema component. (Annotations are not shown.)"><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"dispto"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">ref=</span><span class="s">"<a title='"dispaddr" element declaration could not be found.' href="javascript:void(0)" onclick="alert('&quot;dispaddr&quot; element declaration could not be found.');">dispaddr</a>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence&gt;</span>
+   <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType&gt;</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element&gt;</span>
+</pre></div><div style="text-align: right; clear: both;"><a href="#top" title="Go to top of page"><span class="glyphicon glyphicon-chevron-up"> </span></a></div><hr></hr><h3 class="xs3p-subsection-heading">Element: <a id="element_dmcoricn"></a><strong>dmcoricn</strong></h3><object data="diagrams/dmcoricn.svg" type="image/svg+xml"></object><dl class="dl-horizontal"><dt class="header">Type</dt><dd class=""><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></dd></dl><dl class="dl-horizontal"><dt>Documentation</dt><dd><div class="annotation documentation" id="wdoc-idp105548804771656"><div class="hidden" id="idp105548804771656-doc-raw">
+    **********************************************************************
+    * Define Element dmcoricn (DMC or ICN or PMC of dispatched file)     *
+    * containing:-                                                       *
+    *  Parsed Character Data.                                            *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804771656-doc"> </div></div></dd></dl><div class="bs-callout bs-callout-info"><h4>XML Instance Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.
+         &lt;ul&gt;
+         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;
+         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;
+         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;
+         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;
+         &lt;li&gt;More stuff&lt;/li&gt;
+         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;
+         &lt;/ul&gt;
+      "><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;dmcoricn&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> <span class="nt">&lt;/dmcoricn&gt;</span>
+</pre></div><div class="bs-callout bs-callout-info"><h4>Schema Component Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table below displays the underlying XML representation of the schema component. (Annotations are not shown.)"><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"dmcoricn"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>"</span><span class="nt">/&gt;</span>
+</pre></div><div style="text-align: right; clear: both;"><a href="#top" title="Go to top of page"><span class="glyphicon glyphicon-chevron-up"> </span></a></div><hr></hr><h3 class="xs3p-subsection-heading">Element: <a id="element_mediaid"></a><strong>mediaid</strong></h3><object data="diagrams/mediaid.svg" type="image/svg+xml"></object><dl class="dl-horizontal"><dt class="header">Type</dt><dd class="">Locally-defined complex type</dd></dl><dl class="dl-horizontal"><dt>Documentation</dt><dd><div class="annotation documentation" id="wdoc-idp105548804752968"><div class="hidden" id="idp105548804752968-doc-raw">
+    **********************************************************************
+    * Define Element mediaid (Media Identification) containing:-         *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * label   - NMTOKEN - REQUIRED - Starting Media Label in Volume Set. *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804752968-doc"> </div></div></dd></dl><div class="bs-callout bs-callout-info"><h4>XML Instance Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.
+         &lt;ul&gt;
+         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;
+         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;
+         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;
+         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;
+         &lt;li&gt;More stuff&lt;/li&gt;
+         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;
+         &lt;/ul&gt;
+      "><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;mediaid</span>
+ <span class="na">label=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:NMTOKEN</span>"</span> <span class="cs">[1]</span>
+<span class="nt">/&gt; </span>
+
+</pre></div><div class="bs-callout bs-callout-info"><h4>Schema Component Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table below displays the underlying XML representation of the schema component. (Annotations are not shown.)"><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"mediaid"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:attribute</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:NMTOKEN</span>"</span> <span class="na">use=</span><span class="s">"required"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType&gt;</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element&gt;</span>
+</pre></div><div style="text-align: right; clear: both;"><a href="#top" title="Go to top of page"><span class="glyphicon glyphicon-chevron-up"> </span></a></div><hr></hr><h3 class="xs3p-subsection-heading">Element: <a id="element_modelic"></a><strong>modelic</strong></h3><object data="diagrams/modelic.svg" type="image/svg+xml"></object><dl class="dl-horizontal"><dt class="header">Type</dt><dd class="">Locally-defined simple type</dd></dl><dl class="dl-horizontal"><dt>Documentation</dt><dd><div class="annotation documentation" id="wdoc-idp105548804870344"><div class="hidden" id="idp105548804870344-doc-raw">
+    **********************************************************************
+    * Define Element modelic (Model Identification) containing:-         *
+    *  Parsed Character Data.                                            *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804870344-doc"> </div></div></dd></dl><div class="bs-callout bs-callout-info"><h4>XML Instance Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.
+         &lt;ul&gt;
+         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;
+         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;
+         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;
+         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;
+         &lt;li&gt;More stuff&lt;/li&gt;
+         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;
+         &lt;/ul&gt;
+      "><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;modelic&gt;</span> <span class="constraint"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> (<em>pattern</em> = [A-Za-z0-9]{2,14})</span> <span class="nt">&lt;/modelic&gt;</span>
+</pre></div><div class="bs-callout bs-callout-info"><h4>Schema Component Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table below displays the underlying XML representation of the schema component. (Annotations are not shown.)"><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"modelic"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:simpleType</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:restriction</span> <span class="na">base=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:pattern</span> <span class="na">value=</span><span class="s">"[A-Za-z0-9]{2,14}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:restriction&gt;</span>
+   <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:simpleType&gt;</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element&gt;</span>
+</pre></div><div style="text-align: right; clear: both;"><a href="#top" title="Go to top of page"><span class="glyphicon glyphicon-chevron-up"> </span></a></div><hr></hr><h3 class="xs3p-subsection-heading">Element: <a id="element_recvid"></a><strong>recvid</strong></h3><object data="diagrams/recvid.svg" type="image/svg+xml"></object><dl class="dl-horizontal"><dt class="header">Type</dt><dd class=""><span class="type"><a title='"NCAGEcode" type definition could not be found.' href="javascript:void(0)" onclick="alert('&quot;NCAGEcode&quot; type definition could not be found.');">NCAGEcode</a></span></dd></dl><dl class="dl-horizontal"><dt>Documentation</dt><dd><div class="annotation documentation" id="wdoc-idp105548804865224"><div class="hidden" id="idp105548804865224-doc-raw">
+    **********************************************************************
+    * Define Element recvid (Receiver Identification) containing:-       *
+    *  Parsed Character Data.                                            *
+    * must contain the NCAGE code                                        *
+    **********************************************************************
+			</div><div class="xs3p-doc" id="idp105548804865224-doc"> </div></div></dd></dl><div class="bs-callout bs-callout-info"><h4>XML Instance Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.
+         &lt;ul&gt;
+         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;
+         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;
+         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;
+         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;
+         &lt;li&gt;More stuff&lt;/li&gt;
+         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;
+         &lt;/ul&gt;
+      "><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;recvid&gt;</span> <span class="type"><a title='"NCAGEcode" type definition could not be found.' href="javascript:void(0)" onclick="alert('&quot;NCAGEcode&quot; type definition could not be found.');">NCAGEcode</a></span> <span class="nt">&lt;/recvid&gt;</span>
+</pre></div><div class="bs-callout bs-callout-info"><h4>Schema Component Representation 
+               <span class="xs3p-panel-help"><button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table below displays the underlying XML representation of the schema component. (Annotations are not shown.)"><span class="glyphicon glyphicon-question-sign"> </span></button></span></h4><pre class="codehilite"><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"recvid"</span> <span class="na">type=</span><span class="s">"<span class="type"><a title='"NCAGEcode" type definition could not be found.' href="javascript:void(0)" onclick="alert('&quot;NCAGEcode&quot; type definition could not be found.');">NCAGEcode</a></span>"</span><span class="nt">/&gt;</span>
+</pre></div><div style="text-align: right; clear: both;"><a href="#top" title="Go to top of page"><span class="glyphicon glyphicon-chevron-up"> </span></a></div><hr></hr></section><div id="glossary"><h2><a id="Glossary">Glossary</a></h2><p><span class="glossaryTerm"><a id="term_Abstract">Abstract</a> </span>(Applies to complex type definitions and element declarations). An abstract element or complex type cannot used to validate an element instance. If there is a reference to an abstract element, only element declarations that can substitute the abstract element can be used to validate the instance. For references to abstract type definitions, only derived types can be used.</p><p><span class="glossaryTerm"><a id="term_All">All Model Group</a> </span>Child elements can be provided <em>in any order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-all" href="http://www.w3.org/TR/xmlschema-1/#element-all">http://www.w3.org/TR/xmlschema-1/#element-all</a>.</p><p><span class="glossaryTerm"><a id="term_Choice">Choice Model Group</a> </span><em>Only one</em> from the list of child elements and model groups can be provided in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-choice" href="http://www.w3.org/TR/xmlschema-1/#element-choice">http://www.w3.org/TR/xmlschema-1/#element-choice</a>.</p><p><span class="glossaryTerm"><a id="term_CollapseWS">Collapse Whitespace Policy</a> </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32). Then, collapse contiguous sequences of space characters into single space character, and remove leading and trailing space characters.</p><p><span class="glossaryTerm"><a id="term_ElemBlock">Disallowed Substitutions</a> </span>(Applies to element declarations). If <em>substitution</em> is specified, then <a title="Look up 'substitution group' in glossary" href="#term_SubGroup">substitution group</a> members cannot be used in place of the given element declaration to validate element instances. If <em>derivation methods</em>, e.g. extension, restriction, are specified, then the given element declaration will not validate element instances that have types derived from the element declaration's type using the specified derivation methods. Normally, element instances can override their declaration's type by specifying an <code>xsi:type</code> attribute.</p><p><span class="glossaryTerm"><a id="term_Key">Key Constraint</a> </span>Like <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>, but additionally requires that the specified value(s) must be provided. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p><p><span class="glossaryTerm"><a id="term_KeyRef">Key Reference Constraint</a> </span>Ensures that the specified value(s) must match value(s) from a <a title="Look up 'Key Constraint' in glossary" href="#term_Key">Key Constraint</a> or <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p><p><span class="glossaryTerm"><a id="term_ModelGroup">Model Group</a> </span>Groups together element content, specifying the order in which the element content can occur and the number of times the group of element content may be repeated. See: <a title="http://www.w3.org/TR/xmlschema-1/#Model_Groups" href="http://www.w3.org/TR/xmlschema-1/#Model_Groups">http://www.w3.org/TR/xmlschema-1/#Model_Groups</a>.</p><p><span class="glossaryTerm"><a id="term_Nillable">Nillable</a> </span>(Applies to element declarations). If an element declaration is nillable, instances can use the <code>xsi:nil</code> attribute. The <code>xsi:nil</code> attribute is the boolean attribute, <em>nil</em>, from the <em>http://www.w3.org/2001/XMLSchema-instance</em> namespace. If an element instance has an <code>xsi:nil</code> attribute set to true, it can be left empty, even though its element declaration may have required content.</p><p><span class="glossaryTerm"><a id="term_Notation">Notation</a> </span>A notation is used to identify the format of a piece of data. Values of elements and attributes that are of type, NOTATION, must come from the names of declared notations. See: <a title="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations" href="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations">http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations</a>.</p><p><span class="glossaryTerm"><a id="term_PreserveWS">Preserve Whitespace Policy</a> </span>Preserve whitespaces exactly as they appear in instances.</p><p><span class="glossaryTerm"><a id="term_TypeFinal">Prohibited Derivations</a> </span>(Applies to type definitions). Derivation methods that cannot be used to create sub-types from a given type definition.</p><p><span class="glossaryTerm"><a id="term_TypeBlock">Prohibited Substitutions</a> </span>(Applies to complex type definitions). Prevents sub-types that have been derived using the specified derivation methods from validating element instances in place of the given type definition.</p><p><span class="glossaryTerm"><a id="term_ReplaceWS">Replace Whitespace Policy</a> </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32).</p><p><span class="glossaryTerm"><a id="term_Sequence">Sequence Model Group</a> </span>Child elements and model groups must be provided <em>in the specified order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-sequence" href="http://www.w3.org/TR/xmlschema-1/#element-sequence">http://www.w3.org/TR/xmlschema-1/#element-sequence</a>.</p><p><span class="glossaryTerm"><a id="term_SubGroup">Substitution Group</a> </span>Elements that are <em>members</em> of a substitution group can be used wherever the <em>head</em> element of the substitution group is referenced.</p><p><span class="glossaryTerm"><a id="term_ElemFinal">Substitution Group Exclusions</a> </span>(Applies to element declarations). Prohibits element declarations from nominating themselves as being able to substitute a given element declaration, if they have types that are derived from the original element's type using the specified derivation methods.</p><p><span class="glossaryTerm"><a id="term_TargetNS">Target Namespace</a> </span>The target namespace identifies the namespace that components in this schema belongs to. If no target namespace is provided, then the schema components do not belong to any namespace.</p><p><span class="glossaryTerm"><a id="term_Unique">Uniqueness Constraint</a> </span>Ensures uniqueness of an element/attribute value, or a combination of values, within a specified scope. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p><div style="text-align: right; clear: both;"><a href="#top" title="Go to top of page"><span class="glyphicon glyphicon-chevron-up"> </span></a></div><hr></hr></div><p class="footer">Generated by <a href="https://github.com/unitsml/schemas/blob/master/xsl/xs3p.xsl">xs3p</a> (fork of <a href="http://github.com/bitfehler/xs3p">xs3p</a>)
+                  . Last Modified: <script type="text/javascript">
+<!--
+document.write(document.lastModified);
+// -->
+</script></p></div><br></br><nav><div id="toc"><ul class="nav nav-list xs3p-sidenav"><li><strong><a href="#SchemaProperties">Schema Document Properties</a></strong></li><ul class="nav nav-list nav-list-elements"><li><strong><a href="#SchemaElements">Elements </a></strong></li><li class="nav-sub-item"><a href="#element_authrtn"><strong>authrtn</strong></a></li><li class="nav-sub-item"><a href="#element_ddn"><strong>ddn</strong></a></li><li class="nav-sub-item"><a href="#element_ddnc"><strong>ddnc</strong></a></li><li class="nav-sub-item"><a href="#element_ddnfilen"><strong>ddnfilen</strong></a></li><li class="nav-sub-item"><a href="#element_delivlst"><strong>delivlst</strong></a></li><li class="nav-sub-item"><a href="#element_dispfrom"><strong>dispfrom</strong></a></li><li class="nav-sub-item"><a href="#element_dispto"><strong>dispto</strong></a></li><li class="nav-sub-item"><a href="#element_dmcoricn"><strong>dmcoricn</strong></a></li><li class="nav-sub-item"><a href="#element_mediaid"><strong>mediaid</strong></a></li><li class="nav-sub-item"><a href="#element_modelic"><strong>modelic</strong></a></li><li class="nav-sub-item"><a href="#element_recvid"><strong>recvid</strong></a></li></ul><li><strong><a href="#Glossary">Glossary</a></strong></li></ul></div></nav><script>
+               //TOC toggle animation
+               $('#toggle').on('click', function(){
+                  var duration = 400;
+                  if( $('nav').is(':visible') ) {
+                     $('nav').animate({ 'left': '-353px' }, duration, function(){
+                        $('nav').hide();
+                     });
+                     $('body').animate({ 'margin-left': '0' }, duration);
+                     $('#toggle > span').text('>');
+                  }
+                  else {
+                     $('nav').show();
+                     $('nav').animate({ 'left': '0px' }, duration);
+                     $('body').animate({ 'margin-left': '270px' }, duration);
+                     $('#toggle > span').text('<');
+                  }
+               });
+            </script><script>
+
+                  $(function () { $("[data-toggle='tooltip']").tooltip(); });
+                  $(function () { $("[data-toggle='popover']").popover({ trigger: "hover" }); });
+                  
+                  $(function () { $("[data-toggle='modal']").click(function() { return false; })});
+                  
+                  $(function () { $("[data-toggle='modal']").popover({ trigger: "hover", html: true,
+    content: function () {
+        var targetId = $(this).attr('data-target');
+        return $(targetId).html();
+    }}); });
+                  
+    
+                  
+                  var c = new Markdown.Converter();
+                  $('.xs3p-doc').each(function(i, obj) {
+                     var rawDocID = '#' + $(this).attr('id') + '-raw';
+                     var indent = $(rawDocID).html().match("^\\n[\\t ]*");
+                     if (!(indent === null)) {
+                        normalized = $(rawDocID).html().replace(new RegExp(indent[0], "gm"), "\n");
+                     } else {
+                        normalized = $(rawDocID).html();
+                     }
+                     $(this).html(c.makeHtml(normalized));
+                     $(this).find('code,pre').each(function(i, block) {
+                        $(this).html($(this).text());
+                     });
+                  });
+
+                  $(window).scroll(function() {
+                     if ($(".xs3p-sidebar").css("position") == "fixed" && $(window).height() < $(".xs3p-sidebar").height()) {
+                        var perc = $(window).scrollTop() / $("#xs3p-content").height();
+                        var overflow = $(".xs3p-sidebar").height() + 105 - $(window).height();
+                        $(".xs3p-sidebar").css("top", (65 - Math.round(overflow * perc)) + "px");
+                     }
+                  });
+                  $(window).resize(function() {
+                     if ($(".xs3p-sidebar").css("position") == "fixed") {
+                        $(".xs3p-sidebar").css("top", "65px");
+                     }
+                  });
+                  </script></body></html>

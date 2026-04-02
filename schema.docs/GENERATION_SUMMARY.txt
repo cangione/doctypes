@@ -1,0 +1,104 @@
+S1000D SCHEMA DOCUMENTATION GENERATION SUMMARY
+===============================================
+
+Generation Date: $(date)
+Tool: xs3p XSLT Stylesheet v1.0
+Processor: xsltproc (libxslt)
+
+S1000D 2-1 DOCUMENTATION
+========================
+Location: /Users/charlesangione/git.sgmlxml/doctypes/schema.docs/S1000D_2-1/
+Source:   /Users/charlesangione/git.sgmlxml/doctypes/doctypes/S1000D_2-1/xml_schema/
+
+Total Files: 91 XSD schemas processed
+- comment: 8 schemas
+- ddn: 5 schemas
+- dm: 45 schemas
+- dml: 14 schemas
+- pm: 12 schemas
+
+Output:
+- Individual documentation: 91 HTML files (1.2-211 KB each)
+- Index page: index.html (167 lines)
+- Total size: 9.4 MB
+
+S1000D 2-2 DOCUMENTATION
+========================
+Location: /Users/charlesangione/git.sgmlxml/doctypes/schema.docs/S1000D_2-2/
+Source:   /Users/charlesangione/git.sgmlxml/doctypes/doctypes/S1000D_2-2/xml_schema/
+
+Total Files: 105 XSD schemas processed
+- comment: 8 schemas
+- ddn: 5 schemas
+- dm: 50 schemas
+- dml: 14 schemas
+- pm: 12 schemas
+
+Output:
+- Individual documentation: 105 HTML files (1.2-212 KB each)
+- Index page: index.html (167 lines)
+- Total size: 10 MB
+
+DOCUMENTATION FEATURES
+======================
+Each generated HTML document includes:
+- Global element definitions and descriptions
+- Complex type definitions with inheritance hierarchies
+- Simple type definitions with restrictions and patterns
+- Element and attribute properties
+- Content model descriptions
+- Type hierarchy diagrams
+- Source XML schema references
+- Alphabetical indexing
+- Collapsible sections for details
+- Cross-references between types and elements
+
+INDEX PAGES
+===========
+Both versions include index.html with:
+- Categorized listing of all schemas
+- Direct links to each schema documentation
+- Schema count by category
+- Generation metadata
+- Bootstrap-based responsive layout
+
+GENERATION PARAMETERS
+=====================
+xs3p XSLT Parameters Used:
+  --stringparam title "S1000D {version} — {schema_name} ({category})"
+  --stringparam sortByComponent "true"
+  --stringparam printAllSuperTypes "true"
+  --stringparam printAllSubTypes "true"
+  --stringparam printGlossary "true"
+
+Note: Schema searching parameters (searchIncludedSchemas, searchImportedSchemas)
+were disabled to avoid linksFile dependency. Each schema is documented
+independently to ensure completeness.
+
+HOW TO USE
+==========
+1. Open index.html in each version directory to browse all schemas
+2. Click any schema name to view detailed documentation
+3. Navigate with table of contents on left sidebar
+4. Search for specific elements/types within each page
+5. View source XSD definitions in collapsed sections
+
+FILE ORGANIZATION
+=================
+Output files use naming convention: {category}_{schema_name}.html
+Example: comment_comment.html, dm_base.html, pm_pmSchema.html
+
+This preserves unique identification where multiple categories
+contain schemas with the same name (e.g., dmaddr1.xsd).
+
+COMPATIBILITY
+=============
+- HTML5 with HTML Entities
+- CSS3 (Bootstrap 3.4.1 from CDN)
+- Responsive design for desktop/tablet
+- Tested in modern browsers
+
+STATUS
+======
+Generation: SUCCESS
+All files processed without errors.
